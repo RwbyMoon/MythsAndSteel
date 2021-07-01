@@ -1,0 +1,840 @@
+fileFormatVersion: 2
+guid: 328e5bfe0a6f0934985706f6830f36c2
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8062727879547239800
+    second: coins orgones rouges 30frames_0
+  - first:
+      213: -2870927209833344099
+    second: coins orgones rouges 30frames_1
+  - first:
+      213: 6043044852693777484
+    second: coins orgones rouges 30frames_2
+  - first:
+      213: 6677868696396235591
+    second: coins orgones rouges 30frames_3
+  - first:
+      213: 2823313747007524927
+    second: coins orgones rouges 30frames_4
+  - first:
+      213: 8997277582560762296
+    second: coins orgones rouges 30frames_5
+  - first:
+      213: -932228294338443911
+    second: coins orgones rouges 30frames_6
+  - first:
+      213: 5729001667128220848
+    second: coins orgones rouges 30frames_7
+  - first:
+      213: -6829252738502835431
+    second: coins orgones rouges 30frames_8
+  - first:
+      213: 170763746451149970
+    second: coins orgones rouges 30frames_9
+  - first:
+      213: 8979342055051149073
+    second: coins orgones rouges 30frames_10
+  - first:
+      213: -1868737652981062762
+    second: coins orgones rouges 30frames_11
+  - first:
+      213: 8193938795750607439
+    second: coins orgones rouges 30frames_12
+  - first:
+      213: 2048058285836776837
+    second: coins orgones rouges 30frames_13
+  - first:
+      213: -5622707290781404183
+    second: coins orgones rouges 30frames_14
+  - first:
+      213: -5316538442815453842
+    second: coins orgones rouges 30frames_15
+  - first:
+      213: 6106811275702568310
+    second: coins orgones rouges 30frames_16
+  - first:
+      213: -2329063509883669142
+    second: coins orgones rouges 30frames_17
+  - first:
+      213: -9094308784389977837
+    second: coins orgones rouges 30frames_18
+  - first:
+      213: -6211330833662582888
+    second: coins orgones rouges 30frames_19
+  - first:
+      213: -6431225402370123715
+    second: coins orgones rouges 30frames_20
+  - first:
+      213: -3149262910642337794
+    second: coins orgones rouges 30frames_21
+  - first:
+      213: 7194717827100619061
+    second: coins orgones rouges 30frames_22
+  - first:
+      213: 2920195368538714754
+    second: coins orgones rouges 30frames_23
+  - first:
+      213: 6466579454144670499
+    second: coins orgones rouges 30frames_24
+  - first:
+      213: 1763996165890501892
+    second: coins orgones rouges 30frames_25
+  - first:
+      213: -3945419338426240834
+    second: coins orgones rouges 30frames_26
+  - first:
+      213: -7728632541470438639
+    second: coins orgones rouges 30frames_27
+  - first:
+      213: 4533826785967607717
+    second: coins orgones rouges 30frames_28
+  - first:
+      213: -2044336822954275934
+    second: coins orgones rouges 30frames_29
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: coins orgones rouges 30frames_0
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 23
+        width: 207
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87d3d0dc94094ef60800000000000000
+      internalID: 8062727879547239800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins orgones rouges 30frames_1
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 23
+        width: 207
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9351e9d9ea6828d0800000000000000
+      internalID: -2870927209833344099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins orgones rouges 30frames_2
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 23
+        width: 207
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4cb09ea6453dd350800000000000000
+      internalID: 6043044852693777484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins orgones rouges 30frames_3
+      rect:
+        serializedVersion: 2
+        x: 732
+        y: 23
+        width: 207
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7430661d23e8cac50800000000000000
+      internalID: 6677868696396235591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins orgones rouges 30frames_4
+      rect:
+        serializedVersion: 2
+        x: 972
+        y: 23
+        width: 207
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f305cd3f4ec6e2720800000000000000
+      internalID: 2823313747007524927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins orgones rouges 30frames_5
+      rect:
+        serializedVersion: 2
+        x: 1212
+        y: 23
+        width: 207
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b99e1eaa40ccdc70800000000000000
+      internalID: 8997277582560762296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins orgones rouges 30frames_6
+      rect:
+        serializedVersion: 2
+        x: 1452
+        y: 23
+        width: 207
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97583623e4f0013f0800000000000000
+      internalID: -932228294338443911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins orgones rouges 30frames_7
+      rect:
+        serializedVersion: 2
+        x: 1692
+        y: 23
+        width: 207
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bc5cc6a9a0818f40800000000000000
+      internalID: 5729001667128220848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins orgones rouges 30frames_8
+      rect:
+        serializedVersion: 2
+        x: 1932
+        y: 23
+        width: 207
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 913cc2831de9931a0800000000000000
+      internalID: -6829252738502835431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins orgones rouges 30frames_9
+      rect:
+        serializedVersion: 2
+        x: 2172
+        y: 23
+        width: 207
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2945cbff8bcae5200800000000000000
+      internalID: 170763746451149970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins orgones rouges 30frames_10
+      rect:
+        serializedVersion: 2
+        x: 2412
+        y: 23
+        width: 207
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11fbc0446080d9c70800000000000000
+      internalID: 8979342055051149073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins orgones rouges 30frames_11
+      rect:
+        serializedVersion: 2
+        x: 2652
+        y: 23
+        width: 207
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 693aaaf6109e016e0800000000000000
+      internalID: -1868737652981062762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins orgones rouges 30frames_12
+      rect:
+        serializedVersion: 2
+        x: 2892
+        y: 23
+        width: 207
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4ac100ebe7b6b170800000000000000
+      internalID: 8193938795750607439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins orgones rouges 30frames_13
+      rect:
+        serializedVersion: 2
+        x: 3132
+        y: 23
+        width: 207
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 585b89ee82a2c6c10800000000000000
+      internalID: 2048058285836776837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins orgones rouges 30frames_14
+      rect:
+        serializedVersion: 2
+        x: 3372
+        y: 23
+        width: 207
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e3b9f8628128f1b0800000000000000
+      internalID: -5622707290781404183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins orgones rouges 30frames_15
+      rect:
+        serializedVersion: 2
+        x: 3612
+        y: 23
+        width: 207
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e65c649547cd736b0800000000000000
+      internalID: -5316538442815453842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins orgones rouges 30frames_16
+      rect:
+        serializedVersion: 2
+        x: 3852
+        y: 23
+        width: 207
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6750a9eff70cfb450800000000000000
+      internalID: 6106811275702568310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins orgones rouges 30frames_17
+      rect:
+        serializedVersion: 2
+        x: 4092
+        y: 23
+        width: 207
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a653f02e3118dafd0800000000000000
+      internalID: -2329063509883669142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins orgones rouges 30frames_18
+      rect:
+        serializedVersion: 2
+        x: 4332
+        y: 23
+        width: 207
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31988b428568ac180800000000000000
+      internalID: -9094308784389977837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins orgones rouges 30frames_19
+      rect:
+        serializedVersion: 2
+        x: 4572
+        y: 23
+        width: 207
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89f5c1d048becc9a0800000000000000
+      internalID: -6211330833662582888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins orgones rouges 30frames_20
+      rect:
+        serializedVersion: 2
+        x: 4812
+        y: 23
+        width: 207
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3892451292bfb6a0800000000000000
+      internalID: -6431225402370123715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins orgones rouges 30frames_21
+      rect:
+        serializedVersion: 2
+        x: 5052
+        y: 23
+        width: 207
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef7c9da71129b44d0800000000000000
+      internalID: -3149262910642337794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins orgones rouges 30frames_22
+      rect:
+        serializedVersion: 2
+        x: 5292
+        y: 23
+        width: 207
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 531b0879eb5c8d360800000000000000
+      internalID: 7194717827100619061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins orgones rouges 30frames_23
+      rect:
+        serializedVersion: 2
+        x: 5532
+        y: 23
+        width: 207
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 282bd70473e968820800000000000000
+      internalID: 2920195368538714754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins orgones rouges 30frames_24
+      rect:
+        serializedVersion: 2
+        x: 5772
+        y: 23
+        width: 207
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32be12c80c7edb950800000000000000
+      internalID: 6466579454144670499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins orgones rouges 30frames_25
+      rect:
+        serializedVersion: 2
+        x: 6012
+        y: 23
+        width: 207
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40ded05ba29fa7810800000000000000
+      internalID: 1763996165890501892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins orgones rouges 30frames_26
+      rect:
+        serializedVersion: 2
+        x: 6252
+        y: 23
+        width: 207
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb0b523f30e0f39c0800000000000000
+      internalID: -3945419338426240834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins orgones rouges 30frames_27
+      rect:
+        serializedVersion: 2
+        x: 6492
+        y: 23
+        width: 207
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11b412ec6a16eb490800000000000000
+      internalID: -7728632541470438639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins orgones rouges 30frames_28
+      rect:
+        serializedVersion: 2
+        x: 6732
+        y: 23
+        width: 207
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5af00cac0736bee30800000000000000
+      internalID: 4533826785967607717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins orgones rouges 30frames_29
+      rect:
+        serializedVersion: 2
+        x: 6972
+        y: 23
+        width: 207
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ab4f8aad7e01a3e0800000000000000
+      internalID: -2044336822954275934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

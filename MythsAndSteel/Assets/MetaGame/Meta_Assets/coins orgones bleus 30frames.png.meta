@@ -1,0 +1,840 @@
+fileFormatVersion: 2
+guid: 0384fe4171970b14f9f0baf75b7559f7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7941588534892082049
+    second: coins orgones bleus 30frames_0
+  - first:
+      213: 4195893734651019486
+    second: coins orgones bleus 30frames_1
+  - first:
+      213: -6004025423174742792
+    second: coins orgones bleus 30frames_2
+  - first:
+      213: -7373174245294881387
+    second: coins orgones bleus 30frames_3
+  - first:
+      213: 2411384881259191550
+    second: coins orgones bleus 30frames_4
+  - first:
+      213: -142832212083291914
+    second: coins orgones bleus 30frames_5
+  - first:
+      213: 8712141639487093164
+    second: coins orgones bleus 30frames_6
+  - first:
+      213: -1588402825524175919
+    second: coins orgones bleus 30frames_7
+  - first:
+      213: -7078845110394609892
+    second: coins orgones bleus 30frames_8
+  - first:
+      213: -5238822807409628280
+    second: coins orgones bleus 30frames_9
+  - first:
+      213: -4534942261304220915
+    second: coins orgones bleus 30frames_10
+  - first:
+      213: -8481395917738534181
+    second: coins orgones bleus 30frames_11
+  - first:
+      213: 2618339315338579925
+    second: coins orgones bleus 30frames_12
+  - first:
+      213: 7112034371504761753
+    second: coins orgones bleus 30frames_13
+  - first:
+      213: 5564163380401434527
+    second: coins orgones bleus 30frames_14
+  - first:
+      213: 5035271064504496314
+    second: coins orgones bleus 30frames_15
+  - first:
+      213: 8197969238967851907
+    second: coins orgones bleus 30frames_16
+  - first:
+      213: -2945672560615650562
+    second: coins orgones bleus 30frames_17
+  - first:
+      213: 4728608421783242199
+    second: coins orgones bleus 30frames_18
+  - first:
+      213: 1736454373069673993
+    second: coins orgones bleus 30frames_19
+  - first:
+      213: -8692686057901494078
+    second: coins orgones bleus 30frames_20
+  - first:
+      213: -2202081593107478823
+    second: coins orgones bleus 30frames_21
+  - first:
+      213: -330063838128937465
+    second: coins orgones bleus 30frames_22
+  - first:
+      213: -2361697230930004094
+    second: coins orgones bleus 30frames_23
+  - first:
+      213: -3936162228885971556
+    second: coins orgones bleus 30frames_24
+  - first:
+      213: -3179314591568343059
+    second: coins orgones bleus 30frames_25
+  - first:
+      213: -7964840593703949284
+    second: coins orgones bleus 30frames_26
+  - first:
+      213: -2046147691316001499
+    second: coins orgones bleus 30frames_27
+  - first:
+      213: 4296360031405487056
+    second: coins orgones bleus 30frames_28
+  - first:
+      213: 7787278429082106952
+    second: coins orgones bleus 30frames_29
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: coins orgones bleus 30frames_0
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 23
+        width: 207
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7c4179cd4fc9c190800000000000000
+      internalID: -7941588534892082049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins orgones bleus 30frames_1
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 23
+        width: 207
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed04921fe1fca3a30800000000000000
+      internalID: 4195893734651019486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins orgones bleus 30frames_2
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 23
+        width: 207
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fc414530ba6daca0800000000000000
+      internalID: -6004025423174742792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins orgones bleus 30frames_3
+      rect:
+        serializedVersion: 2
+        x: 732
+        y: 23
+        width: 207
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 595c322b6193da990800000000000000
+      internalID: -7373174245294881387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins orgones bleus 30frames_4
+      rect:
+        serializedVersion: 2
+        x: 972
+        y: 23
+        width: 207
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efc933006c5f67120800000000000000
+      internalID: 2411384881259191550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins orgones bleus 30frames_5
+      rect:
+        serializedVersion: 2
+        x: 1212
+        y: 23
+        width: 207
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f8ca402cde840ef0800000000000000
+      internalID: -142832212083291914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins orgones bleus 30frames_6
+      rect:
+        serializedVersion: 2
+        x: 1452
+        y: 23
+        width: 207
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca9748689aeb7e870800000000000000
+      internalID: 8712141639487093164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins orgones bleus 30frames_7
+      rect:
+        serializedVersion: 2
+        x: 1692
+        y: 23
+        width: 207
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1db9760cb0cd4f9e0800000000000000
+      internalID: -1588402825524175919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins orgones bleus 30frames_8
+      rect:
+        serializedVersion: 2
+        x: 1932
+        y: 23
+        width: 207
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1f1bee90e3e2cd90800000000000000
+      internalID: -7078845110394609892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins orgones bleus 30frames_9
+      rect:
+        serializedVersion: 2
+        x: 2172
+        y: 23
+        width: 207
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88b6223c966fb47b0800000000000000
+      internalID: -5238822807409628280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins orgones bleus 30frames_10
+      rect:
+        serializedVersion: 2
+        x: 2412
+        y: 23
+        width: 207
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d032e0e5a06a011c0800000000000000
+      internalID: -4534942261304220915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins orgones bleus 30frames_11
+      rect:
+        serializedVersion: 2
+        x: 2652
+        y: 23
+        width: 207
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bda1fb369570c4a80800000000000000
+      internalID: -8481395917738534181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins orgones bleus 30frames_12
+      rect:
+        serializedVersion: 2
+        x: 2892
+        y: 23
+        width: 207
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5df02381cb5365420800000000000000
+      internalID: 2618339315338579925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins orgones bleus 30frames_13
+      rect:
+        serializedVersion: 2
+        x: 3132
+        y: 23
+        width: 207
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99be8e7649503b260800000000000000
+      internalID: 7112034371504761753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins orgones bleus 30frames_14
+      rect:
+        serializedVersion: 2
+        x: 3372
+        y: 23
+        width: 207
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9f60114d11e73d40800000000000000
+      internalID: 5564163380401434527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins orgones bleus 30frames_15
+      rect:
+        serializedVersion: 2
+        x: 3612
+        y: 23
+        width: 207
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab0f79bea50e0e540800000000000000
+      internalID: 5035271064504496314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins orgones bleus 30frames_16
+      rect:
+        serializedVersion: 2
+        x: 3852
+        y: 23
+        width: 207
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38b1240969905c170800000000000000
+      internalID: 8197969238967851907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins orgones bleus 30frames_17
+      rect:
+        serializedVersion: 2
+        x: 4092
+        y: 23
+        width: 207
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efa83e7b96ede17d0800000000000000
+      internalID: -2945672560615650562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins orgones bleus 30frames_18
+      rect:
+        serializedVersion: 2
+        x: 4332
+        y: 23
+        width: 207
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d58f4e6e446f9140800000000000000
+      internalID: 4728608421783242199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins orgones bleus 30frames_19
+      rect:
+        serializedVersion: 2
+        x: 4572
+        y: 23
+        width: 207
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 906dd7b5d00291810800000000000000
+      internalID: 1736454373069673993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins orgones bleus 30frames_20
+      rect:
+        serializedVersion: 2
+        x: 4812
+        y: 23
+        width: 207
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c07ace06106d5780800000000000000
+      internalID: -8692686057901494078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins orgones bleus 30frames_21
+      rect:
+        serializedVersion: 2
+        x: 5052
+        y: 23
+        width: 207
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d6076c4572a071e0800000000000000
+      internalID: -2202081593107478823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins orgones bleus 30frames_22
+      rect:
+        serializedVersion: 2
+        x: 5292
+        y: 23
+        width: 207
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7066f1f10b06b6bf0800000000000000
+      internalID: -330063838128937465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins orgones bleus 30frames_23
+      rect:
+        serializedVersion: 2
+        x: 5532
+        y: 23
+        width: 207
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 287b46b91e0993fd0800000000000000
+      internalID: -2361697230930004094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins orgones bleus 30frames_24
+      rect:
+        serializedVersion: 2
+        x: 5772
+        y: 23
+        width: 207
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9d11f8be41ff59c0800000000000000
+      internalID: -3936162228885971556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins orgones bleus 30frames_25
+      rect:
+        serializedVersion: 2
+        x: 6012
+        y: 23
+        width: 207
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: def4a54493ec0e3d0800000000000000
+      internalID: -3179314591568343059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins orgones bleus 30frames_26
+      rect:
+        serializedVersion: 2
+        x: 6252
+        y: 23
+        width: 207
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1c2aa7fda3377190800000000000000
+      internalID: -7964840593703949284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins orgones bleus 30frames_27
+      rect:
+        serializedVersion: 2
+        x: 6492
+        y: 23
+        width: 207
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 525cf15048f9a93e0800000000000000
+      internalID: -2046147691316001499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins orgones bleus 30frames_28
+      rect:
+        serializedVersion: 2
+        x: 6732
+        y: 23
+        width: 207
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d33c1b7facbf9b30800000000000000
+      internalID: 4296360031405487056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coins orgones bleus 30frames_29
+      rect:
+        serializedVersion: 2
+        x: 6972
+        y: 23
+        width: 207
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84c3084f878f11c60800000000000000
+      internalID: 7787278429082106952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

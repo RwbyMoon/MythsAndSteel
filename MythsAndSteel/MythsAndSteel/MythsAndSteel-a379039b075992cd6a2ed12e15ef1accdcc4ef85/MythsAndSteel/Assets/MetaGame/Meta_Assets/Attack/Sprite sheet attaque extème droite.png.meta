@@ -1,0 +1,831 @@
+fileFormatVersion: 2
+guid: 7b9291aebdaa07f4d93ee700abf8f454
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3408092638767966598
+    second: "Sprite sheet attaque ext\xE8me droite_1"
+  - first:
+      213: -1988438419140861756
+    second: "Sprite sheet attaque ext\xE8me droite_2"
+  - first:
+      213: 5423323018319870579
+    second: "Sprite sheet attaque ext\xE8me droite_3"
+  - first:
+      213: -3280053352057498019
+    second: "Sprite sheet attaque ext\xE8me droite_4"
+  - first:
+      213: -8669399184953183180
+    second: "Sprite sheet attaque ext\xE8me droite_5"
+  - first:
+      213: 8855430826337802449
+    second: "Sprite sheet attaque ext\xE8me droite_6"
+  - first:
+      213: 432935284530129409
+    second: "Sprite sheet attaque ext\xE8me droite_7"
+  - first:
+      213: 4309718780058567330
+    second: "Sprite sheet attaque ext\xE8me droite_8"
+  - first:
+      213: -2710048803685678216
+    second: "Sprite sheet attaque ext\xE8me droite_9"
+  - first:
+      213: -5348925858709477281
+    second: "Sprite sheet attaque ext\xE8me droite_10"
+  - first:
+      213: -4426195551047159000
+    second: "Sprite sheet attaque ext\xE8me droite_11"
+  - first:
+      213: 6549555327253366612
+    second: "Sprite sheet attaque ext\xE8me droite_12"
+  - first:
+      213: -7755460171014008166
+    second: "Sprite sheet attaque ext\xE8me droite_13"
+  - first:
+      213: 605592430084287804
+    second: "Sprite sheet attaque ext\xE8me droite_14"
+  - first:
+      213: 6719910890889340203
+    second: "Sprite sheet attaque ext\xE8me droite_15"
+  - first:
+      213: 8575426031950654832
+    second: "Sprite sheet attaque ext\xE8me droite_16"
+  - first:
+      213: 3651874733204630361
+    second: "Sprite sheet attaque ext\xE8me droite_17"
+  - first:
+      213: 7417274422998781894
+    second: "Sprite sheet attaque ext\xE8me droite_18"
+  - first:
+      213: 8292691662475634939
+    second: "Sprite sheet attaque ext\xE8me droite_19"
+  - first:
+      213: -7682187349086033009
+    second: "Sprite sheet attaque ext\xE8me droite_20"
+  - first:
+      213: -6766775448477505196
+    second: "Sprite sheet attaque ext\xE8me droite_21"
+  - first:
+      213: 571812157044644223
+    second: "Sprite sheet attaque ext\xE8me droite_22"
+  - first:
+      213: -3644924761305254775
+    second: "Sprite sheet attaque ext\xE8me droite_23"
+  - first:
+      213: 1658535235404335529
+    second: "Sprite sheet attaque ext\xE8me droite_24"
+  - first:
+      213: 6387872374585454191
+    second: "Sprite sheet attaque ext\xE8me droite_0"
+  - first:
+      213: 4191088065406035514
+    second: "Sprite sheet attaque ext\xE8me droite_25"
+  - first:
+      213: -3902226750354905454
+    second: "Sprite sheet attaque ext\xE8me droite_26"
+  - first:
+      213: 2957770764041708116
+    second: "Sprite sheet attaque ext\xE8me droite_27"
+  - first:
+      213: -2323061309876027864
+    second: "Sprite sheet attaque ext\xE8me droite_28"
+  - first:
+      213: 2550462105159530583
+    second: "Sprite sheet attaque ext\xE8me droite_29"
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: "Sprite sheet attaque ext\xE8me droite_1"
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 248
+        width: 335
+        height: 62
+      alignment: 9
+      pivot: {x: 0.85, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6896367b23afb4f20800000000000000
+      internalID: 3408092638767966598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprite sheet attaque ext\xE8me droite_2"
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 248
+        width: 335
+        height: 62
+      alignment: 9
+      pivot: {x: 0.85, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c0ae510bc5a764e0800000000000000
+      internalID: -1988438419140861756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprite sheet attaque ext\xE8me droite_3"
+      rect:
+        serializedVersion: 2
+        x: 1005
+        y: 248
+        width: 335
+        height: 62
+      alignment: 9
+      pivot: {x: 0.85, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37ab7291d83834b40800000000000000
+      internalID: 5423323018319870579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprite sheet attaque ext\xE8me droite_4"
+      rect:
+        serializedVersion: 2
+        x: 1340
+        y: 248
+        width: 335
+        height: 62
+      alignment: 9
+      pivot: {x: 0.85, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d569842dad8ea72d0800000000000000
+      internalID: -3280053352057498019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprite sheet attaque ext\xE8me droite_5"
+      rect:
+        serializedVersion: 2
+        x: 1675
+        y: 248
+        width: 335
+        height: 62
+      alignment: 9
+      pivot: {x: 0.85, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 434fdccaf5b10b780800000000000000
+      internalID: -8669399184953183180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprite sheet attaque ext\xE8me droite_6"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 186
+        width: 335
+        height: 62
+      alignment: 9
+      pivot: {x: 0.85, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d898e02b6fc4ea70800000000000000
+      internalID: 8855430826337802449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprite sheet attaque ext\xE8me droite_7"
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 186
+        width: 335
+        height: 62
+      alignment: 9
+      pivot: {x: 0.85, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10aa625f858120600800000000000000
+      internalID: 432935284530129409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprite sheet attaque ext\xE8me droite_8"
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 186
+        width: 335
+        height: 62
+      alignment: 9
+      pivot: {x: 0.85, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a2883785623fcb30800000000000000
+      internalID: 4309718780058567330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprite sheet attaque ext\xE8me droite_9"
+      rect:
+        serializedVersion: 2
+        x: 1005
+        y: 186
+        width: 335
+        height: 62
+      alignment: 9
+      pivot: {x: 0.85, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 873c754b8f8f36ad0800000000000000
+      internalID: -2710048803685678216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprite sheet attaque ext\xE8me droite_10"
+      rect:
+        serializedVersion: 2
+        x: 1340
+        y: 186
+        width: 335
+        height: 62
+      alignment: 9
+      pivot: {x: 0.85, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5868b5754cc4c5b0800000000000000
+      internalID: -5348925858709477281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprite sheet attaque ext\xE8me droite_11"
+      rect:
+        serializedVersion: 2
+        x: 1675
+        y: 186
+        width: 335
+        height: 62
+      alignment: 9
+      pivot: {x: 0.85, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8237b69e89ef292c0800000000000000
+      internalID: -4426195551047159000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprite sheet attaque ext\xE8me droite_12"
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 124
+        width: 335
+        height: 62
+      alignment: 9
+      pivot: {x: 0.85, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45744bd7ed1b4ea50800000000000000
+      internalID: 6549555327253366612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprite sheet attaque ext\xE8me droite_13"
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 124
+        width: 335
+        height: 62
+      alignment: 9
+      pivot: {x: 0.85, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a92150d80121f5490800000000000000
+      internalID: -7755460171014008166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprite sheet attaque ext\xE8me droite_14"
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 124
+        width: 335
+        height: 62
+      alignment: 9
+      pivot: {x: 0.85, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3de6d94b1f776800800000000000000
+      internalID: 605592430084287804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprite sheet attaque ext\xE8me droite_15"
+      rect:
+        serializedVersion: 2
+        x: 1005
+        y: 124
+        width: 335
+        height: 62
+      alignment: 9
+      pivot: {x: 0.85, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b25ecb50a5be14d50800000000000000
+      internalID: 6719910890889340203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprite sheet attaque ext\xE8me droite_16"
+      rect:
+        serializedVersion: 2
+        x: 1340
+        y: 124
+        width: 335
+        height: 62
+      alignment: 9
+      pivot: {x: 0.85, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07d6e00aa88020770800000000000000
+      internalID: 8575426031950654832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprite sheet attaque ext\xE8me droite_17"
+      rect:
+        serializedVersion: 2
+        x: 1675
+        y: 124
+        width: 335
+        height: 62
+      alignment: 9
+      pivot: {x: 0.85, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95be2eca8b01ea230800000000000000
+      internalID: 3651874733204630361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprite sheet attaque ext\xE8me droite_18"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 62
+        width: 335
+        height: 62
+      alignment: 9
+      pivot: {x: 0.85, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cfce601ac37fe660800000000000000
+      internalID: 7417274422998781894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprite sheet attaque ext\xE8me droite_19"
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 62
+        width: 335
+        height: 62
+      alignment: 9
+      pivot: {x: 0.85, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf824b5612f851370800000000000000
+      internalID: 8292691662475634939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprite sheet attaque ext\xE8me droite_20"
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 62
+        width: 335
+        height: 62
+      alignment: 9
+      pivot: {x: 0.85, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8b2ab7de43636590800000000000000
+      internalID: -7682187349086033009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprite sheet attaque ext\xE8me droite_21"
+      rect:
+        serializedVersion: 2
+        x: 1005
+        y: 62
+        width: 335
+        height: 62
+      alignment: 9
+      pivot: {x: 0.85, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 459e9aed4959712a0800000000000000
+      internalID: -6766775448477505196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprite sheet attaque ext\xE8me droite_22"
+      rect:
+        serializedVersion: 2
+        x: 1340
+        y: 62
+        width: 335
+        height: 62
+      alignment: 9
+      pivot: {x: 0.85, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7955e2902c7fe700800000000000000
+      internalID: 571812157044644223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprite sheet attaque ext\xE8me droite_23"
+      rect:
+        serializedVersion: 2
+        x: 1675
+        y: 62
+        width: 335
+        height: 62
+      alignment: 9
+      pivot: {x: 0.85, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 984ff51cd30aa6dc0800000000000000
+      internalID: -3644924761305254775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprite sheet attaque ext\xE8me droite_24"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 335
+        height: 62
+      alignment: 9
+      pivot: {x: 0.85, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a98eb1620d440710800000000000000
+      internalID: 1658535235404335529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprite sheet attaque ext\xE8me droite_25"
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 0
+        width: 335
+        height: 62
+      alignment: 9
+      pivot: {x: 0.85, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a36e7e0e36cb92a30800000000000000
+      internalID: 4191088065406035514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprite sheet attaque ext\xE8me droite_26"
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 0
+        width: 335
+        height: 62
+      alignment: 9
+      pivot: {x: 0.85, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 296a118027188d9c0800000000000000
+      internalID: -3902226750354905454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprite sheet attaque ext\xE8me droite_27"
+      rect:
+        serializedVersion: 2
+        x: 1005
+        y: 0
+        width: 335
+        height: 62
+      alignment: 9
+      pivot: {x: 0.85, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 452edb5c6dc1c0920800000000000000
+      internalID: 2957770764041708116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprite sheet attaque ext\xE8me droite_28"
+      rect:
+        serializedVersion: 2
+        x: 1340
+        y: 0
+        width: 335
+        height: 62
+      alignment: 9
+      pivot: {x: 0.85, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82eb269fb04d2cfd0800000000000000
+      internalID: -2323061309876027864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprite sheet attaque ext\xE8me droite_29"
+      rect:
+        serializedVersion: 2
+        x: 1675
+        y: 0
+        width: 335
+        height: 62
+      alignment: 9
+      pivot: {x: 0.85, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 758f02f85cf056320800000000000000
+      internalID: 2550462105159530583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

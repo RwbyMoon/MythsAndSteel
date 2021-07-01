@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c815bdbd83982254eb2da5fbe95df910, type: 3}
+  m_Name: Page1
+  m_EditorClassIdentifier: 
+  UnitName: La derniere guerre
+  Description: "En 1914, alors qu\u2019il visite un laboratoire de recherche Orgonique,
+    l\u2019h\xE9ritier du tr\xF4ne austro-hongrois, Fran\xE7ois-Ferdinand, d\xE9c\xE8de
+    dans une explosion bien vite imput\xE9e comme attentat. Ceci plongeant l\u2019Europe
+    dans une temp\xEAte de sang et de feu alors que toutes les alliances sont r\xE9veill\xE9es
+    et recr\xE9\xE9es. Les deux premi\xE8res ann\xE9es voient une nouvelle sorte
+    de combat appara\xEEtre alors que les formations et marches organis\xE9es d\u2019antan
+    se retrouvent face aux mitrailleuses et canons d'artillerie mais aussi \xE0 l'utilisation
+    de l\u2019Orgone. Alors que les deux camps s\u2019enterrent, une offensive allemande
+    de 1916 m\xE8ne \xE0 la bataille de Verdun, qui s\u2019\xE9ternise une ann\xE9e
+    et demie. Bataille qui se conclut par une retraite fran\xE7aise qui donne l\u2019avantage
+    aux Empires Centraux pour la suite de la guerre. Les arm\xE9e de l\u2019Entente
+    subissent d\xE9b\xE2cle apr\xE8s d\xE9b\xE2cle, et apr\xE8s une n\xE9gociation
+    pour une armistice sur le front de l\u2019Est, la conqu\xEAte totale du territoire
+    fran\xE7ais semble in\xE9vitable.  Cependant, avec les \xE9lections pr\xE9sidentielles
+    des Etats-Unis, le gouvernement britannique prend l\u2019initiative de proposer
+    au candidat R\xE9publicain, Warren Harding, de s\xE9curiser les votes de la diaspora
+    britannique des Etats-Unis en \xE9change d\u2019une intervention dans la guerre
+    en Europe. Warren Harding accepte, et est \xE9lu avec une \xE9crasante majorit\xE9.
+    En 1921, les premi\xE8res troupes am\xE9ricaines arrivent en Europe, apportant
+    une rel\xE8ve bienvenue aux forces fran\xE7aises et britanniques qui sont au
+    bout du rouleau. Commence alors la reconqu\xEAte de l\u2019Hexagone. Les Empires
+    Centraux perdent du terrain, mais pas sans combattre. Cet encha\xEEnement d\u2019offensives
+    atteint son crescendo en juillet 1922, avec la bataille de Jaulny, qui d\xE9passe
+    la bataille de Verdun en dur\xE9e comme en l\xE9talit\xE9, ne prenant fin qu'
+    en avril 1924, un an et neuf mois plus tard, avec une retraite allemande cette
+    fois.  Warren Harding est assassin\xE9 le 2 ao\xFBt 1923 par les services secrets
+    du Kaiser. Ils esp\xE8rent ainsi d\xE9moraliser la population des Etats-Unis.
+    Malheureusement, son successeur Calvin Coolidge ordonne au grand chef des troupes
+    exp\xE9ditionnaires am\xE9ricaines, George Patton, de ne pas arr\xEAter l\u2019offensive
+    et de redoubler d\u2019agression pour terminer la guerre. La fin de la bataille
+    de Francfort, le 11 novembre 1925, voit les derni\xE8res troupes des Empires
+    Centraux offrir leur reddition, mettant fin \xE0 plus de 11 ann\xE9es de guerre.
+    Malgr\xE9 l\u2019opinion publique traumatis\xE9e, qui appelle \xE0 \u201Cplus
+    jamais \xE7a\u201D, des avanc\xE9es technologiques rapides provoquent l\u2019entr\xE9e
+    du monde dans une course \xE0 l\u2019armement qui fait remonter les tensions... "
+  typeUnite: 0
+  LifeMax: 0
+  ShieldMax: 0
+  AttackRange: 0
+  MoveSpeed: 0
+  CreationCost: 0
+  numberOfUnitToAttack: 0
+  DamageMinimum: 0
+  NumberRangeMin: {x: 0, y: 0}
+  DamageMaximum: 0
+  NumberRangeMax: {x: 0, y: 0}
+  SonAttaque: {fileID: 0}
+  SonDeplacement: {fileID: 0}
+  SonMort: {fileID: 0}
+  Sprite: {fileID: 21300000, guid: 9b9ce38bfad3a734ab5935779bb47782, type: 3}
+  CanAttackEmptyTile: 0
+  UsefullToWin: 0
+  IsInRedArmy: 1
+  UnitAttributs: 000000000000000000000000

@@ -1,0 +1,732 @@
+fileFormatVersion: 2
+guid: fd0611993d201644c8c606feaec57975
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7717219265030450820
+    second: Sprite sheet attaque centre_0
+  - first:
+      213: -185574682005449491
+    second: Sprite sheet attaque centre_1
+  - first:
+      213: 399023170507101765
+    second: Sprite sheet attaque centre_2
+  - first:
+      213: 7974667926482493774
+    second: Sprite sheet attaque centre_3
+  - first:
+      213: -586749684268114060
+    second: Sprite sheet attaque centre_4
+  - first:
+      213: 790196078388878082
+    second: Sprite sheet attaque centre_5
+  - first:
+      213: -2468890766921437849
+    second: Sprite sheet attaque centre_6
+  - first:
+      213: -6086008536718650890
+    second: Sprite sheet attaque centre_7
+  - first:
+      213: -2656882141106909345
+    second: Sprite sheet attaque centre_8
+  - first:
+      213: -255567403189427472
+    second: Sprite sheet attaque centre_9
+  - first:
+      213: -6018643736618542602
+    second: Sprite sheet attaque centre_10
+  - first:
+      213: -4735698989916696687
+    second: Sprite sheet attaque centre_11
+  - first:
+      213: -1332425665278224898
+    second: Sprite sheet attaque centre_12
+  - first:
+      213: -1318350949398733653
+    second: Sprite sheet attaque centre_13
+  - first:
+      213: -5429069294450277577
+    second: Sprite sheet attaque centre_14
+  - first:
+      213: -836422585800902009
+    second: Sprite sheet attaque centre_15
+  - first:
+      213: -6673321721926332847
+    second: Sprite sheet attaque centre_16
+  - first:
+      213: -7943210346877349441
+    second: Sprite sheet attaque centre_17
+  - first:
+      213: 3082431605161576443
+    second: Sprite sheet attaque centre_18
+  - first:
+      213: 7901023679810510852
+    second: Sprite sheet attaque centre_19
+  - first:
+      213: 3728054610889868810
+    second: Sprite sheet attaque centre_20
+  - first:
+      213: -8343423510057034304
+    second: Sprite sheet attaque centre_21
+  - first:
+      213: 4455883104661029111
+    second: Sprite sheet attaque centre_22
+  - first:
+      213: 435432460545987413
+    second: Sprite sheet attaque centre_23
+  - first:
+      213: -4045339623415991984
+    second: Sprite sheet attaque centre_24
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Sprite sheet attaque centre_1
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 248
+        width: 335
+        height: 62
+      alignment: 9
+      pivot: {x: 0.535, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de452c75fc4bc6df0800000000000000
+      internalID: -185574682005449491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite sheet attaque centre_2
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 248
+        width: 335
+        height: 62
+      alignment: 9
+      pivot: {x: 0.535, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 546d93f957d998500800000000000000
+      internalID: 399023170507101765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite sheet attaque centre_3
+      rect:
+        serializedVersion: 2
+        x: 1005
+        y: 248
+        width: 335
+        height: 62
+      alignment: 9
+      pivot: {x: 0.535, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e41a0bf3a36bbae60800000000000000
+      internalID: 7974667926482493774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite sheet attaque centre_4
+      rect:
+        serializedVersion: 2
+        x: 1340
+        y: 248
+        width: 335
+        height: 62
+      alignment: 9
+      pivot: {x: 0.535, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47f502955427bd7f0800000000000000
+      internalID: -586749684268114060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite sheet attaque centre_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 186
+        width: 335
+        height: 62
+      alignment: 9
+      pivot: {x: 0.535, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20b964b852757fa00800000000000000
+      internalID: 790196078388878082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite sheet attaque centre_6
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 186
+        width: 335
+        height: 62
+      alignment: 9
+      pivot: {x: 0.535, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76de760adecbcbdd0800000000000000
+      internalID: -2468890766921437849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite sheet attaque centre_7
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 186
+        width: 335
+        height: 62
+      alignment: 9
+      pivot: {x: 0.535, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f1d3ec1b772a8ba0800000000000000
+      internalID: -6086008536718650890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite sheet attaque centre_8
+      rect:
+        serializedVersion: 2
+        x: 1005
+        y: 186
+        width: 335
+        height: 62
+      alignment: 9
+      pivot: {x: 0.535, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5f4e39f4cbd02bd0800000000000000
+      internalID: -2656882141106909345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite sheet attaque centre_9
+      rect:
+        serializedVersion: 2
+        x: 1340
+        y: 186
+        width: 335
+        height: 62
+      alignment: 9
+      pivot: {x: 0.535, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f2a9b40dca047cf0800000000000000
+      internalID: -255567403189427472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite sheet attaque centre_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 124
+        width: 335
+        height: 62
+      alignment: 9
+      pivot: {x: 0.535, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f9d831e86b797ca0800000000000000
+      internalID: -6018643736618542602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite sheet attaque centre_11
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 124
+        width: 335
+        height: 62
+      alignment: 9
+      pivot: {x: 0.535, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19fc6d60cda674eb0800000000000000
+      internalID: -4735698989916696687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite sheet attaque centre_12
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 124
+        width: 335
+        height: 62
+      alignment: 9
+      pivot: {x: 0.535, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef55a7bbae5428de0800000000000000
+      internalID: -1332425665278224898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite sheet attaque centre_13
+      rect:
+        serializedVersion: 2
+        x: 1005
+        y: 124
+        width: 335
+        height: 62
+      alignment: 9
+      pivot: {x: 0.535, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bac1ac3ebc644bde0800000000000000
+      internalID: -1318350949398733653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite sheet attaque centre_14
+      rect:
+        serializedVersion: 2
+        x: 1340
+        y: 124
+        width: 335
+        height: 62
+      alignment: 9
+      pivot: {x: 0.535, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7338f4bbd3218a4b0800000000000000
+      internalID: -5429069294450277577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite sheet attaque centre_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 62
+        width: 335
+        height: 62
+      alignment: 9
+      pivot: {x: 0.535, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78a393bf61e6464f0800000000000000
+      internalID: -836422585800902009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite sheet attaque centre_16
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 62
+        width: 335
+        height: 62
+      alignment: 9
+      pivot: {x: 0.535, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15eceac20499363a0800000000000000
+      internalID: -6673321721926332847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite sheet attaque centre_17
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 62
+        width: 335
+        height: 62
+      alignment: 9
+      pivot: {x: 0.535, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb11b22464c04c190800000000000000
+      internalID: -7943210346877349441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite sheet attaque centre_18
+      rect:
+        serializedVersion: 2
+        x: 1006
+        y: 62
+        width: 335
+        height: 62
+      alignment: 9
+      pivot: {x: 0.535, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf7c716a63ff6ca20800000000000000
+      internalID: 3082431605161576443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite sheet attaque centre_19
+      rect:
+        serializedVersion: 2
+        x: 1340
+        y: 62
+        width: 335
+        height: 62
+      alignment: 9
+      pivot: {x: 0.535, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4002e05ec2316ad60800000000000000
+      internalID: 7901023679810510852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite sheet attaque centre_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 335
+        height: 62
+      alignment: 9
+      pivot: {x: 0.535, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a060951aae5bcb330800000000000000
+      internalID: 3728054610889868810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite sheet attaque centre_21
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 0
+        width: 335
+        height: 62
+      alignment: 9
+      pivot: {x: 0.535, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cd5860e584363c80800000000000000
+      internalID: -8343423510057034304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite sheet attaque centre_22
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 0
+        width: 335
+        height: 62
+      alignment: 9
+      pivot: {x: 0.535, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f04cfd431a76dd30800000000000000
+      internalID: 4455883104661029111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite sheet attaque centre_23
+      rect:
+        serializedVersion: 2
+        x: 1005
+        y: 0
+        width: 335
+        height: 62
+      alignment: 9
+      pivot: {x: 0.535, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 553948e0487fa0600800000000000000
+      internalID: 435432460545987413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite sheet attaque centre_24
+      rect:
+        serializedVersion: 2
+        x: 1340
+        y: 0
+        width: 335
+        height: 62
+      alignment: 9
+      pivot: {x: 0.535, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0513a7eab011cd7c0800000000000000
+      internalID: -4045339623415991984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite sheet attaque centre_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 248
+        width: 335
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c711f0e47fde6e490800000000000000
+      internalID: -7717219265030450820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

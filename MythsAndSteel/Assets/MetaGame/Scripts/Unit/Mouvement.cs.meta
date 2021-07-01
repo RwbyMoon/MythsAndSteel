@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 8dc4602eb7a8cdb40b3c565b975e9ab8
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - _tileSprite: {instanceID: 0}
+  - _selectedSprite: {instanceID: 0}
+  - UpArrow: {instanceID: 0}
+  - DownArrow: {instanceID: 0}
+  - LeftArrow: {instanceID: 0}
+  - RightArrow: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

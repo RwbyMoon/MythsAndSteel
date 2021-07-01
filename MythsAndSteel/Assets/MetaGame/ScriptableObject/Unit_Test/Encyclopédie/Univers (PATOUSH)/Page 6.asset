@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c815bdbd83982254eb2da5fbe95df910, type: 3}
+  m_Name: Page 6
+  m_EditorClassIdentifier: 
+  UnitName: Les Mechas, geants de fer
+  Description: "Pour pallier la menace d\u2019abord incontr\xF4lable des Mythes,
+    les Etats Unis mirent la main sur divers projets prometteurs qui permettraient
+    de cr\xE9er des tueurs de cr\xE9atures l\xE9gendaires. Cherchant d\u2019abord
+    \xE0 se tourner vers des projets de bombes ou de canons, ce sont finalement,
+    les \xE9bauches de soci\xE9t\xE9s publiques diverses qui furent saisies. Les
+    mechas avaient alors pour but la modernisation d\u2019automates pour en faire
+    des outils de construction, de transport, d\u2019agriculture ou d\u2019exploration.
+    En effet, la d\xE9couverte du messali et de l\u2019Orgone ouvrirent largement
+    la voie \xE0 la mise au point de tels g\xE9ants de fer, r\xE9glant tout probl\xE8me
+    de consommation d\u2019\xE9nergie de leurs moteurs.  Encore et toujours \xE0
+    cause de l\u2019espionnage, les industries allemandes finirent bien vite par
+    rattraper le niveau des am\xE9ricains, suivies de pr\xE8s par les cr\xE9ations
+    des entreprises du monde entier, qui comme leurs homologues am\xE9ricains, reprirent
+    les principes de machines pr\xE9vues dans des buts tout sauf militaires.  Au
+    final, ce sont la plupart des pays du monde qui furent capables de d\xE9ployer
+    des mechas d\xE8s le d\xE9but de la Seconde Guerre Mondiale. Si les techniques,
+    l'armement ou le mode de fonctionnement de ces demis-dieux de la guerre sont
+    diff\xE9rents selon leurs cr\xE9ateurs, chacun d\u2019entre eux est capable de
+    miracles dans les mains d\u2019un g\xE9n\xE9ral averti.   "
+  typeUnite: 0
+  LifeMax: 0
+  ShieldMax: 0
+  AttackRange: 0
+  MoveSpeed: 0
+  CreationCost: 0
+  numberOfUnitToAttack: 0
+  DamageMinimum: 0
+  NumberRangeMin: {x: 0, y: 0}
+  DamageMaximum: 0
+  NumberRangeMax: {x: 0, y: 0}
+  SonAttaque: {fileID: 0}
+  SonDeplacement: {fileID: 0}
+  SonMort: {fileID: 0}
+  Sprite: {fileID: 21300000, guid: f13c8e198066ab540ba8a7e5e088c33e, type: 3}
+  CanAttackEmptyTile: 0
+  UsefullToWin: 0
+  IsInRedArmy: 1
+  UnitAttributs: 000000000000000000000000

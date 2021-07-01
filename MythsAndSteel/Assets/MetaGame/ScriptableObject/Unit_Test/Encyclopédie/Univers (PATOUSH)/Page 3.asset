@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c815bdbd83982254eb2da5fbe95df910, type: 3}
+  m_Name: Page 3
+  m_EditorClassIdentifier: 
+  UnitName: L'essor du Mesali
+  Description: "Le d\xE9but du XX\xE8me si\xE8cle marqua aussi le d\xE9but de la
+    recherche de m\xE9thodes plus efficaces de stockage et de production d\u2019\xE9nergie.
+    C\u2019est dans le cadre de ces innovations qu\u2019Heike Kamerlingh d\xE9couvre
+    en 1911 le ph\xE9nom\xE8ne de supraconductivit\xE9, c\u2019est-\xE0-dire la diminution
+    significative de la r\xE9sistance \xE9lectrique de certains m\xE9taux une fois
+    pass\xE9s sous un seuil de temp\xE9rature, leur permettant de stocker beaucoup
+    plus d\u2019\xE9nergie. C\u2019est un de ses disciples qui invente par hyperchimie
+    l\u2019alliage appel\xE9 Mesali. Ce dernier atteint un \xE9tat de supraconductivit\xE9
+    \xE0 temp\xE9rature ambiante, et sa capacit\xE9 de stockage est donc extr\xEAmement
+    grande.  Peu apr\xE8s cette d\xE9couverte, un jeune hyperchimiste nomm\xE9 Arnold
+    Nass parvient \xE0 synth\xE9tiser le Narc\xE9on, un nouveau gaz noble de num\xE9ro
+    atomique 134. Ce dernier a un rendement \xE9nerg\xE9tique immens\xE9ment sup\xE9rieur
+    aux combustibles pr\xE9c\xE9demment connus. Le monde se tourne alors vers une
+    transition \xE9nerg\xE9tique et il ne faudra pas attendre plus de 10 ans pour
+    que cette nouvelle source d\u2019\xE9nergie soit combin\xE9e avec le Mesali,
+    permettant de briser toutes les barri\xE8res \xE9nerg\xE9tiques, et de cr\xE9er
+    des machines toujours plus destructrices. "
+  typeUnite: 0
+  LifeMax: 0
+  ShieldMax: 0
+  AttackRange: 0
+  MoveSpeed: 0
+  CreationCost: 0
+  numberOfUnitToAttack: 0
+  DamageMinimum: 0
+  NumberRangeMin: {x: 0, y: 0}
+  DamageMaximum: 0
+  NumberRangeMax: {x: 0, y: 0}
+  SonAttaque: {fileID: 0}
+  SonDeplacement: {fileID: 0}
+  SonMort: {fileID: 0}
+  Sprite: {fileID: 21300000, guid: 54a07ad9a27ddfe4da4182ccac43abac, type: 3}
+  CanAttackEmptyTile: 0
+  UsefullToWin: 0
+  IsInRedArmy: 1
+  UnitAttributs: 000000000000000000000000

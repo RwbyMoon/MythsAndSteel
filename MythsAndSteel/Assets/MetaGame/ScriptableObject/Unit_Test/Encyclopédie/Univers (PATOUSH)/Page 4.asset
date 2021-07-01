@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c815bdbd83982254eb2da5fbe95df910, type: 3}
+  m_Name: Page 4
+  m_EditorClassIdentifier: 
+  UnitName: Creatures indomptables
+  Description: "Pour justifier ses valeurs et trouver une nouvelle source de pouvoir,
+    les Allemands se tourn\xE8rent vers la recherche de mythes. Avec la cr\xE9ation
+    de l\u2019Anherbe, de nombreuses recherches furent d\xE9marr\xE9es, pour \xE9tudier
+    de nombreux \xE9v\xE9nements ou sites mythiques. Et gr\xE2ce \xE0 l\u2019espionnage
+    et aux alliances entre pays, qui caract\xE9risent ce conflit, les recherches
+    furent expos\xE9es au monde entier, et chaque nation enr\xF4la son propre mythe
+    dans ses arm\xE9es."
+  typeUnite: 0
+  LifeMax: 0
+  ShieldMax: 0
+  AttackRange: 0
+  MoveSpeed: 0
+  CreationCost: 0
+  numberOfUnitToAttack: 0
+  DamageMinimum: 0
+  NumberRangeMin: {x: 0, y: 0}
+  DamageMaximum: 0
+  NumberRangeMax: {x: 0, y: 0}
+  SonAttaque: {fileID: 0}
+  SonDeplacement: {fileID: 0}
+  SonMort: {fileID: 0}
+  Sprite: {fileID: 21300000, guid: 2464b79d1d9c3b240858e925750e6aea, type: 3}
+  CanAttackEmptyTile: 0
+  UsefullToWin: 0
+  IsInRedArmy: 1
+  UnitAttributs: 000000000000000000000000

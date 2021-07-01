@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95328fb1d7735944f91772d315b72f92, type: 3}
+  m_Name: Status
+  m_EditorClassIdentifier: 
+  Data:
+  - Status: 0
+    Animation: {fileID: 9100000, guid: ac8c2a2f5cda5db439d851004a9361e3, type: 2}
+    Icon: {fileID: 21300000, guid: 2464b79d1d9c3b240858e925750e6aea, type: 3}
+    _description: "Inflige \xE0 la fin du prochain tour de l'adversaire 1 PV \xE0
+      l'unit\xE9 et toutes les unit\xE9s qui lui sont adjacentes."
+  - Status: 1
+    Animation: {fileID: 9100000, guid: 01e18e83d3c3f7b4991e6d549ab80bde, type: 2}
+    Icon: {fileID: 21300000, guid: 519d3646ee564f54d82f9c54dce35022, type: 3}
+    _description: "Ne peut pas se d\xE9placer jusqu'\xE0 la fin du prochain tour
+      de son possesseur.\r\n"
+  - Status: 2
+    Animation: {fileID: 9100000, guid: 20cc636dab405544bb540196c6d37aaf, type: 2}
+    Icon: {fileID: 21300000, guid: 6ffe6d9cffa5c0445b36a17ee026c1de, type: 3}
+    _description: "Ne peut pas \xEAtre activ\xE9 jusqu'\xE0 la fin du prochain tour
+      de son possesseur.\r\n"
+  - Status: 3
+    Animation: {fileID: 9100000, guid: a3df959e23b849740875869a58d456b4, type: 2}
+    Icon: {fileID: 21300000, guid: 01b62f3e2e0c3eb419ee14a4efe69d47, type: 3}
+    _description: "Indique que l'unit\xE9 est li\xE9e \xE0 une autre unit\xE9, mourrant
+      lorsque que cette derni\xE8re est tu\xE9e."
+  - Status: 4
+    Animation: {fileID: 9100000, guid: 2310d25e616e6c74187571b61d5ff114, type: 2}
+    Icon: {fileID: 21300000, guid: 67c120ef3d41f83488d3d7b9c0a4f41a, type: 3}
+    _description: "Peut \xEAtre activ\xE9 par l'adversaire jusqu'\xE0 la fin de son
+      prochain tour. N\xE9cessite toujours une Activation pour \xEAtre activ\xE9e.\r"
+  - Status: 5
+    Animation: {fileID: 9100000, guid: a3df959e23b849740875869a58d456b4, type: 2}
+    Icon: {fileID: 21300000, guid: 01b62f3e2e0c3eb419ee14a4efe69d47, type: 3}
+    _description: "Ne peut subir des d\xE9g\xE2ts"
+  - Status: 6
+    Animation: {fileID: 9100000, guid: 3082f33559d55154fbb2414dfeccc2fa, type: 2}
+    Icon: {fileID: 21300000, guid: 7c902def851c6f844ae4276d098831fa, type: 3}
+    _description: "Ne peut pas attaquer jusqu'\xE0 la fin du prochain tour de son
+      possesseur.\r"
+  - Status: 7
+    Animation: {fileID: 9100000, guid: e9ccbacc311fa2b41adcd96bc79a38f6, type: 2}
+    Icon: {fileID: 21300000, guid: a236ad680652a8546840745331b08fa6, type: 3}
+    _description: "Ne peut pas capturer d'objectif jusqu'\xE0 la fin du prochain
+      tour de son possesseur."

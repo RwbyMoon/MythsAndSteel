@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c815bdbd83982254eb2da5fbe95df910, type: 3}
+  m_Name: Page 2
+  m_EditorClassIdentifier: 
+  UnitName: Les premices de l'Orgone
+  Description: "Si l\u2019Orgone a port\xE9 de nombreux noms au cours de l\u2019Histoire
+    humaine, son utilisation est rest\xE9e relativement discr\xE8te et rare jusqu\u2019\xE0
+    l\u2019aube du XX\xE8me si\xE8cle. C\u2019est Ernst Haeckel, un biologiste et
+    philosophe allemand qui sera amen\xE9 \xE0 en th\xE9oriser les principes fondamentaux.
+    En 1874, il commence \xE0 s\u2019int\xE9resser aux \xE9crits de Ralph Cudworth,
+    un philosophe du XVII\xE8me ayant consacr\xE9 une partie de ses recherches \xE0
+    l\u2019alchimie. Haeckel lui reprend le principe d\u2019Hyperchimie, une technique
+    permettant de suppos\xE9ment changer les principes de la mati\xE8re pour la transformer
+    en ce qu\u2019on souhaite. Ses exp\xE9rimentations ne sont pas concluantes, et
+    il finit par abandonner ses recherches, non sans laisser une trace \xE9crite
+    de celles-ci. En 1905, c\u2019est le fils d\u2019un de ses amis les plus chers,
+    Fran\xE7ois Jollivet-Castelot, qui finit par mettre en pratique l\u2019hyperchimie
+    avec succ\xE8s. En s\u2019empressant de reprendre ses travaux, Haeckel s\u2019aper\xE7oit
+    de l\u2019existence d\u2019une \xE9nergie omnipr\xE9sente qui lie la mati\xE8re
+    dans toute ses formes : l\u2019Orgone est d\xE9voil\xE9e au grand jour."
+  typeUnite: 0
+  LifeMax: 0
+  ShieldMax: 0
+  AttackRange: 0
+  MoveSpeed: 0
+  CreationCost: 0
+  numberOfUnitToAttack: 0
+  DamageMinimum: 0
+  NumberRangeMin: {x: 0, y: 0}
+  DamageMaximum: 0
+  NumberRangeMax: {x: 0, y: 0}
+  SonAttaque: {fileID: 0}
+  SonDeplacement: {fileID: 0}
+  SonMort: {fileID: 0}
+  Sprite: {fileID: 21300000, guid: f88ee1c53ee7c984c812cc5c51e54fa3, type: 3}
+  CanAttackEmptyTile: 0
+  UsefullToWin: 0
+  IsInRedArmy: 1
+  UnitAttributs: 000000000000000000000000

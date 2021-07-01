@@ -1,0 +1,864 @@
+fileFormatVersion: 2
+guid: dba381844f80a574f92bf7843358553a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2372362753398192792
+    second: "coins orgones supperpos\xE9s 30frames_0"
+  - first:
+      213: -6653386438017385963
+    second: "coins orgones supperpos\xE9s 30frames_1"
+  - first:
+      213: -7309122020171798940
+    second: "coins orgones supperpos\xE9s 30frames_2"
+  - first:
+      213: 4068418403541218270
+    second: "coins orgones supperpos\xE9s 30frames_3"
+  - first:
+      213: -1061064957656040851
+    second: "coins orgones supperpos\xE9s 30frames_4"
+  - first:
+      213: -5673442934833506435
+    second: "coins orgones supperpos\xE9s 30frames_5"
+  - first:
+      213: 2465148672246628219
+    second: "coins orgones supperpos\xE9s 30frames_6"
+  - first:
+      213: -1380815854963682891
+    second: "coins orgones supperpos\xE9s 30frames_7"
+  - first:
+      213: 5096780371797931553
+    second: "coins orgones supperpos\xE9s 30frames_8"
+  - first:
+      213: -6746582716860398178
+    second: "coins orgones supperpos\xE9s 30frames_9"
+  - first:
+      213: 2253476695265153761
+    second: "coins orgones supperpos\xE9s 30frames_10"
+  - first:
+      213: 1690535903688629440
+    second: "coins orgones supperpos\xE9s 30frames_11"
+  - first:
+      213: -25293338331069958
+    second: "coins orgones supperpos\xE9s 30frames_12"
+  - first:
+      213: 2626400095675784550
+    second: "coins orgones supperpos\xE9s 30frames_13"
+  - first:
+      213: 428493447134747901
+    second: "coins orgones supperpos\xE9s 30frames_14"
+  - first:
+      213: 2578911708029148869
+    second: "coins orgones supperpos\xE9s 30frames_15"
+  - first:
+      213: 4289174788089967663
+    second: "coins orgones supperpos\xE9s 30frames_16"
+  - first:
+      213: 616835866804564081
+    second: "coins orgones supperpos\xE9s 30frames_17"
+  - first:
+      213: 3281149485044768811
+    second: "coins orgones supperpos\xE9s 30frames_18"
+  - first:
+      213: -4004870677259108711
+    second: "coins orgones supperpos\xE9s 30frames_19"
+  - first:
+      213: 4318283222221293694
+    second: "coins orgones supperpos\xE9s 30frames_20"
+  - first:
+      213: -8391364477817048777
+    second: "coins orgones supperpos\xE9s 30frames_21"
+  - first:
+      213: -8166589855993397307
+    second: "coins orgones supperpos\xE9s 30frames_22"
+  - first:
+      213: -6632629227500277547
+    second: "coins orgones supperpos\xE9s 30frames_23"
+  - first:
+      213: 1363196778960911613
+    second: "coins orgones supperpos\xE9s 30frames_24"
+  - first:
+      213: -1465051292254527404
+    second: "coins orgones supperpos\xE9s 30frames_25"
+  - first:
+      213: -7171163015119525359
+    second: "coins orgones supperpos\xE9s 30frames_26"
+  - first:
+      213: 9128893380823890190
+    second: "coins orgones supperpos\xE9s 30frames_27"
+  - first:
+      213: 8865088617128485081
+    second: "coins orgones supperpos\xE9s 30frames_28"
+  - first:
+      213: -1021280597188582570
+    second: "coins orgones supperpos\xE9s 30frames_29"
+  - first:
+      213: 8905085170134410479
+    second: "coins orgones supperpos\xE9s 30frames_30"
+  - first:
+      213: -9062889478901256053
+    second: "coins orgones supperpos\xE9s 30frames_31"
+  - first:
+      213: 2591207744799560767
+    second: "coins orgones supperpos\xE9s 30frames_32"
+  - first:
+      213: -7000063566173979657
+    second: "coins orgones supperpos\xE9s 30frames_33"
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: "coins orgones supperpos\xE9s 30frames_0"
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 23
+        width: 206
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 865455525aca31fd0800000000000000
+      internalID: -2372362753398192792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "coins orgones supperpos\xE9s 30frames_1"
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 23
+        width: 206
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51a7298294c6aa3a0800000000000000
+      internalID: -6653386438017385963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "coins orgones supperpos\xE9s 30frames_2"
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 23
+        width: 206
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 466acaf7f38c09a90800000000000000
+      internalID: -7309122020171798940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "coins orgones supperpos\xE9s 30frames_3"
+      rect:
+        serializedVersion: 2
+        x: 733
+        y: 23
+        width: 206
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed37cbc8bfce57830800000000000000
+      internalID: 4068418403541218270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "coins orgones supperpos\xE9s 30frames_4"
+      rect:
+        serializedVersion: 2
+        x: 973
+        y: 23
+        width: 206
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6afb43fa075641f0800000000000000
+      internalID: -1061064957656040851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "coins orgones supperpos\xE9s 30frames_5"
+      rect:
+        serializedVersion: 2
+        x: 1213
+        y: 23
+        width: 206
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d779ccfb5b1e341b0800000000000000
+      internalID: -5673442934833506435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "coins orgones supperpos\xE9s 30frames_6"
+      rect:
+        serializedVersion: 2
+        x: 1453
+        y: 23
+        width: 206
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7f39cf08a7f53220800000000000000
+      internalID: 2465148672246628219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "coins orgones supperpos\xE9s 30frames_7"
+      rect:
+        serializedVersion: 2
+        x: 1693
+        y: 23
+        width: 206
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b199a8bb4b56dce0800000000000000
+      internalID: -1380815854963682891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "coins orgones supperpos\xE9s 30frames_8"
+      rect:
+        serializedVersion: 2
+        x: 1933
+        y: 23
+        width: 206
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 126f2378eb66bb640800000000000000
+      internalID: 5096780371797931553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "coins orgones supperpos\xE9s 30frames_9"
+      rect:
+        serializedVersion: 2
+        x: 2173
+        y: 23
+        width: 206
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e950fb193c25f52a0800000000000000
+      internalID: -6746582716860398178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "coins orgones supperpos\xE9s 30frames_10"
+      rect:
+        serializedVersion: 2
+        x: 2413
+        y: 23
+        width: 206
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e296ea6d15f54f10800000000000000
+      internalID: 2253476695265153761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "coins orgones supperpos\xE9s 30frames_11"
+      rect:
+        serializedVersion: 2
+        x: 2653
+        y: 23
+        width: 206
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cc9763927df57710800000000000000
+      internalID: 1690535903688629440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "coins orgones supperpos\xE9s 30frames_12"
+      rect:
+        serializedVersion: 2
+        x: 2893
+        y: 23
+        width: 206
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af1c791c7d326aff0800000000000000
+      internalID: -25293338331069958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "coins orgones supperpos\xE9s 30frames_13"
+      rect:
+        serializedVersion: 2
+        x: 3133
+        y: 23
+        width: 206
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66d9ec4c8f8d27420800000000000000
+      internalID: 2626400095675784550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "coins orgones supperpos\xE9s 30frames_14"
+      rect:
+        serializedVersion: 2
+        x: 3373
+        y: 23
+        width: 206
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfc9c09158052f500800000000000000
+      internalID: 428493447134747901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "coins orgones supperpos\xE9s 30frames_15"
+      rect:
+        serializedVersion: 2
+        x: 3613
+        y: 23
+        width: 206
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ce5c28e8822ac320800000000000000
+      internalID: 2578911708029148869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "coins orgones supperpos\xE9s 30frames_16"
+      rect:
+        serializedVersion: 2
+        x: 3853
+        y: 23
+        width: 206
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f24f9a7aeb5368b30800000000000000
+      internalID: 4289174788089967663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "coins orgones supperpos\xE9s 30frames_17"
+      rect:
+        serializedVersion: 2
+        x: 4093
+        y: 23
+        width: 206
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1703b95e3f07f8800800000000000000
+      internalID: 616835866804564081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "coins orgones supperpos\xE9s 30frames_18"
+      rect:
+        serializedVersion: 2
+        x: 4333
+        y: 23
+        width: 206
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b20ac07821cf88d20800000000000000
+      internalID: 3281149485044768811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "coins orgones supperpos\xE9s 30frames_19"
+      rect:
+        serializedVersion: 2
+        x: 4573
+        y: 23
+        width: 206
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99eb7967657db68c0800000000000000
+      internalID: -4004870677259108711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "coins orgones supperpos\xE9s 30frames_20"
+      rect:
+        serializedVersion: 2
+        x: 4813
+        y: 23
+        width: 206
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e78870c16bf9deb30800000000000000
+      internalID: 4318283222221293694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "coins orgones supperpos\xE9s 30frames_21"
+      rect:
+        serializedVersion: 2
+        x: 5053
+        y: 23
+        width: 206
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73132ee7772eb8b80800000000000000
+      internalID: -8391364477817048777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "coins orgones supperpos\xE9s 30frames_22"
+      rect:
+        serializedVersion: 2
+        x: 5293
+        y: 23
+        width: 206
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cf743f5bc17aae80800000000000000
+      internalID: -8166589855993397307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "coins orgones supperpos\xE9s 30frames_23"
+      rect:
+        serializedVersion: 2
+        x: 5533
+        y: 23
+        width: 206
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d0f8f7dbda24f3a0800000000000000
+      internalID: -6632629227500277547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "coins orgones supperpos\xE9s 30frames_24"
+      rect:
+        serializedVersion: 2
+        x: 5773
+        y: 23
+        width: 206
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfcfbe87f3c0be210800000000000000
+      internalID: 1363196778960911613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "coins orgones supperpos\xE9s 30frames_25"
+      rect:
+        serializedVersion: 2
+        x: 6013
+        y: 23
+        width: 206
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4502173ac971babe0800000000000000
+      internalID: -1465051292254527404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "coins orgones supperpos\xE9s 30frames_26"
+      rect:
+        serializedVersion: 2
+        x: 6253
+        y: 23
+        width: 206
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11aa1617b39ea7c90800000000000000
+      internalID: -7171163015119525359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "coins orgones supperpos\xE9s 30frames_27"
+      rect:
+        serializedVersion: 2
+        x: 6493
+        y: 23
+        width: 206
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e093c64b92850be70800000000000000
+      internalID: 9128893380823890190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "coins orgones supperpos\xE9s 30frames_28"
+      rect:
+        serializedVersion: 2
+        x: 6733
+        y: 23
+        width: 206
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d06d46c02f170b70800000000000000
+      internalID: 8865088617128485081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "coins orgones supperpos\xE9s 30frames_29"
+      rect:
+        serializedVersion: 2
+        x: 6973
+        y: 23
+        width: 206
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 653639435bea3d1f0800000000000000
+      internalID: -1021280597188582570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

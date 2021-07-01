@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c815bdbd83982254eb2da5fbe95df910, type: 3}
+  m_Name: Page 5
+  m_EditorClassIdentifier: 
+  UnitName: L'Orgone au coeur de la Guerre
+  Description: "A la suite d\u2019un accident en 1908, Haeckel d\xE9couvre que l\u2019Orgone
+    peut s\u2019accumuler en grande quantit\xE9 pour former des n\u0153uds d\u2019Orgone,
+    ou Nodus. Ces concentrations violac\xE9es en forme de volutes constituent une
+    source potentielle d\u2019Orgone, mais demeurent impossibles \xE0 stocker, jusqu\u2019\xE0
+    l\u2019invention de l\u2019Hypern\xE9odime par la firme Lindsay Chemical Division.
+    Cet alliage con\xE7u par Hyperchimie est capable d\u2019emprisonner l\u2019Orgone
+    sous la forme de Nodus.  On remarque durant la Premi\xE8re Guerre mondiale que
+    ces Nodus sont trouvables en grande quantit\xE9 dans les champs de bataille,
+    o\xF9 l\u2019orgone des soldats d\xE9c\xE9d\xE9s s\u2019\xE9chappe et cr\xE9e
+    des perturbations dans le flux d\u2019orgone. Cependant, aucun moyen n\u2019est
+    encore donn\xE9 pour r\xE9colter l\u2019Orgone de mani\xE8re efficace. C\u2019est
+    en 1935 que le DysOrgone, un appareil visant \xE0 aspirer l\u2019air d\u2019un
+    Nodus pour en conserver l\u2019Orgone, voit le jour. Celui-ci est coupl\xE9 \xE0
+    un principe de pyl\xF4nes multiples transport\xE9s sur le champ de bataille,
+    permettant d\u2019accumuler et de redistribuer l\u2019Orgone. Des divisions discr\xE8tes
+    appel\xE9es les Perturbateurs, charg\xE9s de transporter les pyl\xF4nes lors
+    des combats et de r\xE9cup\xE9rer l\u2019Orgone.  Tr\xE8s instable sous forme
+    concentr\xE9e, l\u2019Orgone peut exploser \xE0 tout moment d\u2019une surcharge
+    de perturbations orgoniques. Elle est utilis\xE9e \xE0 la fois dans les armes,
+    les blindages, comme \xE9nergie, mais aussi occasionnellement directement sur
+    les soldats, leur influant des capacit\xE9s surhumaines. A l\u2019\xE9poque de
+    la Seconde Guerre Mondiale, ces utilisations n\u2019\xE9taient qu\u2019exp\xE9rimentales
+    et il faudra attendre bien plus tard avant que l\u2019Orgone ne soit utilis\xE9
+    \xE0 grande \xE9chelle sur la population. "
+  typeUnite: 0
+  LifeMax: 0
+  ShieldMax: 0
+  AttackRange: 0
+  MoveSpeed: 0
+  CreationCost: 0
+  numberOfUnitToAttack: 0
+  DamageMinimum: 0
+  NumberRangeMin: {x: 0, y: 0}
+  DamageMaximum: 0
+  NumberRangeMax: {x: 0, y: 0}
+  SonAttaque: {fileID: 0}
+  SonDeplacement: {fileID: 0}
+  SonMort: {fileID: 0}
+  Sprite: {fileID: 21300000, guid: 05508572c7a95234582395d4a7297590, type: 3}
+  CanAttackEmptyTile: 0
+  UsefullToWin: 0
+  IsInRedArmy: 1
+  UnitAttributs: 000000000000000000000000

@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7687169254675864835
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7687169254675864834}
+  - component: {fileID: 7687169254675864837}
+  m_Layer: 0
+  m_Name: VictoryScreen
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7687169254675864834
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7687169254675864835}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7687169254675864837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7687169254675864835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25ebf67812eab5a4f80de3557c431d63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TimeCounterM: {fileID: 0}
+  TimeCounterS: {fileID: 0}
+  TurnCounter: {fileID: 0}
+  TurnCounterOverlay: {fileID: 0}
+  turnCounter: 0
+  RedDeadUnits: {fileID: 0}
+  redDeadUnits: 0
+  RedEventUsed: {fileID: 0}
+  redEventUsed: 0
+  RedResourcesUsed: {fileID: 0}
+  redRessourcesUsed: 0
+  RedWin: 0
+  BlueDeadUnits: {fileID: 0}
+  blueDeadUnits: 0
+  BlueEventUsed: {fileID: 0}
+  blueEventUsed: 0
+  BlueResourcesUsed: {fileID: 0}
+  blueResourcesUsed: 0
+  BlueWin: 0
+  IsVictoryScreenActive: 0
