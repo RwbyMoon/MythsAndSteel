@@ -39,7 +39,7 @@ public class Blitzkrieg : Capacity
 
     public override void EndCpty()
     {
-         Player player = GameManager.Instance.IsPlayerRedTurn ? PlayerScript.Instance.RedPlayerInfos : PlayerScript.Instance.BluePlayerInfos;
+        Player player = GameManager.Instance.IsPlayerRedTurn ? PlayerScript.Instance.RedPlayerInfos : PlayerScript.Instance.BluePlayerInfos;
         Debug.Log("oui");
         player.Ressource -= Capacity1Cost;
         player.ActivationLeft += 2;
