@@ -1,5 +1,5 @@
 # MythsAndSteel
-This is the official GitHub for MythsAndSteel. This git contains all the scripts and assets of MythsAndSteel. We create this project in Unity (version 2020.3.01f1)
+This is the official GitHub for the MythsAndSteel polish project. This git contains all the scripts and assets of MythsAndSteel. We create this project in Unity (version 2020.3.01f1)
 
 # Acces to the project
 Everyone on the internet can access this project. But this project is the property of RUBIKA (https://rubika-edu.com/). Everyone can download this project. But you don't have the authorization to publish this project or some parts of this project (with commercial purpose or not). 
