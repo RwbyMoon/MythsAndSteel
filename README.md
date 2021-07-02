@@ -11,4 +11,4 @@ It's all the first year students  (Game Artist and Game Design) at Rubika who wo
 Because it's a student project we can't add parts of work of people around the world. It would be a real pleasure to work with you but we can't
 
 # Where can I find the build of the game?
-This project is actually in progress. There is no public build actually. Maybe in the future we will share a build of the project with you. 
+This project is currently in progress and there is currently no public build. Maybe in the future we will share a build of the project with you. 
