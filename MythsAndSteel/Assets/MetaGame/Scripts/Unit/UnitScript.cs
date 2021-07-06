@@ -889,6 +889,7 @@ public bool MélodieSinistre = false;
     public virtual void ResetTurn()
     {
         _isActivationDone = false;
+        GetComponent<SpriteRenderer>().color = new Color32(255, 255, 255, 255);
         _isMoveDone = false;
         _isActionDone = false;
 
@@ -938,6 +939,7 @@ public bool MélodieSinistre = false;
         if (_isActionDone)
         {
             _isActivationDone = true;
+            GetComponent<SpriteRenderer>().color = new Color32(135, 135, 135, 255);
 
             //Réduit le nombre d'activation restante
             if ((_unitSO.IsInRedArmy && !hasUseActivation && !_unitStatuts.Contains(MYthsAndSteel_Enum.UnitStatut.Possédé)) || (!_unitSO.IsInRedArmy && _unitStatuts.Contains(MYthsAndSteel_Enum.UnitStatut.Possédé) && !MélodieSinistre))
