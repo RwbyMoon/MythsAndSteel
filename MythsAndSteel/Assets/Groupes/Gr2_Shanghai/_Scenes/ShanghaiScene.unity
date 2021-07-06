@@ -41573,7 +41573,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Imperial
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: b096831322d14f24790020dca5ac779a, type: 3}
 --- !u!1001 &8470126671689776449
 PrefabInstance:
