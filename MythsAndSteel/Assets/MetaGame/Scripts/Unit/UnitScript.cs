@@ -890,6 +890,7 @@ public bool MélodieSinistre = false;
     {
         _isActivationDone = false;
         GetComponent<SpriteRenderer>().color = new Color32(255, 255, 255, 255);
+        GetComponent<Animator>().speed = 1f;
         _isMoveDone = false;
         _isActionDone = false;
 
@@ -939,7 +940,6 @@ public bool MélodieSinistre = false;
         if (_isActionDone)
         {
             _isActivationDone = true;
-            GetComponent<SpriteRenderer>().color = new Color32(135, 135, 135, 255);
 
             //Réduit le nombre d'activation restante
             if ((_unitSO.IsInRedArmy && !hasUseActivation && !_unitStatuts.Contains(MYthsAndSteel_Enum.UnitStatut.Possédé)) || (!_unitSO.IsInRedArmy && _unitStatuts.Contains(MYthsAndSteel_Enum.UnitStatut.Possédé) && !MélodieSinistre))
@@ -954,6 +954,7 @@ public bool MélodieSinistre = false;
                 if (!_hasStartMove) PlayerScript.Instance.BluePlayerInfos.ActivationLeft--;
                 UIInstance.Instance.UpdateActivationLeft();
             }
+            StartCoroutine(ReduceSpeed());
         }
     }
 
@@ -1047,5 +1048,13 @@ public bool MélodieSinistre = false;
      
         }
        
+    }
+
+    IEnumerator ReduceSpeed()
+    {
+        yield return new WaitForSeconds(2);
+        GetComponent<Animator>().speed = 0.25f;
+        GetComponent<SpriteRenderer>().color = new Color32(135, 135, 135, 255);
+        StopCoroutine(ReduceSpeed());
     }
 }
