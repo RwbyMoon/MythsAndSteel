@@ -16,7 +16,7 @@ public class MenuTransition : ScriptableObject
  
     public void LoadScene(int sceneId)
     {
-       SceneManager.LoadSceneAsync(sceneId, LoadSceneMode.Additive);
+        SceneManager.LoadSceneAsync(sceneId, LoadSceneMode.Additive);
         SoundController.Instance.PlaySound(SoundController.Instance.AudioClips[13]);
     }
     public void LoadSceneOptionInGame(int sceneId)

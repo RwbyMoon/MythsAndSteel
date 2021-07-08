@@ -1371,6 +1371,7 @@ MonoBehaviour:
   _activationPhase: {fileID: 915835425}
   activationDone: 0
   _Terrain: {fileID: 11400000, guid: 38ed12df59a03714caea8190931b28c9, type: 2}
+  IsNextPhaseDone: 0
   IsCheckingOrgone: 0
   DoingEpxlosionOrgone: 0
   DeathByOrgone: 0
@@ -5532,6 +5533,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1968846222}
         m_TargetAssemblyTypeName: SoundController, Assembly-CSharp
         m_MethodName: UINav
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 96260005}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: CliCToChangePhase
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -16346,7 +16359,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -122.3, y: 58.6}
+  m_AnchoredPosition: {x: -122.30005, y: 58.600098}
   m_SizeDelta: {x: 95, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1318259198
@@ -23912,7 +23925,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 205.19995, y: -91.545044}
+  m_AnchoredPosition: {x: 205.19995, y: -91.54492}
   m_SizeDelta: {x: 282.7516, y: 108.3728}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1927025207
