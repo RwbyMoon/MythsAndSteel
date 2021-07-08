@@ -222,9 +222,11 @@ public class ZoneOrgone : MonoBehaviour
         _isInValidation = false;
         HideChild();
 
-        GameManager.Instance.CliCToChangePhase();
+        Debug.Log("Orgone : OK (Gauthier)");
+        GameManager.Instance.ChangePhase();
         //UIInstance.Instance.ActivateNextPhaseButton();
     }
+
 
     /// <summary>
     /// Quand le joueur clique sur cancel sur le panneau de validation
