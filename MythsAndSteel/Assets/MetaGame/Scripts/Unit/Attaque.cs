@@ -154,7 +154,14 @@ public class Attaque : MonoSingleton<Attaque>
             ChangeStat();  
             AnimationUpdate();
      
-            selectedUnitEnnemy.GetComponent<UnitScript>().TakeDamage(_damageMinimum + _selectedUnit.GetComponent<UnitScript>()._damageBonus);
+            if(selectedUnitEnnemy.GetComponent<UnitScript>().HasOnlyOneDamage == true)
+            {
+                selectedUnitEnnemy.GetComponent<UnitScript>().TakeDamage(1);
+            }
+            else
+            {
+                selectedUnitEnnemy.GetComponent<UnitScript>().TakeDamage(_damageMinimum + _selectedUnit.GetComponent<UnitScript>()._damageBonus);
+            }
             SoundController.Instance.PlaySound(_selectedUnit.GetComponent<UnitScript>().SonAttaque);
             Debug.Log("Damage : " + _damageMinimum);
             StopAttack();
@@ -197,7 +204,14 @@ public class Attaque : MonoSingleton<Attaque>
             _damageMaximum = this._damageMaximum;
             AnimationUpdate();
            
-            selectedUnitEnnemy.GetComponent<UnitScript>().TakeDamage(_damageMinimum + _selectedUnit.GetComponent<UnitScript>()._damageBonus);
+            if(selectedUnitEnnemy.GetComponent<UnitScript>().HasOnlyOneDamage == true)
+            {
+                selectedUnitEnnemy.GetComponent<UnitScript>().TakeDamage(1);
+            }
+            else
+            {
+                selectedUnitEnnemy.GetComponent<UnitScript>().TakeDamage(_damageMinimum + _selectedUnit.GetComponent<UnitScript>()._damageBonus);
+            }
             SoundController.Instance.PlaySound(_selectedUnit.GetComponent<UnitScript>().SonAttaque);
             Debug.Log("Damage : " + _damageMinimum);
             StopAttack();
@@ -209,7 +223,14 @@ public class Attaque : MonoSingleton<Attaque>
             _damageMaximum = this._damageMaximum;
             AnimationUpdate();
           
-            selectedUnitEnnemy.GetComponent<UnitScript>().TakeDamage(_damageMaximum + _selectedUnit.GetComponent<UnitScript>()._damageBonus);
+            if(selectedUnitEnnemy.GetComponent<UnitScript>().HasOnlyOneDamage == true)
+            {
+                selectedUnitEnnemy.GetComponent<UnitScript>().TakeDamage(1);
+            }
+            else
+            {
+                selectedUnitEnnemy.GetComponent<UnitScript>().TakeDamage(_damageMaximum + _selectedUnit.GetComponent<UnitScript>()._damageBonus);
+            }
         
             if (_selectedUnit.GetComponent<UnitScript>().VoiceLine != null)
             {
@@ -1040,7 +1061,14 @@ public class Attaque : MonoSingleton<Attaque>
         else
         {
          
-            selectedUnitEnnemy.GetComponent<UnitScript>().TakeDamage(_damageMinimum + _selectedUnit.GetComponent<UnitScript>()._damageBonus);
+            if(selectedUnitEnnemy.GetComponent<UnitScript>().HasOnlyOneDamage == true)
+            {
+                selectedUnitEnnemy.GetComponent<UnitScript>().TakeDamage(1);
+            }
+            else
+            {
+                selectedUnitEnnemy.GetComponent<UnitScript>().TakeDamage(_damageMinimum + _selectedUnit.GetComponent<UnitScript>()._damageBonus);
+            }
             SoundController.Instance.PlaySound(_selectedUnit.GetComponent<UnitScript>().SonAttaque);
             Debug.Log("Damage : " + _damageMinimum);
             StopAttack();

@@ -25,6 +25,7 @@ public class UnitScript : MonoBehaviour
             _unitSO = value;
         }
     }
+    public bool HasOnlyOneDamage;
 
 public bool MélodieSinistre = false;
     [Header("------------------- VIE -------------------")]
