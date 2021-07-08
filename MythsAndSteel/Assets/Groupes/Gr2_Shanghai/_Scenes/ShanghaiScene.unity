@@ -2292,6 +2292,7 @@ MonoBehaviour:
   _activationPhase: {fileID: 915835425}
   activationDone: 0
   _Terrain: {fileID: 11400000, guid: a3032ce23b29e4543ba95c858cba2611, type: 2}
+  IsNextPhaseDone: 0
   IsCheckingOrgone: 0
   DoingEpxlosionOrgone: 0
   DeathByOrgone: 0
@@ -6814,7 +6815,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8093891363561059414, guid: 52d97b989b65aaf43a6d23512371ba58, type: 3}
       propertyPath: m_text
-      value: OK !
+      value: "Ordre re\xE7u !"
       objectReference: {fileID: 0}
     - target: {fileID: 8093891363561059414, guid: 52d97b989b65aaf43a6d23512371ba58, type: 3}
       propertyPath: m_fontSize
@@ -15069,7 +15070,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8093891363561059414, guid: 52d97b989b65aaf43a6d23512371ba58, type: 3}
       propertyPath: m_text
-      value: OK !
+      value: "Ordre re\xE7u !"
       objectReference: {fileID: 0}
     - target: {fileID: 8093891363561059414, guid: 52d97b989b65aaf43a6d23512371ba58, type: 3}
       propertyPath: m_fontSize
@@ -40064,6 +40065,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 153750237}
     m_Modifications:
+    - target: {fileID: -728645478238897750, guid: 9d536ab024014c74fa620e94a7d69f12, type: 3}
+      propertyPath: _Capacity1Name
+      value: Soleil Levant
+      objectReference: {fileID: 0}
+    - target: {fileID: -728645478238897750, guid: 9d536ab024014c74fa620e94a7d69f12, type: 3}
+      propertyPath: _Capacity1Description
+      value: "Si l'unit\xE9 a attaqu\xE9 au tour pr\xE9c\xE9dant, elle obtient +1
+        de d\xE9gats."
+      objectReference: {fileID: 0}
     - target: {fileID: 6773052740282601602, guid: 9d536ab024014c74fa620e94a7d69f12, type: 3}
       propertyPath: m_Name
       value: T90
@@ -41521,8 +41531,24 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 153750237}
     m_Modifications:
+    - target: {fileID: 3856151153634023055, guid: b096831322d14f24790020dca5ac779a, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3856151154199639044, guid: b096831322d14f24790020dca5ac779a, type: 3}
       propertyPath: m_FlipX
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3856151154199639044, guid: b096831322d14f24790020dca5ac779a, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3856151154199639044, guid: b096831322d14f24790020dca5ac779a, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3856151154199639044, guid: b096831322d14f24790020dca5ac779a, type: 3}
+      propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3856151154199639045, guid: b096831322d14f24790020dca5ac779a, type: 3}
@@ -41573,7 +41599,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Imperial
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: b096831322d14f24790020dca5ac779a, type: 3}
 --- !u!1001 &8470126671689776449
 PrefabInstance:
