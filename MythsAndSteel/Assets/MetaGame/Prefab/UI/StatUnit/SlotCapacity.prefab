@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Art du D\xE9pouillement"
+  m_text: "Mont\xE9e d'Adr\xE9naline"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 27edcde133aa50b448a4c8e5d5845859, type: 2}
   m_sharedMaterial: {fileID: -7314658397477919478, guid: 27edcde133aa50b448a4c8e5d5845859, type: 2}
@@ -418,8 +418,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Volez une ressource \xE0 l'arm\xE9e adverse si une unit\xE9 ennemie se
-    situe \xE0 1 de port\xE9e."
+  m_text: "Augmente de 2 le d\xE9placement pour 1 de ressource. Ne consume pas l'action."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 27edcde133aa50b448a4c8e5d5845859, type: 2}
   m_sharedMaterial: {fileID: -7314658397477919478, guid: 27edcde133aa50b448a4c8e5d5845859, type: 2}
@@ -505,7 +504,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3368705167738113391
 RectTransform:
   m_ObjectHideFlags: 0

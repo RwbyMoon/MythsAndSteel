@@ -33528,24 +33528,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5169323942884928877, guid: ce61da0f111d3ff4b9b104d3a800e0ab, type: 3}
   m_PrefabInstance: {fileID: 498134365491140092}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4707557024564541586
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4707557024564541585}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d57f0619665dc94782fb4ccf00dc115, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _Capacity1Name: Charbonnage
-  render1: {fileID: 0}
-  _Capacity1Description: "Obtient 1 point de d\xE9placement permanant. Ne consomme
-    pas d'action, utilisable une seule fois par tour. Deux utilisations par partie."
-  _Capacity1Cost: 1
-  NbUse: 0
 --- !u!4 &4707557024564541613 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5169323942884928849, guid: ce61da0f111d3ff4b9b104d3a800e0ab, type: 3}
