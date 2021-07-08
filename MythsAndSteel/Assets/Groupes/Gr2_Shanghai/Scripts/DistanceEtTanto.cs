@@ -70,7 +70,7 @@ public class DistanceEtTanto : Capacity
 
         GameManager.Instance._eventCall += EndCpty;
         GameManager.Instance._eventCallCancel += StopCpty;
-        GameManager.Instance.StartEventModeTiles(1, false, tile, "Distance et Tanto", "Voulez-vous vraiment utiliser cette capacité?");
+        GameManager.Instance.StartEventModeTiles(1, GetComponent<UnitScript>().UnitSO.IsInRedArmy, tile, "Distance et Tanto", "Voulez-vous vraiment utiliser cette capacité?");
         base.StartCpty();
     }
 

@@ -25,9 +25,15 @@ public class UnitScript : MonoBehaviour
             _unitSO = value;
         }
     }
+    //Ici sont listées toutes les variables servant uniquement aux capacités passives
     public bool HasOnlyOneDamage;
+    public bool IgnoreTerrainEffect;
 
-public bool MélodieSinistre = false;
+    //Variables liées à l'utilisations de capacités n'utilisant pas l'action
+    public bool IsActifNotConsumeAction;
+    public bool ActifUsedThisTurn;
+
+    public bool MélodieSinistre = false;
     [Header("------------------- VIE -------------------")]
     [Header("------------------- STAT EN JEU -------------------")]
     //Vie actuelle
@@ -110,7 +116,7 @@ public bool MélodieSinistre = false;
 
     [Header("------------------- MOUVEMENT -------------------")]
     //Vitesse de déplacement
-    [SerializeField] int _moveSpeed;
+    [SerializeField] public int _moveSpeed;
     public int MoveSpeed => _moveSpeed;
     public int _MoveSpeedBonus = 0;
     public int MoveSpeedBonus
@@ -346,6 +352,9 @@ public bool MélodieSinistre = false;
     //Vérifie lorsqu'un nouveau tour est lancé
     public bool NewTurnHasStart;
 
+    //Stockage des Bonus permanents
+    public int PermaSpeedBoost;
+    public int PermaRangeBoost;
 
     #endregion Variables
 
@@ -901,8 +910,9 @@ public bool MélodieSinistre = false;
 
         StartCoroutine(NewTurnHasStarted());
 
-        MoveSpeedBonus = 0;
-        AttackRangeBonus = 0;
+        MoveSpeedBonus = PermaSpeedBoost;
+        AttackRangeBonus = PermaRangeBoost;
+        ActifUsedThisTurn = false;
 
         hasUseActivation = false;
         _moveLeft = _unitSO.MoveSpeed;
@@ -982,7 +992,10 @@ public bool MélodieSinistre = false;
     {
         CapacitySystem.Instance.CapacityRunning = false;
 
-        _isActionDone = true;
+        if(IsActifNotConsumeAction == false)
+        {
+            _isActionDone = true;
+        }
         RunningCapacity = false;
 
         CapacitySystem.Instance.PanelBlockant1.SetActive(false);
