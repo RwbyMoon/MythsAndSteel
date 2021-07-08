@@ -326,6 +326,10 @@ public class PhaseActivation : MonoBehaviour
         UIInstance.Instance.CanvasActivation.SetActive(false);
         GameManager.Instance.activationDone = false;
         _result.SetActive(false);
+
+        Debug.Log("GAUTHIER");
+
+        
      
     }
 

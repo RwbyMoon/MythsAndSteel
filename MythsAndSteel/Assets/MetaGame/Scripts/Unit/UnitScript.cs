@@ -385,6 +385,7 @@ public bool MélodieSinistre = false;
         }
     }
 
+
     #region LifeMethods
     /// <summary>
     /// Rajoute de la vie au joueur
@@ -952,16 +953,17 @@ public bool MélodieSinistre = false;
             {
                 if (!_hasStartMove) PlayerScript.Instance.RedPlayerInfos.ActivationLeft--;
                 UIInstance.Instance.UpdateActivationLeft();
-               
 
             }
             else if ((!_unitSO.IsInRedArmy && !_unitStatuts.Contains(MYthsAndSteel_Enum.UnitStatut.Possédé)) || (_unitSO.IsInRedArmy && _unitStatuts.Contains(MYthsAndSteel_Enum.UnitStatut.Possédé) && !MélodieSinistre))
             {
                 if (!_hasStartMove) PlayerScript.Instance.BluePlayerInfos.ActivationLeft--;
                 UIInstance.Instance.UpdateActivationLeft();
+
             }
             StartCoroutine(ReduceSpeed());
         }
+
     }
 
     public void StartCapacity()
