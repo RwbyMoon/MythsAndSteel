@@ -222,7 +222,8 @@ public class ZoneOrgone : MonoBehaviour
         _isInValidation = false;
         HideChild();
 
-        UIInstance.Instance.ActivateNextPhaseButton();
+        GameManager.Instance.CliCToChangePhase();
+        //UIInstance.Instance.ActivateNextPhaseButton();
     }
 
     /// <summary>
