@@ -2292,6 +2292,7 @@ MonoBehaviour:
   _activationPhase: {fileID: 915835425}
   activationDone: 0
   _Terrain: {fileID: 11400000, guid: a3032ce23b29e4543ba95c858cba2611, type: 2}
+  IsNextPhaseDone: 0
   IsCheckingOrgone: 0
   DoingEpxlosionOrgone: 0
   DeathByOrgone: 0
@@ -40064,6 +40065,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 153750237}
     m_Modifications:
+    - target: {fileID: -728645478238897750, guid: 9d536ab024014c74fa620e94a7d69f12, type: 3}
+      propertyPath: _Capacity1Name
+      value: Soleil Levant
+      objectReference: {fileID: 0}
+    - target: {fileID: -728645478238897750, guid: 9d536ab024014c74fa620e94a7d69f12, type: 3}
+      propertyPath: _Capacity1Description
+      value: "Si l'unit\xE9 a attaqu\xE9 au tour pr\xE9c\xE9dant, elle obtient +1
+        de d\xE9gats."
+      objectReference: {fileID: 0}
     - target: {fileID: 6773052740282601602, guid: 9d536ab024014c74fa620e94a7d69f12, type: 3}
       propertyPath: m_Name
       value: T90

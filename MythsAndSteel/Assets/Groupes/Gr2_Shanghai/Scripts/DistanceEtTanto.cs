@@ -80,7 +80,7 @@ public class DistanceEtTanto : Capacity
         if(attackMiss > 3)
         {
             SoundController.Instance.PlaySound(GetComponent<UnitScript>().SonAttaque);
-            GameManager.Instance.TileChooseList[0].GetComponent<TileScript>().Unit.GetComponent<UnitScript>().TakeDamage(GetComponent<UnitScript>().DamageMinimum + GetComponent<UnitScript>().DamageBonus);
+            GameManager.Instance.TileChooseList[0].GetComponent<TileScript>().Unit.GetComponent<UnitScript>().TakeDamage(GetComponent<UnitScript>().DamageMinimum + GetComponent<UnitScript>()._damageBonus);
             GameManager.Instance._eventCall -= EndCpty;
             GetComponent<UnitScript>().EndCapacity();
             base.EndCpty();

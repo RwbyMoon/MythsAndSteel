@@ -88,7 +88,7 @@ public bool MélodieSinistre = false;
     public int DamageMaximum => _damageMaximum;
 
     //Dégât bonus
-    [SerializeField] int _damageBonus;
+    [SerializeField] public int _damageBonus;
     public int DamageBonus => _damageBonus;
 
     //Bonus aux lancés de dé
@@ -338,6 +338,12 @@ public bool MélodieSinistre = false;
             return false;
         }
     }
+
+    //Vérifie si l'unité a attaqué ce tour
+    public bool HasAttacked;
+
+    //Vérifie lorsqu'un nouveau tour est lancé
+    public bool NewTurnHasStart;
 
 
     #endregion Variables
@@ -892,6 +898,8 @@ public bool MélodieSinistre = false;
         _isMoveDone = false;
         _isActionDone = false;
 
+        StartCoroutine(NewTurnHasStarted());
+
         MoveSpeedBonus = 0;
         AttackRangeBonus = 0;
 
@@ -1048,6 +1056,7 @@ public bool MélodieSinistre = false;
        
     }
 
+    //Assombri l'unité et réduit sa vitesse d'animation
     IEnumerator ReduceSpeed()
     {
         yield return new WaitForSeconds(2);
@@ -1056,6 +1065,7 @@ public bool MélodieSinistre = false;
         StopCoroutine(ReduceSpeed());
     }
 
+    //Relance l'animation à sa vitesse de base et annule l'assombrissement
     void Update()
     {
         if (GameObject.Find("GameManager").GetComponent<GameManager>().IsNextPhaseDone == true)
@@ -1063,5 +1073,25 @@ public bool MélodieSinistre = false;
             GetComponent<SpriteRenderer>().color = new Color32(255, 255, 255, 255);
             GetComponent<Animator>().speed = 1f;
         }
+    }
+
+    //Permet de détecter lorsque l'unité vient d'attaquer
+    public void HasAttackedThisTurn()
+    {
+        StartCoroutine(SetAttackedTrue());
+    }
+    public IEnumerator SetAttackedTrue()
+    {
+        HasAttacked = true;
+        yield return new WaitForSeconds(1);
+        HasAttacked = false;
+    }
+
+    //Détecte lorsqu'un nouveau tour est lancé
+    public IEnumerator NewTurnHasStarted()
+    {
+        NewTurnHasStart = true;
+        yield return new WaitForSeconds(1);
+        NewTurnHasStart = false;
     }
 }
