@@ -37,7 +37,7 @@ public class UnitScript : MonoBehaviour
     [Header("------------------- VIE -------------------")]
     [Header("------------------- STAT EN JEU -------------------")]
     //Vie actuelle
-    [SerializeField] int _life;
+    [SerializeField] public int _life;
     public int Life
     {
         get
