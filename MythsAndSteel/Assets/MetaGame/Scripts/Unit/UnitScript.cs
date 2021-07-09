@@ -55,7 +55,7 @@ public class UnitScript : MonoBehaviour
     bool IsDeadByOrgone = false;
 
     // Bouclier actuelle
-    [SerializeField] int _shield;
+    [SerializeField] public int _shield;
     public int Shield => _shield;
 
     //UI de la vie de l'unité
