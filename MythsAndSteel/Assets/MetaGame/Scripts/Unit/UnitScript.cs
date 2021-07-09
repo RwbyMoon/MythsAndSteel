@@ -355,6 +355,7 @@ public class UnitScript : MonoBehaviour
     //Stockage des Bonus permanents
     public int PermaSpeedBoost;
     public int PermaRangeBoost;
+    public int PermaDiceBoost;
 
     #endregion Variables
 
@@ -912,6 +913,7 @@ public class UnitScript : MonoBehaviour
 
         MoveSpeedBonus = PermaSpeedBoost;
         AttackRangeBonus = PermaRangeBoost;
+        DiceBonus = PermaDiceBoost;
         ActifUsedThisTurn = false;
 
         hasUseActivation = false;
