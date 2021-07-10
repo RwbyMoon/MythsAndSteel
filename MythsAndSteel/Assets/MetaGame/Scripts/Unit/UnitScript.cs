@@ -1075,19 +1075,25 @@ public class UnitScript : MonoBehaviour
     //Assombri l'unité et réduit sa vitesse d'animation
     IEnumerator ReduceSpeed()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         GetComponent<Animator>().speed = 0.25f;
         GetComponent<SpriteRenderer>().color = new Color32(135, 135, 135, 255);
-        StopCoroutine(ReduceSpeed());
     }
 
-    //Relance l'animation à sa vitesse de base et annule l'assombrissement
     void Update()
     {
-        if (GameObject.Find("GameManager").GetComponent<GameManager>().IsNextPhaseDone == true)
+        if (GameObject.Find("GameManager").GetComponent<GameManager>().IsNextPhaseDone == true || (UnitSO.IsInRedArmy && PlayerScript.Instance.RedPlayerInfos.ActivationLeft != 0 && !hasUseActivation && !_isActionDone) || (!UnitSO.IsInRedArmy && PlayerScript.Instance.BluePlayerInfos.ActivationLeft != 0 && !hasUseActivation && !_isActionDone))
         {
             GetComponent<SpriteRenderer>().color = new Color32(255, 255, 255, 255);
             GetComponent<Animator>().speed = 1f;
+        }
+        if (PlayerScript.Instance.RedPlayerInfos.ActivationLeft == 0 && UnitSO.IsInRedArmy && !hasUseActivation && GameManager.Instance.IsPlayerRedTurn && GameManager.Instance.ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.ActionJ1)
+        {
+            StartCoroutine(ReduceSpeed());
+        }
+        if (PlayerScript.Instance.BluePlayerInfos.ActivationLeft == 0 && !UnitSO.IsInRedArmy && !hasUseActivation && !GameManager.Instance.IsPlayerRedTurn && GameManager.Instance.ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.ActionJ2)
+        {
+            StartCoroutine(ReduceSpeed());
         }
     }
 
