@@ -27,12 +27,14 @@ public class ColereDuKhodok : MonoBehaviour
         if(actualLife != GetComponent<UnitScript>()._life && GetComponent<UnitScript>()._life != 5)
         {
             GetComponent<UnitScript>().DiceBonus += 2 * (actualLife - GetComponent<UnitScript>()._life);
+            GetComponent<UnitScript>().PermaDiceBoost += 2 * (actualLife - GetComponent<UnitScript>()._life);
             actualBonus += 2 * (actualLife - GetComponent<UnitScript>()._life);
             actualLife = GetComponent<UnitScript>()._life;
         }
         if (GetComponent<UnitScript>().HasAttacked)
         {
             GetComponent<UnitScript>().DiceBonus -= actualBonus;
+            GetComponent<UnitScript>().PermaDiceBoost -= actualBonus;
             actualBonus = 0;
         }
     }
