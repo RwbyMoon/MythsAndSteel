@@ -196,6 +196,8 @@ GameObject:
   - component: {fileID: 5169323942884928848}
   - component: {fileID: 5169323942884928851}
   - component: {fileID: 5169323942884928850}
+  - component: {fileID: -1217298405274476376}
+  - component: {fileID: 748318498993160264}
   m_Layer: 0
   m_Name: Khodok
   m_TagString: Untagged
@@ -284,6 +286,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _unitSO: {fileID: 11400000, guid: 8035a37f68842804fabcc94281ef016d, type: 2}
   ParalysieStat: 3
+  HasOnlyOneDamage: 0
+  IgnoreTerrainEffect: 0
+  IsActifNotConsumeAction: 0
+  ActifUsedThisTurn: 0
   "M\xE9lodieSinistre": 0
   _life: 1
   Renderer: {fileID: 5169323942884928848}
@@ -318,6 +324,10 @@ MonoBehaviour:
   step: 0
   hasUseActivation: 0
   _Animation: {fileID: 5169323942884928850}
+  HasAttacked: 0
+  NewTurnHasStart: 0
+  PermaSpeedBoost: 0
+  PermaRangeBoost: 0
   DoingCharg1Blue: 0
 --- !u!95 &5169323942884928850
 Animator:
@@ -338,3 +348,39 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-1217298405274476376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5169323942884928877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d57f0619665dc94782fb4ccf00dc115, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Capacity1Name: Charbonnage
+  render1: {fileID: 0}
+  _Capacity1Description: "Obtient 1 point de d\xE9placement permanant. Ne consomme
+    pas d'action, utilisable une seule fois par tour. Deux utilisations par partie."
+  _Capacity1Cost: 1
+  NbUse: 0
+--- !u!114 &748318498993160264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5169323942884928877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09037656876e84d4bb18cb1d6d308938, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Capacity1Name: "Col\xE8re du Khodok"
+  render1: {fileID: 0}
+  _Capacity1Description: Obtient +2 au prochain lancer d'attaque par point de vie
+    perdu.
+  actualLife: 0
+  actualBonus: 0

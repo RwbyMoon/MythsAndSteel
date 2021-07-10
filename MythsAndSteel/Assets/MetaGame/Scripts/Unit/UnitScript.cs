@@ -25,12 +25,19 @@ public class UnitScript : MonoBehaviour
             _unitSO = value;
         }
     }
+    //Ici sont listées toutes les variables servant uniquement aux capacités passives
+    public bool HasOnlyOneDamage;
+    public bool IgnoreTerrainEffect;
 
-public bool MélodieSinistre = false;
+    //Variables liées à l'utilisations de capacités n'utilisant pas l'action
+    public bool IsActifNotConsumeAction;
+    public bool ActifUsedThisTurn;
+
+    public bool MélodieSinistre = false;
     [Header("------------------- VIE -------------------")]
     [Header("------------------- STAT EN JEU -------------------")]
     //Vie actuelle
-    [SerializeField] int _life;
+    [SerializeField] public int _life;
     public int Life
     {
         get
@@ -48,7 +55,7 @@ public bool MélodieSinistre = false;
     bool IsDeadByOrgone = false;
 
     // Bouclier actuelle
-    [SerializeField] int _shield;
+    [SerializeField] public int _shield;
     public int Shield => _shield;
 
     //UI de la vie de l'unité
@@ -109,7 +116,7 @@ public bool MélodieSinistre = false;
 
     [Header("------------------- MOUVEMENT -------------------")]
     //Vitesse de déplacement
-    [SerializeField] int _moveSpeed;
+    [SerializeField] public int _moveSpeed;
     public int MoveSpeed => _moveSpeed;
     public int _MoveSpeedBonus = 0;
     public int MoveSpeedBonus
@@ -345,6 +352,10 @@ public bool MélodieSinistre = false;
     //Vérifie lorsqu'un nouveau tour est lancé
     public bool NewTurnHasStart;
 
+    //Stockage des Bonus permanents
+    public int PermaSpeedBoost;
+    public int PermaRangeBoost;
+    public int PermaDiceBoost;
 
     #endregion Variables
 
@@ -901,8 +912,10 @@ public bool MélodieSinistre = false;
 
         StartCoroutine(NewTurnHasStarted());
 
-        MoveSpeedBonus = 0;
-        AttackRangeBonus = 0;
+        MoveSpeedBonus = PermaSpeedBoost;
+        AttackRangeBonus = PermaRangeBoost;
+        DiceBonus = PermaDiceBoost;
+        ActifUsedThisTurn = false;
 
         hasUseActivation = false;
         _moveLeft = _unitSO.MoveSpeed;
@@ -983,7 +996,10 @@ public bool MélodieSinistre = false;
     {
         CapacitySystem.Instance.CapacityRunning = false;
 
-        _isActionDone = true;
+        if(IsActifNotConsumeAction == false)
+        {
+            _isActionDone = true;
+        }
         RunningCapacity = false;
 
         CapacitySystem.Instance.PanelBlockant1.SetActive(false);
@@ -1061,19 +1077,25 @@ public bool MélodieSinistre = false;
     //Assombri l'unité et réduit sa vitesse d'animation
     IEnumerator ReduceSpeed()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         GetComponent<Animator>().speed = 0.25f;
         GetComponent<SpriteRenderer>().color = new Color32(135, 135, 135, 255);
-        StopCoroutine(ReduceSpeed());
     }
 
-    //Relance l'animation à sa vitesse de base et annule l'assombrissement
     void Update()
     {
-        if (GameObject.Find("GameManager").GetComponent<GameManager>().IsNextPhaseDone == true)
+        if (GameObject.Find("GameManager").GetComponent<GameManager>().IsNextPhaseDone == true || (UnitSO.IsInRedArmy && PlayerScript.Instance.RedPlayerInfos.ActivationLeft != 0 && !hasUseActivation && !_isActionDone) || (!UnitSO.IsInRedArmy && PlayerScript.Instance.BluePlayerInfos.ActivationLeft != 0 && !hasUseActivation && !_isActionDone))
         {
             GetComponent<SpriteRenderer>().color = new Color32(255, 255, 255, 255);
             GetComponent<Animator>().speed = 1f;
+        }
+        if (PlayerScript.Instance.RedPlayerInfos.ActivationLeft == 0 && UnitSO.IsInRedArmy && !hasUseActivation && GameManager.Instance.IsPlayerRedTurn && GameManager.Instance.ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.ActionJ1)
+        {
+            StartCoroutine(ReduceSpeed());
+        }
+        if (PlayerScript.Instance.BluePlayerInfos.ActivationLeft == 0 && !UnitSO.IsInRedArmy && !hasUseActivation && !GameManager.Instance.IsPlayerRedTurn && GameManager.Instance.ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.ActionJ2)
+        {
+            StartCoroutine(ReduceSpeed());
         }
     }
 

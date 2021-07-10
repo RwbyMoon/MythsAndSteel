@@ -18,6 +18,18 @@ MonoBehaviour:
     \xE9changer la position de deux unit\xE9s alli\xE9es sur le plateau.\n"
   _Capacity1Cost: 0
   PowerUseLeft: 2
+--- !u!114 &912366434632290543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8125601267762053686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fdb0275739ee884980d388b3205f39f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3573453889743690849
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27,7 +39,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4707557024412655191, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
       propertyPath: m_Name
-      value: Bernard Montgommery
+      value: Bernard Montgommery Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4707557024412655208, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
       propertyPath: m_Controller
