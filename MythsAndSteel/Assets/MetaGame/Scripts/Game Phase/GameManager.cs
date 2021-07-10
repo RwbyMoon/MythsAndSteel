@@ -941,7 +941,7 @@ public class GameManager : MonoSingleton<GameManager>
 
     IEnumerator ChangePhaseDone()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2);
         IsNextPhaseDone = false;
     }
 }
