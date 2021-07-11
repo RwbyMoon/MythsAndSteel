@@ -15,6 +15,7 @@ public class ColereDuKhodok : MonoBehaviour
     #endregion
     
     public int actualLife;
+    bool SetLifeDone;
     public int actualBonus;
 
     private void Start()
@@ -24,7 +25,7 @@ public class ColereDuKhodok : MonoBehaviour
 
     private void Update()
     {
-        if(actualLife != GetComponent<UnitScript>()._life && GetComponent<UnitScript>()._life != 5)
+        if(actualLife > GetComponent<UnitScript>()._life && SetLifeDone)
         {
             GetComponent<UnitScript>().DiceBonus += 2 * (actualLife - GetComponent<UnitScript>()._life);
             GetComponent<UnitScript>().PermaDiceBoost += 2 * (actualLife - GetComponent<UnitScript>()._life);
@@ -37,11 +38,16 @@ public class ColereDuKhodok : MonoBehaviour
             GetComponent<UnitScript>().PermaDiceBoost -= actualBonus;
             actualBonus = 0;
         }
+        if(actualLife < GetComponent<UnitScript>()._life)
+        {
+            actualLife = GetComponent<UnitScript>()._life;
+        }
     }
 
     IEnumerator SetFirstLife()
     {
-        yield return new WaitForSeconds(1);
         actualLife = GetComponent<UnitScript>()._life;
+        yield return new WaitForSeconds(1);
+        SetLifeDone = true;
     }
 }
