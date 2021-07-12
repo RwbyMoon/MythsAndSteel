@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1225121456783386000}
   - component: {fileID: 2947377159831934726}
   - component: {fileID: 2593954544535607008}
+  - component: {fileID: 1793734494053205011}
   m_Layer: 0
   m_Name: Infantry man 2
   m_TagString: Untagged
@@ -100,12 +101,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _unitSO: {fileID: 11400000, guid: eb7cf035e257ee342afc39f6fe213e13, type: 2}
   ParalysieStat: 3
+  HasOnlyOneDamage: 0
+  IgnoreTerrainEffect: 0
+  IsActifNotConsumeAction: 0
+  ActifUsedThisTurn: 0
   "M\xE9lodieSinistre": 0
   _life: 2
   Renderer: {fileID: 1225121456783386000}
   _shield: 0
   _attackRange: 1
-  AttackRangeBonus: 0
+  _attackRangeBonus: 0
   _numberRangeMin: {x: 4, y: 6}
   _damageMinimum: 1
   _numberRangeMax: {x: 7, y: 12}
@@ -134,6 +139,10 @@ MonoBehaviour:
   step: 0
   hasUseActivation: 0
   _Animation: {fileID: 2593954544535607008}
+  HasAttacked: 0
+  NewTurnHasStart: 0
+  PermaSpeedBoost: 0
+  PermaRangeBoost: 0
   DoingCharg1Blue: 0
 --- !u!95 &2593954544535607008
 Animator:
@@ -154,6 +163,23 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1793734494053205011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1572079136962288528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79045634a54e9f64d8dbca8d8b84ce36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Capacity1Name: "Mont\xE9e d'Adr\xE9naline"
+  render1: {fileID: 0}
+  _Capacity1Description: "Augmente de 2 le d\xE9placement pour 1 de ressource. Ne
+    consume pas l'action."
+  _Capacity1Cost: 1
 --- !u!1 &2848508895635588526
 GameObject:
   m_ObjectHideFlags: 0
