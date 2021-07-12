@@ -153,18 +153,9 @@ public class Attaque : MonoSingleton<Attaque>
         {
             ChangeStat();  
             AnimationUpdate();
-     
-            if(selectedUnitEnnemy.GetComponent<UnitScript>().HasOnlyOneDamage == true)
-            {
-                selectedUnitEnnemy.GetComponent<UnitScript>().TakeDamage(1);
-            }
-            else
-            {
-                selectedUnitEnnemy.GetComponent<UnitScript>().TakeDamage(_damageMinimum + _selectedUnit.GetComponent<UnitScript>()._damageBonus);
-            }
-            SoundController.Instance.PlaySound(_selectedUnit.GetComponent<UnitScript>().SonAttaque);
-            Debug.Log("Damage : " + _damageMinimum);
-            StopAttack();
+
+            GameObject ActualUnit = RaycastManager.Instance.ActualUnitSelected;
+            StartCoroutine(MinAttackWaitEndOfAnimationForDamage(ActualUnit.GetComponent<UnitScript>().Animation));
         }
         if (DiceResult < _numberRangeMin.x)
         {
@@ -203,18 +194,9 @@ public class Attaque : MonoSingleton<Attaque>
             _damageMinimum = this._damageMinimum;
             _damageMaximum = this._damageMaximum;
             AnimationUpdate();
-           
-            if(selectedUnitEnnemy.GetComponent<UnitScript>().HasOnlyOneDamage == true)
-            {
-                selectedUnitEnnemy.GetComponent<UnitScript>().TakeDamage(1);
-            }
-            else
-            {
-                selectedUnitEnnemy.GetComponent<UnitScript>().TakeDamage(_damageMinimum + _selectedUnit.GetComponent<UnitScript>()._damageBonus);
-            }
-            SoundController.Instance.PlaySound(_selectedUnit.GetComponent<UnitScript>().SonAttaque);
-            Debug.Log("Damage : " + _damageMinimum);
-            StopAttack();
+
+            GameObject ActualUnit = RaycastManager.Instance.ActualUnitSelected;
+            StartCoroutine(MinAttackWaitEndOfAnimationForDamage(ActualUnit.GetComponent<UnitScript>().Animation));
         }
         if (DiceResult >= _numberRangeMax.x && DiceResult <= _numberRangeMax.y)
         {
@@ -222,30 +204,9 @@ public class Attaque : MonoSingleton<Attaque>
           
             _damageMaximum = this._damageMaximum;
             AnimationUpdate();
-          
-            if(selectedUnitEnnemy.GetComponent<UnitScript>().HasOnlyOneDamage == true)
-            {
-                selectedUnitEnnemy.GetComponent<UnitScript>().TakeDamage(1);
-            }
-            else
-            {
-                selectedUnitEnnemy.GetComponent<UnitScript>().TakeDamage(_damageMaximum + _selectedUnit.GetComponent<UnitScript>()._damageBonus);
-            }
-        
-            if (_selectedUnit.GetComponent<UnitScript>().VoiceLine != null)
-            {
-                SoundController.Instance.PlaySound(_selectedUnit.GetComponent<UnitScript>().VoiceLine);
-                Debug.Log("vocieline");
 
-            }
-            else
-            {
-                SoundController.Instance.PlaySound(_selectedUnit.GetComponent<UnitScript>().SonAttaque);
-
-            }
-
-            Debug.Log("Damage Max : " + _damageMaximum);
-            StopAttack();
+            GameObject ActualUnit = RaycastManager.Instance.ActualUnitSelected;
+            StartCoroutine(MinAttackWaitEndOfAnimationForDamage(ActualUnit.GetComponent<UnitScript>().Animation));
         }
         if (DiceResult < _numberRangeMin.x)
         {
@@ -267,6 +228,52 @@ public class Attaque : MonoSingleton<Attaque>
             }
 
         }
+    }
+
+    IEnumerator MinAttackWaitEndOfAnimationForDamage(Animator AnimToWait)
+    {
+        yield return new WaitForSeconds(AnimToWait.GetCurrentAnimatorStateInfo(0).length + 1f);
+
+        if (selectedUnitEnnemy.GetComponent<UnitScript>().HasOnlyOneDamage == true)
+        {
+            selectedUnitEnnemy.GetComponent<UnitScript>().TakeDamage(1);
+        }
+        else
+        {
+            selectedUnitEnnemy.GetComponent<UnitScript>().TakeDamage(_damageMinimum + _selectedUnit.GetComponent<UnitScript>()._damageBonus);
+        }
+        SoundController.Instance.PlaySound(_selectedUnit.GetComponent<UnitScript>().SonAttaque);
+        Debug.Log("Damage : " + _damageMinimum);
+        StopAttack();
+    }
+
+    IEnumerator MaxAttackWaitEndOfAnimationForDamage(Animator AnimToWait)
+    {
+        yield return new WaitForSeconds(AnimToWait.GetCurrentAnimatorStateInfo(0).length + 1f);
+
+        if (selectedUnitEnnemy.GetComponent<UnitScript>().HasOnlyOneDamage == true)
+        {
+            selectedUnitEnnemy.GetComponent<UnitScript>().TakeDamage(1);
+        }
+        else
+        {
+            selectedUnitEnnemy.GetComponent<UnitScript>().TakeDamage(_damageMaximum + _selectedUnit.GetComponent<UnitScript>()._damageBonus);
+        }
+
+        if (_selectedUnit.GetComponent<UnitScript>().VoiceLine != null)
+        {
+            SoundController.Instance.PlaySound(_selectedUnit.GetComponent<UnitScript>().VoiceLine);
+            Debug.Log("voiceline");
+
+        }
+        else
+        {
+            SoundController.Instance.PlaySound(_selectedUnit.GetComponent<UnitScript>().SonAttaque);
+
+        }
+
+        Debug.Log("Damage Max : " + _damageMaximum);
+        StopAttack();
     }
 
     /// <summary>
