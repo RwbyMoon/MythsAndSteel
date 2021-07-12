@@ -27,13 +27,15 @@ public class UnitScript : MonoBehaviour
     }
     //Ici sont listées toutes les variables servant uniquement aux capacités passives
     public bool HasOnlyOneDamage;
-    public bool IgnoreTerrainEffect;
 
     //Variables liées à l'utilisations de capacités n'utilisant pas l'action
     public bool IsActifNotConsumeAction;
     public bool ActifUsedThisTurn;
 
     public bool MélodieSinistre = false;
+    [Header("--------------- Attributs ---------------")]
+    public bool RestreintAuxRails;
+    public bool ToutTerrain;
     [Header("------------------- VIE -------------------")]
     [Header("------------------- STAT EN JEU -------------------")]
     //Vie actuelle
