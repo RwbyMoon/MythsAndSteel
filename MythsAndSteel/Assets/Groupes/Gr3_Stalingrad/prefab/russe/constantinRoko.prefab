@@ -196,6 +196,8 @@ GameObject:
   - component: {fileID: 6420901648960162123}
   - component: {fileID: 6420901648960162120}
   - component: {fileID: 6420901648960162121}
+  - component: {fileID: 4753591438848281323}
+  - component: {fileID: -4089065534864919919}
   m_Layer: 0
   m_Name: constantinRoko
   m_TagString: Untagged
@@ -284,6 +286,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _unitSO: {fileID: 11400000, guid: d5abb7e13ee71c344af2e91f1a032bd3, type: 2}
   ParalysieStat: 3
+  HasOnlyOneDamage: 0
+  IgnoreTerrainEffect: 0
+  IsActifNotConsumeAction: 0
+  ActifUsedThisTurn: 0
   "M\xE9lodieSinistre": 0
   _life: 1
   Renderer: {fileID: 6420901648960162123}
@@ -318,6 +324,11 @@ MonoBehaviour:
   step: 0
   hasUseActivation: 0
   _Animation: {fileID: 6420901648960162121}
+  HasAttacked: 0
+  NewTurnHasStart: 0
+  PermaSpeedBoost: 0
+  PermaRangeBoost: 0
+  PermaDiceBoost: 0
   DoingCharg1Blue: 0
 --- !u!95 &6420901648960162121
 Animator:
@@ -338,3 +349,32 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4753591438848281323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6420901648960162166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e587011fb1b520949a708720a75c43c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-4089065534864919919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6420901648960162166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6894a9f44a16fcc4aab7d34db6203bff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Capacity1Name: "Gu\xE9rilla Urbaine"
+  render1: {fileID: 0}
+  _Capacity1Description: "Pour 2 ressources, cr\xE9e une infanterie sur une case
+    maison ou ruine."
+  _Capacity1Cost: 2

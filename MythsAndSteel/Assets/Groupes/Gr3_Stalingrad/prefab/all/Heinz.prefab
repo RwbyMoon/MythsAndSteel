@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4003429510070703652}
   - component: {fileID: 4003429510070703653}
   - component: {fileID: 8564601576450574414}
+  - component: {fileID: -616173837872172603}
   m_Layer: 0
   m_Name: Heinz
   m_TagString: Untagged
@@ -101,6 +102,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _unitSO: {fileID: 11400000, guid: 5c74d978cc1e1a842a99f2e81e6fbf6d, type: 2}
   ParalysieStat: 3
+  HasOnlyOneDamage: 0
+  IgnoreTerrainEffect: 0
+  IsActifNotConsumeAction: 0
+  ActifUsedThisTurn: 0
   "M\xE9lodieSinistre": 0
   _life: 1
   Renderer: {fileID: 4003429510070703655}
@@ -135,6 +140,11 @@ MonoBehaviour:
   step: 0
   hasUseActivation: 0
   _Animation: {fileID: 4003429510070703653}
+  HasAttacked: 0
+  NewTurnHasStart: 0
+  PermaSpeedBoost: 0
+  PermaRangeBoost: 0
+  PermaDiceBoost: 0
   DoingCharg1Blue: 0
 --- !u!95 &4003429510070703653
 Animator:
@@ -172,6 +182,18 @@ MonoBehaviour:
   _Capacity1Description: "L'unit\xE9 poss\xE8de un pouvoir permettant d'activer 2
     troupes suppl\xE9mentaires durant ce tour."
   _Capacity1Cost: 2
+--- !u!114 &-616173837872172603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4003429510070703642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb606d4f2e86cc4488ea7a83027e2fb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4003429510586119330
 GameObject:
   m_ObjectHideFlags: 0
