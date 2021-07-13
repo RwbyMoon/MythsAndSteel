@@ -206,7 +206,7 @@ public class Attaque : MonoSingleton<Attaque>
             AnimationUpdate();
 
             GameObject ActualUnit = RaycastManager.Instance.ActualUnitSelected;
-            StartCoroutine(MinAttackWaitEndOfAnimationForDamage(ActualUnit.GetComponent<UnitScript>().Animation));
+            StartCoroutine(MaxAttackWaitEndOfAnimationForDamage(ActualUnit.GetComponent<UnitScript>().Animation));
         }
         if (DiceResult < _numberRangeMin.x)
         {
