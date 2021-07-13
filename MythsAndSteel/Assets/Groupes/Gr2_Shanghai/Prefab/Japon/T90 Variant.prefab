@@ -12,6 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f643e51d2ebb6a142a0adbb0f4d29e8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _Capacity1Name: 
+  render1: {fileID: 0}
+  _Capacity1Description: 
+  HasAtkBoost: 0
+  BoostApplied: 0
+  ReduceDone: 0
 --- !u!1001 &2065513651921817301
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31,6 +37,10 @@ PrefabInstance:
       propertyPath: _unitSO
       value: 
       objectReference: {fileID: 11400000, guid: 3f77e359e9c9bd840b940c6a7051d40c, type: 2}
+    - target: {fileID: 4707557024412655209, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
+      propertyPath: RestreintAuxRails
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4707557024412655210, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
       propertyPath: m_Sprite
       value: 
