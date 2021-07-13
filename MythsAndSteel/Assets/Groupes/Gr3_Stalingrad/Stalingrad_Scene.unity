@@ -12967,6 +12967,10 @@ PrefabInstance:
       propertyPath: AnimatorMainBordure
       value: 
       objectReference: {fileID: 1583193101}
+    - target: {fileID: 9171649473118307006, guid: bdfbac4c885f5c044994fb5c263b03dc, type: 3}
+      propertyPath: m_RenderPostProcessing
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9171649473118307007, guid: bdfbac4c885f5c044994fb5c263b03dc, type: 3}
       propertyPath: m_RootOrder
       value: 0
