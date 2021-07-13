@@ -97,11 +97,11 @@ public class Attaque : MonoSingleton<Attaque>
         }
     }
 
-    GameObject _selectedUnit = null;
+    [SerializeField] private GameObject _selectedUnit = null;
 
     int numberOfTileToSelect = 0;
-    private GameObject _selectedUnitEnemy;
-   public GameObject selectedUnitEnnemy
+    [SerializeField] private GameObject _selectedUnitEnemy;
+    public GameObject selectedUnitEnnemy
     {
         get
         {

@@ -1954,7 +1954,6 @@ GameObject:
   m_Component:
   - component: {fileID: 138174388}
   - component: {fileID: 138174389}
-  - component: {fileID: 138174390}
   m_Layer: 0
   m_Name: Attaque
   m_TagString: Untagged
@@ -2006,27 +2005,13 @@ MonoBehaviour:
   _numberRangeMax: {x: 0, y: 0}
   _isActionDone: 0
   SelectedTiles: 
+  _selectedUnit: {fileID: 0}
+  _selectedUnitEnemy: {fileID: 0}
   _normalAttackSprite: {fileID: 21300000, guid: 120dc50b5dfb8c746a31d79d36df8a98, type: 3}
   _selectedSprite: {fileID: 21300000, guid: 332752d1c1d8b114daccf4a90b1a0703, type: 3}
   Go: 0
   _JaugeAttack: {fileID: 1391136861}
   _attackselected: 0
---- !u!114 &138174390
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 138174387}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9628d79cb62e8424d8ca26848dcfef4b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _Capacity1Name: 
-  render1: {fileID: 0}
-  _Capacity1Description: 
-  _Capacity1Cost: 0
 --- !u!1 &145554579
 GameObject:
   m_ObjectHideFlags: 0
