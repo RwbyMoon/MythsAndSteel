@@ -232,7 +232,7 @@ public class Attaque : MonoSingleton<Attaque>
 
     IEnumerator MinAttackWaitEndOfAnimationForDamage(Animator AnimToWait)
     {
-        yield return new WaitForSeconds(AnimToWait.GetCurrentAnimatorStateInfo(0).length + 1f);
+        yield return new WaitForSeconds(AnimToWait.GetCurrentAnimatorStateInfo(0).length + 0.5f);
 
         if (selectedUnitEnnemy.GetComponent<UnitScript>().HasOnlyOneDamage == true)
         {
@@ -249,7 +249,7 @@ public class Attaque : MonoSingleton<Attaque>
 
     IEnumerator MaxAttackWaitEndOfAnimationForDamage(Animator AnimToWait)
     {
-        yield return new WaitForSeconds(AnimToWait.GetCurrentAnimatorStateInfo(0).length + 1f);
+        yield return new WaitForSeconds(AnimToWait.GetCurrentAnimatorStateInfo(0).length + 0.5f);
 
         if (selectedUnitEnnemy.GetComponent<UnitScript>().HasOnlyOneDamage == true)
         {
