@@ -76,7 +76,6 @@ public class FireBreathCpty : Capacity
             }            
         }
         GameManager.Instance.StopEventModeTile();
-
         GameManager.Instance.TileChooseList.Clear();
     }
 }

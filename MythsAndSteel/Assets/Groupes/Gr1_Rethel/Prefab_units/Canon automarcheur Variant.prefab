@@ -1,5 +1,31 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1119033215031671338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9107272618204806385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f899f8fdae36d844bb348c795cf20e08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ListeAttributs: "D\xE9viation"
+  _Capacity1Name: Repoussement
+  _IsPassive1: 1
+  _IsBonus1: 0
+  _render1capaOne: {fileID: 0}
+  _Capacity1Description: "Repousse d'une case l'unit\xE9 touch\xE9e d'une case dans
+    la direction voulue apr\xE8s lui avoir inflig\xE9e des d\xE9gats."
+  _Capacity1Cost: 0
+  _Capacity2Name: Tir double
+  _IsPassive2: 0
+  _IsBonus2: 1
+  _render2capaOne: {fileID: 0}
+  _Capacity2Description: Attaque deux fois ce tour.
+  _Capacity2Cost: 1
 --- !u!1001 &4555129466703045286
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9,7 +35,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4707557024412655191, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
       propertyPath: m_Name
-      value: Canon automarcheur
+      value: Canon automarcheur Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4707557024412655208, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
       propertyPath: m_Controller
@@ -109,3 +135,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
+--- !u!1 &9107272618204806385 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4707557024412655191, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
+  m_PrefabInstance: {fileID: 4555129466703045286}
+  m_PrefabAsset: {fileID: 0}

@@ -29,8 +29,8 @@ public class UnitScript : MonoBehaviour
     public bool HasOnlyOneDamage;
 
     //Variables liées à l'utilisations de capacités n'utilisant pas l'action
-    public bool IsActifNotConsumeAction;
     public bool ActifUsedThisTurn;
+    public bool IsActiveNotConsumeAction;
 
     public bool MélodieSinistre = false;
     [Header("--------------- Attributs ---------------")]
@@ -997,8 +997,7 @@ public class UnitScript : MonoBehaviour
     public void EndCapacity()
     {
         CapacitySystem.Instance.CapacityRunning = false;
-
-        if(IsActifNotConsumeAction == false)
+        if (!IsActiveNotConsumeAction)
         {
             _isActionDone = true;
         }
@@ -1012,7 +1011,8 @@ public class UnitScript : MonoBehaviour
         UIInstance.Instance.ActivateNextPhaseButton();
         RaycastManager.Instance.ActualTileSelected = null;
         RaycastManager.Instance.ActualUnitSelected = null;
-        Attaque.Instance.Selected = false; 
+        Attaque.Instance.Selected = false;
+        IsActiveNotConsumeAction = false;
         checkActivation();
     }
 

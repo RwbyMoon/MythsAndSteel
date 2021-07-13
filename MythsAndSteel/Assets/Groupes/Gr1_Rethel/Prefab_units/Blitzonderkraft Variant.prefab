@@ -1,5 +1,30 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-5029574764380838304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3763016958914352355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f899f8fdae36d844bb348c795cf20e08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ListeAttributs: 
+  _Capacity1Name: Transport
+  _IsPassive1: 1
+  _render1capaOne: {fileID: 0}
+  _Capacity1Description: "Peut embarquer et d\xE9barquer une unit\xE9 alli\xE9e de
+    typer infanterie, artillerie ou leader."
+  _Capacity1Cost: 0
+  _Capacity2Name: Charge Sortante
+  _IsPassive2: 1
+  _render2capaOne: {fileID: 0}
+  _Capacity2Description: "La prochaine attaque d'une unit\xE9 d\xE9barqu\xE9e du
+    Blitzonderkraft repousse sa cible d'une case (une seule fois par tour)."
+  _Capacity2Cost: 0
 --- !u!1001 &8461262940637399732
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9,7 +34,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4707557024412655191, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
       propertyPath: m_Name
-      value: Blitzonderkraft
+      value: Blitzonderkraft Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4707557024412655208, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
       propertyPath: m_Controller
@@ -109,3 +134,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
+--- !u!1 &3763016958914352355 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4707557024412655191, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
+  m_PrefabInstance: {fileID: 8461262940637399732}
+  m_PrefabAsset: {fileID: 0}

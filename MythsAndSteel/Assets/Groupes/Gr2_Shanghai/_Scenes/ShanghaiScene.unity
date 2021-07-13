@@ -4890,11 +4890,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 254676427}
   m_CullTransparentMesh: 1
---- !u!1 &258559598 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5639581410585674169, guid: 5565107c46ac41e428b8a6be7d73d54c, type: 3}
-  m_PrefabInstance: {fileID: 1087420597564198966}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &262716070
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30633,7 +30628,7 @@ MonoBehaviour:
   - {fileID: 708887310}
   - {fileID: 648579378}
   - {fileID: 448515978}
-  - {fileID: 258559598}
+  - {fileID: 0}
   - {fileID: 437787496}
   - {fileID: 1804828787}
   _unitClassListRedPlayer:
@@ -36704,7 +36699,7 @@ PrefabInstance:
     - target: {fileID: 4227640084239285831, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
       propertyPath: _unit
       value: 
-      objectReference: {fileID: 258559598}
+      objectReference: {fileID: 0}
     - target: {fileID: 4227640084239285831, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
       propertyPath: _tileId
       value: 53
@@ -40145,7 +40140,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6935754649905861600, guid: d13d24d63aa195243a63da29f19b4545, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6935754649905861600, guid: d13d24d63aa195243a63da29f19b4545, type: 3}
       propertyPath: m_LocalPosition.x
@@ -40702,7 +40697,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8397141456301606983, guid: c0807c386ad77014480c5f58015d648e, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8397141456301606983, guid: c0807c386ad77014480c5f58015d648e, type: 3}
       propertyPath: m_LocalPosition.x

@@ -1,5 +1,33 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-6955324153657936735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4476831530521961204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f899f8fdae36d844bb348c795cf20e08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ListeAttributs: 
+  _Capacity1Name: Transport Massif
+  _IsPassive1: 0
+  _IsBonus1: 0
+  _render1capaOne: {fileID: 0}
+  _Capacity1Description: "Peut embarquer et d\xE9barquer jusqu'\xE0 3 unit\xE9s de
+    type Infanterie ou l'Arm\xE9e de Terre Cuite, ou une seule unit\xE9e d'Artillerie."
+  _Capacity1Cost: 0
+  _Capacity2Name: Plateforme d'Assaut
+  _IsPassive2: 1
+  _IsBonus2: 0
+  _render2capaOne: {fileID: 0}
+  _Capacity2Description: "Si l'unit\xE9 embarqu\xE9e est une artillerie, l'attaque
+    du FAMO prend ses propri\xE9t\xE9s. Sinon, le FAMO lance une attaque cumulant
+    les d\xE9gats des unit\xE9s transport\xE9es."
+  _Capacity2Cost: 0
 --- !u!1001 &9184102578563415203
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9,7 +37,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4707557024412655191, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
       propertyPath: m_Name
-      value: FAMO
+      value: FAMO Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4707557024412655208, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
       propertyPath: m_Controller
@@ -97,3 +125,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
+--- !u!1 &4476831530521961204 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4707557024412655191, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
+  m_PrefabInstance: {fileID: 9184102578563415203}
+  m_PrefabAsset: {fileID: 0}
