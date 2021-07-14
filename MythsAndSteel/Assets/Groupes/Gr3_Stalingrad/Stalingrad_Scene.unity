@@ -34026,7 +34026,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _Capacity1Name: Boost
   render1: {fileID: 0}
-  _Capacity1Description: XXX
+  _Capacity1Description: "Octroit 2 points de d\xE9placement en \xE9change d'un point
+    de vie."
   _Capacity1Cost: 0
 --- !u!4 &4707557025916406524 stripped
 Transform:
