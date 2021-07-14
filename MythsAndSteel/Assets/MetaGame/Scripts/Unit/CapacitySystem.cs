@@ -50,7 +50,7 @@ public class CapacitySystem : MonoSingleton<CapacitySystem>
                     {
                        
                         ButtonLaunchCapacity.GetComponent<Image>().sprite = attacklaunchspritebutton;
-                        UIInstance.Instance.ActivateNextPhaseButton();
+                        
                     }
                 }
                 else

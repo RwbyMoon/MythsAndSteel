@@ -65,8 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Vous \xE9changez la position de 2 unit\xE9s alli\xE9es d\xE9j\xE0 activ\xE9es
-    durant ce tour ou de 2 unit\xE9s ennemies sur le plateau de jeu."
+  m_text: "Vous obtenez un nouvel \xE9v\xE9nement lorsqu'une de vos unit\xE9 meurt."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 27edcde133aa50b448a4c8e5d5845859, type: 2}
   m_sharedMaterial: {fileID: -7314658397477919478, guid: 27edcde133aa50b448a4c8e5d5845859, type: 2}
@@ -572,7 +571,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: JE SUIS UN TITRE
+  m_text: "AUCUN \xC9V\xC9NEMENT"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 27edcde133aa50b448a4c8e5d5845859, type: 2}
   m_sharedMaterial: {fileID: -7314658397477919478, guid: 27edcde133aa50b448a4c8e5d5845859, type: 2}
