@@ -4,13 +4,9 @@ using UnityEngine;
 
 public class MonteeDAdrenaline : Capacity
 {
-    private void Start()
-    {
-        GetComponent<UnitScript>().IsActifNotConsumeAction = true;
-    }
-
     public override void StartCpty()
     {
+        GetComponent<UnitScript>().IsActifNotConsumeAction = true;
         int tileId = RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().ActualTiledId;
         List<GameObject> tile = new List<GameObject>();
 
@@ -28,6 +24,7 @@ public class MonteeDAdrenaline : Capacity
 
     public override void StopCpty()
     {
+        GetComponent<UnitScript>().IsActifNotConsumeAction = false;
         GameManager.Instance.StopEventModeTile();
         GameManager.Instance.TileChooseList.Clear();
         GetComponent<UnitScript>().StopCapacity(true);
@@ -50,5 +47,6 @@ public class MonteeDAdrenaline : Capacity
         GetComponent<UnitScript>().EndCapacity();
         base.EndCpty();
         GameManager.Instance.TileChooseList.Clear();
+        GetComponent<UnitScript>().IsActifNotConsumeAction = false;
     }
 }
