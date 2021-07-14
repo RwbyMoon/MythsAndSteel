@@ -2576,6 +2576,32 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1041681344671033457, guid: 952bdf0716382114eaa4a1733562d578, type: 3}
   m_PrefabInstance: {fileID: 1193533415}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &204458449 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4822377788608978092, guid: 3fbd8c6fc337b284787c1f442bc30be7, type: 3}
+  m_PrefabInstance: {fileID: 1060686575}
+  m_PrefabAsset: {fileID: 0}
+--- !u!223 &204458453
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 204458449}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 25
+  m_SortingLayerID: 0
+  m_SortingOrder: 11
+  m_TargetDisplay: 0
 --- !u!1 &214757153
 GameObject:
   m_ObjectHideFlags: 0
@@ -18505,6 +18531,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1451969760 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7711205531599797849, guid: 3fbd8c6fc337b284787c1f442bc30be7, type: 3}
+  m_PrefabInstance: {fileID: 1060686575}
+  m_PrefabAsset: {fileID: 0}
+--- !u!223 &1451969764
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1451969760}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 25
+  m_SortingLayerID: 0
+  m_SortingOrder: 11
+  m_TargetDisplay: 0
 --- !u!1 &1453559453
 GameObject:
   m_ObjectHideFlags: 0
@@ -18984,6 +19036,32 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2449508067522513048, guid: 23d5891db20fc824ebf77b9b0e573bb7, type: 3}
   m_PrefabInstance: {fileID: 2086137259}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1500484566 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4822377788434849007, guid: 3fbd8c6fc337b284787c1f442bc30be7, type: 3}
+  m_PrefabInstance: {fileID: 1060686575}
+  m_PrefabAsset: {fileID: 0}
+--- !u!223 &1500484570
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1500484566}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 25
+  m_SortingLayerID: 0
+  m_SortingOrder: 11
+  m_TargetDisplay: 0
 --- !u!1 &1507397948
 GameObject:
   m_ObjectHideFlags: 0
