@@ -5901,6 +5901,34 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4707557024412655191, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
   m_PrefabInstance: {fileID: 544631424}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &360124469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 360124468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f899f8fdae36d844bb348c795cf20e08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ListeAttributs: 
+  _Capacity1Name: "R\xE9g\xE9n\xE9ration"
+  _IsPassive1: 1
+  _IsBonus1: 0
+  _render1capaOne: {fileID: 0}
+  _Capacity1Description: "Une fois par tour, se soigne d'un pv lorsqu'une unit\xE9
+    alli\xE9e dans un rayon de deux cases ou lui m\xEAme attaque."
+  _Capacity1Cost: 0
+  _Capacity2Name: Boost
+  _IsPassive2: 0
+  _IsBonus2: 1
+  _render2capaOne: {fileID: 0}
+  _Capacity2Description: "Inflige 1 de d\xE9gat \xE0 une unit\xE9 dans un rayon de
+    deux cases ou lui-m\xEAme. Cette unit\xE9 gagne 2 points de d\xE9placement pour
+    le tour"
+  _Capacity2Cost: 0
 --- !u!1001 &361147857
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6364,6 +6392,32 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4707557024412655191, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
   m_PrefabInstance: {fileID: 996468472}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &388723114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 388723113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f899f8fdae36d844bb348c795cf20e08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ListeAttributs: 
+  _Capacity1Name: Pilonnage
+  _IsPassive1: 1
+  _IsBonus1: 0
+  _render1capaOne: {fileID: 0}
+  _Capacity1Description: "Si l'attaque touche, r\xE9duit de 1 le mouvement de la
+    cible jusqu'\xE0 la fin de son tour."
+  _Capacity1Cost: 0
+  _Capacity2Name: Canon Double
+  _IsPassive2: 1
+  _IsBonus2: 0
+  _render2capaOne: {fileID: 0}
+  _Capacity2Description: Attaque 2 fois par tour.
+  _Capacity2Cost: 0
 --- !u!1 &388783380
 GameObject:
   m_ObjectHideFlags: 0
@@ -9089,6 +9143,33 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4707557024412655191, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
   m_PrefabInstance: {fileID: 1071909155}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &557394559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557394558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f899f8fdae36d844bb348c795cf20e08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ListeAttributs: 
+  _Capacity1Name: Peine Maximale
+  _IsPassive1: 0
+  _IsBonus1: 0
+  _render1capaOne: {fileID: 0}
+  _Capacity1Description: "Une fois activ\xE9, les unit\xE9s alli\xE9es adjacentes
+    infligent forc\xE9ment un coup critique pour ce tour."
+  _Capacity1Cost: 1
+  _Capacity2Name: Bondissement
+  _IsPassive2: 0
+  _IsBonus2: 1
+  _render2capaOne: {fileID: 0}
+  _Capacity2Description: "Bondit sur une case \xE0 maximum 3 cases de port\xE9e.
+    Les unit\xE9s adjacentes au point d'arriv\xE9e sont repouss\xE9es de 1 case."
+  _Capacity2Cost: 1
 --- !u!1 &558206696 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2443697204554867568, guid: 7bbc409cd689e724181e7247346a3e4b, type: 3}
@@ -10494,6 +10575,31 @@ MonoBehaviour:
   _Capacity1Description: "Repousse de trois cases une unit\xE9 adjascente.\n"
   _Capacity1Cost: 0
   LineCount: 3
+--- !u!114 &650296784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 650296782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f899f8fdae36d844bb348c795cf20e08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ListeAttributs: Passe-Muraille
+  _Capacity1Name: Tir de Canons
+  _IsPassive1: 0
+  _IsBonus1: 0
+  _render1capaOne: {fileID: 21300000, guid: 46c51ae1279fb454a9be6e3ac8c6b002, type: 3}
+  _Capacity1Description: "Repousse de trois cases une unit\xE9 adjacente"
+  _Capacity1Cost: 0
+  _Capacity2Name: 
+  _IsPassive2: 0
+  _IsBonus2: 0
+  _render2capaOne: {fileID: 0}
+  _Capacity2Description: 
+  _Capacity2Cost: 0
 --- !u!1 &657214117
 GameObject:
   m_ObjectHideFlags: 0
@@ -26095,6 +26201,33 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4707557024412655191, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
   m_PrefabInstance: {fileID: 1589926969}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1557570496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557570495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f899f8fdae36d844bb348c795cf20e08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ListeAttributs: "R\xE9sistance au Feu"
+  _Capacity1Name: "Train\xE9e de Feu"
+  _IsPassive1: 0
+  _IsBonus1: 0
+  _render1capaOne: {fileID: 0}
+  _Capacity1Description: "Enflamme trois cases align\xE9es \xE0 une port\xE9e de
+    2 cases. La case centrale est un brasier, les deux autres sont des flammes."
+  _Capacity1Cost: 2
+  _Capacity2Name: "Gu\xE9rison Enflamm\xE9e"
+  _IsPassive2: 1
+  _IsBonus2: 0
+  _render2capaOne: {fileID: 0}
+  _Capacity2Description: "Soigne 1 pv si laTarasque est situ\xE9e sur une case Brasier,
+    Flamme ou Fumig\xE8ne \xE0 la fin du tour."
+  _Capacity2Cost: 0
 --- !u!4 &1558656418 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1041681342709538972, guid: 952bdf0716382114eaa4a1733562d578, type: 3}

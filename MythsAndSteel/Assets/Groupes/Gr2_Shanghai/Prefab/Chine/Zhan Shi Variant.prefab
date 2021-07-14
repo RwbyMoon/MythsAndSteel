@@ -1,5 +1,32 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-4671264158916921791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1655675786137903076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f899f8fdae36d844bb348c795cf20e08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ListeAttributs: 
+  _Capacity1Name: Innombrables Armes
+  _IsPassive1: 1
+  _IsBonus1: 0
+  _render1capaOne: {fileID: 0}
+  _Capacity1Description: "Inflige \xE9galement des d\xE9gats \xE0 droite et \xE0
+    gauche de la case cibl\xE9e. Ne peut attaquer qu'en ligne droite. peut cibler
+    une case vide."
+  _Capacity1Cost: 0
+  _Capacity2Name: 
+  _IsPassive2: 0
+  _IsBonus2: 0
+  _render2capaOne: {fileID: 0}
+  _Capacity2Description: 
+  _Capacity2Cost: 0
 --- !u!1001 &6318196745557098931
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9,7 +36,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4707557024412655191, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
       propertyPath: m_Name
-      value: Zhan Shi
+      value: Zhan Shi Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4707557024412655208, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
       propertyPath: m_Controller
@@ -22,6 +49,10 @@ PrefabInstance:
     - target: {fileID: 4707557024412655209, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
       propertyPath: _actualTileld
       value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707557024412655209, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
+      propertyPath: _creationCost
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4707557024412655210, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
       propertyPath: m_Sprite
@@ -97,3 +128,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
+--- !u!1 &1655675786137903076 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4707557024412655191, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
+  m_PrefabInstance: {fileID: 6318196745557098931}
+  m_PrefabAsset: {fileID: 0}

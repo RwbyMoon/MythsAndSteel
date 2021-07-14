@@ -4,16 +4,11 @@ using UnityEngine;
 
 public class Charbonnage : Capacity
 {
-    //Cette capacité appartient à l'unité "Khodok" de l'armée Soviétique sur le plateau de Stalingrad
     public int NbUse = 0;
-
-    private void Start()
-    {
-        GetComponent<UnitScript>().IsActifNotConsumeAction = true;
-    }
 
     public override void StartCpty()
     {
+        GetComponent<UnitScript>().IsActiveNotConsumeAction = true;
         int tileId = RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().ActualTiledId;
         List<GameObject> tile = new List<GameObject>();
 

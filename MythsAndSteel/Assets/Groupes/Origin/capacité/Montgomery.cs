@@ -22,6 +22,7 @@ public class Montgomery : Capacity
         {
             Destroy(GetComponent<Montgomery>());
         }
+        GetComponent<UnitScript>()._isActionDone = true;
 
     }
 

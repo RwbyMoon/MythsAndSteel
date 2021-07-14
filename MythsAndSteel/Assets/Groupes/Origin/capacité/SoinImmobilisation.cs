@@ -104,6 +104,5 @@ public class SoinImmobilisation : Capacity
         GetComponent<UnitScript>().EndCapacity();
         base.EndCpty();
         GameManager.Instance.TileChooseList.Clear();
-        
     }
 }

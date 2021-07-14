@@ -58,6 +58,5 @@ public class ChargeCreuse: Capacity
             GetComponent<UnitScript>().EndCapacity();
             base.EndCpty();
             GameManager.Instance.TileChooseList.Clear();
-        
     }
 }

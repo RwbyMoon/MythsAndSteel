@@ -1,5 +1,31 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-802962132420264226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3516828726791126061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f899f8fdae36d844bb348c795cf20e08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ListeAttributs: 
+  _Capacity1Name: "Acc\xE9l\xE9ration"
+  _IsPassive1: 0
+  _IsBonus1: 0
+  _render1capaOne: {fileID: 0}
+  _Capacity1Description: "Obtient 1 d\xE9placement suppl\xE9mentaire ce tour si,
+    \xE0 l'activation, une case adjacente est enflamm\xE9e ou sous fumig\xE9ne."
+  _Capacity1Cost: 0
+  _Capacity2Name: 
+  _IsPassive2: 0
+  _IsBonus2: 0
+  _render2capaOne: {fileID: 0}
+  _Capacity2Description: 
+  _Capacity2Cost: 0
 --- !u!1001 &8186087493465334394
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9,7 +35,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4707557024412655191, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
       propertyPath: m_Name
-      value: Escouade d'infanterie
+      value: Escouade d'infanterie Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4707557024412655208, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
       propertyPath: m_Controller
@@ -109,3 +135,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
+--- !u!1 &3516828726791126061 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4707557024412655191, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
+  m_PrefabInstance: {fileID: 8186087493465334394}
+  m_PrefabAsset: {fileID: 0}
