@@ -7,13 +7,9 @@ public class Charbonnage : Capacity
     //Cette capacité appartient à l'unité "Khodok" de l'armée Soviétique sur le plateau de Stalingrad
     public int NbUse = 0;
 
-    private void Start()
-    {
-        GetComponent<UnitScript>().IsActifNotConsumeAction = true;
-    }
-
     public override void StartCpty()
     {
+        GetComponent<UnitScript>().IsActifNotConsumeAction = true;
         int tileId = RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().ActualTiledId;
         List<GameObject> tile = new List<GameObject>();
 
@@ -30,6 +26,7 @@ public class Charbonnage : Capacity
     }
     public override void StopCpty()
     {
+        GetComponent<UnitScript>().IsActifNotConsumeAction = false;
         GameManager.Instance.StopEventModeTile();
         GameManager.Instance.TileChooseList.Clear();
         GetComponent<UnitScript>().StopCapacity(true);
@@ -54,5 +51,6 @@ public class Charbonnage : Capacity
         GetComponent<UnitScript>().EndCapacity();
         base.EndCpty();
         GameManager.Instance.TileChooseList.Clear();
+        GetComponent<UnitScript>().IsActifNotConsumeAction = false;
     }
 }
