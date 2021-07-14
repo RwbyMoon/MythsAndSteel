@@ -31,6 +31,7 @@ public class Mouvement : MonoSingleton<Mouvement>
 
     //Déplacement restant de l'unité au départ
     int MoveLeftBase = 0;
+    int MoveBonusBase = 0;
 
     [Header("INFOS DE L UNITE")]
     //Est ce que l'unité a commencé à choisir son déplacement
@@ -338,6 +339,7 @@ public class Mouvement : MonoSingleton<Mouvement>
                 {
                     _selected = true;
                     MoveLeftBase = mUnit.GetComponent<UnitScript>().MoveLeft;
+                    MoveBonusBase = mUnit.GetComponent<UnitScript>().MoveSpeedBonus;
                     UIInstance.Instance.ButtonRenfortJ1.GetComponent<Button>().interactable = false;
                     StartMouvement(TilesManager.Instance.TileList.IndexOf(tileSelected), mUnit.GetComponent<UnitScript>().MoveSpeed - (mUnit.GetComponent<UnitScript>().MoveSpeed - MoveLeftBase) + mUnit.GetComponent<UnitScript>().MoveSpeedBonus);
                 }
@@ -360,6 +362,7 @@ public class Mouvement : MonoSingleton<Mouvement>
                 {
                     _selected = true;
                     MoveLeftBase = mUnit.GetComponent<UnitScript>().MoveLeft;
+                    MoveBonusBase = mUnit.GetComponent<UnitScript>().MoveSpeedBonus;
                     UIInstance.Instance.ButtonRenfortJ2.GetComponent<Button>().interactable = false;
                     StartMouvement(TilesManager.Instance.TileList.IndexOf(tileSelected), mUnit.GetComponent<UnitScript>().MoveSpeed - (mUnit.GetComponent<UnitScript>().MoveSpeed - MoveLeftBase) + mUnit.GetComponent<UnitScript>().MoveSpeedBonus);
                 }
@@ -440,6 +443,7 @@ public class Mouvement : MonoSingleton<Mouvement>
         _selected = false;
 
         if (mUnit != null) mUnit.GetComponent<UnitScript>().MoveLeft = forceStop ? MoveLeftBase : mUnit.GetComponent<UnitScript>().MoveLeft;
+        if (mUnit != null) mUnit.GetComponent<UnitScript>().MoveSpeedBonus = forceStop ? MoveBonusBase : mUnit.GetComponent<UnitScript>().MoveSpeedBonus;
 
         if (!forceStop) if (mUnit != null) mUnit.GetComponent<UnitScript>().checkMovementLeft();
 
