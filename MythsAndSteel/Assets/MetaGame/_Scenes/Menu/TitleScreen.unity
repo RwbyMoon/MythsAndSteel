@@ -5869,6 +5869,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -0.00018310547
       objectReference: {fileID: 0}
+    - target: {fileID: 3972754823849131323, guid: f51c8a88773ecef42b36032d9a962578, type: 3}
+      propertyPath: m_text
+      value: SHANGHAI
+      objectReference: {fileID: 0}
     - target: {fileID: 6313619179094915181, guid: f51c8a88773ecef42b36032d9a962578, type: 3}
       propertyPath: m_Type
       value: 1
