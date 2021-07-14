@@ -1,5 +1,30 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &5703388264934728116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2508425555460148649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f899f8fdae36d844bb348c795cf20e08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ListeAttributs: "D\xE9viation"
+  _Capacity1Name: Aimant
+  _IsPassive1: 0
+  _render1capaOne: {fileID: 0}
+  _Capacity1Description: "D\xE9signez une case vide \xE0 port\xE9e d'attaque. Une
+    unit\xE9 ennemie adjacente au choix est d\xE9plac\xE9e sur cette case et subit
+    1 de d\xE9gat pour chaque autre unit\xE9 adjacente."
+  _Capacity1Cost: 0
+  _Capacity2Name: 
+  _IsPassive2: 0
+  _render2capaOne: {fileID: 0}
+  _Capacity2Description: 
+  _Capacity2Cost: 0
 --- !u!1001 &7177380925644477438
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9,7 +34,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4707557024412655191, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
       propertyPath: m_Name
-      value: Magnetzylinder
+      value: Magnetzylinder Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4707557024412655208, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
       propertyPath: m_Controller
@@ -109,3 +134,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
+--- !u!1 &2508425555460148649 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4707557024412655191, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
+  m_PrefabInstance: {fileID: 7177380925644477438}
+  m_PrefabAsset: {fileID: 0}

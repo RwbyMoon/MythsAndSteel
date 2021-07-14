@@ -17,6 +17,32 @@ MonoBehaviour:
   _Capacity1Description: Soigne 2PV.
   _Capacity1Cost: 0
   HealValue: 1
+--- !u!114 &7655854916117174074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 79178721405990367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f899f8fdae36d844bb348c795cf20e08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ListeAttributs: 
+  _Capacity1Name: "Gu\xE9rison"
+  _IsPassive1: 0
+  _IsBonus1: 0
+  _render1capaOne: {fileID: 0}
+  _Capacity1Description: "Soigne 2 pv \xE0 une unit\xE9 sur une case adjacente."
+  _Capacity1Cost: 0
+  _Capacity2Name: Transport
+  _IsPassive2: 0
+  _IsBonus2: 0
+  _render2capaOne: {fileID: 0}
+  _Capacity2Description: "Peut embarquer et d\xE9barquer une unit\xE9 de type infanterie,
+    artillerie ou leader."
+  _Capacity2Cost: 0
 --- !u!1001 &4633595491155618696
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26,7 +52,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4707557024412655191, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
       propertyPath: m_Name
-      value: "Semi-chenill\xE9 Citro\xEBn"
+      value: "Semi-chenill\xE9 Citro\xEBn Variant"
       objectReference: {fileID: 0}
     - target: {fileID: 4707557024412655208, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
       propertyPath: m_Controller

@@ -69,7 +69,6 @@ public class HealNear : Capacity
             }            
         }
         GameManager.Instance.StopEventModeTile();
-
         GameManager.Instance.TileChooseList.Clear();
     }
 }

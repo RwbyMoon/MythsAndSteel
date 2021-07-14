@@ -65,7 +65,6 @@ public class Guérison : Capacity
             }            
         }
         GameManager.Instance.StopEventModeTile();
-
         GameManager.Instance.TileChooseList.Clear();
     }
 }

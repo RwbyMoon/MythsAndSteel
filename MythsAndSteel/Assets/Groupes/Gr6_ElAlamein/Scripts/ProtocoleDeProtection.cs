@@ -4,13 +4,9 @@ using UnityEngine;
 
 public class ProtocoleDeProtection : Capacity
 {
-    private void Start()
-    {
-        GetComponent<UnitScript>().IsActifNotConsumeAction = true;
-    }
-
     public override void StartCpty()
     {
+        GetComponent<UnitScript>().IsActiveNotConsumeAction = true;
         int tileId = RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().ActualTiledId;
         List<GameObject> tile = new List<GameObject>();
         if(GetComponent<UnitScript>().ActifUsedThisTurn == false)

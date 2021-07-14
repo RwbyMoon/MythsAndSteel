@@ -75,7 +75,6 @@ public class Luch : Capacity
 
         Deplacementcapacity();
 
-
     }
 
 
@@ -100,6 +99,6 @@ public class Luch : Capacity
 
         GameManager.Instance.TileChooseList.Clear();
         GameManager.Instance.UnitChooseList.Clear();
-    } 
-        }
+        } 
+    }
 } 
