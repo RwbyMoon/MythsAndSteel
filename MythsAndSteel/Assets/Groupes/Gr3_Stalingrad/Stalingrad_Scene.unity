@@ -34012,6 +34012,22 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2266382448025749778, guid: 3831259cca6181646b59cb16ac12a33e, type: 3}
   m_PrefabInstance: {fileID: 6784484788899480530}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4707557025916406465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4707557025916406464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa5e99b2c9a986c438052d586919e0ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Capacity1Name: Boost
+  render1: {fileID: 0}
+  _Capacity1Description: XXX
+  _Capacity1Cost: 0
 --- !u!4 &4707557025916406524 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2266382448025749806, guid: 3831259cca6181646b59cb16ac12a33e, type: 3}

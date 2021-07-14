@@ -5,13 +5,8 @@ using UnityEngine;
 public class MélodieSinistre : Capacity
 {
 
-
-
-
     public override void StartCpty()
     {
-   
-        
             List<GameObject> unit = new List<GameObject>();
         foreach (int i in PlayerStatic.GetNeighbourDiag(gameObject.GetComponent<UnitScript>().ActualTiledId, TilesManager.Instance.TileList[gameObject.GetComponent<UnitScript>().ActualTiledId].GetComponent<TileScript>().Line, false))
         {
