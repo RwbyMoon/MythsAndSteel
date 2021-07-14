@@ -102,10 +102,11 @@ MonoBehaviour:
   _unitSO: {fileID: 11400000, guid: eb7cf035e257ee342afc39f6fe213e13, type: 2}
   ParalysieStat: 3
   HasOnlyOneDamage: 0
-  IgnoreTerrainEffect: 0
   IsActifNotConsumeAction: 0
   ActifUsedThisTurn: 0
   "M\xE9lodieSinistre": 0
+  RestreintAuxRails: 0
+  ToutTerrain: 0
   _life: 2
   Renderer: {fileID: 1225121456783386000}
   _shield: 0
@@ -143,6 +144,7 @@ MonoBehaviour:
   NewTurnHasStart: 0
   PermaSpeedBoost: 0
   PermaRangeBoost: 0
+  PermaDiceBoost: 0
   DoingCharg1Blue: 0
 --- !u!95 &2593954544535607008
 Animator:
@@ -177,8 +179,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _Capacity1Name: "Mont\xE9e d'Adr\xE9naline"
   render1: {fileID: 0}
-  _Capacity1Description: "Augmente de 2 le d\xE9placement pour 1 de ressource. Ne
-    consume pas l'action."
+  _Capacity1Description: "Augmente de 2 le d\xE9placement pour 1 de ressource."
   _Capacity1Cost: 1
 --- !u!1 &2848508895635588526
 GameObject:
