@@ -29,7 +29,7 @@ MonoBehaviour:
   CreationCost: 0
   numberOfUnitToAttack: 1
   DamageMinimum: 1
-  NumberRangeMin: {x: 4, y: 9}
+  NumberRangeMin: {x: 4, y: 10}
   DamageMaximum: 2
   NumberRangeMax: {x: 11, y: 12}
   SonAttaque: {fileID: 8300000, guid: e8225fe54bcf46d4fa7d8de053364773, type: 3}
