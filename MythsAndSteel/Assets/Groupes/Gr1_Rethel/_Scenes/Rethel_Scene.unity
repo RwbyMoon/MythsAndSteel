@@ -5901,6 +5901,23 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4707557024412655191, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
   m_PrefabInstance: {fileID: 544631424}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &360124469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 360124468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa5e99b2c9a986c438052d586919e0ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Capacity1Name: Boost
+  render1: {fileID: 0}
+  _Capacity1Description: "Conf\xE8re 2 points de d\xE9placements ce tour-ci mais
+    inflige 1 point de d\xE9g\xE2t \xE0 sa cible."
+  _Capacity1Cost: 0
 --- !u!1001 &361147857
 PrefabInstance:
   m_ObjectHideFlags: 0
