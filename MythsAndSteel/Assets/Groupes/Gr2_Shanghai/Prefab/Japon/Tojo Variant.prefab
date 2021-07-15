@@ -1,5 +1,29 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-975647743455600892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8397141456301607035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b5d53f4caebfc4f80e7f9f37bea2cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Capacity1Name: '!!Services Secrets!!'
+  _Capacity1Type: Actif
+  _Capacity1Cost: 1
+  _Capacity1Desc: Jouez en premier au prochain tour si vous utiliser une activation
+    de 2 ou 3.
+  _Capacity1Icon: {fileID: 0}
+  _Capacity2Name: '!!Fil du Rasoir!!'
+  _Capacity2Type: Bonus
+  _Capacity2Cost: 0
+  _Capacity2Desc: "D\xE9placez une unit\xE9 alli\xE9e adjacente de 1 case. Si l'unit\xE9
+    est une infanterie, vous pouvez la d\xE9placer de 2 cases."
+  _Capacity2Icon: {fileID: 0}
 --- !u!1001 &3881040226970408492
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9,7 +33,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4707557024412655191, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
       propertyPath: m_Name
-      value: Tojo
+      value: Tojo Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4707557024412655208, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
       propertyPath: m_Controller
@@ -97,3 +121,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
+--- !u!1 &8397141456301607035 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4707557024412655191, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
+  m_PrefabInstance: {fileID: 3881040226970408492}
+  m_PrefabAsset: {fileID: 0}
