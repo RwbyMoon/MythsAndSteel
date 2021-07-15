@@ -196,6 +196,7 @@ GameObject:
   - component: {fileID: 5758008742859672169}
   - component: {fileID: 5758008742859672170}
   - component: {fileID: 5758008742859672171}
+  - component: {fileID: -1640379524802307477}
   m_Layer: 0
   m_Name: t-34
   m_TagString: Untagged
@@ -284,7 +285,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _unitSO: {fileID: 11400000, guid: 82d8921d06f7ace48b7bc4ad1f90e6a2, type: 2}
   ParalysieStat: 3
+  HasOnlyOneDamage: 0
+  IsActifNotConsumeAction: 0
+  ActifUsedThisTurn: 0
   "M\xE9lodieSinistre": 0
+  RestreintAuxRails: 0
+  ToutTerrain: 0
   _life: 1
   Renderer: {fileID: 5758008742859672169}
   _shield: 2
@@ -318,6 +324,11 @@ MonoBehaviour:
   step: 0
   hasUseActivation: 0
   _Animation: {fileID: 5758008742859672171}
+  HasAttacked: 0
+  NewTurnHasStart: 0
+  PermaSpeedBoost: 0
+  PermaRangeBoost: 0
+  PermaDiceBoost: 0
   DoingCharg1Blue: 0
 --- !u!95 &5758008742859672171
 Animator:
@@ -338,3 +349,27 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-1640379524802307477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5758008742859672148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b5d53f4caebfc4f80e7f9f37bea2cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Capacity1Name: '!!Projectiles Perforants!!'
+  _Capacity1Type: Passif
+  _Capacity1Cost: 0
+  _Capacity1Desc: "Inflige des d\xE9gats \xE0 l'unit\xE9 derri\xE8re la cible de
+    l'attaque."
+  _Capacity1Icon: {fileID: 0}
+  _Capacity2Name: "!!D\xE9molition!!"
+  _Capacity2Type: Passif
+  _Capacity2Cost: 0
+  _Capacity2Desc: "Lorsque cette unit\xE9 se d\xE9place sur une case Habitation ou
+    Village Fortifi\xE9, d\xE9truit l'habition de cette case."
+  _Capacity2Icon: {fileID: 0}

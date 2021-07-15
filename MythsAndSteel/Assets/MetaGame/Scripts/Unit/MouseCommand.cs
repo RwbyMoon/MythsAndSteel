@@ -125,7 +125,7 @@ public class MouseCommand : MonoBehaviour
             UI.capacityList.RemoveAt(UI.capacityList.Count - 1);
         }
 
-        if (RaycastManager.Instance.Tile.GetComponent<TileScript>().Unit.TryGetComponent<Capacity>(out Capacity Capa))
+        if (RaycastManager.Instance.Tile.GetComponent<TileScript>().Unit.TryGetComponent<InfoCarnet>(out InfoCarnet Capa))
         {
             int contentSize = 0;
             // CAPACITY 1.             
@@ -138,6 +138,20 @@ public class MouseCommand : MonoBehaviour
                 UI.capacityList.Add(CAPA1);
 
                 int lengthTxt = CAPA1.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text.Length;
+                float LengthLine = (float)lengthTxt / 21;
+                int truncateLine = (int)LengthLine;
+                int capaSize = 130 + (20 * truncateLine);
+                contentSize += capaSize;
+            }
+            //CAPACITY 2
+            if(Capa.ReturnInfo(UI.capacityPrefab, 1) != null)
+            {
+                GameObject CAPA2 = Instantiate(Capa.ReturnInfo(UI.capacityPrefab, 1), Vector2.zero, Quaternion.identity);
+                CAPA2.transform.SetParent(UI.capacityParent.transform);
+                CAPA2.transform.localScale = new Vector3(.9f, .9f, .9f);
+                UI.capacityList.Add(CAPA2);
+
+                int lengthTxt = CAPA2.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text.Length;
                 float LengthLine = (float)lengthTxt / 21;
                 int truncateLine = (int)LengthLine;
                 int capaSize = 130 + (20 * truncateLine);

@@ -198,6 +198,7 @@ GameObject:
   - component: {fileID: 6420901648960162121}
   - component: {fileID: 4753591438848281323}
   - component: {fileID: -4089065534864919919}
+  - component: {fileID: 7126560212069548910}
   m_Layer: 0
   m_Name: constantinRoko
   m_TagString: Untagged
@@ -287,10 +288,11 @@ MonoBehaviour:
   _unitSO: {fileID: 11400000, guid: d5abb7e13ee71c344af2e91f1a032bd3, type: 2}
   ParalysieStat: 3
   HasOnlyOneDamage: 0
-  IgnoreTerrainEffect: 0
   IsActifNotConsumeAction: 0
   ActifUsedThisTurn: 0
   "M\xE9lodieSinistre": 0
+  RestreintAuxRails: 0
+  ToutTerrain: 0
   _life: 1
   Renderer: {fileID: 6420901648960162123}
   _shield: 2
@@ -375,6 +377,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _Capacity1Name: "Gu\xE9rilla Urbaine"
   render1: {fileID: 0}
-  _Capacity1Description: "Pour 2 ressources, cr\xE9e une infanterie sur une case
-    maison ou ruine."
+  _Capacity1Description: Fait apparaitre une infanterie sur n'importe quelle case
+    Maison ou Ruine.
   _Capacity1Cost: 2
+--- !u!114 &7126560212069548910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6420901648960162166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b5d53f4caebfc4f80e7f9f37bea2cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Capacity1Name: Guidage Radio
+  _Capacity1Type: Passif
+  _Capacity1Cost: 0
+  _Capacity1Desc: "Les unit\xE9s adjacentes obtiennent +1 de port\xE9e."
+  _Capacity1Icon: {fileID: 0}
+  _Capacity2Name: "Gu\xE9rilla Urbaine"
+  _Capacity2Type: Actif
+  _Capacity2Cost: 2
+  _Capacity2Desc: Fait apparaitre une infanterie sur n'importe quelle case Maison
+    ou Ruine.
+  _Capacity2Icon: {fileID: 0}
