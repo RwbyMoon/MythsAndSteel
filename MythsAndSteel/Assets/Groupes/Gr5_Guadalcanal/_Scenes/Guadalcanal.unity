@@ -3335,6 +3335,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5db0fc29cd345474d9a8114deb688c67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &199574545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 199574542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b5d53f4caebfc4f80e7f9f37bea2cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Capacity1Name: Formation Offensive
+  _Capacity1Type: Passif
+  _Capacity1Cost: 0
+  _Capacity1Desc: "Obtient +1 aux bornes d'attaque pour chaque unit\xE9 alli\xE9e
+    adjacente."
+  _Capacity1Icon: {fileID: 0}
+  _Capacity2Name: 
+  _Capacity2Type: 
+  _Capacity2Cost: 0
+  _Capacity2Desc: 
+  _Capacity2Icon: {fileID: 21300000, guid: 24c38065f0aa40046a1f50a3c6882ced, type: 3}
 --- !u!1 &206205581
 GameObject:
   m_ObjectHideFlags: 0
@@ -3702,6 +3725,30 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4707557024412655191, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
   m_PrefabInstance: {fileID: 865889745}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &234009824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 234009823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b5d53f4caebfc4f80e7f9f37bea2cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Capacity1Name: "!!Bouc-\xC9missaire!!"
+  _Capacity1Type: Bonus
+  _Capacity1Cost: 0
+  _Capacity1Desc: "Cible une unit\xE9 dans un rayon de 2 cases. L'unit\xE9 cibl\xE9e
+    ne peut attaqu\xE9e que cette unit\xE9 au prochain tour."
+  _Capacity1Icon: {fileID: 0}
+  _Capacity2Name: "!!Surpuissance Inhib\xE9e!!"
+  _Capacity2Type: Passif
+  _Capacity2Cost: 0
+  _Capacity2Desc: "Peut attaquer 2 fois par tour. Si cette unit\xE9 attaque 2 fois,
+    elle est immobilis\xE9e au tour suivant."
+  _Capacity2Icon: {fileID: 0}
 --- !u!1 &235284657
 GameObject:
   m_ObjectHideFlags: 0
@@ -7559,6 +7606,29 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4707557024412655211, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
   m_PrefabInstance: {fileID: 561884633}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &513370114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 513370112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b5d53f4caebfc4f80e7f9f37bea2cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Capacity1Name: "!!Absorb-\xC2me!!"
+  _Capacity1Type: Passif
+  _Capacity1Cost: 0
+  _Capacity1Desc: "Toutes les 2 unit\xE9s alli\xE9es tu\xE9es, obtient +1 pv et +1
+    aux bornes d'attaque."
+  _Capacity1Icon: {fileID: 0}
+  _Capacity2Name: 
+  _Capacity2Type: 
+  _Capacity2Cost: 0
+  _Capacity2Desc: 
+  _Capacity2Icon: {fileID: 0}
 --- !u!1001 &516666377
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15727,6 +15797,29 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4707557024412655191, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
   m_PrefabInstance: {fileID: 465719014}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1032696543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1032696542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b5d53f4caebfc4f80e7f9f37bea2cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Capacity1Name: '!!Silence!!'
+  _Capacity1Type: Passif
+  _Capacity1Cost: 0
+  _Capacity1Desc: "L'unit\xE9 attaqu\xE9e ne peut pas utiliser de capacit\xE9 active
+    pendant 1 tour."
+  _Capacity1Icon: {fileID: 0}
+  _Capacity2Name: 
+  _Capacity2Type: 
+  _Capacity2Cost: 0
+  _Capacity2Desc: 
+  _Capacity2Icon: {fileID: 21300000, guid: 24c38065f0aa40046a1f50a3c6882ced, type: 3}
 --- !u!1 &1036091114
 GameObject:
   m_ObjectHideFlags: 0
@@ -21321,6 +21414,29 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4707557024412655191, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
   m_PrefabInstance: {fileID: 896254662}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1346271145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1346271144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b5d53f4caebfc4f80e7f9f37bea2cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Capacity1Name: '!!Bonus Littoral!!'
+  _Capacity1Type: Passif
+  _Capacity1Cost: 0
+  _Capacity1Desc: "Obtient +2 aux bornes d'attaques et +1 de d\xE9placement si l'unit\xE9
+    est sur une case Sable."
+  _Capacity1Icon: {fileID: 0}
+  _Capacity2Name: 
+  _Capacity2Type: 
+  _Capacity2Cost: 0
+  _Capacity2Desc: 
+  _Capacity2Icon: {fileID: 21300000, guid: 24c38065f0aa40046a1f50a3c6882ced, type: 3}
 --- !u!1 &1365245465
 GameObject:
   m_ObjectHideFlags: 0
@@ -22351,6 +22467,31 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4707557024412655191, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
   m_PrefabInstance: {fileID: 1463317679}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1422913584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1422913583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b5d53f4caebfc4f80e7f9f37bea2cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Capacity1Name: '!!Exhortation!!'
+  _Capacity1Type: Passif
+  _Capacity1Cost: 0
+  _Capacity1Desc: "Les unit\xE9s alli\xE9es dans un rayon de 2 cases obtiennent +2
+    de d\xE9placement."
+  _Capacity1Icon: {fileID: 0}
+  _Capacity2Name: '!!Tir d''Obus!!'
+  _Capacity2Type: Actif
+  _Capacity2Cost: 0
+  _Capacity2Desc: "Cible n'importe quelle case. \xC0 la fin du prochain tour adverse,
+    l'unit\xE9 situ\xE9e sur la case cibl\xE9e subit 3 d\xE9gats et est immobilis\xE9e
+    pour 1 tour."
+  _Capacity2Icon: {fileID: 0}
 --- !u!1 &1424447019
 GameObject:
   m_ObjectHideFlags: 0
@@ -24072,9 +24213,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _Capacity1Name: "Regroupement Instantan\xE9"
   render1: {fileID: 21300000, guid: cd671cc539bc6714a93c571750c94a56, type: 3}
-  _Capacity1Description: "(Ressources x1 ) : D\xE9placez instantan\xE9ment 2 unit\xE9s
-    d'infanteries alli\xE9s en jeu sur des cases adjacentes \xE0 Hiro Onoda"
+  _Capacity1Description: "D\xE9placez 2 unit\xE9s d'Infanteries alli\xE9es sur des
+    cases adjacentes \xE0 cette unit\xE9."
   _Capacity1Cost: 0
+--- !u!114 &1537405049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1537405047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b5d53f4caebfc4f80e7f9f37bea2cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Capacity1Name: "Regroupement Instantan\xE9"
+  _Capacity1Type: Actif
+  _Capacity1Cost: 0
+  _Capacity1Desc: "D\xE9placez 2 unit\xE9s d'Infanteries alli\xE9es sur des cases
+    adjacentes \xE0 cette unit\xE9."
+  _Capacity1Icon: {fileID: 21300000, guid: cd671cc539bc6714a93c571750c94a56, type: 3}
+  _Capacity2Name: '!!Sprint Forestier!!'
+  _Capacity2Type: Passif
+  _Capacity2Cost: 0
+  _Capacity2Desc: "Ignore les cases For\xEAts. Obtient +1 de d\xE9placement lorsqu'il
+    est situ\xE9 sur une case For\xEAt ou Bosquet au d\xE9but du tour."
+  _Capacity2Icon: {fileID: 0}
 --- !u!4 &1545497638 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7194796541536929993, guid: bc99eaef1dfebfb43b5e5a2698619705, type: 3}
@@ -29360,6 +29525,29 @@ MonoBehaviour:
   render1: {fileID: 0}
   _Capacity1Description: Permet d'emprunter les tunnels.
   _Capacity1Cost: 0
+--- !u!114 &1866652675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1866652673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b5d53f4caebfc4f80e7f9f37bea2cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Capacity1Name: Menace Souterraine
+  _Capacity1Type: 
+  _Capacity1Cost: 0
+  _Capacity1Desc: "Si l'unit\xE9 est situ\xE9e sur une case tunnel, elle peut rejoindre
+    n'importe quelle autre case tunnel."
+  _Capacity1Icon: {fileID: 0}
+  _Capacity2Name: 
+  _Capacity2Type: 
+  _Capacity2Cost: 0
+  _Capacity2Desc: 
+  _Capacity2Icon: {fileID: 21300000, guid: 24c38065f0aa40046a1f50a3c6882ced, type: 3}
 --- !u!1001 &1870634794
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31786,6 +31974,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5db0fc29cd345474d9a8114deb688c67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2010313272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2010313270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b5d53f4caebfc4f80e7f9f37bea2cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Capacity1Name: Formation Offensive
+  _Capacity1Type: Passif
+  _Capacity1Cost: 0
+  _Capacity1Desc: "Obtient +1 aux bornes d'attaque pour chaque unit\xE9 alli\xE9e
+    adjacente."
+  _Capacity1Icon: {fileID: 0}
+  _Capacity2Name: 
+  _Capacity2Type: 
+  _Capacity2Cost: 0
+  _Capacity2Desc: 
+  _Capacity2Icon: {fileID: 21300000, guid: 24c38065f0aa40046a1f50a3c6882ced, type: 3}
 --- !u!1 &2017380097
 GameObject:
   m_ObjectHideFlags: 0
@@ -35714,6 +35925,29 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4707557024412655191, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
   m_PrefabInstance: {fileID: 926478704}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2095743528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2095743527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b5d53f4caebfc4f80e7f9f37bea2cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Capacity1Name: '!!Flottaison!!'
+  _Capacity1Type: Bonus
+  _Capacity1Cost: 0
+  _Capacity1Desc: "Cible une unit\xE9 qui devient insensible \xE0 la mar\xE9e pour
+    le reste de la partie. Une fois par tour."
+  _Capacity1Icon: {fileID: 0}
+  _Capacity2Name: '!!Submersible!!'
+  _Capacity2Type: Passif
+  _Capacity2Cost: 0
+  _Capacity2Desc: Peut stationner sur les cases d'eau
+  _Capacity2Icon: {fileID: 0}
 --- !u!1 &2102142803
 GameObject:
   m_ObjectHideFlags: 0
