@@ -19036,32 +19036,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2449508067522513048, guid: 23d5891db20fc824ebf77b9b0e573bb7, type: 3}
   m_PrefabInstance: {fileID: 2086137259}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1500484566 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4822377788434849007, guid: 3fbd8c6fc337b284787c1f442bc30be7, type: 3}
-  m_PrefabInstance: {fileID: 1060686575}
-  m_PrefabAsset: {fileID: 0}
---- !u!223 &1500484570
-Canvas:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1500484566}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_RenderMode: 2
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
-  m_ReceivesEvents: 1
-  m_OverrideSorting: 1
-  m_OverridePixelPerfect: 0
-  m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 25
-  m_SortingLayerID: 0
-  m_SortingOrder: 11
-  m_TargetDisplay: 0
 --- !u!1 &1507397948
 GameObject:
   m_ObjectHideFlags: 0
@@ -23164,32 +23138,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2331065828151374522, guid: 695c2af5849e9d045a1493acfb28b89c, type: 3}
   m_PrefabInstance: {fileID: 1832407662}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1839184088 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7711205531599797849, guid: 3fbd8c6fc337b284787c1f442bc30be7, type: 3}
-  m_PrefabInstance: {fileID: 1060686575}
-  m_PrefabAsset: {fileID: 0}
---- !u!223 &1839184092
-Canvas:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1839184088}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_RenderMode: 2
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
-  m_ReceivesEvents: 1
-  m_OverrideSorting: 1
-  m_OverridePixelPerfect: 0
-  m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 25
-  m_SortingLayerID: 0
-  m_SortingOrder: 11
-  m_TargetDisplay: 0
 --- !u!1 &1839300238
 GameObject:
   m_ObjectHideFlags: 0
@@ -24065,32 +24013,6 @@ MonoBehaviour:
   - {fileID: 7657445243503043418, guid: 4e5ee84b2c28f4a4fa75b7395ac5ecbf, type: 3}
   - {fileID: 6214391671270575512, guid: 4e5ee84b2c28f4a4fa75b7395ac5ecbf, type: 3}
   - {fileID: 3737658178518209235, guid: 4e5ee84b2c28f4a4fa75b7395ac5ecbf, type: 3}
---- !u!1 &1872758584 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4822377788608978092, guid: 3fbd8c6fc337b284787c1f442bc30be7, type: 3}
-  m_PrefabInstance: {fileID: 1060686575}
-  m_PrefabAsset: {fileID: 0}
---- !u!223 &1872758588
-Canvas:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1872758584}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_RenderMode: 2
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
-  m_ReceivesEvents: 1
-  m_OverrideSorting: 1
-  m_OverridePixelPerfect: 0
-  m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 25
-  m_SortingLayerID: 0
-  m_SortingOrder: 11
-  m_TargetDisplay: 0
 --- !u!1 &1890824750
 GameObject:
   m_ObjectHideFlags: 0
@@ -34192,23 +34114,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2266382448025749778, guid: 3831259cca6181646b59cb16ac12a33e, type: 3}
   m_PrefabInstance: {fileID: 6784484788899480530}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4707557025916406465
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4707557025916406464}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa5e99b2c9a986c438052d586919e0ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _Capacity1Name: Boost
-  render1: {fileID: 0}
-  _Capacity1Description: "Octroit 2 points de d\xE9placement en \xE9change d'un point
-    de vie."
-  _Capacity1Cost: 0
 --- !u!4 &4707557025916406524 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2266382448025749806, guid: 3831259cca6181646b59cb16ac12a33e, type: 3}
