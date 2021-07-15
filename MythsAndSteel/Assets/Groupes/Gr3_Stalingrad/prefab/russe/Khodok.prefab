@@ -198,6 +198,7 @@ GameObject:
   - component: {fileID: 5169323942884928850}
   - component: {fileID: -1217298405274476376}
   - component: {fileID: 748318498993160264}
+  - component: {fileID: -3596402995040630579}
   m_Layer: 0
   m_Name: Khodok
   m_TagString: Untagged
@@ -287,10 +288,11 @@ MonoBehaviour:
   _unitSO: {fileID: 11400000, guid: 8035a37f68842804fabcc94281ef016d, type: 2}
   ParalysieStat: 3
   HasOnlyOneDamage: 0
-  IgnoreTerrainEffect: 0
   IsActifNotConsumeAction: 0
   ActifUsedThisTurn: 0
   "M\xE9lodieSinistre": 0
+  RestreintAuxRails: 0
+  ToutTerrain: 0
   _life: 1
   Renderer: {fileID: 5169323942884928848}
   _shield: 2
@@ -328,6 +330,7 @@ MonoBehaviour:
   NewTurnHasStart: 0
   PermaSpeedBoost: 0
   PermaRangeBoost: 0
+  PermaDiceBoost: 0
   DoingCharg1Blue: 0
 --- !u!95 &5169323942884928850
 Animator:
@@ -362,8 +365,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _Capacity1Name: Charbonnage
   render1: {fileID: 0}
-  _Capacity1Description: "Obtient 1 point de d\xE9placement permanant. Ne consomme
-    pas d'action, utilisable une seule fois par tour. Deux utilisations par partie."
+  _Capacity1Description: "Obtient +1 de d\xE9placement permanent. 2 utilisations
+    par partie."
   _Capacity1Cost: 1
   NbUse: 0
 --- !u!114 &748318498993160264
@@ -380,7 +383,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _Capacity1Name: "Col\xE8re du Khodok"
   render1: {fileID: 0}
-  _Capacity1Description: Obtient +2 au prochain lancer d'attaque par point de vie
-    perdu.
+  _Capacity1Description: "Obtient +2 aux bornes d'attaque par point de vie perdu.\nLe
+    bonus est perdu lorsque l'unit\xE9 a attaqu\xE9."
   actualLife: 0
   actualBonus: 0
+--- !u!114 &-3596402995040630579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5169323942884928877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b5d53f4caebfc4f80e7f9f37bea2cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Capacity1Name: Charbonnage
+  _Capacity1Type: Bonus
+  _Capacity1Cost: 1
+  _Capacity1Desc: "Obtient +1 de d\xE9placement permanent. 2 utilisations par partie."
+  _Capacity1Icon: {fileID: 0}
+  _Capacity2Name: "Col\xE8re du Khodok"
+  _Capacity2Type: Passif
+  _Capacity2Cost: 0
+  _Capacity2Desc: "Obtient +2 aux bornes d'attaque par point de vie perdu.\nLe bonus
+    est perdu lorsque l'unit\xE9 a attaqu\xE9."
+  _Capacity2Icon: {fileID: 0}

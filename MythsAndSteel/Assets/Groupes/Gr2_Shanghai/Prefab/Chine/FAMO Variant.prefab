@@ -1,5 +1,32 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &7460124256111532490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4476831530521961204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b5d53f4caebfc4f80e7f9f37bea2cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Capacity1Name: '!!Transport Massif!!'
+  _Capacity1Type: Transport
+  _Capacity1Cost: 0
+  _Capacity1Desc: "Peut transporter jusqu'\xE0 3 unit\xE9s de type Infanterie ou
+    l'Arm\xE9e de Terre Cuite, ou 1 unit\xE9 de type Artillerie."
+  _Capacity1Icon: {fileID: 0}
+  _Capacity2Name: '!!Plateforme d''Assaut!!'
+  _Capacity2Type: Passif
+  _Capacity2Cost: 0
+  _Capacity2Desc: "Les d\xE9gats de cette unit\xE9 correspondent au total des d\xE9gats
+    des unit\xE9s embarqu\xE9es.\nLa port\xE9e de cette unit\xE9 est \xE9gale \xE0
+    la port\xE9e de l'unit\xE9 embarqu\xE9e ayant la port\xE9e la plus \xE9lev\xE9e.\nSi
+    l'unit\xE9 transport\xE9e est une artillerie, l'attaque de cette unit\xE9 prend
+    les propri\xE9t\xE9 de l'artillerie embarqu\xE9e."
+  _Capacity2Icon: {fileID: 0}
 --- !u!1001 &9184102578563415203
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9,7 +36,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4707557024412655191, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
       propertyPath: m_Name
-      value: FAMO
+      value: FAMO Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4707557024412655208, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
       propertyPath: m_Controller
@@ -97,3 +124,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
+--- !u!1 &4476831530521961204 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4707557024412655191, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
+  m_PrefabInstance: {fileID: 9184102578563415203}
+  m_PrefabAsset: {fileID: 0}

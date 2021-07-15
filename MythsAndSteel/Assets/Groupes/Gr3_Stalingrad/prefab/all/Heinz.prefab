@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4003429510070703653}
   - component: {fileID: 8564601576450574414}
   - component: {fileID: -616173837872172603}
+  - component: {fileID: 4484776114591397506}
   m_Layer: 0
   m_Name: Heinz
   m_TagString: Untagged
@@ -103,10 +104,11 @@ MonoBehaviour:
   _unitSO: {fileID: 11400000, guid: 5c74d978cc1e1a842a99f2e81e6fbf6d, type: 2}
   ParalysieStat: 3
   HasOnlyOneDamage: 0
-  IgnoreTerrainEffect: 0
   IsActifNotConsumeAction: 0
   ActifUsedThisTurn: 0
   "M\xE9lodieSinistre": 0
+  RestreintAuxRails: 0
+  ToutTerrain: 0
   _life: 1
   Renderer: {fileID: 4003429510070703655}
   _shield: 2
@@ -179,8 +181,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _Capacity1Name: Blitzkrieg
   render1: {fileID: 21300000, guid: 5fd1aa00fccfc004cb44ab63e4919a9b, type: 3}
-  _Capacity1Description: "L'unit\xE9 poss\xE8de un pouvoir permettant d'activer 2
-    troupes suppl\xE9mentaires durant ce tour."
+  _Capacity1Description: "Conf\xE8re 2 activations suppl\xE9mentaires."
   _Capacity1Cost: 2
 --- !u!114 &-616173837872172603
 MonoBehaviour:
@@ -194,6 +195,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb606d4f2e86cc4488ea7a83027e2fb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4484776114591397506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4003429510070703642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b5d53f4caebfc4f80e7f9f37bea2cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Capacity1Name: Blitzkrieg
+  _Capacity1Type: Bonus
+  _Capacity1Cost: 2
+  _Capacity1Desc: "Conf\xE8re 2 activations suppl\xE9mentaires."
+  _Capacity1Icon: {fileID: 21300000, guid: 5fd1aa00fccfc004cb44ab63e4919a9b, type: 3}
+  _Capacity2Name: Schneller Heinz
+  _Capacity2Type: Passif
+  _Capacity2Cost: 0
+  _Capacity2Desc: "Les unit\xE9s adjacentes obtiennent +1 de d\xE9placement."
+  _Capacity2Icon: {fileID: 0}
 --- !u!1 &4003429510586119330
 GameObject:
   m_ObjectHideFlags: 0

@@ -114,6 +114,7 @@ GameObject:
   - component: {fileID: 9001176123927704527}
   - component: {fileID: 9001176123927704524}
   - component: {fileID: 9001176123927704525}
+  - component: {fileID: -2426854240184784339}
   m_Layer: 0
   m_Name: heitzur
   m_TagString: Untagged
@@ -202,7 +203,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _unitSO: {fileID: 11400000, guid: c986ffec888924a4c8e6e8166aeee749, type: 2}
   ParalysieStat: 3
+  HasOnlyOneDamage: 0
+  IsActifNotConsumeAction: 0
+  ActifUsedThisTurn: 0
   "M\xE9lodieSinistre": 0
+  RestreintAuxRails: 0
+  ToutTerrain: 0
   _life: 1
   Renderer: {fileID: 9001176123927704527}
   _shield: 2
@@ -236,6 +242,11 @@ MonoBehaviour:
   step: 0
   hasUseActivation: 0
   _Animation: {fileID: 9001176123927704525}
+  HasAttacked: 0
+  NewTurnHasStart: 0
+  PermaSpeedBoost: 0
+  PermaRangeBoost: 0
+  PermaDiceBoost: 0
   DoingCharg1Blue: 0
 --- !u!95 &9001176123927704525
 Animator:
@@ -256,6 +267,32 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-2426854240184784339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9001176123927704562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b5d53f4caebfc4f80e7f9f37bea2cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Capacity1Name: '!!Radiateur!!'
+  _Capacity1Type: Passif
+  _Capacity1Cost: 0
+  _Capacity1Desc: "Les unit\xE9s situ\xE9es dans un rayon de 2 cases obtiennent l'attribut
+    R\xE9sistance au Froid."
+  _Capacity1Icon: {fileID: 0}
+  _Capacity2Name: '!!Surchauffe!!'
+  _Capacity2Type: Actif
+  _Capacity2Cost: 0
+  _Capacity2Desc: "Cible 1 case adjacente. L'un des effets suivant est d\xE9clench\xE9
+    al\xE9atoirement :\n-Inflige 3 d\xE9gats sur la case cibl\xE9e\n-Inflige 1 d\xE9gat
+    dans la zone de 1x3 cases face au Heitzur\n-Ne fait rien\n\nD\xE9sactive Radiateur
+    jusqu'\xE0 votre prochain tour."
+  _Capacity2Icon: {fileID: 0}
 --- !u!1 &9001176125508522314
 GameObject:
   m_ObjectHideFlags: 0
