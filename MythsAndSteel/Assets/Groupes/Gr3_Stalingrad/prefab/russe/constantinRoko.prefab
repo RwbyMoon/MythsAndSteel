@@ -376,7 +376,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _Capacity1Name: "Gu\xE9rilla Urbaine"
-  render1: {fileID: 0}
+  render1: {fileID: 21300000, guid: a74d5e2db16998340a432f7d083a5eb3, type: 3}
   _Capacity1Description: Fait apparaitre une infanterie sur n'importe quelle case
     Maison ou Ruine.
   _Capacity1Cost: 2
@@ -402,4 +402,4 @@ MonoBehaviour:
   _Capacity2Cost: 2
   _Capacity2Desc: Fait apparaitre une infanterie sur n'importe quelle case Maison
     ou Ruine.
-  _Capacity2Icon: {fileID: 0}
+  _Capacity2Icon: {fileID: 21300000, guid: a74d5e2db16998340a432f7d083a5eb3, type: 3}

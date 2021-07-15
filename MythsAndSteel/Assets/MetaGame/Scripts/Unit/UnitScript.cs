@@ -114,6 +114,10 @@ public class UnitScript : MonoBehaviour
         }
     }
 
+    public int NbAtkTurn = 1;
+    public int NbAttaqueParTour = 1;
+    public bool HasAttackedOneTime;
+
     public bool RunningCapacity = false;
 
     [Header("------------------- MOUVEMENT -------------------")]
@@ -911,6 +915,8 @@ public class UnitScript : MonoBehaviour
         _isActivationDone = false;
         _isMoveDone = false;
         _isActionDone = false;
+        NbAttaqueParTour = NbAtkTurn;
+        HasAttackedOneTime = false;
 
         StartCoroutine(NewTurnHasStarted());
 
@@ -983,15 +989,18 @@ public class UnitScript : MonoBehaviour
 
     public void StartCapacity()
     {
-        CapacitySystem.Instance.CapacityRunning = true;
-        RunningCapacity = true; 
-        CapacitySystem.Instance.Updatebutton();
-        UIInstance.Instance.DesactivateNextPhaseButton();
+        if (!HasAttackedOneTime)
+        {
+            CapacitySystem.Instance.CapacityRunning = true;
+            RunningCapacity = true;
+            CapacitySystem.Instance.Updatebutton();
+            UIInstance.Instance.DesactivateNextPhaseButton();
             if (TryGetComponent<Capacity>(out Capacity T))
             {
                 Debug.Log("starrt");
                 T.StartCpty();
             }
+        }
     }
 
     public void EndCapacity()

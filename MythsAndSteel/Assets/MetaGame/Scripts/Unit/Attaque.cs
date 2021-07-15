@@ -924,9 +924,15 @@ public class Attaque : MonoSingleton<Attaque>
     public void ApplyAttack()
     {
         Randomdice();
+        _selectedUnit.GetComponent<UnitScript>().NbAttaqueParTour--;
+        _selectedUnit.GetComponent<UnitScript>().HasAttackedOneTime = true;
         CapacitySystem.Instance.Updatebutton();
         IsInAttack = false;
-        _selectedUnit.GetComponent<UnitScript>()._isActionDone = true;
+        if(_selectedUnit.GetComponent<UnitScript>().NbAttaqueParTour == 0)
+        {
+            _selectedUnit.GetComponent<UnitScript>()._isActionDone = true;
+
+        }
         _selectedUnit.GetComponent<UnitScript>().HasAttackedThisTurn();
 
         _selectedUnit.GetComponent<UnitScript>().checkActivation();
