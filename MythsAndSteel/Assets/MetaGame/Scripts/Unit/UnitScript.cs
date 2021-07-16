@@ -505,8 +505,10 @@ public class UnitScript : MonoBehaviour
                                                 {
                                                     if (Try2.TryGetComponent<TerrainParent>(out TerrainParent Try3))
                                                     {
-                                                        AttackVariation += Try3.AttackApply(Damage);
-
+                                                        if (!ToutTerrain)
+                                                        {
+                                                            AttackVariation += Try3.AttackApply(Damage);
+                                                        }
                                                     }
                                                 }
                                             }
@@ -517,8 +519,10 @@ public class UnitScript : MonoBehaviour
                                     {
                                         if (Type.Child.TryGetComponent<TerrainParent>(out TerrainParent Try))
                                         {
-                                            AttackVariation += Try.AttackApply(Damage);
-
+                                            if (!ToutTerrain)
+                                            {
+                                                AttackVariation += Try.AttackApply(Damage);
+                                            }
                                         }
                                     }
                                 }

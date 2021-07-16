@@ -59,6 +59,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: f5c3560a5809b6e4daf3070f30f72648, type: 2}
     - target: {fileID: 4707557024412655209, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
+      propertyPath: ToutTerrain
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707557024412655209, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
       propertyPath: _actualTileld
       value: 27
       objectReference: {fileID: 0}

@@ -34572,6 +34572,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1506776438210952331, guid: 9cf76d2be6b627b40889961dea1d86ff, type: 3}
+      propertyPath: ToutTerrain
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1506776438210952373, guid: 9cf76d2be6b627b40889961dea1d86ff, type: 3}
       propertyPath: m_Name
       value: grenadier

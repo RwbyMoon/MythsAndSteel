@@ -202,18 +202,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _unitSO: {fileID: 11400000, guid: 72f1363cae7c1b84dab6ed2d32b10daf, type: 2}
   ParalysieStat: 3
+  HasOnlyOneDamage: 0
+  IsActifNotConsumeAction: 0
+  ActifUsedThisTurn: 0
   "M\xE9lodieSinistre": 0
+  RestreintAuxRails: 0
+  ToutTerrain: 1
   _life: 3
   Renderer: {fileID: 2528127683006937201}
   _shield: 0
   _attackRange: 1
-  AttackRangeBonus: 0
+  _attackRangeBonus: 0
   _numberRangeMin: {x: 5, y: 9}
   _damageMinimum: 1
   _numberRangeMax: {x: 10, y: 12}
   _damageMaximum: 2
   _damageBonus: 0
   _diceBonus: 0
+  NbAtkTurn: 1
+  NbAttaqueParTour: 1
+  HasAttackedOneTime: 0
   RunningCapacity: 0
   _moveSpeed: 4
   _MoveSpeedBonus: 0
@@ -236,6 +244,11 @@ MonoBehaviour:
   step: 0
   hasUseActivation: 0
   _Animation: {fileID: 6773546416074122514}
+  HasAttacked: 0
+  NewTurnHasStart: 0
+  PermaSpeedBoost: 0
+  PermaRangeBoost: 0
+  PermaDiceBoost: 0
   DoingCharg1Blue: 0
 --- !u!95 &6773546416074122514
 Animator:

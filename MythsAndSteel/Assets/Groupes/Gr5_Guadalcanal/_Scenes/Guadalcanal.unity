@@ -6414,6 +6414,10 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4707557024412655209, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
+      propertyPath: ToutTerrain
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707557024412655209, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
       propertyPath: _SonAttaque
       value: 
       objectReference: {fileID: 8300000, guid: 3279ed92f37d3704a8993d19656aa86b, type: 3}

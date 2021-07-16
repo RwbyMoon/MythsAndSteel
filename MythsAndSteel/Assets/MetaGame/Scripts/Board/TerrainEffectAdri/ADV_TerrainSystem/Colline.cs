@@ -6,7 +6,10 @@ public class Colline : TerrainParent
 {
     public override int AttackRangeValue(int i = 0)
     {
-        i = 1;
+        if (!RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().ToutTerrain)
+        {
+            i = 1;
+        }
         return base.AttackRangeValue(i);
     }
 }

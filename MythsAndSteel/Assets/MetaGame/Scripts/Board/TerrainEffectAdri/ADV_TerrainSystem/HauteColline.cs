@@ -6,10 +6,14 @@ public class HauteColline : TerrainParent
 {
     public bool cibled = false;
     public bool cibled2 = false;
+    bool cibledUnitHasToutTerrain;
 
     public override int AttackRangeValue(int i = 0)
     {
-        i = 1;
+        if (!RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().ToutTerrain)
+        {
+            i = 1;
+        }
         return base.AttackRangeValue(i);
     }
 
@@ -20,7 +24,14 @@ public class HauteColline : TerrainParent
             if (!TilesManager.Instance.TileList[Mouvement.Instance._selectedTileId[Mouvement.Instance._selectedTileId.Count - 1]].GetComponent<TileScript>().TerrainEffectList.Contains(MYthsAndSteel_Enum.TerrainType.Haute_colline) && !TilesManager.Instance.TileList[Mouvement.Instance._selectedTileId[Mouvement.Instance._selectedTileId.Count - 1]].GetComponent<TileScript>().TerrainEffectList.Contains(MYthsAndSteel_Enum.TerrainType.Colline))
             {
                 cibled = true;
-                AttackerUnit.DiceBonus += -3;
+                if (!RaycastManager.Instance.Tile.GetComponent<TileScript>().Unit.GetComponent<UnitScript>().ToutTerrain)
+                {
+                    AttackerUnit.DiceBonus += -3;
+                }
+                else
+                {
+                    cibledUnitHasToutTerrain = true;
+                }
                 Attaque.Instance._JaugeAttack.SynchAttackBorne(AttackerUnit);
             }
         }
@@ -29,7 +40,14 @@ public class HauteColline : TerrainParent
             if (!TilesManager.Instance.TileList[AttackerUnit.ActualTiledId].GetComponent<TileScript>().TerrainEffectList.Contains(MYthsAndSteel_Enum.TerrainType.Haute_colline) && !TilesManager.Instance.TileList[AttackerUnit.ActualTiledId].GetComponent<TileScript>().TerrainEffectList.Contains(MYthsAndSteel_Enum.TerrainType.Colline))
             {
                 cibled2 = true;
-                AttackerUnit.DiceBonus += -1;
+                if (!RaycastManager.Instance.Tile.GetComponent<TileScript>().Unit.GetComponent<UnitScript>().ToutTerrain)
+                {
+                    AttackerUnit.DiceBonus += -1;
+                }
+                else
+                {
+                    cibledUnitHasToutTerrain = true;
+                }
                 Attaque.Instance._JaugeAttack.SynchAttackBorne(AttackerUnit);
             }
 
@@ -43,17 +61,23 @@ public class HauteColline : TerrainParent
         if (cibled)
         {
             cibled = false;
-            Unit.DiceBonus += 3;
+            if (!cibledUnitHasToutTerrain)
+            {
+                Unit.DiceBonus += 3;
+            }
             Attaque.Instance._JaugeAttack.SynchAttackBorne(Unit);
         }
         else if (cibled2)
         {
             cibled2 = false;
-            Unit.DiceBonus += 1;
+            if (cibledUnitHasToutTerrain)
+            {
+                Unit.DiceBonus += 1;
+            }
             Attaque.Instance._JaugeAttack.SynchAttackBorne(Unit);
         }
         base.UnCibledByAttack(Unit);
-
+        cibledUnitHasToutTerrain = false;
     }
 
 }

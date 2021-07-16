@@ -41064,6 +41064,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 904422083806506550, guid: 3209a011f5235014593734e4a9df9abe, type: 3}
+      propertyPath: ToutTerrain
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4499843879284164869, guid: 3209a011f5235014593734e4a9df9abe, type: 3}
       propertyPath: render1
       value: 
