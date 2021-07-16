@@ -55,6 +55,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 9100000, guid: 1663d1e2d57765748b2cb44642c0063a, type: 2}
     - target: {fileID: 4707557024412655209, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
+      propertyPath: Volant
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707557024412655209, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
       propertyPath: _unitSO
       value: 
       objectReference: {fileID: 11400000, guid: f5c3560a5809b6e4daf3070f30f72648, type: 2}

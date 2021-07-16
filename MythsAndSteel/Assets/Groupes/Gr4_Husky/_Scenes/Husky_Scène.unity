@@ -3205,6 +3205,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4707557024412655209, guid: 041c8ce0012199e43a1c6005e614fab3, type: 3}
+      propertyPath: FireResistance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707557024412655209, guid: 041c8ce0012199e43a1c6005e614fab3, type: 3}
       propertyPath: _damageMaximum
       value: 3
       objectReference: {fileID: 0}
@@ -26861,6 +26865,10 @@ PrefabInstance:
     - target: {fileID: 4707557024412655209, guid: 041c8ce0012199e43a1c6005e614fab3, type: 3}
       propertyPath: _creationCost
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707557024412655209, guid: 041c8ce0012199e43a1c6005e614fab3, type: 3}
+      propertyPath: FireResistance
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4707557024412655209, guid: 041c8ce0012199e43a1c6005e614fab3, type: 3}
       propertyPath: _damageMaximum

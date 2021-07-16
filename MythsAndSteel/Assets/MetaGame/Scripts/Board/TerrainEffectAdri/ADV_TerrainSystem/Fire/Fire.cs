@@ -112,12 +112,12 @@ public class Fire : TerrainParent
     {
         TurnLeft--;
         Debug.Log(TurnLeft);
-        if (TurnLeft == 2)
+        if (TurnLeft == 2 && !Unit.GetComponent<UnitScript>().Volant && !Unit.GetComponent<UnitScript>().FireResistance)
         {
             if (Unit != null) Unit.TakeDamage(2);
 
         }
-        if (TurnLeft == 1)
+        if (TurnLeft == 1 && !Unit.GetComponent<UnitScript>().Volant && !Unit.GetComponent<UnitScript>().FireResistance)
         {
             if (Unit != null) Unit.TakeDamage(1);
         }

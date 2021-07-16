@@ -36,6 +36,8 @@ public class UnitScript : MonoBehaviour
     [Header("--------------- Attributs ---------------")]
     public bool RestreintAuxRails;
     public bool ToutTerrain;
+    public bool Volant;
+    public bool FireResistance;
     [Header("------------------- VIE -------------------")]
     [Header("------------------- STAT EN JEU -------------------")]
     //Vie actuelle
@@ -505,7 +507,7 @@ public class UnitScript : MonoBehaviour
                                                 {
                                                     if (Try2.TryGetComponent<TerrainParent>(out TerrainParent Try3))
                                                     {
-                                                        if (!ToutTerrain)
+                                                        if (!Volant)
                                                         {
                                                             AttackVariation += Try3.AttackApply(Damage);
                                                         }
@@ -519,7 +521,7 @@ public class UnitScript : MonoBehaviour
                                     {
                                         if (Type.Child.TryGetComponent<TerrainParent>(out TerrainParent Try))
                                         {
-                                            if (!ToutTerrain)
+                                            if (!Volant)
                                             {
                                                 AttackVariation += Try.AttackApply(Damage);
                                             }

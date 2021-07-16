@@ -6,11 +6,11 @@ public class HauteColline : TerrainParent
 {
     public bool cibled = false;
     public bool cibled2 = false;
-    bool cibledUnitHasToutTerrain;
+    bool cibledIsImmune;
 
     public override int AttackRangeValue(int i = 0)
     {
-        if (!RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().ToutTerrain)
+        if (!RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().Volant)
         {
             i = 1;
         }
@@ -24,13 +24,13 @@ public class HauteColline : TerrainParent
             if (!TilesManager.Instance.TileList[Mouvement.Instance._selectedTileId[Mouvement.Instance._selectedTileId.Count - 1]].GetComponent<TileScript>().TerrainEffectList.Contains(MYthsAndSteel_Enum.TerrainType.Haute_colline) && !TilesManager.Instance.TileList[Mouvement.Instance._selectedTileId[Mouvement.Instance._selectedTileId.Count - 1]].GetComponent<TileScript>().TerrainEffectList.Contains(MYthsAndSteel_Enum.TerrainType.Colline))
             {
                 cibled = true;
-                if (!RaycastManager.Instance.Tile.GetComponent<TileScript>().Unit.GetComponent<UnitScript>().ToutTerrain)
+                if (!RaycastManager.Instance.Tile.GetComponent<TileScript>().Unit.GetComponent<UnitScript>().Volant)
                 {
                     AttackerUnit.DiceBonus += -3;
                 }
                 else
                 {
-                    cibledUnitHasToutTerrain = true;
+                    cibledIsImmune = true;
                 }
                 Attaque.Instance._JaugeAttack.SynchAttackBorne(AttackerUnit);
             }
@@ -40,13 +40,13 @@ public class HauteColline : TerrainParent
             if (!TilesManager.Instance.TileList[AttackerUnit.ActualTiledId].GetComponent<TileScript>().TerrainEffectList.Contains(MYthsAndSteel_Enum.TerrainType.Haute_colline) && !TilesManager.Instance.TileList[AttackerUnit.ActualTiledId].GetComponent<TileScript>().TerrainEffectList.Contains(MYthsAndSteel_Enum.TerrainType.Colline))
             {
                 cibled2 = true;
-                if (!RaycastManager.Instance.Tile.GetComponent<TileScript>().Unit.GetComponent<UnitScript>().ToutTerrain)
+                if (!RaycastManager.Instance.Tile.GetComponent<TileScript>().Unit.GetComponent<UnitScript>().Volant)
                 {
                     AttackerUnit.DiceBonus += -1;
                 }
                 else
                 {
-                    cibledUnitHasToutTerrain = true;
+                    cibledIsImmune = true;
                 }
                 Attaque.Instance._JaugeAttack.SynchAttackBorne(AttackerUnit);
             }
@@ -61,7 +61,7 @@ public class HauteColline : TerrainParent
         if (cibled)
         {
             cibled = false;
-            if (!cibledUnitHasToutTerrain)
+            if (!cibledIsImmune)
             {
                 Unit.DiceBonus += 3;
             }
@@ -70,14 +70,14 @@ public class HauteColline : TerrainParent
         else if (cibled2)
         {
             cibled2 = false;
-            if (cibledUnitHasToutTerrain)
+            if (!cibledIsImmune)
             {
                 Unit.DiceBonus += 1;
             }
             Attaque.Instance._JaugeAttack.SynchAttackBorne(Unit);
         }
         base.UnCibledByAttack(Unit);
-        cibledUnitHasToutTerrain = false;
+        cibledIsImmune = false;
     }
 
 }

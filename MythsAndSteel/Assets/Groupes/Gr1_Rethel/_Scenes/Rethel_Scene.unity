@@ -26799,6 +26799,10 @@ PrefabInstance:
       propertyPath: _actualTileld
       value: 18
       objectReference: {fileID: 0}
+    - target: {fileID: 4707557024412655209, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
+      propertyPath: FireResistance
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4707557024412655210, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
       propertyPath: m_Sprite
       value: 

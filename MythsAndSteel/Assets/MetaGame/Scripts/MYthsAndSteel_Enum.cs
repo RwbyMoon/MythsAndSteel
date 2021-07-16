@@ -87,6 +87,6 @@ public class MYthsAndSteel_Enum : MonoBehaviour
     }
     public enum Attributs
     {
-       Aucun = 0, Déviation = 1, RésistanceAuFroid = 2, RésistanceAuFeu = 3, AppelDeRenforts = 4, ToutTerrain = 5, PasseMuraille = 6, Perforant = 7, Amphibie = 8, Démineur = 9, RestreintAuxRails = 10 
+       Aucun = 0, Déviation = 1, RésistanceAuFroid = 2, RésistanceAuFeu = 3, AppelDeRenforts = 4, ToutTerrain = 5, PasseMuraille = 6, Perforant = 7, Amphibie = 8, Démineur = 9, RestreintAuxRails = 10, Volant = 11
     }
 }

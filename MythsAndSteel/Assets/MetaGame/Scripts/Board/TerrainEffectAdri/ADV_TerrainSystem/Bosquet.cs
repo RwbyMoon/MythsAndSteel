@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class Bosquet : TerrainParent
 {
-    bool cibledUnitHasToutTerrain;
+    bool cibledIsImmune;
     public override void CibledByAttack(UnitScript AttackerUnit, TileScript AttackerUnitCase)
     {
-        if (!RaycastManager.Instance.Tile.GetComponent<TileScript>().Unit.GetComponent<UnitScript>().ToutTerrain)
+        if (!RaycastManager.Instance.Tile.GetComponent<TileScript>().Unit.GetComponent<UnitScript>().Volant)
         {
             AttackerUnit.DiceBonus += -1;
         }
         else
         {
-            cibledUnitHasToutTerrain = true;
+            cibledIsImmune = true;
         }
         Attaque.Instance._JaugeAttack.SynchAttackBorne(AttackerUnit);
         base.CibledByAttack(AttackerUnit, AttackerUnitCase);
@@ -21,12 +21,12 @@ public class Bosquet : TerrainParent
 
     public override void UnCibledByAttack(UnitScript Unit)
     {
-        if (!cibledUnitHasToutTerrain)
+        if (!cibledIsImmune)
         {
             Unit.DiceBonus += 1;
         }
         Attaque.Instance._JaugeAttack.SynchAttackBorne(Unit);
-        cibledUnitHasToutTerrain = false;
+        cibledIsImmune = false;
         base.UnCibledByAttack(Unit);
     }
 }
