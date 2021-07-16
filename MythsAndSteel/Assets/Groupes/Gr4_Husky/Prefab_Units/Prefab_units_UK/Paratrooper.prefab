@@ -196,6 +196,7 @@ GameObject:
   - component: {fileID: 6646977064435794354}
   - component: {fileID: 9166173353713999790}
   - component: {fileID: 7143242636321155155}
+  - component: {fileID: -7082578767158967755}
   m_Layer: 0
   m_Name: Paratrooper
   m_TagString: Untagged
@@ -284,18 +285,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _unitSO: {fileID: 11400000, guid: 3b2cdca043299a54fb7073ef19c93683, type: 2}
   ParalysieStat: 3
+  HasOnlyOneDamage: 0
+  IsActifNotConsumeAction: 0
+  ActifUsedThisTurn: 0
   "M\xE9lodieSinistre": 0
+  RestreintAuxRails: 0
+  ToutTerrain: 0
   _life: 2
   Renderer: {fileID: 6646977064435794354}
   _shield: 0
   _attackRange: 1
-  AttackRangeBonus: 0
+  _attackRangeBonus: 0
   _numberRangeMin: {x: 5, y: 10}
   _damageMinimum: 1
   _numberRangeMax: {x: 11, y: 12}
   _damageMaximum: 3
   _damageBonus: 0
   _diceBonus: 0
+  NbAtkTurn: 1
+  NbAttaqueParTour: 1
+  HasAttackedOneTime: 0
   RunningCapacity: 0
   _moveSpeed: 4
   _MoveSpeedBonus: 0
@@ -318,6 +327,11 @@ MonoBehaviour:
   step: 0
   hasUseActivation: 0
   _Animation: {fileID: 7143242636321155155}
+  HasAttacked: 0
+  NewTurnHasStart: 0
+  PermaSpeedBoost: 0
+  PermaRangeBoost: 0
+  PermaDiceBoost: 0
   DoingCharg1Blue: 0
 --- !u!95 &7143242636321155155
 Animator:
@@ -338,3 +352,26 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-7082578767158967755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7826486721459903355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b5d53f4caebfc4f80e7f9f37bea2cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Capacity1Name: "!!Menace A\xE9rienne!!"
+  _Capacity1Type: Passif
+  _Capacity1Cost: 0
+  _Capacity1Desc: "Peut-\xEAtre recrut\xE9 partout sur le terrain (sauf Haute-Colline,
+    Ressource, Usine et Objectif)."
+  _Capacity1Icon: {fileID: 0}
+  _Capacity2Name: 
+  _Capacity2Type: 
+  _Capacity2Cost: 0
+  _Capacity2Desc: 
+  _Capacity2Icon: {fileID: 21300000, guid: 24c38065f0aa40046a1f50a3c6882ced, type: 3}

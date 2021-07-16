@@ -3308,6 +3308,28 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4707557024412655191, guid: 041c8ce0012199e43a1c6005e614fab3, type: 3}
   m_PrefabInstance: {fileID: 178807600}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &178807603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 178807602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b5d53f4caebfc4f80e7f9f37bea2cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Capacity1Name: "!!Masse Cyclop\xE9enne!!"
+  _Capacity1Type: Passif
+  _Capacity1Cost: 0
+  _Capacity1Desc: "D\xE9place l'unit\xE9 attaqu\xE9e de 3 cases de votre choix."
+  _Capacity1Icon: {fileID: 0}
+  _Capacity2Name: 
+  _Capacity2Type: 
+  _Capacity2Cost: 0
+  _Capacity2Desc: 
+  _Capacity2Icon: {fileID: 21300000, guid: 24c38065f0aa40046a1f50a3c6882ced, type: 3}
 --- !u!1001 &182419463
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3459,6 +3481,30 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4707557024412655211, guid: 041c8ce0012199e43a1c6005e614fab3, type: 3}
   m_PrefabInstance: {fileID: 182419463}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &182419466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 182419464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b5d53f4caebfc4f80e7f9f37bea2cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Capacity1Name: '!!Contrecoup!!'
+  _Capacity1Type: Passif
+  _Capacity1Cost: 0
+  _Capacity1Desc: "D\xE9place l'unit\xE9e attaqu\xE9e d'une case dans la direction
+    de votre choix."
+  _Capacity1Icon: {fileID: 0}
+  _Capacity2Name: '!!Grue!!'
+  _Capacity2Type: Actif
+  _Capacity2Cost: 0
+  _Capacity2Desc: "D\xE9place une unit\xE9 adjacente sur une autre case adjacente
+    \xE0 cette unit\xE9 (diagonales incluses)."
+  _Capacity2Icon: {fileID: 0}
 --- !u!1001 &188076899
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4109,12 +4155,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b699dfaad64cecd4db2c734c3fd7b8f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Capacity1Name: Coeur de flamme
+  _Capacity1Name: '!!Coeur de flamme!!'
   render1: {fileID: 21300000, guid: 869be2b71c57b1f41b3fb3883eaf131f, type: 3}
   _Capacity1Description: Embrase une zone de 5 cases.
   _Capacity1Cost: 1
   fr: {fileID: 2043064946}
   Range: 3
+--- !u!114 &231853588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 231853585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b5d53f4caebfc4f80e7f9f37bea2cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Capacity1Name: '!!Coeur de Flamme!!'
+  _Capacity1Type: Actif
+  _Capacity1Cost: 0
+  _Capacity1Desc: "Embrase trois cases align\xE9es \xE0 port\xE9e d'attaque \xE0
+    la fin du prochain tour adverse."
+  _Capacity1Icon: {fileID: 0}
+  _Capacity2Name: "Coul\xE9e de Lave"
+  _Capacity2Type: Passif
+  _Capacity2Cost: 0
+  _Capacity2Desc: "L'attaque enflamme la case cibl\xE9e. Embrase en cas de critique."
+  _Capacity2Icon: {fileID: 0}
 --- !u!1001 &235730751
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23498,6 +23567,29 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4707557024412655211, guid: 041c8ce0012199e43a1c6005e614fab3, type: 3}
   m_PrefabInstance: {fileID: 1418046027}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1418046030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1418046028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b5d53f4caebfc4f80e7f9f37bea2cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Capacity1Name: "!!D\xE9flagration!!"
+  _Capacity1Type: Passif
+  _Capacity1Cost: 0
+  _Capacity1Desc: "Inflige 1 d\xE9g\xE2t aux unit\xE9s adjacentes \xE0 la cible en
+    cas de coup critique."
+  _Capacity1Icon: {fileID: 0}
+  _Capacity2Name: 
+  _Capacity2Type: 
+  _Capacity2Cost: 0
+  _Capacity2Desc: 
+  _Capacity2Icon: {fileID: 21300000, guid: 24c38065f0aa40046a1f50a3c6882ced, type: 3}
 --- !u!1 &1424447019
 GameObject:
   m_ObjectHideFlags: 0
@@ -24035,6 +24127,29 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4707557024412655211, guid: 041c8ce0012199e43a1c6005e614fab3, type: 3}
   m_PrefabInstance: {fileID: 1440441356}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1440441359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1440441357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b5d53f4caebfc4f80e7f9f37bea2cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Capacity1Name: "!!Menace A\xE9rienne!!"
+  _Capacity1Type: Passif
+  _Capacity1Cost: 0
+  _Capacity1Desc: "Peut-\xEAtre recrut\xE9 partout sur le terrain (sauf Haute-Colline,
+    Ressource, Usine et Objectif)."
+  _Capacity1Icon: {fileID: 0}
+  _Capacity2Name: 
+  _Capacity2Type: 
+  _Capacity2Cost: 0
+  _Capacity2Desc: 
+  _Capacity2Icon: {fileID: 21300000, guid: 24c38065f0aa40046a1f50a3c6882ced, type: 3}
 --- !u!1001 &1441415956
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24982,6 +25097,31 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4707557024412655211, guid: 041c8ce0012199e43a1c6005e614fab3, type: 3}
   m_PrefabInstance: {fileID: 1486647608}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1486647611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1486647609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b5d53f4caebfc4f80e7f9f37bea2cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Capacity1Name: '!!Bouclier Arthurien!!'
+  _Capacity1Type: Passif
+  _Capacity1Cost: 0
+  _Capacity1Desc: "Les unit\xE9s alli\xE9es adjacentes obtiennent +1 d'armure."
+  _Capacity1Icon: {fileID: 0}
+  _Capacity2Name: "!!Pilote de L\xE9gende!!"
+  _Capacity2Type: Transport
+  _Capacity2Cost: 0
+  _Capacity2Desc: "Peut embarquer et d\xE9barquer 1 unit\xE9 de type Infanterie,
+    Leader ou Mythe. Si l'unit\xE9 embarqu\xE9e est un Leader ou un Mythe, elle peut
+    utiliser ses capacit\xE9s actives.\nExcalibur ni peut pas \xEAtre d\xE9plac\xE9e
+    ni attaquer si aucune unit\xE9 n'est embarqu\xE9e."
+  _Capacity2Icon: {fileID: 0}
 --- !u!1 &1497586340 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2449508067522513048, guid: 23d5891db20fc824ebf77b9b0e573bb7, type: 3}
@@ -25497,6 +25637,32 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4707557024412655211, guid: 041c8ce0012199e43a1c6005e614fab3, type: 3}
   m_PrefabInstance: {fileID: 1522322789}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1522322792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1522322790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b5d53f4caebfc4f80e7f9f37bea2cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Capacity1Name: "!!Fr\xE9n\xE9sie Pugnace!!"
+  _Capacity1Type: Passif
+  _Capacity1Cost: 0
+  _Capacity1Desc: "Pour chaque unit\xE9 ennemie \xE9limin\xE9e, se soigne de 1 PV
+    et si celui-ci est dans une Zone d\u2019Orgone, obtient 1 Ressource. Toutes les
+    2 unit\xE9s alli\xE9es \xE9limin\xE9es, obtient +1 aux bornes d'attaque."
+  _Capacity1Icon: {fileID: 0}
+  _Capacity2Name: '!!Tir Naval!!'
+  _Capacity2Type: Actif
+  _Capacity2Cost: 1
+  _Capacity2Desc: "Cible 1 case adjacente \xE0 une unit\xE9 alli\xE9e situ\xE9e dans
+    un rayon de 3 cases.\n\xC0 la fin du prochain tour adverse, l'unit\xE9 situ\xE9e
+    sur cette case subit 6 d\xE9gats."
+  _Capacity2Icon: {fileID: 0}
 --- !u!1 &1545514385
 GameObject:
   m_ObjectHideFlags: 0
@@ -26817,6 +26983,28 @@ MonoBehaviour:
   _Capacity1Description: "Embrase une zone de 2 cases par 3 face \xE0 Etna."
   _Capacity1Cost: 3
   fr: {fileID: 2043064946}
+--- !u!114 &1604577987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1604577985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b5d53f4caebfc4f80e7f9f37bea2cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Capacity1Name: "\xC9ruption"
+  _Capacity1Type: Actif
+  _Capacity1Cost: 3
+  _Capacity1Desc: "Embrase une zone de 2 cases par 3 face \xE0 Etna."
+  _Capacity1Icon: {fileID: 0}
+  _Capacity2Name: 
+  _Capacity2Type: 
+  _Capacity2Cost: 0
+  _Capacity2Desc: 
+  _Capacity2Icon: {fileID: 21300000, guid: 24c38065f0aa40046a1f50a3c6882ced, type: 3}
 --- !u!1 &1606927465
 GameObject:
   m_ObjectHideFlags: 0
@@ -28552,6 +28740,30 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4707557024412655191, guid: 041c8ce0012199e43a1c6005e614fab3, type: 3}
   m_PrefabInstance: {fileID: 1705633212}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1705633215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1705633214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b5d53f4caebfc4f80e7f9f37bea2cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Capacity1Name: "!!D\xE9tection de l'Aigle!!"
+  _Capacity1Type: Passif
+  _Capacity1Cost: 0
+  _Capacity1Desc: "Les Artilleries alli\xE9es peuvent cibler les unit\xE9s ennemies
+    adjacentes \xE0 cette unit\xE9."
+  _Capacity1Icon: {fileID: 0}
+  _Capacity2Name: "!!Efficacit\xE9 de Terrain!!"
+  _Capacity2Type: Passif
+  _Capacity2Cost: 0
+  _Capacity2Desc: "Cette unit\xE9 et les unit\xE9s alli\xE9es adjacente g\xE9n\xE8rent
+    2 fois plus de ressources."
+  _Capacity2Icon: {fileID: 0}
 --- !u!1 &1713837495
 GameObject:
   m_ObjectHideFlags: 0
@@ -30556,6 +30768,29 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4707557024412655211, guid: 041c8ce0012199e43a1c6005e614fab3, type: 3}
   m_PrefabInstance: {fileID: 1809751433}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1809751436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809751434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b5d53f4caebfc4f80e7f9f37bea2cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Capacity1Name: "!!Adaptabilit\xE9 Militaire!!"
+  _Capacity1Type: Passif
+  _Capacity1Cost: 0
+  _Capacity1Desc: "Inflige 1 d\xE9gat en plus aux unit\xE9s situ\xE9es sur une case
+    \xE0 effet."
+  _Capacity1Icon: {fileID: 0}
+  _Capacity2Name: "!!Pr\xE9cision Stable!!"
+  _Capacity2Type: Passif
+  _Capacity2Cost: 0
+  _Capacity2Desc: "Les valeurs des bornes d'attaque ne peuvent pas \xEAtre modifi\xE9es."
+  _Capacity2Icon: {fileID: 0}
 --- !u!1001 &1816596733
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33167,6 +33402,30 @@ MonoBehaviour:
   _Capacity1Description: "Volez une ressource \xE0 l'arm\xE9e adverse si une unit\xE9
     ennemie se situe \xE0 1 de port\xE9e."
   _Capacity1Cost: 0
+--- !u!114 &1942473597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1942473594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b5d53f4caebfc4f80e7f9f37bea2cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Capacity1Name: '!!Voile Mythique!!'
+  _Capacity1Type: Passif
+  _Capacity1Cost: 0
+  _Capacity1Desc: "Ne peut \xEAtre cibl\xE9 que par des unit\xE9s adjacentes. Ignore
+    toute source de d\xE9gat sup\xE9rieure \xE0 1."
+  _Capacity1Icon: {fileID: 0}
+  _Capacity2Name: "Art du D\xE9pouillement"
+  _Capacity2Type: Actif
+  _Capacity2Cost: 0
+  _Capacity2Desc: "Cible une unit\xE9 ennemie adjacente et vole 1 ressource \xE0
+    l'adversaire."
+  _Capacity2Icon: {fileID: 0}
 --- !u!1001 &1948034054
 PrefabInstance:
   m_ObjectHideFlags: 0

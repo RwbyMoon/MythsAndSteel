@@ -115,6 +115,7 @@ GameObject:
   - component: {fileID: 1628862746925599876}
   - component: {fileID: 8504835386051204522}
   - component: {fileID: 6596144329541696392}
+  - component: {fileID: 2982756271734185031}
   m_Layer: 0
   m_Name: Pyromeccanico
   m_TagString: Untagged
@@ -203,18 +204,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _unitSO: {fileID: 11400000, guid: 692e0720f062c4a4f81297c6ef89ed34, type: 2}
   ParalysieStat: 3
+  HasOnlyOneDamage: 0
+  IsActifNotConsumeAction: 0
+  ActifUsedThisTurn: 0
   "M\xE9lodieSinistre": 0
+  RestreintAuxRails: 0
+  ToutTerrain: 0
   _life: 2
   Renderer: {fileID: 1735168128953122764}
   _shield: 0
   _attackRange: 1
-  AttackRangeBonus: 0
+  _attackRangeBonus: 0
   _numberRangeMin: {x: 0, y: 0}
   _damageMinimum: 0
   _numberRangeMax: {x: 2, y: 12}
   _damageMaximum: 1
   _damageBonus: 0
   _diceBonus: 0
+  NbAtkTurn: 1
+  NbAttaqueParTour: 1
+  HasAttackedOneTime: 0
   RunningCapacity: 0
   _moveSpeed: 3
   _MoveSpeedBonus: 0
@@ -237,6 +246,11 @@ MonoBehaviour:
   step: 0
   hasUseActivation: 0
   _Animation: {fileID: 8504835386051204522}
+  HasAttacked: 0
+  NewTurnHasStart: 0
+  PermaSpeedBoost: 0
+  PermaRangeBoost: 0
+  PermaDiceBoost: 0
   DoingCharg1Blue: 0
 --- !u!95 &8504835386051204522
 Animator:
@@ -274,6 +288,30 @@ MonoBehaviour:
   _Capacity1Description: "Soigne de 2 points de vie une unit\xE9 alli\xE9e ajdacente."
   _Capacity1Cost: 0
   HealValue: 2
+--- !u!114 &2982756271734185031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3071565005083110659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b5d53f4caebfc4f80e7f9f37bea2cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Capacity1Name: "!!\xC9quipement Optimis\xE9!!"
+  _Capacity1Type: Actif
+  _Capacity1Cost: 0
+  _Capacity1Desc: "Soigne 1 pv \xE0 une unit\xE9 de type Artillerie, V\xE9hicule
+    ou M\xE9cha adjacente."
+  _Capacity1Icon: {fileID: 0}
+  _Capacity2Name: "!!Botte Secr\xE8te!!"
+  _Capacity2Type: Actif
+  _Capacity2Cost: 0
+  _Capacity2Desc: "Place une Bombe dans un rayon de 2 cases. Jusqu'\xE0 5 bombes
+    peuvent \xEAtre plac\xE9es en m\xEAme temps."
+  _Capacity2Icon: {fileID: 0}
 --- !u!1 &3366198786971471823
 GameObject:
   m_ObjectHideFlags: 0
