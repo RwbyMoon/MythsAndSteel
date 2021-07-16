@@ -38,6 +38,7 @@ public class UnitScript : MonoBehaviour
     public bool ToutTerrain;
     public bool Volant;
     public bool FireResistance;
+    public bool PasseMuraille;
     [Header("------------------- VIE -------------------")]
     [Header("------------------- STAT EN JEU -------------------")]
     //Vie actuelle

@@ -125,7 +125,7 @@ public class Mouvement : MonoSingleton<Mouvement>
                 }
                 foreach (MYthsAndSteel_Enum.TerrainType Type in TileSc.TerrainEffectList)
                 {
-                    if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Ravin, ID) || PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Eau, ID) && !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().ToutTerrain)
+                    if ((PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Ravin, ID) || PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Eau, ID)) && !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().ToutTerrain)
                     {
                         i = true;
                     }
@@ -177,7 +177,7 @@ public class Mouvement : MonoSingleton<Mouvement>
                 }
                 foreach (MYthsAndSteel_Enum.TerrainType Type in TileSc.TerrainEffectList)
                 {
-                    if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Ravin, ID) || PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Eau, ID) && !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().ToutTerrain)
+                    if ((PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Ravin, ID) || PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Eau, ID)) && !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().ToutTerrain)
                     {
                         i = true;
                     }
@@ -223,7 +223,7 @@ public class Mouvement : MonoSingleton<Mouvement>
                 {
                     if (TilesManager.Instance.TileList[ID].GetComponent<TileScript>().Unit != null)
                     {
-                        if (!TilesManager.Instance.TileList[ID].GetComponent<TileScript>().Unit.GetComponent<UnitScript>().UnitSO.IsInRedArmy)
+                        if (!TilesManager.Instance.TileList[ID].GetComponent<TileScript>().Unit.GetComponent<UnitScript>().UnitSO.IsInRedArmy && (!RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().PasseMuraille || (RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().PasseMuraille && Range == 1)))
                         {
                             i = true;
                         }
@@ -237,7 +237,7 @@ public class Mouvement : MonoSingleton<Mouvement>
                 {
                     if (TilesManager.Instance.TileList[ID].GetComponent<TileScript>().Unit != null)
                     {
-                        if (TilesManager.Instance.TileList[ID].GetComponent<TileScript>().Unit.GetComponent<UnitScript>().UnitSO.IsInRedArmy)
+                        if (TilesManager.Instance.TileList[ID].GetComponent<TileScript>().Unit.GetComponent<UnitScript>().UnitSO.IsInRedArmy && (!RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().PasseMuraille || (RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().PasseMuraille && Range == 1)))
                         {
                             i = true;
                         }
@@ -248,7 +248,7 @@ public class Mouvement : MonoSingleton<Mouvement>
                     }
                 }
 
-                if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Ravin, ID) || PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Eau, ID) && !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().ToutTerrain)
+                if ((PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Ravin, ID) || PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Eau, ID)) && !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().ToutTerrain)
                 {
                     i = true;
                 }
@@ -937,7 +937,7 @@ public class Mouvement : MonoSingleton<Mouvement>
                 }
                 foreach (MYthsAndSteel_Enum.TerrainType Type in TileSc.TerrainEffectList)
                 {
-                    if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Ravin, ID) || PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Eau, ID) && !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().ToutTerrain)
+                    if ((PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Ravin, ID) || PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Eau, ID)) && !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().ToutTerrain)
                     {
                         i = true;
                     }
@@ -1032,7 +1032,7 @@ public class Mouvement : MonoSingleton<Mouvement>
                 {
                     if (TilesManager.Instance.TileList[ID].GetComponent<TileScript>().Unit != null)
                     {
-                        if (!TilesManager.Instance.TileList[ID].GetComponent<TileScript>().Unit.GetComponent<UnitScript>().UnitSO.IsInRedArmy)
+                        if (!TilesManager.Instance.TileList[ID].GetComponent<TileScript>().Unit.GetComponent<UnitScript>().UnitSO.IsInRedArmy && (!RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().PasseMuraille || (RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().PasseMuraille && Range == 1)))
                         {
                             i = true;
                         }
@@ -1046,7 +1046,7 @@ public class Mouvement : MonoSingleton<Mouvement>
                 {
                     if (TilesManager.Instance.TileList[ID].GetComponent<TileScript>().Unit != null)
                     {
-                        if (TilesManager.Instance.TileList[ID].GetComponent<TileScript>().Unit.GetComponent<UnitScript>().UnitSO.IsInRedArmy)
+                        if (TilesManager.Instance.TileList[ID].GetComponent<TileScript>().Unit.GetComponent<UnitScript>().UnitSO.IsInRedArmy && (!RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().PasseMuraille || (RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().PasseMuraille && Range ==1)))
                         {
                             i = true;
                         }
@@ -1057,7 +1057,7 @@ public class Mouvement : MonoSingleton<Mouvement>
                     }
                 }
 
-                if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Ravin, ID) || PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Eau, ID) && !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().ToutTerrain)
+                if ((PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Ravin, ID) || PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Eau, ID)) && !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().ToutTerrain)
                 {
                     i = true;
                 }
