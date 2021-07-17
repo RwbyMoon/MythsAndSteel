@@ -368,6 +368,7 @@ public class UnitScript : MonoBehaviour
     public int PermaSpeedBoost;
     public int PermaRangeBoost;
     public int PermaDiceBoost;
+    public int PermaDamageBoost;
 
     #endregion Variables
 
@@ -933,6 +934,7 @@ public class UnitScript : MonoBehaviour
         MoveSpeedBonus = PermaSpeedBoost;
         AttackRangeBonus = PermaRangeBoost;
         DiceBonus = PermaDiceBoost;
+        _damageBonus = PermaDamageBoost;
         ActifUsedThisTurn = false;
 
         hasUseActivation = false;
