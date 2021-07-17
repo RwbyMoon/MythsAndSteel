@@ -39,6 +39,8 @@ public class UnitScript : MonoBehaviour
     public bool Volant;
     public bool FireResistance;
     public bool PasseMuraille;
+    public bool Amphibie;
+    public bool Submersible;
     [Header("------------------- VIE -------------------")]
     [Header("------------------- STAT EN JEU -------------------")]
     //Vie actuelle
