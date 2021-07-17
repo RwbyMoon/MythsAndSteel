@@ -65,17 +65,17 @@ public class MouseCommand : MonoBehaviour
     void UpdateUIStats(int bigStat = 1)
     {
 
-    //Si la tile ne contient pas d'effet de terrain, on n'affiche pas d'information. Si la tile contient 1 effet, on affiche et met à jour l'effet de la case. Si la tile contient 2 effets, on affiche les 2 Effets.
-    UIInstance UI = UIInstance.Instance;
+        //Si la tile ne contient pas d'effet de terrain, on n'affiche pas d'information. Si la tile contient 1 effet, on affiche et met à jour l'effet de la case. Si la tile contient 2 effets, on affiche les 2 Effets.
+        UIInstance UI = UIInstance.Instance;
 
-    //Statistique pour le MouseOver.
-    UnitScript unit = RaycastManager.Instance.UnitInTile.GetComponent<UnitScript>();
-        
-    UI.TitlePanelMouseOver.GetComponent<TextMeshProUGUI>().text = unit.UnitSO.UnitName;
-    UI.MouseOverStats._lifeGam.GetComponent<TextMeshProUGUI>().text = (unit.Life + unit.Shield).ToString();
-    UI.MouseOverStats._rangeGam.GetComponent<TextMeshProUGUI>().text = (unit.AttackRange + unit.AttackRangeBonus).ToString();
-    UI.MouseOverStats._moveGam.GetComponent<TextMeshProUGUI>().text = (unit.MoveSpeed + unit.MoveSpeedBonus).ToString();
-     
+        //Statistique pour le MouseOver.
+        UnitScript unit = RaycastManager.Instance.UnitInTile.GetComponent<UnitScript>();
+
+        UI.TitlePanelMouseOver.GetComponent<TextMeshProUGUI>().text = unit.UnitSO.UnitName;
+        UI.MouseOverStats._lifeGam.GetComponent<TextMeshProUGUI>().text = (unit.Life + unit.Shield).ToString();
+        UI.MouseOverStats._rangeGam.GetComponent<TextMeshProUGUI>().text = (unit.AttackRange + unit.AttackRangeBonus).ToString();
+        UI.MouseOverStats._moveGam.GetComponent<TextMeshProUGUI>().text = (unit.MoveSpeed + unit.MoveSpeedBonus).ToString();
+
         switch (unit.UnitSO.typeUnite)
         {
             case MYthsAndSteel_Enum.TypeUnite.Infanterie:
@@ -114,8 +114,8 @@ public class MouseCommand : MonoBehaviour
         //Synchronise le texte de la valeur de la distance d'attaque de l'unité avec l'emplacement d'UI.
         //  UI.PageUnitStat._rangeGam.GetComponent<TextMeshProUGUI>().text = unit.AttackRange.ToString();
         //Synchronise le texte de la valeur de la vitesse de l'unité avec l'emplacement d'UI.
-        UI.PageUnitStat._rangeGam.GetComponent<TextMeshProUGUI>().text = (unit.AttackRange+ unit.AttackRangeBonus).ToString();
-        UI.PageUnitStat._moveGam.GetComponent<TextMeshProUGUI>().text = (unit.MoveSpeed+unit.MoveSpeedBonus).ToString();
+        UI.PageUnitStat._rangeGam.GetComponent<TextMeshProUGUI>().text = (unit.AttackRange + unit.AttackRangeBonus).ToString();
+        UI.PageUnitStat._moveGam.GetComponent<TextMeshProUGUI>().text = (unit.MoveSpeed + unit.MoveSpeedBonus).ToString();
 
         UpdateMiniJauge(unit);
 
@@ -133,15 +133,15 @@ public class MouseCommand : MonoBehaviour
             if (Capa.ReturnInfo(UI.capacityPrefab, 0) != null)
             {
                 UI.capacityParent.transform.parent.parent.GetComponent<ScrollRect>().verticalScrollbar.value = 1;
-                GameObject CAPA1 = Instantiate(Capa.ReturnInfo(UI.capacityPrefab, 0), Vector2.zero, Quaternion.identity);
+                GameObject CAPA1 = Instantiate(Capa.ReturnInfo(UI.capacityPrefab, 0), Vector2.zero + new Vector2(120f,0f), Quaternion.identity);
                 CAPA1.transform.SetParent(UI.capacityParent.transform);
                 CAPA1.transform.localScale = new Vector3(1f, 1f, 1f);
                 UI.capacityList.Add(CAPA1);
 
-                int lengthTxt = CAPA1.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text.Length;
+                int lengthTxt = CAPA1.transform.GetChild(3).GetComponent<TextMeshProUGUI>().text.Length;
                 float LengthLine = (float)lengthTxt / 21;
                 int truncateLine = (int)LengthLine;
-                int capaSize = 130 + (20 * truncateLine);
+                int capaSize = 15 * truncateLine;
                 contentSize += capaSize;
             }
 
@@ -179,18 +179,49 @@ public class MouseCommand : MonoBehaviour
                 continue;
             }
         }
-            //Statistique de la Page 2 du Carnet.  
-            //Compléter avec les Images des Tiles.
+        //Statistique de la Page 2 du Carnet.  
+        //Compléter avec les Images des Tiles.
 
         for (int i = UI.effetDeTerrain.Count - 1; i >= 0; i--)
         {
             Destroy(UI.effetDeTerrain[UI.effetDeTerrain.Count - 1]);
             UI.effetDeTerrain.RemoveAt(UI.effetDeTerrain.Count - 1);
         }
-        // MYthsAndSteel_Enum.TerrainType[] _ThisCaseTerrain = RaycastManager.Instance.Tile.GetComponent<TileScript>().TerrainEffectList;
-        
-        //Effets de Terrains
+
+        //Effets de Terrain OLD/maybe good
+        for (int i = UI.effetDeTerrain.Count - 1; i >= 0; i--)
+        {
+            Destroy(UI.effetDeTerrain[UI.effetDeTerrain.Count - 1]);
+            UI.effetDeTerrain.RemoveAt(UI.effetDeTerrain.Count - 1);
+        }
+
         UI.parentSlotEffetDeTerrain.transform.parent.parent.GetComponent<ScrollRect>().verticalScrollbar.value = 1;
+        foreach (MYthsAndSteel_Enum.TerrainType Terrain in RaycastManager.Instance.Tile.GetComponent<TileScript>().TerrainEffectList)
+        {
+            GameObject Effet = Instantiate(UI.Terrain.ReturnInfo(UI.prefabSlotEffetDeTerrain, Terrain), UI.parentSlotEffetDeTerrain.transform.position, Quaternion.identity);
+            Effet.transform.SetParent(UI.parentSlotEffetDeTerrain.transform);
+            Effet.transform.localScale = new Vector3(1f, 1f, 1f);
+            UI.effetDeTerrain.Add(Effet);
+
+            Effet.GetComponent<TextMeshProUGUI>().ForceMeshUpdate();
+
+            Debug.Log("LineCount" + (Effet.GetComponent<TextMeshProUGUI>().textInfo.lineCount + Effet.GetComponent<ChildOfParent>().TheChild.GetComponent<TextMeshProUGUI>().textInfo.lineCount));
+            UI.parentSlotEffetDeTerrain.GetComponent<RectTransform>().sizeDelta = new Vector2(UI.parentSlotEffetDeTerrain.GetComponent<RectTransform>().sizeDelta.x, 212 * UI.effetDeTerrain.Count); //(Effet.GetComponent<TextMeshProUGUI>().textInfo.lineCount + Effet.GetComponent<ChildOfParent>().TheChild.GetComponent<TextMeshProUGUI>().textInfo.lineCount) * 300 * UI.effetDeTerrain.Count);//
+        }
+
+        if (RaycastManager.Instance.Tile.GetComponent<TileScript>().TerrainEffectList.Count == 0)
+        {
+            GameObject Effet = Instantiate(UI.prefabSlotEffetDeTerrain, UI.parentSlotEffetDeTerrain.transform.position, Quaternion.identity);
+            Effet.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "Liste vide.";
+            Effet.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = "Cette unité n'a actuellement aucun pouvoir.";
+            Effet.transform.SetParent(UI.parentSlotEffetDeTerrain.transform);
+            Effet.transform.localScale = new Vector3(1f, 1f, 1f);
+            UI.parentSlotEffetDeTerrain.GetComponent<RectTransform>().sizeDelta = new Vector2(UI.parentSlotEffetDeTerrain.GetComponent<RectTransform>().sizeDelta.x, 212 * UI.Statuts.Count);
+        }
+
+        //Effets de Terrains PROTO NEW
+
+        /*UI.parentSlotEffetDeTerrain.transform.parent.parent.GetComponent<ScrollRect>().verticalScrollbar.value = 1;
         foreach (MYthsAndSteel_Enum.TerrainType Terrain in RaycastManager.Instance.Tile.GetComponent<TileScript>().TerrainEffectList)
         {
             if (FirstTerrain == true)  
@@ -204,7 +235,7 @@ public class MouseCommand : MonoBehaviour
                 int numLines2 = Effet.GetComponent<ChildOfParent>().TheChild.GetComponent<TextMeshProUGUI>().text.Split('n').Length;
 
                 //UI.parentSlotEffetDeTerrain.GetComponent<RectTransform>().sizeDelta = new Vector2(UI.parentSlotEffetDeTerrain.GetComponent<RectTransform>().sizeDelta.x + 150,  * 60); // (1+numLines)
-                Vector2 NextTerrain = new Vector2(0, numLines /*+ numLines2*/);
+                Vector2 NextTerrain = new Vector2(0, numLines + numLines2);
                 //posNextTerrain = new Vector2(UI.parentSlotEffetDeTerrain.transform.position.x + 150, UI.parentSlotEffetDeTerrain.transform.position.y + NextTerrain.y * 60);
                 posNextTerrain = new Vector2(UI.parentSlotEffetDeTerrain.transform.position.x + 150, UI.parentSlotEffetDeTerrain.transform.position.y + Effet.GetComponent<TextMeshProUGUI>().preferredHeight);
 
@@ -221,7 +252,7 @@ public class MouseCommand : MonoBehaviour
                 int numLines2 = Effet.GetComponent<ChildOfParent>().TheChild.GetComponent<TextMeshProUGUI>().text.Split('n').Length;
 
                 //UI.parentSlotEffetDeTerrain.GetComponent<RectTransform>().sizeDelta = new Vector2(UI.parentSlotEffetDeTerrain.GetComponent<RectTransform>().sizeDelta.x + 150,  * 60); // (1+numLines)
-                Vector2 NextTerrain = new Vector2(0, numLines /*+ numLines2*/);
+                Vector2 NextTerrain = new Vector2(0, numLines + numLines2);
                 //posNextTerrain = new Vector2(UI.parentSlotEffetDeTerrain.transform.position.x + 150, UI.parentSlotEffetDeTerrain.transform.position.y + NextTerrain.y * 60);preferredHeight
                 posNextTerrain = new Vector2(UI.parentSlotEffetDeTerrain.transform.position.x + 150, UI.parentSlotEffetDeTerrain.transform.position.y + Effet.GetComponent<TextMeshProUGUI>().preferredHeight);
             }
@@ -237,8 +268,7 @@ public class MouseCommand : MonoBehaviour
                 Effet.transform.localScale = new Vector3(1f, 1f, 1f);
             }
 
-        FirstTerrain = true;
-
+        FirstTerrain = true;*/
         //Statuts
         for (int i = 0; i < 4; i++)
         {
@@ -467,12 +497,12 @@ public class MouseCommand : MonoBehaviour
     /// </summary>
     public void MouseExitWithoutClick()
     {
-        if(GameManager.Instance.activationDone == false)
+        if (GameManager.Instance.activationDone == false)
         {
-        //Arrete l'ensemble des coroutines dans la scène.
-        StopAllCoroutines();
-        _mouseOverUI.SetActive(false);
-        _hasCheckUnit = false;
+            //Arrete l'ensemble des coroutines dans la scène.
+            StopAllCoroutines();
+            _mouseOverUI.SetActive(false);
+            _hasCheckUnit = false;
 
         }
     }
@@ -516,8 +546,13 @@ public class MouseCommand : MonoBehaviour
     {
         //J'active le Panneau 2 car le joueur a cliqué sur le bouton permettant de transitionner de la page 1 à la page 2. De plus, je masque la page 1.
         ActivateUI(ShiftUI[1], ShiftUI[0].transform.position.x, ShiftUI[0].transform.position.y, true);
+        TerrainActivate();
         ShiftUI[0].SetActive(false);
         SoundController.Instance.PlaySound(SoundController.Instance.AudioClips[13]);
+    }
+    void TerrainActivate()
+    {
+        
     }
 
     /// <summary>

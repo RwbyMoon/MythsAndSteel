@@ -56,13 +56,13 @@ public class Capacity : MonoBehaviour
         {
             case 0:
                 {
-                    PrefabCapacity.transform.GetChild(0).GetComponent<Image>().sprite = render1;
-                    PrefabCapacity.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = _Capacity1Name;
-                    PrefabCapacity.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = _Capacity1Description;
+                    PrefabCapacity.transform.GetChild(1).GetComponent<Image>().sprite = render1;
+                    PrefabCapacity.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = _Capacity1Name;
+                    PrefabCapacity.transform.GetChild(3).GetComponent<TextMeshProUGUI>().text = _Capacity1Description;
                     if(_Capacity1Cost > 0)
                     {
-                        PrefabCapacity.transform.GetChild(3).gameObject.SetActive(true);
-                        PrefabCapacity.transform.GetChild(3).GetComponent<TextMeshProUGUI>().text = _Capacity1Cost.ToString();
+                        PrefabCapacity.transform.GetChild(0).gameObject.SetActive(true);
+                        PrefabCapacity.transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = _Capacity1Cost.ToString();
                     }
                     else
                     {
