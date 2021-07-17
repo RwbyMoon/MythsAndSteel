@@ -37,6 +37,8 @@ public class MouseCommand : MonoBehaviour
     [SerializeField] private float OffsetPositionUI;
     [SerializeField] private GameObject MapVisual;
     public Vector4 carnetStats; // position x & y, largeur, hauteur
+    Vector2 posNextTerrain;
+    bool FirstTerrain;
 
     [Header("UI RENFORT UNITE")]
     [SerializeField] private GameObject _renfortUI;
@@ -60,7 +62,7 @@ public class MouseCommand : MonoBehaviour
         UI.CallUpdateUI(Tile);
     }
 
-    void UpdateUIStats()
+    void UpdateUIStats(int bigStat = 1)
     {
 
     //Si la tile ne contient pas d'effet de terrain, on n'affiche pas d'information. Si la tile contient 1 effet, on affiche et met à jour l'effet de la case. Si la tile contient 2 effets, on affiche les 2 Effets.
@@ -133,13 +135,13 @@ public class MouseCommand : MonoBehaviour
                 UI.capacityParent.transform.parent.parent.GetComponent<ScrollRect>().verticalScrollbar.value = 1;
                 GameObject CAPA1 = Instantiate(Capa.ReturnInfo(UI.capacityPrefab, 0), Vector2.zero, Quaternion.identity);
                 CAPA1.transform.SetParent(UI.capacityParent.transform);
-                CAPA1.transform.localScale = new Vector3(.9f, .9f, .9f);
+                CAPA1.transform.localScale = new Vector3(1f, 1f, 1f);
                 UI.capacityList.Add(CAPA1);
 
                 int lengthTxt = CAPA1.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text.Length;
                 float LengthLine = (float)lengthTxt / 21;
                 int truncateLine = (int)LengthLine;
-                int capaSize = 300 + (20 * truncateLine);
+                int capaSize = 130 + (20 * truncateLine);
                 contentSize += capaSize;
             }
 
@@ -185,33 +187,57 @@ public class MouseCommand : MonoBehaviour
             Destroy(UI.effetDeTerrain[UI.effetDeTerrain.Count - 1]);
             UI.effetDeTerrain.RemoveAt(UI.effetDeTerrain.Count - 1);
         }
-
+        // MYthsAndSteel_Enum.TerrainType[] _ThisCaseTerrain = RaycastManager.Instance.Tile.GetComponent<TileScript>().TerrainEffectList;
+        
+        //Effets de Terrains
         UI.parentSlotEffetDeTerrain.transform.parent.parent.GetComponent<ScrollRect>().verticalScrollbar.value = 1;
         foreach (MYthsAndSteel_Enum.TerrainType Terrain in RaycastManager.Instance.Tile.GetComponent<TileScript>().TerrainEffectList)
         {
-            GameObject Effet = Instantiate(UI.Terrain.ReturnInfo(UI.prefabSlotEffetDeTerrain, Terrain), UI.parentSlotEffetDeTerrain.transform.position, Quaternion.identity);
-            Effet.transform.SetParent(UI.parentSlotEffetDeTerrain.transform);
-            Effet.transform.localScale = new Vector3(.9f, .9f, .9f);
-            UI.effetDeTerrain.Add(Effet);
+            if (FirstTerrain == true)  
+            {
+                GameObject Effet = Instantiate(UI.Terrain.ReturnInfo(UI.prefabSlotEffetDeTerrain, Terrain), UI.parentSlotEffetDeTerrain.transform.position, Quaternion.identity);
+                Effet.transform.SetParent(UI.parentSlotEffetDeTerrain.transform);
+                Effet.transform.localScale = new Vector3(1f, 1f, 1f);
+                UI.effetDeTerrain.Add(Effet);
 
-            UI.parentSlotEffetDeTerrain.GetComponent<RectTransform>().sizeDelta = new Vector2(UI.parentSlotEffetDeTerrain.GetComponent<RectTransform>().sizeDelta.x, 212 * UI.effetDeTerrain.Count);
+                int numLines = Effet.GetComponent<TextMeshProUGUI>().text.Split('n').Length;
+                int numLines2 = Effet.GetComponent<ChildOfParent>().TheChild.GetComponent<TextMeshProUGUI>().text.Split('n').Length;
+
+                //UI.parentSlotEffetDeTerrain.GetComponent<RectTransform>().sizeDelta = new Vector2(UI.parentSlotEffetDeTerrain.GetComponent<RectTransform>().sizeDelta.x + 150,  * 60); // (1+numLines)
+                Vector2 NextTerrain = new Vector2(0, numLines /*+ numLines2*/);
+                //posNextTerrain = new Vector2(UI.parentSlotEffetDeTerrain.transform.position.x + 150, UI.parentSlotEffetDeTerrain.transform.position.y + NextTerrain.y * 60);
+                posNextTerrain = new Vector2(UI.parentSlotEffetDeTerrain.transform.position.x + 150, UI.parentSlotEffetDeTerrain.transform.position.y + Effet.GetComponent<TextMeshProUGUI>().preferredHeight);
+
+                FirstTerrain = false;
+            }
+            else  
+            {
+                GameObject Effet = Instantiate(UI.Terrain.ReturnInfo(UI.prefabSlotEffetDeTerrain, Terrain), posNextTerrain, Quaternion.identity);
+                Effet.transform.SetParent(UI.parentSlotEffetDeTerrain.transform);
+                Effet.transform.localScale = new Vector3(1f, 1f, 1f);
+                UI.effetDeTerrain.Add(Effet);
+
+                int numLines = Effet.GetComponent<TextMeshProUGUI>().text.Split('n').Length;
+                int numLines2 = Effet.GetComponent<ChildOfParent>().TheChild.GetComponent<TextMeshProUGUI>().text.Split('n').Length;
+
+                //UI.parentSlotEffetDeTerrain.GetComponent<RectTransform>().sizeDelta = new Vector2(UI.parentSlotEffetDeTerrain.GetComponent<RectTransform>().sizeDelta.x + 150,  * 60); // (1+numLines)
+                Vector2 NextTerrain = new Vector2(0, numLines /*+ numLines2*/);
+                //posNextTerrain = new Vector2(UI.parentSlotEffetDeTerrain.transform.position.x + 150, UI.parentSlotEffetDeTerrain.transform.position.y + NextTerrain.y * 60);preferredHeight
+                posNextTerrain = new Vector2(UI.parentSlotEffetDeTerrain.transform.position.x + 150, UI.parentSlotEffetDeTerrain.transform.position.y + Effet.GetComponent<TextMeshProUGUI>().preferredHeight);
+            }
+
         }
 
         if (RaycastManager.Instance.Tile.GetComponent<TileScript>().TerrainEffectList.Count == 0)
-        {
-            GameObject Effet = Instantiate(UI.prefabSlotEffetDeTerrain, UI.parentSlotEffetDeTerrain.transform.position, Quaternion.identity);
-            Effet.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "Liste vide.";
-            Effet.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = "Cette unité n'a actuellement aucun pouvoir.";
-            Effet.transform.SetParent(UI.parentSlotEffetDeTerrain.transform);
-            Effet.transform.localScale = new Vector3(.9f, .9f, .9f);
-            UI.parentSlotEffetDeTerrain.GetComponent<RectTransform>().sizeDelta = new Vector2(UI.parentSlotEffetDeTerrain.GetComponent<RectTransform>().sizeDelta.x, 212 * UI.Statuts.Count);
-        }
-        
-        for (int i = UI.Statuts.Count - 1; i >= 0; i--)
-        {
-            Destroy(UI.Statuts[UI.Statuts.Count - 1]);
-            UI.Statuts.RemoveAt(UI.Statuts.Count - 1);
-        }
+            {
+                GameObject Effet = Instantiate(UI.prefabSlotEffetDeTerrain, UI.parentSlotEffetDeTerrain.transform.position, Quaternion.identity);
+                Effet.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "Liste vide.";
+                Effet.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = "Cette unité n'a actuellement aucun pouvoir.";
+                Effet.transform.SetParent(UI.parentSlotEffetDeTerrain.transform);
+                Effet.transform.localScale = new Vector3(1f, 1f, 1f);
+            }
+
+        FirstTerrain = true;
 
         //Statuts
         for (int i = 0; i < 4; i++)
@@ -250,9 +276,10 @@ public class MouseCommand : MonoBehaviour
         }
     }
 
-        #endregion UpdateStats
 
-        public void UpdateMiniJauge(UnitScript Unit)
+    #endregion UpdateStats
+
+    public void UpdateMiniJauge(UnitScript Unit)
     {
         bool Done = false;
         List<int> Min = new List<int>();
@@ -405,7 +432,7 @@ public class MouseCommand : MonoBehaviour
     public void ShiftClick()
     {
         ActivateUI(ShiftUI[0], 0, 0, false, 1, 1, 0);
-        UpdateUIStats();
+        UpdateUIStats(0);
     }
 
     /// <summary>
@@ -423,7 +450,7 @@ public class MouseCommand : MonoBehaviour
                 {
                     //Coroutine : Une coroutine est une fonction qui peut suspendre son exécution (yield) jusqu'à la fin de la YieldInstruction donnée.
                     StartCoroutine(ShowObject(TimeToWait));
-                    UpdateUIStats();
+                    UpdateUIStats(1);
                     _hasCheckUnit = true;
                 }
 
