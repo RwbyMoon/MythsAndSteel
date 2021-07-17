@@ -139,7 +139,7 @@ public class MouseCommand : MonoBehaviour
                 int lengthTxt = CAPA1.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text.Length;
                 float LengthLine = (float)lengthTxt / 21;
                 int truncateLine = (int)LengthLine;
-                int capaSize = 130 + (20 * truncateLine);
+                int capaSize = 300 + (20 * truncateLine);
                 contentSize += capaSize;
             }
 
@@ -590,7 +590,7 @@ public class MouseCommand : MonoBehaviour
                         UIInstance.Instance.RessourceUnit_PasTouche._unité1Ressource[2].SetActive(false);
                         UIInstance.Instance.RessourceUnit_PasTouche._unité1Ressource[3].SetActive(false);
                     }
-
+                    
                     UIInstance.Instance.RessourceUnit_PasTouche._unité1Ressource[0].SetActive(true);
                     UIInstance.Instance.RessourceUnit_PasTouche._unité1Ressource[1].SetActive(true);
                     //Image Ressource pour l'unité 2 de l'armée Rouge
