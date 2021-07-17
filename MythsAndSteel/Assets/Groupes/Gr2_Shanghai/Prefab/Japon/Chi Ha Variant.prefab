@@ -41,6 +41,10 @@ PrefabInstance:
       propertyPath: _unitSO
       value: 
       objectReference: {fileID: 11400000, guid: cdc479640bdaf0a488fe5c58086caa60, type: 2}
+    - target: {fileID: 4707557024412655209, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
+      propertyPath: Amphibie
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4707557024412655210, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
       propertyPath: m_Sprite
       value: 
