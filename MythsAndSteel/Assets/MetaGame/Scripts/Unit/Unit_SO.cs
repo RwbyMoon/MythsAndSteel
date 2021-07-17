@@ -59,4 +59,5 @@ public class Unit_SO : ScriptableObject{
     [Tooltip("Est ce que cette unité fait parti de l'armée 1?")]
     public bool IsInRedArmy = true;
     public MYthsAndSteel_Enum.Attributs[] UnitAttributs = new MYthsAndSteel_Enum.Attributs[3];
+    public MYthsAndSteel_Enum.UnitStatut[] UnitStatuts = new MYthsAndSteel_Enum.UnitStatut[4];
 }

@@ -50,6 +50,16 @@ public class MouseCommand : MonoBehaviour
     #endregion Variables
 
     #region UpdateStats
+
+    private void Update()
+    {
+        UIInstance UI = UIInstance.Instance;
+        GameObject Tile = RaycastManager.Instance.Tile;
+
+        //Update des info de la tile sur le pannel du bas quand
+        UI.CallUpdateUI(Tile);
+    }
+
     void UpdateUIStats()
     {
 
@@ -156,7 +166,7 @@ public class MouseCommand : MonoBehaviour
                         gam.SetActive(true);
                         gam.transform.GetChild(0).GetComponent<Image>().sprite = attribut.SpriteAttributUnit;
 
-                        UIInstance.Instance.objectsAttributs[i].Description.GetComponent<TextMeshProUGUI>().text = attribut._name + " :" + attribut.TextAttributUnit;
+                        UIInstance.Instance.objectsAttributs[i].Description.GetComponent<TextMeshProUGUI>().text = attribut._name + " : " + attribut.TextAttributUnit;
                         continue;
                     }
                 }
@@ -203,90 +213,46 @@ public class MouseCommand : MonoBehaviour
             UI.Statuts.RemoveAt(UI.Statuts.Count - 1);
         }
 
-        //OldStatut
-        UI.parentSlotStatuts.transform.parent.parent.GetComponent<ScrollRect>().verticalScrollbar.value = 1;
-        if(RaycastManager.Instance.UnitInTile != null)
-        {
-            foreach (MYthsAndSteel_Enum.UnitStatut status in RaycastManager.Instance.UnitInTile.GetComponent<UnitScript>().UnitStatuts)
-            {
-                GameObject Effet = Instantiate(UI.StatusSc.ReturnInfo(UI.prefabSlotStatuts, status), UI.parentSlotStatuts.transform.position, Quaternion.identity);
-                Effet.transform.SetParent(UI.parentSlotStatuts.transform);
-                Effet.transform.localScale = new Vector3(.9f, .9f, .9f);
-                UI.Statuts.Add(Effet);
-
-                UI.parentSlotStatuts.GetComponent<RectTransform>().sizeDelta = new Vector2(UI.parentSlotStatuts.GetComponent<RectTransform>().sizeDelta.x, 212 * UI.Statuts.Count);
-            }
-        }
-
         //Statuts
-        /*MYthsAndSteel_Enum.UnitStatut[] unitStatuts = RaycastManager.Instance.UnitInTile.GetComponent<UnitScript>().UnitStatuts[];
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < 4; i++)
         {
-            if (unitStatuts.Length > i)
+            if (unit.GetComponent<UnitScript>().UnitStatuts.Count > i)
             {
-                if (7 - unitStatuts[i] > 0)
+                Debug.Log("Count : " + unit.GetComponent<UnitScript>().UnitStatuts.Count);
+                if (unit.GetComponent<UnitScript>().UnitStatuts[i] == MYthsAndSteel_Enum.UnitStatut.Aucun)
                 {
                     UIInstance.Instance.objectsStatuts[i].MainObjects.SetActive(false);
+                    Debug.Log("Case 1");
                     continue;
                 }
 
-                //foreach (TextSpriteStatutUnit statut in UIInstance.Instance.textSpriteStatutUnit)
-                foreach (MYthsAndSteel_Enum.UnitStatut statut in RaycastManager.Instance.UnitInTile.GetComponent<UnitScript>().UnitStatuts)
+                //foreach (MYthsAndSteel_Enum.UnitStatut status in RaycastManager.Instance.UnitInTile.GetComponent<UnitScript>().UnitStatuts)
+                foreach (TextSpriteStatutUnit statut in UIInstance.Instance.textSpriteStatutUnit)
                 {
-                    if (statut._UnitStatuts == unitStatuts[i])
+                    if (statut._statuts == unit.GetComponent<UnitScript>().UnitStatuts[i])
                     {
                         GameObject gam = UIInstance.Instance.objectsStatuts[i].MainObjects;
                         gam.SetActive(true);
                         gam.transform.GetChild(0).GetComponent<Image>().sprite = statut.SpriteStatutUnit;
 
-                        UIInstance.Instance.objectsStatuts[i].Description.GetComponent<TextMeshProUGUI>().text = statut._name + " :" + statut.TextStatutUnit;
+                        UIInstance.Instance.objectsStatuts[i].Description.GetComponent<TextMeshProUGUI>().text = statut._name + " : " + statut.TextStatutUnit;
+                        Debug.Log("Case 2");
                         continue;
                     }
                 }
-        }
+            }
             else
-        {
-                UIInstance.Instance.objectsStatuts[i].MainObjects.SetActive(false);
-                continue;
-        }
-            */
-        /*
-//Statuts
-MYthsAndSteel_Enum.UnitStatut[] _UnitStatuts = RaycastManager.Instance.UnitInTile.GetComponent<UnitScript>().UnitStatuts;
-for (int i = 0; i < 3; i++)
-{
-    if (_UnitStatuts.Length > i)
-    {
-        if (_UnitStatuts[i] == MYthsAndSteel_Enum.Attributs.Aucun)
-        {
-            UIInstance.Instance.objectsAttributs[i].MainObjects.SetActive(false);
-            continue;
-        }
-
-        foreach (MYthsAndSteel_Enum.UnitStatut status in RaycastManager.Instance.UnitInTile.GetComponent<UnitScript>().UnitStatuts
-        {
-            if (status._attributs == _UnitStatuts[i])
             {
-                GameObject gam = UIInstance.Instance.objectsAttributs[i].MainObjects;
-                gam.SetActive(true);
-                gam.transform.GetChild(0).GetComponent<Image>().sprite = attribut.SpriteAttributUnit;
-
-                UIInstance.Instance.objectsAttributs[i].Description.GetComponent<TextMeshProUGUI>().text = attribut._name + " :" + attribut.TextAttributUnit;
+                UIInstance.Instance.objectsStatuts[i].MainObjects.SetActive(false);
+                Debug.Log("Case 3");
                 continue;
             }
         }
     }
-    else
-    {
-        UIInstance.Instance.objectsAttributs[i].MainObjects.SetActive(false);
-        continue;
-    }
-    */
-    }
 
-    #endregion UpdateStats
+        #endregion UpdateStats
 
-    public void UpdateMiniJauge(UnitScript Unit)
+        public void UpdateMiniJauge(UnitScript Unit)
     {
         bool Done = false;
         List<int> Min = new List<int>();
@@ -367,15 +333,6 @@ for (int i = 0; i < 3; i++)
         {
             UIInstance.Instance.MinSlider.SetActive(false);
         }
-    }
-
-    private void Update()
-    {
-        UIInstance UI = UIInstance.Instance;
-        GameObject Tile = RaycastManager.Instance.Tile;
-
-        //Update des info de la tile sur le pannel du bas quand
-        UI.CallUpdateUI(Tile);
     }
 
     #region ActivateUI

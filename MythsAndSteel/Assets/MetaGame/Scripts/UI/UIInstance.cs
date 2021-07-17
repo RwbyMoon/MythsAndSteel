@@ -632,7 +632,6 @@ public class TextSpriteAttributUnit
 [System.Serializable]
 public class ObjectsAttributs
 {
-
     public GameObject MainObjects;
     public GameObject Description;
 }
@@ -644,7 +643,7 @@ public class ObjectsAttributs
 public class TextSpriteStatutUnit
 {
     public string _name;
-    public MYthsAndSteel_Enum.UnitStatut _UnitStatuts;
+    public MYthsAndSteel_Enum.UnitStatut _statuts;
     public Sprite SpriteStatutUnit;
     [TextArea]
     public string TextStatutUnit;
@@ -655,7 +654,6 @@ public class TextSpriteStatutUnit
 [System.Serializable]
 public class ObjectsStatuts
 {
-
     public GameObject MainObjects;
     public GameObject Description;
 }
