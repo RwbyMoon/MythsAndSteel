@@ -36,6 +36,11 @@ public class UnitScript : MonoBehaviour
     [Header("--------------- Attributs ---------------")]
     public bool RestreintAuxRails;
     public bool ToutTerrain;
+    public bool Volant;
+    public bool FireResistance;
+    public bool PasseMuraille;
+    public bool Amphibie;
+    public bool Submersible;
     [Header("------------------- VIE -------------------")]
     [Header("------------------- STAT EN JEU -------------------")]
     //Vie actuelle
@@ -505,8 +510,10 @@ public class UnitScript : MonoBehaviour
                                                 {
                                                     if (Try2.TryGetComponent<TerrainParent>(out TerrainParent Try3))
                                                     {
-                                                        AttackVariation += Try3.AttackApply(Damage);
-
+                                                        if (!Volant)
+                                                        {
+                                                            AttackVariation += Try3.AttackApply(Damage);
+                                                        }
                                                     }
                                                 }
                                             }
@@ -517,8 +524,10 @@ public class UnitScript : MonoBehaviour
                                     {
                                         if (Type.Child.TryGetComponent<TerrainParent>(out TerrainParent Try))
                                         {
-                                            AttackVariation += Try.AttackApply(Damage);
-
+                                            if (!Volant)
+                                            {
+                                                AttackVariation += Try.AttackApply(Damage);
+                                            }
                                         }
                                     }
                                 }

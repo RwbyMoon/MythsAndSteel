@@ -61,6 +61,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 3f77e359e9c9bd840b940c6a7051d40c, type: 2}
     - target: {fileID: 4707557024412655209, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
+      propertyPath: ToutTerrain
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707557024412655209, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
       propertyPath: RestreintAuxRails
       value: 1
       objectReference: {fileID: 0}
