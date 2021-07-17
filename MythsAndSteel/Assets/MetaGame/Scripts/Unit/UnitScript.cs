@@ -14,6 +14,7 @@ public class UnitScript : MonoBehaviour
     [SerializeField] Unit_SO _unitSO;
 
     public int ParalysieStat = 3;
+    public int SilenceStat = 3;
     public Unit_SO UnitSO
     {
         get
@@ -998,7 +999,7 @@ public class UnitScript : MonoBehaviour
 
     public void StartCapacity()
     {
-        if (!HasAttackedOneTime)
+        if (!HasAttackedOneTime && !UnitStatuts.Contains(MYthsAndSteel_Enum.UnitStatut.Silence))
         {
             CapacitySystem.Instance.CapacityRunning = true;
             RunningCapacity = true;
