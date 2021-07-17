@@ -17366,6 +17366,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 1b309b2f3d7c5f14e86e5c515bc4032d, type: 2}
     - target: {fileID: 4707557024412655209, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
+      propertyPath: ToutTerrain
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707557024412655209, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
       propertyPath: _actualTileld
       value: 2
       objectReference: {fileID: 0}
@@ -26165,6 +26169,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: e9f77c9d33fc211428ee358bf077d610, type: 2}
     - target: {fileID: 4707557024412655209, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
+      propertyPath: PasseMuraille
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707557024412655209, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
       propertyPath: _actualTileld
       value: 80
       objectReference: {fileID: 0}
@@ -26794,6 +26802,10 @@ PrefabInstance:
     - target: {fileID: 4707557024412655209, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
       propertyPath: _actualTileld
       value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707557024412655209, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
+      propertyPath: FireResistance
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4707557024412655210, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
       propertyPath: m_Sprite

@@ -70,7 +70,7 @@ public class Barbel : TerrainParent
 
     public override void ComingFromUp(UnitScript Unit)
     {
-        if(Direc == MYthsAndSteel_Enum.Direction.Nord)
+        if(Direc == MYthsAndSteel_Enum.Direction.Nord && !Unit.GetComponent<UnitScript>().Volant)
         {
             Unit.TakeDamage(2);
             TurnLeft--;
@@ -81,7 +81,7 @@ public class Barbel : TerrainParent
 
     public override void ComingFromDown(UnitScript Unit)
     {
-        if (Direc == MYthsAndSteel_Enum.Direction.Sud)
+        if (Direc == MYthsAndSteel_Enum.Direction.Sud && !Unit.GetComponent<UnitScript>().Volant)
         {
             Unit.TakeDamage(2);
             TurnLeft--;
@@ -92,7 +92,7 @@ public class Barbel : TerrainParent
 
     public override void ComingFromLeft(UnitScript Unit)
     {
-        if (Direc == MYthsAndSteel_Enum.Direction.Ouest)
+        if (Direc == MYthsAndSteel_Enum.Direction.Ouest && !Unit.GetComponent<UnitScript>().Volant)
         {
             Unit.TakeDamage(2);
             TurnLeft--;
@@ -103,7 +103,7 @@ public class Barbel : TerrainParent
 
     public override void ComingFromRight(UnitScript Unit)
     {
-        if (Direc == MYthsAndSteel_Enum.Direction.Est)
+        if (Direc == MYthsAndSteel_Enum.Direction.Est && !Unit.GetComponent<UnitScript>().Volant)
         {
             Unit.TakeDamage(2);
             TurnLeft--;
@@ -114,7 +114,7 @@ public class Barbel : TerrainParent
 
     public override void QuitToDown(UnitScript Unit)
     {
-        if (Direc == MYthsAndSteel_Enum.Direction.Sud)
+        if (Direc == MYthsAndSteel_Enum.Direction.Sud && !Unit.GetComponent<UnitScript>().Volant)
         {
             Unit.TakeDamage(2);
             TurnLeft--;
@@ -125,7 +125,7 @@ public class Barbel : TerrainParent
 
     public override void QuitToLeft(UnitScript Unit)
     {
-        if (Direc == MYthsAndSteel_Enum.Direction.Ouest)
+        if (Direc == MYthsAndSteel_Enum.Direction.Ouest && !Unit.GetComponent<UnitScript>().Volant)
         {
             Unit.TakeDamage(2);
             TurnLeft--;
@@ -137,7 +137,7 @@ public class Barbel : TerrainParent
 
     public override void QuitToRight(UnitScript Unit)
     {
-        if (Direc == MYthsAndSteel_Enum.Direction.Est)
+        if (Direc == MYthsAndSteel_Enum.Direction.Est && !Unit.GetComponent<UnitScript>().Volant)
         {
             Unit.TakeDamage(2);
             TurnLeft--;
@@ -149,7 +149,7 @@ public class Barbel : TerrainParent
 
     public override void QuitToUp(UnitScript Unit)
     {
-        if (Direc == MYthsAndSteel_Enum.Direction.Nord)
+        if (Direc == MYthsAndSteel_Enum.Direction.Nord && !Unit.GetComponent<UnitScript>().Volant)
         {
             Unit.TakeDamage(2);
             TurnLeft--;

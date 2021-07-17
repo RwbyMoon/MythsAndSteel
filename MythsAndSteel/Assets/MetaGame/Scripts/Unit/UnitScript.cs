@@ -14,6 +14,7 @@ public class UnitScript : MonoBehaviour
     [SerializeField] Unit_SO _unitSO;
 
     public int ParalysieStat = 3;
+    public int SilenceStat = 3;
     public Unit_SO UnitSO
     {
         get
@@ -36,6 +37,11 @@ public class UnitScript : MonoBehaviour
     [Header("--------------- Attributs ---------------")]
     public bool RestreintAuxRails;
     public bool ToutTerrain;
+    public bool Volant;
+    public bool FireResistance;
+    public bool PasseMuraille;
+    public bool Amphibie;
+    public bool Submersible;
     [Header("------------------- VIE -------------------")]
     [Header("------------------- STAT EN JEU -------------------")]
     //Vie actuelle
@@ -362,6 +368,7 @@ public class UnitScript : MonoBehaviour
     public int PermaSpeedBoost;
     public int PermaRangeBoost;
     public int PermaDiceBoost;
+    public int PermaDamageBoost;
 
     #endregion Variables
 
@@ -505,8 +512,10 @@ public class UnitScript : MonoBehaviour
                                                 {
                                                     if (Try2.TryGetComponent<TerrainParent>(out TerrainParent Try3))
                                                     {
-                                                        AttackVariation += Try3.AttackApply(Damage);
-
+                                                        if (!Volant)
+                                                        {
+                                                            AttackVariation += Try3.AttackApply(Damage);
+                                                        }
                                                     }
                                                 }
                                             }
@@ -517,8 +526,10 @@ public class UnitScript : MonoBehaviour
                                     {
                                         if (Type.Child.TryGetComponent<TerrainParent>(out TerrainParent Try))
                                         {
-                                            AttackVariation += Try.AttackApply(Damage);
-
+                                            if (!Volant)
+                                            {
+                                                AttackVariation += Try.AttackApply(Damage);
+                                            }
                                         }
                                     }
                                 }
@@ -923,6 +934,7 @@ public class UnitScript : MonoBehaviour
         MoveSpeedBonus = PermaSpeedBoost;
         AttackRangeBonus = PermaRangeBoost;
         DiceBonus = PermaDiceBoost;
+        _damageBonus = PermaDamageBoost;
         ActifUsedThisTurn = false;
 
         hasUseActivation = false;
@@ -989,7 +1001,7 @@ public class UnitScript : MonoBehaviour
 
     public void StartCapacity()
     {
-        if (!HasAttackedOneTime)
+        if (!HasAttackedOneTime && !UnitStatuts.Contains(MYthsAndSteel_Enum.UnitStatut.Silence))
         {
             CapacitySystem.Instance.CapacityRunning = true;
             RunningCapacity = true;

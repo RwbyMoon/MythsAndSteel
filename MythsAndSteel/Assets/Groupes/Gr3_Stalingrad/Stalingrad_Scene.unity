@@ -23812,6 +23812,10 @@ MonoBehaviour:
     SpriteAttributUnit: {fileID: 21300000, guid: 76fadfb718b98e040ae205e84cb03c6c, type: 3}
     TextAttributUnit: "Ne peut se d\xE9placer que sur les rails et ignore la Boue
       et la Route."
+  - _name: Volant
+    _attributs: 11
+    SpriteAttributUnit: {fileID: 21300000, guid: 76fadfb718b98e040ae205e84cb03c6c, type: 3}
+    TextAttributUnit: Ignore tous les effets de terrain.
   objectsAttributs:
   - MainObjects: {fileID: 1938190257}
     Description: {fileID: 1742319753}
@@ -34758,6 +34762,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1506776438210952329, guid: 9cf76d2be6b627b40889961dea1d86ff, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1506776438210952331, guid: 9cf76d2be6b627b40889961dea1d86ff, type: 3}
+      propertyPath: ToutTerrain
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1506776438210952373, guid: 9cf76d2be6b627b40889961dea1d86ff, type: 3}

@@ -106,7 +106,7 @@ MonoBehaviour:
   ActifUsedThisTurn: 0
   "M\xE9lodieSinistre": 0
   RestreintAuxRails: 0
-  ToutTerrain: 0
+  ToutTerrain: 1
   _life: 1
   Renderer: {fileID: 2055593173506058124}
   _shield: 2
@@ -118,6 +118,9 @@ MonoBehaviour:
   _damageMaximum: 2
   _damageBonus: 0
   _diceBonus: 0
+  NbAtkTurn: 1
+  NbAttaqueParTour: 1
+  HasAttackedOneTime: 0
   RunningCapacity: 0
   _moveSpeed: 3
   _MoveSpeedBonus: 0
