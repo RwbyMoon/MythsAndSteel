@@ -6,30 +6,43 @@ public class DistanceEtTanto : Capacity
 {
     //Cette capacité appartient à l'unité "Impérial" de l'armée Japonaise sur le plateau de Shanghai
     private int attackMiss;
-    private List<GameObject> id = new List<GameObject>();
-    [SerializeField] private int Range = 2;
-    public void Highlight(int tileId, int Range, int lasttileId = 999)
+    List<GameObject> newNeighbourId = new List<GameObject>();
+    [SerializeField] private int Range = 3;
+    void Highlight(int tileId, int currentID, int Range)
     {
         if (Range > 0)
         {
-            id.Add(TilesManager.Instance.TileList[tileId]);
             foreach (int ID in PlayerStatic.GetNeighbourDiag(tileId, TilesManager.Instance.TileList[tileId].GetComponent<TileScript>().Line, false))
             {
-                if (lasttileId != tileId)
+                TileScript TileSc = TilesManager.Instance.TileList[ID].GetComponent<TileScript>();
+                bool i = false;
+
+                if (ID == currentID)
                 {
-                    Highlight(ID, Range - 1, tileId);
+                    i = true;
+
+                }
+
+                if (!i)
+                {
+                    if (!newNeighbourId.Contains(TilesManager.Instance.TileList[ID]) && TilesManager.Instance.TileList[ID].GetComponent<TileScript>().Unit != null)
+                    {
+                        if(TilesManager.Instance.TileList[ID].GetComponent<TileScript>().Unit.GetComponent<UnitScript>().UnitSO.IsInRedArmy != GetComponent<UnitScript>().UnitSO.IsInRedArmy)
+                        newNeighbourId.Add(TilesManager.Instance.TileList[ID]);
+                    }
+                    Highlight(ID, currentID, Range - 1); ;
                 }
             }
         }
     }
     public override void StartCpty()
     {
-        id = new List<GameObject>();
-        Highlight(GetComponent<UnitScript>().ActualTiledId, Range);
+        newNeighbourId = new List<GameObject>();
+        Highlight(GetComponent<UnitScript>().ActualTiledId, GetComponent<UnitScript>().ActualTiledId, Range);
 
         GameManager.Instance._eventCall += EndCpty;
         GameManager.Instance._eventCallCancel += StopCpty;
-        GameManager.Instance.StartEventModeTiles(1, GetComponent<UnitScript>().UnitSO.IsInRedArmy, id, "Distance et Tanto", "Voulez-vous vraiment utiliser cette capacité?");
+        GameManager.Instance.StartEventModeTiles(1, GetComponent<UnitScript>().UnitSO.IsInRedArmy, newNeighbourId, "Distance et Tanto", "Voulez-vous vraiment utiliser cette capacité?");
         base.StartCpty();
     }
 

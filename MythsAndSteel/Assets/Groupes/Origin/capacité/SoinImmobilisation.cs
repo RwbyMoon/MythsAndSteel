@@ -3,18 +3,30 @@ using UnityEngine;
 
 public class SoinImmobilisation : Capacity
 {
-    private List<GameObject> id = new List<GameObject>();
-    [SerializeField] private int Range = 2;
-    public void Highlight(int tileId, int Range, int lasttileId = 999)
+    List<GameObject> newNeighbourId = new List<GameObject>();
+    [SerializeField] private int Range;
+    void Highlight(int tileId, int currentID, int Range)
     {
         if (Range > 0)
         {
-            id.Add(TilesManager.Instance.TileList[tileId]);
             foreach (int ID in PlayerStatic.GetNeighbourDiag(tileId, TilesManager.Instance.TileList[tileId].GetComponent<TileScript>().Line, false))
             {
-                if (lasttileId != tileId)
+                TileScript TileSc = TilesManager.Instance.TileList[ID].GetComponent<TileScript>();
+                bool i = false;
+
+                if (ID == currentID)
                 {
-                    Highlight(ID, Range - 1, tileId);
+                    i = true;
+
+                }
+
+                if (!i)
+                {
+                    if (!newNeighbourId.Contains(TilesManager.Instance.TileList[ID]) && TilesManager.Instance.TileList[ID].GetComponent<TileScript>().Unit != null)
+                    {
+                        newNeighbourId.Add(TilesManager.Instance.TileList[ID]);
+                    }
+                    Highlight(ID, currentID, Range - 1); ;
                 }
             }
         }
@@ -22,12 +34,12 @@ public class SoinImmobilisation : Capacity
     public override void StartCpty()
     {
         Range = GetComponent<UnitScript>().AttackRange + GetComponent<UnitScript>().AttackRangeBonus;
-        id = new List<GameObject>();
-        Highlight(GetComponent<UnitScript>().ActualTiledId, Range);
+        newNeighbourId = new List<GameObject>();
+        Highlight(GetComponent<UnitScript>().ActualTiledId, GetComponent<UnitScript>().ActualTiledId, Range);
 
         GameManager.Instance._eventCall += EndCpty;
         GameManager.Instance._eventCallCancel += StopCpty;
-        GameManager.Instance.StartEventModeTiles(1, false, id, "Soin/Immobilisation", "Voulez-vous vraiment soigner/immobiliser cette unitée ?");
+        GameManager.Instance.StartEventModeTiles(1, false, newNeighbourId, "Soin/Immobilisation", "Voulez-vous vraiment soigner/immobiliser cette unitée ?");
         base.StartCpty();
         
     }

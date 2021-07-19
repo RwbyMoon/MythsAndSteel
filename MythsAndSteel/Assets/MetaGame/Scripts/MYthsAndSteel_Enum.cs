@@ -16,7 +16,7 @@ public class MYthsAndSteel_Enum : MonoBehaviour
     /// </summary>
     public enum UnitStatut
     {
-        ArmeEpidemiologique, Paralysie, Immobilisation, Réanimé, Possédé, Invincible, PeutPasCombattre, PeutPasPrendreDesObjectifs
+        ArmeEpidemiologique, Paralysie, Immobilisation, Réanimé, Possédé, Invincible, PeutPasCombattre, PeutPasPrendreDesObjectifs, Silence
     }
 
     /// <summary>

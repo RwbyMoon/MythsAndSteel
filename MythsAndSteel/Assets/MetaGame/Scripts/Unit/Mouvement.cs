@@ -113,7 +113,7 @@ public class Mouvement : MonoSingleton<Mouvement>
     public void Highlight(int tileId, int Range, int lasttileId)
     {
         // Si il s'agit d'une route et que la range est de 0.
-        if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Route, tileId) && Range == 0)
+        if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Route, tileId) && Range == 0 && !RaycastManager.Instance.Tile.GetComponent<TileScript>().Unit.GetComponent<UnitScript>().Volant && !RaycastManager.Instance.Tile.GetComponent<TileScript>().Unit.GetComponent<UnitScript>().RestreintAuxRails)
         {
             foreach (int ID in PlayerStatic.GetNeighbourDiag(tileId, TilesManager.Instance.TileList[tileId].GetComponent<TileScript>().Line, false))
             {
@@ -165,7 +165,7 @@ public class Mouvement : MonoSingleton<Mouvement>
             }
         }
         // Si il s'agit d'une route et que la range est de 1.
-        else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Route, tileId) && Range == 1)
+        else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Route, tileId) && Range == 1 && !RaycastManager.Instance.Tile.GetComponent<TileScript>().Unit.GetComponent<UnitScript>().Volant && !RaycastManager.Instance.Tile.GetComponent<TileScript>().Unit.GetComponent<UnitScript>().RestreintAuxRails)
         {
             foreach (int ID in PlayerStatic.GetNeighbourDiag(tileId, TilesManager.Instance.TileList[tileId].GetComponent<TileScript>().Line, false))
             {

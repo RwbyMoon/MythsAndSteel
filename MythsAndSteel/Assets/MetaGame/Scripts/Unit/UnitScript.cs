@@ -14,6 +14,7 @@ public class UnitScript : MonoBehaviour
     [SerializeField] Unit_SO _unitSO;
 
     public int ParalysieStat = 3;
+    public int SilenceStat = 3;
     public Unit_SO UnitSO
     {
         get
@@ -367,6 +368,7 @@ public class UnitScript : MonoBehaviour
     public int PermaSpeedBoost;
     public int PermaRangeBoost;
     public int PermaDiceBoost;
+    public int PermaDamageBoost;
 
     #endregion Variables
 
@@ -932,6 +934,7 @@ public class UnitScript : MonoBehaviour
         MoveSpeedBonus = PermaSpeedBoost;
         AttackRangeBonus = PermaRangeBoost;
         DiceBonus = PermaDiceBoost;
+        _damageBonus = PermaDamageBoost;
         ActifUsedThisTurn = false;
 
         hasUseActivation = false;
@@ -998,7 +1001,7 @@ public class UnitScript : MonoBehaviour
 
     public void StartCapacity()
     {
-        if (!HasAttackedOneTime)
+        if (!HasAttackedOneTime && !UnitStatuts.Contains(MYthsAndSteel_Enum.UnitStatut.Silence))
         {
             CapacitySystem.Instance.CapacityRunning = true;
             RunningCapacity = true;
