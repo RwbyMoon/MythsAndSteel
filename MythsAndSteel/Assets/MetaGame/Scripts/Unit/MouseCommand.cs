@@ -138,7 +138,7 @@ public class MouseCommand : MonoBehaviour
                 CAPA1.transform.localScale = new Vector3(1f, 1f, 1f);
                 UI.capacityList.Add(CAPA1);
 
-                int lengthTxt = CAPA1.transform.GetChild(3).GetComponent<TextMeshProUGUI>().text.Length;
+                int lengthTxt = CAPA1.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text.Length;
                 float LengthLine = (float)lengthTxt / 21;
                 int truncateLine = (int)LengthLine;
                 int capaSize = 15 * truncateLine;
@@ -147,9 +147,9 @@ public class MouseCommand : MonoBehaviour
             //CAPACITY 2
             if(Capa.ReturnInfo(UI.capacityPrefab, 1) != null)
             {
-                GameObject CAPA2 = Instantiate(Capa.ReturnInfo(UI.capacityPrefab, 1), Vector2.zero, Quaternion.identity);
+                GameObject CAPA2 = Instantiate(Capa.ReturnInfo(UI.capacityPrefab, 1), Vector2.zero - new Vector2(120f, 0f), Quaternion.identity);
                 CAPA2.transform.SetParent(UI.capacityParent.transform);
-                CAPA2.transform.localScale = new Vector3(.9f, .9f, .9f);
+                CAPA2.transform.localScale = new Vector3(1f, 1f, 1f);
                 UI.capacityList.Add(CAPA2);
 
                 int lengthTxt = CAPA2.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text.Length;
