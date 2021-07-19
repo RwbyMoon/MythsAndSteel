@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8032170884315663528}
   - component: {fileID: 3806426296903903207}
   - component: {fileID: 3281532405626706820}
+  - component: {fileID: 2123259760948976487}
   m_Layer: 0
   m_Name: Title
   m_TagString: Untagged
@@ -65,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '!!Surchauffe!!'
+  m_text: '!!Impact de Zone!!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 27edcde133aa50b448a4c8e5d5845859, type: 2}
   m_sharedMaterial: {fileID: -7314658397477919478, guid: 27edcde133aa50b448a4c8e5d5845859, type: 2}
@@ -128,12 +129,33 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 1
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 8.001648, y: 2.5701141, z: -71.70154, w: 0}
+  m_margin: {x: 8.001648, y: 2.5701141, z: -35.06604, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!223 &2123259760948976487
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2353226157888032982}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 15
+  m_TargetDisplay: 0
 --- !u!1 &3034618033302659075
 GameObject:
   m_ObjectHideFlags: 0
@@ -227,7 +249,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &166907374184684856
 RectTransform:
   m_ObjectHideFlags: 0
@@ -345,7 +367,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -63.56842, y: 61.9258}
-  m_SizeDelta: {x: 395.6, y: 210}
+  m_SizeDelta: {x: 395.6, y: 190}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4630139207784274949
 CanvasRenderer:
@@ -484,6 +506,7 @@ GameObject:
   - component: {fileID: 3158547281964987534}
   - component: {fileID: 4935792394333771175}
   - component: {fileID: 2711571164118410978}
+  - component: {fileID: 6270938514755657279}
   m_Layer: 0
   m_Name: Description
   m_TagString: Untagged
@@ -508,8 +531,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -6.3, y: -104.7}
-  m_SizeDelta: {x: 384.16, y: 75.2451}
+  m_AnchoredPosition: {x: -6.3, y: -104.36693}
+  m_SizeDelta: {x: 384.16, y: 74.579}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4935792394333771175
 CanvasRenderer:
@@ -539,10 +562,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Cible 1 case adjacente. L'un des effets suivant est d\xE9clench\xE9 al\xE9atoirement
-    :\n-Inflige 3 d\xE9gats sur la case cibl\xE9e\n-Inflige 1 d\xE9gat dans la zone
-    de 1x3 cases face au Heitzur\n-Ne fait rien\n\nD\xE9sactive Radiateur jusqu'\xE0
-    votre prochain tour."
+  m_text: "Inflige des d\xE9gats aux unit\xE9s adjacentes \xE0 la case cibl\xE9e.
+    Peut cibler les cases vide."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 27edcde133aa50b448a4c8e5d5845859, type: 2}
   m_sharedMaterial: {fileID: -7314658397477919478, guid: 27edcde133aa50b448a4c8e5d5845859, type: 2}
@@ -605,12 +626,33 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 1
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 126.28418, y: 0.06854466, z: -79.85071, w: 22.826843}
+  m_margin: {x: 126.28418, y: 0.06854466, z: -33.223633, w: 22.826843}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!223 &6270938514755657279
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8103361471005174078}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 15
+  m_TargetDisplay: 0
 --- !u!1 &8629485452402653994
 GameObject:
   m_ObjectHideFlags: 0
@@ -811,10 +853,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Cible 1 case adjacente. L'un des effets suivant est d\xE9clench\xE9 al\xE9atoirement
-    :\n-Inflige 3 d\xE9gats sur la case cibl\xE9e\n-Inflige 1 d\xE9gat dans la zone
-    de 1x3 cases face au Heitzur\n-Ne fait rien\n\nD\xE9sactive Radiateur jusqu'\xE0
-    votre prochain tour."
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 27edcde133aa50b448a4c8e5d5845859, type: 2}
   m_sharedMaterial: {fileID: -7314658397477919478, guid: 27edcde133aa50b448a4c8e5d5845859, type: 2}
@@ -877,7 +916,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 1
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -56.904602, y: 0.06854466, z: -141.79382, w: 31.846436}
+  m_margin: {x: -56.904602, y: 0.06854466, z: -89.171875, w: 31.846436}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
