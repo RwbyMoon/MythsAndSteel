@@ -275,10 +275,10 @@ public class UnitScript : MonoBehaviour
         {
 
         if (StatusPrefab.GetBool("In"))
-        {
+            {
             StatusPrefab.SetBool("In", false);
             yield return new WaitForSeconds(1f);
-        }
+            }
         }
         if(UnitStatuts.Count >= step && step >= 0)
         {

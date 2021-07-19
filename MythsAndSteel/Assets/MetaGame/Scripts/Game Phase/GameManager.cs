@@ -203,7 +203,7 @@ public class GameManager : MonoSingleton<GameManager>
 
     private void Update()
     {
-       
+
     }
 
     /// <summary>
