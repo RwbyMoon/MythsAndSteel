@@ -126,14 +126,30 @@ public class MouseCommand : MonoBehaviour
             UI.capacityList.RemoveAt(UI.capacityList.Count - 1);
         }
 
+        UI.capacityParent.transform.parent.parent.GetComponent<ScrollRect>().verticalScrollbar.value = 1;
         if (RaycastManager.Instance.Tile.GetComponent<TileScript>().Unit.TryGetComponent<InfoCarnet>(out InfoCarnet Capa))
         {
             int contentSize = 0;
             // CAPACITY 1.             
             if (Capa.ReturnInfo(UI.capacityPrefab, 0) != null)
             {
-                UI.capacityParent.transform.parent.parent.GetComponent<ScrollRect>().verticalScrollbar.value = 1;
-                GameObject CAPA1 = Instantiate(Capa.ReturnInfo(UI.capacityPrefab, 0), Vector2.zero + new Vector2(120f,0f), Quaternion.identity);
+                /*                GameObject CAPA1 = Instantiate(Capa.ReturnInfo(UI.capacityPrefab, 0), new Vector2(UI.capacityParent.transform.position.x + 150f,UI.capacityParent.transform.position.y), Quaternion.identity);
+                CAPA1.transform.SetParent(UI.parentSlotEffetDeTerrain.transform);
+                CAPA1.transform.localScale = new Vector3(1f, 1f, 1f);
+                UI.capacityList.Add(CAPA1);
+
+                int lengthTxt = CAPA1.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text.Length;
+                float LengthLine = (float)lengthTxt / 21;
+                int truncateLine = (int)LengthLine;
+                int capaSize = 15 * truncateLine;
+                contentSize += capaSize;
+            }
+            //CAPACITY 2
+            if(Capa.ReturnInfo(UI.capacityPrefab, 1) != null)
+            {
+                GameObject CAPA2 = Instantiate(Capa.ReturnInfo(UI.capacityPrefab, 1), new Vector2(UI.capacityParent.transform.position.x + 150f, UI.capacityParent.transform.position.y), Quaternion.identity);
+                CAPA2.transform.SetParent(UI.parentSlotEffetDeTerrain.transform);*/
+                GameObject CAPA1 = Instantiate(Capa.ReturnInfo(UI.capacityPrefab, 0), new Vector2(UI.capacityParent.transform.position.x + 150f, UI.capacityParent.transform.position.y), Quaternion.identity);
                 CAPA1.transform.SetParent(UI.capacityParent.transform);
                 CAPA1.transform.localScale = new Vector3(1f, 1f, 1f);
                 UI.capacityList.Add(CAPA1);
@@ -147,7 +163,7 @@ public class MouseCommand : MonoBehaviour
             //CAPACITY 2
             if(Capa.ReturnInfo(UI.capacityPrefab, 1) != null)
             {
-                GameObject CAPA2 = Instantiate(Capa.ReturnInfo(UI.capacityPrefab, 1), Vector2.zero - new Vector2(120f, 0f), Quaternion.identity);
+                GameObject CAPA2 = Instantiate(Capa.ReturnInfo(UI.capacityPrefab, 1), new Vector2(UI.capacityParent.transform.position.x + 150f, UI.capacityParent.transform.position.y), Quaternion.identity);
                 CAPA2.transform.SetParent(UI.capacityParent.transform);
                 CAPA2.transform.localScale = new Vector3(1f, 1f, 1f);
                 UI.capacityList.Add(CAPA2);
@@ -159,7 +175,7 @@ public class MouseCommand : MonoBehaviour
                 contentSize += capaSize;
             }
 
-            UI.capacityParent.GetComponent<RectTransform>().sizeDelta = new Vector2(UI.capacityParent.GetComponent<RectTransform>().sizeDelta.x, contentSize);
+            
         }
 
         //Attributs
@@ -196,13 +212,6 @@ public class MouseCommand : MonoBehaviour
         //Statistique de la Page 2 du Carnet.  
         //Compléter avec les Images des Tiles.
 
-        for (int i = UI.effetDeTerrain.Count - 1; i >= 0; i--)
-        {
-            Destroy(UI.effetDeTerrain[UI.effetDeTerrain.Count - 1]);
-            UI.effetDeTerrain.RemoveAt(UI.effetDeTerrain.Count - 1);
-        }
-
-        //Effets de Terrain OLD/maybe good
         for (int i = UI.effetDeTerrain.Count - 1; i >= 0; i--)
         {
             Destroy(UI.effetDeTerrain[UI.effetDeTerrain.Count - 1]);
@@ -283,8 +292,8 @@ public class MouseCommand : MonoBehaviour
             }
 
         FirstTerrain = true;*/
-        //Statuts
-        for (int i = 0; i < 4; i++)
+                //Statuts
+                for (int i = 0; i < 4; i++)
         {
             if (unit.GetComponent<UnitScript>().UnitStatuts.Count > i)
             {
