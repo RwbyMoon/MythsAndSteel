@@ -124,6 +124,10 @@ public class UnitScript : MonoBehaviour
     public int NbAttaqueParTour = 1;
     public bool HasAttackedOneTime;
 
+    public bool FailAttack;
+    public bool InflictMinimumDamages;
+    public bool InflictMaximumDamages;
+
     public bool RunningCapacity = false;
 
     [Header("------------------- MOUVEMENT -------------------")]
@@ -1141,4 +1145,30 @@ public class UnitScript : MonoBehaviour
         yield return new WaitForSeconds(1);
         NewTurnHasStart = false;
     }
+
+    #region DamagesInflict
+    //Passe les bools en true selon le résultat du lancer d'attaque
+
+    public IEnumerator HasFailedAttack()
+    {
+        FailAttack = true;
+        yield return new WaitForSeconds(1);
+        FailAttack = false;
+    }
+
+    public IEnumerator HasInflictedMini()
+    {
+        InflictMinimumDamages = true;
+        yield return new WaitForSeconds(1);
+        InflictMinimumDamages = false;
+    }
+
+    public IEnumerator HasInflictedMax()
+    {
+        InflictMaximumDamages = true;
+        yield return new WaitForSeconds(1);
+        InflictMaximumDamages = false;
+    }
+
+    #endregion
 }

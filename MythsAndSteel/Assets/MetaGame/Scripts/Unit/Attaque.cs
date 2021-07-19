@@ -125,6 +125,9 @@ public class Attaque : MonoSingleton<Attaque>
         }
     }
 
+    public bool DeviationEnCours;
+    public int idTileCible;
+
     #endregion Variables
 
     /// <summary>
@@ -149,23 +152,17 @@ public class Attaque : MonoSingleton<Attaque>
     /// <param name="DiceResult"></param>
     void UnitAttackOneRange(Vector2 _numberRangeMin, int _damageMinimum, int DiceResult, GameObject selectedUnitEnemyJauge)
     {
+        idTileCible = selectedUnitEnnemy.GetComponent<UnitScript>().ActualTiledId;
         if (DiceResult >= _numberRangeMin.x && DiceResult <= _numberRangeMin.y)
         {
             ChangeStat();
             AnimationUpdate();
 
-            if (selectedUnitEnnemy.GetComponent<UnitScript>().HasOnlyOneDamage == true)
-            {
-                GameObject ActualUnit = RaycastManager.Instance.ActualUnitSelected;
-                StartCoroutine(OneDmgAfterDelay(ActualUnit.GetComponent<UnitScript>().Animation, selectedUnitEnemyJauge));
-            }
-            else
-            {
                 int damageDealt = _damageMinimum + _selectedUnit.GetComponent<UnitScript>()._damageBonus;
 
                 GameObject ActualUnit = RaycastManager.Instance.ActualUnitSelected;
                 StartCoroutine(MinDmgAfterDelay(ActualUnit.GetComponent<UnitScript>().Animation, selectedUnitEnemyJauge, damageDealt));
-            }
+            
             SoundController.Instance.PlaySound(_selectedUnit.GetComponent<UnitScript>().SonAttaque);
             Debug.Log("Damage : " + _damageMinimum);
             StopAttack();
@@ -176,7 +173,8 @@ public class Attaque : MonoSingleton<Attaque>
             {
                 AnimationUpdate();
                 ChangeStat();
-                _damageMinimum = this._damageMinimum;
+                this._damageMinimum = _damageMinimum;
+                DeviationEnCours = true;
                 StartDeviation();
             }
             else
@@ -184,6 +182,7 @@ public class Attaque : MonoSingleton<Attaque>
                 ChangeStat();
 
                 selectedUnitEnnemy.GetComponent<UnitScript>().TakeDamage(0);
+                StartCoroutine(_selectedUnit.GetComponent<UnitScript>().HasFailedAttack());
                 SoundController.Instance.PlaySound(_selectedUnit.GetComponent<UnitScript>().SonAttaque);
                 Debug.Log("Damage : " + null);
                 StopAttack();
@@ -201,6 +200,7 @@ public class Attaque : MonoSingleton<Attaque>
     /// <param name="DiceResult"></param>
     void UnitAttackTwoRanges(Vector2 _numberRangeMin, int _damageMinimum, Vector2 _numberRangeMax, int _damageMaximum, int DiceResult, GameObject selectedUnitEnemyJauge)
     {
+        idTileCible = selectedUnitEnnemy.GetComponent<UnitScript>().ActualTiledId;
         if (DiceResult >= _numberRangeMin.x && DiceResult <= _numberRangeMin.y)
         {
             ChangeStat();
@@ -208,18 +208,12 @@ public class Attaque : MonoSingleton<Attaque>
             _damageMaximum = this._damageMaximum;
             AnimationUpdate();
 
-            if (selectedUnitEnnemy.GetComponent<UnitScript>().HasOnlyOneDamage == true)
-            {
-                GameObject ActualUnit = RaycastManager.Instance.ActualUnitSelected;
-                StartCoroutine(OneDmgAfterDelay(ActualUnit.GetComponent<UnitScript>().Animation, selectedUnitEnemyJauge));
-            }
-            else
-            {
+            
                 int damageDealt = _damageMinimum + _selectedUnit.GetComponent<UnitScript>()._damageBonus;
 
                 GameObject ActualUnit = RaycastManager.Instance.ActualUnitSelected;
                 StartCoroutine(MinDmgAfterDelay(ActualUnit.GetComponent<UnitScript>().Animation, selectedUnitEnemyJauge, damageDealt));
-            }
+            
             SoundController.Instance.PlaySound(_selectedUnit.GetComponent<UnitScript>().SonAttaque);
             Debug.Log("Damage : " + _damageMinimum);
             StopAttack();
@@ -231,18 +225,10 @@ public class Attaque : MonoSingleton<Attaque>
             _damageMaximum = this._damageMaximum;
             AnimationUpdate();
 
-            if (selectedUnitEnnemy.GetComponent<UnitScript>().HasOnlyOneDamage == true)
-            {
-                GameObject ActualUnit = RaycastManager.Instance.ActualUnitSelected;
-                StartCoroutine(OneDmgAfterDelay(ActualUnit.GetComponent<UnitScript>().Animation, selectedUnitEnemyJauge));
-            }
-            else
-            {
                 int damageDealt = _damageMaximum + _selectedUnit.GetComponent<UnitScript>()._damageBonus;
 
                 GameObject ActualUnit = RaycastManager.Instance.ActualUnitSelected;
                 StartCoroutine(MaxDmgAfterDelay(ActualUnit.GetComponent<UnitScript>().Animation, selectedUnitEnemyJauge, damageDealt));
-            }
 
             if (_selectedUnit.GetComponent<UnitScript>().VoiceLine != null)
             {
@@ -261,11 +247,13 @@ public class Attaque : MonoSingleton<Attaque>
         }
         if (DiceResult < _numberRangeMin.x)
         {
+            Debug.Log("Devi two Range" + _isAttackDeviation);
             if (_isAttackDeviation == true)
             {
                 ChangeStat();
                 AnimationUpdate();
                 this._damageMinimum = _damageMinimum;
+                DeviationEnCours = true;
                 StartDeviation();
             }
             else
@@ -273,6 +261,7 @@ public class Attaque : MonoSingleton<Attaque>
                 ChangeStat();
 
                 selectedUnitEnnemy.GetComponent<UnitScript>().TakeDamage(0);
+                StartCoroutine(_selectedUnit.GetComponent<UnitScript>().HasFailedAttack());
                 SoundController.Instance.PlaySound(_selectedUnit.GetComponent<UnitScript>().SonAttaque);
                 Debug.Log("Damage : " + null);
                 StopAttack();
@@ -281,25 +270,32 @@ public class Attaque : MonoSingleton<Attaque>
         }
     }
 
-    IEnumerator OneDmgAfterDelay(Animator AnimToWait, GameObject selectedUnitEnemyDMG)
-    {
-        yield return new WaitForSeconds(AnimToWait.GetCurrentAnimatorStateInfo(0).length + 0.5f);
-
-        selectedUnitEnemyDMG.GetComponent<UnitScript>().TakeDamage(1);
-    }
-
     IEnumerator MinDmgAfterDelay(Animator AnimToWait, GameObject selectedUnitEnemyDMG, int DamageDealtToEnemy)
     {
         yield return new WaitForSeconds(AnimToWait.GetCurrentAnimatorStateInfo(0).length + 0.5f);
-
-        selectedUnitEnemyDMG.GetComponent<UnitScript>().TakeDamage(DamageDealtToEnemy);
+        if (selectedUnitEnemyDMG.GetComponent<UnitScript>().HasOnlyOneDamage)
+        {
+            selectedUnitEnemyDMG.GetComponent<UnitScript>().TakeDamage(1);
+        }
+        else
+        {
+            selectedUnitEnemyDMG.GetComponent<UnitScript>().TakeDamage(DamageDealtToEnemy);
+        }
+        StartCoroutine(_selectedUnit.GetComponent<UnitScript>().HasInflictedMini());
     }
 
     IEnumerator MaxDmgAfterDelay(Animator AnimToWait, GameObject selectedUnitEnemyDMG, int DamageDealtToEnemy)
     {
         yield return new WaitForSeconds(AnimToWait.GetCurrentAnimatorStateInfo(0).length + 0.5f);
-
-        selectedUnitEnemyDMG.GetComponent<UnitScript>().TakeDamage(DamageDealtToEnemy);
+        if (selectedUnitEnemyDMG.GetComponent<UnitScript>().HasOnlyOneDamage)
+        {
+            selectedUnitEnemyDMG.GetComponent<UnitScript>().TakeDamage(1);
+        }
+        else
+        {
+            selectedUnitEnemyDMG.GetComponent<UnitScript>().TakeDamage(DamageDealtToEnemy);
+        }
+        StartCoroutine(_selectedUnit.GetComponent<UnitScript>().HasInflictedMax());
     }
 
 
@@ -389,9 +385,9 @@ public class Attaque : MonoSingleton<Attaque>
         _JaugeAttack.SynchAttackBorne(RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>());
         _JaugeAttack.Attack(firstDiceInt + secondDiceInt);
 
-        if (_numberRangeMax.x == 0 && _numberRangeMax.y == 0)
+        if (_numberRangeMin.x == 0 && _numberRangeMin.y == 0)
         {
-            UnitAttackOneRange(_numberRangeMin, _damageMinimum, DiceResult, EnemyTarget);
+            UnitAttackOneRange(_numberRangeMax, _damageMaximum, DiceResult, EnemyTarget);
         }
         else
         {
@@ -968,6 +964,7 @@ public class Attaque : MonoSingleton<Attaque>
     /// </summary>
     public void StartDeviation()
     {
+        Debug.Log("StartDevi");
         foreach (int i in _selectedTiles)
         {
             TilesManager.Instance.TileList[i].gameObject.GetComponent<TileScript>().DesActiveChildObj(MYthsAndSteel_Enum.ChildTileType.AttackSelect);
@@ -1059,6 +1056,7 @@ public class Attaque : MonoSingleton<Attaque>
 
         int DeviationIdTile = listIdUI[DeviationIdTileIndex];
         selectedUnitEnnemy = TilesManager.Instance.TileList[DeviationIdTile].GetComponent<TileScript>().Unit;
+        idTileCible = TilesManager.Instance.TileList[DeviationIdTile].GetComponent<TileScript>().TileId;
         //Si lors du random on tombe sur l'idée case de l'unité visée rajouté précédemment on la rapporte à son valeur correspondante. 
         if (DeviationIdTileIndex == listIdUI.Count - 1)
         {
@@ -1086,6 +1084,7 @@ public class Attaque : MonoSingleton<Attaque>
     /// </summary>
     void ApplyDeviation()
     {
+        DeviationEnCours = false;
         foreach (int item in SetEnnemyUnitListTileNeighbourDiagUI)
         {
             TilesManager.Instance.TileList[item].GetComponent<SpriteRenderer>().sprite = DeviationOriginalSpriteCase;
@@ -1098,6 +1097,7 @@ public class Attaque : MonoSingleton<Attaque>
         {
             SoundController.Instance.PlaySound(_selectedUnit.GetComponent<UnitScript>().SonAttaque);
             Debug.Log("Damage : " + null);
+            StartCoroutine(_selectedUnit.GetComponent<UnitScript>().HasFailedAttack());
             StopAttack();
 
         }
@@ -1107,13 +1107,23 @@ public class Attaque : MonoSingleton<Attaque>
             if (selectedUnitEnnemy.GetComponent<UnitScript>().HasOnlyOneDamage == true)
             {
                 selectedUnitEnnemy.GetComponent<UnitScript>().TakeDamage(1);
+                StartCoroutine(_selectedUnit.GetComponent<UnitScript>().HasInflictedMini());
             }
             else
             {
-                selectedUnitEnnemy.GetComponent<UnitScript>().TakeDamage(_damageMinimum + _selectedUnit.GetComponent<UnitScript>()._damageBonus);
+                if(_damageMinimum == 0)
+                {
+                    selectedUnitEnnemy.GetComponent<UnitScript>().TakeDamage(_damageMaximum + _selectedUnit.GetComponent<UnitScript>()._damageBonus);
+                }
+                else
+                {
+                    selectedUnitEnnemy.GetComponent<UnitScript>().TakeDamage(_damageMinimum + _selectedUnit.GetComponent<UnitScript>()._damageBonus);
+                }
+                StartCoroutine(_selectedUnit.GetComponent<UnitScript>().HasInflictedMini());
             }
             SoundController.Instance.PlaySound(_selectedUnit.GetComponent<UnitScript>().SonAttaque);
             Debug.Log("Damage : " + _damageMinimum);
+            
             StopAttack();
         }
     }
