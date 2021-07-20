@@ -17,10 +17,15 @@ public class ColereDuKhodok : MonoBehaviour
     public int actualLife;
     bool SetLifeDone;
     public int actualBonus;
+    public AudioClip AttaqueUp;
+    public AudioClip AttaqueDown;
+    public AudioSource audioSource;
 
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         StartCoroutine(SetFirstLife());
+        GetComponentInChildren<Animation>().enabled = false;
     }
 
     private void Update()
@@ -31,12 +36,16 @@ public class ColereDuKhodok : MonoBehaviour
             GetComponent<UnitScript>().PermaDiceBoost += 2 * (actualLife - GetComponent<UnitScript>()._life);
             actualBonus += 2 * (actualLife - GetComponent<UnitScript>()._life);
             actualLife = GetComponent<UnitScript>()._life;
+            transform.GetChild(2).GetComponent<Animator>().SetBool("Active", true);
+            audioSource.PlayOneShot(AttaqueUp, 10f);
         }
         if (GetComponent<UnitScript>().HasAttacked)
         {
             GetComponent<UnitScript>().DiceBonus -= actualBonus;
             GetComponent<UnitScript>().PermaDiceBoost -= actualBonus;
             actualBonus = 0;
+            transform.GetChild(2).GetComponent<Animator>().SetBool("Active", false);
+            audioSource.PlayOneShot(AttaqueDown, 1f);
         }
         if(actualLife < GetComponent<UnitScript>()._life)
         {

@@ -2008,6 +2008,8 @@ MonoBehaviour:
   SelectedTiles: 
   _normalAttackSprite: {fileID: 21300000, guid: 120dc50b5dfb8c746a31d79d36df8a98, type: 3}
   _selectedSprite: {fileID: 21300000, guid: 332752d1c1d8b114daccf4a90b1a0703, type: 3}
+  DeviationEnCours: 0
+  idTileCible: 0
   Go: 0
   _JaugeAttack: {fileID: 1391136861}
   _attackselected: 0
