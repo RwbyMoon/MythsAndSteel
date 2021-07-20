@@ -47,17 +47,17 @@ public class InfoCarnet : MonoBehaviour
         {
             case 0:
                 {
-                    PrefabCapacity.transform.GetChild(0).GetComponent<Image>().sprite = _Capacity1Icon;
-                    PrefabCapacity.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = _Capacity1Name;
-                    PrefabCapacity.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = _Capacity1Desc;
+                    PrefabCapacity.transform.GetChild(1).GetComponent<Image>().sprite = _Capacity1Icon;
+                    PrefabCapacity.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = _Capacity1Name;
+                    PrefabCapacity.transform.GetComponent<TextMeshProUGUI>().text = _Capacity1Desc;
                     if (_Capacity1Cost > 0)
                     {
-                        PrefabCapacity.transform.GetChild(3).gameObject.SetActive(true);
-                        PrefabCapacity.transform.GetChild(3).GetComponent<TextMeshProUGUI>().text = _Capacity1Cost.ToString();
+                        PrefabCapacity.transform.GetChild(0).gameObject.SetActive(true);
+                        PrefabCapacity.transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = _Capacity1Cost.ToString();
                     }
                     else
                     {
-                        PrefabCapacity.transform.GetChild(3).gameObject.SetActive(false);
+                        PrefabCapacity.transform.GetChild(0).gameObject.SetActive(false);
                     }
                     int lengthTxt = _Capacity1Desc.Length;
                     float LengthLine = (float)lengthTxt / 21;
@@ -69,18 +69,17 @@ public class InfoCarnet : MonoBehaviour
                 }
             case 1:
                 {
-                    
-                    PrefabCapacity.transform.GetChild(0).GetComponent<Image>().sprite = _Capacity2Icon;
-                    PrefabCapacity.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = _Capacity2Name;
-                    PrefabCapacity.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = _Capacity2Desc;
+                    PrefabCapacity.transform.GetChild(1).GetComponent<Image>().sprite = _Capacity2Icon;
+                    PrefabCapacity.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = _Capacity2Name;
+                    PrefabCapacity.transform.GetComponent<TextMeshProUGUI>().text = _Capacity2Desc;
                     if (_Capacity2Cost > 0)
                     {
-                         PrefabCapacity.transform.GetChild(3).gameObject.SetActive(true);
-                         PrefabCapacity.transform.GetChild(3).GetComponent<TextMeshProUGUI>().text = _Capacity2Cost.ToString();
+                         PrefabCapacity.transform.GetChild(0).gameObject.SetActive(true);
+                         PrefabCapacity.transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = _Capacity2Cost.ToString();
                     }
                     else
                     {
-                        PrefabCapacity.transform.GetChild(3).gameObject.SetActive(false);
+                        PrefabCapacity.transform.GetChild(0).gameObject.SetActive(false);
                     }
                     int lengthTxt = _Capacity1Desc.Length;
                     float LengthLine = (float)lengthTxt / 21;
