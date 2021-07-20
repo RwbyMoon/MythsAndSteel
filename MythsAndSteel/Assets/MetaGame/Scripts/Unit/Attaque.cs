@@ -400,7 +400,7 @@ public class Attaque : MonoSingleton<Attaque>
     /// </summary>
     /// <param name="tileId"></param>
     /// <param name="Range"></param>
-    public void Highlight(int tileId, int currentID, int Range)
+    public void Highlight(int tileId, int currentID, int Range, int InfoLigneDroite = 1)
     {
         UIInstance.Instance.DesactivateNextPhaseButton();
         if (Range > 0)
@@ -418,12 +418,15 @@ public class Attaque : MonoSingleton<Attaque>
 
                 if (!i)
                 {
-                    TileSc.ActiveChildObj(MYthsAndSteel_Enum.ChildTileType.AttackSelect, _normalAttackSprite, 1);
                     if (!newNeighbourId.Contains(ID))
                     {
-                        newNeighbourId.Add(ID);
+                        if(!_selectedUnit.GetComponent<UnitScript>().AttaqueEnLigne || (_selectedUnit.GetComponent<UnitScript>().AttaqueEnLigne && (((ID - currentID) / InfoLigneDroite == 9) || ((ID - currentID) / InfoLigneDroite == -9) || ((ID - currentID) / InfoLigneDroite == 1) || ((ID - currentID) / InfoLigneDroite == -1))))
+                        {
+                            TileSc.ActiveChildObj(MYthsAndSteel_Enum.ChildTileType.AttackSelect, _normalAttackSprite, 1);
+                            newNeighbourId.Add(ID);
+                        }
                     }
-                    Highlight(ID, currentID, Range - 1); ;
+                    Highlight(ID, currentID, Range - 1, InfoLigneDroite + 1);
                 }
             }
         }

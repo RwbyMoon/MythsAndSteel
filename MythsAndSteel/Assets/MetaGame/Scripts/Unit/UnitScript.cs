@@ -86,6 +86,8 @@ public class UnitScript : MonoBehaviour
             _attackRangeBonus = value;
         }
     }
+
+    public bool AttaqueEnLigne;
   
 
     [Space]
