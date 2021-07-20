@@ -1,5 +1,44 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-4389298620020160751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9107272618204806385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ad1481ec1b07e149b594e4aa0edd8a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Capacity1Name: Tir Double
+  render1: {fileID: 0}
+  _Capacity1Description: Attaque 1 fois de plus ce tour.
+  _Capacity1Cost: 1
+--- !u!114 &-3196441758315317316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9107272618204806385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b5d53f4caebfc4f80e7f9f37bea2cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Capacity1Name: '!!Repoussement!!'
+  _Capacity1Type: Passif
+  _Capacity1Cost: 0
+  _Capacity1Desc: "Repousse d'une case l'unit\xE9 cibl\xE9e dans la direction voulue
+    lorsque l'attaque fait des d\xE9gats."
+  _Capacity1Icon: {fileID: 0}
+  _Capacity2Name: Tir Double
+  _Capacity2Type: Bonus
+  _Capacity2Cost: 1
+  _Capacity2Desc: Attaque 1 fois de plus ce tour.
+  _Capacity2Icon: {fileID: 0}
 --- !u!1001 &4555129466703045286
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9,7 +48,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4707557024412655191, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
       propertyPath: m_Name
-      value: Canon automarcheur
+      value: Canon automarcheur Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4707557024412655208, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
       propertyPath: m_Controller
@@ -109,3 +148,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
+--- !u!1 &9107272618204806385 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4707557024412655191, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
+  m_PrefabInstance: {fileID: 4555129466703045286}
+  m_PrefabAsset: {fileID: 0}

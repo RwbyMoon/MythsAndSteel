@@ -100,42 +100,50 @@ public class RaycastManager : MonoSingleton<RaycastManager>
         //Assigne l'unité si la tile qui est sélectionnée possède une unité
         _unitInTile = _tile != null ? _tile.GetComponent<TileScript>().Unit != null ? _tile.GetComponent<TileScript>().Unit : null : null;
 
-        //Permet de combiner le Shift et le click gauche de la souris.
-        if (_unitInTile == true && GameManager.Instance.IsInTurn){
-            //Si le joueur a utilisé le Shift puis leclick, le joueur est considéré comme click et on applique les fonctions propres au bouton des panneaux. De plus, le mouseOver est désactivé.
-            if (_mouseCommand._checkIfPlayerAsClic == true && _mouseCommand._hasCheckUnit == false && supersose)
-            {
-                _mouseCommand.ShiftClick();
-                _mouseCommand.MouseExitWithoutClick();
-                supersose = false;
-            }
-            else if(_mouseCommand._checkIfPlayerAsClic == false)
-            {
-                //Si le joueur n'a pas continué sa combinaison d'action( Shif+clic), alors quand ma souris reste sur une case sans cliqué, l'interface résumé des statistiques s'active.
-                _mouseCommand.MouseOverWithoutClick();
-            }
-  
-            
-        }
-        else
-        {
-            //Si la case ne comporte pas d'unité alors le MouseOver ne s'active pas et n'affiche par l'interface résumé des statistiques.
-            _mouseCommand.MouseExitWithoutClick();
-            if(GameManager.Instance.IsInTurn == false || GameManager.Instance.ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.Activation)
-            {
-            _mouseCommand.QuitShiftPanel();
-            }
-
-        }
+        CheckMouseHover();
 
         //Si la tile change
         if (_tile != _lastTile || _isInTurn != GameManager.Instance.IsInTurn)
         {
             _isInTurn = GameManager.Instance.IsInTurn;
             _lastTile = _tile;
-            if(!Input.GetKey(KeyCode.LeftShift))
+            if (!Input.GetKey(KeyCode.LeftShift))
             {
                 OnTileChanged();
+                _mouseCommand.MouseExitWithoutClick();
+            }
+
+        }
+    }
+
+    void CheckMouseHover()
+    {
+        //Permet de combiner le Shift et le click gauche de la souris.
+        if (_unitInTile == true && GameManager.Instance.IsInTurn)
+        {
+            //Si le joueur a utilisé le Shift puis leclick, le joueur est considéré comme click et on applique les fonctions propres au bouton des panneaux. De plus, le mouseOver est désactivé.
+            if (_mouseCommand._checkIfPlayerAsClic == true && _mouseCommand._hasCheckUnit == false && supersose)
+            {
+                _mouseCommand.ShiftClick();
+                _mouseCommand.MouseExitWithoutClick();
+                supersose = false;
+
+            }
+            else if (_mouseCommand._checkIfPlayerAsClic == false)
+            {
+                //Si le joueur n'a pas continué sa combinaison d'action( Shif+clic), alors quand ma souris reste sur une case sans cliqué, l'interface résumé des statistiques s'active.
+                _mouseCommand.MouseOverWithoutClick();
+            }
+
+
+        }
+        else
+        {
+            //Si la case ne comporte pas d'unité alors le MouseOver ne s'active pas et n'affiche par l'interface résumé des statistiques.
+            _mouseCommand.MouseExitWithoutClick();
+            if (GameManager.Instance.IsInTurn == false || GameManager.Instance.ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.Activation)
+            {
+                _mouseCommand.QuitShiftPanel();
             }
 
         }

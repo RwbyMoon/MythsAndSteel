@@ -33,21 +33,12 @@ public class MouseCommand : MonoBehaviour
 
     [Header("VALEUR POSITION UI")]
     //Permet de modifier la position de l'UI dans l'espace
-    [SerializeField] private float _offsetXActivationMenu;
-    [SerializeField] private float _offsetYActivationMenu;
-    [Space]
-    [SerializeField] private float _offsetXMouseOver;
-    [SerializeField] private float _offsetYMouseOver;
-    [Space]
-    [SerializeField] private float _offsetXStatPlus;
-    [SerializeField] private float _offsetYStatPlus;
-    [Space]
-    [SerializeField] private Vector2 _xOffsetMin;
-    [SerializeField] private Vector2 _yOffsetMin;
-    [SerializeField] private Vector2 _xOffset;
-    [SerializeField] private Vector2 _yOffset;
-    [SerializeField] private Vector2 _xOffsetMax;
-    [SerializeField] private Vector2 _yOffsetMax;
+
+    [SerializeField] private float OffsetPositionUI;
+    [SerializeField] private GameObject MapVisual;
+    public Vector4 carnetStats; // position x & y, largeur, hauteur
+    Vector2 posNextTerrain;
+    bool FirstTerrain;
 
     [Header("UI RENFORT UNITE")]
     [SerializeField] private GameObject _renfortUI;
@@ -61,7 +52,17 @@ public class MouseCommand : MonoBehaviour
     #endregion Variables
 
     #region UpdateStats
-    void UpdateUIStats()
+
+    private void Update()
+    {
+        UIInstance UI = UIInstance.Instance;
+        GameObject Tile = RaycastManager.Instance.Tile;
+
+        //Update des info de la tile sur le pannel du bas quand
+        UI.CallUpdateUI(Tile);
+    }
+
+    void UpdateUIStats(int bigStat = 1)
     {
 
         //Si la tile ne contient pas d'effet de terrain, on n'affiche pas d'information. Si la tile contient 1 effet, on affiche et met à jour l'effet de la case. Si la tile contient 2 effets, on affiche les 2 Effets.
@@ -69,12 +70,12 @@ public class MouseCommand : MonoBehaviour
 
         //Statistique pour le MouseOver.
         UnitScript unit = RaycastManager.Instance.UnitInTile.GetComponent<UnitScript>();
-        
+
         UI.TitlePanelMouseOver.GetComponent<TextMeshProUGUI>().text = unit.UnitSO.UnitName;
         UI.MouseOverStats._lifeGam.GetComponent<TextMeshProUGUI>().text = (unit.Life + unit.Shield).ToString();
         UI.MouseOverStats._rangeGam.GetComponent<TextMeshProUGUI>().text = (unit.AttackRange + unit.AttackRangeBonus).ToString();
         UI.MouseOverStats._moveGam.GetComponent<TextMeshProUGUI>().text = (unit.MoveSpeed + unit.MoveSpeedBonus).ToString();
-     
+
         switch (unit.UnitSO.typeUnite)
         {
             case MYthsAndSteel_Enum.TypeUnite.Infanterie:
@@ -113,8 +114,8 @@ public class MouseCommand : MonoBehaviour
         //Synchronise le texte de la valeur de la distance d'attaque de l'unité avec l'emplacement d'UI.
         //  UI.PageUnitStat._rangeGam.GetComponent<TextMeshProUGUI>().text = unit.AttackRange.ToString();
         //Synchronise le texte de la valeur de la vitesse de l'unité avec l'emplacement d'UI.
-        UI.PageUnitStat._rangeGam.GetComponent<TextMeshProUGUI>().text = (unit.AttackRange+ unit.AttackRangeBonus).ToString();
-        UI.PageUnitStat._moveGam.GetComponent<TextMeshProUGUI>().text = (unit.MoveSpeed+unit.MoveSpeedBonus).ToString();
+        UI.PageUnitStat._rangeGam.GetComponent<TextMeshProUGUI>().text = (unit.AttackRange + unit.AttackRangeBonus).ToString();
+        UI.PageUnitStat._moveGam.GetComponent<TextMeshProUGUI>().text = (unit.MoveSpeed + unit.MoveSpeedBonus).ToString();
 
         UpdateMiniJauge(unit);
 
@@ -125,19 +126,33 @@ public class MouseCommand : MonoBehaviour
             UI.capacityList.RemoveAt(UI.capacityList.Count - 1);
         }
 
-        if (RaycastManager.Instance.Tile.GetComponent<TileScript>().Unit.TryGetComponent<Capacity>(out Capacity Capa))
+        if (RaycastManager.Instance.Tile.GetComponent<TileScript>().Unit.TryGetComponent<InfoCarnet>(out InfoCarnet Capa))
         {
             int contentSize = 0;
             // CAPACITY 1.             
             if (Capa.ReturnInfo(UI.capacityPrefab, 0) != null)
             {
                 UI.capacityParent.transform.parent.parent.GetComponent<ScrollRect>().verticalScrollbar.value = 1;
-                GameObject CAPA1 = Instantiate(Capa.ReturnInfo(UI.capacityPrefab, 0), Vector2.zero, Quaternion.identity);
+                GameObject CAPA1 = Instantiate(Capa.ReturnInfo(UI.capacityPrefab, 0), Vector2.zero + new Vector2(120f,0f), Quaternion.identity);
                 CAPA1.transform.SetParent(UI.capacityParent.transform);
-                CAPA1.transform.localScale = new Vector3(.9f, .9f, .9f);
+                CAPA1.transform.localScale = new Vector3(1f, 1f, 1f);
                 UI.capacityList.Add(CAPA1);
 
-                int lengthTxt = CAPA1.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text.Length;
+                int lengthTxt = CAPA1.transform.GetChild(3).GetComponent<TextMeshProUGUI>().text.Length;
+                float LengthLine = (float)lengthTxt / 21;
+                int truncateLine = (int)LengthLine;
+                int capaSize = 15 * truncateLine;
+                contentSize += capaSize;
+            }
+            //CAPACITY 2
+            if(Capa.ReturnInfo(UI.capacityPrefab, 1) != null)
+            {
+                GameObject CAPA2 = Instantiate(Capa.ReturnInfo(UI.capacityPrefab, 1), Vector2.zero, Quaternion.identity);
+                CAPA2.transform.SetParent(UI.capacityParent.transform);
+                CAPA2.transform.localScale = new Vector3(.9f, .9f, .9f);
+                UI.capacityList.Add(CAPA2);
+
+                int lengthTxt = CAPA2.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text.Length;
                 float LengthLine = (float)lengthTxt / 21;
                 int truncateLine = (int)LengthLine;
                 int capaSize = 130 + (20 * truncateLine);
@@ -167,7 +182,7 @@ public class MouseCommand : MonoBehaviour
                         gam.SetActive(true);
                         gam.transform.GetChild(0).GetComponent<Image>().sprite = attribut.SpriteAttributUnit;
 
-                        UIInstance.Instance.objectsAttributs[i].Description.GetComponent<TextMeshProUGUI>().text = attribut._name + " :" + attribut.TextAttributUnit;
+                        UIInstance.Instance.objectsAttributs[i].Description.GetComponent<TextMeshProUGUI>().text = attribut._name + " : " + attribut.TextAttributUnit;
                         continue;
                     }
                 }
@@ -178,10 +193,16 @@ public class MouseCommand : MonoBehaviour
                 continue;
             }
         }
-
         //Statistique de la Page 2 du Carnet.  
         //Compléter avec les Images des Tiles.
 
+        for (int i = UI.effetDeTerrain.Count - 1; i >= 0; i--)
+        {
+            Destroy(UI.effetDeTerrain[UI.effetDeTerrain.Count - 1]);
+            UI.effetDeTerrain.RemoveAt(UI.effetDeTerrain.Count - 1);
+        }
+
+        //Effets de Terrain OLD/maybe good
         for (int i = UI.effetDeTerrain.Count - 1; i >= 0; i--)
         {
             Destroy(UI.effetDeTerrain[UI.effetDeTerrain.Count - 1]);
@@ -193,10 +214,13 @@ public class MouseCommand : MonoBehaviour
         {
             GameObject Effet = Instantiate(UI.Terrain.ReturnInfo(UI.prefabSlotEffetDeTerrain, Terrain), UI.parentSlotEffetDeTerrain.transform.position, Quaternion.identity);
             Effet.transform.SetParent(UI.parentSlotEffetDeTerrain.transform);
-            Effet.transform.localScale = new Vector3(.9f, .9f, .9f);
+            Effet.transform.localScale = new Vector3(1f, 1f, 1f);
             UI.effetDeTerrain.Add(Effet);
 
-            UI.parentSlotEffetDeTerrain.GetComponent<RectTransform>().sizeDelta = new Vector2(UI.parentSlotEffetDeTerrain.GetComponent<RectTransform>().sizeDelta.x, 212 * UI.effetDeTerrain.Count);
+            Effet.GetComponent<TextMeshProUGUI>().ForceMeshUpdate();
+
+            Debug.Log("LineCount" + (Effet.GetComponent<TextMeshProUGUI>().textInfo.lineCount + Effet.GetComponent<ChildOfParent>().TheChild.GetComponent<TextMeshProUGUI>().textInfo.lineCount));
+            UI.parentSlotEffetDeTerrain.GetComponent<RectTransform>().sizeDelta = new Vector2(UI.parentSlotEffetDeTerrain.GetComponent<RectTransform>().sizeDelta.x, 212 * UI.effetDeTerrain.Count); //(Effet.GetComponent<TextMeshProUGUI>().textInfo.lineCount + Effet.GetComponent<ChildOfParent>().TheChild.GetComponent<TextMeshProUGUI>().textInfo.lineCount) * 300 * UI.effetDeTerrain.Count);//
         }
 
         if (RaycastManager.Instance.Tile.GetComponent<TileScript>().TerrainEffectList.Count == 0)
@@ -205,30 +229,97 @@ public class MouseCommand : MonoBehaviour
             Effet.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "Liste vide.";
             Effet.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = "Cette unité n'a actuellement aucun pouvoir.";
             Effet.transform.SetParent(UI.parentSlotEffetDeTerrain.transform);
-            Effet.transform.localScale = new Vector3(.9f, .9f, .9f);
+            Effet.transform.localScale = new Vector3(1f, 1f, 1f);
             UI.parentSlotEffetDeTerrain.GetComponent<RectTransform>().sizeDelta = new Vector2(UI.parentSlotEffetDeTerrain.GetComponent<RectTransform>().sizeDelta.x, 212 * UI.Statuts.Count);
         }
 
-        for (int i = UI.Statuts.Count - 1; i >= 0; i--)
+        //Effets de Terrains PROTO NEW
+
+        /*UI.parentSlotEffetDeTerrain.transform.parent.parent.GetComponent<ScrollRect>().verticalScrollbar.value = 1;
+        foreach (MYthsAndSteel_Enum.TerrainType Terrain in RaycastManager.Instance.Tile.GetComponent<TileScript>().TerrainEffectList)
         {
-            Destroy(UI.Statuts[UI.Statuts.Count - 1]);
-            UI.Statuts.RemoveAt(UI.Statuts.Count - 1);
+            if (FirstTerrain == true)  
+            {
+                GameObject Effet = Instantiate(UI.Terrain.ReturnInfo(UI.prefabSlotEffetDeTerrain, Terrain), UI.parentSlotEffetDeTerrain.transform.position, Quaternion.identity);
+                Effet.transform.SetParent(UI.parentSlotEffetDeTerrain.transform);
+                Effet.transform.localScale = new Vector3(1f, 1f, 1f);
+                UI.effetDeTerrain.Add(Effet);
+
+                int numLines = Effet.GetComponent<TextMeshProUGUI>().text.Split('n').Length;
+                int numLines2 = Effet.GetComponent<ChildOfParent>().TheChild.GetComponent<TextMeshProUGUI>().text.Split('n').Length;
+
+                //UI.parentSlotEffetDeTerrain.GetComponent<RectTransform>().sizeDelta = new Vector2(UI.parentSlotEffetDeTerrain.GetComponent<RectTransform>().sizeDelta.x + 150,  * 60); // (1+numLines)
+                Vector2 NextTerrain = new Vector2(0, numLines + numLines2);
+                //posNextTerrain = new Vector2(UI.parentSlotEffetDeTerrain.transform.position.x + 150, UI.parentSlotEffetDeTerrain.transform.position.y + NextTerrain.y * 60);
+                posNextTerrain = new Vector2(UI.parentSlotEffetDeTerrain.transform.position.x + 150, UI.parentSlotEffetDeTerrain.transform.position.y + Effet.GetComponent<TextMeshProUGUI>().preferredHeight);
+
+                FirstTerrain = false;
+            }
+            else  
+            {
+                GameObject Effet = Instantiate(UI.Terrain.ReturnInfo(UI.prefabSlotEffetDeTerrain, Terrain), posNextTerrain, Quaternion.identity);
+                Effet.transform.SetParent(UI.parentSlotEffetDeTerrain.transform);
+                Effet.transform.localScale = new Vector3(1f, 1f, 1f);
+                UI.effetDeTerrain.Add(Effet);
+
+                int numLines = Effet.GetComponent<TextMeshProUGUI>().text.Split('n').Length;
+                int numLines2 = Effet.GetComponent<ChildOfParent>().TheChild.GetComponent<TextMeshProUGUI>().text.Split('n').Length;
+
+                //UI.parentSlotEffetDeTerrain.GetComponent<RectTransform>().sizeDelta = new Vector2(UI.parentSlotEffetDeTerrain.GetComponent<RectTransform>().sizeDelta.x + 150,  * 60); // (1+numLines)
+                Vector2 NextTerrain = new Vector2(0, numLines + numLines2);
+                //posNextTerrain = new Vector2(UI.parentSlotEffetDeTerrain.transform.position.x + 150, UI.parentSlotEffetDeTerrain.transform.position.y + NextTerrain.y * 60);preferredHeight
+                posNextTerrain = new Vector2(UI.parentSlotEffetDeTerrain.transform.position.x + 150, UI.parentSlotEffetDeTerrain.transform.position.y + Effet.GetComponent<TextMeshProUGUI>().preferredHeight);
+            }
+
         }
 
-        UI.parentSlotStatuts.transform.parent.parent.GetComponent<ScrollRect>().verticalScrollbar.value = 1;
-        if(RaycastManager.Instance.UnitInTile != null)
-        {
-            foreach (MYthsAndSteel_Enum.UnitStatut status in RaycastManager.Instance.UnitInTile.GetComponent<UnitScript>().UnitStatuts)
+        if (RaycastManager.Instance.Tile.GetComponent<TileScript>().TerrainEffectList.Count == 0)
             {
-                GameObject Effet = Instantiate(UI.StatusSc.ReturnInfo(UI.prefabSlotStatuts, status), UI.parentSlotStatuts.transform.position, Quaternion.identity);
-                Effet.transform.SetParent(UI.parentSlotStatuts.transform);
-                Effet.transform.localScale = new Vector3(.9f, .9f, .9f);
-                UI.Statuts.Add(Effet);
+                GameObject Effet = Instantiate(UI.prefabSlotEffetDeTerrain, UI.parentSlotEffetDeTerrain.transform.position, Quaternion.identity);
+                Effet.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "Liste vide.";
+                Effet.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = "Cette unité n'a actuellement aucun pouvoir.";
+                Effet.transform.SetParent(UI.parentSlotEffetDeTerrain.transform);
+                Effet.transform.localScale = new Vector3(1f, 1f, 1f);
+            }
 
-                UI.parentSlotStatuts.GetComponent<RectTransform>().sizeDelta = new Vector2(UI.parentSlotStatuts.GetComponent<RectTransform>().sizeDelta.x, 212 * UI.Statuts.Count);
+        FirstTerrain = true;*/
+        //Statuts
+        for (int i = 0; i < 4; i++)
+        {
+            if (unit.GetComponent<UnitScript>().UnitStatuts.Count > i)
+            {
+                Debug.Log("Count : " + unit.GetComponent<UnitScript>().UnitStatuts.Count);
+                if (unit.GetComponent<UnitScript>().UnitStatuts[i] == MYthsAndSteel_Enum.UnitStatut.Aucun)
+                {
+                    UIInstance.Instance.objectsStatuts[i].MainObjects.SetActive(false);
+                    Debug.Log("Case 1");
+                    continue;
+                }
+
+                //foreach (MYthsAndSteel_Enum.UnitStatut status in RaycastManager.Instance.UnitInTile.GetComponent<UnitScript>().UnitStatuts)
+                foreach (TextSpriteStatutUnit statut in UIInstance.Instance.textSpriteStatutUnit)
+                {
+                    if (statut._statuts == unit.GetComponent<UnitScript>().UnitStatuts[i])
+                    {
+                        GameObject gam = UIInstance.Instance.objectsStatuts[i].MainObjects;
+                        gam.SetActive(true);
+                        gam.transform.GetChild(0).GetComponent<Image>().sprite = statut.SpriteStatutUnit;
+
+                        UIInstance.Instance.objectsStatuts[i].Description.GetComponent<TextMeshProUGUI>().text = statut._name + " : " + statut.TextStatutUnit;
+                        Debug.Log("Case 2");
+                        continue;
+                    }
+                }
+            }
+            else
+            {
+                UIInstance.Instance.objectsStatuts[i].MainObjects.SetActive(false);
+                Debug.Log("Case 3");
+                continue;
             }
         }
     }
+
 
     #endregion UpdateStats
 
@@ -315,15 +406,6 @@ public class MouseCommand : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        UIInstance UI = UIInstance.Instance;
-        GameObject Tile = RaycastManager.Instance.Tile;
-
-        //Update des info de la tile sur le pannel du bas quand
-        UI.CallUpdateUI(Tile);
-    }
-
     #region ActivateUI
     /// <summary>
     /// Permet d'activer un élément de l'UI en utilisant un Raycast distint de la position et d'assigner une position custom par rapport au Canvas (Conflit avec le Canvas).
@@ -331,514 +413,48 @@ public class MouseCommand : MonoBehaviour
     /// <param name="uiElements"></param>
     /// <param name="offSetX"></param>
     /// <param name="offSetY"></param>
-    public void ActivateUI(GameObject uiElements, float lastPosX = 0, float lastPosY = 0, bool switchPage = false, bool activationMenu = false, bool mouseOver = false, bool bigStat = false)
+    public void ActivateUI(GameObject uiElements, float lastPosX = 0, float lastPosY = 0, bool switchPage = false, int activationMenu = 1, int mouseOver = 1, int bigStat = 1)
     {
         //Reprendre la position du raycast qui a sélectionné la tile
         RaycastHit2D hit = RaycastManager.Instance.GetRaycastHit();
 
-        //Je stop l'ensemble des coroutines en cours.
         Vector3 pos = Vector3.zero;
         StopAllCoroutines();
 
-        //Menu d'activation d'une unité
-        if (activationMenu)
-        {
-            if (hit.transform.position.x >= _xOffset.y)
-            {
-                if (hit.transform.position.x >= _xOffsetMax.y)
-                {
-                    if (hit.transform.position.y >= _yOffset.y)
-                    {
-                        if (hit.transform.position.y >= _yOffsetMax.y)
-                        {
-                            pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x - _offsetXActivationMenu, hit.transform.position.y - _offsetYActivationMenu + .5f, hit.transform.position.z));
-                        }
-                        else
-                        {
-                            pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x - _offsetXActivationMenu, hit.transform.position.y, hit.transform.position.z));
-                        }
-                    }
-                    else if (hit.transform.position.y <= _yOffset.x)
-                    {
-                        if (hit.transform.position.y <= _yOffsetMax.x)
-                        {
-                            pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x - _offsetXActivationMenu, hit.transform.position.y + _offsetYActivationMenu - .5f, hit.transform.position.z));
-                        }
-                        else
-                        {
-                            pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x - _offsetXActivationMenu, hit.transform.position.y, hit.transform.position.z));
-                        }
-                    }
-                    else
-                    {
-                        pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x - _offsetXActivationMenu, hit.transform.position.y, hit.transform.position.z));
-                    }
-                }
-                else
-                {
-                    if (hit.transform.position.y >= _yOffset.y)
-                    {
-                        if (hit.transform.position.y >= _yOffsetMax.y)
-                        {
-                            pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x - _offsetXActivationMenu, hit.transform.position.y - _offsetYActivationMenu + .5f, hit.transform.position.z));
-                        }
-                        else
-                        {
-                            pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x - _offsetXActivationMenu, hit.transform.position.y, hit.transform.position.z));
-                        }
-                    }
-                    else if (hit.transform.position.y <= _yOffset.x)
-                    {
-                        if (hit.transform.position.y <= _yOffsetMax.x)
-                        {
-                            pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x - _offsetXActivationMenu, hit.transform.position.y + _offsetYActivationMenu - .5f, hit.transform.position.z));
-                        }
-                        else
-                        {
-                            pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x - _offsetXActivationMenu, hit.transform.position.y, hit.transform.position.z));
-                        }
-                    }
-                    else
-                    {
-                        pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x - _offsetXActivationMenu, hit.transform.position.y, hit.transform.position.z));
-                    }
-                }
-            }
-
-            else if (hit.transform.position.x <= _xOffset.x)
-            {
-                if (hit.transform.position.x <= _xOffsetMax.x)
-                {
-                    if (hit.transform.position.y >= _yOffset.y)
-                    {
-                        if (hit.transform.position.y >= _yOffsetMax.y)
-                        {
-                            pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x + _offsetXActivationMenu, hit.transform.position.y - _offsetYActivationMenu + .5f, hit.transform.position.z));
-                        }
-                        else
-                        {
-                            pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x + _offsetXActivationMenu, hit.transform.position.y, hit.transform.position.z));
-                        }
-                    }
-                    else if (hit.transform.position.y <= _yOffset.x)
-                    {
-                        if (hit.transform.position.y <= _yOffsetMax.x)
-                        {
-                            pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x + _offsetXActivationMenu, hit.transform.position.y + _offsetYActivationMenu - .5f, hit.transform.position.z));
-                        }
-                        else
-                        {
-                            pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x + _offsetXActivationMenu, hit.transform.position.y, hit.transform.position.z));
-                        }
-                    }
-                    else
-                    {
-                        pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x + _offsetXActivationMenu, hit.transform.position.y, hit.transform.position.z));
-                    }
-                }
-                else
-                {
-                    if (hit.transform.position.y >= _yOffset.y)
-                    {
-                        if (hit.transform.position.y >= _yOffsetMax.y)
-                        {
-                            pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x + _offsetXActivationMenu, hit.transform.position.y - _offsetYActivationMenu + .5f, hit.transform.position.z));
-                        }
-                        else
-                        {
-                            pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x + _offsetXActivationMenu, hit.transform.position.y, hit.transform.position.z));
-                        }
-                    }
-                    else if (hit.transform.position.y <= _yOffset.x)
-                    {
-                        if (hit.transform.position.y <= _yOffsetMax.x)
-                        {
-                            pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x + _offsetXActivationMenu, hit.transform.position.y + _offsetYActivationMenu - .5f, hit.transform.position.z));
-                        }
-                        else
-                        {
-                            pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x + _offsetXActivationMenu, hit.transform.position.y, hit.transform.position.z));
-                        }
-                    }
-                    else
-                    {
-                        pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x + _offsetXActivationMenu, hit.transform.position.y, hit.transform.position.z));
-                    }
-                }
-            }
-            else
-            {
-                if (hit.transform.position.y >= _yOffsetMax.y)
-                {
-                    pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x + _offsetXActivationMenu, hit.transform.position.y - _offsetYActivationMenu, hit.transform.position.z));
-                }
-                else if (hit.transform.position.y <= _yOffsetMax.x)
-                {
-                    pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x + _offsetXActivationMenu, hit.transform.position.y + _offsetYActivationMenu, hit.transform.position.z));
-                }
-                else
-                {
-                    pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x + _offsetXActivationMenu, hit.transform.position.y, hit.transform.position.z));
-                }
-            }
-        }
-
-        //Menu mouseOver
-        else if (mouseOver)
-        {
-            if (hit.transform.position.x >= _xOffset.y)
-            {
-                if (hit.transform.position.x >= _xOffsetMax.y)
-                {
-                    if (hit.transform.position.y >= _yOffsetMin.y)
-                    {
-                        if (hit.transform.position.y >= _yOffsetMax.y)
-                        {
-                            pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x - _offsetXMouseOver, hit.transform.position.y - _offsetYMouseOver - 1, hit.transform.position.z));
-                        }
-                        else if (hit.transform.position.y <= _yOffsetMax.y && hit.transform.position.y >= _yOffset.y)
-                        {
-                            pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x - _offsetXMouseOver, hit.transform.position.y - _offsetYMouseOver - .5f, hit.transform.position.z));
-                        }
-                        else
-                        {
-                            pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x - _offsetXMouseOver, hit.transform.position.y - _offsetYMouseOver - .5f, hit.transform.position.z));
-                        }
-                    }
-                    else if (hit.transform.position.y <= _yOffsetMin.x)
-                    {
-                        if (hit.transform.position.y <= _yOffsetMax.x)
-                        {
-                            pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x - _offsetXMouseOver, hit.transform.position.y + _offsetYMouseOver + 1, hit.transform.position.z));
-                        }
-                        else if (hit.transform.position.y >= _yOffsetMax.x && hit.transform.position.y <= _yOffset.x)
-                        {
-                            pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x - _offsetXMouseOver, hit.transform.position.y + _offsetYMouseOver + .5f, hit.transform.position.z));
-                        }
-                        else
-                        {
-                            pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x - _offsetXMouseOver, hit.transform.position.y + _offsetYMouseOver + .5f, hit.transform.position.z));
-                        }
-                    }
-                    else
-                    {
-                        pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x - _offsetXMouseOver, hit.transform.position.y - _offsetYMouseOver - .5f, hit.transform.position.z));
-                    }
-                }
-                else
-                {
-                    if (hit.transform.position.y >= _yOffsetMin.y)
-                    {
-                        if (hit.transform.position.y >= _yOffsetMax.y)
-                        {
-                            pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x, hit.transform.position.y - _offsetYMouseOver - 1, hit.transform.position.z));
-                        }
-                        else if (hit.transform.position.y >= _yOffset.y && hit.transform.position.y <= _yOffsetMax.y)
-                        {
-                            pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x, hit.transform.position.y - _offsetYMouseOver - .5f, hit.transform.position.z));
-                        }
-                        else
-                        {
-                            pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x, hit.transform.position.y - _offsetYMouseOver - .5f, hit.transform.position.z));
-                        }
-                    }
-                    else if (hit.transform.position.y <= _yOffsetMin.x)
-                    {
-                        if (hit.transform.position.y <= _yOffsetMax.x)
-                        {
-                            pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x, hit.transform.position.y + _offsetYMouseOver + 1, hit.transform.position.z));
-                        }
-                        else if (hit.transform.position.y >= _yOffsetMax.x && hit.transform.position.y <= _yOffset.x)
-                        {
-                            pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x, hit.transform.position.y + _offsetYMouseOver + .5f, hit.transform.position.z));
-                        }
-                        else
-                        {
-                            pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x, hit.transform.position.y + _offsetYMouseOver + .5f, hit.transform.position.z));
-                        }
-                    }
-                    else
-                    {
-                        pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x, hit.transform.position.y - _offsetYMouseOver - .5f, hit.transform.position.z));
-                    }
-                }
-            }
-
-            else if (hit.transform.position.x <= _xOffset.x)
-            {
-                if (hit.transform.position.x <= _xOffsetMax.x)
-                {
-                    if (hit.transform.position.y >= _yOffsetMin.y)
-                    {
-                        if (hit.transform.position.y >= _yOffsetMax.y)
-                        {
-                            pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x + _offsetXMouseOver, hit.transform.position.y - _offsetYMouseOver - 1, hit.transform.position.z));
-                        }
-                        else if (hit.transform.position.y >= _yOffset.y && hit.transform.position.y <= _yOffsetMax.y)
-                        {
-                            pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x + _offsetXMouseOver, hit.transform.position.y - _offsetYMouseOver - .5f, hit.transform.position.z));
-                        }
-                        else
-                        {
-                            pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x + _offsetXMouseOver, hit.transform.position.y - _offsetYMouseOver - .5f, hit.transform.position.z));
-                        }
-                    }
-                    else if (hit.transform.position.y <= _yOffsetMin.x)
-                    {
-                        if (hit.transform.position.y <= _yOffsetMax.x)
-                        {
-                            pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x + _offsetXMouseOver, hit.transform.position.y + _offsetYMouseOver + 1, hit.transform.position.z));
-                        }
-                        else if (hit.transform.position.y >= _yOffsetMax.x && hit.transform.position.y <= _yOffset.x)
-                        {
-                            pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x + _offsetXMouseOver, hit.transform.position.y + _offsetYMouseOver + .5f, hit.transform.position.z));
-                        }
-                        else
-                        {
-                            pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x + _offsetXMouseOver, hit.transform.position.y + _offsetYMouseOver + .5f, hit.transform.position.z));
-                        }
-                    }
-                    else
-                    {
-                        pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x, hit.transform.position.y - _offsetYMouseOver - .5f, hit.transform.position.z));
-                    }
-                }
-                else
-                {
-                    if (hit.transform.position.y >= _yOffsetMin.y)
-                    {
-                        if (hit.transform.position.y >= _yOffsetMax.y)
-                        {
-                            pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x + _offsetXMouseOver, hit.transform.position.y - _offsetYMouseOver - 1, hit.transform.position.z));
-                        }
-                        else if (hit.transform.position.y >= _yOffset.y && hit.transform.position.y <= _yOffsetMax.y)
-                        {
-                            pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x + _offsetXMouseOver, hit.transform.position.y - _offsetYMouseOver - .5f, hit.transform.position.z));
-                        }
-                        else
-                        {
-                            pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x + _offsetXMouseOver, hit.transform.position.y - _offsetYMouseOver - .5f, hit.transform.position.z));
-                        }
-                    }
-                    else if (hit.transform.position.y <= _yOffsetMin.x)
-                    {
-                        if (hit.transform.position.y <= _yOffsetMax.x)
-                        {
-                            pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x + _offsetXMouseOver, hit.transform.position.y + _offsetYMouseOver + 1, hit.transform.position.z));
-                        }
-                        else if (hit.transform.position.y >= _yOffsetMax.x && hit.transform.position.y <= _yOffset.x)
-                        {
-                            pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x + _offsetXMouseOver, hit.transform.position.y + _offsetYMouseOver + .5f, hit.transform.position.z));
-                        }
-                        else
-                        {
-                            pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x + _offsetXMouseOver, hit.transform.position.y + _offsetYMouseOver + .5f, hit.transform.position.z));
-                        }
-                    }
-                    else
-                    {
-                        pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x, hit.transform.position.y - _offsetYMouseOver - .5f, hit.transform.position.z));
-                    }
-                }
-            }
-            else
-            {
-                if (hit.transform.position.y >= _yOffsetMax.y)
-                {
-                    pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x - _offsetXMouseOver / 2, hit.transform.position.y - _offsetYMouseOver - .5f, hit.transform.position.z));
-                }
-                else if (hit.transform.position.y <= _yOffsetMax.x)
-                {
-                    pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x - _offsetXMouseOver / 2, hit.transform.position.y + _offsetYMouseOver + .5f, hit.transform.position.z));
-                }
-                else
-                {
-                    pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x - _offsetXMouseOver * 2.5f, hit.transform.position.y, hit.transform.position.z));
-                }
-            }
-        }
-
-        //Menu avec toutes les stats
-        else if (bigStat)
-        {
-            if (hit.transform.position.x >= _xOffset.y)
-            {
-                if (hit.transform.position.x >= _xOffsetMax.y)
-                {
-                    if (hit.transform.position.y >= _yOffsetMin.y)
-                    {
-                        if (hit.transform.position.y >= _yOffsetMax.y)
-                        {
-                            pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x - _offsetXStatPlus, hit.transform.position.y - _offsetYStatPlus - 1, hit.transform.position.z));
-                        }
-                        else if (hit.transform.position.y <= _yOffsetMax.y && hit.transform.position.y >= _yOffset.y)
-                        {
-                            pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x - _offsetXStatPlus, hit.transform.position.y - _offsetYStatPlus - .5f, hit.transform.position.z));
-                        }
-                        else
-                        {
-                            pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x - _offsetXStatPlus, hit.transform.position.y - _offsetYStatPlus - .5f, hit.transform.position.z));
-                        }
-                    }
-                    else if (hit.transform.position.y <= _yOffsetMin.x)
-                    {
-                        if (hit.transform.position.y <= _yOffsetMax.x)
-                        {
-                            pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x - _offsetXStatPlus, hit.transform.position.y + _offsetYStatPlus + 1, hit.transform.position.z));
-                        }
-                        else if (hit.transform.position.y >= _yOffsetMax.x && hit.transform.position.y <= _yOffset.x)
-                        {
-                            pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x - _offsetXStatPlus, hit.transform.position.y + _offsetYStatPlus + .5f, hit.transform.position.z));
-                        }
-                        else
-                        {
-                            pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x - _offsetXStatPlus, hit.transform.position.y + _offsetYStatPlus + .5f, hit.transform.position.z));
-                        }
-                    }
-                    else
-                    {
-                        pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x - _offsetXStatPlus, hit.transform.position.y - _offsetYStatPlus - .5f, hit.transform.position.z));
-                    }
-                }
-                else
-                {
-                    if (hit.transform.position.y >= _yOffsetMin.y)
-                    {
-                        if (hit.transform.position.y >= _yOffsetMax.y)
-                        {
-                            pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x, hit.transform.position.y - _offsetYStatPlus - 1, hit.transform.position.z));
-                        }
-                        else if (hit.transform.position.y >= _yOffset.y && hit.transform.position.y <= _yOffsetMax.y)
-                        {
-                            pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x, hit.transform.position.y - _offsetYStatPlus - .5f, hit.transform.position.z));
-                        }
-                        else
-                        {
-                            pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x, hit.transform.position.y - _offsetYStatPlus - .5f, hit.transform.position.z));
-                        }
-                    }
-                    else if (hit.transform.position.y <= _yOffsetMin.x)
-                    {
-                        if (hit.transform.position.y <= _yOffsetMax.x)
-                        {
-                            pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x, hit.transform.position.y + _offsetYStatPlus + 1, hit.transform.position.z));
-                        }
-                        else if (hit.transform.position.y >= _yOffsetMax.x && hit.transform.position.y <= _yOffset.x)
-                        {
-                            pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x, hit.transform.position.y + _offsetYStatPlus + .5f, hit.transform.position.z));
-                        }
-                        else
-                        {
-                            pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x, hit.transform.position.y + _offsetYStatPlus + .5f, hit.transform.position.z));
-                        }
-                    }
-                    else
-                    {
-                        pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x, hit.transform.position.y - _offsetYStatPlus - .5f, hit.transform.position.z));
-                    }
-                }
-            }
-
-            else if (hit.transform.position.x <= _xOffset.x)
-            {
-                if (hit.transform.position.x <= _xOffsetMax.x)
-                {
-                    if (hit.transform.position.y >= _yOffsetMin.y)
-                    {
-                        if (hit.transform.position.y >= _yOffsetMax.y)
-                        {
-                            pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x + _offsetXStatPlus, hit.transform.position.y - _offsetYStatPlus - 1, hit.transform.position.z));
-                        }
-                        else if (hit.transform.position.y >= _yOffset.y && hit.transform.position.y <= _yOffsetMax.y)
-                        {
-                            pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x + _offsetXStatPlus, hit.transform.position.y - _offsetYStatPlus - .5f, hit.transform.position.z));
-                        }
-                        else
-                        {
-                            pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x + _offsetXStatPlus, hit.transform.position.y - _offsetYStatPlus - .5f, hit.transform.position.z));
-                        }
-                    }
-                    else if (hit.transform.position.y <= _yOffsetMin.x)
-                    {
-                        if (hit.transform.position.y <= _yOffsetMax.x)
-                        {
-                            pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x + _offsetXStatPlus, hit.transform.position.y + _offsetYStatPlus + 1, hit.transform.position.z));
-                        }
-                        else if (hit.transform.position.y >= _yOffsetMax.x && hit.transform.position.y <= _yOffset.x)
-                        {
-                            pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x + _offsetXStatPlus, hit.transform.position.y + _offsetYStatPlus + .5f, hit.transform.position.z));
-                        }
-                        else
-                        {
-                            pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x + _offsetXStatPlus, hit.transform.position.y + _offsetYStatPlus + .5f, hit.transform.position.z));
-                        }
-                    }
-                    else
-                    {
-                        pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x, hit.transform.position.y - _offsetYStatPlus - .5f, hit.transform.position.z));
-                    }
-                }
-                else
-                {
-                    if (hit.transform.position.y >= _yOffsetMin.y)
-                    {
-                        if (hit.transform.position.y >= _yOffsetMax.y)
-                        {
-                            pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x + _offsetXStatPlus, hit.transform.position.y - _offsetYStatPlus - 1, hit.transform.position.z));
-                        }
-                        else if (hit.transform.position.y >= _yOffset.y && hit.transform.position.y <= _yOffsetMax.y)
-                        {
-                            pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x + _offsetXStatPlus, hit.transform.position.y - _offsetYStatPlus - .5f, hit.transform.position.z));
-                        }
-                        else
-                        {
-                            pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x + _offsetXStatPlus, hit.transform.position.y - _offsetYStatPlus - .5f, hit.transform.position.z));
-                        }
-                    }
-                    else if (hit.transform.position.y <= _yOffsetMin.x)
-                    {
-                        if (hit.transform.position.y <= _yOffsetMax.x)
-                        {
-                            pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x + _offsetXStatPlus, hit.transform.position.y + _offsetYStatPlus + 1, hit.transform.position.z));
-                        }
-                        else if (hit.transform.position.y >= _yOffsetMax.x && hit.transform.position.y <= _yOffset.x)
-                        {
-                            pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x + _offsetXStatPlus, hit.transform.position.y + _offsetYStatPlus + .5f, hit.transform.position.z));
-                        }
-                        else
-                        {
-                            pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x + _offsetXStatPlus, hit.transform.position.y + _offsetYStatPlus + .5f, hit.transform.position.z));
-                        }
-                    }
-                    else
-                    {
-                        pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x, hit.transform.position.y - _offsetYStatPlus - .5f, hit.transform.position.z));
-                    }
-                }
-            }
-            else
-            {
-                if (hit.transform.position.y >= _yOffsetMax.y)
-                {
-                    pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x - _offsetXStatPlus / 2, hit.transform.position.y - _offsetYStatPlus - .5f, hit.transform.position.z));
-                }
-                else if (hit.transform.position.y <= _yOffsetMax.x)
-                {
-                    pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x - _offsetXStatPlus / 2, hit.transform.position.y + _offsetYStatPlus + .5f, hit.transform.position.z));
-                }
-                else
-                {
-                    pos = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x - _offsetXStatPlus * 2.5f, hit.transform.position.y, hit.transform.position.z));
-                }
-            }
-        }
-        else if (switchPage)
+        if (switchPage)
         {
             pos = new Vector3(lastPosX, lastPosY, ShiftUI[0].transform.position.z);
         }
         else
         {
-            Debug.LogError("Vous essayez de positionner un objet qui ne peut pas se positionner autour de l'unité");
+            // Coordonnées dans l'espace & côtes 
+            carnetStats.x = uiElements.transform.position.x;                        // x
+            carnetStats.y = uiElements.transform.position.y;                        // y
+            carnetStats.z = uiElements.GetComponent<RectTransform>().rect.width;    // width
+            carnetStats.w = uiElements.GetComponent<RectTransform>().rect.height;   // height
+
+            // Ecart entre chaque tile
+            float tileScale = 2.0255f;
+
+            Vector3 BottomLeft = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x, hit.transform.position.y, 0));
+            Vector3 TopRight = Camera.main.WorldToScreenPoint(new Vector3(hit.transform.position.x + tileScale, hit.transform.position.y + tileScale, 0));
+
+            pos.x = BottomLeft.x - carnetStats.z / 2 + (BottomLeft.x - TopRight.x) / 2;
+            pos.y = BottomLeft.y;
+
+            if (BottomLeft.x - carnetStats.z <= 380) // Si ça dépasse pas à gauche, sinon, à droite !
+            {
+                pos.x = BottomLeft.x + carnetStats.z / 2 - (BottomLeft.x - TopRight.x) / 2;
+            }
+            if (pos.y - carnetStats.w / 2 <= 0) // Si ça va plus bas que l'écran, ça le résoud en l'envoyant plus haut.
+            {
+                pos.y = (0 + carnetStats.w / 2);
+            }
+            else if (pos.y + carnetStats.w / 2 >= Screen.height) // Si ça va plus haut que l'écran, ça le résoud en l'envoyant plus bas
+            {
+                pos.y = Screen.height - carnetStats.w / 2;
+                Debug.Log("2Y " + pos.y);
+            }
         }
 
         //Rendre l'élément visible.
@@ -849,6 +465,7 @@ public class MouseCommand : MonoBehaviour
         {
             uiElements.transform.position = pos;
         }
+
     }
     #endregion ActivateUI
 
@@ -858,8 +475,8 @@ public class MouseCommand : MonoBehaviour
     /// </summary>
     public void ShiftClick()
     {
-        ActivateUI(ShiftUI[0], 0, 0, false, false, false, true);
-        UpdateUIStats();
+        ActivateUI(ShiftUI[0], 0, 0, false, 1, 1, 0);
+        UpdateUIStats(0);
     }
 
     /// <summary>
@@ -877,7 +494,7 @@ public class MouseCommand : MonoBehaviour
                 {
                     //Coroutine : Une coroutine est une fonction qui peut suspendre son exécution (yield) jusqu'à la fin de la YieldInstruction donnée.
                     StartCoroutine(ShowObject(TimeToWait));
-                    UpdateUIStats();
+                    UpdateUIStats(1);
                     _hasCheckUnit = true;
                 }
 
@@ -894,12 +511,12 @@ public class MouseCommand : MonoBehaviour
     /// </summary>
     public void MouseExitWithoutClick()
     {
-        if(GameManager.Instance.activationDone == false)
+        if (GameManager.Instance.activationDone == false)
         {
-        //Arrete l'ensemble des coroutines dans la scène.
-        StopAllCoroutines();
-        _mouseOverUI.SetActive(false);
-        _hasCheckUnit = false;
+            //Arrete l'ensemble des coroutines dans la scène.
+            StopAllCoroutines();
+            _mouseOverUI.SetActive(false);
+            _hasCheckUnit = false;
 
         }
     }
@@ -914,7 +531,7 @@ public class MouseCommand : MonoBehaviour
         //J'utilise un délai pour que le boutton apparaisse après un délai.
         yield return new WaitForSeconds(TimeToWait);
         //J'active l'élément et je lui assigne des paramètres.
-        ActivateUI(MouseOverUI, 0, 0, false, false, true);
+        ActivateUI(MouseOverUI, 0, 0, false, 1, 0);
     }
     #endregion ControleDesClicks
 
@@ -943,8 +560,13 @@ public class MouseCommand : MonoBehaviour
     {
         //J'active le Panneau 2 car le joueur a cliqué sur le bouton permettant de transitionner de la page 1 à la page 2. De plus, je masque la page 1.
         ActivateUI(ShiftUI[1], ShiftUI[0].transform.position.x, ShiftUI[0].transform.position.y, true);
+        TerrainActivate();
         ShiftUI[0].SetActive(false);
         SoundController.Instance.PlaySound(SoundController.Instance.AudioClips[13]);
+    }
+    void TerrainActivate()
+    {
+        
     }
 
     /// <summary>
@@ -1044,7 +666,7 @@ public class MouseCommand : MonoBehaviour
                         UIInstance.Instance.RessourceUnit_PasTouche._unité1Ressource[2].SetActive(false);
                         UIInstance.Instance.RessourceUnit_PasTouche._unité1Ressource[3].SetActive(false);
                     }
-
+                    
                     UIInstance.Instance.RessourceUnit_PasTouche._unité1Ressource[0].SetActive(true);
                     UIInstance.Instance.RessourceUnit_PasTouche._unité1Ressource[1].SetActive(true);
                     //Image Ressource pour l'unité 2 de l'armée Rouge

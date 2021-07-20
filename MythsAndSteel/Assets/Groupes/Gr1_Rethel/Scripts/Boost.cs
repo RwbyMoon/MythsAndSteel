@@ -4,15 +4,9 @@ using UnityEngine;
 
 public class Boost : Capacity
 {
-
-    // Start is called before the first frame update
-    private void Start()
-    {
-        GetComponent<UnitScript>().IsActifNotConsumeAction = true;
-    }
-
     public override void StartCpty()
     {
+        GetComponent<UnitScript>().IsActifNotConsumeAction = true;
         int tileId = RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().ActualTiledId;
         List<GameObject> unit = new List<GameObject>();
 
@@ -25,7 +19,7 @@ public class Boost : Capacity
                 GameObject Unit = TilesManager.Instance.TileList[i].GetComponent<TileScript>().Unit;
                 if (Unit != null)
                 {
-                    if (Unit.GetComponent<UnitScript>().UnitSO.IsInRedArmy==false)
+                    if (RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().UnitSO.IsInRedArmy == Unit.GetComponent<UnitScript>().UnitSO.IsInRedArmy)
                     {
                         unit.Add(TilesManager.Instance.TileList[Unit.GetComponent<UnitScript>().ActualTiledId]);
 
@@ -39,7 +33,7 @@ public class Boost : Capacity
                 GameObject Unit = TilesManager.Instance.TileList[i].GetComponent<TileScript>().Unit;
                 if (Unit != null)
                 {
-                    if (Unit.GetComponent<UnitScript>().UnitSO.IsInRedArmy == false)
+                    if (RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().UnitSO.IsInRedArmy == Unit.GetComponent<UnitScript>().UnitSO.IsInRedArmy)
                     {
                         unit.Add(TilesManager.Instance.TileList[Unit.GetComponent<UnitScript>().ActualTiledId]);
 
@@ -54,7 +48,7 @@ public class Boost : Capacity
                 GameObject Unit = TilesManager.Instance.TileList[i].GetComponent<TileScript>().Unit;
                 if (Unit != null)
                 {
-                    if (Unit.GetComponent<UnitScript>().UnitSO.IsInRedArmy == false)
+                    if (RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().UnitSO.IsInRedArmy == Unit.GetComponent<UnitScript>().UnitSO.IsInRedArmy)
                     {
                         unit.Add(TilesManager.Instance.TileList[Unit.GetComponent<UnitScript>().ActualTiledId]);
 
@@ -69,7 +63,7 @@ public class Boost : Capacity
                 GameObject Unit = TilesManager.Instance.TileList[i].GetComponent<TileScript>().Unit;
                 if (Unit != null)
                 {
-                    if (Unit.GetComponent<UnitScript>().UnitSO.IsInRedArmy == false)
+                    if (RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().UnitSO.IsInRedArmy == Unit.GetComponent<UnitScript>().UnitSO.IsInRedArmy)
                     {
                         unit.Add(TilesManager.Instance.TileList[Unit.GetComponent<UnitScript>().ActualTiledId]);
 
@@ -84,7 +78,7 @@ public class Boost : Capacity
                 GameObject Unit = TilesManager.Instance.TileList[i].GetComponent<TileScript>().Unit;
                 if (Unit != null)
                 {
-                    if (Unit.GetComponent<UnitScript>().UnitSO.IsInRedArmy == false)
+                    if (RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().UnitSO.IsInRedArmy == Unit.GetComponent<UnitScript>().UnitSO.IsInRedArmy)
                     {
                         unit.Add(TilesManager.Instance.TileList[Unit.GetComponent<UnitScript>().ActualTiledId]);
 
@@ -102,6 +96,7 @@ public class Boost : Capacity
     }
     public override void StopCpty()
     {
+        GetComponent<UnitScript>().IsActifNotConsumeAction = false;
         GameManager.Instance.StopEventModeTile();
         GameManager.Instance.TileChooseList.Clear();
         GetComponent<UnitScript>().StopCapacity(true);
@@ -110,6 +105,7 @@ public class Boost : Capacity
 
     public override void EndCpty()
     {
+
         Debug.Log("Boost, unité choisie : "+ GameManager.Instance.TileChooseList[0].GetComponent<TileScript>().Unit.GetComponent<UnitScript>().UnitSO.UnitName);
 
         // -1 PV pour la cible
@@ -123,15 +119,11 @@ public class Boost : Capacity
         {
             Debug.Log("pas possible car pas assez de PV");
         }
-
-
-        
-
-
         GetComponent<UnitScript>().ActifUsedThisTurn = true;
         GameManager.Instance._eventCall -= EndCpty;
         GetComponent<UnitScript>().EndCapacity();
         base.EndCpty();
         GameManager.Instance.TileChooseList.Clear();
+        GetComponent<UnitScript>().IsActifNotConsumeAction = false;
     }
 }

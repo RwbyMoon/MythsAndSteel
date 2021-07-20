@@ -16,7 +16,7 @@ public class MYthsAndSteel_Enum : MonoBehaviour
     /// </summary>
     public enum UnitStatut
     {
-        ArmeEpidemiologique, Paralysie, Immobilisation, Réanimé, Possédé, Invincible, PeutPasCombattre, PeutPasPrendreDesObjectifs
+        Aucun = 0, ArmeEpidemiologique = 1, Paralysie = 2, Immobilisation = 3, Réanimé = 4, Possédé = 5, Invincible = 6, PeutPasCombattre = 7, PeutPasPrendreDesObjectifs = 8, Silence = 9
     }
 
     /// <summary>
@@ -48,7 +48,7 @@ public class MYthsAndSteel_Enum : MonoBehaviour
     /// Tous les types de terrain
     /// </summary>
     public enum TerrainType{
-        Sol, Forêt, Bosquet, Plage, Colline, Haute_colline, Mont, Ravin, Eau, Boue, Rivière_Nord, Rivière_Sud, Rivière_Est, Rivière_Ouest, Fleuve, Ruisseau, Pont_Nord, Pont_Sud, Pont_Est, Pont_Ouest, Route, Rails, Maison, Immeuble, Ruines, UsineRouge, UsineBleu, Point_de_ressource, Gare, Bunker, Cabane_Isatabu, OrgoneBlue, OrgoneRed, Point_de_ressources_vide, Brasier, Feu, Barbelé_Nord, Barbelé_Sud, Barbelé_Est, Barbelé_Ouest, Détonation, Point_Objectif_Rouge, Point_Objectif_Bleu
+        Sol, Forêt, Bosquet, Plage, Colline, Haute_colline, Mont, Ravin, Eau, Boue, Rivière_Nord, Rivière_Sud, Rivière_Est, Rivière_Ouest, Fleuve, Ruisseau, Pont_Nord, Pont_Sud, Pont_Est, Pont_Ouest, Route, Rails, Maison, Immeuble, Ruines, UsineRouge, UsineBleu, Point_de_ressource, Gare, Bunker, Cabane_Isatabu, OrgoneBlue, OrgoneRed, Point_de_ressources_vide, Brasier, Feu, Barbelé_Nord, Barbelé_Sud, Barbelé_Est, Barbelé_Ouest, Détonation, Point_Objectif_Rouge, Point_Objectif_Bleu, Tunnel
     }
 
     /// <summary>
@@ -87,6 +87,6 @@ public class MYthsAndSteel_Enum : MonoBehaviour
     }
     public enum Attributs
     {
-       Aucun = 0, Déviation = 1, RésistanceAuFroid = 2, RésistanceAuFeu = 3, AppelDeRenforts = 4, ToutTerrain = 5, PasseMuraille = 6, Perforant = 7, Amphibie = 8, Démineur = 9, RestreintAuxRails = 10 
+       Aucun = 0, Déviation = 1, RésistanceAuFroid = 2, RésistanceAuFeu = 3, AppelDeRenforts = 4, ToutTerrain = 5, PasseMuraille = 6, Perforant = 7, Amphibie = 8, Démineur = 9, RestreintAuxRails = 10, Volant = 11
     }
 }

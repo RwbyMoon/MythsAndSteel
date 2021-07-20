@@ -3,71 +3,43 @@ using UnityEngine;
 
 public class SoinImmobilisation : Capacity
 {
+    List<GameObject> newNeighbourId = new List<GameObject>();
+    [SerializeField] private int Range;
+    void Highlight(int tileId, int currentID, int Range)
+    {
+        if (Range > 0)
+        {
+            foreach (int ID in PlayerStatic.GetNeighbourDiag(tileId, TilesManager.Instance.TileList[tileId].GetComponent<TileScript>().Line, false))
+            {
+                TileScript TileSc = TilesManager.Instance.TileList[ID].GetComponent<TileScript>();
+                bool i = false;
+
+                if (ID == currentID)
+                {
+                    i = true;
+
+                }
+
+                if (!i)
+                {
+                    if (!newNeighbourId.Contains(TilesManager.Instance.TileList[ID]) && TilesManager.Instance.TileList[ID].GetComponent<TileScript>().Unit != null)
+                    {
+                        newNeighbourId.Add(TilesManager.Instance.TileList[ID]);
+                    }
+                    Highlight(ID, currentID, Range - 1); ;
+                }
+            }
+        }
+    }
     public override void StartCpty()
     {
-        int tileId = RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().ActualTiledId;
-        List<GameObject> tile = new List<GameObject>();
-        
-        foreach (int T in PlayerStatic.GetNeighbourDiag(tileId, TilesManager.Instance.TileList[tileId].GetComponent<TileScript>().Line, false))
-        {
-            if (TilesManager.Instance.TileList[T] != null)
-            {
-                if (TilesManager.Instance.TileList[T].GetComponent<TileScript>().Unit != RaycastManager.Instance.ActualUnitSelected && TilesManager.Instance.TileList[T].GetComponent<TileScript>().Unit != null)
-                {
-                    tile.Add(TilesManager.Instance.TileList[T]);
-                }
-            }
-        }
-
-        foreach (int T in PlayerStatic.GetNeighbourDiag(tileId + 1, TilesManager.Instance.TileList[tileId + 1].GetComponent<TileScript>().Line, false))
-        {
-            if (TilesManager.Instance.TileList[T] != null)
-            {
-                if (TilesManager.Instance.TileList[T].GetComponent<TileScript>().Unit != RaycastManager.Instance.ActualUnitSelected && TilesManager.Instance.TileList[T].GetComponent<TileScript>().Unit != null)
-                {
-                    tile.Add(TilesManager.Instance.TileList[T]);
-                }
-            }
-        }
-
-        foreach (int T in PlayerStatic.GetNeighbourDiag(tileId - 1, TilesManager.Instance.TileList[tileId - 1].GetComponent<TileScript>().Line, false))
-        {
-            if (TilesManager.Instance.TileList[T] != null)
-            {
-                if (TilesManager.Instance.TileList[T].GetComponent<TileScript>().Unit != RaycastManager.Instance.ActualUnitSelected && TilesManager.Instance.TileList[T].GetComponent<TileScript>().Unit != null)
-                {
-                    tile.Add(TilesManager.Instance.TileList[T]);
-                }
-            }
-        }
-
-        foreach (int T in PlayerStatic.GetNeighbourDiag(tileId - 9, TilesManager.Instance.TileList[tileId - 9].GetComponent<TileScript>().Line, false))
-        {
-            if (TilesManager.Instance.TileList[T] != null)
-            {
-                if (TilesManager.Instance.TileList[T].GetComponent<TileScript>().Unit != RaycastManager.Instance.ActualUnitSelected && TilesManager.Instance.TileList[T].GetComponent<TileScript>().Unit != null)
-                {
-                    tile.Add(TilesManager.Instance.TileList[T]);
-                }
-            }
-        }
-
-        foreach (int T in PlayerStatic.GetNeighbourDiag(tileId + 9, TilesManager.Instance.TileList[tileId + 9].GetComponent<TileScript>().Line, false))
-        {
-            if (TilesManager.Instance.TileList[T] != null)
-            {
-                if (TilesManager.Instance.TileList[T].GetComponent<TileScript>().Unit != RaycastManager.Instance.ActualUnitSelected && TilesManager.Instance.TileList[T].GetComponent<TileScript>().Unit != null)
-                {
-                    tile.Add(TilesManager.Instance.TileList[T]);
-                }
-            }
-        }
-        
-        tile.Remove(TilesManager.Instance.TileList[GetComponent<UnitScript>().ActualTiledId].GetComponent<GameObject>());
+        Range = GetComponent<UnitScript>().AttackRange + GetComponent<UnitScript>().AttackRangeBonus;
+        newNeighbourId = new List<GameObject>();
+        Highlight(GetComponent<UnitScript>().ActualTiledId, GetComponent<UnitScript>().ActualTiledId, Range);
 
         GameManager.Instance._eventCall += EndCpty;
         GameManager.Instance._eventCallCancel += StopCpty;
-        GameManager.Instance.StartEventModeTiles(1, false, tile, "Soin/Immobilisation", "Voulez-vous vraiment soigner/immobiliser cette unitée ?");
+        GameManager.Instance.StartEventModeTiles(1, false, newNeighbourId, "Soin/Immobilisation", "Voulez-vous vraiment soigner/immobiliser cette unitée ?");
         base.StartCpty();
         
     }

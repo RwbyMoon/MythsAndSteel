@@ -14,6 +14,7 @@ public class UnitScript : MonoBehaviour
     [SerializeField] Unit_SO _unitSO;
 
     public int ParalysieStat = 3;
+    public int SilenceStat = 3;
     public Unit_SO UnitSO
     {
         get
@@ -36,6 +37,11 @@ public class UnitScript : MonoBehaviour
     [Header("--------------- Attributs ---------------")]
     public bool RestreintAuxRails;
     public bool ToutTerrain;
+    public bool Volant;
+    public bool FireResistance;
+    public bool PasseMuraille;
+    public bool Amphibie;
+    public bool Submersible;
     [Header("------------------- VIE -------------------")]
     [Header("------------------- STAT EN JEU -------------------")]
     //Vie actuelle
@@ -113,6 +119,10 @@ public class UnitScript : MonoBehaviour
             _diceBonus = value;
         }
     }
+
+    public int NbAtkTurn = 1;
+    public int NbAttaqueParTour = 1;
+    public bool HasAttackedOneTime;
 
     public bool RunningCapacity = false;
 
@@ -265,10 +275,10 @@ public class UnitScript : MonoBehaviour
         {
 
         if (StatusPrefab.GetBool("In"))
-        {
+            {
             StatusPrefab.SetBool("In", false);
             yield return new WaitForSeconds(1f);
-        }
+            }
         }
         if(UnitStatuts.Count >= step && step >= 0)
         {
@@ -358,6 +368,7 @@ public class UnitScript : MonoBehaviour
     public int PermaSpeedBoost;
     public int PermaRangeBoost;
     public int PermaDiceBoost;
+    public int PermaDamageBoost;
 
     #endregion Variables
 
@@ -501,8 +512,10 @@ public class UnitScript : MonoBehaviour
                                                 {
                                                     if (Try2.TryGetComponent<TerrainParent>(out TerrainParent Try3))
                                                     {
-                                                        AttackVariation += Try3.AttackApply(Damage);
-
+                                                        if (!Volant)
+                                                        {
+                                                            AttackVariation += Try3.AttackApply(Damage);
+                                                        }
                                                     }
                                                 }
                                             }
@@ -513,8 +526,10 @@ public class UnitScript : MonoBehaviour
                                     {
                                         if (Type.Child.TryGetComponent<TerrainParent>(out TerrainParent Try))
                                         {
-                                            AttackVariation += Try.AttackApply(Damage);
-
+                                            if (!Volant)
+                                            {
+                                                AttackVariation += Try.AttackApply(Damage);
+                                            }
                                         }
                                     }
                                 }
@@ -911,12 +926,15 @@ public class UnitScript : MonoBehaviour
         _isActivationDone = false;
         _isMoveDone = false;
         _isActionDone = false;
+        NbAttaqueParTour = NbAtkTurn;
+        HasAttackedOneTime = false;
 
         StartCoroutine(NewTurnHasStarted());
 
         MoveSpeedBonus = PermaSpeedBoost;
         AttackRangeBonus = PermaRangeBoost;
         DiceBonus = PermaDiceBoost;
+        _damageBonus = PermaDamageBoost;
         ActifUsedThisTurn = false;
 
         hasUseActivation = false;
@@ -983,15 +1001,18 @@ public class UnitScript : MonoBehaviour
 
     public void StartCapacity()
     {
-        CapacitySystem.Instance.CapacityRunning = true;
-        RunningCapacity = true; 
-        CapacitySystem.Instance.Updatebutton();
-        UIInstance.Instance.DesactivateNextPhaseButton();
+        if (!HasAttackedOneTime && !UnitStatuts.Contains(MYthsAndSteel_Enum.UnitStatut.Silence))
+        {
+            CapacitySystem.Instance.CapacityRunning = true;
+            RunningCapacity = true;
+            CapacitySystem.Instance.Updatebutton();
+            UIInstance.Instance.DesactivateNextPhaseButton();
             if (TryGetComponent<Capacity>(out Capacity T))
             {
                 Debug.Log("starrt");
                 T.StartCpty();
             }
+        }
     }
 
     public void EndCapacity()

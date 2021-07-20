@@ -47,7 +47,7 @@ public class TerrainTypeClass : ScriptableObject
                 PrefabEffetDeTerrain.transform.GetChild(0).GetComponent<Image>().sprite = Saved.render;
             }
             PrefabEffetDeTerrain.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = Saved._terrainName;
-            PrefabEffetDeTerrain.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = Saved._description;
+            PrefabEffetDeTerrain.transform.GetComponent<TextMeshProUGUI>().text = Saved._description;
             return PrefabEffetDeTerrain;
         }
         return null;

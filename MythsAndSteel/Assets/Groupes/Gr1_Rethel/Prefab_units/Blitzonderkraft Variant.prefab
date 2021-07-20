@@ -1,5 +1,29 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &2749623181247097548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3763016958914352355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b5d53f4caebfc4f80e7f9f37bea2cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Capacity1Name: '!!Transport!!'
+  _Capacity1Type: Transport
+  _Capacity1Cost: 0
+  _Capacity1Desc: "Peut embarquer et d\xE9barquer une unit\xE9 de type Infanterie,
+    Artillerie ou Leader."
+  _Capacity1Icon: {fileID: 0}
+  _Capacity2Name: '!!Charge Sortante!!'
+  _Capacity2Type: Passif
+  _Capacity2Cost: 0
+  _Capacity2Desc: "La prochaine attaque d'une unit\xE9 d\xE9barqu\xE9e repousse sa
+    cible de 1 case."
+  _Capacity2Icon: {fileID: 0}
 --- !u!1001 &8461262940637399732
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9,7 +33,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4707557024412655191, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
       propertyPath: m_Name
-      value: Blitzonderkraft
+      value: Blitzonderkraft Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4707557024412655208, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
       propertyPath: m_Controller
@@ -109,3 +133,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
+--- !u!1 &3763016958914352355 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4707557024412655191, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
+  m_PrefabInstance: {fileID: 8461262940637399732}
+  m_PrefabAsset: {fileID: 0}
