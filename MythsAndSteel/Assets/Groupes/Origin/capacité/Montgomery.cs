@@ -27,15 +27,19 @@ public class Montgomery : Capacity
 
     override public void StartCpty()
     {
+        GameManager.Instance.UnitChooseList.Clear();
         List<GameObject> unitList = new List<GameObject>();
         unitList.AddRange(GameManager.Instance.IsPlayerRedTurn ? PlayerScript.Instance.UnitRef.UnitListRedPlayer : PlayerScript.Instance.UnitRef.UnitListBluePlayer);
         GameManager.Instance.StartEventModeUnit(2, GameManager.Instance.IsPlayerRedTurn ? true : false, unitList, Capacity1Name, Capacity1Description + "Utilsiation Restantes: " + PowerUseLeft);
         GameManager.Instance._eventCall += EndCpty;
-
+        GameManager.Instance._eventCallCancel += StopCpty;
     }
     override public void StopCpty()
     {
-
+        GameManager.Instance.StopEventModeTile();
+        GameManager.Instance.TileChooseList.Clear();
+        GetComponent<UnitScript>().StopCapacity(true);
+        base.StopCpty();
     }
 
 }

@@ -4,13 +4,9 @@ using UnityEngine;
 
 public class ProtocoleDeProtection : Capacity
 {
-    private void Start()
-    {
-        GetComponent<UnitScript>().IsActifNotConsumeAction = true;
-    }
-
     public override void StartCpty()
     {
+        GetComponent<UnitScript>().IsActifNotConsumeAction = true;
         int tileId = RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().ActualTiledId;
         List<GameObject> tile = new List<GameObject>();
         if(GetComponent<UnitScript>().ActifUsedThisTurn == false)
@@ -34,6 +30,7 @@ public class ProtocoleDeProtection : Capacity
 
     public override void StopCpty()
     {
+        GetComponent<UnitScript>().IsActifNotConsumeAction = false;
         GameManager.Instance.StopEventModeTile();
         GameManager.Instance.TileChooseList.Clear();
         GetComponent<UnitScript>().StopCapacity(true);
@@ -56,5 +53,6 @@ public class ProtocoleDeProtection : Capacity
             GameManager.Instance.TileChooseList[0].GetComponent<TileScript>().Unit.GetComponent<UnitScript>().UpdateLifeHeartShieldUI(UIInstance.Instance.BlueHeartShieldSprite, GameManager.Instance.TileChooseList[0].GetComponent<TileScript>().Unit.GetComponent<UnitScript>()._life + GameManager.Instance.TileChooseList[0].GetComponent<TileScript>().Unit.GetComponent<UnitScript>()._shield);
         }
         GameManager.Instance.TileChooseList.Clear();
+        GetComponent<UnitScript>().IsActifNotConsumeAction = false;
     }
 }

@@ -1,5 +1,28 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-3746348279736032323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3742800689673664377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b5d53f4caebfc4f80e7f9f37bea2cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Capacity1Name: '!!Changement de Trajectoire!!'
+  _Capacity1Type: Passif
+  _Capacity1Cost: 1
+  _Capacity1Desc: "1 fois par tour, l'unit\xE9 peut relancer son attaque si cette
+    derni\xE8re a \xE9chou\xE9e. La seconde attaque poss\xE8de l'attribut D\xE9viation."
+  _Capacity1Icon: {fileID: 0}
+  _Capacity2Name: 
+  _Capacity2Type: 
+  _Capacity2Cost: 0
+  _Capacity2Desc: 
+  _Capacity2Icon: {fileID: 21300000, guid: 24c38065f0aa40046a1f50a3c6882ced, type: 3}
 --- !u!1001 &8261153443940870446
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9,7 +32,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4707557024412655191, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
       propertyPath: m_Name
-      value: Lance-Avion
+      value: Lance-Avion Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4707557024412655208, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
       propertyPath: m_Controller
@@ -173,3 +196,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
+--- !u!1 &3742800689673664377 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4707557024412655191, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
+  m_PrefabInstance: {fileID: 8261153443940870446}
+  m_PrefabAsset: {fileID: 0}

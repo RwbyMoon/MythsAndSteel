@@ -5901,6 +5901,30 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4707557024412655191, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
   m_PrefabInstance: {fileID: 544631424}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &360124469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 360124468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b5d53f4caebfc4f80e7f9f37bea2cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Capacity1Name: "!!R\xE9g\xE9n\xE9ration!!"
+  _Capacity1Type: Passif
+  _Capacity1Cost: 0
+  _Capacity1Desc: "Une fois par tour, se soigne de 1 pv lorsqu'une unit\xE9 alli\xE9e
+    dans un rayon de 2 cases ou lui-m\xEAme inflige des d\xE9gats."
+  _Capacity1Icon: {fileID: 0}
+  _Capacity2Name: Boost
+  _Capacity2Type: Bonus
+  _Capacity2Cost: 0
+  _Capacity2Desc: "Cible une unit\xE9 alli\xE9e dans un rayon de 2 cases ou lui-m\xEAme.
+    Cette unit\xE9 subit 1 d\xE9gat. En contrepartie, elle obtient +2 de d\xE9placement."
+  _Capacity2Icon: {fileID: 0}
 --- !u!1001 &361147857
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6086,6 +6110,29 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4707557024412655211, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
   m_PrefabInstance: {fileID: 1048766018}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &366772114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 366772112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b5d53f4caebfc4f80e7f9f37bea2cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Capacity1Name: "!!Acc\xE9l\xE9ration!!"
+  _Capacity1Type: Passif
+  _Capacity1Cost: 0
+  _Capacity1Desc: "Au d\xE9but du tour, obtient +1 de d\xE9placement si une case
+    adjacente est enflamm\xE9e ou sous fumig\xE8ne."
+  _Capacity1Icon: {fileID: 0}
+  _Capacity2Name: 
+  _Capacity2Type: 
+  _Capacity2Cost: 0
+  _Capacity2Desc: 
+  _Capacity2Icon: {fileID: 21300000, guid: 24c38065f0aa40046a1f50a3c6882ced, type: 3}
 --- !u!1001 &368406577
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6364,6 +6411,41 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4707557024412655191, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
   m_PrefabInstance: {fileID: 996468472}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &388723114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 388723113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b5d53f4caebfc4f80e7f9f37bea2cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Capacity1Name: '!!Pilonnage!!'
+  _Capacity1Type: Passif
+  _Capacity1Cost: 0
+  _Capacity1Desc: "Si l'attaque inflige des d\xE9gats, l'unit\xE9 cibl\xE9e subit
+    -1 de mouvement pour son prochain tour."
+  _Capacity1Icon: {fileID: 0}
+  _Capacity2Name: Canon Double
+  _Capacity2Type: Passif
+  _Capacity2Cost: 0
+  _Capacity2Desc: Attaque 2 fois par tour.
+  _Capacity2Icon: {fileID: 0}
+--- !u!114 &388723115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 388723113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f73f09319808eda41b736687a48f37a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &388783380
 GameObject:
   m_ObjectHideFlags: 0
@@ -9089,6 +9171,31 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4707557024412655191, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
   m_PrefabInstance: {fileID: 1071909155}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &557394559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557394558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b5d53f4caebfc4f80e7f9f37bea2cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Capacity1Name: '!!Peine Maximal!!'
+  _Capacity1Type: Actif
+  _Capacity1Cost: 1
+  _Capacity1Desc: "Une fois activ\xE9e, les unit\xE9s alli\xE9es adjacentes infligent
+    forc\xE9ment un coup critique pour ce tour."
+  _Capacity1Icon: {fileID: 0}
+  _Capacity2Name: '!!Bondissement!!'
+  _Capacity2Type: Bonus
+  _Capacity2Cost: 1
+  _Capacity2Desc: "Bondit sur une case dans un rayon de 3 cases de port\xE9e. Les
+    unit\xE9s ennemies adjacentes au point d'arriv\xE9e sont repouss\xE9es d'une
+    case."
+  _Capacity2Icon: {fileID: 0}
 --- !u!1 &558206696 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2443697204554867568, guid: 7bbc409cd689e724181e7247346a3e4b, type: 3}
@@ -9561,6 +9668,30 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4707557024412655211, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
   m_PrefabInstance: {fileID: 1612234106}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &581274737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 581274735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b5d53f4caebfc4f80e7f9f37bea2cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Capacity1Name: "!!D\xE9placement en Meute!!"
+  _Capacity1Type: Bonus
+  _Capacity1Cost: 0
+  _Capacity1Desc: "D\xE9place un Wolpetinger alli\xE9 de 1 case. 1 fois par Wolpertinger
+    dans un m\xEAme tour."
+  _Capacity1Icon: {fileID: 0}
+  _Capacity2Name: "!!Meute de la For\xEAt Noire!!"
+  _Capacity2Type: Passif
+  _Capacity2Cost: 0
+  _Capacity2Desc: "Ignore les effets de terrain For\xEAt. Obtient +2 aux bornes d'attaques
+    par Wolpertinger adjacent."
+  _Capacity2Icon: {fileID: 0}
 --- !u!1 &587643442
 GameObject:
   m_ObjectHideFlags: 0
@@ -10491,9 +10622,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _Capacity1Name: Tir de canon
   render1: {fileID: 21300000, guid: 46c51ae1279fb454a9be6e3ac8c6b002, type: 3}
-  _Capacity1Description: "Repousse de trois cases une unit\xE9 adjascente.\n"
+  _Capacity1Description: "Repousse de trois cases une unit\xE9 adjacente.\n"
   _Capacity1Cost: 0
   LineCount: 3
+--- !u!114 &650296784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 650296782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b5d53f4caebfc4f80e7f9f37bea2cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Capacity1Name: Tir de Canon
+  _Capacity1Type: Actif
+  _Capacity1Cost: 0
+  _Capacity1Desc: "Repousse de 3 cases une unit\xE9 adjacente."
+  _Capacity1Icon: {fileID: 21300000, guid: 46c51ae1279fb454a9be6e3ac8c6b002, type: 3}
+  _Capacity2Name: 
+  _Capacity2Type: 
+  _Capacity2Cost: 0
+  _Capacity2Desc: 
+  _Capacity2Icon: {fileID: 21300000, guid: 24c38065f0aa40046a1f50a3c6882ced, type: 3}
 --- !u!1 &657214117
 GameObject:
   m_ObjectHideFlags: 0
@@ -15337,6 +15490,30 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4707557024412655191, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
   m_PrefabInstance: {fileID: 233790672}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &948397036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 948397035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b5d53f4caebfc4f80e7f9f37bea2cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Capacity1Name: "!!D\xE9placement en Meute!!"
+  _Capacity1Type: Bonus
+  _Capacity1Cost: 0
+  _Capacity1Desc: "D\xE9place un Wolpetinger alli\xE9 de 1 case. 1 fois par Wolpertinger
+    dans un m\xEAme tour."
+  _Capacity1Icon: {fileID: 0}
+  _Capacity2Name: "!!Meute de la For\xEAt Noire!!"
+  _Capacity2Type: Passif
+  _Capacity2Cost: 0
+  _Capacity2Desc: "Ignore les effets de terrain For\xEAt. Obtient +2 aux bornes d'attaques
+    par Wolpertinger adjacent."
+  _Capacity2Icon: {fileID: 0}
 --- !u!1 &948662973 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1151891421109527660, guid: 23d5891db20fc824ebf77b9b0e573bb7, type: 3}
@@ -16246,6 +16423,10 @@ PrefabInstance:
     - target: {fileID: 4707557024412655209, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
       propertyPath: _actualTileld
       value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707557024412655209, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
+      propertyPath: NbAttaqueParTour
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4707557024412655210, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
       propertyPath: m_Sprite
@@ -17184,6 +17365,10 @@ PrefabInstance:
       propertyPath: _unitSO
       value: 
       objectReference: {fileID: 11400000, guid: 1b309b2f3d7c5f14e86e5c515bc4032d, type: 2}
+    - target: {fileID: 4707557024412655209, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
+      propertyPath: ToutTerrain
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4707557024412655209, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
       propertyPath: _actualTileld
       value: 2
@@ -25984,6 +26169,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: e9f77c9d33fc211428ee358bf077d610, type: 2}
     - target: {fileID: 4707557024412655209, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
+      propertyPath: PasseMuraille
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707557024412655209, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
       propertyPath: _actualTileld
       value: 80
       objectReference: {fileID: 0}
@@ -26095,6 +26284,30 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4707557024412655191, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
   m_PrefabInstance: {fileID: 1589926969}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1557570496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557570495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b5d53f4caebfc4f80e7f9f37bea2cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Capacity1Name: "!!Train\xE9e de Feu!!"
+  _Capacity1Type: Actif
+  _Capacity1Cost: 2
+  _Capacity1Desc: "Enflamme 3 cases align\xE9es \xE0 2 cases de port\xE9e. La case
+    centrale est un brasier, les deux autres sont des flammes."
+  _Capacity1Icon: {fileID: 0}
+  _Capacity2Name: "!!Gu\xE9rison Enflamm\xE9e!!"
+  _Capacity2Type: Passif
+  _Capacity2Cost: 0
+  _Capacity2Desc: "Soigne de 1 pv si l'unit\xE9 se trouve sur une case enflamm\xE9e
+    ou sous fumig\xE8ne \xE0 la fin de son tour."
+  _Capacity2Icon: {fileID: 0}
 --- !u!4 &1558656418 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1041681342709538972, guid: 952bdf0716382114eaa4a1733562d578, type: 3}
@@ -26589,6 +26802,10 @@ PrefabInstance:
     - target: {fileID: 4707557024412655209, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
       propertyPath: _actualTileld
       value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707557024412655209, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
+      propertyPath: FireResistance
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4707557024412655210, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
       propertyPath: m_Sprite
@@ -27735,6 +27952,30 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4707557024412655211, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
   m_PrefabInstance: {fileID: 312117450}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1653349011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1653349009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b5d53f4caebfc4f80e7f9f37bea2cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Capacity1Name: "!!D\xE9placement en Meute!!"
+  _Capacity1Type: Bonus
+  _Capacity1Cost: 0
+  _Capacity1Desc: "D\xE9place un Wolpetinger alli\xE9 de 1 case. 1 fois par Wolpertinger
+    dans un m\xEAme tour."
+  _Capacity1Icon: {fileID: 0}
+  _Capacity2Name: "!!Meute de la For\xEAt Noire!!"
+  _Capacity2Type: Passif
+  _Capacity2Cost: 0
+  _Capacity2Desc: "Ignore les effets de terrain For\xEAt. Obtient +2 aux bornes d'attaques
+    par Wolpertinger adjacent."
+  _Capacity2Icon: {fileID: 0}
 --- !u!1 &1658327341
 GameObject:
   m_ObjectHideFlags: 0

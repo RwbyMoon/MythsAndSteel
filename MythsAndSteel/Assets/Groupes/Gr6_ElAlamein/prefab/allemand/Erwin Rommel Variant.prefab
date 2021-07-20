@@ -14,12 +14,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _Capacity1Name: Transformation
   render1: {fileID: 21300000, guid: a83d1851c25eb4a40843bb3f8f88ef7a, type: 3}
-  _Capacity1Description: "Si cette unit\xE9 est adjacente \xE0 une usine, transformez-la
-    en Erwin Rommel (m\xE9cha) et soignez-le.\n"
-  _Capacity1Cost: 5
+  _Capacity1Description: "Si cette unit\xE9 est adjacente \xE0 une usine. la transforme
+    en M\xE9cha-Rommel et la soigne enti\xE8rement.\n"
+  _Capacity1Cost: 4
   TransformationRomel: {fileID: 11400000, guid: 63a82f15696f96d4bb0343895e91d569, type: 2}
   TransformationRomelAnimator: {fileID: 9100000, guid: 165dc9dc466dfec47ab5ef114f66ce15, type: 2}
   TransformationRomelsprite: {fileID: 0}
+--- !u!114 &76006818135186110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7957999565015944866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b5d53f4caebfc4f80e7f9f37bea2cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Capacity1Name: Transformation
+  _Capacity1Type: Actif
+  _Capacity1Cost: 4
+  _Capacity1Desc: "Si cette unit\xE9 est adjacente \xE0 une usine. la transforme
+    en M\xE9cha-Rommel et la soigne enti\xE8rement."
+  _Capacity1Icon: {fileID: 21300000, guid: a83d1851c25eb4a40843bb3f8f88ef7a, type: 3}
+  _Capacity2Name: '!!Repositionnement!!'
+  _Capacity2Type: Bonus
+  _Capacity2Cost: 0
+  _Capacity2Desc: "D\xE9place une unit\xE9 alli\xE9e adjacente de 1 case."
+  _Capacity2Icon: {fileID: 0}
 --- !u!1001 &3397091106549125365
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29,7 +52,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4707557024412655191, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
       propertyPath: m_Name
-      value: Erwin Rommel
+      value: Erwin Rommel Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4707557024412655208, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
       propertyPath: m_Controller

@@ -629,4 +629,46 @@ public class RenfortPhase : MonoSingleton<RenfortPhase>
 
     }
     #endregion CréerUnité
+
+    public void UpdateGareControl()
+    {
+        _usineListBlue.Clear();
+        _usineListRed.Clear();
+        foreach (GameObject typeTile in TilesManager.Instance.TileList)
+        {
+            if (typeTile.GetComponent<TileScript>().TerrainEffectList.Contains((MYthsAndSteel_Enum.TerrainType.UsineRouge)))
+            {
+                _usineListRed.Add(typeTile);
+            }
+            else if (typeTile.GetComponent<TileScript>().TerrainEffectList.Contains((MYthsAndSteel_Enum.TerrainType.UsineBleu)))
+            {
+                _usineListBlue.Add(typeTile);
+            }
+        }
+
+        foreach (GameObject unit in PlayerScript.Instance.UnitRef.UnitListRedPlayer)
+        {
+            foreach (MYthsAndSteel_Enum.Attributs att in unit.GetComponent<UnitScript>().UnitSO.UnitAttributs)
+            {
+                if (att == MYthsAndSteel_Enum.Attributs.AppelDeRenforts)
+                {
+                    _leaderListRed.Add(unit);
+                }
+            }
+
+
+
+        }
+
+        foreach (GameObject unit in PlayerScript.Instance.UnitRef.UnitListBluePlayer)
+        {
+            foreach (MYthsAndSteel_Enum.Attributs att in unit.GetComponent<UnitScript>().UnitSO.UnitAttributs)
+            {
+                if (att == MYthsAndSteel_Enum.Attributs.AppelDeRenforts)
+                {
+                    _leaderListBlue.Add(unit);
+                }
+            }
+        }
+    }
 }

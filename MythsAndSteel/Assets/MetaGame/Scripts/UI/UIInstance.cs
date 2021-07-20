@@ -135,11 +135,25 @@ public class UIInstance : MonoSingleton<UIInstance>
     [SerializeField] private List<GameObject> _capacitylist;
     public List<GameObject> capacityList => _capacitylist;
 
+
+
     //Comporte les descriptions et sprites pour chaque Attribut. 
     //Si vous changez la taille ou le positionnement des élements de l'Array il faut absolument que la position dans l'Arraye de Chaque ObjectsAttributs correspondent à l'ID de son enum.
     public List<TextSpriteAttributUnit> textSpriteAttributUnit = new List<TextSpriteAttributUnit>();
+
     //Array comportant les ObjectsAttributs. A ne pas modifier !
     public ObjectsAttributs[] objectsAttributs = new ObjectsAttributs[3];
+
+
+
+    //Comporte les descriptions et sprites pour chaque Statut. 
+    //Si vous changez la taille ou le positionnement des élements de l'Array il faut absolument que la position dans l'Arraye de Chaque ObjectsStatuts correspondent à l'ID de son enum.
+    public List<TextSpriteStatutUnit> textSpriteStatutUnit = new List<TextSpriteStatutUnit>();
+
+    //Array comportant les ObjectsStatuts. A ne pas modifier !
+    public ObjectsStatuts[] objectsStatuts = new ObjectsStatuts[4];
+
+
 
     public List<Image> MiniJaugeSlot = new List<Image>();
     public Sprite Maximum;
@@ -618,7 +632,28 @@ public class TextSpriteAttributUnit
 [System.Serializable]
 public class ObjectsAttributs
 {
+    public GameObject MainObjects;
+    public GameObject Description;
+}
 
+/// <summary>
+/// Contient le texte et le sprite pour un statut
+/// </summary>
+[System.Serializable]
+public class TextSpriteStatutUnit
+{
+    public string _name;
+    public MYthsAndSteel_Enum.UnitStatut _statuts;
+    public Sprite SpriteStatutUnit;
+    [TextArea]
+    public string TextStatutUnit;
+}
+/// <summary>
+/// Objet dont le sprite va changer en fonction du statut, Objet dont le texte va changer en fonction du statut. 
+/// </summary>
+[System.Serializable]
+public class ObjectsStatuts
+{
     public GameObject MainObjects;
     public GameObject Description;
 }

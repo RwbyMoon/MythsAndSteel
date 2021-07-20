@@ -197,6 +197,7 @@ GameObject:
   - component: {fileID: 7308518830903692991}
   - component: {fileID: 4417350707824968301}
   - component: {fileID: -5636587789628770555}
+  - component: {fileID: 3534217983729592492}
   m_Layer: 0
   m_Name: Infantry man
   m_TagString: Untagged
@@ -290,7 +291,7 @@ MonoBehaviour:
   ActifUsedThisTurn: 0
   "M\xE9lodieSinistre": 0
   RestreintAuxRails: 0
-  ToutTerrain: 0
+  ToutTerrain: 1
   _life: 2
   Renderer: {fileID: 6051721719627908802}
   _shield: 0
@@ -302,6 +303,9 @@ MonoBehaviour:
   _damageMaximum: 2
   _damageBonus: 0
   _diceBonus: 0
+  NbAtkTurn: 1
+  NbAttaqueParTour: 1
+  HasAttackedOneTime: 0
   RunningCapacity: 0
   _moveSpeed: 3
   _MoveSpeedBonus: 0
@@ -363,5 +367,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _Capacity1Name: "Mont\xE9e d'Adr\xE9naline"
   render1: {fileID: 0}
-  _Capacity1Description: "Augmente de 2 le d\xE9placement pour 1 de ressource."
+  _Capacity1Description: "Octroie +2 de d\xE9placement pour ce tour."
   _Capacity1Cost: 1
+--- !u!114 &3534217983729592492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6736649830371218775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b5d53f4caebfc4f80e7f9f37bea2cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Capacity1Name: "Mont\xE9e d'Adr\xE9naline"
+  _Capacity1Type: Bonus
+  _Capacity1Cost: 1
+  _Capacity1Desc: "Octroie +2 de d\xE9placement pour ce tour."
+  _Capacity1Icon: {fileID: 0}
+  _Capacity2Name: 
+  _Capacity2Type: 
+  _Capacity2Cost: 0
+  _Capacity2Desc: 
+  _Capacity2Icon: {fileID: 21300000, guid: 24c38065f0aa40046a1f50a3c6882ced, type: 3}

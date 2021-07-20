@@ -695,7 +695,7 @@ foreach (GameObject element in TilesManager.Instance.TileList)
         if((GameManager.Instance.ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.ActionJ1 || GameManager.Instance.ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.ActionJ2) &&
             ((player == 1 && GameManager.Instance.IsPlayerRedTurn && PlayerScript.Instance.RedPlayerInfos.EventUseLeft > 0) || (player == 2 && !GameManager.Instance.IsPlayerRedTurn && PlayerScript.Instance.BluePlayerInfos.EventUseLeft > 0)))
         {
-            LaunchEventUnit(1, player == 1 ? true : false, unitList, "Arme épidémiologique", "Êtes-vous sur de vouloir Infliger l'effet à cette unité? Toutes unités adjacentes à cette unité se verra perdre un point de vie à la fin du tour adverse ainsi que les unités adjacentes.");
+            LaunchEventUnit(1, player == 1 ? true : false, unitList, "Arme épidémiologique", "Êtes-vous sur de vouloir Infliger l'effet à cette unité? Cette unité et toutes celles adjacentes unité se verront perdre un point de vie à la fin du tour adverse.");
             GameManager.Instance._eventCall += ArmeEpidemiologique;
         }
         else

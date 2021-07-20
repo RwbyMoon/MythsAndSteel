@@ -6,7 +6,7 @@ public class Blitzkrieg : Capacity
 {
     public override void StartCpty()
     {
-      
+        GetComponent<UnitScript>().IsActifNotConsumeAction = true;
         int ressourcePlayer = GameManager.Instance.IsPlayerRedTurn ? PlayerScript.Instance.RedPlayerInfos.Ressource : PlayerScript.Instance.BluePlayerInfos.Ressource;
         if (ressourcePlayer >= Capacity1Cost)
         {
@@ -31,6 +31,7 @@ public class Blitzkrieg : Capacity
 
     public override void StopCpty()
     {
+        GetComponent<UnitScript>().IsActifNotConsumeAction = false;
         GameManager.Instance.StopEventModeTile();
         GameManager.Instance.TileChooseList.Clear();
         GetComponent<UnitScript>().StopCapacity(true);
@@ -50,6 +51,7 @@ public class Blitzkrieg : Capacity
         GetComponent<UnitScript>().EndCapacity();
         base.EndCpty();
         GameManager.Instance.TileChooseList.Clear();
+        GetComponent<UnitScript>().IsActifNotConsumeAction = false;
     }
 }
 
