@@ -25,7 +25,6 @@ public class ColereDuKhodok : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         StartCoroutine(SetFirstLife());
-        GetComponentInChildren<Animation>().enabled = false;
     }
 
     private void Update()

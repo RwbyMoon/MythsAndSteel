@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8564601576450574414}
   - component: {fileID: -616173837872172603}
   - component: {fileID: 4484776114591397506}
+  - component: {fileID: 2481817073183470989}
   m_Layer: 0
   m_Name: Heinz
   m_TagString: Untagged
@@ -103,12 +104,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _unitSO: {fileID: 11400000, guid: 5c74d978cc1e1a842a99f2e81e6fbf6d, type: 2}
   ParalysieStat: 3
+  SilenceStat: 3
   HasOnlyOneDamage: 0
   IsActifNotConsumeAction: 0
   ActifUsedThisTurn: 0
   "M\xE9lodieSinistre": 0
   RestreintAuxRails: 0
   ToutTerrain: 0
+  Volant: 0
+  FireResistance: 0
+  PasseMuraille: 0
+  Amphibie: 0
+  Submersible: 0
   _life: 1
   Renderer: {fileID: 4003429510070703655}
   _shield: 2
@@ -120,6 +127,12 @@ MonoBehaviour:
   _damageMaximum: 2
   _damageBonus: 0
   _diceBonus: 0
+  NbAtkTurn: 1
+  NbAttaqueParTour: 1
+  HasAttackedOneTime: 0
+  FailAttack: 0
+  InflictMinimumDamages: 0
+  InflictMaximumDamages: 0
   RunningCapacity: 0
   _moveSpeed: 3
   _MoveSpeedBonus: 0
@@ -147,6 +160,7 @@ MonoBehaviour:
   PermaSpeedBoost: 0
   PermaRangeBoost: 0
   PermaDiceBoost: 0
+  PermaDamageBoost: 0
   DoingCharg1Blue: 0
 --- !u!95 &4003429510070703653
 Animator:
@@ -183,6 +197,8 @@ MonoBehaviour:
   render1: {fileID: 21300000, guid: 5fd1aa00fccfc004cb44ab63e4919a9b, type: 3}
   _Capacity1Description: "Conf\xE8re 2 activations suppl\xE9mentaires."
   _Capacity1Cost: 2
+  ActivUp: {fileID: 8300000, guid: 98a2ac310f6ea1645a0f407918da9a18, type: 3}
+  audioSource: {fileID: 2481817073183470989}
 --- !u!114 &-616173837872172603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -217,6 +233,102 @@ MonoBehaviour:
   _Capacity2Cost: 0
   _Capacity2Desc: "Les unit\xE9s adjacentes obtiennent +1 de d\xE9placement."
   _Capacity2Icon: {fileID: 0}
+--- !u!82 &2481817073183470989
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4003429510070703642}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -2120345429679228948, guid: 8df816f5612b532468ca9da0b5ca238a, type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &4003429510586119330
 GameObject:
   m_ObjectHideFlags: 0
