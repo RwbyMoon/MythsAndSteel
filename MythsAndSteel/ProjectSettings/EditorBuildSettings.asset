@@ -44,4 +44,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/MetaGame/_Scenes/Menu/Credits.unity
     guid: db64add5860a5ac40a8d00d49b70c49f
+  - enabled: 1
+    path: Assets/_BASE/1_Base_Scenes/TutorielScene.unity
+    guid: 60ca6280c81dad149ae74eba1d2929b1
   m_configObjects: {}
