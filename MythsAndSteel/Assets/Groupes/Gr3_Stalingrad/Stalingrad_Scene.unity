@@ -2024,6 +2024,8 @@ MonoBehaviour:
   render1: {fileID: 0}
   _Capacity1Description: 
   _Capacity1Cost: 0
+  ActivUp: {fileID: 0}
+  audioSource: {fileID: 0}
 --- !u!1 &145554579
 GameObject:
   m_ObjectHideFlags: 0
@@ -20293,7 +20295,7 @@ PrefabInstance:
       objectReference: {fileID: 4707557025104531209}
     - target: {fileID: 753220426195484956, guid: 09173d6233fd4ee4c99a729b0b264ff4, type: 3}
       propertyPath: _terrainEffectList.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 753220426195484956, guid: 09173d6233fd4ee4c99a729b0b264ff4, type: 3}
       propertyPath: _terrainEffectList.Array.data[0]
@@ -20301,7 +20303,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 753220426195484956, guid: 09173d6233fd4ee4c99a729b0b264ff4, type: 3}
       propertyPath: _terrainEffectList.Array.data[1]
-      value: 20
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 753220426195484956, guid: 09173d6233fd4ee4c99a729b0b264ff4, type: 3}
       propertyPath: _terrainEffectList.Array.data[2]
@@ -20625,7 +20627,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 753220427049312298, guid: 09173d6233fd4ee4c99a729b0b264ff4, type: 3}
       propertyPath: _terrainEffectList.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 753220427049312298, guid: 09173d6233fd4ee4c99a729b0b264ff4, type: 3}
       propertyPath: _terrainEffectList.Array.data[0]
@@ -20633,11 +20635,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 753220427049312298, guid: 09173d6233fd4ee4c99a729b0b264ff4, type: 3}
       propertyPath: _terrainEffectList.Array.data[1]
-      value: 18
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 753220427049312298, guid: 09173d6233fd4ee4c99a729b0b264ff4, type: 3}
       propertyPath: _terrainEffectList.Array.data[2]
-      value: 27
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 753220427101170213, guid: 09173d6233fd4ee4c99a729b0b264ff4, type: 3}
       propertyPath: _terrainEffectList.Array.size
@@ -20713,7 +20715,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 753220427205324041, guid: 09173d6233fd4ee4c99a729b0b264ff4, type: 3}
       propertyPath: _terrainEffectList.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 753220427205324041, guid: 09173d6233fd4ee4c99a729b0b264ff4, type: 3}
       propertyPath: _terrainEffectList.Array.data[0]
@@ -20861,7 +20863,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 753220427606183117, guid: 09173d6233fd4ee4c99a729b0b264ff4, type: 3}
       propertyPath: _terrainEffectList.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 753220427606183117, guid: 09173d6233fd4ee4c99a729b0b264ff4, type: 3}
       propertyPath: _terrainEffectList.Array.data[0]
@@ -20881,11 +20883,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 753220427617932146, guid: 09173d6233fd4ee4c99a729b0b264ff4, type: 3}
       propertyPath: _terrainEffectList.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 753220427617932146, guid: 09173d6233fd4ee4c99a729b0b264ff4, type: 3}
       propertyPath: _terrainEffectList.Array.data[0]
       value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 753220427617932146, guid: 09173d6233fd4ee4c99a729b0b264ff4, type: 3}
+      propertyPath: _terrainEffectList.Array.data[1]
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 753220427650738727, guid: 09173d6233fd4ee4c99a729b0b264ff4, type: 3}
       propertyPath: _ownerObjectiv
