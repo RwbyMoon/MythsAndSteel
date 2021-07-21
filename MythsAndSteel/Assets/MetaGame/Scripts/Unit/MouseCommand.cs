@@ -600,6 +600,8 @@ public class MouseCommand : MonoBehaviour
         ShiftUI[1].SetActive(false);
         SoundController.Instance.PlaySound(SoundController.Instance.AudioClips[13]);
     }
+
+
     #endregion SwitchPages
 
     #region MenuRenfortFunction

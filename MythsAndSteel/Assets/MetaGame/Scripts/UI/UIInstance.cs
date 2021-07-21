@@ -20,6 +20,14 @@ public class UIInstance : MonoSingleton<UIInstance>
     [SerializeField] private GameObject _canvasActivation = null;
     public GameObject CanvasActivation => _canvasActivation;
 
+    //Le bouton pour éteindre le canvas de phase d'activation, lorsqu'il est allumé
+    [SerializeField] private GameObject _buttonSetOffSwitch = null;
+    public GameObject ButtonSetOffSwitch => _buttonSetOffSwitch;
+
+    //Le bouton pour allumer le canvas de phase d'activation, lorsqu'il est éteint
+    [SerializeField] private GameObject _buttonSetOnSwitch = null;
+    public GameObject ButtonSetOnSwitch => _buttonSetOnSwitch;
+
     //Le canvas en jeu pour la phase d'activation
     [SerializeField] private Image _skipPhaseImage = null;
     public Image SkipPhaseImage => _skipPhaseImage;

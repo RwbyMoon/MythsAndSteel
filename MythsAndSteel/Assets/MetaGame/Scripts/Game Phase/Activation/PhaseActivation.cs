@@ -285,6 +285,7 @@ public class PhaseActivation : MonoBehaviour
     /// </summary>
     public void ShowResult()
     {
+        UIInstance.Instance.CanvasActivation.SetActive(true);
         SoundController.Instance.PlaySound(SoundController.Instance.AudioClips[11]);
         int InitiativeValeur = J1DernièreValeurActivation - J2DernièreValeurActivation;
         float rgb = 0.2f;
@@ -310,6 +311,8 @@ public class PhaseActivation : MonoBehaviour
         PlayerScript.Instance.J2Infos.ActivationLeft = (int)J2DernièreValeurActivation;
         UIInstance.Instance.ActivationMenuActivation(int.Parse(J1CarteVerif.valeurActivation) % 10, int.Parse(J2CarteVerif.valeurActivation) % 10);
         UIInstance.Instance.UpdateActivationLeft();
+        UIInstance.Instance.ButtonSetOnSwitch.SetActive(false);
+        UIInstance.Instance.ButtonSetOffSwitch.SetActive(false);
     }
     public void DesactivatePannelActivation()
     {
