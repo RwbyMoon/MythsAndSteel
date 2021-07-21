@@ -2630,6 +2630,8 @@ MonoBehaviour:
   SelectedTiles: 
   _normalAttackSprite: {fileID: 21300000, guid: 120dc50b5dfb8c746a31d79d36df8a98, type: 3}
   _selectedSprite: {fileID: 21300000, guid: 332752d1c1d8b114daccf4a90b1a0703, type: 3}
+  DeviationEnCours: 0
+  idTileCible: 0
   Go: 0
   _JaugeAttack: {fileID: 1391136861}
   _attackselected: 0
@@ -2649,6 +2651,8 @@ MonoBehaviour:
   render1: {fileID: 0}
   _Capacity1Description: 
   _Capacity1Cost: 0
+  ActivUp: {fileID: 0}
+  audioSource: {fileID: 0}
 --- !u!1 &145554579
 GameObject:
   m_ObjectHideFlags: 0
@@ -3303,11 +3307,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5729802673627382403, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
   m_PrefabInstance: {fileID: 188076899}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &194844992 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3876014583248920428, guid: 25294b9364e0e6a40bdf53908301a743, type: 3}
-  m_PrefabInstance: {fileID: 1160431421}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &197000184 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1041681344671033457, guid: 952bdf0716382114eaa4a1733562d578, type: 3}
@@ -3690,7 +3689,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4227640084239285831, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
       propertyPath: _terrainEffectList.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4227640084239285831, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
       propertyPath: _terrainEffectList.Array.data[0]
@@ -3698,7 +3697,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4227640084239285831, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
       propertyPath: _terrainEffectList.Array.data[1]
-      value: 13
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4227640084239285831, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
       propertyPath: _terrainEffectList.Array.data[2]
@@ -5761,7 +5760,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4227640084239285831, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
       propertyPath: _terrainEffectList.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4227640084239285831, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
       propertyPath: _terrainEffectList.Array.data[0]
@@ -5769,7 +5768,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4227640084239285831, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
       propertyPath: _terrainEffectList.Array.data[1]
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5729802673627382403, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
       propertyPath: m_Name
@@ -9822,11 +9821,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4227640084239285831, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
       propertyPath: _terrainEffectList.Array.data[0]
-      value: 12
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4227640084239285831, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
       propertyPath: _terrainEffectList.Array.data[1]
-      value: 0
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4227640084239285831, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
       propertyPath: _terrainEffectList.Array.data[2]
@@ -10595,11 +10594,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4227640084239285831, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
       propertyPath: _terrainEffectList.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4227640084239285831, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
       propertyPath: _terrainEffectList.Array.data[0]
       value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 4227640084239285831, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
+      propertyPath: _terrainEffectList.Array.data[1]
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5729802673627382403, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
       propertyPath: m_Name
@@ -12336,7 +12339,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4227640084239285831, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
       propertyPath: _terrainEffectList.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4227640084239285831, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
       propertyPath: _terrainEffectList.Array.data[0]
@@ -12344,10 +12347,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4227640084239285831, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
       propertyPath: _terrainEffectList.Array.data[1]
-      value: 12
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4227640084239285831, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
       propertyPath: _terrainEffectList.Array.data[2]
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4227640084239285831, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
+      propertyPath: _terrainEffectList.Array.data[3]
       value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 5729802673627382403, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
@@ -12796,18 +12803,9 @@ MonoBehaviour:
   - {fileID: 1279647277}
   - {fileID: 1766856158}
   _timeToWait: 0.25
-  _offsetXActivationMenu: 2
-  _offsetYActivationMenu: 0
-  _offsetXMouseOver: 1.5
-  _offsetYMouseOver: 2.3
-  _offsetXStatPlus: 1.5
-  _offsetYStatPlus: 3.7
-  _xOffsetMin: {x: -4, y: 4}
-  _yOffsetMin: {x: -4, y: 4}
-  _xOffset: {x: -6, y: 6}
-  _yOffset: {x: -6, y: 6}
-  _xOffsetMax: {x: -8, y: 8}
-  _yOffsetMax: {x: -8, y: 8}
+  OffsetPositionUI: 0
+  MapVisual: {fileID: 0}
+  carnetStats: {x: 0, y: 0, z: 0, w: 0}
   _renfortUI: {fileID: 2086137330}
   _elementMenuRenfort:
   - {fileID: 2086137329}
@@ -14218,7 +14216,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4227640084239285831, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
       propertyPath: _terrainEffectList.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4227640084239285831, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
       propertyPath: _terrainEffectList.Array.data[0]
@@ -14226,6 +14224,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4227640084239285831, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
       propertyPath: _terrainEffectList.Array.data[1]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4227640084239285831, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
+      propertyPath: _terrainEffectList.Array.data[2]
       value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 5729802673627382403, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
@@ -15349,7 +15351,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4227640084239285831, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
       propertyPath: _terrainEffectList.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4227640084239285831, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
       propertyPath: _terrainEffectList.Array.data[0]
@@ -15357,7 +15359,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4227640084239285831, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
       propertyPath: _terrainEffectList.Array.data[1]
-      value: 11
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5729802673627382403, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
       propertyPath: m_Name
@@ -15386,11 +15388,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1002808549 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4822377787160631848, guid: 3fbd8c6fc337b284787c1f442bc30be7, type: 3}
-  m_PrefabInstance: {fileID: 1060686575}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1007017053
 GameObject:
   m_ObjectHideFlags: 0
@@ -16498,6 +16495,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7273229136771560123, guid: 3fbd8c6fc337b284787c1f442bc30be7, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7273229136771560123, guid: 3fbd8c6fc337b284787c1f442bc30be7, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7273229136771560123, guid: 3fbd8c6fc337b284787c1f442bc30be7, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7373338440962963388, guid: 3fbd8c6fc337b284787c1f442bc30be7, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -17098,7 +17107,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4227640084239285831, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
       propertyPath: _terrainEffectList.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4227640084239285831, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
       propertyPath: _terrainEffectList.Array.data[0]
@@ -18239,6 +18248,10 @@ PrefabInstance:
     - target: {fileID: 4939496440910725444, guid: 25294b9364e0e6a40bdf53908301a743, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: switchWindows2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5037983463522373146, guid: 25294b9364e0e6a40bdf53908301a743, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 393.443
       objectReference: {fileID: 0}
     - target: {fileID: 5037983464029410098, guid: 25294b9364e0e6a40bdf53908301a743, type: 3}
       propertyPath: m_AnchorMax.x
@@ -24518,7 +24531,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4227640084239285831, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
       propertyPath: _terrainEffectList.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4227640084239285831, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
       propertyPath: _terrainEffectList.Array.data[0]
@@ -24530,7 +24543,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4227640084239285831, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
       propertyPath: _terrainEffectList.Array.data[2]
-      value: 17
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5729802673627382403, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
       propertyPath: m_Name
@@ -24752,11 +24765,6 @@ Transform:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5729802673627382403, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
   m_PrefabInstance: {fileID: 1564384576}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1565548301 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4822377787769312383, guid: 3fbd8c6fc337b284787c1f442bc30be7, type: 3}
-  m_PrefabInstance: {fileID: 1060686575}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1578598718 stripped
 GameObject:
@@ -26809,11 +26817,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!1 &1742319753 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6507295139892987008, guid: 3fbd8c6fc337b284787c1f442bc30be7, type: 3}
-  m_PrefabInstance: {fileID: 1060686575}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1745334396 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4212960245422712267, guid: 50ea1da46568d724cb16f2697d023b57, type: 3}
@@ -27701,7 +27704,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4227640084239285831, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
       propertyPath: _terrainEffectList.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4227640084239285831, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
       propertyPath: _terrainEffectList.Array.data[0]
@@ -27709,7 +27712,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4227640084239285831, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
       propertyPath: _terrainEffectList.Array.data[1]
-      value: 23
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4227640084239285831, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
       propertyPath: _terrainEffectList.Array.data[2]
@@ -29637,11 +29640,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4227640084239285831, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
       propertyPath: _terrainEffectList.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4227640084239285831, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
       propertyPath: _terrainEffectList.Array.data[0]
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4227640084239285831, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
+      propertyPath: _terrainEffectList.Array.data[1]
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5729802673627382403, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
       propertyPath: m_Name
@@ -29756,7 +29763,7 @@ MonoBehaviour:
     _rangeMaxDamageGam: {fileID: 0}
     _minDamageValueGam: {fileID: 0}
     _maxDamageValueGam: {fileID: 0}
-  _capacityParent: {fileID: 1002808549}
+  _capacityParent: {fileID: 0}
   _capacityPrefab: {fileID: 5476234599435034801, guid: 3c4ab42a361d03a42a7ca23e80503a92, type: 3}
   _capacitylist: []
   textSpriteAttributUnit:
@@ -29809,11 +29816,21 @@ MonoBehaviour:
       et la Route."
   objectsAttributs:
   - MainObjects: {fileID: 1938190257}
-    Description: {fileID: 1742319753}
+    Description: {fileID: 0}
   - MainObjects: {fileID: 81386031}
-    Description: {fileID: 1565548301}
+    Description: {fileID: 0}
   - MainObjects: {fileID: 1633305398}
     Description: {fileID: 760087533}
+  textSpriteStatutUnit: []
+  objectsStatuts:
+  - MainObjects: {fileID: 0}
+    Description: {fileID: 0}
+  - MainObjects: {fileID: 0}
+    Description: {fileID: 0}
+  - MainObjects: {fileID: 0}
+    Description: {fileID: 0}
+  - MainObjects: {fileID: 0}
+    Description: {fileID: 0}
   MiniJaugeSlot:
   - {fileID: 1010602382}
   - {fileID: 1289869642}
@@ -29832,7 +29849,7 @@ MonoBehaviour:
   MinSlider: {fileID: 545791933}
   MaxSlider: {fileID: 459834148}
   _prefabSlotEffetDeTerrain: {fileID: 5476234599435034801, guid: 935f51419ad172646a34ee56e0bef9ea, type: 3}
-  _parentSlotEffetDeTerrain: {fileID: 194844992}
+  _parentSlotEffetDeTerrain: {fileID: 0}
   _effetDeTerrain: []
   _prefabSlotStatuts: {fileID: 5476234599435034801, guid: 7bcaec3b13cd59747950a811c1923970, type: 3}
   _parentSlotStatuts: {fileID: 407080643}
@@ -30459,7 +30476,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4227640084239285831, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
       propertyPath: _terrainEffectList.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4227640084239285831, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
       propertyPath: _terrainEffectList.Array.data[0]
@@ -30467,7 +30484,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4227640084239285831, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
       propertyPath: _terrainEffectList.Array.data[1]
-      value: 18
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4227640084239285831, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
       propertyPath: _terrainEffectList.Array.data[2]

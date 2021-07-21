@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 2317642524759299312}
   - component: {fileID: 2186968111744900454}
   - component: {fileID: -2933448205466968328}
+  - component: {fileID: -2727843924489184297}
+  - component: {fileID: -5269720208070170172}
   m_Layer: 0
   m_Name: QF25 pounder
   m_TagString: Untagged
@@ -101,17 +103,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _unitSO: {fileID: 11400000, guid: 7a494a96feb61dc4c8adc1972ab37c24, type: 2}
   ParalysieStat: 3
+  SilenceStat: 3
   HasOnlyOneDamage: 0
   IsActifNotConsumeAction: 0
   ActifUsedThisTurn: 0
   "M\xE9lodieSinistre": 0
   RestreintAuxRails: 0
   ToutTerrain: 0
+  Volant: 0
+  FireResistance: 0
+  PasseMuraille: 0
+  Amphibie: 0
+  Submersible: 0
   _life: 3
   Renderer: {fileID: 3588378491021107268}
   _shield: 0
   _attackRange: 2
   _attackRangeBonus: 0
+  AttaqueEnLigne: 0
   _numberRangeMin: {x: 4, y: 8}
   _damageMinimum: 1
   _numberRangeMax: {x: 9, y: 12}
@@ -121,6 +130,9 @@ MonoBehaviour:
   NbAtkTurn: 1
   NbAttaqueParTour: 1
   HasAttackedOneTime: 0
+  FailAttack: 0
+  InflictMinimumDamages: 0
+  InflictMaximumDamages: 0
   RunningCapacity: 0
   _moveSpeed: 2
   _MoveSpeedBonus: 0
@@ -148,6 +160,7 @@ MonoBehaviour:
   PermaSpeedBoost: 0
   PermaRangeBoost: 0
   PermaDiceBoost: 0
+  PermaDamageBoost: 0
   DoingCharg1Blue: 0
 --- !u!95 &2186968111744900454
 Animator:
@@ -180,17 +193,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4b5d53f4caebfc4f80e7f9f37bea2cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Capacity1Name: "!!Adaptabilit\xE9 Militaire!!"
+  _Capacity1Name: "Adaptabilit\xE9 Militaire"
   _Capacity1Type: Passif
   _Capacity1Cost: 0
   _Capacity1Desc: "Inflige 1 d\xE9gat en plus aux unit\xE9s situ\xE9es sur une case
     \xE0 effet."
   _Capacity1Icon: {fileID: 0}
-  _Capacity2Name: "!!Pr\xE9cision Stable!!"
+  _Capacity2Name: "Pr\xE9cision Stable"
   _Capacity2Type: Passif
   _Capacity2Cost: 0
   _Capacity2Desc: "Les valeurs des bornes d'attaque ne peuvent pas \xEAtre modifi\xE9es."
   _Capacity2Icon: {fileID: 0}
+--- !u!114 &-2727843924489184297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5222107258293436964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cb4270194681a140ac60873960c078a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-5269720208070170172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5222107258293436964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89f5bb327aa0f5146ab2620272696b9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6549212960739533619
 GameObject:
   m_ObjectHideFlags: 0

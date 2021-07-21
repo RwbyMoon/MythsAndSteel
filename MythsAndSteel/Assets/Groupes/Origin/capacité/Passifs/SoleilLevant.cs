@@ -17,6 +17,9 @@ public class SoleilLevant : MonoBehaviour
     public int HasAtkBoost = 0;
     public bool BoostApplied = false;
     public bool ReduceDone = false;
+    public AudioClip AttaqueUp;
+    public AudioClip AttaqueDown;
+    public AudioSource audioSource;
 
     private void Update()
     {
@@ -32,11 +35,15 @@ public class SoleilLevant : MonoBehaviour
         {
             BoostApplied = true;
             GetComponent<UnitScript>().AddDamageToUnit(1);
+            transform.GetChild(2).GetComponent<Animator>().SetBool("Enabled", true);
+            audioSource.PlayOneShot(AttaqueUp, 10f);
         }
         if(HasAtkBoost == 0 && BoostApplied == true)
         {
             BoostApplied = false;
             GetComponent<UnitScript>().AddDamageToUnit(-1);
+            transform.GetChild(2).GetComponent<Animator>().SetBool("Enabled", false);
+            audioSource.PlayOneShot(AttaqueDown, 1f);
         }
     }
 
