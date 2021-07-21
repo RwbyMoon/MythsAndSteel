@@ -506,7 +506,7 @@ public class TileScript : MonoBehaviour
     private void Update()
     {
         //Système de contrôle des gares
-        if (TerrainEffectList.Contains(MYthsAndSteel_Enum.TerrainType.Gare))
+        if (TerrainEffectList.Contains(MYthsAndSteel_Enum.TerrainType.Gare) && Unit != null)
         {
             if(Unit.GetComponent<UnitScript>().UnitSO.IsInRedArmy)
             {

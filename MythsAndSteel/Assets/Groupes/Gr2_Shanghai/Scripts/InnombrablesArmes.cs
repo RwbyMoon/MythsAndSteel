@@ -28,14 +28,14 @@ public class InnombrablesArmes : MonoBehaviour
     {
         foreach (int T in PlayerStatic.GetNeighbourDiag(CentralTile, TilesManager.Instance.TileList[CentralTile].GetComponent<TileScript>().Line, false))
         {
-            if(GetComponent<UnitScript>().ActualTiledId - CentralTile == 1 || GetComponent<UnitScript>().ActualTiledId - CentralTile == -1)
+            if(-8 <= GetComponent<UnitScript>().ActualTiledId - CentralTile && GetComponent<UnitScript>().ActualTiledId - CentralTile <= 8)
             {
                 if((T - CentralTile == 9 || T - CentralTile == -9) && TilesManager.Instance.TileList[T].GetComponent<TileScript>().Unit != null)
                 {
                     TilesManager.Instance.TileList[T].GetComponent<TileScript>().Unit.GetComponent<UnitScript>().TakeDamage(GetComponent<UnitScript>().DamageMaximum + GetComponent<UnitScript>().DamageBonus);
                 }
             }
-            if (GetComponent<UnitScript>().ActualTiledId - CentralTile == 9 || GetComponent<UnitScript>().ActualTiledId - CentralTile == -9)
+            else
             {
                 if ((T - CentralTile == 1 || T - CentralTile == -1) && TilesManager.Instance.TileList[T].GetComponent<TileScript>().Unit != null)
                 {
