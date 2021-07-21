@@ -10,7 +10,7 @@ public class Eruption : Capacity
     public override void StartCpty()
     {
         //check si le joueur a les ressources pour la capacité
-        int ressourcePlayer = GetComponent<UnitScript>().UnitSO.IsInRedArmy ? PlayerScript.Instance.RedPlayerInfos.Ressource : PlayerScript.Instance.BluePlayerInfos.Ressource;
+        int ressourcePlayer = GetComponent<UnitScript>().UnitSO.IsInRedArmy ? PlayerScript.Instance.J1Infos.Ressource : PlayerScript.Instance.J2Infos.Ressource;
         if (ressourcePlayer >= Capacity1Cost)
         {
         //choppe les cases adjacentes a Etna
@@ -68,11 +68,11 @@ public class Eruption : Capacity
         //le joueur paye la capacité en ressource
         if (GetComponent<UnitScript>().UnitSO.IsInRedArmy)
         {
-            PlayerScript.Instance.RedPlayerInfos.Ressource -= Capacity1Cost;
+            PlayerScript.Instance.J1Infos.Ressource -= Capacity1Cost;
         }
         else
         {
-            PlayerScript.Instance.BluePlayerInfos.Ressource -= Capacity1Cost;
+            PlayerScript.Instance.J2Infos.Ressource -= Capacity1Cost;
         }
 
 

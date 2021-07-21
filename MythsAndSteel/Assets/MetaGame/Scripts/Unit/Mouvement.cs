@@ -330,7 +330,7 @@ public class Mouvement : MonoSingleton<Mouvement>
     {
         GameObject tileSelected = RaycastManager.Instance.ActualTileSelected;
         mUnit = tileSelected.GetComponent<TileScript>().Unit;
-        if ((GameManager.Instance.IsPlayerRedTurn && PlayerScript.Instance.RedPlayerInfos.ActivationLeft > 0) || (mUnit.GetComponent<UnitScript>()._hasStartMove && GameManager.Instance.IsPlayerRedTurn && PlayerScript.Instance.RedPlayerInfos.ActivationLeft == 0))
+        if ((GameManager.Instance.IsPlayerRedTurn && PlayerScript.Instance.J1Infos.ActivationLeft > 0) || (mUnit.GetComponent<UnitScript>()._hasStartMove && GameManager.Instance.IsPlayerRedTurn && PlayerScript.Instance.J1Infos.ActivationLeft == 0))
         {
             if (tileSelected != null)
             {
@@ -353,7 +353,7 @@ public class Mouvement : MonoSingleton<Mouvement>
                 _selected = false;
             }
         }
-        else if ((!GameManager.Instance.IsPlayerRedTurn && PlayerScript.Instance.BluePlayerInfos.ActivationLeft > 0) || (mUnit.GetComponent<UnitScript>()._hasStartMove && !GameManager.Instance.IsPlayerRedTurn && PlayerScript.Instance.BluePlayerInfos.ActivationLeft == 0))
+        else if ((!GameManager.Instance.IsPlayerRedTurn && PlayerScript.Instance.J2Infos.ActivationLeft > 0) || (mUnit.GetComponent<UnitScript>()._hasStartMove && !GameManager.Instance.IsPlayerRedTurn && PlayerScript.Instance.J2Infos.ActivationLeft == 0))
         {
             if (tileSelected != null)
             {

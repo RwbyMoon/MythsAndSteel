@@ -14,11 +14,11 @@ public class Romel : Capacity
         int ressourcePlayer = 0;
         if (!gameObject.GetComponent<UnitScript>().UnitStatuts.Contains(MYthsAndSteel_Enum.UnitStatut.Possédé))
         {
-            ressourcePlayer = GetComponent<UnitScript>().UnitSO.IsInRedArmy ? PlayerScript.Instance.RedPlayerInfos.Ressource : PlayerScript.Instance.BluePlayerInfos.Ressource;
+            ressourcePlayer = GetComponent<UnitScript>().UnitSO.IsInRedArmy ? PlayerScript.Instance.J1Infos.Ressource : PlayerScript.Instance.J2Infos.Ressource;
         }
         else if (gameObject.GetComponent<UnitScript>().UnitStatuts.Contains(MYthsAndSteel_Enum.UnitStatut.Possédé))
         {
-            ressourcePlayer = GetComponent<UnitScript>().UnitSO.IsInRedArmy ? PlayerScript.Instance.BluePlayerInfos.Ressource : PlayerScript.Instance.RedPlayerInfos.Ressource;
+            ressourcePlayer = GetComponent<UnitScript>().UnitSO.IsInRedArmy ? PlayerScript.Instance.J2Infos.Ressource : PlayerScript.Instance.J1Infos.Ressource;
         }
         if (ressourcePlayer >= Capacity1Cost)
         {
@@ -88,18 +88,18 @@ public class Romel : Capacity
         {
 
        
-                PlayerScript.Instance.RedPlayerInfos.Ressource -= Capacity1Cost;
+                PlayerScript.Instance.J1Infos.Ressource -= Capacity1Cost;
        
         }
         else
         {
            
-                PlayerScript.Instance.BluePlayerInfos.Ressource -= Capacity1Cost;
+                PlayerScript.Instance.J2Infos.Ressource -= Capacity1Cost;
             
    
         }
         GetComponent<Animator>().runtimeAnimatorController = TransformationRomelAnimator;
-        GetComponent<UnitScript>().UpdateLifeHeartShieldUI(GameManager.Instance.IsPlayerRedTurn ? UIInstance.Instance.RedHeartSprite : UIInstance.Instance.BlueHeartSprite,GetComponent<UnitScript>().Life);
+        GetComponent<UnitScript>().UpdateLifeHeartShieldUI(GameManager.Instance.IsPlayerRedTurn ? UIInstance.Instance.J1HeartSprite : UIInstance.Instance.J2HeartSprite,GetComponent<UnitScript>().Life);
      
         Destroy(GetComponent<Romel>());
     }

@@ -32,7 +32,7 @@ public class PhaseActivation : MonoBehaviour
     CarteActivation J1CarteVerif = null;
 
     List<CarteActivation> J1CartesNonVerif = new List<CarteActivation>();
-    private float J1DernièreValeurActivation;
+    private int J1DernièreValeurActivation;
 
     private bool _j1CarteChoisie = false;
     public bool J1CarteChoisie => _j1CarteChoisie;
@@ -51,7 +51,7 @@ public class PhaseActivation : MonoBehaviour
     bool J2Verif = false;
     CarteActivation J2CarteVerif = null;
     List<CarteActivation> J2CartesNonVerif = new List<CarteActivation>();
-    private float J2DernièreValeurActivation;
+    private int J2DernièreValeurActivation;
 
     private bool _j2CarteChoisie = false;
     public bool J2CarteChoisie => _j2CarteChoisie;
@@ -90,7 +90,7 @@ public class PhaseActivation : MonoBehaviour
                         HasConfirmedPanelRed.SetActive(true);
                     }
 
-                    J1DernièreValeurActivation = float.Parse(J1CarteVerif.valeurActivation) / 10;
+                    J1DernièreValeurActivation = int.Parse(J1CarteVerif.valeurActivation) / 10;
                     CarteActivationUtilisée.Add(J1CarteVerif);
                     RedCartesActivation.Clear();
 
@@ -169,7 +169,7 @@ public class PhaseActivation : MonoBehaviour
                         HasConfirmedPanelBlue.SetActive(true);
                     }
 
-                    J2DernièreValeurActivation = float.Parse(J2CarteVerif.valeurActivation) / 10;
+                    J2DernièreValeurActivation = int.Parse(J2CarteVerif.valeurActivation) / 10;
                     CarteActivationUtilisée.Add(J2CarteVerif);
                     BlueCartesActivation.Clear();
 
@@ -247,7 +247,7 @@ public class PhaseActivation : MonoBehaviour
         J1Choix = true;
         J1Verif = false;
 
-        J1DernièreValeurActivation = 0f;
+        J1DernièreValeurActivation = 0;
         _j1CarteChoisie = false;
 
         //Variables pour le joueur 2
@@ -259,11 +259,12 @@ public class PhaseActivation : MonoBehaviour
         J2Choix = true;
         J2Verif = false;
 
-        J2DernièreValeurActivation = 0f;
+        J2DernièreValeurActivation = 0;
         _j2CarteChoisie = false;
 
         UIInstance.Instance.BackgroundActivation.SetActive(true);
- 
+
+        UIInstance.Instance.ResetActivationValue();
 
         _result.SetActive(false);
     }
@@ -285,7 +286,7 @@ public class PhaseActivation : MonoBehaviour
     public void ShowResult()
     {
         SoundController.Instance.PlaySound(SoundController.Instance.AudioClips[11]);
-        float InitiativeValeur = J1DernièreValeurActivation - J2DernièreValeurActivation;
+        int InitiativeValeur = J1DernièreValeurActivation - J2DernièreValeurActivation;
         float rgb = 0.2f;
         if(InitiativeValeur < 0)
         {
@@ -296,7 +297,7 @@ public class PhaseActivation : MonoBehaviour
             _result.SetActive(true);
         }
         else
-        {
+        {   
             GameManager.Instance.SetPlayerStart(false);
             RedPlayerPanel.transform.GetChild(J1CarteVerif.IndexCarteActivation).GetComponent<Image>().color = new Color(rgb, rgb, rgb, 1f);
             BluePlayerPanel.transform.GetChild(J2CarteVerif.IndexCarteActivation).GetComponent<Image>().color = new Color(rgb, rgb, rgb, 1f);
@@ -305,13 +306,10 @@ public class PhaseActivation : MonoBehaviour
             
         }
 
-
-
-        PlayerScript.Instance.RedPlayerInfos.ActivationLeft = (int)J1DernièreValeurActivation;
-        PlayerScript.Instance.BluePlayerInfos.ActivationLeft = (int)J2DernièreValeurActivation;
+        PlayerScript.Instance.J1Infos.ActivationLeft = (int)J1DernièreValeurActivation;
+        PlayerScript.Instance.J2Infos.ActivationLeft = (int)J2DernièreValeurActivation;
+        UIInstance.Instance.ActivationMenuActivation(int.Parse(J1CarteVerif.valeurActivation) % 10, int.Parse(J2CarteVerif.valeurActivation) % 10);
         UIInstance.Instance.UpdateActivationLeft();
-
-       
     }
     public void DesactivatePannelActivation()
     {
@@ -327,10 +325,7 @@ public class PhaseActivation : MonoBehaviour
         GameManager.Instance.activationDone = false;
         _result.SetActive(false);
 
-        Debug.Log("GAUTHIER");
-
-        
-     
+        Debug.Log("GAUTHIER");     
     }
 
     /// <summary>

@@ -252,11 +252,11 @@ public class RaycastManager : MonoSingleton<RaycastManager>
                 }
             }
             else if(GameManager.Instance.ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.OrgoneJ1 || GameManager.Instance.ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.OrgoneJ2){
-                if(GameManager.Instance.IsPlayerRedTurn && _tile == PlayerScript.Instance.RedPlayerInfos.TileCentreZoneOrgone)
+                if(GameManager.Instance.IsPlayerRedTurn && _tile == PlayerScript.Instance.J1Infos.TileCentreZoneOrgone)
                 {
                     OrgoneManager.Instance.StartToMoveZone();
                 }
-                else if(!GameManager.Instance.IsPlayerRedTurn && _tile == PlayerScript.Instance.BluePlayerInfos.TileCentreZoneOrgone)
+                else if(!GameManager.Instance.IsPlayerRedTurn && _tile == PlayerScript.Instance.J2Infos.TileCentreZoneOrgone)
                 {
                     OrgoneManager.Instance.StartToMoveZone();
                 }

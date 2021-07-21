@@ -122,13 +122,13 @@ public class GameManagerSO : ScriptableObject
                 UIInstance.Instance.ActiveOrgoneChargeButton();
                 if(GameManager.Instance.IsPlayerRedStarting)
                 {
-                    PlayerScript.Instance.RedPlayerInfos.OrgonePowerLeft = 1;
-                    PlayerScript.Instance.RedPlayerInfos.EventUseLeft = 1;
+                    PlayerScript.Instance.J1Infos.OrgonePowerLeft = 1;
+                    PlayerScript.Instance.J1Infos.EventUseLeft = 1;
                 }
                 else
                 {
-                    PlayerScript.Instance.BluePlayerInfos.OrgonePowerLeft = 1;
-                    PlayerScript.Instance.BluePlayerInfos.EventUseLeft = 1;
+                    PlayerScript.Instance.J2Infos.OrgonePowerLeft = 1;
+                    PlayerScript.Instance.J2Infos.EventUseLeft = 1;
                 }
                 GoToOrgoneJ1Phase();
                 break;
@@ -152,13 +152,13 @@ public class GameManagerSO : ScriptableObject
                 }
                 if (GameManager.Instance.SabotageStat == 1 && !GameManager.Instance.IsPlayerRedTurn)
                 {
-                    PlayerScript.Instance.BluePlayerInfos.ActivationLeft--;
+                    PlayerScript.Instance.J2Infos.ActivationLeft--;
                     GameManager.Instance.SabotageStat = 3;
 
                 }
                 else if (GameManager.Instance.SabotageStat == 2 && GameManager.Instance.IsPlayerRedTurn)
                 {
-                    PlayerScript.Instance.RedPlayerInfos.ActivationLeft--;
+                    PlayerScript.Instance.J1Infos.ActivationLeft--;
                     GameManager.Instance.SabotageStat = 3;
                 }
                 UIInstance.Instance.UpdateActivationLeft();
@@ -384,13 +384,13 @@ public class GameManagerSO : ScriptableObject
                 }
                     if (!GameManager.Instance.IsPlayerRedStarting)
                 {
-                    PlayerScript.Instance.RedPlayerInfos.OrgonePowerLeft = 1;
-                    PlayerScript.Instance.RedPlayerInfos.EventUseLeft = 1;
+                    PlayerScript.Instance.J1Infos.OrgonePowerLeft = 1;
+                    PlayerScript.Instance.J1Infos.EventUseLeft = 1;
                 }
                 else
                 {
-                    PlayerScript.Instance.BluePlayerInfos.OrgonePowerLeft = 1;
-                    PlayerScript.Instance.BluePlayerInfos.EventUseLeft = 1;
+                    PlayerScript.Instance.J2Infos.OrgonePowerLeft = 1;
+                    PlayerScript.Instance.J2Infos.EventUseLeft = 1;
                 }
 
                 UIInstance.Instance.ActiveOrgoneChargeButton();
@@ -417,12 +417,12 @@ public class GameManagerSO : ScriptableObject
                 }
                 if (GameManager.Instance.SabotageStat == 1 && !GameManager.Instance.IsPlayerRedTurn)
                 {
-                    PlayerScript.Instance.BluePlayerInfos.ActivationLeft--;
+                    PlayerScript.Instance.J2Infos.ActivationLeft--;
                     GameManager.Instance.SabotageStat = 3;
                 }
                 else if (GameManager.Instance.SabotageStat == 2 && GameManager.Instance.IsPlayerRedTurn)
                 {
-                    PlayerScript.Instance.RedPlayerInfos.ActivationLeft--;
+                    PlayerScript.Instance.J1Infos.ActivationLeft--;
                     GameManager.Instance.SabotageStat = 3;
                 }
                 UIInstance.Instance.UpdateActivationLeft();
@@ -650,8 +650,8 @@ public class GameManagerSO : ScriptableObject
                UIInstance.Instance.ButtonRenfortJ2.GetComponent<Button>().interactable = false;
                 
            
-                PlayerScript.Instance.RedPlayerInfos.HasCreateUnit = false;
-                PlayerScript.Instance.BluePlayerInfos.HasCreateUnit = false;
+                PlayerScript.Instance.J1Infos.HasCreateUnit = false;
+                PlayerScript.Instance.J2Infos.HasCreateUnit = false;
                 if (GoToStrategyPhase != null) GoToStrategyPhase();
                         break;
         }

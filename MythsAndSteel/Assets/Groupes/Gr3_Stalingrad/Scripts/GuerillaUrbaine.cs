@@ -6,7 +6,7 @@ public class GuerillaUrbaine : Capacity
 {
     public override void StartCpty()
     {
-        int ressourcePlayer = GetComponent<UnitScript>().UnitSO.IsInRedArmy ? PlayerScript.Instance.RedPlayerInfos.Ressource : PlayerScript.Instance.BluePlayerInfos.Ressource;
+        int ressourcePlayer = GetComponent<UnitScript>().UnitSO.IsInRedArmy ? PlayerScript.Instance.J1Infos.Ressource : PlayerScript.Instance.J2Infos.Ressource;
         if (ressourcePlayer >= Capacity1Cost)
         {
             List<GameObject> tile = new List<GameObject>();
@@ -36,14 +36,14 @@ public class GuerillaUrbaine : Capacity
     {
         if (GetComponent<UnitScript>().UnitSO.IsInRedArmy)
         {
-            PlayerScript.Instance.RedPlayerInfos.Ressource -= Capacity1Cost;
+            PlayerScript.Instance.J1Infos.Ressource -= Capacity1Cost;
             GameObject obj = Instantiate(PlayerScript.Instance.UnitRef.UnitClassCreableListRedPlayer[1], GameManager.Instance.TileChooseList[0].transform.position, Quaternion.identity);
             GameManager.Instance.TileChooseList[0].GetComponent<TileScript>().AddUnitToTile(obj);
             PlayerScript.Instance.UnitRef.UnitListRedPlayer.Add(obj);
         }
         else
         {
-            PlayerScript.Instance.BluePlayerInfos.Ressource -= Capacity1Cost;
+            PlayerScript.Instance.J2Infos.Ressource -= Capacity1Cost;
             GameObject obj = Instantiate(PlayerScript.Instance.UnitRef.UnitClassCreableListBluePlayer[1], GameManager.Instance.TileChooseList[0].transform.position, Quaternion.identity);
             GameManager.Instance.TileChooseList[0].GetComponent<TileScript>().AddUnitToTile(obj);
             PlayerScript.Instance.UnitRef.UnitListBluePlayer.Add(obj);

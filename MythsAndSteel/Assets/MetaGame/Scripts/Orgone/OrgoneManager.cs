@@ -332,14 +332,14 @@ namespace MythsAndSteel.Orgone{
            
                     if (player == 1){
                        
-                        if (PlayerScript.Instance.RedPlayerInfos.OrgonePowerLeft > 0 && PlayerScript.Instance.RedPlayerInfos.OrgoneValue >= cost){
+                        if (PlayerScript.Instance.J1Infos.OrgonePowerLeft > 0 && PlayerScript.Instance.J1Infos.OrgoneValue >= cost){
 
                             canUse = true;
                         }
                     }
                     else{
                         
-                        if (PlayerScript.Instance.BluePlayerInfos.OrgonePowerLeft > 0 && PlayerScript.Instance.BluePlayerInfos.OrgoneValue >= cost){
+                        if (PlayerScript.Instance.J2Infos.OrgonePowerLeft > 0 && PlayerScript.Instance.J2Infos.OrgoneValue >= cost){
                             canUse = true;
                             
                         }

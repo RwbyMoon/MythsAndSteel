@@ -1,0 +1,409 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1397833382716939711
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1397833382716939710}
+  - component: {fileID: 1397833382716939709}
+  m_Layer: 0
+  m_Name: UIInstance
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1397833382716939710
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1397833382716939711}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.108147, y: -0.73039323, z: 41.194866}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1397833382716939709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1397833382716939711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1129ac21bcf02f742b54eb48f71a9ed9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RedRenfortCount: 0
+  BlueRenfortCount: 0
+  boutonAnnulerRenfort: {fileID: 0}
+  DownSliderJauge: {fileID: 0}
+  skiPhaseTouche: 1
+  _switchPhaseObject: {fileID: 4950479300666342195, guid: 111b4523566bf904e984f7c9843eb641, type: 3}
+  _canvasActivation: {fileID: 0}
+  _skipPhaseImage: {fileID: 0}
+  _backgroundActivation: {fileID: 0}
+  _canvasTurnPhase: {fileID: 0}
+  _buttonNextPhase: {fileID: 0}
+  _activationUnitPanel: {fileID: 0}
+  _victoryScreen: {fileID: 0}
+  _redWin: {fileID: 0}
+  _blueWin: {fileID: 0}
+  _eventCardObjectRed: {fileID: 5249351300956634737, guid: 7b4e07eb63565d04b8e25cd06fad29ca, type: 3}
+  _eventCardObjectBlue: {fileID: 8817809928786969543, guid: 3b5accca611a0e54a95baa847cfbd3dd, type: 3}
+  _flecheSpriteRef:
+    _redArrowUp: {fileID: 21300000, guid: 8cebf809470bb6d4eb090c3267bc51f8, type: 3}
+    _redArrowDown: {fileID: 21300000, guid: 2102bf759da0a084797f8a09ad9cca70, type: 3}
+    _blueArrowUp: {fileID: 21300000, guid: 1ec510790d352ab439381c62d23a02e1, type: 3}
+    _blueArrowDown: {fileID: 21300000, guid: 1ae046eeffebd44478fe41c9ff1ebe9b, type: 3}
+    _grisArrowUp: {fileID: 21300000, guid: d8998de639d437643a9a550aa494e9d8, type: 3}
+    _grisArrowDown: {fileID: 21300000, guid: af4b8f00a230b8e4bb7b182480878b79, type: 3}
+  _buttonEventBluePlayer:
+    _upButton: {fileID: 0}
+    _downButton: {fileID: 0}
+  _buttonEventRedPlayer:
+    _upButton: {fileID: 0}
+    _downButton: {fileID: 0}
+  _redPlayerEventtransf: {fileID: 0}
+  _bluePlayerEventtransf: {fileID: 0}
+  _redEventDowntrans: {fileID: 0}
+  _blueEventDowntrans: {fileID: 0}
+  _pageButton:
+    _rightArrowPage1: {fileID: 0}
+    _leftArrowPage2: {fileID: 0}
+  _titlePanelMouseOver: {fileID: 0}
+  _mouseOverStats:
+    _lifeGam: {fileID: 0}
+    _rangeGam: {fileID: 0}
+    _moveGam: {fileID: 0}
+    _ciblesGam: {fileID: 0}
+    _nbAtkGam: {fileID: 0}
+    _unitSpriteGam: {fileID: 0}
+  _titlePanelShiftClicPage1: {fileID: 0}
+  _pageUnitStat:
+    _lifeGam: {fileID: 0}
+    _rangeGam: {fileID: 0}
+    _moveGam: {fileID: 0}
+    _ciblesGam: {fileID: 0}
+    _nbAtkGam: {fileID: 0}
+    _unitSpriteGam: {fileID: 0}
+  _attackStat:
+    _rangeMinDamageGam: {fileID: 0}
+    _rangeMaxDamageGam: {fileID: 0}
+    _minDamageValueGam: {fileID: 0}
+    _maxDamageValueGam: {fileID: 0}
+  _capacityParent: {fileID: 0}
+  _capacityPrefab: {fileID: 5476234599435034801, guid: 3c4ab42a361d03a42a7ca23e80503a92, type: 3}
+  _capacitylist: []
+  textSpriteAttributUnit:
+  - _name: "D\xE9viation"
+    _attributs: 1
+    SpriteAttributUnit: {fileID: 21300000, guid: acd77d857bc325e4d85258714ef5d338, type: 3}
+    TextAttributUnit: "En cas d'\xE9chec d'attaque, le coup est port\xE9e sur une
+      case adjacente al\xE9atoire (diagonales incluses) et inflige les d\xE9g\xE2ts
+      minimaux de l'unit\xE9."
+  - _name: "R\xE9sistance au froid"
+    _attributs: 2
+    SpriteAttributUnit: {fileID: 21300000, guid: 0e965d5ff78cbc644b360b9725531387, type: 3}
+    TextAttributUnit: Immunise aux effets du Froid (Stalingrad principalement).
+  - _name: "R\xE9sistance au feu"
+    _attributs: 3
+    SpriteAttributUnit: {fileID: 21300000, guid: 78fd1b90cb1bb0b4b818005b89184312, type: 3}
+    TextAttributUnit: Immunise aux effets des Brasiers & Flammes.
+  - _name: Appel de renforts
+    _attributs: 4
+    SpriteAttributUnit: {fileID: 21300000, guid: 7e191bd7a2f35db489f16b5f6df5d6c0, type: 3}
+    TextAttributUnit: "Permet de cr\xE9er des nouvelles unit\xE9s adjacentes \xE0
+      celle-ci via les Renforts."
+  - _name: Tout terrain
+    _attributs: 5
+    SpriteAttributUnit: {fileID: 21300000, guid: 29de31ae7013d2b44ad5b1586f3894e0, type: 3}
+    TextAttributUnit: Ignore tous les Effets de Terrains et les Mines sauf les Points
+      de Ressources & Objectifs
+  - _name: Passe Muraille
+    _attributs: 6
+    SpriteAttributUnit: {fileID: 21300000, guid: 276cf727e126c8a439b05fd14c427f3f, type: 3}
+    TextAttributUnit: "Permet de traverser les unit\xE9s ennemies."
+  - _name: Perforant
+    _attributs: 7
+    SpriteAttributUnit: {fileID: 21300000, guid: a407425d6496cde48a4c80fe9226d1d7, type: 3}
+    TextAttributUnit: Outrepasse les Boucliers
+  - _name: Amphibie
+    _attributs: 8
+    SpriteAttributUnit: {fileID: 21300000, guid: 4f635f4550930af42a61bb5918399b38, type: 3}
+    TextAttributUnit: "Ignore les effets des Cours d\u2019Eau et de la Mar\xE9e et
+      peut traverser les Points d\u2019Eau, mais pas stationner sur eux."
+  - _name: "D\xE9mineur"
+    _attributs: 9
+    SpriteAttributUnit: {fileID: 21300000, guid: 370b6ee4a1c59ff4eb1db4595db10b5a, type: 3}
+    TextAttributUnit: "Est immunis\xE9 aux mines et permet de consommer son action
+      pour supprimer une mine."
+  - _name: Restreint aux rails
+    _attributs: 10
+    SpriteAttributUnit: {fileID: 21300000, guid: 76fadfb718b98e040ae205e84cb03c6c, type: 3}
+    TextAttributUnit: "Ne peut se d\xE9placer que sur les rails et ignore la Boue
+      et la Route."
+  - _name: Volant
+    _attributs: 11
+    SpriteAttributUnit: {fileID: 21300000, guid: 76fadfb718b98e040ae205e84cb03c6c, type: 3}
+    TextAttributUnit: Ignore tous les effets de terrain.
+  objectsAttributs:
+  - MainObjects: {fileID: 0}
+    Description: {fileID: 0}
+  - MainObjects: {fileID: 0}
+    Description: {fileID: 0}
+  - MainObjects: {fileID: 0}
+    Description: {fileID: 0}
+  textSpriteStatutUnit:
+  - _name: "Contamin\xE9"
+    _statuts: 1
+    SpriteStatutUnit: {fileID: 21300000, guid: 7b0d58a25a8ceb744bb7e13923111cd5, type: 3}
+    TextStatutUnit: "Inflige \xE0 la cible et aux unit\xE9s adjacentes 1 point de
+      d\xE9g\xE2ts \xE0 la fin du prochain adverse."
+  - _name: "Paralys\xE9"
+    _statuts: 2
+    SpriteStatutUnit: {fileID: 21300000, guid: 54a07ad9a27ddfe4da4182ccac43abac, type: 3}
+    TextStatutUnit: "Ne peut pas \xEAtre activ\xE9 jusqu'\xE0 la fin du prochain
+      tour."
+  - _name: "Immobilis\xE9"
+    _statuts: 3
+    SpriteStatutUnit: {fileID: 21300000, guid: 6ffe6d9cffa5c0445b36a17ee026c1de, type: 3}
+    TextStatutUnit: "Ne peut pas se d\xE9placer jusqu'\xE0 la fin du tour."
+  - _name: "R\xE9anim\xE9"
+    _statuts: 4
+    SpriteStatutUnit: {fileID: 21300000, guid: 01b62f3e2e0c3eb419ee14a4efe69d47, type: 3}
+    TextStatutUnit: "Meurt si l'unit\xE9 qui l'a r\xE9anim\xE9e meurt."
+  - _name: "Poss\xE9d\xE9"
+    _statuts: 5
+    SpriteStatutUnit: {fileID: 21300000, guid: 67c120ef3d41f83488d3d7b9c0a4f41a, type: 3}
+    TextStatutUnit: "Peut \xEAtre activ\xE9 par l'opposant jusqu'\xE0 son prochain
+      tour."
+  - _name: Invincible
+    _statuts: 6
+    SpriteStatutUnit: {fileID: 21300000, guid: 01b62f3e2e0c3eb419ee14a4efe69d47, type: 3}
+    TextStatutUnit: "Ne peut pas subir de d\xE9g\xE2ts."
+  - _name: "D\xE9sarm\xE9"
+    _statuts: 7
+    SpriteStatutUnit: {fileID: 21300000, guid: 7c902def851c6f844ae4276d098831fa, type: 3}
+    TextStatutUnit: "Ne peut pas attaquer jusqu'\xE0 la fin du tour."
+  - _name: "Isol\xE9"
+    _statuts: 8
+    SpriteStatutUnit: {fileID: 21300000, guid: a236ad680652a8546840745331b08fa6, type: 3}
+    TextStatutUnit: "Ne peut pas capturer d'objectif jusqu'\xE0 la fin du tour."
+  - _name: Silence
+    _statuts: 9
+    SpriteStatutUnit: {fileID: 21300000, guid: a236ad680652a8546840745331b08fa6, type: 3}
+    TextStatutUnit: "Ne peut pas utiliser de capacit\xE9s actives jusqu'\xE0 la fin
+      du tour."
+  objectsStatuts:
+  - MainObjects: {fileID: 0}
+    Description: {fileID: 0}
+  - MainObjects: {fileID: 0}
+    Description: {fileID: 0}
+  - MainObjects: {fileID: 0}
+    Description: {fileID: 0}
+  - MainObjects: {fileID: 0}
+    Description: {fileID: 0}
+  MiniJaugeSlot:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  Maximum: {fileID: 4194018619189795068, guid: bf05eb09a47d86742a85fa52d11f883e, type: 3}
+  Minimum: {fileID: -2842108149588003640, guid: bf05eb09a47d86742a85fa52d11f883e, type: 3}
+  None: {fileID: -1505434149793338070, guid: bf05eb09a47d86742a85fa52d11f883e, type: 3}
+  MinSlider: {fileID: 0}
+  MaxSlider: {fileID: 0}
+  _prefabSlotEffetDeTerrain: {fileID: 5476234599435034801, guid: 935f51419ad172646a34ee56e0bef9ea, type: 3}
+  _parentSlotEffetDeTerrain: {fileID: 0}
+  _effetDeTerrain: []
+  _prefabSlotStatuts: {fileID: 5476234599435034801, guid: 7bcaec3b13cd59747950a811c1923970, type: 3}
+  _parentSlotStatuts: {fileID: 0}
+  _Statuts: []
+  _mouvementTilePrefab: {fileID: 5418695048351900630, guid: fb0b1478d0b2d3d41a6a69566fbf7ccf, type: 3}
+  _validationPanel: {fileID: 0}
+  _titleValidationTxt: {fileID: 0}
+  _descriptionValidationTxt: {fileID: 0}
+  _fpsText: {fileID: 0}
+  _typeTileList:
+    _title: {fileID: 0}
+    _desc: {fileID: 0}
+    _rendu: {fileID: 0}
+    _ressources: {fileID: 0}
+    _uiTiles: {fileID: 0}
+  Terrain: {fileID: 11400000, guid: 38ed12df59a03714caea8190931b28c9, type: 2}
+  StatusSc: {fileID: 11400000, guid: 126b899e3398b524c832dadec7151592, type: 2}
+  _activationLeftTxtRP: {fileID: 0}
+  _activationLeftTxtBP: {fileID: 0}
+  _ressourceLeftTxtRP: {fileID: 0}
+  _ressourceLeftTxtBP: {fileID: 0}
+  "_pageUnit\xE9Renfort":
+    _ressourceJoueur: {fileID: 0}
+    _ressourceText: {fileID: 0}
+    _nameUnit1: {fileID: 0}
+    _lifeValor1: {fileID: 0}
+    _rangeValor1: {fileID: 0}
+    _moveValor1: {fileID: 0}
+    _damageValor1: {fileID: 0}
+    _nameUnit2: {fileID: 0}
+    _lifeValor2: {fileID: 0}
+    _rangeValor2: {fileID: 0}
+    _moveValor2: {fileID: 0}
+    _damageValor2: {fileID: 0}
+    _nameUnit3: {fileID: 0}
+    _lifeValor3: {fileID: 0}
+    _rangeValor3: {fileID: 0}
+    _moveValor3: {fileID: 0}
+    _damageValor3: {fileID: 0}
+    _nameUnit4: {fileID: 0}
+    _lifeValor4: {fileID: 0}
+    _rangeValor4: {fileID: 0}
+    _moveValor4: {fileID: 0}
+    _damageValor4: {fileID: 0}
+    _nameUnit5: {fileID: 0}
+    _lifeValor5: {fileID: 0}
+    _rangeValor5: {fileID: 0}
+    _moveValor5: {fileID: 0}
+    _damageValor5: {fileID: 0}
+    _nameUnit6: {fileID: 0}
+    _lifeValor6: {fileID: 0}
+    _rangeValor6: {fileID: 0}
+    _moveValor6: {fileID: 0}
+    _damageValor6: {fileID: 0}
+  RenfortBlockant: {fileID: 0}
+  _emplacementImageMenuRenfort:
+    _drapeauDuJoueur: {fileID: 0}
+    "_imageUnit\xE91": {fileID: 0}
+    "_imageUnit\xE92": {fileID: 0}
+    "_imageUnit\xE93": {fileID: 0}
+    "_imageUnit\xE94": {fileID: 0}
+    "_imageUnit\xE95": {fileID: 0}
+    "_imageUnit\xE96": {fileID: 0}
+    _imageLifeValor: {fileID: 0}
+    _imageRangeValor: {fileID: 0}
+    _imageMovementValor: {fileID: 0}
+    _imageAttaqueValor: {fileID: 0}
+    _imageRessource: {fileID: 0}
+  _stockageImage:
+    _drapeauJoueur: []
+    _imageUnit1: []
+    _imageUnit2: []
+    _imageUnit3: []
+    _imageUnit4: []
+    _imageUnit5: []
+    _imageUnit6: []
+    _terrainEffectForet: {fileID: 0}
+    "_rivi\xE8reDirection": []
+    _pont: []
+  _ressourceUnit_PasTouche:
+    "_unit\xE91Ressource":
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    "_unit\xE92Ressource":
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    "_unit\xE93Ressource":
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    "_unit\xE94Ressource":
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    "_unit\xE95Ressource":
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    "_unit\xE96Ressource":
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  _buttonRenfort:
+    "_clicSurUnit\xE91": {fileID: 0}
+    "_clicSurUnit\xE92": {fileID: 0}
+    "_clicSurUnit\xE93": {fileID: 0}
+    "_clicSurUnit\xE94": {fileID: 0}
+    "_clicSurUnit\xE95": {fileID: 0}
+    "_clicSurUnit\xE96": {fileID: 0}
+  ButtonRenfortJ1: {fileID: 0}
+  ButtonRenfortJ2: {fileID: 0}
+  RedButtonCharge1: {fileID: 0}
+  RedButtonCharge3: {fileID: 0}
+  RedButtonCharge5: {fileID: 0}
+  BlueButtonCharge1: {fileID: 0}
+  BlueButtonCharge3: {fileID: 0}
+  BlueButtonCharge5: {fileID: 0}
+  _lifeHeartPrefab: {fileID: 173392163849239963, guid: f995a6ed1892ee8439d628c36a76c6ff, type: 3}
+  _redHeartSprite:
+  - {fileID: 21300000, guid: a761f2292b3db0a4999bf5ac1db5e50d, type: 3}
+  - {fileID: 21300000, guid: f655843c27611d04094a1822e8933df3, type: 3}
+  - {fileID: 21300000, guid: f40cb213ffa47fd46859e8ee40381bdd, type: 3}
+  - {fileID: 21300000, guid: 496e0329cb19d814db6ae1b905872608, type: 3}
+  - {fileID: 21300000, guid: 42183da3d322eb246a3570ee4a90dd5f, type: 3}
+  - {fileID: 21300000, guid: e3bef85698823544fa99beb643ec9d10, type: 3}
+  - {fileID: 21300000, guid: 1dae12d38e1577f44b711fbdcaf9d74b, type: 3}
+  - {fileID: 21300000, guid: 6712e32d186d55748b8d3a6e0abbe5a2, type: 3}
+  - {fileID: 21300000, guid: cf29a1172092ec44f84823e57df1ddd4, type: 3}
+  - {fileID: 21300000, guid: 37b6c2bf2d883de4b8d93e3dca5a3f96, type: 3}
+  - {fileID: 21300000, guid: 9c8da066afbdbf44bad78dbb4295884d, type: 3}
+  _blueHeartSprite:
+  - {fileID: 21300000, guid: f4061b12460f34f4882f3dcdffdb5ee7, type: 3}
+  - {fileID: 21300000, guid: 6a35cd2c4ba742a46b15e2ef272f6ef4, type: 3}
+  - {fileID: 21300000, guid: 3028eccadae8f4841b714344df9e791d, type: 3}
+  - {fileID: 21300000, guid: 2f3cc0242b0724447a272ba4b51a3bf2, type: 3}
+  - {fileID: 21300000, guid: b41083f22ce0b384d8b1ad87ef05b365, type: 3}
+  - {fileID: 21300000, guid: d54c68c444759ff4d83d06b1b5751432, type: 3}
+  - {fileID: 21300000, guid: 52d603bbc34d88249b69807be9798290, type: 3}
+  - {fileID: 21300000, guid: e453f4018dffe224b865aa5345ac8781, type: 3}
+  - {fileID: 21300000, guid: 714a7f1f14647f24d8f136c4aa18dd35, type: 3}
+  - {fileID: 21300000, guid: 34896eb1eca9a6745bbf85d1ddf31f96, type: 3}
+  - {fileID: 21300000, guid: aba068187803f5a468bb140204f352ae, type: 3}
+  _redHeartShieldSprite:
+  - {fileID: -5583410944381411032, guid: 4187f0e7319311049bbf7b678cd84528, type: 3}
+  - {fileID: -6700640347006754069, guid: 4187f0e7319311049bbf7b678cd84528, type: 3}
+  - {fileID: 6713693146708932332, guid: 4187f0e7319311049bbf7b678cd84528, type: 3}
+  - {fileID: -3082924813425570008, guid: 4187f0e7319311049bbf7b678cd84528, type: 3}
+  - {fileID: -7355901863232873014, guid: 4187f0e7319311049bbf7b678cd84528, type: 3}
+  - {fileID: -513739002167091131, guid: 4187f0e7319311049bbf7b678cd84528, type: 3}
+  - {fileID: 2317670629787211640, guid: 4187f0e7319311049bbf7b678cd84528, type: 3}
+  - {fileID: -628503001144286711, guid: 4187f0e7319311049bbf7b678cd84528, type: 3}
+  - {fileID: -6729118478464844328, guid: 4187f0e7319311049bbf7b678cd84528, type: 3}
+  - {fileID: -6729118478464844328, guid: 4187f0e7319311049bbf7b678cd84528, type: 3}
+  - {fileID: -6889621516815628970, guid: 4187f0e7319311049bbf7b678cd84528, type: 3}
+  - {fileID: 1023448971855760657, guid: 4187f0e7319311049bbf7b678cd84528, type: 3}
+  _blueHeartShieldSprite:
+  - {fileID: -7219233562172976228, guid: 4e5ee84b2c28f4a4fa75b7395ac5ecbf, type: 3}
+  - {fileID: -8878936062031098394, guid: 4e5ee84b2c28f4a4fa75b7395ac5ecbf, type: 3}
+  - {fileID: 3655621051033334485, guid: 4e5ee84b2c28f4a4fa75b7395ac5ecbf, type: 3}
+  - {fileID: -5287574731550421417, guid: 4e5ee84b2c28f4a4fa75b7395ac5ecbf, type: 3}
+  - {fileID: 8787267627741447102, guid: 4e5ee84b2c28f4a4fa75b7395ac5ecbf, type: 3}
+  - {fileID: 6293229178347879417, guid: 4e5ee84b2c28f4a4fa75b7395ac5ecbf, type: 3}
+  - {fileID: -4899502065552949648, guid: 4e5ee84b2c28f4a4fa75b7395ac5ecbf, type: 3}
+  - {fileID: 7048249088587545909, guid: 4e5ee84b2c28f4a4fa75b7395ac5ecbf, type: 3}
+  - {fileID: 7657445243503043418, guid: 4e5ee84b2c28f4a4fa75b7395ac5ecbf, type: 3}
+  - {fileID: 6214391671270575512, guid: 4e5ee84b2c28f4a4fa75b7395ac5ecbf, type: 3}
+  - {fileID: 3737658178518209235, guid: 4e5ee84b2c28f4a4fa75b7395ac5ecbf, type: 3}

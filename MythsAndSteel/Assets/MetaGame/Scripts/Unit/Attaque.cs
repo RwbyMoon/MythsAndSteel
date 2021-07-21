@@ -493,7 +493,7 @@ public class Attaque : MonoSingleton<Attaque>
         _selectedTiles.Clear();
         _newNeighbourId.Clear();
 
-        if ((GameManager.Instance.IsPlayerRedTurn && PlayerScript.Instance.RedPlayerInfos.ActivationLeft > 0) || (_selectedUnit.GetComponent<UnitScript>()._hasStartMove && GameManager.Instance.IsPlayerRedTurn && PlayerScript.Instance.RedPlayerInfos.ActivationLeft == 0))
+        if ((GameManager.Instance.IsPlayerRedTurn && PlayerScript.Instance.J1Infos.ActivationLeft > 0) || (_selectedUnit.GetComponent<UnitScript>()._hasStartMove && GameManager.Instance.IsPlayerRedTurn && PlayerScript.Instance.J1Infos.ActivationLeft == 0))
         {
             if (tileId != -1)
             {
@@ -543,7 +543,7 @@ public class Attaque : MonoSingleton<Attaque>
                 }
             }
         }
-        else if ((!GameManager.Instance.IsPlayerRedTurn && PlayerScript.Instance.BluePlayerInfos.ActivationLeft > 0) || (_selectedUnit.GetComponent<UnitScript>()._hasStartMove && !GameManager.Instance.IsPlayerRedTurn && PlayerScript.Instance.BluePlayerInfos.ActivationLeft == 0))
+        else if ((!GameManager.Instance.IsPlayerRedTurn && PlayerScript.Instance.J2Infos.ActivationLeft > 0) || (_selectedUnit.GetComponent<UnitScript>()._hasStartMove && !GameManager.Instance.IsPlayerRedTurn && PlayerScript.Instance.J2Infos.ActivationLeft == 0))
         {
             if (tileId != -1)
             {
