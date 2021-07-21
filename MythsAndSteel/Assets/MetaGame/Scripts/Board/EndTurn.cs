@@ -112,7 +112,7 @@ public class EndTurn : MonoBehaviour
 
             if (S.ResourcesCounter != 0)
             {
-                if (S.Unit != null)
+                if (S.Unit != null && !S.Unit.GetComponent<UnitScript>().DoubleRessource)
                 {
                     UnitScript US = S.Unit.GetComponent<UnitScript>();
                     if(GameManager.Instance.VolDeRavitaillementStat != 3)
@@ -148,6 +148,47 @@ public class EndTurn : MonoBehaviour
                     {
                         SoundController.Instance.PlaySound(SoundController.Instance.AudioClips[9]);
                         S.RemoveRessources(1, PlayerStatic.CheckIsUnitArmy(US.GetComponent<UnitScript>(), true) == true ? 1 : 2);
+                        AnimResourcesBlue.SetActive(true);
+                        StartCoroutine(WaitAnimResourceBlue(1.5f));
+
+                    }
+                }
+                if (S.Unit != null && S.Unit.GetComponent<UnitScript>().DoubleRessource)
+                {
+                    UnitScript US = S.Unit.GetComponent<UnitScript>();
+                    if (GameManager.Instance.VolDeRavitaillementStat != 3)
+                    {
+                        if (S.Unit.GetComponent<UnitScript>().UnitSO.IsInRedArmy && GameManager.Instance.VolDeRavitaillementStat == 2)
+                        {
+                            SoundController.Instance.PlaySound(SoundController.Instance.AudioClips[9]);
+                            S.RemoveRessources(2, 2);
+                            AnimResourcesBlue.SetActive(true);
+
+                            StartCoroutine(WaitAnimResourceRed(1.5f));
+
+                        }
+                        else if (!S.Unit.GetComponent<UnitScript>().UnitSO.IsInRedArmy && GameManager.Instance.VolDeRavitaillementStat == 1)
+                        {
+
+                            SoundController.Instance.PlaySound(SoundController.Instance.AudioClips[9]);
+                            S.RemoveRessources(2, 1);
+                            AnimResourcesRed.SetActive(true);
+                            StartCoroutine(WaitAnimResourceRed(1.5f));
+
+                        }
+                        else
+                        {
+                            SoundController.Instance.PlaySound(SoundController.Instance.AudioClips[9]);
+                            S.RemoveRessources(2, PlayerStatic.CheckIsUnitArmy(US.GetComponent<UnitScript>(), true) == true ? 1 : 2);
+                            AnimResourcesRed.SetActive(true);
+                            StartCoroutine(WaitAnimResourceRed(1.5f));
+
+                        }
+                    }
+                    else
+                    {
+                        SoundController.Instance.PlaySound(SoundController.Instance.AudioClips[9]);
+                        S.RemoveRessources(2, PlayerStatic.CheckIsUnitArmy(US.GetComponent<UnitScript>(), true) == true ? 1 : 2);
                         AnimResourcesBlue.SetActive(true);
                         StartCoroutine(WaitAnimResourceBlue(1.5f));
 
