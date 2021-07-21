@@ -932,6 +932,10 @@ public class Attaque : MonoSingleton<Attaque>
             _selectedUnit.GetComponent<UnitScript>()._isActionDone = true;
 
         }
+        else if(_selectedUnit.GetComponent<UnitScript>().NbAtkTurn > 1 && !_selectedUnit.GetComponent<UnitScript>()._hasStartMove)
+        {
+            _selectedUnit.GetComponent<UnitScript>()._hasStartMove = true;
+        }
         _selectedUnit.GetComponent<UnitScript>().HasAttackedThisTurn();
 
         _selectedUnit.GetComponent<UnitScript>().checkActivation();
