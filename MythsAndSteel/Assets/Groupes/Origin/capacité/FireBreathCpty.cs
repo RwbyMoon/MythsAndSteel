@@ -9,7 +9,7 @@ public class FireBreathCpty : Capacity
 
     public override void StartCpty()
     {
-        int ressourcePlayer = GetComponent<UnitScript>().UnitSO.IsInRedArmy ? PlayerScript.Instance.RedPlayerInfos.Ressource : PlayerScript.Instance.BluePlayerInfos.Ressource;
+        int ressourcePlayer = GetComponent<UnitScript>().UnitSO.IsInRedArmy ? PlayerScript.Instance.J1Infos.Ressource : PlayerScript.Instance.J2Infos.Ressource;
         if (ressourcePlayer >= Capacity1Cost)
         {
             List<GameObject> tile = new List<GameObject>();
@@ -34,11 +34,11 @@ public class FireBreathCpty : Capacity
     {
         if (GetComponent<UnitScript>().UnitSO.IsInRedArmy)
         {
-            PlayerScript.Instance.RedPlayerInfos.Ressource -= Capacity1Cost;
+            PlayerScript.Instance.J1Infos.Ressource -= Capacity1Cost;
         }
         else
         {
-            PlayerScript.Instance.BluePlayerInfos.Ressource -= Capacity1Cost;
+            PlayerScript.Instance.J2Infos.Ressource -= Capacity1Cost;
         }
         
         GameManager.Instance._eventCall -= EndCpty;

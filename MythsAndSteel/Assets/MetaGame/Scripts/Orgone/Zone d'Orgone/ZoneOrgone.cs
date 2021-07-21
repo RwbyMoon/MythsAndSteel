@@ -50,10 +50,10 @@ public class ZoneOrgone : MonoBehaviour
         GameManager.Instance.ManagerSO.GoToActionJ2Phase += HideChild;
 
         if(_redPlayerZone){
-            PlayerScript.Instance.RedPlayerInfos.TileCentreZoneOrgone = _centerOrgoneArea;
+            PlayerScript.Instance.J1Infos.TileCentreZoneOrgone = _centerOrgoneArea;
         }
         else{
-            PlayerScript.Instance.BluePlayerInfos.TileCentreZoneOrgone = _centerOrgoneArea;
+            PlayerScript.Instance.J2Infos.TileCentreZoneOrgone = _centerOrgoneArea;
         }
 
         List<int> neighZone = PlayerStatic.GetNeighbourDiag(_centerOrgoneArea.GetComponent<TileScript>().TileId, _centerOrgoneArea.GetComponent<TileScript>().Line, true);
@@ -110,11 +110,11 @@ public class ZoneOrgone : MonoBehaviour
     /// </summary>
     public void AddOrgoneAtRange(){
         UIInstance.Instance.DesactivateNextPhaseButton();
-        List<int> OrgoneNeigh = _redPlayerZone ? PlayerStatic.GetNeighbourDiag(PlayerScript.Instance.RedPlayerInfos.TileCentreZoneOrgone.GetComponent<TileScript>().TileId, 
-                                                                               PlayerScript.Instance.RedPlayerInfos.TileCentreZoneOrgone.GetComponent<TileScript>().Line,   
+        List<int> OrgoneNeigh = _redPlayerZone ? PlayerStatic.GetNeighbourDiag(PlayerScript.Instance.J1Infos.TileCentreZoneOrgone.GetComponent<TileScript>().TileId, 
+                                                                               PlayerScript.Instance.J1Infos.TileCentreZoneOrgone.GetComponent<TileScript>().Line,   
                                                                                false) : 
-                                                 PlayerStatic.GetNeighbourDiag(PlayerScript.Instance.BluePlayerInfos.TileCentreZoneOrgone.GetComponent<TileScript>().TileId,
-                                                                               PlayerScript.Instance.BluePlayerInfos.TileCentreZoneOrgone.GetComponent<TileScript>().Line,
+                                                 PlayerStatic.GetNeighbourDiag(PlayerScript.Instance.J2Infos.TileCentreZoneOrgone.GetComponent<TileScript>().TileId,
+                                                                               PlayerScript.Instance.J2Infos.TileCentreZoneOrgone.GetComponent<TileScript>().Line,
                                                                                false);
 
         foreach(int i in OrgoneNeigh){
@@ -197,8 +197,8 @@ public class ZoneOrgone : MonoBehaviour
             TilesManager.Instance.TileList[i].GetComponent<TileScript>().TerrainEffectList.Remove(_redPlayerZone? MYthsAndSteel_Enum.TerrainType.OrgoneRed : MYthsAndSteel_Enum.TerrainType.OrgoneBlue);
         }
 
-        if(GameManager.Instance.IsPlayerRedTurn) PlayerScript.Instance.RedPlayerInfos.TileCentreZoneOrgone = _targetTile;
-        else PlayerScript.Instance.BluePlayerInfos.TileCentreZoneOrgone = _targetTile;
+        if(GameManager.Instance.IsPlayerRedTurn) PlayerScript.Instance.J1Infos.TileCentreZoneOrgone = _targetTile;
+        else PlayerScript.Instance.J2Infos.TileCentreZoneOrgone = _targetTile;
 
         _centerOrgoneArea = _targetTile;
         _targetTile = null;

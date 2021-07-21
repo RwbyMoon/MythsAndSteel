@@ -29,7 +29,7 @@ public class ColereDuKhodok : MonoBehaviour
 
     private void Update()
     {
-        if(actualLife > GetComponent<UnitScript>()._life && SetLifeDone)
+        if(actualLife > GetComponent<UnitScript>()._life && SetLifeDone && GetComponent<UnitScript>()._life > 0)
         {
             GetComponent<UnitScript>().DiceBonus += 2 * (actualLife - GetComponent<UnitScript>()._life);
             GetComponent<UnitScript>().PermaDiceBoost += 2 * (actualLife - GetComponent<UnitScript>()._life);

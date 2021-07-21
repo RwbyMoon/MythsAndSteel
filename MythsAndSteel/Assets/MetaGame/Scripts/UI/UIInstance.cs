@@ -1,8 +1,7 @@
-using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
 public class UIInstance : MonoSingleton<UIInstance>
 {
@@ -20,6 +19,14 @@ public class UIInstance : MonoSingleton<UIInstance>
     //Le canvas en jeu pour la phase d'activation
     [SerializeField] private GameObject _canvasActivation = null;
     public GameObject CanvasActivation => _canvasActivation;
+
+    //Le bouton pour éteindre le canvas de phase d'activation, lorsqu'il est allumé
+    [SerializeField] private GameObject _buttonSetOffSwitch = null;
+    public GameObject ButtonSetOffSwitch => _buttonSetOffSwitch;
+
+    //Le bouton pour allumer le canvas de phase d'activation, lorsqu'il est éteint
+    [SerializeField] private GameObject _buttonSetOnSwitch = null;
+    public GameObject ButtonSetOnSwitch => _buttonSetOnSwitch;
 
     //Le canvas en jeu pour la phase d'activation
     [SerializeField] private Image _skipPhaseImage = null;
@@ -289,33 +296,65 @@ public class UIInstance : MonoSingleton<UIInstance>
 
     [Header("PLAYER ACTIVATION")]
     //nombre d'activation restante pour le joueur rouge
-    [SerializeField] private TextMeshProUGUI _activationLeftTxtRP = null;
-    public TextMeshProUGUI ActivationLeftTxtRP => _activationLeftTxtRP;
+    [SerializeField] private TextMeshProUGUI _activationLeftTxtJ1 = null;
+    public TextMeshProUGUI ActivationLeftTxtRP => _activationLeftTxtJ1;
     //nombre d'activation restante pour le joueur bleu
-    [SerializeField] private TextMeshProUGUI _activationLeftTxtBP = null;
-    public TextMeshProUGUI ActivationLeftTxtBP => _activationLeftTxtBP;
+    [SerializeField] private TextMeshProUGUI _activationLeftTxtJ2 = null;
+    public TextMeshProUGUI ActivationLeftTxtBP => _activationLeftTxtJ2;
+
+
+    [SerializeField] private TextMeshProUGUI _activationDefinedTxtJ1 = null;
+    public TextMeshProUGUI ActivationDefinedTxtJ1 => _activationDefinedTxtJ1;
+    //nombre d'activations restantes pour le joueur bleu affichées dans le 
+    [SerializeField] private TextMeshProUGUI _activationDefinedTxtJ2 = null;
+    public TextMeshProUGUI ActivationDefinedTxtBP => _activationDefinedTxtJ2;
+
+
+    [SerializeField] private TextMeshProUGUI _activationInitTxtJ1 = null;
+    public TextMeshProUGUI ActivationInitTxtJ1 => _activationInitTxtJ1;
+    //nombre d'activation restante pour le joueur bleu
+    [SerializeField] private TextMeshProUGUI _activationInitTxtJ2 = null;
+    public TextMeshProUGUI ActivationInitTxtBP => _activationInitTxtJ2;
+
+
     [Header("PLAYER RESSOURCE")]
     //nombre d'activation restante pour le joueur rouge
-    [SerializeField] private TextMeshProUGUI _ressourceLeftTxtRP = null;
-    public TextMeshProUGUI ressourceLeftTxtRP => _ressourceLeftTxtRP;
+    [SerializeField] private TextMeshProUGUI _ressourceLeftTxtJ1 = null;
+    public TextMeshProUGUI ressourceLeftTxtJ1 => _ressourceLeftTxtJ1;
     //nombre d'activation restante pour le joueur bleu
-    [SerializeField] private TextMeshProUGUI _ressourceLeftTxtBP = null;
-    public TextMeshProUGUI ressourceLeftTxtBP => _ressourceLeftTxtBP;
+    [SerializeField] private TextMeshProUGUI _ressourceLeftTxtJ2 = null;
+    public TextMeshProUGUI ressourceLeftTxtJ2 => _ressourceLeftTxtJ2;
 
     /// <summary>
     /// Update la valeur d'activation restante des joueurs
     /// </summary>
     public void UpdateActivationLeft(){
-        _activationLeftTxtRP.text = PlayerScript.Instance.RedPlayerInfos.ActivationLeft.ToString();
-        _activationLeftTxtBP.text = PlayerScript.Instance.BluePlayerInfos.ActivationLeft.ToString();
+        _activationLeftTxtJ1.text = PlayerScript.Instance.J1Infos.ActivationLeft.ToString();
+        _activationLeftTxtJ2.text = PlayerScript.Instance.J2Infos.ActivationLeft.ToString();
+    }
+
+    public void ActivationMenuActivation(int InitiativeJ1, int InitiativeJ2)
+    {
+        _activationDefinedTxtJ1.text = PlayerScript.Instance.J1Infos.ActivationLeft.ToString() + ".";
+        _activationDefinedTxtJ2.text = PlayerScript.Instance.J2Infos.ActivationLeft.ToString() + ".";
+        _activationInitTxtJ1.text = InitiativeJ1.ToString();
+        _activationInitTxtJ2.text = InitiativeJ2.ToString();
+    }
+
+    public void ResetActivationValue()
+    {
+        _activationDefinedTxtJ1.text = "?.";
+        _activationDefinedTxtJ2.text = "?.";
+        _activationInitTxtJ1.text = "?";
+        _activationInitTxtJ2.text = "?";
     }
 
     /// <summary>
     /// Update la valeur de Ressources des joueurs
     /// </summary>
     public void UpdateRessourceLeft(){
-        _ressourceLeftTxtRP.text = PlayerScript.Instance.RedPlayerInfos.Ressource.ToString();
-        _ressourceLeftTxtBP.text = PlayerScript.Instance.BluePlayerInfos.Ressource.ToString();
+        _ressourceLeftTxtJ1.text = PlayerScript.Instance.J1Infos.Ressource.ToString();
+        _ressourceLeftTxtJ2.text = PlayerScript.Instance.J2Infos.Ressource.ToString();
     }
 
     #region MenuRenfort
@@ -343,48 +382,48 @@ public class UIInstance : MonoSingleton<UIInstance>
     #endregion MenuRenfort
     [Header("BOUTON LIE A L'ORGONE")]
     [Header("RedPlayer")]
-    public GameObject RedButtonCharge1;
-    public GameObject RedButtonCharge3;
-    public GameObject RedButtonCharge5;
+    public GameObject J1ButtonCharge1;
+    public GameObject J1ButtonCharge3;
+    public GameObject J1ButtonCharge5;
     [Header("BluePlayer")]
-    public GameObject BlueButtonCharge1;
-    public GameObject BlueButtonCharge3;
-    public GameObject BlueButtonCharge5;
+    public GameObject J2ButtonCharge1;
+    public GameObject J2ButtonCharge3;
+    public GameObject J2ButtonCharge5;
 
     public void ActiveOrgoneChargeButton()
     {
-        RedButtonCharge1.GetComponent<Button>().interactable = true;
-        RedButtonCharge3.GetComponent<Button>().interactable = true;
-        RedButtonCharge5.GetComponent<Button>().interactable = true;
-        BlueButtonCharge1.GetComponent<Button>().interactable = true;
-        BlueButtonCharge3.GetComponent<Button>().interactable = true;
-        BlueButtonCharge5.GetComponent<Button>().interactable = true;
+        J1ButtonCharge1.GetComponent<Button>().interactable = true;
+        J1ButtonCharge3.GetComponent<Button>().interactable = true;
+        J1ButtonCharge5.GetComponent<Button>().interactable = true;
+        J2ButtonCharge1.GetComponent<Button>().interactable = true;
+        J2ButtonCharge3.GetComponent<Button>().interactable = true;
+        J2ButtonCharge5.GetComponent<Button>().interactable = true;
     }
 
     public void DesactiveOrgoneChargeButton()
     {
-        RedButtonCharge1.GetComponent<Button>().interactable = false;
-        RedButtonCharge3.GetComponent<Button>().interactable = false;
-        RedButtonCharge5.GetComponent<Button>().interactable = false;
-        BlueButtonCharge1.GetComponent<Button>().interactable = false;
-        BlueButtonCharge3.GetComponent<Button>().interactable = false;
-        BlueButtonCharge5.GetComponent<Button>().interactable = false;
+        J1ButtonCharge1.GetComponent<Button>().interactable = false;
+        J1ButtonCharge3.GetComponent<Button>().interactable = false;
+        J1ButtonCharge5.GetComponent<Button>().interactable = false;
+        J2ButtonCharge1.GetComponent<Button>().interactable = false;
+        J2ButtonCharge3.GetComponent<Button>().interactable = false;
+        J2ButtonCharge5.GetComponent<Button>().interactable = false;
     }
     #region VieUnité
     [SerializeField] private GameObject _lifeHeartPrefab;
     public GameObject LifeHeartPrefab => _lifeHeartPrefab;
 
-    [SerializeField] private Sprite[] _redHeartSprite;
-    public Sprite[] RedHeartSprite => _redHeartSprite;
+    [SerializeField] private Sprite[] _j1HeartSprite;
+    public Sprite[] J1HeartSprite => _j1HeartSprite;
 
-    [SerializeField] private Sprite[] _blueHeartSprite;
-    public Sprite[] BlueHeartSprite => _blueHeartSprite;
+    [SerializeField] private Sprite[] _j2HeartSprite;
+    public Sprite[] J2HeartSprite => _j2HeartSprite;
 
-    [SerializeField] private Sprite[] _redHeartShieldSprite;
-    public Sprite[] RedHeartShieldSprite => _redHeartShieldSprite;
+    [SerializeField] private Sprite[] _j1HeartShieldSprite;
+    public Sprite[] J1HeartShieldSprite => _j1HeartShieldSprite;
 
-    [SerializeField] private Sprite[] _blueHeartShieldSprite;
-    public Sprite[] BlueHeartShieldSprite => _blueHeartShieldSprite;
+    [SerializeField] private Sprite[] _j2HeartShieldSprite;
+    public Sprite[] J2HeartShieldSprite => _j2HeartShieldSprite;
     #endregion VieUnité
 }
 
@@ -420,6 +459,8 @@ public class TextStatUnit
     public GameObject _lifeGam = null;
     public GameObject _rangeGam = null;
     public GameObject _moveGam = null;
+    public GameObject _ciblesGam = null;
+    public GameObject _nbAtkGam = null;
     public GameObject _unitSpriteGam = null;
 }
 

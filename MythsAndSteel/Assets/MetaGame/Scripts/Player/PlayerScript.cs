@@ -17,10 +17,10 @@ public class PlayerScript : MonoSingleton<PlayerScript>
 
     [Header("STAT JOUEUR ROUGE")]
     [SerializeField] private Player _redPlayerInfos = new Player();
-    public Player RedPlayerInfos => _redPlayerInfos;
+    public Player J1Infos => _redPlayerInfos;
     [Header("STAT JOUEUR BLEU")]
     [SerializeField] private Player _bluePlayerInfos = new Player();
-    public Player BluePlayerInfos => _bluePlayerInfos;
+    public Player J2Infos => _bluePlayerInfos;
     [Space]
 
     [SerializeField] private UnitReference _unitRef = null;
@@ -44,8 +44,8 @@ public class PlayerScript : MonoSingleton<PlayerScript>
     private void Start(){        
         EventCardList._eventSO.UpdateVisualUI(_eventCardList._eventGamBluePlayer, 2);
         EventCardList._eventSO.UpdateVisualUI(_eventCardList._eventGamRedPlayer, 1);
-        RedPlayerInfos.UpdateOrgoneUI(1);
-        BluePlayerInfos.UpdateOrgoneUI(2);
+        J1Infos.UpdateOrgoneUI(1);
+        J2Infos.UpdateOrgoneUI(2);
         
 
     }
@@ -308,14 +308,14 @@ public class PlayerScript : MonoSingleton<PlayerScript>
     public void AddOrgone(int value, int player){
 
         if(player == 1){
-            RedPlayerInfos.ChangeOrgone(value, player);
+            J1Infos.ChangeOrgone(value, player);
           
         }
         else{
      
         
 
-            BluePlayerInfos.ChangeOrgone(value, player);
+            J2Infos.ChangeOrgone(value, player);
             
         }
     }
@@ -327,10 +327,10 @@ public class PlayerScript : MonoSingleton<PlayerScript>
     /// <param name="player"></param>
     public void UseOrgone(int value, int player){
         if(player == 1){
-            RedPlayerInfos.ChangeOrgone(value, player);
+            J1Infos.ChangeOrgone(value, player);
         }
         else{
-            BluePlayerInfos.ChangeOrgone(value, player);
+            J2Infos.ChangeOrgone(value, player);
         }
     }
     #endregion Orgone
@@ -357,10 +357,10 @@ public class PlayerScript : MonoSingleton<PlayerScript>
 
     public void ResetPlayerInfo(){
         if(GameManager.Instance.IsPlayerRedTurn){
-            RedPlayerInfos.HasCreateUnit = false;
+            J1Infos.HasCreateUnit = false;
         }
         else{
-            BluePlayerInfos.HasCreateUnit = false;
+            J2Infos.HasCreateUnit = false;
         }
     }
 }

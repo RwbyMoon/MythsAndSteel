@@ -9,7 +9,7 @@ public class ChargeOrgone : MonoBehaviour
 public void EndOrgoneUpdateRed(int cost)
     {
         PlayerScript.Instance.UseOrgone(cost, 1);
-        PlayerScript.Instance.RedPlayerInfos.OrgonePowerLeft--;
+        PlayerScript.Instance.J1Infos.OrgonePowerLeft--;
         Attaque.Instance.PanelBlockant1.SetActive(false);
         Attaque.Instance.PanelBlockant2.SetActive(false);
 
@@ -20,7 +20,7 @@ public void EndOrgoneUpdateRed(int cost)
         PlayerScript.Instance.UseOrgone(cost, 2);
         Attaque.Instance.PanelBlockant1.SetActive(false);
         Attaque.Instance.PanelBlockant2.SetActive(false);
-            PlayerScript.Instance.BluePlayerInfos.OrgonePowerLeft--;
+            PlayerScript.Instance.J2Infos.OrgonePowerLeft--;
         
 
     }

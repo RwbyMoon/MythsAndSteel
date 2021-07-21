@@ -375,8 +375,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Cible une unit\xE9 ennemie adjacente sur les rails. Cette unit\xE9 subit
-    1 de d\xE9gats. Si l'unit\xE9 meurt, le T90 prend sa place."
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 27edcde133aa50b448a4c8e5d5845859, type: 2}
   m_sharedMaterial: {fileID: -7314658397477919478, guid: 27edcde133aa50b448a4c8e5d5845859, type: 2}
@@ -510,7 +509,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 24c38065f0aa40046a1f50a3c6882ced, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

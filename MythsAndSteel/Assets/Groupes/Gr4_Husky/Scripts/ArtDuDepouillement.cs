@@ -32,15 +32,15 @@ public class ArtDuDepouillement : Capacity
 
     public override void EndCpty()
     {
-        if(GetComponent<UnitScript>().UnitSO.IsInRedArmy == true && PlayerScript.Instance.BluePlayerInfos.Ressource >0)
+        if(GetComponent<UnitScript>().UnitSO.IsInRedArmy == true && PlayerScript.Instance.J2Infos.Ressource >0)
         {
-            PlayerScript.Instance.RedPlayerInfos.Ressource++;
-            PlayerScript.Instance.BluePlayerInfos.Ressource--;
+            PlayerScript.Instance.J1Infos.Ressource++;
+            PlayerScript.Instance.J2Infos.Ressource--;
         }
-        else if(GetComponent<UnitScript>().UnitSO.IsInRedArmy == false && PlayerScript.Instance.RedPlayerInfos.Ressource >0)
+        else if(GetComponent<UnitScript>().UnitSO.IsInRedArmy == false && PlayerScript.Instance.J1Infos.Ressource >0)
         {
-            PlayerScript.Instance.RedPlayerInfos.Ressource--;
-            PlayerScript.Instance.BluePlayerInfos.Ressource++;
+            PlayerScript.Instance.J1Infos.Ressource--;
+            PlayerScript.Instance.J2Infos.Ressource++;
         }
         GameManager.Instance._eventCall -= EndCpty;
         GetComponent<UnitScript>().EndCapacity();

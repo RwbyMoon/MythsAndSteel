@@ -92,7 +92,7 @@ public class ChargeRedPlayer : ChargeOrgone
         {
             UIInstance.Instance.ActivateNextPhaseButton();
             Debug.Log("R3 USE");
-            PlayerScript.Instance.RedPlayerInfos.EventUseLeft += 1;
+            PlayerScript.Instance.J1Infos.EventUseLeft += 1;
          
             Debug.Log("R3 finish");
             SoundController.Instance.PlaySound(SoundController.Instance.AudioClips[7]);
@@ -231,7 +231,7 @@ public class ChargeRedPlayer : ChargeOrgone
         {
             UIInstance.Instance.ActivateNextPhaseButton();
             Debug.Log("R3 USE");
-            PlayerScript.Instance.BluePlayerInfos.EventUseLeft += 1;
+            PlayerScript.Instance.J2Infos.EventUseLeft += 1;
 
             Debug.Log("R3 finish");
             SoundController.Instance.PlaySound(SoundController.Instance.AudioClips[7]);

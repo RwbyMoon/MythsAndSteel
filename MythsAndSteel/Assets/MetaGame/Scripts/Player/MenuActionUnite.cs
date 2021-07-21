@@ -33,11 +33,11 @@ public class MenuActionUnite : MonoBehaviour
     /// </summary>
     public void ShowPanel(){
         UnitScript unit = RaycastManager.Instance.UnitInTile.GetComponent<UnitScript>();
-        if((PlayerScript.Instance.RedPlayerInfos.ActivationLeft > 0 || (unit.MoveLeft + unit.MoveSpeedBonus > 0 && unit._hasStartMove) || (unit.IsMoveDone && !unit._isActionDone)) && GameManager.Instance.IsPlayerRedTurn && _isOpen == false){
+        if((PlayerScript.Instance.J1Infos.ActivationLeft > 0 || (unit.MoveLeft + unit.MoveSpeedBonus > 0 && unit._hasStartMove) || (unit.IsMoveDone && !unit._isActionDone)) && GameManager.Instance.IsPlayerRedTurn && _isOpen == false){
             menuaffichage(RaycastManager.Instance.UnitInTile.GetComponent<UnitScript>(), pouvoiractif);
             //_isOpen = true;
         }
-        else if((PlayerScript.Instance.BluePlayerInfos.ActivationLeft > 0 || (unit.MoveLeft + unit.MoveSpeedBonus > 0 && unit._hasStartMove) || (unit.IsMoveDone && !unit._isActionDone)) && !GameManager.Instance.IsPlayerRedTurn && _isOpen == false)
+        else if((PlayerScript.Instance.J2Infos.ActivationLeft > 0 || (unit.MoveLeft + unit.MoveSpeedBonus > 0 && unit._hasStartMove) || (unit.IsMoveDone && !unit._isActionDone)) && !GameManager.Instance.IsPlayerRedTurn && _isOpen == false)
         {
             menuaffichage(RaycastManager.Instance.UnitInTile.GetComponent<UnitScript>(), pouvoiractif);
             //_isOpen = true;

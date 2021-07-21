@@ -76,6 +76,11 @@ public class MouseCommand : MonoBehaviour
         UI.MouseOverStats._rangeGam.GetComponent<TextMeshProUGUI>().text = (unit.AttackRange + unit.AttackRangeBonus).ToString();
         UI.MouseOverStats._moveGam.GetComponent<TextMeshProUGUI>().text = (unit.MoveSpeed + unit.MoveSpeedBonus).ToString();
 
+        if (unit.Shield >= 1)
+        {
+            UI.MouseOverStats._lifeGam.GetComponent<TextMeshProUGUI>().color = new Color32(58, 197, 234, 100);
+        }
+
         switch (unit.UnitSO.typeUnite)
         {
             case MYthsAndSteel_Enum.TypeUnite.Infanterie:
@@ -116,6 +121,13 @@ public class MouseCommand : MonoBehaviour
         //Synchronise le texte de la valeur de la vitesse de l'unité avec l'emplacement d'UI.
         UI.PageUnitStat._rangeGam.GetComponent<TextMeshProUGUI>().text = (unit.AttackRange + unit.AttackRangeBonus).ToString();
         UI.PageUnitStat._moveGam.GetComponent<TextMeshProUGUI>().text = (unit.MoveSpeed + unit.MoveSpeedBonus).ToString();
+        UI.PageUnitStat._ciblesGam.GetComponent<TextMeshProUGUI>().text = (unit.MoveSpeed + unit.MoveSpeedBonus).ToString();
+        UI.PageUnitStat._nbAtkGam.GetComponent<TextMeshProUGUI>().text = (unit.NbAttaqueParTour).ToString();
+
+        if (unit.Shield >= 1)
+        {
+            UI.PageUnitStat._lifeGam.GetComponent<TextMeshProUGUI>().color = new Color32(58, 197, 234, 100);
+        }
 
         UpdateMiniJauge(unit);
 
@@ -588,6 +600,8 @@ public class MouseCommand : MonoBehaviour
         ShiftUI[1].SetActive(false);
         SoundController.Instance.PlaySound(SoundController.Instance.AudioClips[13]);
     }
+
+
     #endregion SwitchPages
 
     #region MenuRenfortFunction
@@ -645,7 +659,7 @@ public class MouseCommand : MonoBehaviour
         if (player)
         {
 
-            UIInstance.Instance.PageUnitéRenfort._ressourceJoueur.GetComponent<TextMeshProUGUI>().text = PlayerScript.Instance.RedPlayerInfos.Ressource.ToString();
+            UIInstance.Instance.PageUnitéRenfort._ressourceJoueur.GetComponent<TextMeshProUGUI>().text = PlayerScript.Instance.J1Infos.Ressource.ToString();
 
             //Permet de déterminer le nombre d'emplacements à mettre à jour sur le menu Renfort de l'Armée Rouge.
             for (int i = 0; i < unitReference.UnitClassCreableListRedPlayer.Count; i++)
@@ -878,7 +892,7 @@ public class MouseCommand : MonoBehaviour
         else if (!player)
         {
 
-            UIInstance.Instance.PageUnitéRenfort._ressourceJoueur.GetComponent<TextMeshProUGUI>().text = PlayerScript.Instance.BluePlayerInfos.Ressource.ToString();
+            UIInstance.Instance.PageUnitéRenfort._ressourceJoueur.GetComponent<TextMeshProUGUI>().text = PlayerScript.Instance.J2Infos.Ressource.ToString();
             //Permet de déterminer le nombre d'emplacements à mettre à jour sur le menu Renfort de l'Armée Bleu.
             for (int i = 0; i < unitReference.UnitClassCreableListBluePlayer.Count; i++)
             {

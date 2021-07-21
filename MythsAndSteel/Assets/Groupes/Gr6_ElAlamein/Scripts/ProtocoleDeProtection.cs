@@ -46,11 +46,11 @@ public class ProtocoleDeProtection : Capacity
         GetComponent<UnitScript>().ActifUsedThisTurn = true;
         if (GameManager.Instance.TileChooseList[0].GetComponent<TileScript>().Unit.GetComponent<UnitScript>().UnitSO.IsInRedArmy)
         {
-            GameManager.Instance.TileChooseList[0].GetComponent<TileScript>().Unit.GetComponent<UnitScript>().UpdateLifeHeartShieldUI(UIInstance.Instance.RedHeartShieldSprite, GameManager.Instance.TileChooseList[0].GetComponent<TileScript>().Unit.GetComponent<UnitScript>()._life + GameManager.Instance.TileChooseList[0].GetComponent<TileScript>().Unit.GetComponent<UnitScript>()._shield);
+            GameManager.Instance.TileChooseList[0].GetComponent<TileScript>().Unit.GetComponent<UnitScript>().UpdateLifeHeartShieldUI(UIInstance.Instance.J1HeartShieldSprite, GameManager.Instance.TileChooseList[0].GetComponent<TileScript>().Unit.GetComponent<UnitScript>()._life + GameManager.Instance.TileChooseList[0].GetComponent<TileScript>().Unit.GetComponent<UnitScript>()._shield);
         }
         else
         {
-            GameManager.Instance.TileChooseList[0].GetComponent<TileScript>().Unit.GetComponent<UnitScript>().UpdateLifeHeartShieldUI(UIInstance.Instance.BlueHeartShieldSprite, GameManager.Instance.TileChooseList[0].GetComponent<TileScript>().Unit.GetComponent<UnitScript>()._life + GameManager.Instance.TileChooseList[0].GetComponent<TileScript>().Unit.GetComponent<UnitScript>()._shield);
+            GameManager.Instance.TileChooseList[0].GetComponent<TileScript>().Unit.GetComponent<UnitScript>().UpdateLifeHeartShieldUI(UIInstance.Instance.J2HeartShieldSprite, GameManager.Instance.TileChooseList[0].GetComponent<TileScript>().Unit.GetComponent<UnitScript>()._life + GameManager.Instance.TileChooseList[0].GetComponent<TileScript>().Unit.GetComponent<UnitScript>()._shield);
         }
         GameManager.Instance.TileChooseList.Clear();
         GetComponent<UnitScript>().IsActifNotConsumeAction = false;

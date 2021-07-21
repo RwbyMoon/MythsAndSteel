@@ -9,7 +9,7 @@ public class Luch : Capacity
 
     public override void StartCpty()
     {
-        int ressourcePlayer = GetComponent<UnitScript>().UnitSO.IsInRedArmy ? PlayerScript.Instance.RedPlayerInfos.Ressource : PlayerScript.Instance.BluePlayerInfos.Ressource;
+        int ressourcePlayer = GetComponent<UnitScript>().UnitSO.IsInRedArmy ? PlayerScript.Instance.J1Infos.Ressource : PlayerScript.Instance.J2Infos.Ressource;
         if (ressourcePlayer >= Capacity1Cost)
         {
             List<GameObject> unit = new List<GameObject>();
@@ -35,11 +35,11 @@ public class Luch : Capacity
         GameManager.Instance.TileChooseList.Add(TilesManager.Instance.TileList[GameManager.Instance.UnitChooseList[0].GetComponent<UnitScript>().ActualTiledId]);
         if (GetComponent<UnitScript>().UnitSO.IsInRedArmy)
         {
-            PlayerScript.Instance.RedPlayerInfos.Ressource -= Capacity1Cost;
+            PlayerScript.Instance.J1Infos.Ressource -= Capacity1Cost;
         }
         else
         {
-            PlayerScript.Instance.BluePlayerInfos.Ressource -= Capacity1Cost;
+            PlayerScript.Instance.J2Infos.Ressource -= Capacity1Cost;
         }
         
         GameManager.Instance.UnitChooseList[0].GetComponent<UnitScript>().TakeDamage(1);

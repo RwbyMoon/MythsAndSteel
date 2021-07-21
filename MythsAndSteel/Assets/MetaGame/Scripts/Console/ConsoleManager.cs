@@ -140,11 +140,11 @@ public class ConsoleManager : MonoSingleton<ConsoleManager>
                             switch (int.Parse(split[1]))
                             {
                                 case 1:
-                                    PlayerScript.Instance.RedPlayerInfos.Ressource += int.Parse(split[2]);
+                                    PlayerScript.Instance.J1Infos.Ressource += int.Parse(split[2]);
 
                                     break;
                                 case 2:
-                                    PlayerScript.Instance.RedPlayerInfos.Ressource += int.Parse(split[2]);
+                                    PlayerScript.Instance.J1Infos.Ressource += int.Parse(split[2]);
                                     break;
                             }
                             Debug.Log("x");
@@ -166,11 +166,11 @@ public class ConsoleManager : MonoSingleton<ConsoleManager>
                             switch (int.Parse(split[1]))
                             {
                                 case 1:
-                                    PlayerScript.Instance.RedPlayerInfos.ChangeOrgone(int.Parse(split[2]), 1);
+                                    PlayerScript.Instance.J1Infos.ChangeOrgone(int.Parse(split[2]), 1);
 
                                     break;
                                 case 2:
-                                    PlayerScript.Instance.RedPlayerInfos.ChangeOrgone(int.Parse(split[2]), 2);
+                                    PlayerScript.Instance.J1Infos.ChangeOrgone(int.Parse(split[2]), 2);
                                     break;
                             }
                             Log("Le joueur " + split[1].ToString() + " a gagné " + int.Parse(split[2]) + " d'orgone(s))", cmd, true);
@@ -271,11 +271,11 @@ public class ConsoleManager : MonoSingleton<ConsoleManager>
                             switch (int.Parse(split[1]))
                             {
                                 case 1:
-                                    PlayerScript.Instance.RedPlayerInfos.ActivationLeft += int.Parse(split[2]);
+                                    PlayerScript.Instance.J1Infos.ActivationLeft += int.Parse(split[2]);
 
                                     break;
                                 case 2:
-                                    PlayerScript.Instance.RedPlayerInfos.ActivationLeft += int.Parse(split[2]);
+                                    PlayerScript.Instance.J1Infos.ActivationLeft += int.Parse(split[2]);
                                     break;
                             }
                             Debug.Log("x");
@@ -350,10 +350,10 @@ public class ConsoleManager : MonoSingleton<ConsoleManager>
                     switch (int.Parse(split[1]))
                     {
                         case 1:
-                            PlayerScript.Instance.RedPlayerInfos.dontTouchThis = true;
+                            PlayerScript.Instance.J1Infos.dontTouchThis = true;
                             break;
                         case 2:
-                            PlayerScript.Instance.BluePlayerInfos.dontTouchThis = true;
+                            PlayerScript.Instance.J2Infos.dontTouchThis = true;
                             break;
                     }
                     break;

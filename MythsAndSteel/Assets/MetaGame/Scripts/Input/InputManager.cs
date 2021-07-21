@@ -157,7 +157,7 @@ public class InputManager : MonoBehaviour
                         //Si l'usine de l'Armée Bleu est sélectionnée et c'est le tour du joueur de l'Armée Bleu.
                         if (RaycastManager.Instance.Tile.GetComponent<TileScript>().TerrainEffectList.Contains(MYthsAndSteel_Enum.TerrainType.UsineBleu) &&
                             !GameManager.Instance.IsPlayerRedTurn && (GameManager.Instance.ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.ActionJ1
-                            || GameManager.Instance.ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.ActionJ2) && !PlayerScript.Instance.BluePlayerInfos.HasCreateUnit)
+                            || GameManager.Instance.ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.ActionJ2) && !PlayerScript.Instance.J2Infos.HasCreateUnit)
                         {
                             RaycastManager.Instance._mouseCommand.MenuRenfortUI(false);
                             _renfortPhase.CreateRenfort(false);
@@ -166,7 +166,7 @@ public class InputManager : MonoBehaviour
                         //Si l'usine de l'Armée Rouge est sélectionnée et c'est le tour du joueur de l'Armée Rouge.
                         if (RaycastManager.Instance.Tile.GetComponent<TileScript>().TerrainEffectList.Contains(MYthsAndSteel_Enum.TerrainType.UsineRouge)
                             && GameManager.Instance.IsPlayerRedTurn && (GameManager.Instance.ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.ActionJ1
-                            || GameManager.Instance.ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.ActionJ2) && !PlayerScript.Instance.RedPlayerInfos.HasCreateUnit)
+                            || GameManager.Instance.ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.ActionJ2) && !PlayerScript.Instance.J1Infos.HasCreateUnit)
                         {
                             RaycastManager.Instance._mouseCommand.MenuRenfortUI(true);
                             _renfortPhase.CreateRenfort(true);

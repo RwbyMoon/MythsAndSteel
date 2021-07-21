@@ -398,12 +398,12 @@ public class TileScript : MonoBehaviour
             if (player == 1)
             {
               
-                PlayerScript.Instance.RedPlayerInfos.Ressource += value;
+                PlayerScript.Instance.J1Infos.Ressource += value;
             }
             else
             {
                 
-                PlayerScript.Instance.BluePlayerInfos.Ressource += value;
+                PlayerScript.Instance.J2Infos.Ressource += value;
             }
         }
         else
@@ -413,12 +413,12 @@ public class TileScript : MonoBehaviour
             if (player == 1)
             {
               
-                PlayerScript.Instance.RedPlayerInfos.Ressource += value;
+                PlayerScript.Instance.J1Infos.Ressource += value;
             }
             else
             {
                 
-                PlayerScript.Instance.BluePlayerInfos.Ressource += value;
+                PlayerScript.Instance.J2Infos.Ressource += value;
             }
         }
     }

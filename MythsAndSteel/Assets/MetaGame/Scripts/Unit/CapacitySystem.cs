@@ -24,11 +24,11 @@ public class CapacitySystem : MonoSingleton<CapacitySystem>
             //Debug.Log("test");
             if(GameManager.Instance.IsPlayerRedTurn)
             {
-                player = PlayerScript.Instance.RedPlayerInfos;
+                player = PlayerScript.Instance.J1Infos;
             }
             else
             {
-                player = PlayerScript.Instance.BluePlayerInfos;
+                player = PlayerScript.Instance.J2Infos;
             }
             if ((!Attaque.Instance.attackselected && !Unit.GetComponent<UnitScript>()._isActionDone 
                 && !Mouvement.Instance.mvmtrunning && player.ActivationLeft > 0) || (!Attaque.Instance.attackselected && !Unit.GetComponent<UnitScript>()._isActionDone && Unit.GetComponent<UnitScript>()._hasStartMove && player.ActivationLeft == 0))
