@@ -6,7 +6,7 @@ using UnityEngine.UI;
 /*
 Ce Script va gérer l'utilisation des charges d'orgones. Tous les scripts des charges d'orgone dérive de ce dernier. 
 C'est pour cela qu'il ne faut surtout pas le MODIFIER !! 
- */ 
+ */
 public class OrgoneManager : MonoSingleton<OrgoneManager>
 {
 
@@ -14,29 +14,37 @@ public class OrgoneManager : MonoSingleton<OrgoneManager>
     #region Variables
     [Header("PARENT JAUGE D'ORGONE")]
     //Jauge d'orgone joueur rouge
-    [SerializeField] private GameObject _redPlayerPanelOrgone = null;
-    public GameObject RedPlayerPanelOrgone => _redPlayerPanelOrgone;
+    [SerializeField] private GameObject _j1PanelOrgone = null;
+    public GameObject J1PanelOrgone => _j1PanelOrgone;
     public GameObject FxOrgoneGauche;
     public GameObject FxOrgoneDroit;
     public GameObject ForceFieldDroit;
     public GameObject ForceFieldGauche;
-    public GameObject BasOrgoneRed;
-    public GameObject BasOrgoneBlue;
+    public GameObject BasOrgoneJ1;
+    public GameObject BasOrgoneJ2;
 
     //Jauge d'orgone joueur bleu
-    [SerializeField] private GameObject _bluePlayerPanelOrgone = null;
-    public GameObject BluePlayerPanelOrgone => _bluePlayerPanelOrgone;
+    [SerializeField] private GameObject _j2PanelOrgone = null;
+    public GameObject J2PanelOrgone => _j2PanelOrgone;
 
     [Space]
-    //Liste des enfants de la jauge d'orgone du joueur rouge
-    [SerializeField] private List<Animator> _redPlayerCharge = new List<Animator>();
-    public List<Animator> RedPlayerCharge => _redPlayerCharge;
+    //Liste des enfants de la jauge d'orgone du joueur 1
+    [SerializeField] private List<Animator> _j1Charge = new List<Animator>();
+    public List<Animator> J1Charge => _j1Charge;
+
+    //Liste des indicateurs de jauge d'orgone du joueur 1
+    [SerializeField] private List<GameObject> _j1Indicateur = new List<GameObject>();
+    public List<GameObject> J1Indicateur => _j1Indicateur;
 
     [SerializeField] private Animator Explodered;
 
-    //Liste des enfants de la jauge d'orgone du joueur bleu
-    [SerializeField] private List<Animator> _bluePlayerCharge = new List<Animator>();
-    public List<Animator> BluePlayerCharge => _bluePlayerCharge;
+    //Liste des enfants de la jauge d'orgone du joueur 2
+    [SerializeField] private List<Animator> _j2Charge = new List<Animator>();
+    public List<Animator> J2Charge => _j2Charge;
+
+    //Liste des indicateurs de jauge d'orgone du joueur 2
+    [SerializeField] private List<GameObject> _j2Indicateur = new List<GameObject>();
+    public List<GameObject> J2Indicateur => _j2Indicateur;
 
     [SerializeField] private Animator Explodeblue;
 
@@ -46,63 +54,68 @@ public class OrgoneManager : MonoSingleton<OrgoneManager>
     public bool Selected => _selected;
 
     //Zone d'orgone joueur rouge
-    [SerializeField] private GameObject _redPlayerZone = null;
-    public GameObject RedPlayerZone => _redPlayerZone;
+    [SerializeField] private GameObject _j1Zone = null;
+    public GameObject J1Zone => _j1Zone;
 
     //Zone d'orgone joueur bleu
-    [SerializeField] private GameObject _bluePlayerZone = null;
-    public GameObject BluePlayerZone => _bluePlayerZone;
+    [SerializeField] private GameObject _j2Zone = null;
+    public GameObject J2Zone => _j2Zone;
 
     #endregion Variables
 
     public void CheckZoneOrgone()
     {
-        if(_bluePlayerZone.GetComponent<ZoneOrgone>()._centerOrgoneArea == _redPlayerZone.GetComponent<ZoneOrgone>()._centerOrgoneArea)
+        if (_j2Zone.GetComponent<ZoneOrgone>()._centerOrgoneArea == _j1Zone.GetComponent<ZoneOrgone>()._centerOrgoneArea)
         {
-            _bluePlayerZone.GetComponent<Animator>().SetBool("SAME", true);
-            _redPlayerZone.GetComponent<Animator>().SetBool("SAME", true);
+            _j2Zone.GetComponent<Animator>().SetBool("SAME", true);
+            _j1Zone.GetComponent<Animator>().SetBool("SAME", true);
         }
         else
         {
-            _bluePlayerZone.GetComponent<Animator>().SetBool("SAME", false);
-            _redPlayerZone.GetComponent<Animator>().SetBool("SAME", false);
+            _j2Zone.GetComponent<Animator>().SetBool("SAME", false);
+            _j1Zone.GetComponent<Animator>().SetBool("SAME", false);
         }
     }
 
 
-    private void Start(){
+    private void Start()
+    {
         GameManager.Instance.ManagerSO.GoToOrgoneJ1Phase += ActivateOrgoneArea;
         GameManager.Instance.ManagerSO.GoToOrgoneJ2Phase += ActivateOrgoneArea;
     }
     private void Update()
     {
-       
-        ForceFieldGauche.transform.GetChild(0).position = Camera.main.ScreenToWorldPoint(BasOrgoneRed.transform.position);
-        ForceFieldDroit.transform.GetChild(0).position = Camera.main.ScreenToWorldPoint(BasOrgoneBlue.transform.position);
- 
+
+        ForceFieldGauche.transform.GetChild(0).position = Camera.main.ScreenToWorldPoint(BasOrgoneJ1.transform.position);
+        ForceFieldDroit.transform.GetChild(0).position = Camera.main.ScreenToWorldPoint(BasOrgoneJ2.transform.position);
+
 
     }
-    public void ReleaseZone(){
-        if(GameManager.Instance.IsPlayerRedTurn){
-            _redPlayerZone.GetComponent<ZoneOrgone>().ReleaseZone();
+    public void ReleaseZone()
+    {
+        if (GameManager.Instance.IsPlayerRedTurn)
+        {
+            _j1Zone.GetComponent<ZoneOrgone>().ReleaseZone();
         }
-        else{
-            _bluePlayerZone.GetComponent<ZoneOrgone>().ReleaseZone();
+        else
+        {
+            _j2Zone.GetComponent<ZoneOrgone>().ReleaseZone();
         }
 
         _selected = false;
     }
 
-    public void StartToMoveZone(){
-        if(GameManager.Instance.IsPlayerRedTurn && !_redPlayerZone.GetComponent<ZoneOrgone>().HasMoveOrgoneArea && !_redPlayerZone.GetComponent<ZoneOrgone>().IsInValidation)
+    public void StartToMoveZone()
+    {
+        if (GameManager.Instance.IsPlayerRedTurn && !_j1Zone.GetComponent<ZoneOrgone>().HasMoveOrgoneArea && !_j1Zone.GetComponent<ZoneOrgone>().IsInValidation)
         {
-            _redPlayerZone.GetComponent<ZoneOrgone>().AddOrgoneAtRange();
+            _j1Zone.GetComponent<ZoneOrgone>().AddOrgoneAtRange();
             SoundController.Instance.PlaySound(SoundController.Instance.AudioClips[13]);
             _selected = true;
         }
-        else if(!GameManager.Instance.IsPlayerRedTurn && !_bluePlayerZone.GetComponent<ZoneOrgone>().HasMoveOrgoneArea && !_bluePlayerZone.GetComponent<ZoneOrgone>().IsInValidation)
+        else if (!GameManager.Instance.IsPlayerRedTurn && !_j2Zone.GetComponent<ZoneOrgone>().HasMoveOrgoneArea && !_j2Zone.GetComponent<ZoneOrgone>().IsInValidation)
         {
-            _bluePlayerZone.GetComponent<ZoneOrgone>().AddOrgoneAtRange();
+            _j2Zone.GetComponent<ZoneOrgone>().AddOrgoneAtRange();
             SoundController.Instance.PlaySound(SoundController.Instance.AudioClips[13]);
             _selected = true;
         }
@@ -111,7 +124,8 @@ public class OrgoneManager : MonoSingleton<OrgoneManager>
     /// <summary>
     /// Permet de connaitre la nouvelle valeur de la jauge d'orgone en fonction d'un variation positif ou négatif
     /// </summary>
-    public int ChangeOrgone(int currentValue, int fluctuation){
+    public int ChangeOrgone(int currentValue, int fluctuation)
+    {
         int newValue = currentValue + fluctuation;
         return newValue;
     }
@@ -126,9 +140,9 @@ public class OrgoneManager : MonoSingleton<OrgoneManager>
     {
         StartCoroutine(UpdateOrgoneUI(Player, LastOrgoneValue, ActualOrgoneValue));
         SoundController.Instance.PlaySound(SoundController.Instance.AudioClips[3]);
-        if(LastOrgoneValue == 4) SoundController.Instance.PlaySound(SoundController.Instance.AudioClips[4]);
+        if (LastOrgoneValue == 4) SoundController.Instance.PlaySound(SoundController.Instance.AudioClips[4]);
     }
-    
+
     public IEnumerator UpdateOrgoneUI(int Player, int LastOrgoneValue, int ActualOrgoneValue)
     {
         if (Player == 1)
@@ -151,36 +165,36 @@ public class OrgoneManager : MonoSingleton<OrgoneManager>
 
     public void ExplosionOrgone(int Player)
     {
-        if(Player == 1)
+        if (Player == 1)
         {
-           Explodered.SetTrigger("explode");
+            Explodered.SetTrigger("explode");
             SoundController.Instance.PlaySound(SoundController.Instance.AudioClips[2]);
             Debug.Log("exoplsionn");
         }
         else
         {
-           Explodeblue.SetTrigger("explode");
+            Explodeblue.SetTrigger("explode");
             SoundController.Instance.PlaySound(SoundController.Instance.AudioClips[2]);
             Debug.Log("exoplsionn");
         }
-        
+
         StartCoroutine(UpdateOrgoneUI(Player, 4, 0));
     }
 
     IEnumerator AnimationOrgone(int LastOrgoneValue, int ActualOrgoneValue, int Player)
-    {            
+    {
         if (Player == 1)
-        {        
+        {
             OrgoneRunning1 = true;
             int w = ActualOrgoneValue - LastOrgoneValue;
-            if(w > 0)
+            if (w > 0)
             {
                 for (int i = LastOrgoneValue; i < ActualOrgoneValue; i++)
                 {
                     if (i < 0 || i > 4)
                     {
                         // Explosion.
-                        if(i > 4)
+                        if (i > 4)
                         {
                             ExplosionOrgone(1);
                         }
@@ -189,18 +203,30 @@ public class OrgoneManager : MonoSingleton<OrgoneManager>
                     }
                     for (int u = 0; u <= i; u++)
                     {
-                        if (!OrgoneManager.Instance.RedPlayerCharge[u].GetBool("Increase"))
+                        if (!OrgoneManager.Instance.J1Charge[u].GetBool("Increase"))
                         {
-                            OrgoneManager.Instance.RedPlayerCharge[u].SetBool("Increase", true);
+                            OrgoneManager.Instance.J1Charge[u].SetBool("Increase", true);
+                            OrgoneManager.Instance.J1Indicateur[0].GetComponent<ChargeLevelIndicateur>().UpdateOrgoneCase(ActualOrgoneValue);
+                            OrgoneManager.Instance.J1Indicateur[1].GetComponent<ChargeLevelIndicateur>().UpdateOrgoneCase(ActualOrgoneValue);
+                            OrgoneManager.Instance.J1Indicateur[2].GetComponent<ChargeLevelIndicateur>().UpdateOrgoneCase(ActualOrgoneValue);
+                            OrgoneManager.Instance.J1Indicateur[3].GetComponent<ChargeLevelIndicateur>().UpdateOrgoneCase(ActualOrgoneValue);
+                            OrgoneManager.Instance.J1Indicateur[4].GetComponent<ChargeLevelIndicateur>().UpdateOrgoneCase(ActualOrgoneValue);
+                            yield return new WaitForSeconds(.5f);
                             SoundController.Instance.PlaySound(SoundController.Instance.AudioClips[3]);
                             yield return new WaitForSeconds(.75f);
                         }
                     }
-                    OrgoneManager.Instance.RedPlayerCharge[i].SetBool("Increase", true);
+                    OrgoneManager.Instance.J1Charge[i].SetBool("Increase", true);
+                    OrgoneManager.Instance.J1Indicateur[0].GetComponent<ChargeLevelIndicateur>().UpdateOrgoneCase(ActualOrgoneValue);
+                    OrgoneManager.Instance.J1Indicateur[1].GetComponent<ChargeLevelIndicateur>().UpdateOrgoneCase(ActualOrgoneValue);
+                    OrgoneManager.Instance.J1Indicateur[2].GetComponent<ChargeLevelIndicateur>().UpdateOrgoneCase(ActualOrgoneValue);
+                    OrgoneManager.Instance.J1Indicateur[3].GetComponent<ChargeLevelIndicateur>().UpdateOrgoneCase(ActualOrgoneValue);
+                    OrgoneManager.Instance.J1Indicateur[4].GetComponent<ChargeLevelIndicateur>().UpdateOrgoneCase(ActualOrgoneValue);
+
                     yield return new WaitForSeconds(.75f);
                 }
             }
-            if(w < 0)
+            if (w < 0)
             {
                 for (int i = LastOrgoneValue; i > ActualOrgoneValue; i--)
                 {
@@ -213,19 +239,29 @@ public class OrgoneManager : MonoSingleton<OrgoneManager>
                             OrgoneRunning1 = false;
                             break;
                         }
-                        if (OrgoneManager.Instance.RedPlayerCharge[u].GetBool("Increase"))
+                        if (OrgoneManager.Instance.J1Charge[u].GetBool("Increase"))
                         {
-                            OrgoneManager.Instance.RedPlayerCharge[u].SetBool("Increase", false);
+                            OrgoneManager.Instance.J1Charge[u].SetBool("Increase", false);
+                            OrgoneManager.Instance.J1Indicateur[0].GetComponent<ChargeLevelIndicateur>().UpdateOrgoneCase(ActualOrgoneValue);
+                            OrgoneManager.Instance.J1Indicateur[1].GetComponent<ChargeLevelIndicateur>().UpdateOrgoneCase(ActualOrgoneValue);
+                            OrgoneManager.Instance.J1Indicateur[2].GetComponent<ChargeLevelIndicateur>().UpdateOrgoneCase(ActualOrgoneValue);
+                            OrgoneManager.Instance.J1Indicateur[3].GetComponent<ChargeLevelIndicateur>().UpdateOrgoneCase(ActualOrgoneValue);
+                            OrgoneManager.Instance.J1Indicateur[4].GetComponent<ChargeLevelIndicateur>().UpdateOrgoneCase(ActualOrgoneValue);
                             yield return new WaitForSeconds(.5f);
                         }
 
                     }
                     if (i - 1 >= 0)
                     {
-                        OrgoneManager.Instance.RedPlayerCharge[i - 1].SetBool("Increase", false);
+                        OrgoneManager.Instance.J1Charge[i - 1].SetBool("Increase", false);
+                        OrgoneManager.Instance.J1Indicateur[0].GetComponent<ChargeLevelIndicateur>().UpdateOrgoneCase(ActualOrgoneValue);
+                        OrgoneManager.Instance.J1Indicateur[1].GetComponent<ChargeLevelIndicateur>().UpdateOrgoneCase(ActualOrgoneValue);
+                        OrgoneManager.Instance.J1Indicateur[2].GetComponent<ChargeLevelIndicateur>().UpdateOrgoneCase(ActualOrgoneValue);
+                        OrgoneManager.Instance.J1Indicateur[3].GetComponent<ChargeLevelIndicateur>().UpdateOrgoneCase(ActualOrgoneValue);
+                        OrgoneManager.Instance.J1Indicateur[4].GetComponent<ChargeLevelIndicateur>().UpdateOrgoneCase(ActualOrgoneValue);
                         yield return new WaitForSeconds(.5f);
                     }
-                 
+
                 }
             }
             else if (w == 0)
@@ -254,13 +290,24 @@ public class OrgoneManager : MonoSingleton<OrgoneManager>
                     }
                     for (int u = 0; u <= i; u++)
                     {
-                        if (!OrgoneManager.Instance.BluePlayerCharge[u].GetBool("Increase"))
+                        if (!OrgoneManager.Instance.J2Charge[u].GetBool("Increase"))
                         {
-                            OrgoneManager.Instance.BluePlayerCharge[u].SetBool("Increase", true);
+                            OrgoneManager.Instance.J2Charge[u].SetBool("Increase", true);
+                            OrgoneManager.Instance.J2Indicateur[0].GetComponent<ChargeLevelIndicateur>().UpdateOrgoneCase(ActualOrgoneValue);
+                            OrgoneManager.Instance.J2Indicateur[1].GetComponent<ChargeLevelIndicateur>().UpdateOrgoneCase(ActualOrgoneValue);
+                            OrgoneManager.Instance.J2Indicateur[2].GetComponent<ChargeLevelIndicateur>().UpdateOrgoneCase(ActualOrgoneValue);
+                            OrgoneManager.Instance.J2Indicateur[3].GetComponent<ChargeLevelIndicateur>().UpdateOrgoneCase(ActualOrgoneValue);
+                            OrgoneManager.Instance.J2Indicateur[4].GetComponent<ChargeLevelIndicateur>().UpdateOrgoneCase(ActualOrgoneValue);
                             yield return new WaitForSeconds(.75f);
                         }
                     }
-                    OrgoneManager.Instance.BluePlayerCharge[i].SetBool("Increase", true); 
+                    OrgoneManager.Instance.J2Charge[i].SetBool("Increase", true);
+                    OrgoneManager.Instance.J2Indicateur[0].GetComponent<ChargeLevelIndicateur>().UpdateOrgoneCase(ActualOrgoneValue);
+                    OrgoneManager.Instance.J2Indicateur[1].GetComponent<ChargeLevelIndicateur>().UpdateOrgoneCase(ActualOrgoneValue);
+                    OrgoneManager.Instance.J2Indicateur[2].GetComponent<ChargeLevelIndicateur>().UpdateOrgoneCase(ActualOrgoneValue);
+                    OrgoneManager.Instance.J2Indicateur[3].GetComponent<ChargeLevelIndicateur>().UpdateOrgoneCase(ActualOrgoneValue);
+                    OrgoneManager.Instance.J2Indicateur[4].GetComponent<ChargeLevelIndicateur>().UpdateOrgoneCase(ActualOrgoneValue);
+
                     yield return new WaitForSeconds(.75f);
                 }
             }
@@ -276,26 +323,38 @@ public class OrgoneManager : MonoSingleton<OrgoneManager>
                             OrgoneRunning2 = false;
                             break;
                         }
-                        if (OrgoneManager.Instance.BluePlayerCharge[u].GetBool("Increase"))
+                        if (OrgoneManager.Instance.J2Charge[u].GetBool("Increase"))
                         {
-                            OrgoneManager.Instance.BluePlayerCharge[u].SetBool("Increase", false);
+                            OrgoneManager.Instance.J2Charge[u].SetBool("Increase", false);
+                            OrgoneManager.Instance.J2Indicateur[0].GetComponent<ChargeLevelIndicateur>().UpdateOrgoneCase(ActualOrgoneValue);
+                            OrgoneManager.Instance.J2Indicateur[1].GetComponent<ChargeLevelIndicateur>().UpdateOrgoneCase(ActualOrgoneValue);
+                            OrgoneManager.Instance.J2Indicateur[2].GetComponent<ChargeLevelIndicateur>().UpdateOrgoneCase(ActualOrgoneValue);
+                            OrgoneManager.Instance.J2Indicateur[3].GetComponent<ChargeLevelIndicateur>().UpdateOrgoneCase(ActualOrgoneValue);
+                            OrgoneManager.Instance.J2Indicateur[4].GetComponent<ChargeLevelIndicateur>().UpdateOrgoneCase(ActualOrgoneValue);
 
-                       
+
+
                             yield return new WaitForSeconds(.5f);
                         }
 
                     }
                     if (i - 1 >= 0)
                     {
-                        OrgoneManager.Instance.BluePlayerCharge[i - 1].SetBool("Increase", false);
+                        OrgoneManager.Instance.J2Charge[i - 1].SetBool("Increase", false);
+                        OrgoneManager.Instance.J2Indicateur[0].GetComponent<ChargeLevelIndicateur>().UpdateOrgoneCase(ActualOrgoneValue);
+                        OrgoneManager.Instance.J2Indicateur[1].GetComponent<ChargeLevelIndicateur>().UpdateOrgoneCase(ActualOrgoneValue);
+                        OrgoneManager.Instance.J2Indicateur[2].GetComponent<ChargeLevelIndicateur>().UpdateOrgoneCase(ActualOrgoneValue);
+                        OrgoneManager.Instance.J2Indicateur[3].GetComponent<ChargeLevelIndicateur>().UpdateOrgoneCase(ActualOrgoneValue);
+                        OrgoneManager.Instance.J2Indicateur[4].GetComponent<ChargeLevelIndicateur>().UpdateOrgoneCase(ActualOrgoneValue);
+
                         yield return new WaitForSeconds(.5f);
                     }
 
                 }
             }
-         
 
-        
+
+
             else if (w == 0)
             {
                 Debug.Log("Same value.");
@@ -304,15 +363,20 @@ public class OrgoneManager : MonoSingleton<OrgoneManager>
         }
     }
 
-    public void ActivateOrgoneArea(){
-        if(GameManager.Instance.IsPlayerRedTurn){
-            _redPlayerZone.GetComponent<ZoneOrgone>().ActivationArea();
+    public void ActivateOrgoneArea()
+    {
+        if (GameManager.Instance.IsPlayerRedTurn)
+        {
+            _j1Zone.GetComponent<ZoneOrgone>().ActivationArea();
         }
-        else{
-            _bluePlayerZone.GetComponent<ZoneOrgone>().ActivationArea();
+        else
+        {
+            _j2Zone.GetComponent<ZoneOrgone>().ActivationArea();
         }
     }
+
 }
+
 
 namespace MythsAndSteel.Orgone{
     public static class OrgoneCheck{
