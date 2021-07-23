@@ -217,8 +217,8 @@ public class InputManager : MonoBehaviour
     void ClicToSkipPhase()
     {
 
-        if ((GameManager.Instance.IsPlayerRedTurn && !OrgoneManager.Instance.RedPlayerZone.GetComponent<ZoneOrgone>().IsInValidation) ||
-                       (!GameManager.Instance.IsPlayerRedTurn && !OrgoneManager.Instance.BluePlayerZone.GetComponent<ZoneOrgone>().IsInValidation))
+        if ((GameManager.Instance.IsPlayerRedTurn && !OrgoneManager.Instance.J1Zone.GetComponent<ZoneOrgone>().IsInValidation) ||
+                       (!GameManager.Instance.IsPlayerRedTurn && !OrgoneManager.Instance.J2Zone.GetComponent<ZoneOrgone>().IsInValidation))
         {
             t += Time.deltaTime;
             UIInstance.Instance.SkipPhaseImage.GetComponent<RectTransform>().sizeDelta = new Vector2(SkipPhaseStartWidth * (t / _timeToWaitForSkipPhase), UIInstance.Instance.SkipPhaseImage.GetComponent<RectTransform>().sizeDelta.y);
