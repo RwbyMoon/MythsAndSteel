@@ -1500,6 +1500,36 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 125
       objectReference: {fileID: 0}
+    - target: {fileID: 9042030385319081264, guid: c0293a185ef1c3c40812cf3284631397, type: 3}
+      propertyPath: m_text
+      value: "En Ao\xFBt 1942, les am\xE9ricains se battent contre l\u2019arm\xE9e
+        japonaise sur l\u2019\xEEle de Guadalcanal afin de prendre la piste Henderson
+        que les ennemis tentent de prot\xE9ger. L\u2019avantage strat\xE9gique de
+        cette piste est non-n\xE9gligeable comme elle facilite le ravitaillement
+        et le renfort a\xE9rien. L'arm\xE9e japonaise, qui a jusqu'\xE0 maintenant
+        domin\xE9 la guerre dans le Pacifique, est maintenant confront\xE9e \xE0
+        une r\xE9sistance de la part de l'arm\xE9e am\xE9ricaine. Ils ont le devoir
+        de d\xE9fendre l'\xEEle de Guadalcanal, tremplin strat\xE9gique du Pacifique.
+        Heureusement pour eux, les japonais connaissent ces terres et d\xE9tiennent
+        des strat\xE9gies capables de contrecarrer la puissance militaire de l'arm\xE9e
+        adverse."
+      objectReference: {fileID: 0}
+    - target: {fileID: 9042030385319081264, guid: c0293a185ef1c3c40812cf3284631397, type: 3}
+      propertyPath: m_fontSize
+      value: 28.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 9042030385319081264, guid: c0293a185ef1c3c40812cf3284631397, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9042030385319081264, guid: c0293a185ef1c3c40812cf3284631397, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190080
+      objectReference: {fileID: 0}
+    - target: {fileID: 9042030385319081264, guid: c0293a185ef1c3c40812cf3284631397, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 9099656430689936498, guid: c0293a185ef1c3c40812cf3284631397, type: 3}
       propertyPath: m_SizeDelta.x
       value: 950
@@ -3849,6 +3879,45 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 344110873}
     m_Modifications:
+    - target: {fileID: 4022171401269439803, guid: 79f8a9889d0d5844dbda211a810efc92, type: 3}
+      propertyPath: m_text
+      value: "La Seconde Guerre mondiale n\u2019est qu\u2019\xE0 ses d\xE9buts et
+        la France vient \xE0 peine de capituler face \xE0 la puissance allemande.
+        Le haut commandement du Reich d\xE9cide de mettre en place une arm\xE9e,
+        capable de soutenir les Italiens dans leurs conqu\xEAtes en Afrique : l\u2019Afrika
+        Korp.\r\nLe 23 octobre 1942, apr\xE8s la victoire co\xFBteuse de la pr\xE9c\xE9dente
+        bataille d\u2019El Alamein, la flotte britannique forme un blocus pour emp\xEAcher
+        le ravitaillement des forces allemandes. Ceci permet au g\xE9n\xE9ral britannique
+        Bernard Montgomery de se d\xE9barrasser de la pr\xE9sence allemande qui menace
+        ce point strat\xE9gique. Il doit lancer une attaque g\xE9n\xE9ralis\xE9e
+        sur les troupes allemandes, avec une force d\xE9fensive, et tenir la position
+        \xE0 tout prix, car la prise du canal de Suez signifierait la perte de la
+        M\xE9diterran\xE9e.\r\nLe g\xE9n\xE9ral britannique se heurte \xE0 une autre
+        l\xE9gende l\u2019\xE9poque : le g\xE9n\xE9ral Erwin Rommel connu sous le
+        nom de \xAB Renard du D\xE9sert \xBB. Escort\xE9 par des troupes robotis\xE9es,
+        Rommel dispose d\u2019une arm\xE9e efficace, mais surtout des meilleures
+        innovations en armement. L\u2019objectif est la prise de la gare d\u2019El
+        Alamein, qui permettra de s\xE9curiser le canal de Suez et de r\xE9cup\xE9rer
+        le m\xE9cha Valkyrion. Celui-ci, \xE9quip\xE9 d\u2019une artillerie puissante
+        n\xE9cessitant de se d\xE9ployer sur rails permettra de rayer d\xE9finitivement
+        l'arm\xE9e britannique de la carte.\r\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4022171401269439803, guid: 79f8a9889d0d5844dbda211a810efc92, type: 3}
+      propertyPath: m_fontSize
+      value: 19.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 4022171401269439803, guid: 79f8a9889d0d5844dbda211a810efc92, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4022171401269439803, guid: 79f8a9889d0d5844dbda211a810efc92, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190080
+      objectReference: {fileID: 0}
+    - target: {fileID: 4022171401269439803, guid: 79f8a9889d0d5844dbda211a810efc92, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4789395326511337686, guid: 79f8a9889d0d5844dbda211a810efc92, type: 3}
       propertyPath: m_SizeDelta.x
       value: 125
@@ -4878,6 +4947,44 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -300
       objectReference: {fileID: 0}
+    - target: {fileID: 3781973321400977125, guid: 361512f40093818478845f212a67284d, type: 3}
+      propertyPath: m_text
+      value: "En 1941, Hitler lance l\u2019op\xE9ration Barbarossa : une offensive
+        sur le territoire sovi\xE9tique, afin de s\u2019emparer des mines d\u2019uranium
+        situ\xE9es en Ukraine et en Russie et d\u2019\xE9craser l\u2019URSS avant
+        que celle-ci ne termine son industrialisation et devienne une menace pour
+        l\u2019Allemagne. \r\nApr\xE8s une s\xE9rie de victoires fulgurantes, l\u2019offensive
+        allemande est stopp\xE9e par l\u2019arriv\xE9e de l\u2019hiver. L\u2019assaut
+        ne pourra reprendre qu\u2019apr\xE8s l\u2019arriv\xE9e en urgence de mat\xE9riel
+        et de m\xE9chas con\xE7us pour ces conditions. Cette interruption de l\u2019invasion
+        permet \xE0 l\u2019URSS de rassembler ses troupes et de rattraper son retard
+        industriel. La t\xEAte de pont allemande est chass\xE9e par une arm\xE9e
+        rouge galvanis\xE9e, la for\xE7ant \xE0 se retrancher \xE0 Stalingrad.\r\nEn
+        1942, l\u2019op\xE9ration russe Uranus est lanc\xE9e et l\u2019arm\xE9e sovi\xE9tique
+        entoure les troupes allemandes \xE0 Stalingrad.\r\nL\u2019arm\xE9e sovi\xE9tique
+        est en train de compl\xE9ter son encerclement de la ville. La reprise de
+        Stalingrad serait le premier pas vers une reconqu\xEAte \xE0 grande \xE9chelle
+        de ses territoires. De son c\xF4t\xE9, l\u2019avant-garde allemande n\u2019a
+        qu\u2019une seule chance de faire une perc\xE9e afin de rejoindre les troupes
+        situ\xE9es hors de la ville, ce qui permettrait \xE0 l\u2019Allemagne de
+        poursuivre sa conqu\xEAte de l\u2019URSS.\r"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3781973321400977125, guid: 361512f40093818478845f212a67284d, type: 3}
+      propertyPath: m_fontSize
+      value: 19.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3781973321400977125, guid: 361512f40093818478845f212a67284d, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3781973321400977125, guid: 361512f40093818478845f212a67284d, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190080
+      objectReference: {fileID: 0}
+    - target: {fileID: 3781973321400977125, guid: 361512f40093818478845f212a67284d, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 3882523685156100556, guid: 361512f40093818478845f212a67284d, type: 3}
       propertyPath: m_SizeDelta.x
       value: 800
@@ -5485,6 +5592,34 @@ PrefabInstance:
       propertyPath: m_hasFontAssetChanged
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4582074907644384874, guid: 2f8a4a9275786354b8d9f5bc40a6de56, type: 3}
+      propertyPath: m_text
+      value: "Le 10 Juillet 1943 d\xE9bute l\u2019op\xE9ration Husky, ouvrant un
+        second front en Europe. Des troupes am\xE9ricaines, fran\xE7aises, canadiennes
+        et britanniques d\xE9barquent en Sicile, dans le but d\u2019obtenir le contr\xF4le
+        de la voie maritime en M\xE9diterran\xE9e. Prendre la Sicile obligerait \xE9galement
+        l\u2019Axe \xE0 d\xE9tourner une partie de ses forces vers le front italien,
+        affaiblissant sa force de frappe. Pendant que leurs alli\xE9s se battent
+        sur tout le territoire sicilien, sur le front Sud-Est, l\u2019objectif des
+        Britanniques est simple : s\u2019emparer des usines italiennes et couper
+        court \xE0 la production de m\xE9chas men\xE9e par le cyclope St\xE9rop\xE8s."
+      objectReference: {fileID: 0}
+    - target: {fileID: 4582074907644384874, guid: 2f8a4a9275786354b8d9f5bc40a6de56, type: 3}
+      propertyPath: m_fontSize
+      value: 29.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4582074907644384874, guid: 2f8a4a9275786354b8d9f5bc40a6de56, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4582074907644384874, guid: 2f8a4a9275786354b8d9f5bc40a6de56, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190080
+      objectReference: {fileID: 0}
+    - target: {fileID: 4582074907644384874, guid: 2f8a4a9275786354b8d9f5bc40a6de56, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f8a4a9275786354b8d9f5bc40a6de56, type: 3}
 --- !u!224 &1314965666 stripped
@@ -5812,13 +5947,51 @@ PrefabInstance:
       propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3059622863716457615, guid: ead6614dec605784290c4cd193cbcac7, type: 3}
+      propertyPath: m_text
+      value: "En 1935, l\u2019institut mytho-arch\xE9ologique sovi\xE9tique d\xE9couvre
+        pr\xE8s du Lac Ba\xEFkal le dragon l\xE9gendaire chinois Ao Shun : \u201CLe
+        Dragon Noir du nord\u201D. Le gouvernement sovi\xE9tique d\xE9cide de livrer
+        la b\xEAte au Parti Communiste Chinois en \xE9change de sa collaboration,
+        afin de gagner un avantage sur leurs rivaux r\xE9publicains.\r\nApr\xE8s
+        le d\xE9but de la guerre sino-japonaise en 1937, Tchang Ka\xEF-Chek rallie
+        de force \xE0 son arm\xE9e les communistes ainsi que la cr\xE9ature pour
+        combattre la menace japonaise. Ao Shun est affaibli et facile \xE0 capturer,
+        mais reste n\xE9anmoins indocile aux tentatives de domptage des ma\xEEtres
+        de guerre chinois. Ceux-ci d\xE9cident donc d\u2019emmener Ao Shun dans un
+        complexe de recherches mytho-biologiques \xE0 Shanghai.\r\nMais les espions
+        japonais install\xE9s en R\xE9publique de Chine ont rapidement connaissance
+        de ces nouvelles exp\xE9rimentations. L\u2019information de l\u2019existence
+        d\u2019une autre cr\xE9ature mythique jusque-l\xE0 indomptable remonte jusqu\u2019aux
+        autorit\xE9s imp\xE9riales et am\xE8ne Hideki T\u014Dj\u014D \xE0 s\u2019int\xE9resser
+        au cas d\u2019Ao Shun.\r\nL\u2019empereur japonais d\xE9cide d\u2019attaquer
+        Shanghai en automne, et envoie T\u014Dj\u014D s\u2019occuper du front alors
+        que les troupes chinoises se pr\xE9parent \xE0 extraire Ao Shun de la ville
+        par chemin de fer.\r"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3059622863716457615, guid: ead6614dec605784290c4cd193cbcac7, type: 3}
+      propertyPath: m_fontSize
+      value: 19.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 3059622863716457615, guid: ead6614dec605784290c4cd193cbcac7, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3059622863716457615, guid: ead6614dec605784290c4cd193cbcac7, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190080
+      objectReference: {fileID: 0}
+    - target: {fileID: 3059622863716457615, guid: ead6614dec605784290c4cd193cbcac7, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 3545825355203162255, guid: ead6614dec605784290c4cd193cbcac7, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4161293974450243533, guid: ead6614dec605784290c4cd193cbcac7, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4161293974497729423, guid: ead6614dec605784290c4cd193cbcac7, type: 3}
       propertyPath: m_SizeDelta.x
@@ -6066,7 +6239,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4161293975391339242, guid: ead6614dec605784290c4cd193cbcac7, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4161293975470459039, guid: ead6614dec605784290c4cd193cbcac7, type: 3}
       propertyPath: m_SizeDelta.x
@@ -6078,7 +6251,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4161293975481250354, guid: ead6614dec605784290c4cd193cbcac7, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4161293975507372697, guid: ead6614dec605784290c4cd193cbcac7, type: 3}
       propertyPath: m_SizeDelta.x
@@ -6238,11 +6411,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7257194809228155373, guid: ead6614dec605784290c4cd193cbcac7, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7257194810312293245, guid: ead6614dec605784290c4cd193cbcac7, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ead6614dec605784290c4cd193cbcac7, type: 3}
@@ -6649,11 +6822,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2292964425935336934, guid: 7e143960449feb3419152b269531e8ed, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2292964426997704300, guid: 7e143960449feb3419152b269531e8ed, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4817549878329213521, guid: 7e143960449feb3419152b269531e8ed, type: 3}
       propertyPath: m_SizeDelta.x
@@ -6769,7 +6942,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 27edcde133aa50b448a4c8e5d5845859, type: 2}
     - target: {fileID: 4817549878506527962, guid: 7e143960449feb3419152b269531e8ed, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4817549878544152336, guid: 7e143960449feb3419152b269531e8ed, type: 3}
       propertyPath: m_SizeDelta.x
@@ -6789,7 +6962,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4817549878882091499, guid: 7e143960449feb3419152b269531e8ed, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4817549879173730488, guid: 7e143960449feb3419152b269531e8ed, type: 3}
       propertyPath: m_SizeDelta.x
@@ -6869,7 +7042,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4817549879797210102, guid: 7e143960449feb3419152b269531e8ed, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4817549879838731217, guid: 7e143960449feb3419152b269531e8ed, type: 3}
       propertyPath: m_AnchorMax.x
@@ -7108,6 +7281,30 @@ PrefabInstance:
       value: -300
       objectReference: {fileID: 0}
     - target: {fileID: 8103582688554277311, guid: 7e143960449feb3419152b269531e8ed, type: 3}
+      propertyPath: m_text
+      value: "Le 10 mai 1940, apr\xE8s presque un an \xE0 se regarder dans le blanc
+        des yeux, le Troisi\xE8me Reich lance finalement son offensive sur la France.
+        L\u2019arm\xE9e fran\xE7aise est prise de court. Alors que la Blitzmacht
+        allemande, une arm\xE9e bas\xE9e sur les armes \xE9lectriques exp\xE9rimentales,
+        balaye la fronti\xE8re franco-belge de sa mobilit\xE9 sup\xE9rieure, un bastion
+        ardennais bloque l\u2019avanc\xE9e du flanc sud de l\u2019arm\xE9e, et menace
+        de retarder suffisamment l\u2019offensive pour permettre aux forces fran\xE7aises
+        de reprendre du poil de la b\xEAte. Le 9 juin 1940, apr\xE8s un mois d\u2019offensives
+        repouss\xE9es, La Blitzmacht remet sur pied une nouvelle offensive dans le
+        but de prendre des positions qui lui permettront de lancer une attaque \xE0
+        grande \xE9chelle sur la France. Une tour Mesali exp\xE9rimentale se retrouve
+        surcharg\xE9e par l'orgone ambiante et rends la bataille d'autant plus impr\xE9visible
+        et meurtri\xE8re."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8103582688554277311, guid: 7e143960449feb3419152b269531e8ed, type: 3}
+      propertyPath: m_fontSize
+      value: 25.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8103582688554277311, guid: 7e143960449feb3419152b269531e8ed, type: 3}
+      propertyPath: m_margin.z
+      value: 2.4120483
+      objectReference: {fileID: 0}
+    - target: {fileID: 8103582688554277311, guid: 7e143960449feb3419152b269531e8ed, type: 3}
       propertyPath: m_fontAsset
       value: 
       objectReference: {fileID: 11400000, guid: 27edcde133aa50b448a4c8e5d5845859, type: 2}
@@ -7128,8 +7325,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -7314658397477919478, guid: 27edcde133aa50b448a4c8e5d5845859, type: 2}
     - target: {fileID: 8103582688554277311, guid: 7e143960449feb3419152b269531e8ed, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8103582688554277311, guid: 7e143960449feb3419152b269531e8ed, type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4278190080
+      objectReference: {fileID: 0}
+    - target: {fileID: 8103582688554277311, guid: 7e143960449feb3419152b269531e8ed, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8210138051427758119, guid: 7e143960449feb3419152b269531e8ed, type: 3}
       propertyPath: m_fontAsset
@@ -8702,6 +8907,46 @@ PrefabInstance:
     - target: {fileID: 4592381642132817611, guid: 261a0dab820e47b4783753d25cab60e3, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5012372346191145869, guid: 261a0dab820e47b4783753d25cab60e3, type: 3}
+      propertyPath: m_text
+      value: "En d\xE9cembre 1944, l\u2019arm\xE9e allemande est mise en d\xE9route
+        sur tous les fronts. Pour les Alli\xE9s, la capitulation de l\u2019Allemagne
+        approche. N\xE9anmoins, apr\xE8s le d\xE9barquement en Normandie, les Alli\xE9s
+        poss\xE8dent de nombreux probl\xE8mes de logistique. Les soldats sont fatigu\xE9s,
+        les fournitures \xE9puis\xE9es et les ressources hyperchimiques arrivent
+        en rupture de stock. De ce fait, les Am\xE9ricains ont envoy\xE9 un petit
+        d\xE9tachement, compos\xE9 de leurs meilleurs \xE9l\xE9ments, \xE0 la cr\xE8te
+        d\u2019Elsenborn, dans les Ardennes belges. Sur cette cr\xE8te se trouve
+        un grand d\xE9p\xF4t de ressources contenant du p\xE9trole, du Mesali, de
+        l\u2019Orgone concentr\xE9e et surtout du Narc\xE9on. Les Am\xE9ricains terminent
+        les pr\xE9parations pour la r\xE9cup\xE9ration de ces ressources afin de
+        pouvoir atteindre Berlin et achever la guerre en Europe.\r\nL\u2019Allemagne
+        ayant intercept\xE9 un message des Alli\xE9s de leur op\xE9rations et de
+        leur petit nombre, d\xE9cide de rassembler ses meilleures troupes dans un
+        village pr\xE8s de la for\xEAt non-loin de la cr\xE8te pour prendre possession
+        de ces ressources. Dans le but de produire \xE0 la cha\xEEne les Wunderwaffes
+        qui pourraient conduire \xE0 un avantage d\xE9cisif \xE0 l\u2019Allemagne.\r\nPour
+        remporter cette bataille \xE0 l'enjeu capital, les deux puissances ont envoy\xE9
+        leur source de destruction massive sur la cr\xE8te d'Elsenborn. Asa Noah
+        le Soleil de l'Am\xE9rique et Hugo Kraas le premier Wunderaffe. La bataille
+        promet d'\xEAtre des plus f\xE9roces.\r"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5012372346191145869, guid: 261a0dab820e47b4783753d25cab60e3, type: 3}
+      propertyPath: m_fontSize
+      value: 18.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5012372346191145869, guid: 261a0dab820e47b4783753d25cab60e3, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5012372346191145869, guid: 261a0dab820e47b4783753d25cab60e3, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190080
+      objectReference: {fileID: 0}
+    - target: {fileID: 5012372346191145869, guid: 261a0dab820e47b4783753d25cab60e3, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 261a0dab820e47b4783753d25cab60e3, type: 3}
