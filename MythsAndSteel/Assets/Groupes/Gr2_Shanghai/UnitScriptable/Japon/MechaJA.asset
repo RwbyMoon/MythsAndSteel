@@ -15,8 +15,8 @@ MonoBehaviour:
   UnitName: Musashi No Bushido
   Description: "Inspir\xE9 de Miyamoto Musashi et de son maniement du sabre in\xE9gal\xE9,
     le m\xE9cha enchaine les attaques mortelles sur ses ennemis, et cela jusqu\u2019\xE0
-    ce qu\u2019aucun ne tienne debout. Avec sa puissance et son effificacit\xE9 redoutable,
-    le Musashi-no- Bushido constitue un atout essentiel pour le Japon durant la guerre."
+    ce qu\u2019aucun ne tienne debout. Avec sa puissance et son efficacit\xE9 redoutable,
+    le Musashi-no-Bushido constitue un atout essentiel pour le Japon durant la guerre."
   typeUnite: 5
   LifeMax: 3
   ShieldMax: 0
@@ -37,3 +37,4 @@ MonoBehaviour:
   UsefullToWin: 0
   IsInRedArmy: 0
   UnitAttributs: 000000000000000000000000
+  UnitStatuts: 00000000000000000000000000000000

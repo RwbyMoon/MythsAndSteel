@@ -13,13 +13,11 @@ MonoBehaviour:
   m_Name: InfanterieCH
   m_EditorClassIdentifier: 
   UnitName: Zhan Shi
-  Description: "Le Zh\xE0n Sh\xEC (Soldat, Militaire en Mandarin) est la repr\xE9sentation
-    typique de l\u2019infanterie chinoise, nombreuse et form\xE9e au plus vite. Ils
-    utilisent des armes en tout genre, souvent arrang\xE9es sur le front notamment,
-    ce qui peut permettre de gagner rapidement des batailles en vis-\xE0-vis, d\u2019o\xF9
-    la pr\xE9dominance d\u2019armes \xE0 courte port\xE9e mais explosant en de nombreux
-    projectiles. Tout ceci combin\xE9 \xE0 l\u2019utilisation du narc\xE9on fait
-    de lui une puissante unit\xE9."
+  Description: "Le Zh\xE0n Sh\xEC est la repr\xE9sentation typique de l\u2019infanterie
+    chinoise, nombreuse et form\xE9e au plus vite. Ils utilisent des armes en tout
+    genre, souvent arrang\xE9es sur le front, ce qui peut permettre de gagner rapidement
+    des batailles en vis-\xE0-vis, d\u2019o\xF9 la pr\xE9dominance d\u2019armes \xE0
+    courte port\xE9e mais explosant en de nombreux projectiles."
   typeUnite: 0
   LifeMax: 2
   ShieldMax: 0

@@ -14,12 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UnitName: "Tchang Ka\xEF-Chek"
   Description: "Depuis ses \xE9tudes dans le monde militaire, Tchang s\u2019est tr\xE8s
-    rapidement dirig\xE9 dans la politique. Inflfluenc\xE9 par le monde r\xE9volutionnaire
-    et ayant d\xE9j\xE0 particip\xE9 aux conflflits de Shanghai, il put alors progresser
-    grandement dans la hi\xE9rarchie, faisant de lui un g\xE9n\xE9ral puissant et
-    habile. Utilisant ses connaissances tr\xE8s impressionnantes sur les mythes,
-    l\u2019Orgone et l\u2019Hyperchimie sur le champ de bataille, il est un savant
-    \xE0 ne surtout pas sous-estimer."
+    rapidement dirig\xE9 dans la politique. Influenc\xE9 par le monde r\xE9volutionnaire
+    et ayant d\xE9j\xE0 particip\xE9 aux conflits de Shanghai, il monta dans la hi\xE9rarchie,
+    et devint un g\xE9n\xE9ral puissant et habile. Il utilise ses connaissances sur
+    les mythes, l\u2019Orgone et l\u2019Hyperchimie sur le champ de bataille, et
+    est un savant \xE0 ne surtout pas sous-estimer."
   typeUnite: 4
   LifeMax: 4
   ShieldMax: 0
@@ -40,3 +39,4 @@ MonoBehaviour:
   UsefullToWin: 0
   IsInRedArmy: 1
   UnitAttributs: 040000000000000000000000
+  UnitStatuts: 00000000000000000000000000000000

@@ -13,14 +13,12 @@ MonoBehaviour:
   m_Name: MytheCH2
   m_EditorClassIdentifier: 
   UnitName: Ao Guang
-  Description: "Dans les temps anciens, le dragon azur de la mer de l\u2019Est est
-    apparu en tant que divinit\xE9 protectrice. Devenant le conseiller d\xE9sign\xE9
-    de l\u2019Empereur Qin Shi Huang, il utilisa sa sagesse et son immortalit\xE9
-    pour guider la Qin antique qui deviendra la Chine. Au d\xE9but de la guerre,
-    il ne souhaite pas intervenir. Cependant, lorsque Ao Shun, est impliqu\xE9 dans
-    la bataille, Ao Guang n\u2019y tint plus. Son temp\xE9rament violent se r\xE9veille
-    et il se dirigea \xE0 toute vitesse sur le front.pour soutenir le peuple qu\u2019il
-    prot\xE8ge depuis des mill\xE9naires."
+  Description: "Dans les temps anciens, le dragon azur de la mer de l\u2019est apparut
+    en tant que divinit\xE9 protectrice. Devenant le conseiller d\xE9sign\xE9 de
+    l\u2019Empereur Qin Shi Huang, il utilisa sa sagesse et son immortalit\xE9 pour
+    guider la Qin antique. Lorsqu\u2019Ao Shun est impliqu\xE9 dans la bataille,
+    le temp\xE9rament violent d\u2019Ao Guang se r\xE9veille et il se dirigea \xE0
+    toute vitesse sur le front."
   typeUnite: 3
   LifeMax: 4
   ShieldMax: 0
@@ -41,3 +39,4 @@ MonoBehaviour:
   UsefullToWin: 0
   IsInRedArmy: 1
   UnitAttributs: 000000000000000000000000
+  UnitStatuts: 00000000000000000000000000000000

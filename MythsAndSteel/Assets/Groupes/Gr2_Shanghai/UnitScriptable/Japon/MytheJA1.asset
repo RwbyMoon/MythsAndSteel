@@ -17,9 +17,7 @@ MonoBehaviour:
     S\xE9vissant depuis le IXe si\xE8cle au Japon, cet esprit ressemblant \xE0 un
     renard prend possession d\u2019une personne et vit paisiblement dans son corps.
     Profond\xE9ment attach\xE9 au pays qui l\u2019a vu na\xEEtre, un esprit de Kitsune
-    rejoint les rangs de l\u2019arm\xE9e japonaise et sert d\u2019ic\xF4ne divine.
-    Elle se bat avec la foudre et l\u2019environnement, dans le but d\u2019apporter
-    la victoire \xE0 sa patrie."
+    rejoint les rangs de l\u2019arm\xE9e japonaise et lui sert d\u2019ic\xF4ne divine."
   typeUnite: 3
   LifeMax: 3
   ShieldMax: 0
@@ -40,3 +38,4 @@ MonoBehaviour:
   UsefullToWin: 0
   IsInRedArmy: 0
   UnitAttributs: 000000000000000000000000
+  UnitStatuts: 00000000000000000000000000000000

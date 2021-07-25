@@ -7007,9 +7007,29 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 27edcde133aa50b448a4c8e5d5845859, type: 2}
     - target: {fileID: 762453911159684796, guid: ead6614dec605784290c4cd193cbcac7, type: 3}
+      propertyPath: m_fontSize
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 762453911159684796, guid: ead6614dec605784290c4cd193cbcac7, type: 3}
       propertyPath: m_fontAsset
       value: 
       objectReference: {fileID: 11400000, guid: 27edcde133aa50b448a4c8e5d5845859, type: 2}
+    - target: {fileID: 762453911159684796, guid: ead6614dec605784290c4cd193cbcac7, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 762453911159684796, guid: ead6614dec605784290c4cd193cbcac7, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 762453911159684796, guid: ead6614dec605784290c4cd193cbcac7, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 762453911159684796, guid: ead6614dec605784290c4cd193cbcac7, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 762453911159684796, guid: ead6614dec605784290c4cd193cbcac7, type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 1
@@ -9142,6 +9162,10 @@ PrefabInstance:
     - target: {fileID: 8210138052563133357, guid: 7e143960449feb3419152b269531e8ed, type: 3}
       propertyPath: m_enableAutoSizing
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8210138052563133357, guid: 7e143960449feb3419152b269531e8ed, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
       objectReference: {fileID: 0}
     - target: {fileID: 8210138052563133357, guid: 7e143960449feb3419152b269531e8ed, type: 3}
       propertyPath: m_HorizontalAlignment

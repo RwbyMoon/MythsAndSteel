@@ -16,9 +16,8 @@ MonoBehaviour:
   Description: "Le Chi-Ha est un mod\xE8le de char japonais r\xE9put\xE9 pour sa
     mobilit\xE9 et son nombre de variantes, ce qui a conduit les Japonais \xE0 concevoir
     le Type Modulaire 102. Celui-ci r\xE9unit certaines des meilleures caract\xE9ristiques
-    des chars japonais : Le d\xE9placement amphibie des Ka-Mi, la r\xE9sistance incroyable
-    du Ho- Ro mais aussi un canon \xE0 hauteur r\xE9glable. Il correspond parfaitement
-    au style agressif de l\u2019arm\xE9e japonaise."
+    des chars japonais : le d\xE9placement amphibie des Ka-Mi, la r\xE9sistance incroyable
+    du Ho-Ro mais aussi un canon \xE0 hauteur r\xE9glable."
   typeUnite: 1
   LifeMax: 4
   ShieldMax: 0
@@ -39,3 +38,4 @@ MonoBehaviour:
   UsefullToWin: 0
   IsInRedArmy: 0
   UnitAttributs: 000000000000000000000000
+  UnitStatuts: 00000000000000000000000000000000

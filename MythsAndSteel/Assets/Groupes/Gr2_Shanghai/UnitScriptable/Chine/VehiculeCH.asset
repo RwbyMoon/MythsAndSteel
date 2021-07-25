@@ -14,12 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UnitName: FAMO Zugkraft
   Description: "Le FAMO est un v\xE9hicule durable d\xE9riv\xE9 des v\xE9hicules
-    de transports allemands, ayant pu profifiter de leurs recherches pr\xE9-guerre
+    de transports allemands, ayant pu profiter de leurs recherches pr\xE9-guerre
     sur ce qui deviendra le Sd.Kfz.9 FAMO. Parfaitement adapt\xE9 aux troupes chinoises
-    chaotiques, il est \xE0 la fois capable de transporter des soldats et m\xEAme
-    des pi\xE8ces d\u2019artillerie. L\u2019\xE9quipement de r\xE9paration et de
-    m\xE9decine qu\u2019elle porte, coupl\xE9 \xE0 sa formidable composition, lui
-    permet d\u2019\xEAtre un excellent support pour l\u2019arm\xE9e."
+    chaotiques, il est \xE0 la fois capable de transporter des soldats, des pi\xE8ces
+    d\u2019artillerie, et constitue une unit\xE9 de soutien efficace."
   typeUnite: 1
   LifeMax: 4
   ShieldMax: 0
@@ -40,3 +38,4 @@ MonoBehaviour:
   UsefullToWin: 0
   IsInRedArmy: 1
   UnitAttributs: 000000000000000000000000
+  UnitStatuts: 00000000000000000000000000000000

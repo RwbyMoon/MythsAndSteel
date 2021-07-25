@@ -16,7 +16,7 @@ MonoBehaviour:
   Description: "G\xE9n\xE9ral inv\xE9t\xE9r\xE9 par les champs de bataille, Hideki
     Tojo est connu pour son pass\xE9 dans les milieux de l\u2019information et de
     la reconnaissance. il est le premier \xE0 se procurer un prototype militaire
-    d\u2019antenne portative, lui permettant d\u2019ordonner des manoeoeuvres \xE0
+    d\u2019antenne portative, lui permettant d\u2019ordonner des man\u0153uvres \xE0
     ses troupes en un \xE9clair. Sa radio lui octroie \xE9galement la capacit\xE9
     de brouiller temporairement les lignes de communication ennemies, offrant l\u2019initiative
     strat\xE9gique \xE0 son camp."
@@ -40,3 +40,4 @@ MonoBehaviour:
   UsefullToWin: 0
   IsInRedArmy: 0
   UnitAttributs: 040000000000000000000000
+  UnitStatuts: 00000000000000000000000000000000

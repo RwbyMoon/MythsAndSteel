@@ -13,12 +13,11 @@ MonoBehaviour:
   m_Name: ArtillerieJA
   m_EditorClassIdentifier: 
   UnitName: Canon Type 90
-  Description: "Le Canon d\u2019artillerie Type 90 a originellement \xE9t\xE9 d\xE9velopp\xE9
+  Description: "Le canon d\u2019artillerie Type 90 a originellement \xE9t\xE9 d\xE9velopp\xE9
     par l\u2019entreprise fran\xE7aise Schneider en 1930 dans un mod\xE8le de 240mm.
     Quand il est r\xE9cup\xE9r\xE9 par les Japonais \xE0 l\u2019aube de la Seconde
-    Guerre mondiale, ceux-ci imaginent une version beaucoup plus lourde et am\xE9lior\xE9e.
-    Notamment, \xE0 l\u2019aide des nouvelles avanc\xE9es technologiques de l\u2019\xE9poque
-    en mati\xE8re d\u2019alliages et de constructions, apport\xE9s par l\u2019Hyperchimie."
+    Guerre mondiale, ceux-ci imaginent une version beaucoup plus lourde et am\xE9lior\xE9e
+    par les avanc\xE9es technologiques."
   typeUnite: 2
   LifeMax: 3
   ShieldMax: 0
@@ -39,3 +38,4 @@ MonoBehaviour:
   UsefullToWin: 0
   IsInRedArmy: 0
   UnitAttributs: 010000000a00000005000000
+  UnitStatuts: 00000000000000000000000000000000

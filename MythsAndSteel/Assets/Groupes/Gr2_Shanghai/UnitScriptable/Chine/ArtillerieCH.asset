@@ -13,13 +13,11 @@ MonoBehaviour:
   m_Name: ArtillerieCH
   m_EditorClassIdentifier: 
   UnitName: Feldhaub PAK
-  Description: "Le Fledhaub PAK est une artillerie lente et exp\xE9rimentale d\xE9riv\xE9e
+  Description: "Le Feldhaub PAK est une artillerie lente et exp\xE9rimentale d\xE9riv\xE9e
     d\u2019exp\xE9rimentations sur la Feldhaubitze 18 de 15cm capable de tirer plusieurs
     fois \xE0 la suite. Sa capacit\xE9 \xE0 pouvoir attaquer rapidement d\u2019une
     cible \xE0 une autre est permise par des projectiles d\u2019\xE9nergie issus
-    de recherches allemandes. Elle profifite alors de sa pleine puissance une fois
-    ancr\xE9e dans le sol ou sur un FAMO, avec lequel elle a \xE9t\xE9 con\xE7ue
-    en concordance."
+    de recherches allemandes."
   typeUnite: 2
   LifeMax: 2
   ShieldMax: 0
@@ -40,3 +38,4 @@ MonoBehaviour:
   UsefullToWin: 0
   IsInRedArmy: 1
   UnitAttributs: 010000000000000000000000
+  UnitStatuts: 00000000000000000000000000000000

@@ -14,12 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UnitName: Di Jiu Drachen
   Description: "Alors que la course \xE0 l\u2019armement explose dans le monde entier
-    d\xE8s les ann\xE9es 20, les forces nationalistes chinoises d\xE9cident de la
-    rejoindre, poussant tous leurs efforts dans l\u2019\xE9laboration de technologies
-    toujours plus prototypiques. Est alors n\xE9 en 1935 le Di Jiu Drachen (en r\xE9f\xE9rence
-    au Nombre du Dragon, mais aussi du nombre de concepteurs), un assemblage m\xE9canique
-    inspir\xE9 des dragons orientaux propuls\xE9 par une batterie de petits jetpacks,
-    devant leur effificacit\xE9 aux recherches hyperchimiques chinoises."
+    d\xE8s les ann\xE9es 20, les forces nationalistes chinoises poussent tous leurs
+    efforts dans l\u2019\xE9laboration de technologies toujours plus prototypiques.
+    Est alors n\xE9 en 1935 le Di Jiu Drachen : un assemblage m\xE9canique inspir\xE9
+    des dragons orientaux propuls\xE9 par une batterie de petits jetpacks, devant
+    leur efficacit\xE9 aux recherches hyperchimiques chinoises."
   typeUnite: 5
   LifeMax: 4
   ShieldMax: 0
@@ -40,3 +39,4 @@ MonoBehaviour:
   UsefullToWin: 0
   IsInRedArmy: 1
   UnitAttributs: 0b0000000600000000000000
+  UnitStatuts: 00000000000000000000000000000000
