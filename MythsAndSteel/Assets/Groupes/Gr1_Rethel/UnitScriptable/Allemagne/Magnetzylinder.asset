@@ -15,8 +15,8 @@ MonoBehaviour:
   UnitName: Magnetzylinder
   Description: "Le MagnetZylinder est une artillerie allemande parue peu avant le
     d\xE9but de la Seconde Guerre mondiale. \xC9quip\xE9e de chenilles pour un mouvement
-    assez rapide , et arm\xE9e d\u2019un puissant canon \xE0 tr\xE8s longue port\xE9e
-    , elle a la possibilit\xE9 d\u2019envoyer un aimant universel qui attirera n\u2019importe
+    assez rapide, et arm\xE9e d\u2019un puissant canon \xE0 tr\xE8s longue port\xE9e,
+    elle a la possibilit\xE9 d\u2019envoyer un aimant universel qui attire n\u2019importe
     quelle unit\xE9 se trouvant \xE0 proximit\xE9 du projectile."
   typeUnite: 2
   LifeMax: 2
@@ -38,3 +38,4 @@ MonoBehaviour:
   UsefullToWin: 0
   IsInRedArmy: 0
   UnitAttributs: 
+  UnitStatuts: 00000000000000000000000000000000

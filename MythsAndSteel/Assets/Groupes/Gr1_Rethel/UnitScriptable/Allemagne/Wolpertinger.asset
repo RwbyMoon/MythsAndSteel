@@ -13,19 +13,11 @@ MonoBehaviour:
   m_Name: Wolpertinger
   m_EditorClassIdentifier: 
   UnitName: Wolpertinger
-  Description: "Ces petites cr\xE9atures sont originaires des plus profondes for\xEAts
-    bavaroises. Cet animal l\xE9gendaire prend l\u2019apparence d\u2019un lapin avec
-    des ailes, des bois et des crocs. Sa petite taille ne l\u2019emp\xEAche pas d\u2019\xEAtre
-    une f\xE9roce machine \xE0 tuer.  Le Wolpertinger est incroyablement difficile
-    \xE0 capturer, en grande partie \xE0 cause du fait qu\u2019il reste cach\xE9
-    tant qu\u2019il n\u2019est pas s\xFBr d\u2019\xE9liminer sa proie. Cependant,
-    en fouillant la For\xEAt Noire, un groupe de scientifiques allemand a trouv\xE9
-    des traces d\u2019Orgone appartenant \xE0 cette cr\xE9ature l\xE9gendaire ainsi
-    que des corps, \xE2g\xE9s. A la suite de plusieurs exp\xE9riences, et gr\xE2ce
-    \xE0 l\u2019utilisation de l\u2019hyperchimie, ils ont r\xE9ussi \xE0 recr\xE9er
-    cette cr\xE9ature tout en la maintenant sous contr\xF4le. L\u2019arm\xE9e allemande
-    \xE0 alors d\xE9cid\xE9 de se servir de ces cr\xE9atures lors de combats en France
-    au d\xE9but de la guerre pour sa rapidit\xE9 et sa dangerosit\xE9."
+  Description: "Ces petites cr\xE9atures l\xE9gendaires sont originaires des plus
+    profondes for\xEAts bavaroises, et prennent l\u2019apparence d\u2019un lapin
+    avec des ailes, des bois et des crocs. Sa petite taille ne l\u2019emp\xEAche
+    pas d\u2019\xEAtre une f\xE9roce machine \xE0 tuer. L\u2019utilisation de l\u2019Hyperchimie
+    permit aux Allemands de recr\xE9er ces cr\xE9atures. "
   typeUnite: 3
   LifeMax: 2
   ShieldMax: 0
@@ -46,3 +38,4 @@ MonoBehaviour:
   UsefullToWin: 0
   IsInRedArmy: 0
   UnitAttributs: 
+  UnitStatuts: 00000000000000000000000000000000

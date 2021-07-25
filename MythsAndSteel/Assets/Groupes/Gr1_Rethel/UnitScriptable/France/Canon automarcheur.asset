@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Canon automarcheur
   m_EditorClassIdentifier: 
   UnitName: Canon automarcheur
-  Description: "Conceptualis\xE9 par des ing\xE9nieurs et des entomologistes , le
+  Description: "Conceptualis\xE9 par des ing\xE9nieurs et des entomologistes, le
     canon auto-marcheur ressemble \xE0 un insecte. Poss\xE9dant 6 pattes faites d\u2019un
-    m\xE9tal tr\xE8s lourd , cette artillerie est tr\xE8s lente. Elle propulse n\xE9anmoins
-    des projectiles tr\xE8s lourds , \xE0 une longue port\xE9e , qui repoussent les
+    m\xE9tal tr\xE8s lourd, cette artillerie est tr\xE8s lente. Elle propulse n\xE9anmoins
+    des projectiles tr\xE8s lourds, \xE0 une longue port\xE9e, qui repoussent les
     unit\xE9s ennemies touch\xE9es. "
   typeUnite: 2
   LifeMax: 2
@@ -38,3 +38,4 @@ MonoBehaviour:
   UsefullToWin: 0
   IsInRedArmy: 1
   UnitAttributs: 01000000
+  UnitStatuts: 00000000000000000000000000000000

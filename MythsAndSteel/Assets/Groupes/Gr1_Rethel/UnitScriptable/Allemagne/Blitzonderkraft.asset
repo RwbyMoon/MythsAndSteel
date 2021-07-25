@@ -15,10 +15,10 @@ MonoBehaviour:
   UnitName: Blitzonderkraft
   Description: "La doctrine allemande d\u2019attaque \xE9clair n\xE9cessite que l\u2019infanterie
     puisse suivre les chars qui forment le fer de lance de l\u2019attaque. Le Blitzsondercraft
-    est un v\xE9hicule de transport de troupes rapide et l\xE9g\xE8rement blind\xE9
-    qui \xE9tend la flexibilit\xE9 et la mobilit\xE9 de l\u2019infanterie allemande,
-    permettant des attaques \xE9clairs de l\u2019arme blind\xE9e allemande sans qu\u2019elle
-    se retrouve sans s\xE9curit\xE9."
+    est un v\xE9hicule de transport et l\xE9g\xE8rement blind\xE9 qui \xE9tend la
+    flexibilit\xE9 et la mobilit\xE9 de l\u2019infanterie, permettant des attaques
+    \xE9clairs de l\u2019arme blind\xE9e allemande sans qu\u2019elle se retrouve
+    sans s\xE9curit\xE9."
   typeUnite: 1
   LifeMax: 2
   ShieldMax: 0
@@ -39,3 +39,4 @@ MonoBehaviour:
   UsefullToWin: 0
   IsInRedArmy: 0
   UnitAttributs: 
+  UnitStatuts: 00000000000000000000000000000000

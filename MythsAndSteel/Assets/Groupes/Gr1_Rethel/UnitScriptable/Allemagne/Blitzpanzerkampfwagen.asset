@@ -16,9 +16,7 @@ MonoBehaviour:
   Description: "L\u2019exp\xE9rimentation avec des prototypes de chars de combat
     rapides et l\xE9ger, les panzer I et II, aboutit en 1937 \xE0 la premi\xE8re
     version de la coque du Blitzpanzerkampfwagen I, \xE9quip\xE9 d\u2019armes Tesla
-    exp\xE9rimentales qui offrait une grande puissance de feu sur une zone \xE9tendu,
-    permettant de saturer une zone avec des \xE9clairs mena\xE7ant pour l\u2019infanterie
-    comme pour les blind\xE9s."
+    exp\xE9rimentales qui offraient une grande puissance de feu sur une large zone."
   typeUnite: 1
   LifeMax: 3
   ShieldMax: 0
@@ -39,3 +37,4 @@ MonoBehaviour:
   UsefullToWin: 0
   IsInRedArmy: 0
   UnitAttributs: 
+  UnitStatuts: 00000000000000000000000000000000

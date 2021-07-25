@@ -14,13 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UnitName: Marcheur d'artillerie OB35
   Description: "P\xE9pite d'ing\xE9nierie des usines fran\xE7aises, le marcheur d\u2019artillerie
-    OB35, \xE0 commenc\xE9 \xE0 \xEAtre produit tr\xE8s peu de temps avant la guerre.
-    Les forces fran\xE7aises voulaient profiter du terrain des collines Ardennaises.
-    Apr\xE8s des ann\xE9es de recherche et d\u2019exp\xE9rimentation, l'OB35 est
-    donc n\xE9.  \xC9quip\xE9 de deux \xE9normes canons, ce mecha dispose d\u2019une
-    \xE9norme puissance de feu qui lui permet de tirer au-del\xE0 des montagnes et
-    des b\xE2timents. Sa carapace lui offre \xE9galement une d\xE9fense efficace
-    et ces quatres pattes une praticit\xE9 dans les vallons des Ardennes."
+    OB35 a commenc\xE9 \xE0 \xEAtre produit tr\xE8s peu de temps avant la guerre.
+    \xC9quip\xE9 de deux \xE9normes canons, ce m\xE9cha dispose d\u2019une \xE9norme
+    puissance de feu qui lui permet de tirer au-del\xE0 des montagnes et des b\xE2timents."
   typeUnite: 5
   LifeMax: 3
   ShieldMax: 0
@@ -41,3 +37,4 @@ MonoBehaviour:
   UsefullToWin: 0
   IsInRedArmy: 1
   UnitAttributs: 01000000
+  UnitStatuts: 00000000000000000000000000000000

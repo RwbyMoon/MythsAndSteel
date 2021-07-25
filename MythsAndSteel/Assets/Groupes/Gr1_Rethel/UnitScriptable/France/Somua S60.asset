@@ -13,13 +13,12 @@ MonoBehaviour:
   m_Name: Somua S60
   m_EditorClassIdentifier: 
   UnitName: Somua S60
-  Description: "Le Somua S60 est le nouveau mod\xE8le qui remplace le S35 qui fut
-    mis \xE0 rude \xE9preuve durant la deuxi\xE8me moiti\xE9 de la Premi\xE8re Guerre.
-    Les ing\xE9nieurs fran\xE7ais ont am\xE9lior\xE9 leurs techniques de moulage
-    qui font la marque de fabrique des blind\xE9s fran\xE7ais, permettant au S60
-    de r\xE9sister aux armes de nouvelles g\xE9n\xE9rations. De plus, le S60 profite
-    aussi des nouvelles avanc\xE9es balistiques au profit d\u2019un canon capable
-    de tirer des obus a bien plus haute v\xE9locit\xE9 qu\u2019auparavant."
+  Description: "Ce mod\xE8le remplace le S35 qui fut mis \xE0 rude \xE9preuve durant
+    la Premi\xE8re Guerre mondiale. Les ing\xE9nieurs fran\xE7ais ont am\xE9lior\xE9
+    leurs techniques de moulage qui font la marque de fabrique de leurs blind\xE9s,
+    permettant au S60 de r\xE9sister aux armes de nouvelles g\xE9n\xE9rations. Il
+    profite aussi d\u2019avanc\xE9es balistiques, lui permettant de tirer des obus
+    plus rapidement."
   typeUnite: 1
   LifeMax: 3
   ShieldMax: 0
@@ -40,3 +39,4 @@ MonoBehaviour:
   UsefullToWin: 0
   IsInRedArmy: 1
   UnitAttributs: 
+  UnitStatuts: 00000000000000000000000000000000

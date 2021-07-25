@@ -14,15 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UnitName: Tarasque
   Description: "Jadis, pr\xE8s de Tarascon, une b\xEAte mythique d\xE9fendait son
-    territoire. Elle avait l\u2019apparence d\u2019une chim\xE8re, poss\xE9dant un
-    corps de b\u0153uf, une t\xEAte de lion avec un visage d\u2019homme \xE2g\xE9,
-    le tout avec une carapace de tortue surmont\xE9e d'\xE9pines. La Tarasque guettait
-    les voyageurs voulant traverser le Rh\xF4ne et les d\xE9vorait. Lors de l\u2019\xE9vang\xE9lisation,
-    Sainte Marthe se rendit \xE0 Tarascon et dompta la b\xEAte. La l\xE9gende dit
-    que la cr\xE9ature serait morte, tu\xE9e par les villageois en qu\xEAte de vengeance.
-    Cependant il n\u2019en est rien. Apr\xE8s s\u2019\xEAtre r\xE9fugi\xE9e dans
-    une grotte avec Sainte Marthe, la Tarasque s'emmure avec cette derni\xE8re dans
-    la pierre, les plongeant toutes les deux dans une profonde transe."
+    territoire. Lors de l\u2019\xE9vang\xE9lisation, Sainte Marthe se rendit \xE0
+    Tarascon et dompta la b\xEAte. Apr\xE8s s\u2019\xEAtre r\xE9fugi\xE9e dans une
+    grotte avec Sainte Marthe, la Tarasque s'emmure avec cette derni\xE8re dans la
+    pierre, les plongeant toutes les deux dans une profonde transe. R\xE9veill\xE9es
+    par un g\xE9n\xE9ral fran\xE7ais, elles rejoignirent la guerre."
   typeUnite: 3
   LifeMax: 4
   ShieldMax: 0
@@ -43,3 +39,4 @@ MonoBehaviour:
   UsefullToWin: 0
   IsInRedArmy: 1
   UnitAttributs: 03000000
+  UnitStatuts: 00000000000000000000000000000000

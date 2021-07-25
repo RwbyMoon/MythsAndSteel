@@ -13,12 +13,11 @@ MonoBehaviour:
   m_Name: "Semi-chenill\xE9"
   m_EditorClassIdentifier: 
   UnitName: "Semi-chenill\xE9 Citro\xEBn"
-  Description: "\xC9quip\xE9 de roues et de chenilles , ce v\xE9hicule fran\xE7ais
-    est tr\xE8s rapide. Il s\u2019agit d\u2019un camion de ravitaillement qui apportera
-    de l\u2019aide au soldat tout au long de la bataille. Gr\xE2ce aux infirmiers
-    et aux avanc\xE9s technologiques qui se trouvent \xE0 l\u2019int\xE9rieur, les
-    unit\xE9s pourront se faire soigner. Jamais trop prudents, les ing\xE9nieurs
-    fran\xE7ais ont install\xE9 une mitrailleuse au-dessus du v\xE9hicule."
+  Description: "\xC9quip\xE9 de roues et de chenilles, ce v\xE9hicule fran\xE7ais
+    est tr\xE8s rapide. Il s\u2019agit d\u2019un camion de ravitaillement qui apporte
+    de l\u2019aide aux soldats tout au long de la bataille. Gr\xE2ce aux infirmiers
+    et aux avanc\xE9es technologiques qui se trouvent \xE0 l\u2019int\xE9rieur, les
+    unit\xE9s peuvent s\u2019y faire soigner."
   typeUnite: 1
   LifeMax: 3
   ShieldMax: 0
@@ -39,3 +38,4 @@ MonoBehaviour:
   UsefullToWin: 0
   IsInRedArmy: 1
   UnitAttributs: 
+  UnitStatuts: 00000000000000000000000000000000

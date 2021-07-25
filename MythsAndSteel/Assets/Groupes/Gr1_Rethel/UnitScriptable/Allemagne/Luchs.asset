@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UnitName: Luchs
   Description: "Fascin\xE9s par la vitesse et l'agressivit\xE9, les ing\xE9nieurs
-    allemands \xE9taient \xE0 larecherche d'une machine \xE0 la fois rapide et destructrice.
+    allemands \xE9taient \xE0 la recherche d'une machine \xE0 la fois rapide et destructrice.
     C'est ainsi qu'a \xE9t\xE9 cr\xE9\xE9 le Luchs, une machine rapide et puissante
-    capable de cr\xE9er des trous dans les lignes de front ennemies"
+    capable de cr\xE9er des trous dans les lignes de front ennemies."
   typeUnite: 5
   LifeMax: 4
   ShieldMax: 0
@@ -37,3 +37,4 @@ MonoBehaviour:
   UsefullToWin: 0
   IsInRedArmy: 0
   UnitAttributs: 06000000
+  UnitStatuts: 00000000000000000000000000000000

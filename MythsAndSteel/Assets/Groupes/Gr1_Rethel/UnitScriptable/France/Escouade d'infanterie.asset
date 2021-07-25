@@ -15,10 +15,9 @@ MonoBehaviour:
   UnitName: Escouade d'infanterie
   Description: "Les soldats de l\u2019escouade d\u2019infanterie ont \xE9t\xE9 recrut\xE9s
     et entra\xEEn\xE9s de mani\xE8re intense par l\u2019arm\xE9e fran\xE7aise quelques
-    mois avant le d\xE9but de la Seconde Guerre Mondiale. Ils n\u2019ont pas de sp\xE9cialisation
-    , mais ils sont bien entra\xEEn\xE9s dans tous les domaines. Arm\xE9s de fusils
-    d\u2019assaut , ils seront plus efficaces au combat s\u2019ils restent immobiles
-    afin de mieux viser."
+    mois avant le d\xE9but de la Seconde Guerre mondiale. Ils sont bien entra\xEEn\xE9s
+    dans tous les domaines. Arm\xE9s de fusils d\u2019assaut, ils sont plus efficaces
+    au combat s\u2019ils restent immobiles afin de mieux viser."
   typeUnite: 0
   LifeMax: 2
   ShieldMax: 0
@@ -39,3 +38,4 @@ MonoBehaviour:
   UsefullToWin: 0
   IsInRedArmy: 1
   UnitAttributs: 
+  UnitStatuts: 00000000000000000000000000000000
