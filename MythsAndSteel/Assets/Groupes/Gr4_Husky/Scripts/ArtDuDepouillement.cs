@@ -42,10 +42,27 @@ public class ArtDuDepouillement : Capacity
             PlayerScript.Instance.J1Infos.Ressource--;
             PlayerScript.Instance.J2Infos.Ressource++;
         }
-        GameManager.Instance._eventCall -= EndCpty;
-        GetComponent<UnitScript>().EndCapacity();
-        GameManager.Instance.TileChooseList.Clear();
-        base.EndCpty();
+        if(GameManager.Instance.TileChooseList[0].GetComponent<TileScript>().TileId - GetComponent<UnitScript>().ActualTiledId == -1 || GameManager.Instance.TileChooseList[0].GetComponent<TileScript>().TileId - GetComponent<UnitScript>().ActualTiledId == 1)
+        {
+            GetComponent<Animator>().SetInteger("CapaSens", 1);
+            if(!GetComponent<SpriteRenderer>().flipX && GameManager.Instance.TileChooseList[0].GetComponent<TileScript>().TileId - GetComponent<UnitScript>().ActualTiledId == -1)
+            {
+                GetComponent<SpriteRenderer>().flipX = true;
+            }
+            if (GetComponent<SpriteRenderer>().flipX && GameManager.Instance.TileChooseList[0].GetComponent<TileScript>().TileId - GetComponent<UnitScript>().ActualTiledId == 1)
+            {
+                GetComponent<SpriteRenderer>().flipX = false;
+            }
+        }
+        else if(GameManager.Instance.TileChooseList[0].GetComponent<TileScript>().TileId - GetComponent<UnitScript>().ActualTiledId == 9)
+        {
+            GetComponent<Animator>().SetInteger("CapaSens", 2);
+        }
+        else if(GameManager.Instance.TileChooseList[0].GetComponent<TileScript>().TileId - GetComponent<UnitScript>().ActualTiledId == -9)
+        {
+            GetComponent<Animator>().SetInteger("CapaSens", 3);
+        }
+        StartCoroutine(WaitEndAnim());
     }
 
     public override void StopCpty()
@@ -54,5 +71,15 @@ public class ArtDuDepouillement : Capacity
         GameManager.Instance.TileChooseList.Clear();
         GetComponent<UnitScript>().StopCapacity(true);
         base.StopCpty();
+    }
+
+    IEnumerator WaitEndAnim()
+    {
+        yield return new WaitForSeconds(1.5f);
+        GetComponent<Animator>().SetInteger("CapaSens", 0);
+        GameManager.Instance._eventCall -= EndCpty;
+        GetComponent<UnitScript>().EndCapacity();
+        GameManager.Instance.TileChooseList.Clear();
+        base.EndCpty();
     }
 }
