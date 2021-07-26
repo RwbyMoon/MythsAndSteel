@@ -17,6 +17,8 @@ public class Capacity : MonoBehaviour
     [SerializeField] int _Capacity1Cost;
     public int Capacity1Cost => _Capacity1Cost;
 
+    public bool SecondCapacity = false;
+
     virtual public void EndCpty()
     {
 
@@ -25,12 +27,12 @@ public class Capacity : MonoBehaviour
 
     virtual public void StartCpty()
     {
-  
+
         Debug.Log("Active La capacité 1");
     }
     virtual public void StopCpty()
     {
-       
+
         Debug.Log("Active La capacité 1");
     }
 
@@ -52,14 +54,14 @@ public class Capacity : MonoBehaviour
     public GameObject ReturnInfo(GameObject PrefabCapacity, int number = 0)
     {
 
-        switch(number)
+        switch (number)
         {
             case 0:
                 {
                     PrefabCapacity.transform.GetChild(1).GetComponent<Image>().sprite = render1;
                     PrefabCapacity.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = _Capacity1Name;
                     PrefabCapacity.transform.GetChild(3).GetComponent<TextMeshProUGUI>().text = _Capacity1Description;
-                    if(_Capacity1Cost > 0)
+                    if (_Capacity1Cost > 0)
                     {
                         PrefabCapacity.transform.GetChild(0).gameObject.SetActive(true);
                         PrefabCapacity.transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = _Capacity1Cost.ToString();
@@ -69,8 +71,8 @@ public class Capacity : MonoBehaviour
                         PrefabCapacity.transform.GetChild(3).gameObject.SetActive(false);
                     }
                     int lengthTxt = _Capacity1Description.Length;
-                    float LengthLine = (float) lengthTxt / 21;
-                    int truncateLine = (int) LengthLine;
+                    float LengthLine = (float)lengthTxt / 21;
+                    int truncateLine = (int)LengthLine;
                     PrefabCapacity.GetComponent<RectTransform>().sizeDelta = new Vector2(
                         PrefabCapacity.GetComponent<RectTransform>().sizeDelta.x,
                         130 + (20 * truncateLine));

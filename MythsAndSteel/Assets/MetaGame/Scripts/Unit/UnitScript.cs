@@ -89,7 +89,7 @@ public class UnitScript : MonoBehaviour
     }
 
     public bool AttaqueEnLigne;
-  
+
 
     [Space]
     //Dégats minimum infligé
@@ -132,6 +132,7 @@ public class UnitScript : MonoBehaviour
     public bool InflictMaximumDamages;
 
     public bool RunningCapacity = false;
+    public bool RunningCapacity2 = false;
 
     [Header("------------------- MOUVEMENT -------------------")]
     //Vitesse de déplacement
@@ -266,7 +267,7 @@ public class UnitScript : MonoBehaviour
             return _unitStatuts;
         }
         set
-        { 
+        {
             _unitStatuts = value;
         }
     }
@@ -278,22 +279,22 @@ public class UnitScript : MonoBehaviour
     Coroutine last;
     IEnumerator NextStep()
     {
-        if(StatusPrefab.GetComponent<RuntimeAnimatorController>() != null)
+        if (StatusPrefab.GetComponent<RuntimeAnimatorController>() != null)
         {
 
-        if (StatusPrefab.GetBool("In"))
+            if (StatusPrefab.GetBool("In"))
             {
-            StatusPrefab.SetBool("In", false);
-            yield return new WaitForSeconds(1f);
+                StatusPrefab.SetBool("In", false);
+                yield return new WaitForSeconds(1f);
             }
         }
-        if(UnitStatuts.Count >= step && step >= 0)
+        if (UnitStatuts.Count >= step && step >= 0)
         {
             StatusPrefab.runtimeAnimatorController = GetAnimator(_unitStatuts[step]);
         }
         StatusPrefab.SetBool("In", true);
         yield return new WaitForSeconds(3);
-        if(UnitStatuts.Count > 1)
+        if (UnitStatuts.Count > 1)
         {
             NewStep();
         }
@@ -306,11 +307,11 @@ public class UnitScript : MonoBehaviour
 
     public void NewStep()
     {
-        if(step >= UnitStatuts.Count - 1)
+        if (step >= UnitStatuts.Count - 1)
         {
             step = 0;
         }
-        else if(UnitStatuts.Count != 0)
+        else if (UnitStatuts.Count != 0)
         {
             step++;
         }
@@ -319,11 +320,11 @@ public class UnitScript : MonoBehaviour
 
     public RuntimeAnimatorController GetAnimator(MYthsAndSteel_Enum.UnitStatut ST)
     {
-        foreach(Data D in StatusData.Data)
+        foreach (Data D in StatusData.Data)
         {
-            if(D.Status == ST)
+            if (D.Status == ST)
             {
-                if(D.Animation != null)
+                if (D.Animation != null)
                 {
                     return D.Animation;
                 }
@@ -339,7 +340,7 @@ public class UnitScript : MonoBehaviour
 
     public void NextStepSetter(MYthsAndSteel_Enum.UnitStatut ST)
     {
-        if(last != null)
+        if (last != null)
         {
             StopCoroutine(last);
         }
@@ -352,10 +353,10 @@ public class UnitScript : MonoBehaviour
     public Animator Animation => _Animation;
 
     //Récupération de stats pour l'écran de victoire
- 
+
     public bool GotCapacity()
     {
-        if(TryGetComponent<Capacity>(out Capacity C))
+        if (TryGetComponent<Capacity>(out Capacity C))
         {
             return true;
         }
@@ -382,7 +383,7 @@ public class UnitScript : MonoBehaviour
     private void Start()
     {
 
-       
+
         LastTileId = ActualTiledId;
         UpdateUnitStat();
 
@@ -736,11 +737,11 @@ public class UnitScript : MonoBehaviour
         {
             if (UnitSO.IsInRedArmy)
             {
-               GameManager.Instance.victoryScreen.redDeadUnits += 1;
+                GameManager.Instance.victoryScreen.redDeadUnits += 1;
             }
             if (!UnitSO.IsInRedArmy)
             {
-               GameManager.Instance.victoryScreen.blueDeadUnits += 1;
+                GameManager.Instance.victoryScreen.blueDeadUnits += 1;
             }
             Death();
             IsDead = true;
@@ -758,7 +759,7 @@ public class UnitScript : MonoBehaviour
     public virtual void Death()
     {
 
-      
+
         if (RaycastManager.Instance.ActualUnitSelected == this.gameObject)
         {
             Mouvement.Instance.StopMouvement(false);
@@ -805,7 +806,7 @@ public class UnitScript : MonoBehaviour
         SoundController.Instance.PlaySound(_SonMort);
         if (Animation != null)
         {
-            
+
             Animation.SetBool("Dead", true);
             yield return new WaitForEndOfFrame();
             yield return new WaitForSeconds(Animation.GetCurrentAnimatorStateInfo(0).length);
@@ -819,7 +820,7 @@ public class UnitScript : MonoBehaviour
     /// </summary>
     public void UpdateLifeHeartShieldUI(Sprite[] listSprite, int life)
     {
-        if(life >= 10)
+        if (life >= 10)
         {
             life = 10;
         }
@@ -888,7 +889,7 @@ public class UnitScript : MonoBehaviour
     {
         _diceBonus += value;
 
-        
+
     }
     #endregion ChangementStat
 
@@ -906,7 +907,7 @@ public class UnitScript : MonoBehaviour
         _shield = 0;
         _attackRange = _unitSO.AttackRange;
         _moveSpeed = _unitSO.MoveSpeed;
-       Renderer.sprite = _unitSO.Sprite;
+        Renderer.sprite = _unitSO.Sprite;
         _creationCost = _unitSO.CreationCost;
         _damageMinimum = _unitSO.DamageMinimum;
         _damageMaximum = _unitSO.DamageMaximum;
@@ -954,28 +955,28 @@ public class UnitScript : MonoBehaviour
     /// </summary>
     public void checkMovementLeft()
     {
-        if(!_isActionDone)
+        if (!_isActionDone)
         {
 
-        if ((_unitSO.IsInRedArmy && !hasUseActivation && !_unitStatuts.Contains(MYthsAndSteel_Enum.UnitStatut.Possédé)) || (!_unitSO.IsInRedArmy && _unitStatuts.Contains(MYthsAndSteel_Enum.UnitStatut.Possédé) && !hasUseActivation && !MélodieSinistre)) 
-        {
-            Debug.Log("bonsoir");
-            hasUseActivation = true;
-            PlayerScript.Instance.J1Infos.ActivationLeft--;
-        }
-        else if ((!_unitSO.IsInRedArmy && !hasUseActivation && !_unitStatuts.Contains(MYthsAndSteel_Enum.UnitStatut.Possédé)) || (_unitSO.IsInRedArmy && _unitStatuts.Contains(MYthsAndSteel_Enum.UnitStatut.Possédé) && !hasUseActivation && !MélodieSinistre))
-        {
-            Debug.Log("bonsoir");
-            hasUseActivation = true;
-            PlayerScript.Instance.J2Infos.ActivationLeft--;
-        }
+            if ((_unitSO.IsInRedArmy && !hasUseActivation && !_unitStatuts.Contains(MYthsAndSteel_Enum.UnitStatut.Possédé)) || (!_unitSO.IsInRedArmy && _unitStatuts.Contains(MYthsAndSteel_Enum.UnitStatut.Possédé) && !hasUseActivation && !MélodieSinistre))
+            {
+                Debug.Log("bonsoir");
+                hasUseActivation = true;
+                PlayerScript.Instance.J1Infos.ActivationLeft--;
+            }
+            else if ((!_unitSO.IsInRedArmy && !hasUseActivation && !_unitStatuts.Contains(MYthsAndSteel_Enum.UnitStatut.Possédé)) || (_unitSO.IsInRedArmy && _unitStatuts.Contains(MYthsAndSteel_Enum.UnitStatut.Possédé) && !hasUseActivation && !MélodieSinistre))
+            {
+                Debug.Log("bonsoir");
+                hasUseActivation = true;
+                PlayerScript.Instance.J2Infos.ActivationLeft--;
+            }
 
-        UIInstance.Instance.UpdateActivationLeft();
+            UIInstance.Instance.UpdateActivationLeft();
 
-        if (_moveLeft == 0)
-        {
-            _isMoveDone = true;
-        }
+            if (_moveLeft == 0)
+            {
+                _isMoveDone = true;
+            }
         }
     }
 
@@ -1022,15 +1023,56 @@ public class UnitScript : MonoBehaviour
         }
     }
 
+    public void StartCapacityV2(int CapacityNumber = 1)
+    {
+        if (!HasAttackedOneTime)
+        {
+            CapacitySystem.Instance.CapacityRunning = true;
+
+            if (CapacityNumber == 1)
+            {
+                RunningCapacity = true;
+            }
+            else
+            {
+                CapacityNumber = 2;
+                RunningCapacity2 = true;
+
+            }
+
+
+            CapacitySystem.Instance.Updatebutton();
+            UIInstance.Instance.DesactivateNextPhaseButton();
+            Capacity[] CapacityList = GetComponents<Capacity>();
+
+            foreach (Capacity T in CapacityList)
+            {
+                if (CapacityNumber == 1 && !T.SecondCapacity)
+                {
+                    T.StartCpty();
+                    break;
+                }
+                else if (CapacityNumber == 2 && T.SecondCapacity)
+                {
+                    T.StartCpty();
+                    break;
+                }
+            }
+
+
+        }
+    }
+
     public void EndCapacity()
     {
         CapacitySystem.Instance.CapacityRunning = false;
 
-        if(IsActifNotConsumeAction == false)
+        if (IsActifNotConsumeAction == false)
         {
             _isActionDone = true;
         }
         RunningCapacity = false;
+        RunningCapacity2 = false;
 
         CapacitySystem.Instance.PanelBlockant1.SetActive(false);
         CapacitySystem.Instance.PanelBlockant2.SetActive(false);
@@ -1040,13 +1082,13 @@ public class UnitScript : MonoBehaviour
         UIInstance.Instance.ActivateNextPhaseButton();
         RaycastManager.Instance.ActualTileSelected = null;
         RaycastManager.Instance.ActualUnitSelected = null;
-        Attaque.Instance.Selected = false; 
+        Attaque.Instance.Selected = false;
         checkActivation();
     }
 
     public void StopCapacity(bool FromCptyScript = false)
     {
-     
+
         GameManager.Instance.StopEventModeTile();
         GameManager.Instance.StopEventModeUnit();
         CapacitySystem.Instance.CapacityRunning = false;
@@ -1054,6 +1096,7 @@ public class UnitScript : MonoBehaviour
         CapacitySystem.Instance.PanelBlockant2.SetActive(false);
         UIInstance.Instance.ActivateNextPhaseButton();
         RunningCapacity = false;
+        RunningCapacity2 = false;
 
         CapacitySystem.Instance.Updatebutton();
         Attaque.Instance.StartAttackSelectionUnit(ActualTiledId);
@@ -1062,7 +1105,11 @@ public class UnitScript : MonoBehaviour
         {
             if (!FromCptyScript)
             {
-                T.StopCpty();
+                Capacity[] CapacityList = GetComponents<Capacity>();
+                foreach (Capacity Capa in CapacityList)
+                {
+                    Capa.StopCpty();
+                }
             }
         }
 
@@ -1073,9 +1120,9 @@ public class UnitScript : MonoBehaviour
         if (_unitStatuts.Contains(MYthsAndSteel_Enum.UnitStatut.Possédé))
         {
             _diceBonus += 4;
-          
+
             ResetTurn();
-          RemoveStatutToUnit(MYthsAndSteel_Enum.UnitStatut.Possédé);
+            RemoveStatutToUnit(MYthsAndSteel_Enum.UnitStatut.Possédé);
             MélodieSinistre = false;
         }
     }
@@ -1083,25 +1130,25 @@ public class UnitScript : MonoBehaviour
     private void FxOrgoneSpawn(bool player)
     {
 
-        GameObject fx = Instantiate(player ? OrgoneManager.Instance.FxOrgoneGauche : OrgoneManager.Instance.FxOrgoneDroit,transform.position, Quaternion.identity, player ? OrgoneManager.Instance.ForceFieldGauche.transform : OrgoneManager.Instance.ForceFieldDroit.transform) ;
-   
-       
+        GameObject fx = Instantiate(player ? OrgoneManager.Instance.FxOrgoneGauche : OrgoneManager.Instance.FxOrgoneDroit, transform.position, Quaternion.identity, player ? OrgoneManager.Instance.ForceFieldGauche.transform : OrgoneManager.Instance.ForceFieldDroit.transform);
+
+
         Transform fxChild = fx.transform.GetChild(1);
-        
-        
+
+
         List<GameObject> fxList = new List<GameObject>();
         for (int i = 0; i < 4; i++)
         {
 
-  fxList.Add(fxChild.GetChild(i).gameObject);
+            fxList.Add(fxChild.GetChild(i).gameObject);
         }
-       foreach (GameObject child  in fxList)
+        foreach (GameObject child in fxList)
         {
             child.GetComponent<ParticleSystem>().trigger.AddCollider(player ? OrgoneManager.Instance.ForceFieldGauche.transform.GetChild(0).GetChild(0) : OrgoneManager.Instance.ForceFieldDroit.transform.GetChild(0).GetChild(0));
 
-     
+
         }
-       
+
     }
 
     //Assombri l'unité et réduit sa vitesse d'animation
