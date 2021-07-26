@@ -46,19 +46,19 @@ public class ChangeActivPhase : MonoBehaviour
     {
         if(GameManager.Instance.IsPlayerRedStarting)
         {
-            gameObject.transform.GetChild(2).GetComponent<Image>().sprite = _refOrgoneJ1Img;
-            gameObject.transform.GetChild(3).GetComponent<Image>().sprite = _refActionJ1Img;
-            gameObject.transform.GetChild(4).GetComponent<Image>().sprite = _refOrgoneJ2Img;
-            gameObject.transform.GetChild(5).GetComponent<Image>().sprite = _refActionJ2Img;
+            gameObject.transform.GetChild(9).GetComponent<Image>().sprite = _refOrgoneJ1Img;
+            gameObject.transform.GetChild(10).GetComponent<Image>().sprite = _refActionJ1Img;
+            gameObject.transform.GetChild(11).GetComponent<Image>().sprite = _refOrgoneJ2Img;
+            gameObject.transform.GetChild(12).GetComponent<Image>().sprite = _refActionJ2Img;
 
 
         }
         else
         {
-            gameObject.transform.GetChild(2).GetComponent<Image>().sprite = _refOrgoneJ2Img;
-            gameObject.transform.GetChild(3).GetComponent<Image>().sprite = _refActionJ2Img;
-            gameObject.transform.GetChild(4).GetComponent<Image>().sprite = _refOrgoneJ1Img;
-            gameObject.transform.GetChild(5).GetComponent<Image>().sprite = _refActionJ1Img;
+            gameObject.transform.GetChild(9).GetComponent<Image>().sprite = _refOrgoneJ2Img;
+            gameObject.transform.GetChild(10).GetComponent<Image>().sprite = _refActionJ2Img;
+            gameObject.transform.GetChild(11).GetComponent<Image>().sprite = _refOrgoneJ1Img;
+            gameObject.transform.GetChild(12).GetComponent<Image>().sprite = _refActionJ1Img;
         }
     }
         
