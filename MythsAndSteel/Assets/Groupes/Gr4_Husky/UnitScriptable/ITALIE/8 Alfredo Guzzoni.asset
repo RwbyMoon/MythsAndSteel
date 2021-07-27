@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: 8 Alfredo Guzzoni
   m_EditorClassIdentifier: 
   UnitName: Alfredo Guzzoni
-  Description: "Charg\xE9 du front Sud-Est lors de l\u2019op\xE9ration Husky, Alfredo
+  Description: "Charg\xE9 du front sud-est lors de l\u2019op\xE9ration Husky, Alfredo
     Guzzoni utilise son aigle m\xE9canique pour rep\xE9rer les positions ennemies
     et les transmettre \xE0 ses unit\xE9s d\u2019artilleries. Cet aigle est l\u2019un
-    des premiers animaux m\xE9caniques fonctionnels qui existent."
+    des premiers animaux m\xE9caniques fonctionnels qui existent et constitue un
+    bijou de technologies."
   typeUnite: 4
   LifeMax: 4
   ShieldMax: 0
@@ -37,3 +38,4 @@ MonoBehaviour:
   UsefullToWin: 0
   IsInRedArmy: 0
   UnitAttributs: 000000000000000000000000
+  UnitStatuts: 00000000000000000000000000000000

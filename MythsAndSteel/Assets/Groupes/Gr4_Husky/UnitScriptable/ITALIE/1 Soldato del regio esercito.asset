@@ -15,7 +15,7 @@ MonoBehaviour:
   UnitName: Soldato del regio esercito
   Description: "La division d\u2019infanterie italienne a \xE9t\xE9 \xE9quip\xE9e
     de yeux cybern\xE9tiques. La lunette de pr\xE9cision int\xE9gr\xE9e \xE0 cet
-    outil permet une pr\xE9cision accrue. "
+    outil permet une acuit\xE9 accrue. "
   typeUnite: 0
   LifeMax: 2
   ShieldMax: 0
@@ -36,3 +36,4 @@ MonoBehaviour:
   UsefullToWin: 0
   IsInRedArmy: 0
   UnitAttributs: 000000000000000000000000
+  UnitStatuts: 00000000000000000000000000000000

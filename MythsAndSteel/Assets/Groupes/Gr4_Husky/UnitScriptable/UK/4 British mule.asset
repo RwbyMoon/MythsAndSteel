@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: 4 British mule
   m_EditorClassIdentifier: 
   UnitName: British mule
-  Description: "Modifi\xE9e pour s\u2019adapter \xE0 tout type de terrains, la Mule
-    a \xE9t\xE9 renforc\xE9e avec un grappin massif, lui permettant de se tracter
-    dans les zones les plus abruptes. "
+  Description: "Modifi\xE9e pour s\u2019adapter \xE0 tout type de terrains, la British
+    Mule a \xE9t\xE9 renforc\xE9e avec un grappin massif, lui permettant de se tracter
+    dans les zones les plus abruptes. Sa grande vitesse est un atout ma\xEEtre lors
+    de la bataille de l'op\xE9ration Husky en Sicile."
   typeUnite: 1
   LifeMax: 3
   ShieldMax: 0
@@ -36,3 +37,4 @@ MonoBehaviour:
   UsefullToWin: 0
   IsInRedArmy: 1
   UnitAttributs: 050000000000000000000000
+  UnitStatuts: 00000000000000000000000000000000

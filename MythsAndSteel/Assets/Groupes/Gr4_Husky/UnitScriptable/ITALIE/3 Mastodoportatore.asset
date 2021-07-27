@@ -15,7 +15,8 @@ MonoBehaviour:
   UnitName: Mastodoportatore
   Description: "Con\xE7u pour d\xE9placer des artilleries, le Mastodoportatore poss\xE8de
     le n\xE9cessaire pour r\xE9sister au recul engendr\xE9 par les tirs de l\u2019Obice
-    Sputafuoco. "
+    Sputafuoco. Il s'av\xE8re \xE9galement \xEAtre capable de se d\xE9fendre seul
+    en cas d'attaque."
   typeUnite: 1
   LifeMax: 4
   ShieldMax: 0
@@ -36,3 +37,4 @@ MonoBehaviour:
   UsefullToWin: 0
   IsInRedArmy: 0
   UnitAttributs: 050000000000000000000000
+  UnitStatuts: 00000000000000000000000000000000

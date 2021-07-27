@@ -15,7 +15,7 @@ MonoBehaviour:
   UnitName: Paratrooper
   Description: "\xC9quip\xE9s de masques respiratoires, les paratroopers sont capables
     de se d\xE9placer efficacement malgr\xE9 la fum\xE9e produite par les nombreuses
-    attaques italiennes. "
+    attaques italiennes. Ils sont une arme efficace pour submerger l'arm\xE9e adverse."
   typeUnite: 0
   LifeMax: 2
   ShieldMax: 0
@@ -36,3 +36,4 @@ MonoBehaviour:
   UsefullToWin: 0
   IsInRedArmy: 1
   UnitAttributs: 040000000000000000000000
+  UnitStatuts: 00000000000000000000000000000000

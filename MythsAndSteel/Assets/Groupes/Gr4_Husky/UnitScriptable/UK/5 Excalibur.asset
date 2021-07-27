@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UnitName: Excalibur
   Description: "Cr\xE9\xE9 pour \xEAtre un dieu de la destruction m\xE9canique, ce
-    m\xE9cha britannique est envoy\xE9 lorsqu\u2019il faut une force de frappe particuli\xE8rement
-    violente sur le champ de bataille. "
+    m\xE9cha britannique est envoy\xE9 au front lorsqu\u2019il faut une force de
+    frappe particuli\xE8rement violente sur le champ de bataille. Parfois moqu\xE9
+    pour sa faible pr\xE9cision, ce m\xE9cha terrifie pourtant tout ceux qui l'ont
+    vu an\xE9antir sa cible d'un simple coup."
   typeUnite: 5
   LifeMax: 6
   ShieldMax: 0
@@ -36,3 +38,4 @@ MonoBehaviour:
   UsefullToWin: 0
   IsInRedArmy: 1
   UnitAttributs: 010000000000000000000000
+  UnitStatuts: 00000000000000000000000000000000

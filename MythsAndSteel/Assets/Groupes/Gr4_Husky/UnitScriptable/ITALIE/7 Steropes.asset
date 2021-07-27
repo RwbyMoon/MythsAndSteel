@@ -18,7 +18,8 @@ MonoBehaviour:
     de la nouvelle vie qui s\u2019offrait \xE0 lui. Apr\xE8s \xEAtre tomb\xE9 par
     hasard sur leur rep\xE8re, un commando lourdement lourdement arm\xE9 s\u2019infiltra
     parmi les cr\xE9atures et immobilisa St\xE9rop\xE8s avant de s\u2019emparer des
-    plus jeunes cyclopes. "
+    plus jeunes cyclopes. St\xE9rop\xE8s ob\xE9it d\xE9sormais aux italiens pour
+    prot\xE9ger les otages."
   typeUnite: 3
   LifeMax: 7
   ShieldMax: 0
@@ -39,3 +40,4 @@ MonoBehaviour:
   UsefullToWin: 0
   IsInRedArmy: 0
   UnitAttributs: 030000000000000000000000
+  UnitStatuts: 00000000000000000000000000000000

@@ -16,7 +16,8 @@ MonoBehaviour:
   Description: "L\u2019\xE9volution des moyens m\xE9dicaux permit de sauver la vie
     de Douglas Haig en 1928. Il fut rappel\xE9 de sa retraite pour commander une
     division de l\u2019arm\xE9e britannique, notamment lors de l\u2019op\xE9ration
-    Husky."
+    Husky. Il ne connait plus la peur de la mort et n'h\xE9site pas \xE0 envoyer
+    aux fronts ses plus fid\xE8les soldats, qu'importent les cons\xE9quences."
   typeUnite: 4
   LifeMax: 3
   ShieldMax: 0
@@ -37,3 +38,4 @@ MonoBehaviour:
   UsefullToWin: 0
   IsInRedArmy: 1
   UnitAttributs: 000000000000000000000000
+  UnitStatuts: 00000000000000000000000000000000
