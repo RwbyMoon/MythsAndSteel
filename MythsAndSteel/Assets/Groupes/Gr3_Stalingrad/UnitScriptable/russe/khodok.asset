@@ -14,12 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UnitName: Khodok
   Description: "L\u2019invasion allemande for\xE7a l\u2019URSS \xE0 tout faire pour
-    rattraper son retard dans le d\xE9veloppement de technologie de m\xE9chas. Manquant
+    rattraper son retard dans le d\xE9veloppement de technologies de m\xE9chas. Manquant
     de temps et de technique, le g\xE9nie sovi\xE9tique finit par produire le tout
     premier m\xE9cha du pays, le Khodok, qui compense son manque de sophistication
-    par un blindage monstrueux. Si celui ci parvenait \xE0 \xEAtre bris\xE9 alors,
-    le poids de son armure en moins, son habilet\xE9 en combat se verrait d\xE9cupl\xE9e,
-    devenant ainsi un v\xE9ritable dieu du champ de bataille.. "
+    par un blindage monstrueux."
   typeUnite: 5
   LifeMax: 5
   ShieldMax: 0
@@ -40,3 +38,4 @@ MonoBehaviour:
   UsefullToWin: 0
   IsInRedArmy: 1
   UnitAttributs: 020000000000000000000000
+  UnitStatuts: 00000000000000000000000000000000

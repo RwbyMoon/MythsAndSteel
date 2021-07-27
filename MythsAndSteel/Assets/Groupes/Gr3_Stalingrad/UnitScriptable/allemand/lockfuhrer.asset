@@ -16,11 +16,8 @@ MonoBehaviour:
   Description: "Apr\xE8s la confection par le g\xE9nie allemand d\u2019un s\xE9rum
     hyperchimique capable de booster les capacit\xE9s physiques d\u2019un soldat
     pendant un court laps de temps, il fut d\xE9cid\xE9 d\u2019envoyer sur le front
-    de l\u2019Est, des unit\xE9s d\u2019infanteries de soutien, ayant les connaissances
-    requises pour administrer le s\xE9rum aux troupes sur le front.  Ces unit\xE9s,
-    aussi form\xE9es aux bases de la r\xE9paration de blind\xE9s, sont capables de
-    r\xE9parer rapidement des chars ou m\xE9chas pour booster temporairement leurs
-    capacit\xE9s."
+    de l\u2019est, des unit\xE9s d\u2019infanteries de soutien, ayant les connaissances
+    requises pour administrer le s\xE9rum aux troupes sur le front."
   typeUnite: 0
   LifeMax: 2
   ShieldMax: 0
@@ -41,3 +38,4 @@ MonoBehaviour:
   UsefullToWin: 0
   IsInRedArmy: 0
   UnitAttributs: 000000000000000000000000
+  UnitStatuts: 00000000000000000000000000000000

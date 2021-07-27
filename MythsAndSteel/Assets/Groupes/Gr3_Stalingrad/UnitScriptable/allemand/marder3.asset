@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UnitName: 'Marder III '
   Description: "La terreur des T-34, le Marder-III, est \xE9quip\xE9 de batteries
-    Messali lui conf\xE9rant une immense autonomie et une grande vitesse, lui permettant
+    Mesali lui conf\xE9rant une immense autonomie et une grande vitesse, lui permettant
     de contourner ses cibles et de les prendre de flanc. Sa petite taille en fait
     l\u2019un des rares chars capables de livrer bataille dans les rues encombr\xE9es
     de Stalingrad. "
@@ -38,3 +38,4 @@ MonoBehaviour:
   UsefullToWin: 0
   IsInRedArmy: 0
   UnitAttributs: 000000000000000000000000
+  UnitStatuts: 00000000000000000000000000000000

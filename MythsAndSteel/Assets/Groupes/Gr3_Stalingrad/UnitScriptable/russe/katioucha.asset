@@ -16,9 +16,7 @@ MonoBehaviour:
   Description: "V\xE9hicule militaire transportant une immense batterie de missiles,
     le Katioucha ou \xAB orgue de Staline \xBB utilise une technologie de contr\xF4le
     filaire afin de diriger ses projectiles avec une grande pr\xE9cision, faisant
-    pleuvoir la mort sur les troupes retranch\xE9es dans la ville.  Leurs explosions
-    d\xE9vastatrices sont dues \xE0 un m\xE9lange de gaz instables issus de l\u2019Hyperchimie
-    augmentant grandement leur potentiel meurtrier."
+    pleuvoir la mort sur les troupes retranch\xE9es dans la ville."
   typeUnite: 2
   LifeMax: 2
   ShieldMax: 0
@@ -39,3 +37,4 @@ MonoBehaviour:
   UsefullToWin: 0
   IsInRedArmy: 1
   UnitAttributs: 010000000000000000000000
+  UnitStatuts: 00000000000000000000000000000000

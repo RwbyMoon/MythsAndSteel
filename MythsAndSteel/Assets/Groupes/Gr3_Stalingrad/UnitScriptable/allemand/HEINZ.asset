@@ -16,10 +16,9 @@ MonoBehaviour:
   Description: "Ancien officier radio durant la Premi\xE8re Guerre mondiale ayant
     particip\xE9 aux conflits en Russie, Heinz fut celui qui th\xE9orisa la tactique
     de la Blitzkrieg et mena l\u2019assaut allemand sur les d\xE9fenses fran\xE7aises
-    en 1940. Il est \xE0 la t\xEAte des divisions blind\xE9es du front de l\u2019Est
-    et obtient des succ\xE8s importants en Ukraine et lors de son attaque de Moscou. 
-    Cependant, suite \xE0 la d\xE9faite allemande sur ce front, il est envoy\xE9
-    \xE0 Stalingrad pour sauver la t\xEAte de pont de la Wehrmacht sur place."
+    en 1940. Cependant, suite \xE0 la d\xE9faite allemande sur le front de l\u2019est,
+    il est envoy\xE9 \xE0 Stalingrad pour sauver la t\xEAte de pont de la Wehrmacht
+    sur place."
   typeUnite: 4
   LifeMax: 4
   ShieldMax: 0
@@ -40,3 +39,4 @@ MonoBehaviour:
   UsefullToWin: 0
   IsInRedArmy: 0
   UnitAttributs: 000000000000000000000000
+  UnitStatuts: 00000000000000000000000000000000

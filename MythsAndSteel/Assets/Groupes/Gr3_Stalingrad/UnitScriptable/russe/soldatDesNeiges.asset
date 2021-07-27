@@ -15,10 +15,9 @@ MonoBehaviour:
   UnitName: Soldat des Neiges
   Description: "Conscrits en masse au d\xE9but de l\u2019invasion de l\u2019Allemagne,
     les soldats sovi\xE9tiques sont bien moins arm\xE9s que leurs adversaires mais
-    disposent d\u2019un avantage de taille : leurs tenues sont \xE9quip\xE9es de
-    syst\xE8mes de r\xE9gulation de temp\xE9rature leur permettant de combattre en
-    plein c\u0153ur de l\u2019hiver russe et ainsi leur permettre une plus grande
-    capacit\xE9 de survie et de mobilit\xE9 dans ce climat inhospitalier. "
+    disposent d\u2019un avantage de taille : leurs tenues \xE9quip\xE9es de syst\xE8mes
+    de r\xE9gulation de temp\xE9rature leur permettant de combattre en plein c\u0153ur
+    de l\u2019hiver russe. "
   typeUnite: 0
   LifeMax: 2
   ShieldMax: 0
@@ -39,3 +38,4 @@ MonoBehaviour:
   UsefullToWin: 0
   IsInRedArmy: 1
   UnitAttributs: 020000000500000000000000
+  UnitStatuts: 00000000000000000000000000000000

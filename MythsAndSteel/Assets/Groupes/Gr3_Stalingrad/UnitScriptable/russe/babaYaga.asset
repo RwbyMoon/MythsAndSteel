@@ -13,15 +13,13 @@ MonoBehaviour:
   m_Name: babaYaga
   m_EditorClassIdentifier: 
   UnitName: Baba Yaga
-  Description: "La terrible sorci\xE8re des bois aurait aid\xE9 des h\xE9ros, tu\xE9
-    d\u2019autres et kidnapperait des enfants pour s\u2019en nourrir. Quelle que
-    soit la v\xE9rit\xE9, la Baba Yaga hante la Russie depuis des si\xE8cles. Staline
-    ayant eu vent de son apparition envoya des diplomates n\xE9gocier avec la vieille
-    femme, sans qu\u2019aucun d\u2019entre-eux ne soit revenu. Lorsque l\u2019arm\xE9e
-    allemande p\xE9n\xE9tra le territoire sovi\xE9tique jusqu\u2019\xE0 Moscou, Constantin
-    Rokossovski, en d\xE9sespoir de cause, se rendit seul dans son repaire. Celle-ci
-    le mit \xE0 l\u2019\xE9preuve et le trouva digne de son aide. Elle aide depuis
-    les forces sovi\xE9tiques dans leur d\xE9fense de leur pays."
+  Description: "La sorci\xE8re des bois aurait aid\xE9 des h\xE9ros, tu\xE9 d\u2019autres
+    et kidnapperait des enfants pour s\u2019en nourrir. Quelle que soit la v\xE9rit\xE9,
+    la Baba Yaga hante la Russie depuis des si\xE8cles. Staline ayant eu vent de
+    son apparition envoya des diplomates n\xE9gocier avec la vieille femme, en vain.
+    Lorsque l\u2019arm\xE9e allemande p\xE9n\xE9tra le territoire sovi\xE9tique,
+    Constantin Rokossovski se rendit seul dans son repaire. Elle le mit \xE0 l\u2019\xE9preuve
+    et le trouva digne de son aide."
   typeUnite: 3
   LifeMax: 4
   ShieldMax: 0
@@ -42,3 +40,4 @@ MonoBehaviour:
   UsefullToWin: 0
   IsInRedArmy: 1
   UnitAttributs: 020000000000000000000000
+  UnitStatuts: 00000000000000000000000000000000

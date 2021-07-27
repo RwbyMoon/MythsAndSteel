@@ -16,10 +16,7 @@ MonoBehaviour:
   Description: "Consid\xE9r\xE9 comme le meilleur char des alli\xE9s, voire de la
     Seconde Guerre mondiale par des g\xE9n\xE9raux comme Guderian, le T34 est le
     fleuron de l\u2019industrie militaire sovi\xE9tique et a contribu\xE9 \xE0 la
-    victoire de la bataille de Moscou. Le T-34 est essentiellement fabriqu\xE9 \xE0
-    Stalingrad et l'arm\xE9e sovi\xE9tique joue gros pour reprendre son avantage.
-    Apr\xE8s avoir subi des am\xE9liorations cons\xE9quentes gr\xE2ce aux innovations
-    de l\u2019Hyperchimie, il est d\xE9sormais d\xE9ploy\xE9 pour reprendre Stalingrad."
+    victoire de la bataille de Moscou."
   typeUnite: 1
   LifeMax: 3
   ShieldMax: 0
@@ -40,3 +37,4 @@ MonoBehaviour:
   UsefullToWin: 0
   IsInRedArmy: 1
   UnitAttributs: 000000000000000000000000
+  UnitStatuts: 00000000000000000000000000000000

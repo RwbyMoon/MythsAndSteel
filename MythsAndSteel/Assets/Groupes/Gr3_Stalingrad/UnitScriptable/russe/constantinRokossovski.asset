@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UnitName: Konstantin Rokossovski
   Description: "Commandant sovi\xE9tique d\u2019origine polonaise, il est envoy\xE9
-    au goulag o\xF9 il sera tortur\xE9 puis emprisonn\xE9 pendant plusieurs ann\xE9es. 
+    au goulag o\xF9 il sera tortur\xE9 puis emprisonn\xE9 pendant plusieurs ann\xE9es.
     Il est finalement lib\xE9r\xE9 et se voit redonn\xE9 son commandement en 1940.
     Il sera la principale opposition \xE0 l\u2019arm\xE9e allemande durant la bataille
     de Moscou et participera dans les plus grandes op\xE9rations visant \xE0 reprendre
@@ -39,3 +39,4 @@ MonoBehaviour:
   UsefullToWin: 0
   IsInRedArmy: 1
   UnitAttributs: 000000000000000000000000
+  UnitStatuts: 00000000000000000000000000000000

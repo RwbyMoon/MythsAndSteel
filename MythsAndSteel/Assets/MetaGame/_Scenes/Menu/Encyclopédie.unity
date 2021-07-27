@@ -5785,6 +5785,26 @@ PrefabInstance:
       value: -300
       objectReference: {fileID: 0}
     - target: {fileID: 3122126298657353504, guid: 361512f40093818478845f212a67284d, type: 3}
+      propertyPath: m_fontSize
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122126298657353504, guid: 361512f40093818478845f212a67284d, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122126298657353504, guid: 361512f40093818478845f212a67284d, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122126298657353504, guid: 361512f40093818478845f212a67284d, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122126298657353504, guid: 361512f40093818478845f212a67284d, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122126298657353504, guid: 361512f40093818478845f212a67284d, type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}

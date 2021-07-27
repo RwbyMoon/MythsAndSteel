@@ -14,13 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UnitName: Heitzur
   Description: "L\u2019arriv\xE9e de l\u2019hiver 1941 \xE9prouva tant l\u2019arm\xE9e
-    allemande que l\u2019\xE9tat major demanda en catastrophe au g\xE9nie militaire
-    allemand un moyen de permettre aux troupes d\u2019avancer dans le froid et la
-    neige. Les ing\xE9nieurs sortirent de leur archives les plans d\u2019un des premiers
-    prototypes de moteur pour m\xE9cha, jug\xE9 inutilisable \xE0 cause de sa trop
-    forte \xE9vacuation de chaleur. Ce d\xE9faut devint le principal atout du nouveau
-    mod\xE8le Heiztur, m\xE9cha bip\xE8de faisant fondre glace, neige et r\xE9chauffant
-    les troupes sur un rayon de 5 kilom\xE8tres. "
+    allemande que l\u2019\xE9tat-major ordonna au g\xE9nie militaire un moyen pour
+    les troupes d\u2019avancer dans le froid et la neige. Les ing\xE9nieurs sortirent
+    de leur archives les plans d\u2019un prototype de moteur pour m\xE9cha, jug\xE9
+    inutilisable \xE0 cause de sa trop forte \xE9vacuation de chaleur. Ce d\xE9faut
+    devint l\u2019atout du nouveau mod\xE8le Heiztur, m\xE9cha bip\xE8de faisant
+    fondre glace, neige et r\xE9chauffant les troupes sur un rayon de 5 kilom\xE8tres. "
   typeUnite: 5
   LifeMax: 4
   ShieldMax: 0
@@ -41,3 +40,4 @@ MonoBehaviour:
   UsefullToWin: 0
   IsInRedArmy: 0
   UnitAttributs: 020000000000000000000000
+  UnitStatuts: 00000000000000000000000000000000
