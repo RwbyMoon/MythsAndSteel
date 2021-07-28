@@ -442,7 +442,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startColor: {r: 1, g: 1, b: 1, a: 0.90588236}
   mouseOverColor: {r: 1, g: 1, b: 1, a: 0.90588236}
-  pressedColor: {r: 0, g: 0, b: 0, a: 0}
   changedTarget: {fileID: 12748085}
 --- !u!1 &19332903 stripped
 GameObject:
@@ -593,7 +592,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &28562221
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2231,7 +2230,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startColor: {r: 1, g: 1, b: 1, a: 1}
   mouseOverColor: {r: 0.8679245, g: 0.8679245, b: 0.8679245, a: 1}
-  pressedColor: {r: 0.627451, g: 0.627451, b: 0.627451, a: 1}
   changedTarget: {fileID: 138446504}
 --- !u!114 &138446510
 MonoBehaviour:
@@ -2269,38 +2267,6 @@ MonoBehaviour:
         - m_Target: {fileID: 138446509}
           m_TargetAssemblyTypeName: HoverChangeColor, Assembly-CSharp
           m_MethodName: OnMouseExit
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - eventID: 2
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 138446509}
-          m_TargetAssemblyTypeName: HoverChangeColor, Assembly-CSharp
-          m_MethodName: OnMouseDown
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - eventID: 3
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 138446509}
-          m_TargetAssemblyTypeName: HoverChangeColor, Assembly-CSharp
-          m_MethodName: OnMouseUp
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -2898,7 +2864,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 3078e617cbb17fb4cb56923860e5e34c, type: 3}
-  m_Type: 1
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -3804,8 +3770,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -140.82843, y: 40.290825}
-  m_SizeDelta: {x: 276.2246, y: 120.4421}
+  m_AnchoredPosition: {x: -139.39752, y: 40.290825}
+  m_SizeDelta: {x: 273.3627, y: 120.4421}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &313674261
 Canvas:
@@ -4690,7 +4656,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startColor: {r: 1, g: 1, b: 1, a: 0.90588236}
   mouseOverColor: {r: 1, g: 1, b: 1, a: 0.90588236}
-  pressedColor: {r: 0, g: 0, b: 0, a: 0}
   changedTarget: {fileID: 353625726}
 --- !u!1001 &361147857
 PrefabInstance:
@@ -6956,7 +6921,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startColor: {r: 1, g: 1, b: 1, a: 0.90588236}
   mouseOverColor: {r: 1, g: 1, b: 1, a: 0.90588236}
-  pressedColor: {r: 0, g: 0, b: 0, a: 0}
   changedTarget: {fileID: 570287438}
 --- !u!114 &575946265 stripped
 MonoBehaviour:
@@ -7131,7 +7095,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &587643443
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10367,7 +10331,6 @@ GameObject:
   - component: {fileID: 898313255}
   - component: {fileID: 898313258}
   - component: {fileID: 898313257}
-  - component: {fileID: 898313259}
   m_Layer: 5
   m_Name: Txt
   m_TagString: Untagged
@@ -10520,38 +10483,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - eventID: 2
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 898313258}
-          m_TargetAssemblyTypeName: HoverChangeColor, Assembly-CSharp
-          m_MethodName: OnMouseDown
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - eventID: 3
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 898313258}
-          m_TargetAssemblyTypeName: HoverChangeColor, Assembly-CSharp
-          m_MethodName: OnMouseUp
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!114 &898313258
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10566,88 +10497,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startColor: {r: 1, g: 1, b: 1, a: 1}
   mouseOverColor: {r: 0.8679245, g: 0.8679245, b: 0.8679245, a: 1}
-  pressedColor: {r: 0.627451, g: 0.627451, b: 0.627451, a: 1}
   changedTarget: {fileID: 138446504}
---- !u!114 &898313259
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 898313253}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.8867924, g: 0.8867924, b: 0.8867924, a: 0.5882353}
-    m_PressedColor: {r: 1, g: 0.9080458, b: 0.6367924, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 1469355420}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 96260005}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: CliCToChangePhase
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1870703326}
-        m_TargetAssemblyTypeName: UIInstance, Assembly-CSharp
-        m_MethodName: DesactivateNextPhaseButton
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1968846222}
-        m_TargetAssemblyTypeName: SoundController, Assembly-CSharp
-        m_MethodName: UINav
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &903467781
 GameObject:
   m_ObjectHideFlags: 0
@@ -11143,8 +10993,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -140.82843, y: 40.290825}
-  m_SizeDelta: {x: 276.2245, y: 120.4421}
+  m_AnchoredPosition: {x: -139.39752, y: 40.290825}
+  m_SizeDelta: {x: 273.3627, y: 120.4421}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &926049755
 Canvas:
@@ -13647,7 +13497,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 3078e617cbb17fb4cb56923860e5e34c, type: 3}
-  m_Type: 1
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -16845,8 +16695,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -140.82843, y: 40.290825}
-  m_SizeDelta: {x: 276.2245, y: 120.4421}
+  m_AnchoredPosition: {x: -139.39752, y: 40.290825}
+  m_SizeDelta: {x: 273.3627, y: 120.4421}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &1338210832
 Canvas:
@@ -17976,7 +17826,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startColor: {r: 1, g: 1, b: 1, a: 0.90588236}
   mouseOverColor: {r: 1, g: 1, b: 1, a: 0.90588236}
-  pressedColor: {r: 0, g: 0, b: 0, a: 0}
   changedTarget: {fileID: 1447798379}
 --- !u!1 &1453559453
 GameObject:
@@ -18316,7 +18165,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startColor: {r: 1, g: 1, b: 1, a: 1}
   mouseOverColor: {r: 0.8679245, g: 0.8679245, b: 0.8679245, a: 1}
-  pressedColor: {r: 0.627451, g: 0.627451, b: 0.627451, a: 1}
   changedTarget: {fileID: 1469355417}
 --- !u!114 &1469355422
 MonoBehaviour:
@@ -18552,7 +18400,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1493617166
 RectTransform:
   m_ObjectHideFlags: 0
@@ -18570,8 +18418,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -140.82843, y: 40.29077}
-  m_SizeDelta: {x: 276.2245, y: 120.4421}
+  m_AnchoredPosition: {x: -139.39752, y: 40.29077}
+  m_SizeDelta: {x: 273.3627, y: 120.4421}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &1493617167
 Canvas:
@@ -18777,8 +18625,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -140.82843, y: 40.290825}
-  m_SizeDelta: {x: 276.2245, y: 120.4421}
+  m_AnchoredPosition: {x: -139.39752, y: 40.290825}
+  m_SizeDelta: {x: 273.3627, y: 120.4421}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &1497176690
 Canvas:
@@ -20996,7 +20844,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startColor: {r: 1, g: 1, b: 1, a: 0.90588236}
   mouseOverColor: {r: 1, g: 1, b: 1, a: 0.90588236}
-  pressedColor: {r: 0, g: 0, b: 0, a: 0}
   changedTarget: {fileID: 1688755000}
 --- !u!1 &1701949960
 GameObject:
@@ -21510,7 +21357,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startColor: {r: 1, g: 1, b: 1, a: 0.90588236}
   mouseOverColor: {r: 1, g: 1, b: 1, a: 0.90588236}
-  pressedColor: {r: 0, g: 0, b: 0, a: 0}
   changedTarget: {fileID: 1736350140}
 --- !u!1001 &1739073210
 PrefabInstance:
@@ -24182,7 +24028,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startColor: {r: 1, g: 1, b: 1, a: 0.90588236}
   mouseOverColor: {r: 1, g: 1, b: 1, a: 0.90588236}
-  pressedColor: {r: 0, g: 0, b: 0, a: 0}
   changedTarget: {fileID: 1849134024}
 --- !u!1 &1857560384
 GameObject:
@@ -25072,7 +24917,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startColor: {r: 1, g: 1, b: 1, a: 0.90588236}
   mouseOverColor: {r: 1, g: 1, b: 1, a: 0.90588236}
-  pressedColor: {r: 0, g: 0, b: 0, a: 0}
   changedTarget: {fileID: 1893377967}
 --- !u!4 &1898137078 stripped
 Transform:
@@ -25220,8 +25064,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -140.82843, y: 40.290825}
-  m_SizeDelta: {x: 276.2245, y: 120.4421}
+  m_AnchoredPosition: {x: -139.39752, y: 40.290825}
+  m_SizeDelta: {x: 273.3627, y: 120.4421}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &1955433009
 Canvas:
@@ -26936,10 +26780,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "PHASE STRAT\xC9GIQUE\nPhase o\xF9 les Ressources sont r\xE9colt\xE9es
-    et o\xF9 les objectifs bas\xE9s sur le nombre de tours et de capture de points
-    d'objectifs sont v\xE9rifi\xE9s. Les victoires par destruction le sont sur le
-    coup."
+  m_text: "PHASE DE STRAT\xC9GIE\nPhase o\xF9 les Ressources sont r\xE9colt\xE9es
+    et o\xF9 les objectifs bas\xE9s sur le nombre de tours sont v\xE9rifi\xE9s."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 27edcde133aa50b448a4c8e5d5845859, type: 2}
   m_sharedMaterial: {fileID: -7314658397477919478, guid: 27edcde133aa50b448a4c8e5d5845859, type: 2}
@@ -27483,8 +27325,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -140.82843, y: 40.290825}
-  m_SizeDelta: {x: 276.2245, y: 120.4421}
+  m_AnchoredPosition: {x: -139.39752, y: 40.290825}
+  m_SizeDelta: {x: 273.3627, y: 120.4421}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &2034608752
 Canvas:
@@ -31918,7 +31760,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startColor: {r: 1, g: 1, b: 1, a: 0.90588236}
   mouseOverColor: {r: 1, g: 1, b: 1, a: 0.90588236}
-  pressedColor: {r: 0, g: 0, b: 0, a: 0}
   changedTarget: {fileID: 2125707951}
 --- !u!1 &2131134512
 GameObject:
@@ -32567,7 +32408,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startColor: {r: 1, g: 1, b: 1, a: 0.90588236}
   mouseOverColor: {r: 1, g: 1, b: 1, a: 0.90588236}
-  pressedColor: {r: 0, g: 0, b: 0, a: 0}
   changedTarget: {fileID: 2135458794}
 --- !u!1 &2137093234
 GameObject:
@@ -40196,7 +40036,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Phase Strat\xE9gique"
+  m_text: "Phase strat\xE9gique"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 27edcde133aa50b448a4c8e5d5845859, type: 2}
   m_sharedMaterial: {fileID: -7314658397477919478, guid: 27edcde133aa50b448a4c8e5d5845859, type: 2}

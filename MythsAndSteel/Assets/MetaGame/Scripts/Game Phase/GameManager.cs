@@ -211,7 +211,7 @@ public class GameManager : MonoSingleton<GameManager>
     /// </summary>
     public void CliCToChangePhase()
     {
-        Debug.Log("ClickedToChangePhase");
+
         _eventCallCancel += CancelSkipPhase;
         _eventCall += ChangePhase;
         _eventCall += SoundController.Instance.nextPhaseSound;
