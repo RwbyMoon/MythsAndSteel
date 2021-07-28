@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '!!Impact de Zone!!'
+  m_text: "!!D\xE9molition!!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 27edcde133aa50b448a4c8e5d5845859, type: 2}
   m_sharedMaterial: {fileID: -7314658397477919478, guid: 27edcde133aa50b448a4c8e5d5845859, type: 2}
@@ -325,11 +325,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -38.87577, y: -106.643326}
-<<<<<<< Updated upstream
-  m_SizeDelta: {x: 444.985, y: 210}
-=======
-  m_SizeDelta: {x: 444.985, y: 190}
->>>>>>> Stashed changes
+  m_SizeDelta: {x: 444.985, y: 170}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4630139207784274949
 CanvasRenderer:
@@ -379,8 +375,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Inflige des d\xE9gats aux unit\xE9s adjacentes \xE0 la case cibl\xE9e.
-    Peut cibler les cases vide."
+  m_text: "Lorsque cette unit\xE9 se d\xE9place sur une case Habitation ou Village
+    Fortifi\xE9, d\xE9truit l'habition de cette case."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 27edcde133aa50b448a4c8e5d5845859, type: 2}
   m_sharedMaterial: {fileID: -7314658397477919478, guid: 27edcde133aa50b448a4c8e5d5845859, type: 2}
