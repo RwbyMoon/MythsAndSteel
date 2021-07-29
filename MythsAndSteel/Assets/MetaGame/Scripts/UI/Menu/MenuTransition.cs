@@ -26,6 +26,7 @@ public class MenuTransition : ScriptableObject
         SoundController.Instance.PlaySound(SoundController.Instance.AudioClips[13]);
 
     }
+
     public void DesactivMenuOptionInGame(int sceneId)
     {
         SoundController.Instance.PlaySound(SoundController.Instance.AudioClips[13]);

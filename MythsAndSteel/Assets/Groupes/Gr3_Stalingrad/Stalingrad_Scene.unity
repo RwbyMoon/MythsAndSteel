@@ -1374,6 +1374,7 @@ MonoBehaviour:
   SabotageStat: 3
   pauseMenu: {fileID: 1477396351}
   menuOptionOuvert: 0
+  menuTutorielOuvert: 0
   backgroundActivation: {fileID: 2057195738}
   isGamePaused: 0
   BackgroundPaused: {fileID: 2104470150}
@@ -1387,6 +1388,7 @@ MonoBehaviour:
   _eventCardSO: {fileID: 11400000, guid: 955303dc40a1fa54984cef9072aef4ad, type: 2}
   _managerSO: {fileID: 11400000, guid: 915a645e0a8638b4d8f4a6522da5cc44, type: 2}
   _optionSO: {fileID: 11400000, guid: 8e44f760b0bd87e4eb43170212b4f710, type: 2}
+  _tutoSO: {fileID: 11400000, guid: b17a7454a7b48a349af996c59e852ce4, type: 2}
   _renfortPhase: {fileID: 1781675647}
   _chooseUnitForEvent: 0
   _selectableUnit: []
