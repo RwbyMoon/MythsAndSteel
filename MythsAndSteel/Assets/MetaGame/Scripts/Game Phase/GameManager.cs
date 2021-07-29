@@ -37,8 +37,6 @@ public class GameManager : MonoSingleton<GameManager>
     GameObject pauseMenu;
     /// <param name="sceneId"></param>
    public  bool menuOptionOuvert = false;
-   public bool menuTutorielOuvert = false;
-
     [SerializeField]
     GameObject backgroundActivation;
     public bool isGamePaused = false;
@@ -92,11 +90,6 @@ public class GameManager : MonoSingleton<GameManager>
     //Option manager pour ouvrir le menu d'option
     [SerializeField] private MenuTransition _optionSO = null;
     public MenuTransition OptionSO => _optionSO;
-
-    //Tuto manager
-    [SerializeField] private TutoTransition _tutoSO = null;
-
-    public TutoTransition TutoSO => _tutoSO;
 
     [Header("RENFORT PHASE SCRIPT")]
     [SerializeField] RenfortPhase _renfortPhase = null;
