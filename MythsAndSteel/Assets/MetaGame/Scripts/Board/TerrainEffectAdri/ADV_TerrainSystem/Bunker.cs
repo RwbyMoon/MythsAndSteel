@@ -15,7 +15,7 @@ public class Bunker : TerrainParent
         if (Unit != null)
         {
             Debug.LogWarning("Deux ressources supp. car vous êtes arrivés en premier sur le bunker. Prévoir un rendu visuel de récupération ?");
-            if (Unit.UnitSO.IsInRedArmy)
+            if (Unit.UnitSO.IsInJ1Army)
             {
                 GetComponentInParent<TileScript>().RemoveRessources(2, 1);
             }

@@ -10,12 +10,12 @@ public class Hacking : Capacity
 
     public override void StartCpty()
     {
-        int ressourcePlayer = GetComponent<UnitScript>().UnitSO.IsInRedArmy ? PlayerScript.Instance.J1Infos.Ressource : PlayerScript.Instance.J2Infos.Ressource;
+        int ressourcePlayer = GetComponent<UnitScript>().UnitSO.IsInJ1Army ? PlayerScript.Instance.J1Infos.Ressource : PlayerScript.Instance.J2Infos.Ressource;
         if (ressourcePlayer >= Capacity1Cost)
         {
             List<GameObject> unit = new List<GameObject>();
            
-            foreach (GameObject T in gameObject.GetComponent<UnitScript>().UnitSO.IsInRedArmy ? PlayerScript.Instance.UnitRef.UnitListBluePlayer : PlayerScript.Instance.UnitRef.UnitListRedPlayer)
+            foreach (GameObject T in gameObject.GetComponent<UnitScript>().UnitSO.IsInJ1Army ? PlayerScript.Instance.UnitRef.UnitListBluePlayer : PlayerScript.Instance.UnitRef.UnitListRedPlayer)
             {
                 if (T.GetComponent<UnitScript>().UnitSO.typeUnite == MYthsAndSteel_Enum.TypeUnite.Mecha || T.GetComponent<UnitScript>().UnitSO.typeUnite == MYthsAndSteel_Enum.TypeUnite.Vehicule)
                 {
@@ -29,7 +29,7 @@ public class Hacking : Capacity
 
             GameManager.Instance._eventCall += EndCpty;
             GameManager.Instance._eventCallCancel += StopCpty;
-            GameManager.Instance.StartEventModeUnit(1, GetComponent<UnitScript>().UnitSO.IsInRedArmy, unit, "Hacking", "Voulez vous activer une unité adverse de type Char ou Mécha durant un tour en échange d'une activation.?");
+            GameManager.Instance.StartEventModeUnit(1, GetComponent<UnitScript>().UnitSO.IsInJ1Army, unit, "Hacking", "Voulez vous activer une unité adverse de type Char ou Mécha durant un tour en échange d'une activation.?");
 
         }
 
@@ -46,7 +46,7 @@ public class Hacking : Capacity
 
     public override void EndCpty()
     {
-        if (GetComponent<UnitScript>().UnitSO.IsInRedArmy)
+        if (GetComponent<UnitScript>().UnitSO.IsInJ1Army)
         {
             PlayerScript.Instance.J1Infos.Ressource -= Capacity1Cost;
         }

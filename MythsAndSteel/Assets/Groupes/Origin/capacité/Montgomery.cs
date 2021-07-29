@@ -29,8 +29,8 @@ public class Montgomery : Capacity
     {
         GameManager.Instance.UnitChooseList.Clear();
         List<GameObject> unitList = new List<GameObject>();
-        unitList.AddRange(GameManager.Instance.IsPlayerRedTurn ? PlayerScript.Instance.UnitRef.UnitListRedPlayer : PlayerScript.Instance.UnitRef.UnitListBluePlayer);
-        GameManager.Instance.StartEventModeUnit(2, GameManager.Instance.IsPlayerRedTurn ? true : false, unitList, Capacity1Name, Capacity1Description + "Utilsiation Restantes: " + PowerUseLeft);
+        unitList.AddRange(GameManager.Instance.IsJ1Turn ? PlayerScript.Instance.UnitRef.UnitListRedPlayer : PlayerScript.Instance.UnitRef.UnitListBluePlayer);
+        GameManager.Instance.StartEventModeUnit(2, GameManager.Instance.IsJ1Turn ? true : false, unitList, Capacity1Name, Capacity1Description + "Utilsiation Restantes: " + PowerUseLeft);
         GameManager.Instance._eventCall += EndCpty;
         GameManager.Instance._eventCallCancel += StopCpty;
     }

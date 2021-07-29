@@ -90,7 +90,7 @@ public class OrgoneManager : MonoSingleton<OrgoneManager>
 
     }
     public void ReleaseZone(){
-        if(GameManager.Instance.IsPlayerRedTurn){
+        if(GameManager.Instance.IsJ1Turn){
             _j1Zone.GetComponent<ZoneOrgone>().ReleaseZone();
         }
         else{
@@ -101,13 +101,13 @@ public class OrgoneManager : MonoSingleton<OrgoneManager>
     }
 
     public void StartToMoveZone(){
-        if(GameManager.Instance.IsPlayerRedTurn && !_j1Zone.GetComponent<ZoneOrgone>().HasMoveOrgoneArea && !_j1Zone.GetComponent<ZoneOrgone>().IsInValidation)
+        if(GameManager.Instance.IsJ1Turn && !_j1Zone.GetComponent<ZoneOrgone>().HasMoveOrgoneArea && !_j1Zone.GetComponent<ZoneOrgone>().IsInValidation)
         {
             _j1Zone.GetComponent<ZoneOrgone>().AddOrgoneAtRange();
             SoundController.Instance.PlaySound(SoundController.Instance.AudioClips[13]);
             _selected = true;
         }
-        else if(!GameManager.Instance.IsPlayerRedTurn && !_j2Zone.GetComponent<ZoneOrgone>().HasMoveOrgoneArea && !_j2Zone.GetComponent<ZoneOrgone>().IsInValidation)
+        else if(!GameManager.Instance.IsJ1Turn && !_j2Zone.GetComponent<ZoneOrgone>().HasMoveOrgoneArea && !_j2Zone.GetComponent<ZoneOrgone>().IsInValidation)
         {
             _j2Zone.GetComponent<ZoneOrgone>().AddOrgoneAtRange();
             SoundController.Instance.PlaySound(SoundController.Instance.AudioClips[13]);
@@ -351,7 +351,7 @@ public class OrgoneManager : MonoSingleton<OrgoneManager>
     }
 
     public void ActivateOrgoneArea(){
-        if(GameManager.Instance.IsPlayerRedTurn){
+        if(GameManager.Instance.IsJ1Turn){
             _j1Zone.GetComponent<ZoneOrgone>().ActivationArea();
         }
         else{
@@ -374,7 +374,7 @@ namespace MythsAndSteel.Orgone{
           
             if(GameManager.Instance.ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.OrgoneJ1 || GameManager.Instance.ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.OrgoneJ2){
               
-                if(GameManager.Instance.IsPlayerRedTurn == (player == 1? true : false)){
+                if(GameManager.Instance.IsJ1Turn == (player == 1? true : false)){
            
                     if (player == 1){
                        

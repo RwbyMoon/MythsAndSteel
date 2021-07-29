@@ -12,7 +12,7 @@ public class Overclock : Capacity
 
         GameManager.Instance._eventCall += EndCpty;
         GameManager.Instance._eventCallCancel += StopCpty;
-        GameManager.Instance.StartEventModeTiles(1, GetComponent<UnitScript>().UnitSO.IsInRedArmy, tile, "Overclock", "Voulez-vous booster les unités adjacentes?");
+        GameManager.Instance.StartEventModeTiles(1, GetComponent<UnitScript>().UnitSO.IsInJ1Army, tile, "Overclock", "Voulez-vous booster les unités adjacentes?");
         base.StartCpty();
     }
 
@@ -30,7 +30,7 @@ public class Overclock : Capacity
         List<GameObject> UnitToBoost = new List<GameObject>();
         foreach (int T in PlayerStatic.GetNeighbourDiag(tileId, TilesManager.Instance.TileList[tileId].GetComponent<TileScript>().Line, false))
         {
-            if(TilesManager.Instance.TileList[T].GetComponent<TileScript>().Unit != null && TilesManager.Instance.TileList[T].GetComponent<TileScript>().Unit.GetComponent<UnitScript>().UnitSO.IsInRedArmy == GetComponent<UnitScript>().UnitSO.IsInRedArmy)
+            if(TilesManager.Instance.TileList[T].GetComponent<TileScript>().Unit != null && TilesManager.Instance.TileList[T].GetComponent<TileScript>().Unit.GetComponent<UnitScript>().UnitSO.IsInJ1Army == GetComponent<UnitScript>().UnitSO.IsInJ1Army)
             {
                 TilesManager.Instance.TileList[T].GetComponent<TileScript>().Unit.GetComponent<UnitScript>().DiceBonus += 2;
                 TilesManager.Instance.TileList[T].GetComponent<TileScript>().Unit.GetComponent<UnitScript>().AttackRangeBonus+=1;

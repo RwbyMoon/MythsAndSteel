@@ -21,7 +21,7 @@ public class MenaceSouterraine : Capacity
             }
             GameManager.Instance._eventCall += EndCpty;
             GameManager.Instance._eventCallCancel += StopCpty;
-            GameManager.Instance.StartEventModeTiles(1, GetComponent<UnitScript>().UnitSO.IsInRedArmy, tile, "Menace Souterraine", "Voulez-vous vraiment déplacer l'unité sur cette case?");
+            GameManager.Instance.StartEventModeTiles(1, GetComponent<UnitScript>().UnitSO.IsInJ1Army, tile, "Menace Souterraine", "Voulez-vous vraiment déplacer l'unité sur cette case?");
         }
         base.StartCpty();
     }

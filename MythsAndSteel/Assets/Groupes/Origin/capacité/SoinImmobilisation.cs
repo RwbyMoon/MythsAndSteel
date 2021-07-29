@@ -55,10 +55,10 @@ public class SoinImmobilisation : Capacity
 
     public override void EndCpty()
     {
-        if (GameManager.Instance.TileChooseList[0].GetComponent<TileScript>().Unit.GetComponent<UnitScript>().UnitSO.IsInRedArmy != GameManager.Instance.IsPlayerRedTurn)
+        if (GameManager.Instance.TileChooseList[0].GetComponent<TileScript>().Unit.GetComponent<UnitScript>().UnitSO.IsInJ1Army != GameManager.Instance.IsJ1Turn)
         {
             GameManager.Instance.TileChooseList[0].GetComponent<TileScript>().Unit.GetComponent<UnitScript>().AddStatutToUnit(MYthsAndSteel_Enum.UnitStatut.Immobilisation);
-           if(GameManager.Instance.IsPlayerRedTurn)
+           if(GameManager.Instance.IsJ1Turn)
            {
                 GameManager.Instance.statetImmobilisation = 1;
            }
@@ -67,7 +67,7 @@ public class SoinImmobilisation : Capacity
                 GameManager.Instance.statetImmobilisation = 2;
            }
         }
-        else if (GameManager.Instance.TileChooseList[0].GetComponent<TileScript>().Unit.GetComponent<UnitScript>().UnitSO.IsInRedArmy == GameManager.Instance.IsPlayerRedTurn)   
+        else if (GameManager.Instance.TileChooseList[0].GetComponent<TileScript>().Unit.GetComponent<UnitScript>().UnitSO.IsInJ1Army == GameManager.Instance.IsJ1Turn)   
         {
             GameManager.Instance.TileChooseList[0].GetComponent<TileScript>().Unit.GetComponent<UnitScript>().GiveLife(2);
         }

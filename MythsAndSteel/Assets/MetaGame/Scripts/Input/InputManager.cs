@@ -156,7 +156,7 @@ public class InputManager : MonoBehaviour
                     {
                         //Si l'usine de l'Armée Bleu est sélectionnée et c'est le tour du joueur de l'Armée Bleu.
                         if (RaycastManager.Instance.Tile.GetComponent<TileScript>().TerrainEffectList.Contains(MYthsAndSteel_Enum.TerrainType.UsineBleu) &&
-                            !GameManager.Instance.IsPlayerRedTurn && (GameManager.Instance.ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.ActionJ1
+                            !GameManager.Instance.IsJ1Turn && (GameManager.Instance.ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.ActionJ1
                             || GameManager.Instance.ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.ActionJ2) && !PlayerScript.Instance.J2Infos.HasCreateUnit)
                         {
                             RaycastManager.Instance._mouseCommand.MenuRenfortUI(false);
@@ -165,7 +165,7 @@ public class InputManager : MonoBehaviour
 
                         //Si l'usine de l'Armée Rouge est sélectionnée et c'est le tour du joueur de l'Armée Rouge.
                         if (RaycastManager.Instance.Tile.GetComponent<TileScript>().TerrainEffectList.Contains(MYthsAndSteel_Enum.TerrainType.UsineRouge)
-                            && GameManager.Instance.IsPlayerRedTurn && (GameManager.Instance.ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.ActionJ1
+                            && GameManager.Instance.IsJ1Turn && (GameManager.Instance.ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.ActionJ1
                             || GameManager.Instance.ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.ActionJ2) && !PlayerScript.Instance.J1Infos.HasCreateUnit)
                         {
                             RaycastManager.Instance._mouseCommand.MenuRenfortUI(true);
@@ -193,8 +193,8 @@ public class InputManager : MonoBehaviour
                 GameManager.Instance.ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.OrgoneJ1 ||
                 GameManager.Instance.ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.OrgoneJ2))
             {
-                RaycastManager.Instance._mouseCommand.MenuRenfortUI(GameManager.Instance.IsPlayerRedTurn);
-                _renfortPhase.CreateRenfort(GameManager.Instance.IsPlayerRedTurn ? true : false);
+                RaycastManager.Instance._mouseCommand.MenuRenfortUI(GameManager.Instance.IsJ1Turn);
+                _renfortPhase.CreateRenfort(GameManager.Instance.IsJ1Turn ? true : false);
             }
             if (Input.GetKeyUp(OpenRenfort))
             {
@@ -217,8 +217,8 @@ public class InputManager : MonoBehaviour
     void ClicToSkipPhase()
     {
 
-        if ((GameManager.Instance.IsPlayerRedTurn && !OrgoneManager.Instance.J1Zone.GetComponent<ZoneOrgone>().IsInValidation) ||
-                       (!GameManager.Instance.IsPlayerRedTurn && !OrgoneManager.Instance.J2Zone.GetComponent<ZoneOrgone>().IsInValidation))
+        if ((GameManager.Instance.IsJ1Turn && !OrgoneManager.Instance.J1Zone.GetComponent<ZoneOrgone>().IsInValidation) ||
+                       (!GameManager.Instance.IsJ1Turn && !OrgoneManager.Instance.J2Zone.GetComponent<ZoneOrgone>().IsInValidation))
         {
             t += Time.deltaTime;
             UIInstance.Instance.SkipPhaseImage.GetComponent<RectTransform>().sizeDelta = new Vector2(SkipPhaseStartWidth * (t / _timeToWaitForSkipPhase), UIInstance.Instance.SkipPhaseImage.GetComponent<RectTransform>().sizeDelta.y);

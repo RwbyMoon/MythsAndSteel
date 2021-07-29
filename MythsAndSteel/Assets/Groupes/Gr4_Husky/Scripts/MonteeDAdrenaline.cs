@@ -10,14 +10,14 @@ public class MonteeDAdrenaline : Capacity
         int tileId = RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().ActualTiledId;
         List<GameObject> tile = new List<GameObject>();
 
-        int ressourcePlayer = GetComponent<UnitScript>().UnitSO.IsInRedArmy ? PlayerScript.Instance.J1Infos.Ressource : PlayerScript.Instance.J2Infos.Ressource;
+        int ressourcePlayer = GetComponent<UnitScript>().UnitSO.IsInJ1Army ? PlayerScript.Instance.J1Infos.Ressource : PlayerScript.Instance.J2Infos.Ressource;
         if (ressourcePlayer >= Capacity1Cost && GetComponent<UnitScript>().ActifUsedThisTurn == false)
         {
             tile.Add(TilesManager.Instance.TileList[GetComponent<UnitScript>().ActualTiledId]);
 
             GameManager.Instance._eventCall += EndCpty;
             GameManager.Instance._eventCallCancel += StopCpty;
-            GameManager.Instance.StartEventModeTiles(1, GetComponent<UnitScript>().UnitSO.IsInRedArmy, tile, "Montée d'Adrénaline", "Voulez-vous vraiment utiliser cette capacité?");
+            GameManager.Instance.StartEventModeTiles(1, GetComponent<UnitScript>().UnitSO.IsInJ1Army, tile, "Montée d'Adrénaline", "Voulez-vous vraiment utiliser cette capacité?");
         }
         base.StartCpty();
     }
@@ -33,7 +33,7 @@ public class MonteeDAdrenaline : Capacity
 
     public override void EndCpty()
     {
-        if (GetComponent<UnitScript>().UnitSO.IsInRedArmy)
+        if (GetComponent<UnitScript>().UnitSO.IsInJ1Army)
         {
             PlayerScript.Instance.J1Infos.Ressource -= Capacity1Cost;
         }

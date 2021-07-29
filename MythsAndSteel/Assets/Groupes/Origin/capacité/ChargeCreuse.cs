@@ -17,7 +17,7 @@ public class ChargeCreuse: Capacity
                 {
                     if (TilesManager.Instance.TileList[T].GetComponent<TileScript>().Unit != RaycastManager.Instance.ActualUnitSelected && TilesManager.Instance.TileList[T].GetComponent<TileScript>().Unit != null)
                     {
-                    if(TilesManager.Instance.TileList[T].GetComponent<TileScript>().Unit.GetComponent<UnitScript>().UnitSO.IsInRedArmy != GameManager.Instance.IsPlayerRedTurn)
+                    if(TilesManager.Instance.TileList[T].GetComponent<TileScript>().Unit.GetComponent<UnitScript>().UnitSO.IsInJ1Army != GameManager.Instance.IsJ1Turn)
                     {
 
                         unitList.Add(TilesManager.Instance.TileList[T]);
@@ -28,7 +28,7 @@ public class ChargeCreuse: Capacity
 
             GameManager.Instance._eventCall += EndCpty;
             GameManager.Instance._eventCallCancel += StopCpty;
-            GameManager.Instance.StartEventModeTiles(1, GetComponent<UnitScript>().UnitSO.IsInRedArmy, unitList, "Charge creuse", "Voulez-vous vraiment infliger 3 dégats à cette unité ?");
+            GameManager.Instance.StartEventModeTiles(1, GetComponent<UnitScript>().UnitSO.IsInJ1Army, unitList, "Charge creuse", "Voulez-vous vraiment infliger 3 dégats à cette unité ?");
             base.StartCpty();
         
     }

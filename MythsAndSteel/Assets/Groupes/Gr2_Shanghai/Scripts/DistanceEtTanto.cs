@@ -27,7 +27,7 @@ public class DistanceEtTanto : Capacity
                 {
                     if (!newNeighbourId.Contains(TilesManager.Instance.TileList[ID]) && TilesManager.Instance.TileList[ID].GetComponent<TileScript>().Unit != null)
                     {
-                        if(TilesManager.Instance.TileList[ID].GetComponent<TileScript>().Unit.GetComponent<UnitScript>().UnitSO.IsInRedArmy != GetComponent<UnitScript>().UnitSO.IsInRedArmy)
+                        if(TilesManager.Instance.TileList[ID].GetComponent<TileScript>().Unit.GetComponent<UnitScript>().UnitSO.IsInJ1Army != GetComponent<UnitScript>().UnitSO.IsInJ1Army)
                         newNeighbourId.Add(TilesManager.Instance.TileList[ID]);
                     }
                     Highlight(ID, currentID, Range - 1); ;
@@ -42,7 +42,7 @@ public class DistanceEtTanto : Capacity
 
         GameManager.Instance._eventCall += EndCpty;
         GameManager.Instance._eventCallCancel += StopCpty;
-        GameManager.Instance.StartEventModeTiles(1, GetComponent<UnitScript>().UnitSO.IsInRedArmy, newNeighbourId, "Distance et Tanto", "Voulez-vous vraiment utiliser cette capacité?");
+        GameManager.Instance.StartEventModeTiles(1, GetComponent<UnitScript>().UnitSO.IsInJ1Army, newNeighbourId, "Distance et Tanto", "Voulez-vous vraiment utiliser cette capacité?");
         base.StartCpty();
     }
 

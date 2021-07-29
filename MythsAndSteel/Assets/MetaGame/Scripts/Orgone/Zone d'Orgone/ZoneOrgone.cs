@@ -32,7 +32,7 @@ public class ZoneOrgone : MonoBehaviour
 
     //Variables propres à chaque Zone d'orgone à Assigner dans l'Inspecteur à mettre dans le Player Class
     [Header("INFO ZONE")]
-    [SerializeField] bool _redPlayerZone;
+    [SerializeField] bool _J1Zone;
     [SerializeField] bool _hasMoveOrgoneArea;
     public bool HasMoveOrgoneArea => _hasMoveOrgoneArea;
     [SerializeField] bool _isInValidation = false;
@@ -49,7 +49,7 @@ public class ZoneOrgone : MonoBehaviour
         GameManager.Instance.ManagerSO.GoToActionJ1Phase += HideChild;
         GameManager.Instance.ManagerSO.GoToActionJ2Phase += HideChild;
 
-        if(_redPlayerZone){
+        if(_J1Zone){
             PlayerScript.Instance.J1Infos.TileCentreZoneOrgone = _centerOrgoneArea;
         }
         else{
@@ -57,11 +57,11 @@ public class ZoneOrgone : MonoBehaviour
         }
 
         List<int> neighZone = PlayerStatic.GetNeighbourDiag(_centerOrgoneArea.GetComponent<TileScript>().TileId, _centerOrgoneArea.GetComponent<TileScript>().Line, true);
-        _centerOrgoneArea.GetComponent<TileScript>().TerrainEffectList.Remove(_redPlayerZone ? MYthsAndSteel_Enum.TerrainType.OrgoneRed : MYthsAndSteel_Enum.TerrainType.OrgoneBlue);
+        _centerOrgoneArea.GetComponent<TileScript>().TerrainEffectList.Remove(_J1Zone ? MYthsAndSteel_Enum.TerrainType.OrgoneRed : MYthsAndSteel_Enum.TerrainType.OrgoneBlue);
 
         foreach(int i in neighZone)
         {
-            TilesManager.Instance.TileList[i].GetComponent<TileScript>().TerrainEffectList.Remove(_redPlayerZone ? MYthsAndSteel_Enum.TerrainType.OrgoneRed : MYthsAndSteel_Enum.TerrainType.OrgoneBlue);
+            TilesManager.Instance.TileList[i].GetComponent<TileScript>().TerrainEffectList.Remove(_J1Zone ? MYthsAndSteel_Enum.TerrainType.OrgoneRed : MYthsAndSteel_Enum.TerrainType.OrgoneBlue);
         }
 
         List<int> newNeighZone = PlayerStatic.GetNeighbourDiag(_centerOrgoneArea.GetComponent<TileScript>().TileId, _centerOrgoneArea.GetComponent<TileScript>().Line, true);
@@ -69,15 +69,15 @@ public class ZoneOrgone : MonoBehaviour
 
         foreach(int i in newNeighZone)
         {
-            TilesManager.Instance.TileList[i].GetComponent<TileScript>().TerrainEffectList.Add(_redPlayerZone ? MYthsAndSteel_Enum.TerrainType.OrgoneRed : MYthsAndSteel_Enum.TerrainType.OrgoneBlue);
+            TilesManager.Instance.TileList[i].GetComponent<TileScript>().TerrainEffectList.Add(_J1Zone ? MYthsAndSteel_Enum.TerrainType.OrgoneRed : MYthsAndSteel_Enum.TerrainType.OrgoneBlue);
         }
     }
 
     private void Update(){
-        if(_isInValidation == false && _redPlayerZone == GameManager.Instance.IsPlayerRedTurn)
+        if(_isInValidation == false && _J1Zone == GameManager.Instance.IsJ1Turn)
         {
             //Déplace la zone si il est dans la bonne phase
-            if(OrgoneManager.Instance.Selected && GameManager.Instance.IsPlayerRedTurn == _redPlayerZone && RaycastManager.Instance.Tile != null && !_hasMoveOrgoneArea)
+            if(OrgoneManager.Instance.Selected && GameManager.Instance.IsJ1Turn == _J1Zone && RaycastManager.Instance.Tile != null && !_hasMoveOrgoneArea)
             {
                 if(_tilesInRange.Contains(RaycastManager.Instance.Tile))
                 {
@@ -110,7 +110,7 @@ public class ZoneOrgone : MonoBehaviour
     /// </summary>
     public void AddOrgoneAtRange(){
         UIInstance.Instance.DesactivateNextPhaseButton();
-        List<int> OrgoneNeigh = _redPlayerZone ? PlayerStatic.GetNeighbourDiag(PlayerScript.Instance.J1Infos.TileCentreZoneOrgone.GetComponent<TileScript>().TileId, 
+        List<int> OrgoneNeigh = _J1Zone ? PlayerStatic.GetNeighbourDiag(PlayerScript.Instance.J1Infos.TileCentreZoneOrgone.GetComponent<TileScript>().TileId, 
                                                                                PlayerScript.Instance.J1Infos.TileCentreZoneOrgone.GetComponent<TileScript>().Line,   
                                                                                false) : 
                                                  PlayerStatic.GetNeighbourDiag(PlayerScript.Instance.J2Infos.TileCentreZoneOrgone.GetComponent<TileScript>().TileId,
@@ -191,13 +191,13 @@ public class ZoneOrgone : MonoBehaviour
         }
 
         List<int> neighZone = PlayerStatic.GetNeighbourDiag(_centerOrgoneArea.GetComponent<TileScript>().TileId, _centerOrgoneArea.GetComponent<TileScript>().Line, true);
-        _centerOrgoneArea.GetComponent<TileScript>().TerrainEffectList.Remove(_redPlayerZone ? MYthsAndSteel_Enum.TerrainType.OrgoneRed : MYthsAndSteel_Enum.TerrainType.OrgoneBlue);
+        _centerOrgoneArea.GetComponent<TileScript>().TerrainEffectList.Remove(_J1Zone ? MYthsAndSteel_Enum.TerrainType.OrgoneRed : MYthsAndSteel_Enum.TerrainType.OrgoneBlue);
 
         foreach(int i in neighZone){
-            TilesManager.Instance.TileList[i].GetComponent<TileScript>().TerrainEffectList.Remove(_redPlayerZone? MYthsAndSteel_Enum.TerrainType.OrgoneRed : MYthsAndSteel_Enum.TerrainType.OrgoneBlue);
+            TilesManager.Instance.TileList[i].GetComponent<TileScript>().TerrainEffectList.Remove(_J1Zone? MYthsAndSteel_Enum.TerrainType.OrgoneRed : MYthsAndSteel_Enum.TerrainType.OrgoneBlue);
         }
 
-        if(GameManager.Instance.IsPlayerRedTurn) PlayerScript.Instance.J1Infos.TileCentreZoneOrgone = _targetTile;
+        if(GameManager.Instance.IsJ1Turn) PlayerScript.Instance.J1Infos.TileCentreZoneOrgone = _targetTile;
         else PlayerScript.Instance.J2Infos.TileCentreZoneOrgone = _targetTile;
 
         _centerOrgoneArea = _targetTile;
@@ -209,7 +209,7 @@ public class ZoneOrgone : MonoBehaviour
 
         foreach(int i in newNeighZone)
         {
-            TilesManager.Instance.TileList[i].GetComponent<TileScript>().TerrainEffectList.Add(_redPlayerZone ? MYthsAndSteel_Enum.TerrainType.OrgoneRed : MYthsAndSteel_Enum.TerrainType.OrgoneBlue);
+            TilesManager.Instance.TileList[i].GetComponent<TileScript>().TerrainEffectList.Add(_J1Zone ? MYthsAndSteel_Enum.TerrainType.OrgoneRed : MYthsAndSteel_Enum.TerrainType.OrgoneBlue);
         }
 
         newNeighZone.Clear();

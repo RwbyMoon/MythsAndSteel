@@ -38,10 +38,10 @@ public class EventCardClass : ScriptableObject{
     /// </summary>
     /// <param name="ev"></param>
     void RemoveEvents(MYthsAndSteel_Enum.EventCard ev){
-        if(PlayerScript.Instance.EventCardList._eventCardRedPlayer.Contains(ev)){
-            PlayerScript.Instance.EventCardList._eventCardRedPlayer.Remove(ev);
+        if(PlayerScript.Instance.EventCardList._eventCardJ1.Contains(ev)){
+            PlayerScript.Instance.EventCardList._eventCardJ1.Remove(ev);
             
-            foreach(GameObject gam in PlayerScript.Instance.EventCardList._eventGamRedPlayer){
+            foreach(GameObject gam in PlayerScript.Instance.EventCardList._eventGamJ1){
                 if(gam.GetComponent<EventCardContainer>().EventCardInfo._eventType == ev){
                     RemoveEventGam(gam, 1);
                     break;
@@ -51,7 +51,7 @@ public class EventCardClass : ScriptableObject{
         else{
             PlayerScript.Instance.EventCardList._eventCardBluePlayer.Remove(ev);
 
-            foreach(GameObject gam in PlayerScript.Instance.EventCardList._eventGamBluePlayer){
+            foreach(GameObject gam in PlayerScript.Instance.EventCardList._eventGamJ2){
                 if(gam.GetComponent<EventCardContainer>().EventCardInfo._eventType == ev){
                     RemoveEventGam(gam, 2);
                     break;
@@ -66,12 +66,12 @@ public class EventCardClass : ScriptableObject{
     /// <param name="gam"></param>
     void RemoveEventGam(GameObject gam, int player){
         if(player == 1){
-            PlayerScript.Instance.EventCardList._eventGamRedPlayer.Remove(gam);
+            PlayerScript.Instance.EventCardList._eventGamJ1.Remove(gam);
             Destroy(gam);
            GameManager.Instance.victoryScreen.redEventUsed += 1;
         }
         else if(player == 2){
-            PlayerScript.Instance.EventCardList._eventGamBluePlayer.Remove(gam);
+            PlayerScript.Instance.EventCardList._eventGamJ2.Remove(gam);
             Destroy(gam);
           GameManager.Instance.victoryScreen.blueEventUsed += 1;
         }
@@ -79,8 +79,8 @@ public class EventCardClass : ScriptableObject{
             Debug.LogError("Vous essayez d'enlever une carte event a un joueur qui n'existe pas");
         }
 
-        UpdateVisualUI(PlayerScript.Instance.EventCardList._eventGamRedPlayer, 1);
-        UpdateVisualUI(PlayerScript.Instance.EventCardList._eventGamBluePlayer, 2);
+        UpdateVisualUI(PlayerScript.Instance.EventCardList._eventGamJ1, 1);
+        UpdateVisualUI(PlayerScript.Instance.EventCardList._eventGamJ2, 2);
     }
     #endregion RemoveEvent
 
@@ -91,15 +91,15 @@ public class EventCardClass : ScriptableObject{
     /// <param name="gam"></param>
     public void UpdateVisualUI(List<GameObject> gam, int player){
         if(player == 1){
-            if(PlayerScript.Instance.EventCardList._eventCardRedPlayer.Count <= 3){
+            if(PlayerScript.Instance.EventCardList._eventCardJ1.Count <= 3){
                 ResetEventParentPos(1);
 
                 UpdateEventList(gam, player);
-                UpdateButtonPlayer(UIInstance.Instance.ButtonEventRedPlayer._upButton, UIInstance.Instance.ButtonEventRedPlayer._downButton, false, PlayerScript.Instance.EventCardList._eventGamRedPlayer.Count, _redPlayerPos, player);
+                UpdateButtonPlayer(UIInstance.Instance.ButtonEventRedPlayer._upButton, UIInstance.Instance.ButtonEventRedPlayer._downButton, false, PlayerScript.Instance.EventCardList._eventGamJ1.Count, _redPlayerPos, player);
             }
             else{
                 UpdateEventList(gam, player);
-                UpdateButtonPlayer(UIInstance.Instance.ButtonEventRedPlayer._upButton, UIInstance.Instance.ButtonEventRedPlayer._downButton, true, PlayerScript.Instance.EventCardList._eventGamRedPlayer.Count, _redPlayerPos, player);
+                UpdateButtonPlayer(UIInstance.Instance.ButtonEventRedPlayer._upButton, UIInstance.Instance.ButtonEventRedPlayer._downButton, true, PlayerScript.Instance.EventCardList._eventGamJ1.Count, _redPlayerPos, player);
             }
         }
         else if(player == 2)
@@ -108,11 +108,11 @@ public class EventCardClass : ScriptableObject{
                 ResetEventParentPos(2);
 
                 UpdateEventList(gam, player);
-                UpdateButtonPlayer(UIInstance.Instance.ButtonEventBluePlayer._upButton, UIInstance.Instance.ButtonEventBluePlayer._downButton, false, PlayerScript.Instance.EventCardList._eventGamBluePlayer.Count, _bluePlayerPos, player);
+                UpdateButtonPlayer(UIInstance.Instance.ButtonEventBluePlayer._upButton, UIInstance.Instance.ButtonEventBluePlayer._downButton, false, PlayerScript.Instance.EventCardList._eventGamJ2.Count, _bluePlayerPos, player);
             }
             else{
                 UpdateEventList(gam, player);
-                UpdateButtonPlayer(UIInstance.Instance.ButtonEventBluePlayer._upButton, UIInstance.Instance.ButtonEventBluePlayer._downButton, true, PlayerScript.Instance.EventCardList._eventGamBluePlayer.Count, _bluePlayerPos, player);
+                UpdateButtonPlayer(UIInstance.Instance.ButtonEventBluePlayer._upButton, UIInstance.Instance.ButtonEventBluePlayer._downButton, true, PlayerScript.Instance.EventCardList._eventGamJ2.Count, _bluePlayerPos, player);
             }
         }
         else{
@@ -240,12 +240,12 @@ public class EventCardClass : ScriptableObject{
         if(player == 1){
             _redPlayerPos--;
             UpdateEventsParentPos(1);
-            UpdateButtonPlayer(UIInstance.Instance.ButtonEventRedPlayer._upButton, UIInstance.Instance.ButtonEventRedPlayer._downButton, true, PlayerScript.Instance.EventCardList._eventGamRedPlayer.Count, _redPlayerPos, player);
+            UpdateButtonPlayer(UIInstance.Instance.ButtonEventRedPlayer._upButton, UIInstance.Instance.ButtonEventRedPlayer._downButton, true, PlayerScript.Instance.EventCardList._eventGamJ1.Count, _redPlayerPos, player);
         }
         else if(player == 2){
             _bluePlayerPos--;
             UpdateEventsParentPos(2);
-            UpdateButtonPlayer(UIInstance.Instance.ButtonEventBluePlayer._upButton, UIInstance.Instance.ButtonEventBluePlayer._downButton, true, PlayerScript.Instance.EventCardList._eventGamBluePlayer.Count, _bluePlayerPos, player);
+            UpdateButtonPlayer(UIInstance.Instance.ButtonEventBluePlayer._upButton, UIInstance.Instance.ButtonEventBluePlayer._downButton, true, PlayerScript.Instance.EventCardList._eventGamJ2.Count, _bluePlayerPos, player);
         }
         else{
             Debug.LogError("vous essayez de déplacer les cartes events d'un joueur qui n'existe pas");
@@ -260,12 +260,12 @@ public class EventCardClass : ScriptableObject{
         if(player == 1){
             _redPlayerPos++;
             UpdateEventsParentPos(1);
-            UpdateButtonPlayer(UIInstance.Instance.ButtonEventRedPlayer._upButton, UIInstance.Instance.ButtonEventRedPlayer._downButton, true, PlayerScript.Instance.EventCardList._eventGamRedPlayer.Count, _redPlayerPos, player);
+            UpdateButtonPlayer(UIInstance.Instance.ButtonEventRedPlayer._upButton, UIInstance.Instance.ButtonEventRedPlayer._downButton, true, PlayerScript.Instance.EventCardList._eventGamJ1.Count, _redPlayerPos, player);
         }
         else if(player == 2){
             _bluePlayerPos++;
             UpdateEventsParentPos(2);
-            UpdateButtonPlayer(UIInstance.Instance.ButtonEventBluePlayer._upButton, UIInstance.Instance.ButtonEventBluePlayer._downButton, true, PlayerScript.Instance.EventCardList._eventGamBluePlayer.Count, _bluePlayerPos, player);
+            UpdateButtonPlayer(UIInstance.Instance.ButtonEventBluePlayer._upButton, UIInstance.Instance.ButtonEventBluePlayer._downButton, true, PlayerScript.Instance.EventCardList._eventGamJ2.Count, _bluePlayerPos, player);
         }
         else{
             Debug.LogError("vous essayez de déplacer les cartes events d'un joueur qui n'existe pas");
@@ -357,7 +357,7 @@ public class EventCardClass : ScriptableObject{
         }
 
         if((GameManager.Instance.ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.ActionJ1 || GameManager.Instance.ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.ActionJ2) && 
-            ((player == 1 && GameManager.Instance.IsPlayerRedTurn && PlayerScript.Instance.J1Infos.EventUseLeft > 0) && (PlayerScript.Instance.J1Infos.Ressource >= 1)|| (player == 2 && !GameManager.Instance.IsPlayerRedTurn && PlayerScript.Instance.J2Infos.Ressource >= 1&& PlayerScript.Instance.J2Infos.EventUseLeft > 0))){
+            ((player == 1 && GameManager.Instance.IsJ1Turn && PlayerScript.Instance.J1Infos.EventUseLeft > 0) && (PlayerScript.Instance.J1Infos.Ressource >= 1)|| (player == 2 && !GameManager.Instance.IsJ1Turn && PlayerScript.Instance.J2Infos.Ressource >= 1&& PlayerScript.Instance.J2Infos.EventUseLeft > 0))){
 
         
             LaunchEventTile(1, player == 1 ? true : false, gamList, "Déploiement accéléré", "Êtes-vous sur de vouloir créer une unité d'infanterie sur cette case?", false);
@@ -421,7 +421,7 @@ public class EventCardClass : ScriptableObject{
         GameManager.Instance.IllusionStratégique = true;
 
         if((GameManager.Instance.ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.ActionJ1 || GameManager.Instance.ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.ActionJ2) &&
-            ((player == 1 && GameManager.Instance.IsPlayerRedTurn && PlayerScript.Instance.J1Infos.EventUseLeft > 0) || (player == 2 && !GameManager.Instance.IsPlayerRedTurn && PlayerScript.Instance.J2Infos.EventUseLeft > 0)))
+            ((player == 1 && GameManager.Instance.IsJ1Turn && PlayerScript.Instance.J1Infos.EventUseLeft > 0) || (player == 2 && !GameManager.Instance.IsJ1Turn && PlayerScript.Instance.J2Infos.EventUseLeft > 0)))
         {
             LaunchEventUnit(2, player == 1 ? true : false, unitList, "Illusion Stratégique", "Êtes-vous sur de vouloir échanger la position de ces deux unités sur le plateau?");
             GameManager.Instance._eventCall += IllusionStratégique;
@@ -458,7 +458,7 @@ public class EventCardClass : ScriptableObject{
         int player = DeterminArmy(MYthsAndSteel_Enum.EventCard.Optimisation_de_l_orgone);
 
         if((GameManager.Instance.ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.OrgoneJ1 || GameManager.Instance.ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.OrgoneJ2) &&
-            ((player == 1 && GameManager.Instance.IsPlayerRedTurn && PlayerScript.Instance.J1Infos.EventUseLeft > 0) || (player == 2 && !GameManager.Instance.IsPlayerRedTurn && PlayerScript.Instance.J2Infos.EventUseLeft > 0)))
+            ((player == 1 && GameManager.Instance.IsJ1Turn && PlayerScript.Instance.J1Infos.EventUseLeft > 0) || (player == 2 && !GameManager.Instance.IsJ1Turn && PlayerScript.Instance.J2Infos.EventUseLeft > 0)))
         {
                 GameManager.Instance._eventCall += OptimisationOrgone;
             if (PlayerPrefs.GetInt("Avertissement") == 0)
@@ -502,7 +502,7 @@ public class EventCardClass : ScriptableObject{
         tileList.AddRange(TilesManager.Instance.ResourcesList);
 
         if((GameManager.Instance.ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.ActionJ1 || GameManager.Instance.ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.ActionJ2) &&
-            ((player == 1 && GameManager.Instance.IsPlayerRedTurn && PlayerScript.Instance.J1Infos.EventUseLeft > 0) || (player == 2 && !GameManager.Instance.IsPlayerRedTurn && PlayerScript.Instance.J2Infos.EventUseLeft > 0)))
+            ((player == 1 && GameManager.Instance.IsJ1Turn && PlayerScript.Instance.J1Infos.EventUseLeft > 0) || (player == 2 && !GameManager.Instance.IsJ1Turn && PlayerScript.Instance.J2Infos.EventUseLeft > 0)))
         {
             LaunchEventTile(2, player == 1 ? true : false, tileList, "Pillage d'orgone", "Êtes-vous sur de vouloir voler deux Ressources sur ces cases?", true);
             GameManager.Instance._eventCall += PillageOrgone;
@@ -547,7 +547,7 @@ foreach (GameObject element in TilesManager.Instance.TileList)
         tileList.AddRange(TilesManager.Instance.TileList);
 
         if ((GameManager.Instance.ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.ActionJ1 || GameManager.Instance.ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.ActionJ2) &&
-            ((player == 1 && GameManager.Instance.IsPlayerRedTurn && PlayerScript.Instance.J1Infos.EventUseLeft > 0) || (player == 2 && !GameManager.Instance.IsPlayerRedTurn && PlayerScript.Instance.J2Infos.EventUseLeft > 0)))
+            ((player == 1 && GameManager.Instance.IsJ1Turn && PlayerScript.Instance.J1Infos.EventUseLeft > 0) || (player == 2 && !GameManager.Instance.IsJ1Turn && PlayerScript.Instance.J2Infos.EventUseLeft > 0)))
         {
             if (PlayerScript.Instance.J1Infos.Ressource >= 1 && player == 1 || PlayerScript.Instance.J2Infos.Ressource >= 1 && player == 2)
             {
@@ -606,7 +606,7 @@ foreach (GameObject element in TilesManager.Instance.TileList)
         tileList.AddRange(TilesManager.Instance.TileList);
 
         if ((GameManager.Instance.ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.ActionJ1 || GameManager.Instance.ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.ActionJ2) &&
-            ((player == 1 && GameManager.Instance.IsPlayerRedTurn && PlayerScript.Instance.J1Infos.EventUseLeft > 0) || (player == 2 && !GameManager.Instance.IsPlayerRedTurn && PlayerScript.Instance.J2Infos.EventUseLeft > 0)))
+            ((player == 1 && GameManager.Instance.IsJ1Turn && PlayerScript.Instance.J1Infos.EventUseLeft > 0) || (player == 2 && !GameManager.Instance.IsJ1Turn && PlayerScript.Instance.J2Infos.EventUseLeft > 0)))
         {
             if (PlayerScript.Instance.J1Infos.Ressource >= 1 && player == 1 || PlayerScript.Instance.J2Infos.Ressource >= 1 && player == 2)
             {
@@ -654,7 +654,7 @@ foreach (GameObject element in TilesManager.Instance.TileList)
         unitList.AddRange(player == 2 ? PlayerScript.Instance.UnitRef.UnitListBluePlayer : PlayerScript.Instance.UnitRef.UnitListRedPlayer);
 
         if((GameManager.Instance.ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.ActionJ1 || GameManager.Instance.ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.ActionJ2) &&
-            ((player == 1 && GameManager.Instance.IsPlayerRedTurn && PlayerScript.Instance.J1Infos.EventUseLeft > 0) || (player == 2 && !GameManager.Instance.IsPlayerRedTurn && PlayerScript.Instance.J2Infos.EventUseLeft > 0)))
+            ((player == 1 && GameManager.Instance.IsJ1Turn && PlayerScript.Instance.J1Infos.EventUseLeft > 0) || (player == 2 && !GameManager.Instance.IsJ1Turn && PlayerScript.Instance.J2Infos.EventUseLeft > 0)))
         {
             LaunchEventUnit(2, player == 1 ? true : false, unitList, "Pointeurs Laser Optimisé", "Êtes-vous sur de vouloir augmenter de 1 la portée de ces 2 unités?");
             GameManager.Instance._eventCall += PointeursLaserOptimisés;
@@ -693,7 +693,7 @@ foreach (GameObject element in TilesManager.Instance.TileList)
         unitList.AddRange(player == 2? PlayerScript.Instance.UnitRef.UnitListRedPlayer : PlayerScript.Instance.UnitRef.UnitListBluePlayer);
 
         if((GameManager.Instance.ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.ActionJ1 || GameManager.Instance.ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.ActionJ2) &&
-            ((player == 1 && GameManager.Instance.IsPlayerRedTurn && PlayerScript.Instance.J1Infos.EventUseLeft > 0) || (player == 2 && !GameManager.Instance.IsPlayerRedTurn && PlayerScript.Instance.J2Infos.EventUseLeft > 0)))
+            ((player == 1 && GameManager.Instance.IsJ1Turn && PlayerScript.Instance.J1Infos.EventUseLeft > 0) || (player == 2 && !GameManager.Instance.IsJ1Turn && PlayerScript.Instance.J2Infos.EventUseLeft > 0)))
         {
             LaunchEventUnit(1, player == 1 ? true : false, unitList, "Arme épidémiologique", "Êtes-vous sur de vouloir Infliger l'effet à cette unité? Cette unité et toutes celles adjacentes unité se verront perdre un point de vie à la fin du tour adverse.");
             GameManager.Instance._eventCall += ArmeEpidemiologique;
@@ -733,7 +733,7 @@ foreach (GameObject element in TilesManager.Instance.TileList)
         int player = DeterminArmy(MYthsAndSteel_Enum.EventCard.Manoeuvre_stratégique);
 
         if((GameManager.Instance.ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.ActionJ1 || GameManager.Instance.ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.ActionJ2) &&
-            ((player == 1 && GameManager.Instance.IsPlayerRedTurn && PlayerScript.Instance.J1Infos.EventUseLeft > 0) || (player == 2 && !GameManager.Instance.IsPlayerRedTurn && PlayerScript.Instance.J2Infos.EventUseLeft > 0)))
+            ((player == 1 && GameManager.Instance.IsJ1Turn && PlayerScript.Instance.J1Infos.EventUseLeft > 0) || (player == 2 && !GameManager.Instance.IsJ1Turn && PlayerScript.Instance.J2Infos.EventUseLeft > 0)))
         {
             GameManager.Instance._eventCall += ManoeuvreStratégique;
             if(PlayerPrefs.GetInt("Avertissement") == 0)
@@ -775,7 +775,7 @@ foreach (GameObject element in TilesManager.Instance.TileList)
         unitList.AddRange(player == 2 ? PlayerScript.Instance.UnitRef.UnitListBluePlayer : PlayerScript.Instance.UnitRef.UnitListRedPlayer);
 
         if((GameManager.Instance.ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.ActionJ1 || GameManager.Instance.ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.ActionJ2) &&
-            ((player == 1 && GameManager.Instance.IsPlayerRedTurn && PlayerScript.Instance.J1Infos.EventUseLeft > 0) || (player == 2 && !GameManager.Instance.IsPlayerRedTurn && PlayerScript.Instance.J2Infos.EventUseLeft > 0)))
+            ((player == 1 && GameManager.Instance.IsJ1Turn && PlayerScript.Instance.J1Infos.EventUseLeft > 0) || (player == 2 && !GameManager.Instance.IsJ1Turn && PlayerScript.Instance.J2Infos.EventUseLeft > 0)))
         {
             LaunchEventUnit(2, player == 1 ? true : false, unitList, "Sérum Expérimental", "Êtes-vous sur de vouloir augmenter d'1 point le déplacement de ces deux unités?");
             GameManager.Instance._eventCall += SerumExperimental;
@@ -812,7 +812,7 @@ foreach (GameObject element in TilesManager.Instance.TileList)
         int player = DeterminArmy(MYthsAndSteel_Enum.EventCard.Activation_de_nodus);
 
         if((GameManager.Instance.ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.ActionJ1 || GameManager.Instance.ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.ActionJ2) &&
-            ((player == 1 && GameManager.Instance.IsPlayerRedTurn && PlayerScript.Instance.J1Infos.EventUseLeft > 0) || (player == 2 && !GameManager.Instance.IsPlayerRedTurn && PlayerScript.Instance.J2Infos.EventUseLeft > 0)))
+            ((player == 1 && GameManager.Instance.IsJ1Turn && PlayerScript.Instance.J1Infos.EventUseLeft > 0) || (player == 2 && !GameManager.Instance.IsJ1Turn && PlayerScript.Instance.J2Infos.EventUseLeft > 0)))
         {
             GameManager.Instance._eventCall += ActivationDeNodus;
             if (PlayerPrefs.GetInt("Avertissement") == 0)
@@ -874,7 +874,7 @@ foreach (GameObject element in TilesManager.Instance.TileList)
         unitList.AddRange(player == 1 ? PlayerScript.Instance.UnitRef.UnitListBluePlayer : PlayerScript.Instance.UnitRef.UnitListRedPlayer);
 
         if((GameManager.Instance.ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.ActionJ1 || GameManager.Instance.ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.ActionJ2) &&
-            ((player == 1 && GameManager.Instance.IsPlayerRedTurn && PlayerScript.Instance.J1Infos.EventUseLeft > 0) || (player == 2 && !GameManager.Instance.IsPlayerRedTurn && PlayerScript.Instance.J2Infos.EventUseLeft > 0)))
+            ((player == 1 && GameManager.Instance.IsJ1Turn && PlayerScript.Instance.J1Infos.EventUseLeft > 0) || (player == 2 && !GameManager.Instance.IsJ1Turn && PlayerScript.Instance.J2Infos.EventUseLeft > 0)))
         {
             LaunchEventUnit(1, player == 1 ? true : false, unitList, "Bombardement Aérien", "Êtes-vous sur de vouloir infliger des dégâts à cette unité?");
             GameManager.Instance._eventCall += BombardementAerien;
@@ -938,7 +938,7 @@ foreach (GameObject element in TilesManager.Instance.TileList)
             }
         }
         if ((GameManager.Instance.ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.ActionJ1 || GameManager.Instance.ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.ActionJ2) &&
-            ((player == 1 && GameManager.Instance.IsPlayerRedTurn && PlayerScript.Instance.J1Infos.EventUseLeft > 0) || (player == 2 && !GameManager.Instance.IsPlayerRedTurn && PlayerScript.Instance.J2Infos.EventUseLeft > 0)))
+            ((player == 1 && GameManager.Instance.IsJ1Turn && PlayerScript.Instance.J1Infos.EventUseLeft > 0) || (player == 2 && !GameManager.Instance.IsJ1Turn && PlayerScript.Instance.J2Infos.EventUseLeft > 0)))
         {
             if(PlayerScript.Instance.J1Infos.Ressource >= 1 && player == 1 || PlayerScript.Instance.J2Infos.Ressource >= 1 && player == 2)
             {
@@ -988,7 +988,7 @@ foreach (GameObject element in TilesManager.Instance.TileList)
         unitList.AddRange(PlayerScript.Instance.UnitRef.UnitListRedPlayer);
 
         if((GameManager.Instance.ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.ActionJ1 || GameManager.Instance.ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.ActionJ2) &&
-            ((player == 1 && GameManager.Instance.IsPlayerRedTurn && PlayerScript.Instance.J1Infos.EventUseLeft > 0) || (player == 2 && !GameManager.Instance.IsPlayerRedTurn && PlayerScript.Instance.J2Infos.EventUseLeft > 0)))
+            ((player == 1 && GameManager.Instance.IsJ1Turn && PlayerScript.Instance.J1Infos.EventUseLeft > 0) || (player == 2 && !GameManager.Instance.IsJ1Turn && PlayerScript.Instance.J2Infos.EventUseLeft > 0)))
 
         {
             if (PlayerScript.Instance.J1Infos.Ressource >= 1 && player == 1 || PlayerScript.Instance.J2Infos.Ressource >= 1 && player == 2)
@@ -1018,7 +1018,7 @@ foreach (GameObject element in TilesManager.Instance.TileList)
     {
      
         UIInstance.Instance.ActivateNextPhaseButton();
-        if(GameManager.Instance.IsPlayerRedTurn)
+        if(GameManager.Instance.IsJ1Turn)
         {
 
         GameManager.Instance.VolDeRavitaillementStat = 1;
@@ -1039,7 +1039,7 @@ foreach (GameObject element in TilesManager.Instance.TileList)
         int player = DeterminArmy(MYthsAndSteel_Enum.EventCard.Vol_de_ravitaillement);
 
        if ((GameManager.Instance.ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.ActionJ1 || GameManager.Instance.ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.ActionJ2) &&
-            ((player == 1 && GameManager.Instance.IsPlayerRedTurn && PlayerScript.Instance.J1Infos.EventUseLeft > 0) || (player == 2 && !GameManager.Instance.IsPlayerRedTurn && PlayerScript.Instance.J2Infos.EventUseLeft > 0)))
+            ((player == 1 && GameManager.Instance.IsJ1Turn && PlayerScript.Instance.J1Infos.EventUseLeft > 0) || (player == 2 && !GameManager.Instance.IsJ1Turn && PlayerScript.Instance.J2Infos.EventUseLeft > 0)))
         {
          
 
@@ -1063,7 +1063,7 @@ foreach (GameObject element in TilesManager.Instance.TileList)
     public void Sabotage()
     {
         UIInstance.Instance.ActivateNextPhaseButton();
-        if (GameManager.Instance.IsPlayerRedTurn)
+        if (GameManager.Instance.IsJ1Turn)
         {
 
             GameManager.Instance.SabotageStat = 1;
@@ -1081,7 +1081,7 @@ foreach (GameObject element in TilesManager.Instance.TileList)
     {
         int player = DeterminArmy(MYthsAndSteel_Enum.EventCard.Sabotage);
         if ((GameManager.Instance.ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.ActionJ1 || GameManager.Instance.ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.ActionJ2) &&
-      ((player == 1 && GameManager.Instance.IsPlayerRedTurn && PlayerScript.Instance.J1Infos.EventUseLeft > 0) || (player == 2 && !GameManager.Instance.IsPlayerRedTurn && PlayerScript.Instance.J2Infos.EventUseLeft > 0)))
+      ((player == 1 && GameManager.Instance.IsJ1Turn && PlayerScript.Instance.J1Infos.EventUseLeft > 0) || (player == 2 && !GameManager.Instance.IsJ1Turn && PlayerScript.Instance.J2Infos.EventUseLeft > 0)))
         {
             GameManager.Instance._eventCall += Sabotage;
             if (PlayerPrefs.GetInt("Avertissement") == 0)
@@ -1111,7 +1111,7 @@ foreach (GameObject element in TilesManager.Instance.TileList)
             {
                 unit.GetComponent<UnitScript>().AddStatutToUnit(MYthsAndSteel_Enum.UnitStatut.Paralysie);
             }
-        if (GameManager.Instance.IsPlayerRedTurn)
+        if (GameManager.Instance.IsJ1Turn)
         {
 
             unit.GetComponent<UnitScript>().ParalysieStat = 1;
@@ -1137,7 +1137,7 @@ foreach (GameObject element in TilesManager.Instance.TileList)
         unitList.AddRange(PlayerScript.Instance.UnitRef.UnitListBluePlayer);
         unitList.AddRange(PlayerScript.Instance.UnitRef.UnitListRedPlayer);
         if ((GameManager.Instance.ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.OrgoneJ1 || GameManager.Instance.ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.OrgoneJ2) &&
-      ((player == 1 && GameManager.Instance.IsPlayerRedTurn && PlayerScript.Instance.J1Infos.EventUseLeft > 0) || (player == 2 && !GameManager.Instance.IsPlayerRedTurn && PlayerScript.Instance.J2Infos.EventUseLeft > 0)))
+      ((player == 1 && GameManager.Instance.IsJ1Turn && PlayerScript.Instance.J1Infos.EventUseLeft > 0) || (player == 2 && !GameManager.Instance.IsJ1Turn && PlayerScript.Instance.J2Infos.EventUseLeft > 0)))
         {
             if ((player == 1 && PlayerScript.Instance.J1Infos.Ressource >= 0) || (player == 2 && PlayerScript.Instance.J2Infos.Ressource >= 0))
             {
@@ -1193,7 +1193,7 @@ foreach (GameObject element in TilesManager.Instance.TileList)
         unitList.AddRange(player == 2 ? PlayerScript.Instance.UnitRef.UnitListBluePlayer : PlayerScript.Instance.UnitRef.UnitListRedPlayer);
 
         if ((GameManager.Instance.ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.ActionJ1 || GameManager.Instance.ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.ActionJ2) &&
-            ((player == 1 && GameManager.Instance.IsPlayerRedTurn && PlayerScript.Instance.J1Infos.EventUseLeft > 0) || (player == 2 && !GameManager.Instance.IsPlayerRedTurn && PlayerScript.Instance.J2Infos.EventUseLeft > 0)))
+            ((player == 1 && GameManager.Instance.IsJ1Turn && PlayerScript.Instance.J1Infos.EventUseLeft > 0) || (player == 2 && !GameManager.Instance.IsJ1Turn && PlayerScript.Instance.J2Infos.EventUseLeft > 0)))
         {
         
                 
@@ -1240,7 +1240,7 @@ foreach (GameObject element in TilesManager.Instance.TileList)
         unitList.AddRange(player == 1 ? PlayerScript.Instance.UnitRef.UnitListRedPlayer : PlayerScript.Instance.UnitRef.UnitListBluePlayer);
 
         if((GameManager.Instance.ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.ActionJ1 || GameManager.Instance.ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.ActionJ2) &&
-            ((player == 1 && GameManager.Instance.IsPlayerRedTurn) && PlayerScript.Instance.J1Infos.EventUseLeft > 0 || (player == 2 && !GameManager.Instance.IsPlayerRedTurn && PlayerScript.Instance.J2Infos.EventUseLeft > 0)))
+            ((player == 1 && GameManager.Instance.IsJ1Turn) && PlayerScript.Instance.J1Infos.EventUseLeft > 0 || (player == 2 && !GameManager.Instance.IsJ1Turn && PlayerScript.Instance.J2Infos.EventUseLeft > 0)))
         {
             LaunchEventUnit(2, player == 1 ? true : false, unitList, "Armes perforantes", "Êtes-vous sur de vouloir augmenter d'1 les dégâts de ces deux unités?");
             GameManager.Instance._eventCall += ArmesPerforantes;
@@ -1280,7 +1280,7 @@ foreach (GameObject element in TilesManager.Instance.TileList)
         unitList.AddRange(player == 1 ? PlayerScript.Instance.UnitRef.UnitListRedPlayer : PlayerScript.Instance.UnitRef.UnitListBluePlayer);
 
         if((GameManager.Instance.ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.ActionJ1 || GameManager.Instance.ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.ActionJ2) &&
-            ((player == 1 && GameManager.Instance.IsPlayerRedTurn && PlayerScript.Instance.J1Infos.EventUseLeft>0) || (player == 2 && !GameManager.Instance.IsPlayerRedTurn &&  PlayerScript.Instance.J2Infos.EventUseLeft > 0)))
+            ((player == 1 && GameManager.Instance.IsJ1Turn && PlayerScript.Instance.J1Infos.EventUseLeft>0) || (player == 2 && !GameManager.Instance.IsJ1Turn &&  PlayerScript.Instance.J2Infos.EventUseLeft > 0)))
         {
             LaunchEventUnit(1, player == 1 ? true : false, unitList, "Entraînement rigoureux", "Êtes-vous sur de vouloir donner un bonus de 3 aux chances d'attaques de cette unité?");
             GameManager.Instance._eventCall += EntrainementRigoureux;
@@ -1320,7 +1320,7 @@ foreach (GameObject element in TilesManager.Instance.TileList)
     /// Determine à quelle armée appartient la carte
     /// </summary>
     int DeterminArmy(MYthsAndSteel_Enum.EventCard cardToFind){
-        foreach(MYthsAndSteel_Enum.EventCard card in PlayerScript.Instance.EventCardList._eventCardRedPlayer)
+        foreach(MYthsAndSteel_Enum.EventCard card in PlayerScript.Instance.EventCardList._eventCardJ1)
         {
             if(card == cardToFind)
             {
@@ -1341,7 +1341,7 @@ foreach (GameObject element in TilesManager.Instance.TileList)
     #endregion Evenement
     void EventCardUse()
     {
-        if (GameManager.Instance.IsPlayerRedTurn)
+        if (GameManager.Instance.IsJ1Turn)
         {
             PlayerScript.Instance.J1Infos.EventUseLeft --;
         }

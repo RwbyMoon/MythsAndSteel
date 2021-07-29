@@ -24,14 +24,14 @@ public class FireCpty : Capacity
 
     public override void StartCpty()
     {
-        int ressourcePlayer = GetComponent<UnitScript>().UnitSO.IsInRedArmy ? PlayerScript.Instance.J1Infos.Ressource : PlayerScript.Instance.J2Infos.Ressource;
+        int ressourcePlayer = GetComponent<UnitScript>().UnitSO.IsInJ1Army ? PlayerScript.Instance.J1Infos.Ressource : PlayerScript.Instance.J2Infos.Ressource;
         if (ressourcePlayer >= Capacity1Cost)
         {
             id = new List<GameObject>();
             Highlight(GetComponent<UnitScript>().ActualTiledId, Range);
             GameManager.Instance._eventCall += EndCpty;
             GameManager.Instance._eventCallCancel += StopCpty;
-            GameManager.Instance.StartEventModeTiles(1, GetComponent<UnitScript>().UnitSO.IsInRedArmy, id, "Embrasement!", "Embrase les cases en forme de croix à partir de la selection centrale. Voulez-vous vraiment effectuer cette action ?");
+            GameManager.Instance.StartEventModeTiles(1, GetComponent<UnitScript>().UnitSO.IsInJ1Army, id, "Embrasement!", "Embrase les cases en forme de croix à partir de la selection centrale. Voulez-vous vraiment effectuer cette action ?");
         }
     }
 
@@ -45,7 +45,7 @@ public class FireCpty : Capacity
 
     public override void EndCpty()
     {
-        if (GetComponent<UnitScript>().UnitSO.IsInRedArmy)
+        if (GetComponent<UnitScript>().UnitSO.IsInJ1Army)
         {
             PlayerScript.Instance.J1Infos.Ressource -= Capacity1Cost;
         }

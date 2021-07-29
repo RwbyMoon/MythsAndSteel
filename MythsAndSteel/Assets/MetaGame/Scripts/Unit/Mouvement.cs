@@ -219,29 +219,29 @@ public class Mouvement : MonoSingleton<Mouvement>
             {
                 TileScript TileSc = TilesManager.Instance.TileList[ID].GetComponent<TileScript>();
                 bool i = false;
-                if (GameManager.Instance.IsPlayerRedTurn)
+                if (GameManager.Instance.IsJ1Turn)
                 {
                     if (TilesManager.Instance.TileList[ID].GetComponent<TileScript>().Unit != null)
                     {
-                        if (!TilesManager.Instance.TileList[ID].GetComponent<TileScript>().Unit.GetComponent<UnitScript>().UnitSO.IsInRedArmy && (!RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().PasseMuraille || (RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().PasseMuraille && Range == 1)))
+                        if (!TilesManager.Instance.TileList[ID].GetComponent<TileScript>().Unit.GetComponent<UnitScript>().UnitSO.IsInJ1Army && (!RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().PasseMuraille || (RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().PasseMuraille && Range == 1)))
                         {
                             i = true;
                         }
-                        if (TilesManager.Instance.TileList[ID].GetComponent<TileScript>().Unit.GetComponent<UnitScript>().UnitSO.IsInRedArmy && Range == 1)
+                        if (TilesManager.Instance.TileList[ID].GetComponent<TileScript>().Unit.GetComponent<UnitScript>().UnitSO.IsInJ1Army && Range == 1)
                         {
                             i = true;
                         }
                     }
                 }
-                if (!GameManager.Instance.IsPlayerRedTurn)
+                if (!GameManager.Instance.IsJ1Turn)
                 {
                     if (TilesManager.Instance.TileList[ID].GetComponent<TileScript>().Unit != null)
                     {
-                        if (TilesManager.Instance.TileList[ID].GetComponent<TileScript>().Unit.GetComponent<UnitScript>().UnitSO.IsInRedArmy && (!RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().PasseMuraille || (RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().PasseMuraille && Range == 1)))
+                        if (TilesManager.Instance.TileList[ID].GetComponent<TileScript>().Unit.GetComponent<UnitScript>().UnitSO.IsInJ1Army && (!RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().PasseMuraille || (RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().PasseMuraille && Range == 1)))
                         {
                             i = true;
                         }
-                        if (!TilesManager.Instance.TileList[ID].GetComponent<TileScript>().Unit.GetComponent<UnitScript>().UnitSO.IsInRedArmy && Range == 1)
+                        if (!TilesManager.Instance.TileList[ID].GetComponent<TileScript>().Unit.GetComponent<UnitScript>().UnitSO.IsInJ1Army && Range == 1)
                         {
                             i = true;
                         }
@@ -330,7 +330,7 @@ public class Mouvement : MonoSingleton<Mouvement>
     {
         GameObject tileSelected = RaycastManager.Instance.ActualTileSelected;
         mUnit = tileSelected.GetComponent<TileScript>().Unit;
-        if ((GameManager.Instance.IsPlayerRedTurn && PlayerScript.Instance.J1Infos.ActivationLeft > 0) || (mUnit.GetComponent<UnitScript>()._hasStartMove && GameManager.Instance.IsPlayerRedTurn && PlayerScript.Instance.J1Infos.ActivationLeft == 0))
+        if ((GameManager.Instance.IsJ1Turn && PlayerScript.Instance.J1Infos.ActivationLeft > 0) || (mUnit.GetComponent<UnitScript>()._hasStartMove && GameManager.Instance.IsJ1Turn && PlayerScript.Instance.J1Infos.ActivationLeft == 0))
         {
             if (tileSelected != null)
             {
@@ -353,7 +353,7 @@ public class Mouvement : MonoSingleton<Mouvement>
                 _selected = false;
             }
         }
-        else if ((!GameManager.Instance.IsPlayerRedTurn && PlayerScript.Instance.J2Infos.ActivationLeft > 0) || (mUnit.GetComponent<UnitScript>()._hasStartMove && !GameManager.Instance.IsPlayerRedTurn && PlayerScript.Instance.J2Infos.ActivationLeft == 0))
+        else if ((!GameManager.Instance.IsJ1Turn && PlayerScript.Instance.J2Infos.ActivationLeft > 0) || (mUnit.GetComponent<UnitScript>()._hasStartMove && !GameManager.Instance.IsJ1Turn && PlayerScript.Instance.J2Infos.ActivationLeft == 0))
         {
             if (tileSelected != null)
             {
@@ -462,7 +462,7 @@ public class Mouvement : MonoSingleton<Mouvement>
         UIInstance.Instance.ActivateNextPhaseButton();
 
         _mvmtRunning = false;
-        if (GameManager.Instance.IsPlayerRedTurn)
+        if (GameManager.Instance.IsJ1Turn)
         {
             if (UIInstance.Instance.RedRenfortCount == 0)
             {
@@ -741,7 +741,7 @@ public class Mouvement : MonoSingleton<Mouvement>
         {
             if (TilesManager.Instance.TileList[_selectedTileId[_selectedTileId.Count - 1]].GetComponent<TileScript>().Unit != null || ((TilesManager.Instance.TileList[_selectedTileId[_selectedTileId.Count - 1]].GetComponent<TileScript>().TerrainEffectList.Contains(MYthsAndSteel_Enum.TerrainType.Eau) || TilesManager.Instance.TileList[_selectedTileId[_selectedTileId.Count - 1]].GetComponent<TileScript>().TerrainEffectList.Contains(MYthsAndSteel_Enum.TerrainType.Ravin)) && !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().Volant) || (TilesManager.Instance.TileList[_selectedTileId[_selectedTileId.Count - 1]].GetComponent<TileScript>().TerrainEffectList.Contains(MYthsAndSteel_Enum.TerrainType.Eau) && !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().Submersible))
             {
-                if (GameManager.Instance.IsPlayerRedTurn == TilesManager.Instance.TileList[_selectedTileId[_selectedTileId.Count - 1]].GetComponent<TileScript>().Unit.GetComponent<UnitScript>().UnitSO.IsInRedArmy)
+                if (GameManager.Instance.IsJ1Turn == TilesManager.Instance.TileList[_selectedTileId[_selectedTileId.Count - 1]].GetComponent<TileScript>().Unit.GetComponent<UnitScript>().UnitSO.IsInJ1Army)
                 {
                     UIInstance.Instance.ActivationUnitPanel.ShowMovementPanel();
                     Debug.Log("Vous ne pouvez pas terminer votre mouvement sur une unité alliée.");
@@ -1028,29 +1028,29 @@ public class Mouvement : MonoSingleton<Mouvement>
             {
                 TileScript TileSc = TilesManager.Instance.TileList[ID].GetComponent<TileScript>();
                 bool i = false;
-                if (GameManager.Instance.IsPlayerRedTurn)
+                if (GameManager.Instance.IsJ1Turn)
                 {
                     if (TilesManager.Instance.TileList[ID].GetComponent<TileScript>().Unit != null)
                     {
-                        if (!TilesManager.Instance.TileList[ID].GetComponent<TileScript>().Unit.GetComponent<UnitScript>().UnitSO.IsInRedArmy && (!RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().PasseMuraille || (RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().PasseMuraille && Range == 1)))
+                        if (!TilesManager.Instance.TileList[ID].GetComponent<TileScript>().Unit.GetComponent<UnitScript>().UnitSO.IsInJ1Army && (!RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().PasseMuraille || (RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().PasseMuraille && Range == 1)))
                         {
                             i = true;
                         }
-                        if (TilesManager.Instance.TileList[ID].GetComponent<TileScript>().Unit.GetComponent<UnitScript>().UnitSO.IsInRedArmy && Range == 1)
+                        if (TilesManager.Instance.TileList[ID].GetComponent<TileScript>().Unit.GetComponent<UnitScript>().UnitSO.IsInJ1Army && Range == 1)
                         {
                             i = true;
                         }
                     }
                 }
-                if (!GameManager.Instance.IsPlayerRedTurn)
+                if (!GameManager.Instance.IsJ1Turn)
                 {
                     if (TilesManager.Instance.TileList[ID].GetComponent<TileScript>().Unit != null)
                     {
-                        if (TilesManager.Instance.TileList[ID].GetComponent<TileScript>().Unit.GetComponent<UnitScript>().UnitSO.IsInRedArmy && (!RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().PasseMuraille || (RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().PasseMuraille && Range == 1)))
+                        if (TilesManager.Instance.TileList[ID].GetComponent<TileScript>().Unit.GetComponent<UnitScript>().UnitSO.IsInJ1Army && (!RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().PasseMuraille || (RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().PasseMuraille && Range == 1)))
                         {
                             i = true;
                         }
-                        if (!TilesManager.Instance.TileList[ID].GetComponent<TileScript>().Unit.GetComponent<UnitScript>().UnitSO.IsInRedArmy && Range == 1)
+                        if (!TilesManager.Instance.TileList[ID].GetComponent<TileScript>().Unit.GetComponent<UnitScript>().UnitSO.IsInJ1Army && Range == 1)
                         {
                             i = true;
                         }

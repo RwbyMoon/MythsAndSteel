@@ -28,7 +28,7 @@ public class MélodieSinistre : Capacity
 
             GameManager.Instance._eventCall += EndCpty;
             GameManager.Instance._eventCallCancel += StopCpty;
-            GameManager.Instance.StartEventModeUnit(1, GetComponent<UnitScript>().UnitSO.IsInRedArmy, unit, "Mélodie Sinistre", "Voulez vous activer une unité adverse de type Leader, Infanterie ou Artillerie durant un tour ?");
+            GameManager.Instance.StartEventModeUnit(1, GetComponent<UnitScript>().UnitSO.IsInJ1Army, unit, "Mélodie Sinistre", "Voulez vous activer une unité adverse de type Leader, Infanterie ou Artillerie durant un tour ?");
 
         
 

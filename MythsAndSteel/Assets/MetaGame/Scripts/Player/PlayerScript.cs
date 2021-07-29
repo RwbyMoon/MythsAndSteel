@@ -12,15 +12,15 @@ public class PlayerScript : MonoSingleton<PlayerScript>
    List<MYthsAndSteel_Enum.EventCard> eventWithCostRessource;
     [SerializeField]
     GameObject prefabIconRessource; 
-    [SerializeField] bool _ArmyRedWinAtTheEnd;
-    public bool ArmyRedWinAtTheEnd => _ArmyRedWinAtTheEnd;
+    [SerializeField] bool _ArmyJ1WinAtTheEnd;
+    public bool ArmyJ1WinAtTheEnd => _ArmyJ1WinAtTheEnd;
 
     [Header("STAT JOUEUR ROUGE")]
-    [SerializeField] private Player _redPlayerInfos = new Player();
-    public Player J1Infos => _redPlayerInfos;
+    [SerializeField] private Player _j1Infos = new Player();
+    public Player J1Infos => _j1Infos;
     [Header("STAT JOUEUR BLEU")]
-    [SerializeField] private Player _bluePlayerInfos = new Player();
-    public Player J2Infos => _bluePlayerInfos;
+    [SerializeField] private Player _j2Infos = new Player();
+    public Player J2Infos => _j2Infos;
     [Space]
 
     [SerializeField] private UnitReference _unitRef = null;
@@ -37,13 +37,13 @@ public class PlayerScript : MonoSingleton<PlayerScript>
 
     public List<MYthsAndSteel_Enum.EventCard> _cardObtain = new List<MYthsAndSteel_Enum.EventCard>();
 
-    [SerializeField] private GameObject RedAnim;
-    [SerializeField] private GameObject BlueAnim;
+    [SerializeField] private GameObject J1Anim;
+    [SerializeField] private GameObject J2Anim;
 
 
     private void Start(){        
-        EventCardList._eventSO.UpdateVisualUI(_eventCardList._eventGamBluePlayer, 2);
-        EventCardList._eventSO.UpdateVisualUI(_eventCardList._eventGamRedPlayer, 1);
+        EventCardList._eventSO.UpdateVisualUI(_eventCardList._eventGamJ2, 2);
+        EventCardList._eventSO.UpdateVisualUI(_eventCardList._eventGamJ1, 1);
         J1Infos.UpdateOrgoneUI(1);
         J2Infos.UpdateOrgoneUI(2);
         
@@ -53,25 +53,25 @@ public class PlayerScript : MonoSingleton<PlayerScript>
     IEnumerator WaitEventRed(float waitTime)
     {
         yield return new WaitForSeconds(waitTime);
-        RedAnim.SetActive(false);
+        J1Anim.SetActive(false);
     }
     IEnumerator WaitEventBlue(float waitTime)
     {
         yield return new WaitForSeconds(waitTime);
-        BlueAnim.SetActive(false);
+        J2Anim.SetActive(false);
     }
 
-    [SerializeField] private GameObject UseResourcesAnimRed;
-    [SerializeField] private GameObject UseResourcesAnimBlue;
-    IEnumerator WaitResRed(float waitTime)
+    [SerializeField] private GameObject UseResourcesAnimJ1;
+    [SerializeField] private GameObject UseResourcesAnimJ2;
+    IEnumerator WaitResJ1(float waitTime)
     {
         yield return new WaitForSeconds(waitTime);
-        UseResourcesAnimRed.SetActive(false);
+        UseResourcesAnimJ1.SetActive(false);
     }
-    IEnumerator WaitResBlue(float waitTime)
+    IEnumerator WaitResJ2(float waitTime)
     {
         yield return new WaitForSeconds(waitTime);
-        UseResourcesAnimBlue.SetActive(false);
+        UseResourcesAnimJ2.SetActive(false);
     }
 
     public void AnimRessource(int player)
@@ -79,16 +79,16 @@ public class PlayerScript : MonoSingleton<PlayerScript>
         
         if (player == 1)
         {
-            UseResourcesAnimRed.SetActive(true);
+            UseResourcesAnimJ1.SetActive(true);
 
-            StartCoroutine(WaitResRed(1.5f));
+            StartCoroutine(WaitResJ1(1.5f));
         }
 
         else if (player == 2)
         {
-            UseResourcesAnimBlue.SetActive(true);
+            UseResourcesAnimJ2.SetActive(true);
         
-            StartCoroutine(WaitResBlue(1.5f));
+            StartCoroutine(WaitResJ2(1.5f));
         }
     }
 
@@ -132,12 +132,12 @@ public class PlayerScript : MonoSingleton<PlayerScript>
             AddEventCard(player, newCard);
             _cardObtain.Add(newCard);
             if (player == 1){
-                RedAnim.SetActive(true);
+                J1Anim.SetActive(true);
                StartCoroutine(WaitEventRed(0.8f));
            
             }
             else if (player == 2){
-                BlueAnim.SetActive(true);
+                J2Anim.SetActive(true);
                 StartCoroutine(WaitEventBlue(0.8f));
                  
             }
@@ -155,7 +155,7 @@ public class PlayerScript : MonoSingleton<PlayerScript>
     void AddEventCard(int player, MYthsAndSteel_Enum.EventCard card)
     {
         if(player == 1){
-            EventCardList._eventCardRedPlayer.Insert(0, card);
+            EventCardList._eventCardJ1.Insert(0, card);
         }
         else if(player == 2){
             EventCardList._eventCardBluePlayer.Insert(0, card);
@@ -197,12 +197,12 @@ public class PlayerScript : MonoSingleton<PlayerScript>
 
         }
         if(player == 1){
-            EventCardList._eventGamRedPlayer.Insert(0, newCard);
-            _eventCardList._eventSO.UpdateVisualUI(EventCardList._eventGamRedPlayer, 1);
+            EventCardList._eventGamJ1.Insert(0, newCard);
+            _eventCardList._eventSO.UpdateVisualUI(EventCardList._eventGamJ1, 1);
         }
         else if(player == 2){
-            EventCardList._eventGamBluePlayer.Insert(0, newCard);
-            _eventCardList._eventSO.UpdateVisualUI(EventCardList._eventGamBluePlayer, 2);
+            EventCardList._eventGamJ2.Insert(0, newCard);
+            _eventCardList._eventSO.UpdateVisualUI(EventCardList._eventGamJ2, 2);
         }
         else{
             Debug.LogError("vous essayez d'ajouter une carte event a un joueur qui n'existe pas");
@@ -342,13 +342,13 @@ public class PlayerScript : MonoSingleton<PlayerScript>
     /// <returns></returns>
     public bool CheckArmy(UnitScript unit, int Joueur){
         if(Joueur == 1){
-            if(unit.UnitSO.IsInRedArmy){
+            if(unit.UnitSO.IsInJ1Army){
                 return true;
             }
             return false;
         }
         else{
-            if(unit.UnitSO.IsInRedArmy){
+            if(unit.UnitSO.IsInJ1Army){
                 return false;
             }
             return true;
@@ -356,7 +356,7 @@ public class PlayerScript : MonoSingleton<PlayerScript>
     }
 
     public void ResetPlayerInfo(){
-        if(GameManager.Instance.IsPlayerRedTurn){
+        if(GameManager.Instance.IsJ1Turn){
             J1Infos.HasCreateUnit = false;
         }
         else{
@@ -374,14 +374,14 @@ public class EventCardList
     public EventCardClass _eventSO = null;
 
     //Carte Event du Joueur 1
-    public List<MYthsAndSteel_Enum.EventCard> _eventCardRedPlayer = new List<MYthsAndSteel_Enum.EventCard>();
+    public List<MYthsAndSteel_Enum.EventCard> _eventCardJ1 = new List<MYthsAndSteel_Enum.EventCard>();
 
     //Carte Event du Joueur 2
     public List<MYthsAndSteel_Enum.EventCard> _eventCardBluePlayer = new List<MYthsAndSteel_Enum.EventCard>();
 
     //Carte Gam du Joueur 1
-    public List<GameObject> _eventGamRedPlayer = null;
+    public List<GameObject> _eventGamJ1 = null;
 
     //Carte Gam du Joueur 2
-    public List<GameObject> _eventGamBluePlayer = null;
+    public List<GameObject> _eventGamJ2 = null;
 }

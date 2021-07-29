@@ -519,7 +519,7 @@ public class RenfortPhase : MonoSingleton<RenfortPhase>
     /// </summary>
     public void craftUnit(int unitId)
     {
-        if (GameManager.Instance.IsPlayerRedTurn)
+        if (GameManager.Instance.IsJ1Turn)
         {
             if (PlayerScript.Instance.UnitRef.UnitClassCreableListRedPlayer[unitId].GetComponent<UnitScript>().UnitSO.CreationCost <= PlayerScript.Instance.J1Infos.Ressource || OrgoneManager.Instance.DoingOrgoneCharge)
             {

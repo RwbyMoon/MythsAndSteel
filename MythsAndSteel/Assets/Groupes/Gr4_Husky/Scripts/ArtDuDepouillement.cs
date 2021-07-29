@@ -15,7 +15,7 @@ public class ArtDuDepouillement : Capacity
         {
             if (TilesManager.Instance.TileList[T] != null)
             {
-                if (TilesManager.Instance.TileList[T].GetComponent<TileScript>().Unit != RaycastManager.Instance.ActualUnitSelected && TilesManager.Instance.TileList[T].GetComponent<TileScript>().Unit != null && TilesManager.Instance.TileList[T].GetComponent<TileScript>().Unit.GetComponent<UnitScript>().UnitSO.IsInRedArmy != RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().UnitSO.IsInRedArmy)
+                if (TilesManager.Instance.TileList[T].GetComponent<TileScript>().Unit != RaycastManager.Instance.ActualUnitSelected && TilesManager.Instance.TileList[T].GetComponent<TileScript>().Unit != null && TilesManager.Instance.TileList[T].GetComponent<TileScript>().Unit.GetComponent<UnitScript>().UnitSO.IsInJ1Army != RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().UnitSO.IsInJ1Army)
                 {
                     tile.Add(TilesManager.Instance.TileList[T]);
                 }
@@ -26,18 +26,18 @@ public class ArtDuDepouillement : Capacity
 
         GameManager.Instance._eventCall += EndCpty;
         GameManager.Instance._eventCallCancel += StopCpty;
-        GameManager.Instance.StartEventModeTiles(1, GetComponent<UnitScript>().UnitSO.IsInRedArmy, tile, "Art du Dépouillement", "Voulez-vous vraiment utiliser cette capacité?");
+        GameManager.Instance.StartEventModeTiles(1, GetComponent<UnitScript>().UnitSO.IsInJ1Army, tile, "Art du Dépouillement", "Voulez-vous vraiment utiliser cette capacité?");
         base.StartCpty();
     }
 
     public override void EndCpty()
     {
-        if(GetComponent<UnitScript>().UnitSO.IsInRedArmy == true && PlayerScript.Instance.J2Infos.Ressource >0)
+        if(GetComponent<UnitScript>().UnitSO.IsInJ1Army == true && PlayerScript.Instance.J2Infos.Ressource >0)
         {
             PlayerScript.Instance.J1Infos.Ressource++;
             PlayerScript.Instance.J2Infos.Ressource--;
         }
-        else if(GetComponent<UnitScript>().UnitSO.IsInRedArmy == false && PlayerScript.Instance.J1Infos.Ressource >0)
+        else if(GetComponent<UnitScript>().UnitSO.IsInJ1Army == false && PlayerScript.Instance.J1Infos.Ressource >0)
         {
             PlayerScript.Instance.J1Infos.Ressource--;
             PlayerScript.Instance.J2Infos.Ressource++;

@@ -24,7 +24,7 @@ public class CapacitySystem : MonoSingleton<CapacitySystem>
         if (Unit != null)
         {
             Player player;
-            if (GameManager.Instance.IsPlayerRedTurn)
+            if (GameManager.Instance.IsJ1Turn)
             {
                 player = PlayerScript.Instance.J1Infos;
             }

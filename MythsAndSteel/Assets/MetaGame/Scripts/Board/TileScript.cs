@@ -508,7 +508,7 @@ public class TileScript : MonoBehaviour
         //Système de contrôle des gares
         if (TerrainEffectList.Contains(MYthsAndSteel_Enum.TerrainType.Gare) && Unit != null)
         {
-            if(Unit.GetComponent<UnitScript>().UnitSO.IsInRedArmy)
+            if(Unit.GetComponent<UnitScript>().UnitSO.IsInJ1Army)
             {
                 if (!TerrainEffectList.Contains(MYthsAndSteel_Enum.TerrainType.UsineRouge) || !TerrainEffectList.Contains(MYthsAndSteel_Enum.TerrainType.UsineBleu))
                 {
@@ -522,7 +522,7 @@ public class TileScript : MonoBehaviour
                     RenfortPhase.Instance.UpdateGareControl();
                 }
             }
-            if (!Unit.GetComponent<UnitScript>().UnitSO.IsInRedArmy)
+            if (!Unit.GetComponent<UnitScript>().UnitSO.IsInJ1Army)
             {
                 if (!TerrainEffectList.Contains(MYthsAndSteel_Enum.TerrainType.UsineRouge) || !TerrainEffectList.Contains(MYthsAndSteel_Enum.TerrainType.UsineBleu))
                 {

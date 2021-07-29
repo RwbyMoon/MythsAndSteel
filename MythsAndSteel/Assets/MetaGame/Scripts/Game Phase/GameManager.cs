@@ -64,7 +64,7 @@ public class GameManager : MonoSingleton<GameManager>
 
     //Permet de savoir si c'est le joueur 1 (TRUE) ou le joueur 2 (FALSE) qui joue actuellement
     [SerializeField] private bool _isPlayerRedTurn = false;
-    public bool IsPlayerRedTurn => _isPlayerRedTurn;
+    public bool IsJ1Turn => _isPlayerRedTurn;
 
     //Est ce que les joueurs sont actuellement dans un tour de jeu?
     [SerializeField] private bool _isInTurn = false;
@@ -418,13 +418,13 @@ public class GameManager : MonoSingleton<GameManager>
     /// <param name="armyUnit"></param>
     public void StartEventModeUnit(int numberUnit, bool redPlayer, List<GameObject> _unitSelectable, string title, string description, bool multiplesUnit = false)
     {
-        if (IsPlayerRedTurn && ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.ActionJ1 || ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.ActionJ2)
+        if (IsJ1Turn && ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.ActionJ1 || ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.ActionJ2)
         {
 
             UIInstance.Instance.ButtonRenfortJ1.GetComponent<Button>().interactable = false;
 
         }
-        else if (!IsPlayerRedTurn && ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.ActionJ1 || ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.ActionJ2)
+        else if (!IsJ1Turn && ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.ActionJ1 || ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.ActionJ2)
         {
 
             UIInstance.Instance.ButtonRenfortJ2.GetComponent<Button>().interactable = false;
@@ -483,7 +483,7 @@ public class GameManager : MonoSingleton<GameManager>
     /// </summary>
  public   void StopEventModeUnit()
     {
-        if (GameManager.Instance.IsPlayerRedTurn)
+        if (GameManager.Instance.IsJ1Turn)
         {
             if (UIInstance.Instance.RedRenfortCount == 0)
             {
@@ -583,7 +583,7 @@ public class GameManager : MonoSingleton<GameManager>
             {
                 foreach (GameObject gam in _selectableUnit)
                 {
-                    if (gam.GetComponent<UnitScript>().UnitSO.IsInRedArmy != unit.GetComponent<UnitScript>().UnitSO.IsInRedArmy)
+                    if (gam.GetComponent<UnitScript>().UnitSO.IsInJ1Army != unit.GetComponent<UnitScript>().UnitSO.IsInJ1Army)
                     {
                         GameObject tile = TilesManager.Instance.TileList[gam.GetComponent<UnitScript>().ActualTiledId].gameObject;
                         tile.GetComponent<TileScript>().DesActiveChildObj(MYthsAndSteel_Enum.ChildTileType.EventSelect);
@@ -643,7 +643,7 @@ public class GameManager : MonoSingleton<GameManager>
     /// <param name="_tileSelectable"></param>
     public void StartEventModeTiles(int numberOfTile, bool redPlayer, List<GameObject> _tileSelectable, string title, string description, bool multiplesTile = false)
     {
-        if (GameManager.Instance.IsPlayerRedTurn)
+        if (GameManager.Instance.IsJ1Turn)
         {
             UIInstance.Instance.ButtonRenfortJ1.GetComponent<Button>().interactable = false;
 
@@ -680,7 +680,7 @@ public class GameManager : MonoSingleton<GameManager>
     /// </summary>
     public void StopEventModeTile()
     {
-        if (IsPlayerRedTurn && ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.ActionJ1 || ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.ActionJ2)
+        if (IsJ1Turn && ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.ActionJ1 || ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.ActionJ2)
         {
             if (UIInstance.Instance.RedRenfortCount == 0)
             {
@@ -689,7 +689,7 @@ public class GameManager : MonoSingleton<GameManager>
             }
 
         }
-        else if(!IsPlayerRedTurn && ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.ActionJ1 || ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.ActionJ2)
+        else if(!IsJ1Turn && ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.ActionJ1 || ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.ActionJ2)
         {
             if (UIInstance.Instance.BlueRenfortCount == 0)
             {

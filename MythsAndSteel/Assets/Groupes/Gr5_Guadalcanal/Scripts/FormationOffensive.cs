@@ -54,7 +54,7 @@ public class FormationOffensive : MonoBehaviour
         {
             if (TilesManager.Instance.TileList[T] != null)
             {
-                if (TilesManager.Instance.TileList[T].GetComponent<TileScript>().Unit != this && TilesManager.Instance.TileList[T].GetComponent<TileScript>().Unit != null && TilesManager.Instance.TileList[T].GetComponent<TileScript>().Unit.GetComponent<UnitScript>().UnitSO.IsInRedArmy == GetComponent<UnitScript>().UnitSO.IsInRedArmy)
+                if (TilesManager.Instance.TileList[T].GetComponent<TileScript>().Unit != this && TilesManager.Instance.TileList[T].GetComponent<TileScript>().Unit != null && TilesManager.Instance.TileList[T].GetComponent<TileScript>().Unit.GetComponent<UnitScript>().UnitSO.IsInJ1Army == GetComponent<UnitScript>().UnitSO.IsInJ1Army)
                 {
                     TilesWithUnit.Add(TilesManager.Instance.TileList[T]);
                     ApplyBonus.Add(TilesManager.Instance.TileList[T]);

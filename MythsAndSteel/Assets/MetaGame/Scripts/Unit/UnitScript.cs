@@ -394,7 +394,7 @@ public class UnitScript : MonoBehaviour
         CurrentSpriteLifeHeartUI = LifeHeartUI.GetComponent<SpriteRenderer>();
         if (_shield > 0)
         {
-            if (UnitSO.IsInRedArmy)
+            if (UnitSO.IsInJ1Army)
             {
                 UpdateLifeHeartShieldUI(UIInstance.Instance.J1HeartShieldSprite, _life + _shield);
             }
@@ -406,7 +406,7 @@ public class UnitScript : MonoBehaviour
         }
         else
         {
-            if (UnitSO.IsInRedArmy)
+            if (UnitSO.IsInJ1Army)
             {
                 UpdateLifeHeartShieldUI(UIInstance.Instance.J1HeartSprite, _life);
             }
@@ -430,7 +430,7 @@ public class UnitScript : MonoBehaviour
         _life += Lifeadd;
         if (_shield > 0)
         {
-            if (UnitSO.IsInRedArmy)
+            if (UnitSO.IsInJ1Army)
             {
                 UpdateLifeHeartShieldUI(UIInstance.Instance.J1HeartShieldSprite, _life + _shield);
             }
@@ -441,7 +441,7 @@ public class UnitScript : MonoBehaviour
         }
         else
         {
-            if (UnitSO.IsInRedArmy)
+            if (UnitSO.IsInJ1Army)
             {
                 UpdateLifeHeartShieldUI(UIInstance.Instance.J1HeartSprite, _life);
             }
@@ -458,7 +458,7 @@ public class UnitScript : MonoBehaviour
             _shield += shieldPlus;
             if (_shield > 0)
             {
-                if (UnitSO.IsInRedArmy)
+                if (UnitSO.IsInJ1Army)
                 {
                     UpdateLifeHeartShieldUI(UIInstance.Instance.J1HeartShieldSprite, _life + _shield);
                 }
@@ -469,7 +469,7 @@ public class UnitScript : MonoBehaviour
             }
             else
             {
-                if (UnitSO.IsInRedArmy)
+                if (UnitSO.IsInJ1Army)
                 {
                     UpdateLifeHeartShieldUI(UIInstance.Instance.J1HeartSprite, _life);
                 }
@@ -592,7 +592,7 @@ public class UnitScript : MonoBehaviour
 
                 if (_shield > 0)
                 {
-                    if (UnitSO.IsInRedArmy)
+                    if (UnitSO.IsInJ1Army)
                     {
                         UpdateLifeHeartShieldUI(UIInstance.Instance.J1HeartShieldSprite, _life + _shield);
                         Renderer.material.SetFloat("_HitTime", Time.time);
@@ -607,7 +607,7 @@ public class UnitScript : MonoBehaviour
                 }
                 else
                 {
-                    if (UnitSO.IsInRedArmy)
+                    if (UnitSO.IsInJ1Army)
                     {
                         UpdateLifeHeartShieldUI(UIInstance.Instance.J1HeartSprite, _life);
                         Renderer.material.SetFloat("_HitTime", Time.time);
@@ -626,7 +626,7 @@ public class UnitScript : MonoBehaviour
                 _life -= Damage;
                 if (_shield > 0)
                 {
-                    if (UnitSO.IsInRedArmy)
+                    if (UnitSO.IsInJ1Army)
                     {
                         UpdateLifeHeartShieldUI(UIInstance.Instance.J1HeartShieldSprite, _life + _shield);
                         Renderer.material.SetFloat("_HitTime", Time.time);
@@ -643,7 +643,7 @@ public class UnitScript : MonoBehaviour
                 {
                     if (_life > 0)
                     {
-                        if (UnitSO.IsInRedArmy)
+                        if (UnitSO.IsInJ1Army)
                         {
                             UpdateLifeHeartShieldUI(UIInstance.Instance.J1HeartSprite, _life);
                             Renderer.material.SetFloat("_HitTime", Time.time);
@@ -735,11 +735,11 @@ public class UnitScript : MonoBehaviour
 
         if (_life <= 0 && !IsDead)
         {
-            if (UnitSO.IsInRedArmy)
+            if (UnitSO.IsInJ1Army)
             {
                 GameManager.Instance.victoryScreen.redDeadUnits += 1;
             }
-            if (!UnitSO.IsInRedArmy)
+            if (!UnitSO.IsInJ1Army)
             {
                 GameManager.Instance.victoryScreen.blueDeadUnits += 1;
             }
@@ -765,7 +765,7 @@ public class UnitScript : MonoBehaviour
             Mouvement.Instance.StopMouvement(false);
         }
 
-        if (UnitSO.IsInRedArmy) PlayerScript.Instance.UnitRef.UnitListRedPlayer.Remove(gameObject);
+        if (UnitSO.IsInJ1Army) PlayerScript.Instance.UnitRef.UnitListRedPlayer.Remove(gameObject);
         else PlayerScript.Instance.UnitRef.UnitListBluePlayer.Remove(gameObject);
         if (!IsDeadByOrgone)
         {
@@ -791,7 +791,7 @@ public class UnitScript : MonoBehaviour
             GameManager.Instance.DeathByOrgone--;
         }
 
-        PlayerScript.Instance.GiveEventCard(UnitSO.IsInRedArmy ? 1 : 2);
+        PlayerScript.Instance.GiveEventCard(UnitSO.IsInJ1Army ? 1 : 2);
         IsDead = false;
 
         StartCoroutine(DeathAnimation());
@@ -958,13 +958,13 @@ public class UnitScript : MonoBehaviour
         if (!_isActionDone)
         {
 
-            if ((_unitSO.IsInRedArmy && !hasUseActivation && !_unitStatuts.Contains(MYthsAndSteel_Enum.UnitStatut.Possédé)) || (!_unitSO.IsInRedArmy && _unitStatuts.Contains(MYthsAndSteel_Enum.UnitStatut.Possédé) && !hasUseActivation && !MélodieSinistre))
+            if ((_unitSO.IsInJ1Army && !hasUseActivation && !_unitStatuts.Contains(MYthsAndSteel_Enum.UnitStatut.Possédé)) || (!_unitSO.IsInJ1Army && _unitStatuts.Contains(MYthsAndSteel_Enum.UnitStatut.Possédé) && !hasUseActivation && !MélodieSinistre))
             {
                 Debug.Log("bonsoir");
                 hasUseActivation = true;
                 PlayerScript.Instance.J1Infos.ActivationLeft--;
             }
-            else if ((!_unitSO.IsInRedArmy && !hasUseActivation && !_unitStatuts.Contains(MYthsAndSteel_Enum.UnitStatut.Possédé)) || (_unitSO.IsInRedArmy && _unitStatuts.Contains(MYthsAndSteel_Enum.UnitStatut.Possédé) && !hasUseActivation && !MélodieSinistre))
+            else if ((!_unitSO.IsInJ1Army && !hasUseActivation && !_unitStatuts.Contains(MYthsAndSteel_Enum.UnitStatut.Possédé)) || (_unitSO.IsInJ1Army && _unitStatuts.Contains(MYthsAndSteel_Enum.UnitStatut.Possédé) && !hasUseActivation && !MélodieSinistre))
             {
                 Debug.Log("bonsoir");
                 hasUseActivation = true;
@@ -990,13 +990,13 @@ public class UnitScript : MonoBehaviour
             _isActivationDone = true;
 
             //Réduit le nombre d'activation restante
-            if ((_unitSO.IsInRedArmy && !hasUseActivation && !_unitStatuts.Contains(MYthsAndSteel_Enum.UnitStatut.Possédé)) || (!_unitSO.IsInRedArmy && _unitStatuts.Contains(MYthsAndSteel_Enum.UnitStatut.Possédé) && !MélodieSinistre))
+            if ((_unitSO.IsInJ1Army && !hasUseActivation && !_unitStatuts.Contains(MYthsAndSteel_Enum.UnitStatut.Possédé)) || (!_unitSO.IsInJ1Army && _unitStatuts.Contains(MYthsAndSteel_Enum.UnitStatut.Possédé) && !MélodieSinistre))
             {
                 if (!_hasStartMove) PlayerScript.Instance.J1Infos.ActivationLeft--;
                 UIInstance.Instance.UpdateActivationLeft();
 
             }
-            else if ((!_unitSO.IsInRedArmy && !_unitStatuts.Contains(MYthsAndSteel_Enum.UnitStatut.Possédé)) || (_unitSO.IsInRedArmy && _unitStatuts.Contains(MYthsAndSteel_Enum.UnitStatut.Possédé) && !MélodieSinistre))
+            else if ((!_unitSO.IsInJ1Army && !_unitStatuts.Contains(MYthsAndSteel_Enum.UnitStatut.Possédé)) || (_unitSO.IsInJ1Army && _unitStatuts.Contains(MYthsAndSteel_Enum.UnitStatut.Possédé) && !MélodieSinistre))
             {
                 if (!_hasStartMove) PlayerScript.Instance.J2Infos.ActivationLeft--;
                 UIInstance.Instance.UpdateActivationLeft();
@@ -1161,16 +1161,16 @@ public class UnitScript : MonoBehaviour
 
     void Update()
     {
-        if (GameObject.Find("GameManager").GetComponent<GameManager>().IsNextPhaseDone == true || (UnitSO.IsInRedArmy && PlayerScript.Instance.J1Infos.ActivationLeft != 0 && !hasUseActivation && !_isActionDone) || (!UnitSO.IsInRedArmy && PlayerScript.Instance.J2Infos.ActivationLeft != 0 && !hasUseActivation && !_isActionDone))
+        if (GameObject.Find("GameManager").GetComponent<GameManager>().IsNextPhaseDone == true || (UnitSO.IsInJ1Army && PlayerScript.Instance.J1Infos.ActivationLeft != 0 && !hasUseActivation && !_isActionDone) || (!UnitSO.IsInJ1Army && PlayerScript.Instance.J2Infos.ActivationLeft != 0 && !hasUseActivation && !_isActionDone))
         {
             GetComponent<SpriteRenderer>().color = new Color32(255, 255, 255, 255);
             GetComponent<Animator>().speed = 1f;
         }
-        if (PlayerScript.Instance.J1Infos.ActivationLeft == 0 && UnitSO.IsInRedArmy && !hasUseActivation && GameManager.Instance.IsPlayerRedTurn && GameManager.Instance.ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.ActionJ1)
+        if (PlayerScript.Instance.J1Infos.ActivationLeft == 0 && UnitSO.IsInJ1Army && !hasUseActivation && GameManager.Instance.IsJ1Turn && GameManager.Instance.ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.ActionJ1)
         {
             StartCoroutine(ReduceSpeed());
         }
-        if (PlayerScript.Instance.J2Infos.ActivationLeft == 0 && !UnitSO.IsInRedArmy && !hasUseActivation && !GameManager.Instance.IsPlayerRedTurn && GameManager.Instance.ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.ActionJ2)
+        if (PlayerScript.Instance.J2Infos.ActivationLeft == 0 && !UnitSO.IsInJ1Army && !hasUseActivation && !GameManager.Instance.IsJ1Turn && GameManager.Instance.ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.ActionJ2)
         {
             StartCoroutine(ReduceSpeed());
         }

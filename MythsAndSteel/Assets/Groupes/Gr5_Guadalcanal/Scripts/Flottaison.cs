@@ -20,7 +20,7 @@ public class Flottaison : Capacity
         }
         GameManager.Instance._eventCall += EndCpty;
         GameManager.Instance._eventCallCancel += StopCpty;
-        GameManager.Instance.StartEventModeTiles(1, GetComponent<UnitScript>().UnitSO.IsInRedArmy, tile, "Flottaison", "Voulez-vous vraiment rendre cette unité insensible à l'eau?");
+        GameManager.Instance.StartEventModeTiles(1, GetComponent<UnitScript>().UnitSO.IsInJ1Army, tile, "Flottaison", "Voulez-vous vraiment rendre cette unité insensible à l'eau?");
     }
 
     public override void StopCpty()

@@ -9,7 +9,7 @@ public class Luch : Capacity
 
     public override void StartCpty()
     {
-        int ressourcePlayer = GetComponent<UnitScript>().UnitSO.IsInRedArmy ? PlayerScript.Instance.J1Infos.Ressource : PlayerScript.Instance.J2Infos.Ressource;
+        int ressourcePlayer = GetComponent<UnitScript>().UnitSO.IsInJ1Army ? PlayerScript.Instance.J1Infos.Ressource : PlayerScript.Instance.J2Infos.Ressource;
         if (ressourcePlayer >= Capacity1Cost)
         {
             List<GameObject> unit = new List<GameObject>();
@@ -19,7 +19,7 @@ public class Luch : Capacity
             }
             GameManager.Instance._eventCall += EndCpty;
             GameManager.Instance._eventCallCancel += StopCpty;
-            GameManager.Instance.StartEventModeUnit(1, GetComponent<UnitScript>().UnitSO.IsInRedArmy, unit, Capacity1Name , "Inflige 1 point de dégât et faire reculer l'unité jusqu'à 2 cases. Voulez-vous vraiment effectuer cette action ?");
+            GameManager.Instance.StartEventModeUnit(1, GetComponent<UnitScript>().UnitSO.IsInJ1Army, unit, Capacity1Name , "Inflige 1 point de dégât et faire reculer l'unité jusqu'à 2 cases. Voulez-vous vraiment effectuer cette action ?");
         }
     }
 
@@ -33,7 +33,7 @@ public class Luch : Capacity
     public override void EndCpty()
     {
         GameManager.Instance.TileChooseList.Add(TilesManager.Instance.TileList[GameManager.Instance.UnitChooseList[0].GetComponent<UnitScript>().ActualTiledId]);
-        if (GetComponent<UnitScript>().UnitSO.IsInRedArmy)
+        if (GetComponent<UnitScript>().UnitSO.IsInJ1Army)
         {
             PlayerScript.Instance.J1Infos.Ressource -= Capacity1Cost;
         }

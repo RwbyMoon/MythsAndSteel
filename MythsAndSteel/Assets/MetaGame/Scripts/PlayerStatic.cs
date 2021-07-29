@@ -27,7 +27,7 @@ static class PlayerStatic{
         //Permet de dire si l'unité fait partie de l'armée, par défault il est null (ni oui, ni non).
         bool IsUnitInArmy;
         //Si la valeur de l'armée est égale au cout alors..
-        if (unite.UnitSO.IsInRedArmy == RedPlayer)
+        if (unite.UnitSO.IsInJ1Army == RedPlayer)
         {
             //..Oui l'unité fait partie de l'armée.
             IsUnitInArmy = true;

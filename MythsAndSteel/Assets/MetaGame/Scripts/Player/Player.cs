@@ -54,12 +54,12 @@ public class Player
             
             if (_Ressource > value)
             {
-                if (GameManager.Instance.IsPlayerRedTurn)
+                if (GameManager.Instance.IsJ1Turn)
                 {
                     PlayerScript.Instance.AnimRessource(1);
                     
                 }
-                else if (!GameManager.Instance.IsPlayerRedTurn)
+                else if (!GameManager.Instance.IsJ1Turn)
                 {
                     PlayerScript.Instance.AnimRessource(2);
                 

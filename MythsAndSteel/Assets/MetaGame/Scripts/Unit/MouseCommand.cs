@@ -75,7 +75,7 @@ public class MouseCommand : MonoBehaviour
         UI.MouseOverStats._lifeGam.GetComponent<TextMeshProUGUI>().text = (unit.Life + unit.Shield).ToString();
         UI.MouseOverStats._rangeGam.GetComponent<TextMeshProUGUI>().text = (unit.AttackRange + unit.AttackRangeBonus).ToString();
         UI.MouseOverStats._moveGam.GetComponent<TextMeshProUGUI>().text = (unit.MoveSpeed + unit.MoveSpeedBonus).ToString();
-
+                
         if (unit.Shield >= 1)
         {
             UI.MouseOverStats._lifeGam.GetComponent<TextMeshProUGUI>().color = new Color32(58, 197, 234, 100);
@@ -121,7 +121,7 @@ public class MouseCommand : MonoBehaviour
         //Synchronise le texte de la valeur de la vitesse de l'unité avec l'emplacement d'UI.
         UI.PageUnitStat._rangeGam.GetComponent<TextMeshProUGUI>().text = (unit.AttackRange + unit.AttackRangeBonus).ToString();
         UI.PageUnitStat._moveGam.GetComponent<TextMeshProUGUI>().text = (unit.MoveSpeed + unit.MoveSpeedBonus).ToString();
-        UI.PageUnitStat._ciblesGam.GetComponent<TextMeshProUGUI>().text = (unit.MoveSpeed + unit.MoveSpeedBonus).ToString();
+        UI.PageUnitStat._ciblesGam.GetComponent<TextMeshProUGUI>().text = (1).ToString();
         UI.PageUnitStat._nbAtkGam.GetComponent<TextMeshProUGUI>().text = (unit.NbAttaqueParTour).ToString();
 
         if (unit.Shield >= 1)
@@ -610,12 +610,12 @@ public class MouseCommand : MonoBehaviour
     /// </summary>
     public void QuitRenfortPanel()
     {
-        if (!GameManager.Instance.IsPlayerRedTurn)
+        if (!GameManager.Instance.IsJ1Turn)
         {
             GameManager.Instance.RenfortPhase.CreateTileJ2.Clear();
             GameManager.Instance.RenfortPhase.CreateLeader2.Clear();
         }
-        else if (GameManager.Instance.IsPlayerRedTurn)
+        else if (GameManager.Instance.IsJ1Turn)
         {
             GameManager.Instance.RenfortPhase.CreateTileJ1.Clear();
             GameManager.Instance.RenfortPhase.CreateLeader1.Clear();

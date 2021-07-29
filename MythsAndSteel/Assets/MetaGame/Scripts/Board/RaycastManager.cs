@@ -174,7 +174,7 @@ public class RaycastManager : MonoSingleton<RaycastManager>
                         if(GameManager.Instance.UnitChooseList.Count > 0)
                         {
                             //est ce qu'il y avait déjà une unité dans la liste
-                            if(GameManager.Instance.UnitChooseList[0].GetComponent<UnitScript>().UnitSO.IsInRedArmy == _unitInTile.GetComponent<UnitScript>().UnitSO.IsInRedArmy)
+                            if(GameManager.Instance.UnitChooseList[0].GetComponent<UnitScript>().UnitSO.IsInJ1Army == _unitInTile.GetComponent<UnitScript>().UnitSO.IsInJ1Army)
                             {
                                 GameManager.Instance.AddUnitToList(_unitInTile);
                             }
@@ -252,11 +252,11 @@ public class RaycastManager : MonoSingleton<RaycastManager>
                 }
             }
             else if(GameManager.Instance.ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.OrgoneJ1 || GameManager.Instance.ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.OrgoneJ2){
-                if(GameManager.Instance.IsPlayerRedTurn && _tile == PlayerScript.Instance.J1Infos.TileCentreZoneOrgone)
+                if(GameManager.Instance.IsJ1Turn && _tile == PlayerScript.Instance.J1Infos.TileCentreZoneOrgone)
                 {
                     OrgoneManager.Instance.StartToMoveZone();
                 }
-                else if(!GameManager.Instance.IsPlayerRedTurn && _tile == PlayerScript.Instance.J2Infos.TileCentreZoneOrgone)
+                else if(!GameManager.Instance.IsJ1Turn && _tile == PlayerScript.Instance.J2Infos.TileCentreZoneOrgone)
                 {
                     OrgoneManager.Instance.StartToMoveZone();
                 }
@@ -307,7 +307,7 @@ public class RaycastManager : MonoSingleton<RaycastManager>
     {
         if(uniTouch.IsActivationDone == false)
         {
-            if(GameManager.Instance.IsPlayerRedTurn)
+            if(GameManager.Instance.IsJ1Turn)
             {
                 if(!PlayerStatic.CheckIsUnitArmy(uniTouch, true) && !uniTouch.UnitStatuts.Contains(MYthsAndSteel_Enum.UnitStatut.Possédé))
                 {

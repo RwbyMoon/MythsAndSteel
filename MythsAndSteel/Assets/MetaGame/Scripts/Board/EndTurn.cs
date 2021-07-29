@@ -117,7 +117,7 @@ public class EndTurn : MonoBehaviour
                     UnitScript US = S.Unit.GetComponent<UnitScript>();
                     if(GameManager.Instance.VolDeRavitaillementStat != 3)
                     {
-                       if(S.Unit.GetComponent<UnitScript>().UnitSO.IsInRedArmy && GameManager.Instance.VolDeRavitaillementStat == 2)
+                       if(S.Unit.GetComponent<UnitScript>().UnitSO.IsInJ1Army && GameManager.Instance.VolDeRavitaillementStat == 2)
                        {
                             SoundController.Instance.PlaySound(SoundController.Instance.AudioClips[9]);
                             S.RemoveRessources(1, 2);
@@ -126,7 +126,7 @@ public class EndTurn : MonoBehaviour
                             StartCoroutine(WaitAnimResourceRed(1.5f));
 
                         }
-                       else if (!S.Unit.GetComponent<UnitScript>().UnitSO.IsInRedArmy && GameManager.Instance.VolDeRavitaillementStat == 1)
+                       else if (!S.Unit.GetComponent<UnitScript>().UnitSO.IsInJ1Army && GameManager.Instance.VolDeRavitaillementStat == 1)
                        {
 
                             SoundController.Instance.PlaySound(SoundController.Instance.AudioClips[9]);
@@ -158,7 +158,7 @@ public class EndTurn : MonoBehaviour
                     UnitScript US = S.Unit.GetComponent<UnitScript>();
                     if (GameManager.Instance.VolDeRavitaillementStat != 3)
                     {
-                        if (S.Unit.GetComponent<UnitScript>().UnitSO.IsInRedArmy && GameManager.Instance.VolDeRavitaillementStat == 2)
+                        if (S.Unit.GetComponent<UnitScript>().UnitSO.IsInJ1Army && GameManager.Instance.VolDeRavitaillementStat == 2)
                         {
                             SoundController.Instance.PlaySound(SoundController.Instance.AudioClips[9]);
                             S.RemoveRessources(2, 2);
@@ -167,7 +167,7 @@ public class EndTurn : MonoBehaviour
                             StartCoroutine(WaitAnimResourceRed(1.5f));
 
                         }
-                        else if (!S.Unit.GetComponent<UnitScript>().UnitSO.IsInRedArmy && GameManager.Instance.VolDeRavitaillementStat == 1)
+                        else if (!S.Unit.GetComponent<UnitScript>().UnitSO.IsInJ1Army && GameManager.Instance.VolDeRavitaillementStat == 1)
                         {
 
                             SoundController.Instance.PlaySound(SoundController.Instance.AudioClips[9]);
@@ -220,13 +220,13 @@ public class EndTurn : MonoBehaviour
                 if (S.Unit != null)
                 {
                     UnitScript US = S.Unit.GetComponent<UnitScript>();
-                    if (US.UnitSO.IsInRedArmy && !US.UnitStatuts.Contains(MYthsAndSteel_Enum.UnitStatut.PeutPasPrendreDesObjectifs))
+                    if (US.UnitSO.IsInJ1Army && !US.UnitStatuts.Contains(MYthsAndSteel_Enum.UnitStatut.PeutPasPrendreDesObjectifs))
                     {
                         Debug.Log("Objectif dans le camp rouge.");
                         //ChangeOwner(S, true);
                         PlayerScript.Instance.J1Infos.GoalCapturePointsNumber++;
                     }
-                    else if (!US.UnitSO.IsInRedArmy && !US.UnitStatuts.Contains(MYthsAndSteel_Enum.UnitStatut.PeutPasPrendreDesObjectifs))
+                    else if (!US.UnitSO.IsInJ1Army && !US.UnitStatuts.Contains(MYthsAndSteel_Enum.UnitStatut.PeutPasPrendreDesObjectifs))
                     {
                         Debug.Log("Objectif dans le camp bleu.");
                         //ChangeOwner(S, false);
@@ -243,13 +243,13 @@ public class EndTurn : MonoBehaviour
                 if (S.Unit != null)
                 {
                     UnitScript US = S.Unit.GetComponent<UnitScript>();
-                    if (!US.UnitSO.IsInRedArmy && !US.UnitStatuts.Contains(MYthsAndSteel_Enum.UnitStatut.PeutPasPrendreDesObjectifs))
+                    if (!US.UnitSO.IsInJ1Army && !US.UnitStatuts.Contains(MYthsAndSteel_Enum.UnitStatut.PeutPasPrendreDesObjectifs))
                     {
                         Debug.Log("Objectif dans le camp rouge.");
                         //ChangeOwner(S, true);
                         PlayerScript.Instance.J2Infos.GoalCapturePointsNumber++;
                     }
-                    else if (US.UnitSO.IsInRedArmy && !US.UnitStatuts.Contains(MYthsAndSteel_Enum.UnitStatut.PeutPasPrendreDesObjectifs))
+                    else if (US.UnitSO.IsInJ1Army && !US.UnitStatuts.Contains(MYthsAndSteel_Enum.UnitStatut.PeutPasPrendreDesObjectifs))
                     {
                         Debug.Log("Objectif dans le camp bleu.");
                         //ChangeOwner(S, false);

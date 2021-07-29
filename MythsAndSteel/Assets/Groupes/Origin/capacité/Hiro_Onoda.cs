@@ -8,7 +8,7 @@ public class Hiro_Onoda : Capacity
     {
         List<GameObject> unitlist = new List<GameObject>();
 
-        foreach (GameObject gam in GameManager.Instance.IsPlayerRedTurn ? PlayerScript.Instance.UnitRef.UnitListRedPlayer : PlayerScript.Instance.UnitRef.UnitListBluePlayer)
+        foreach (GameObject gam in GameManager.Instance.IsJ1Turn ? PlayerScript.Instance.UnitRef.UnitListRedPlayer : PlayerScript.Instance.UnitRef.UnitListBluePlayer)
         {
             if (gam.GetComponent<UnitScript>().UnitSO.typeUnite == MYthsAndSteel_Enum.TypeUnite.Infanterie && gam != gameObject)
             {
@@ -17,7 +17,7 @@ public class Hiro_Onoda : Capacity
         }
   
 
-        EventUnit(2, GameManager.Instance.IsPlayerRedTurn ? true : false, unitlist, "Regroupement Instantané", "Êtes-vous sûr de vouloir déplacer ces deux unités à côté de Hiro Onoda");
+        EventUnit(2, GameManager.Instance.IsJ1Turn ? true : false, unitlist, "Regroupement Instantané", "Êtes-vous sûr de vouloir déplacer ces deux unités à côté de Hiro Onoda");
         GameManager.Instance._eventCall += UseCpty;
     }
 
@@ -34,7 +34,7 @@ public class Hiro_Onoda : Capacity
             }
         }
 
-        EventTile(2, GameManager.Instance.IsPlayerRedTurn, tileList, "Regroupement Instantané", "Êtes-vous sur de vouloir déplacer les unités sur ces cases?", false);
+        EventTile(2, GameManager.Instance.IsJ1Turn, tileList, "Regroupement Instantané", "Êtes-vous sur de vouloir déplacer les unités sur ces cases?", false);
         GameManager.Instance._eventCall += EndCpty;
 
     }

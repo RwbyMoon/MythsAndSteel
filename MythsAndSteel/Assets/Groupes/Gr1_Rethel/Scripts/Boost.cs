@@ -19,7 +19,7 @@ public class Boost : Capacity
                 GameObject Unit = TilesManager.Instance.TileList[i].GetComponent<TileScript>().Unit;
                 if (Unit != null)
                 {
-                    if (RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().UnitSO.IsInRedArmy == Unit.GetComponent<UnitScript>().UnitSO.IsInRedArmy)
+                    if (RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().UnitSO.IsInJ1Army == Unit.GetComponent<UnitScript>().UnitSO.IsInJ1Army)
                     {
                         unit.Add(TilesManager.Instance.TileList[Unit.GetComponent<UnitScript>().ActualTiledId]);
 
@@ -33,7 +33,7 @@ public class Boost : Capacity
                 GameObject Unit = TilesManager.Instance.TileList[i].GetComponent<TileScript>().Unit;
                 if (Unit != null)
                 {
-                    if (RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().UnitSO.IsInRedArmy == Unit.GetComponent<UnitScript>().UnitSO.IsInRedArmy)
+                    if (RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().UnitSO.IsInJ1Army == Unit.GetComponent<UnitScript>().UnitSO.IsInJ1Army)
                     {
                         unit.Add(TilesManager.Instance.TileList[Unit.GetComponent<UnitScript>().ActualTiledId]);
 
@@ -48,7 +48,7 @@ public class Boost : Capacity
                 GameObject Unit = TilesManager.Instance.TileList[i].GetComponent<TileScript>().Unit;
                 if (Unit != null)
                 {
-                    if (RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().UnitSO.IsInRedArmy == Unit.GetComponent<UnitScript>().UnitSO.IsInRedArmy)
+                    if (RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().UnitSO.IsInJ1Army == Unit.GetComponent<UnitScript>().UnitSO.IsInJ1Army)
                     {
                         unit.Add(TilesManager.Instance.TileList[Unit.GetComponent<UnitScript>().ActualTiledId]);
 
@@ -63,7 +63,7 @@ public class Boost : Capacity
                 GameObject Unit = TilesManager.Instance.TileList[i].GetComponent<TileScript>().Unit;
                 if (Unit != null)
                 {
-                    if (RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().UnitSO.IsInRedArmy == Unit.GetComponent<UnitScript>().UnitSO.IsInRedArmy)
+                    if (RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().UnitSO.IsInJ1Army == Unit.GetComponent<UnitScript>().UnitSO.IsInJ1Army)
                     {
                         unit.Add(TilesManager.Instance.TileList[Unit.GetComponent<UnitScript>().ActualTiledId]);
 
@@ -78,7 +78,7 @@ public class Boost : Capacity
                 GameObject Unit = TilesManager.Instance.TileList[i].GetComponent<TileScript>().Unit;
                 if (Unit != null)
                 {
-                    if (RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().UnitSO.IsInRedArmy == Unit.GetComponent<UnitScript>().UnitSO.IsInRedArmy)
+                    if (RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().UnitSO.IsInJ1Army == Unit.GetComponent<UnitScript>().UnitSO.IsInJ1Army)
                     {
                         unit.Add(TilesManager.Instance.TileList[Unit.GetComponent<UnitScript>().ActualTiledId]);
 
@@ -90,7 +90,7 @@ public class Boost : Capacity
         }
         GameManager.Instance._eventCall += EndCpty;
         GameManager.Instance._eventCallCancel += StopCpty;
-        GameManager.Instance.StartEventModeTiles(1, GetComponent<UnitScript>().UnitSO.IsInRedArmy, unit, "Boost", "Voulez-vous vraiment utiliser cette capacité?");
+        GameManager.Instance.StartEventModeTiles(1, GetComponent<UnitScript>().UnitSO.IsInJ1Army, unit, "Boost", "Voulez-vous vraiment utiliser cette capacité?");
 
         base.StartCpty();
     }

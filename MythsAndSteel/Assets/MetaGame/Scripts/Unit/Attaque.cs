@@ -437,7 +437,7 @@ public class Attaque : MonoSingleton<Attaque>
     /// </summary>
     private void RandomMore()
     {
-        if (GameManager.Instance.IsPlayerRedTurn || !GameManager.Instance.IsPlayerRedTurn)
+        if (GameManager.Instance.IsJ1Turn || !GameManager.Instance.IsJ1Turn)
         {
             if (_selectedUnit.GetComponent<UnitScript>().DoingCharg1Blue == true)
             {
@@ -496,7 +496,7 @@ public class Attaque : MonoSingleton<Attaque>
         _selectedTiles.Clear();
         _newNeighbourId.Clear();
 
-        if ((GameManager.Instance.IsPlayerRedTurn && PlayerScript.Instance.J1Infos.ActivationLeft > 0) || (_selectedUnit.GetComponent<UnitScript>()._hasStartMove && GameManager.Instance.IsPlayerRedTurn && PlayerScript.Instance.J1Infos.ActivationLeft == 0))
+        if ((GameManager.Instance.IsJ1Turn && PlayerScript.Instance.J1Infos.ActivationLeft > 0) || (_selectedUnit.GetComponent<UnitScript>()._hasStartMove && GameManager.Instance.IsJ1Turn && PlayerScript.Instance.J1Infos.ActivationLeft == 0))
         {
             if (tileId != -1)
             {
@@ -546,7 +546,7 @@ public class Attaque : MonoSingleton<Attaque>
                 }
             }
         }
-        else if ((!GameManager.Instance.IsPlayerRedTurn && PlayerScript.Instance.J2Infos.ActivationLeft > 0) || (_selectedUnit.GetComponent<UnitScript>()._hasStartMove && !GameManager.Instance.IsPlayerRedTurn && PlayerScript.Instance.J2Infos.ActivationLeft == 0))
+        else if ((!GameManager.Instance.IsJ1Turn && PlayerScript.Instance.J2Infos.ActivationLeft > 0) || (_selectedUnit.GetComponent<UnitScript>()._hasStartMove && !GameManager.Instance.IsJ1Turn && PlayerScript.Instance.J2Infos.ActivationLeft == 0))
         {
             if (tileId != -1)
             {
@@ -600,11 +600,11 @@ public class Attaque : MonoSingleton<Attaque>
         {
             if (TilesManager.Instance.TileList[TileId].TryGetComponent(out TileScript u) && u.Unit != null)
             {
-                if (GameManager.Instance.IsPlayerRedTurn && u.Unit.GetComponent<UnitScript>().UnitSO.IsInRedArmy || (GameManager.Instance.IsPlayerRedTurn && !u.Unit.GetComponent<UnitScript>().UnitSO.IsInRedArmy && u.Unit.GetComponent<UnitScript>().UnitStatuts.Contains(MYthsAndSteel_Enum.UnitStatut.Possédé)))
+                if (GameManager.Instance.IsJ1Turn && u.Unit.GetComponent<UnitScript>().UnitSO.IsInJ1Army || (GameManager.Instance.IsJ1Turn && !u.Unit.GetComponent<UnitScript>().UnitSO.IsInJ1Army && u.Unit.GetComponent<UnitScript>().UnitStatuts.Contains(MYthsAndSteel_Enum.UnitStatut.Possédé)))
                 {
                     _JaugeAttack.SynchAttackBorne(u.Unit.GetComponent<UnitScript>());
                 }
-                else if (!GameManager.Instance.IsPlayerRedTurn && !u.Unit.GetComponent<UnitScript>().UnitSO.IsInRedArmy || (!GameManager.Instance.IsPlayerRedTurn && !u.Unit.GetComponent<UnitScript>().UnitSO.IsInRedArmy && u.Unit.GetComponent<UnitScript>().UnitStatuts.Contains(MYthsAndSteel_Enum.UnitStatut.Possédé)))
+                else if (!GameManager.Instance.IsJ1Turn && !u.Unit.GetComponent<UnitScript>().UnitSO.IsInJ1Army || (!GameManager.Instance.IsJ1Turn && !u.Unit.GetComponent<UnitScript>().UnitSO.IsInJ1Army && u.Unit.GetComponent<UnitScript>().UnitStatuts.Contains(MYthsAndSteel_Enum.UnitStatut.Possédé)))
                 {
                     _JaugeAttack.SynchAttackBorne(u.Unit.GetComponent<UnitScript>());
                 }
@@ -702,7 +702,7 @@ public class Attaque : MonoSingleton<Attaque>
                 TileScript currentTileScript = TilesManager.Instance.TileList[tileId].GetComponent<TileScript>();
                 if (currentTileScript.Unit != null)
                 {
-                    if (currentTileScript.Unit.GetComponent<UnitScript>().UnitSO.IsInRedArmy != GameManager.Instance.IsPlayerRedTurn)
+                    if (currentTileScript.Unit.GetComponent<UnitScript>().UnitSO.IsInJ1Army != GameManager.Instance.IsJ1Turn)
                     {
                         foreach (MYthsAndSteel_Enum.TerrainType T1 in TilesManager.Instance.TileList[tileId].GetComponent<TileScript>().TerrainEffectList)
                         {
@@ -774,7 +774,7 @@ public class Attaque : MonoSingleton<Attaque>
     /// </summary>
     public void StopAttack()
     {
-        if (GameManager.Instance.IsPlayerRedTurn)
+        if (GameManager.Instance.IsJ1Turn)
         {
             if (UIInstance.Instance.RedRenfortCount == 0)
             {

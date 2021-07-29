@@ -135,12 +135,12 @@ public class GameManagerSO : ScriptableObject
 
             case MYthsAndSteel_Enum.PhaseDeJeu.ActionJ1:
                 GameManager.Instance.GoPhase(MYthsAndSteel_Enum.PhaseDeJeu.ActionJ1);
-                foreach (GameObject unit in GameManager.Instance.IsPlayerRedTurn ? PlayerScript.Instance.UnitRef.UnitListRedPlayer : PlayerScript.Instance.UnitRef.UnitListBluePlayer)
+                foreach (GameObject unit in GameManager.Instance.IsJ1Turn ? PlayerScript.Instance.UnitRef.UnitListRedPlayer : PlayerScript.Instance.UnitRef.UnitListBluePlayer)
                 {
                     unit.GetComponent<UnitScript>().ResetTurn();
                 }
                 UIInstance.Instance.DesactiveOrgoneChargeButton();
-                if (GameManager.Instance.IsPlayerRedTurn)
+                if (GameManager.Instance.IsJ1Turn)
                 {
                     UIInstance.Instance.ButtonRenfortJ1.GetComponent<Button>().interactable = true;
                     UIInstance.Instance.RedRenfortCount = 0;
@@ -150,13 +150,13 @@ public class GameManagerSO : ScriptableObject
                     UIInstance.Instance.ButtonRenfortJ2.GetComponent<Button>().interactable = true;
                     UIInstance.Instance.BlueRenfortCount = 0;
                 }
-                if (GameManager.Instance.SabotageStat == 1 && !GameManager.Instance.IsPlayerRedTurn)
+                if (GameManager.Instance.SabotageStat == 1 && !GameManager.Instance.IsJ1Turn)
                 {
                     PlayerScript.Instance.J2Infos.ActivationLeft--;
                     GameManager.Instance.SabotageStat = 3;
 
                 }
-                else if (GameManager.Instance.SabotageStat == 2 && GameManager.Instance.IsPlayerRedTurn)
+                else if (GameManager.Instance.SabotageStat == 2 && GameManager.Instance.IsJ1Turn)
                 {
                     PlayerScript.Instance.J1Infos.ActivationLeft--;
                     GameManager.Instance.SabotageStat = 3;
@@ -172,7 +172,7 @@ public class GameManagerSO : ScriptableObject
                 GameManager.Instance.GoPhase(MYthsAndSteel_Enum.PhaseDeJeu.OrgoneJ2);
                 RaycastManager.Instance.ActualUnitSelected = null;
                 RaycastManager.Instance.ActualTileSelected = null;
-                if (GameManager.Instance.IsPlayerRedTurn)
+                if (GameManager.Instance.IsJ1Turn)
                 {
 
 
@@ -185,8 +185,8 @@ public class GameManagerSO : ScriptableObject
                 
                 if (GameManager.Instance.possesion)
                 {
-                    Debug.Log(GameManager.Instance.IsPlayerRedTurn);
-                    foreach (GameObject unit in GameManager.Instance.IsPlayerRedTurn ? PlayerScript.Instance.UnitRef.UnitListBluePlayer : PlayerScript.Instance.UnitRef.UnitListRedPlayer)
+                    Debug.Log(GameManager.Instance.IsJ1Turn);
+                    foreach (GameObject unit in GameManager.Instance.IsJ1Turn ? PlayerScript.Instance.UnitRef.UnitListBluePlayer : PlayerScript.Instance.UnitRef.UnitListRedPlayer)
                     {
                         GameManager.Instance.possesion = false;
                         Debug.Log("fjkds");
@@ -223,7 +223,7 @@ public class GameManagerSO : ScriptableObject
                                                             {
                                                                 u = TS.GetComponent<TileScript>().Unit.GetComponent<UnitScript>();
                                                             }
-                                                            Try3.EndPlayerTurnEffect(GameManager.Instance.IsPlayerRedTurn, u);
+                                                            Try3.EndPlayerTurnEffect(GameManager.Instance.IsJ1Turn, u);
                                                         }
                                                     }
                                                 }
@@ -239,7 +239,7 @@ public class GameManagerSO : ScriptableObject
                                                    u = TS.GetComponent<TileScript>().Unit.GetComponent<UnitScript>();
                                                 }
 
-                                                Try.EndPlayerTurnEffect(GameManager.Instance.IsPlayerRedTurn, u);
+                                                Try.EndPlayerTurnEffect(GameManager.Instance.IsJ1Turn, u);
                                             }
                                         }
                                     }
@@ -254,11 +254,11 @@ public class GameManagerSO : ScriptableObject
                 if (GameManager.Instance.armeEpidemelogiqueStat != 0)
                 {
                     List<GameObject> refunit5 = new List<GameObject>();
-                    if (GameManager.Instance.IsPlayerRedTurn && GameManager.Instance.armeEpidemelogiqueStat == 2)
+                    if (GameManager.Instance.IsJ1Turn && GameManager.Instance.armeEpidemelogiqueStat == 2)
                     {
                         refunit5 = PlayerScript.Instance.UnitRef.UnitListRedPlayer;
                     }
-                    else if (!GameManager.Instance.IsPlayerRedTurn && GameManager.Instance.armeEpidemelogiqueStat == 1)
+                    else if (!GameManager.Instance.IsJ1Turn && GameManager.Instance.armeEpidemelogiqueStat == 1)
                     {
                         refunit5 = PlayerScript.Instance.UnitRef.UnitListBluePlayer;
                     }
@@ -290,7 +290,7 @@ public class GameManagerSO : ScriptableObject
                 List<GameObject> refunit = new List<GameObject>();
                 refunit.AddRange(PlayerScript.Instance.UnitRef.UnitListRedPlayer);
                 refunit.AddRange(PlayerScript.Instance.UnitRef.UnitListBluePlayer);
-                if (GameManager.Instance.IsPlayerRedTurn)
+                if (GameManager.Instance.IsJ1Turn)
                 {
 
                     foreach (GameObject unit in refunit)
@@ -306,7 +306,7 @@ public class GameManagerSO : ScriptableObject
 
 
                 }
-                else if (!GameManager.Instance.IsPlayerRedTurn)
+                else if (!GameManager.Instance.IsJ1Turn)
                 {
 
                     foreach (GameObject unit in refunit)
@@ -327,7 +327,7 @@ public class GameManagerSO : ScriptableObject
                 List<GameObject> refunit3 = new List<GameObject>();
                 refunit3.AddRange(PlayerScript.Instance.UnitRef.UnitListRedPlayer);
                 refunit3.AddRange(PlayerScript.Instance.UnitRef.UnitListBluePlayer);
-                if (GameManager.Instance.IsPlayerRedTurn)
+                if (GameManager.Instance.IsJ1Turn)
                 {
 
                     foreach (GameObject unit in refunit3)
@@ -343,7 +343,7 @@ public class GameManagerSO : ScriptableObject
 
 
                 }
-                else if (!GameManager.Instance.IsPlayerRedTurn)
+                else if (!GameManager.Instance.IsJ1Turn)
                 {
 
                     foreach (GameObject unit in refunit3)
@@ -366,7 +366,7 @@ public class GameManagerSO : ScriptableObject
                     List<GameObject> refunit6 = new List<GameObject>();
                     refunit6.AddRange(PlayerScript.Instance.UnitRef.UnitListRedPlayer);
                     refunit6.AddRange(PlayerScript.Instance.UnitRef.UnitListBluePlayer);
-                    if (GameManager.Instance.IsPlayerRedTurn && GameManager.Instance.statetImmobilisation == 2 || !GameManager.Instance.IsPlayerRedTurn && GameManager.Instance.statetImmobilisation == 1)
+                    if (GameManager.Instance.IsJ1Turn && GameManager.Instance.statetImmobilisation == 2 || !GameManager.Instance.IsJ1Turn && GameManager.Instance.statetImmobilisation == 1)
                     {
 
                         foreach (GameObject unit in refunit6)
@@ -399,12 +399,12 @@ public class GameManagerSO : ScriptableObject
 
             case MYthsAndSteel_Enum.PhaseDeJeu.ActionJ2:
                 GameManager.Instance.GoPhase(MYthsAndSteel_Enum.PhaseDeJeu.ActionJ2);
-                foreach (GameObject unit in GameManager.Instance.IsPlayerRedTurn ? PlayerScript.Instance.UnitRef.UnitListRedPlayer : PlayerScript.Instance.UnitRef.UnitListBluePlayer)
+                foreach (GameObject unit in GameManager.Instance.IsJ1Turn ? PlayerScript.Instance.UnitRef.UnitListRedPlayer : PlayerScript.Instance.UnitRef.UnitListBluePlayer)
                 {
                     unit.GetComponent<UnitScript>().ResetTurn();
                 }
                 UIInstance.Instance.DesactiveOrgoneChargeButton();
-                if(GameManager.Instance.IsPlayerRedTurn)
+                if(GameManager.Instance.IsJ1Turn)
                 {
 
                     UIInstance.Instance.RedRenfortCount = 0;
@@ -415,12 +415,12 @@ public class GameManagerSO : ScriptableObject
                     UIInstance.Instance.BlueRenfortCount = 0;
                     UIInstance.Instance.ButtonRenfortJ2.GetComponent<Button>().interactable = true;
                 }
-                if (GameManager.Instance.SabotageStat == 1 && !GameManager.Instance.IsPlayerRedTurn)
+                if (GameManager.Instance.SabotageStat == 1 && !GameManager.Instance.IsJ1Turn)
                 {
                     PlayerScript.Instance.J2Infos.ActivationLeft--;
                     GameManager.Instance.SabotageStat = 3;
                 }
-                else if (GameManager.Instance.SabotageStat == 2 && GameManager.Instance.IsPlayerRedTurn)
+                else if (GameManager.Instance.SabotageStat == 2 && GameManager.Instance.IsJ1Turn)
                 {
                     PlayerScript.Instance.J1Infos.ActivationLeft--;
                     GameManager.Instance.SabotageStat = 3;
@@ -461,7 +461,7 @@ public class GameManagerSO : ScriptableObject
                                                             {
                                                                 u = TS.GetComponent<TileScript>().Unit.GetComponent<UnitScript>();
                                                             }
-                                                            Try3.EndPlayerTurnEffect(GameManager.Instance.IsPlayerRedTurn, u);
+                                                            Try3.EndPlayerTurnEffect(GameManager.Instance.IsJ1Turn, u);
                                                         }
                                                     }
                                                 }
@@ -476,7 +476,7 @@ public class GameManagerSO : ScriptableObject
                                                 {
                                                     u = TS.GetComponent<TileScript>().Unit.GetComponent<UnitScript>();
                                                 }
-                                                Try.EndPlayerTurnEffect(GameManager.Instance.IsPlayerRedTurn, u);
+                                                Try.EndPlayerTurnEffect(GameManager.Instance.IsJ1Turn, u);
                                             }
                                         }
                                     }
@@ -507,11 +507,11 @@ public class GameManagerSO : ScriptableObject
                 if (GameManager.Instance.armeEpidemelogiqueStat != 0)
                 {
                     List<GameObject> refunit5 = new List<GameObject>();
-                    if (GameManager.Instance.IsPlayerRedTurn && GameManager.Instance.armeEpidemelogiqueStat == 2)
+                    if (GameManager.Instance.IsJ1Turn && GameManager.Instance.armeEpidemelogiqueStat == 2)
                     {
                         refunit5 = PlayerScript.Instance.UnitRef.UnitListRedPlayer;
                     }
-                    else if (!GameManager.Instance.IsPlayerRedTurn && GameManager.Instance.armeEpidemelogiqueStat == 1)
+                    else if (!GameManager.Instance.IsJ1Turn && GameManager.Instance.armeEpidemelogiqueStat == 1)
                     {
                         refunit5 = PlayerScript.Instance.UnitRef.UnitListBluePlayer;
                     }
@@ -539,7 +539,7 @@ public class GameManagerSO : ScriptableObject
                       
                     if (GameManager.Instance.possesion)
                     {
-                        foreach (GameObject unit in GameManager.Instance.IsPlayerRedTurn ? PlayerScript.Instance.UnitRef.UnitListBluePlayer : PlayerScript.Instance.UnitRef.UnitListRedPlayer)
+                        foreach (GameObject unit in GameManager.Instance.IsJ1Turn ? PlayerScript.Instance.UnitRef.UnitListBluePlayer : PlayerScript.Instance.UnitRef.UnitListRedPlayer)
                         {
                            
                             GameManager.Instance.possesion = false;
@@ -551,7 +551,7 @@ public class GameManagerSO : ScriptableObject
                 List<GameObject> refunit2 = new List<GameObject>();
                 refunit2.AddRange(PlayerScript.Instance.UnitRef.UnitListRedPlayer);
                 refunit2.AddRange(PlayerScript.Instance.UnitRef.UnitListBluePlayer);
-                if (GameManager.Instance.IsPlayerRedTurn)
+                if (GameManager.Instance.IsJ1Turn)
                 {
 
                     foreach (GameObject unit in refunit2)
@@ -567,7 +567,7 @@ public class GameManagerSO : ScriptableObject
 
 
                 }
-                else if (!GameManager.Instance.IsPlayerRedTurn)
+                else if (!GameManager.Instance.IsJ1Turn)
                 {
 
                     foreach (GameObject unit in refunit2)
@@ -588,7 +588,7 @@ public class GameManagerSO : ScriptableObject
                 List<GameObject> refunit4 = new List<GameObject>();
                 refunit4.AddRange(PlayerScript.Instance.UnitRef.UnitListRedPlayer);
                 refunit4.AddRange(PlayerScript.Instance.UnitRef.UnitListBluePlayer);
-                if (GameManager.Instance.IsPlayerRedTurn)
+                if (GameManager.Instance.IsJ1Turn)
                 {
 
                     foreach (GameObject unit in refunit4)
@@ -604,7 +604,7 @@ public class GameManagerSO : ScriptableObject
 
 
                 }
-                else if (!GameManager.Instance.IsPlayerRedTurn)
+                else if (!GameManager.Instance.IsJ1Turn)
                 {
 
                     foreach (GameObject unit in refunit4)
@@ -626,7 +626,7 @@ public class GameManagerSO : ScriptableObject
                     List<GameObject> refunit6 = new List<GameObject>();
                     refunit6.AddRange(PlayerScript.Instance.UnitRef.UnitListRedPlayer);
                     refunit6.AddRange(PlayerScript.Instance.UnitRef.UnitListBluePlayer);
-                    if (GameManager.Instance.IsPlayerRedTurn && GameManager.Instance.statetImmobilisation == 2 || !GameManager.Instance.IsPlayerRedTurn && GameManager.Instance.statetImmobilisation == 1)
+                    if (GameManager.Instance.IsJ1Turn && GameManager.Instance.statetImmobilisation == 2 || !GameManager.Instance.IsJ1Turn && GameManager.Instance.statetImmobilisation == 1)
                     {
 
                         foreach (GameObject unit in refunit6)

@@ -9,7 +9,7 @@ public class HealNear : Capacity
 
     public override void StartCpty()
     {
-        int ressourcePlayer = GetComponent<UnitScript>().UnitSO.IsInRedArmy ? PlayerScript.Instance.J1Infos.Ressource : PlayerScript.Instance.J2Infos.Ressource;
+        int ressourcePlayer = GetComponent<UnitScript>().UnitSO.IsInJ1Army ? PlayerScript.Instance.J1Infos.Ressource : PlayerScript.Instance.J2Infos.Ressource;
         if (ressourcePlayer >= Capacity1Cost)
         {
             List<GameObject> tile = new List<GameObject>();
@@ -22,7 +22,7 @@ public class HealNear : Capacity
                     if (unit.typeUnite == MYthsAndSteel_Enum.TypeUnite.Mecha || unit.typeUnite == MYthsAndSteel_Enum.TypeUnite.Artillerie || unit.typeUnite == MYthsAndSteel_Enum.TypeUnite.Vehicule)
                     {
 
-                        if(unit.IsInRedArmy == GameManager.Instance.IsPlayerRedTurn)
+                        if(unit.IsInJ1Army == GameManager.Instance.IsJ1Turn)
                         {
 
                     tile.Add(TilesManager.Instance.TileList[T]);
@@ -32,7 +32,7 @@ public class HealNear : Capacity
             }
             GameManager.Instance._eventCall += EndCpty;
             GameManager.Instance._eventCallCancel += StopCpty;
-            GameManager.Instance.StartEventModeTiles(1, GetComponent<UnitScript>().UnitSO.IsInRedArmy, tile, "Equipement optimisé!", "Donne " + HealValue + " PV une unité adjacente. Voulez-vous vraiment effectuer cette action ?");
+            GameManager.Instance.StartEventModeTiles(1, GetComponent<UnitScript>().UnitSO.IsInJ1Army, tile, "Equipement optimisé!", "Donne " + HealValue + " PV une unité adjacente. Voulez-vous vraiment effectuer cette action ?");
         }
     }
 
@@ -45,7 +45,7 @@ public class HealNear : Capacity
 
     public override void EndCpty()
     {
-        if (GetComponent<UnitScript>().UnitSO.IsInRedArmy)
+        if (GetComponent<UnitScript>().UnitSO.IsInJ1Army)
         {
             PlayerScript.Instance.J1Infos.Ressource -= Capacity1Cost;
         }

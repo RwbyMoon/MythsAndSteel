@@ -9,7 +9,7 @@ public class FireBreathCpty : Capacity
 
     public override void StartCpty()
     {
-        int ressourcePlayer = GetComponent<UnitScript>().UnitSO.IsInRedArmy ? PlayerScript.Instance.J1Infos.Ressource : PlayerScript.Instance.J2Infos.Ressource;
+        int ressourcePlayer = GetComponent<UnitScript>().UnitSO.IsInJ1Army ? PlayerScript.Instance.J1Infos.Ressource : PlayerScript.Instance.J2Infos.Ressource;
         if (ressourcePlayer >= Capacity1Cost)
         {
             List<GameObject> tile = new List<GameObject>();
@@ -19,7 +19,7 @@ public class FireBreathCpty : Capacity
             }
             GameManager.Instance._eventCall += EndCpty;
             GameManager.Instance._eventCallCancel += StopCpty;
-            GameManager.Instance.StartEventModeTiles(1, GetComponent<UnitScript>().UnitSO.IsInRedArmy, tile, "Souffle de feu!", "Inflige 2 points de dégâts sur 3 cases en ligne droite. Voulez-vous vraiment effectuer cette action ?");
+            GameManager.Instance.StartEventModeTiles(1, GetComponent<UnitScript>().UnitSO.IsInJ1Army, tile, "Souffle de feu!", "Inflige 2 points de dégâts sur 3 cases en ligne droite. Voulez-vous vraiment effectuer cette action ?");
         }
     }
 
@@ -32,7 +32,7 @@ public class FireBreathCpty : Capacity
 
     public override void EndCpty()
     {
-        if (GetComponent<UnitScript>().UnitSO.IsInRedArmy)
+        if (GetComponent<UnitScript>().UnitSO.IsInJ1Army)
         {
             PlayerScript.Instance.J1Infos.Ressource -= Capacity1Cost;
         }

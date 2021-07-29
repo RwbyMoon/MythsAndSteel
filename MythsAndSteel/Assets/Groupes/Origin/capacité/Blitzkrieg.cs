@@ -9,7 +9,7 @@ public class Blitzkrieg : Capacity
     public override void StartCpty()
     {
         GetComponent<UnitScript>().IsActifNotConsumeAction = true;
-        int ressourcePlayer = GameManager.Instance.IsPlayerRedTurn ? PlayerScript.Instance.J1Infos.Ressource : PlayerScript.Instance.J2Infos.Ressource;
+        int ressourcePlayer = GameManager.Instance.IsJ1Turn ? PlayerScript.Instance.J1Infos.Ressource : PlayerScript.Instance.J2Infos.Ressource;
         if (ressourcePlayer >= Capacity1Cost)
         {
             List<GameObject> tile = new List<GameObject>();
@@ -43,7 +43,7 @@ public class Blitzkrieg : Capacity
     public override void EndCpty()
     {
         audioSource.PlayOneShot(ActivUp, 1f);
-         Player player = GameManager.Instance.IsPlayerRedTurn ? PlayerScript.Instance.J1Infos : PlayerScript.Instance.J2Infos;
+         Player player = GameManager.Instance.IsJ1Turn ? PlayerScript.Instance.J1Infos : PlayerScript.Instance.J2Infos;
         Debug.Log("oui");
         player.Ressource -= Capacity1Cost;
         player.ActivationLeft += 2;

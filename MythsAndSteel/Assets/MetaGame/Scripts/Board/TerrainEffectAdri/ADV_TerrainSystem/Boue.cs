@@ -10,7 +10,7 @@ public class Boue : TerrainParent
         if (Unit != null)
         {
            
-            if(Unit.UnitSO.IsInRedArmy == IsInRedArmy && !Unit._hasStartMove && !Unit.GetComponent<UnitScript>().ToutTerrain && !Unit.GetComponent<UnitScript>().Volant)
+            if(Unit.UnitSO.IsInJ1Army == IsInRedArmy && !Unit._hasStartMove && !Unit.GetComponent<UnitScript>().ToutTerrain && !Unit.GetComponent<UnitScript>().Volant)
             {
                 Unit.TakeDamage(1);
 
