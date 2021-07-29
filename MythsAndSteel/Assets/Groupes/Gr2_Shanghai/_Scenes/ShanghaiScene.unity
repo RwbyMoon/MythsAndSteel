@@ -1591,6 +1591,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5809077986756428449, guid: 31ce9f7613ab8954f9d1342edd11fce1, type: 3}
   m_PrefabInstance: {fileID: 941124409}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &52238290 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5206241554185911617, guid: 073f643059aa8084d9d48459c2b24b24, type: 3}
+  m_PrefabInstance: {fileID: 1717620165}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &55532404
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12835,6 +12840,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: -20}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &432330858 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1638417357793978671, guid: 5dac19f2bbfe3d6438d44602e1f45b8c, type: 3}
+  m_PrefabInstance: {fileID: 703169022}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &435467514 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7615493162520283648, guid: 23d5891db20fc824ebf77b9b0e573bb7, type: 3}
@@ -18937,6 +18947,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25294b9364e0e6a40bdf53908301a743, type: 3}
+--- !u!1 &531586852 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2233764969326599540, guid: b7dce2bbce5fd1b46b8b6918db8c81b7, type: 3}
+  m_PrefabInstance: {fileID: 1928164535}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &531828286 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8511874936075131972, guid: 6c2849a05d89df74c803f2eea890bbb0, type: 3}
@@ -36760,33 +36775,33 @@ MonoBehaviour:
   _ArmyJ1WinAtTheEnd: 0
   _j1Infos:
     EventUseLeft: 0
-    ArmyName: 
-    ArmyNameNomMasc: 
-    ArmyNameNomFem: 
+    ArmyName: Chine
+    ArmyNameNomMasc: chinois
+    ArmyNameNomFem: chinoise
     ActivationLeft: 0
     ActivationCardValue: 0
     _OrgoneValue: 0
-    OrgoneExploseCancel: 1
+    OrgoneExploseCancel: 0
     OrgonePowerLeft: 0
     _LastKnownOrgoneValue: 0
-    TileCentreZoneOrgone: {fileID: 0}
-    _Ressource: 0
+    TileCentreZoneOrgone: {fileID: 1036877431}
+    _Ressource: 3
     GoalCapturePointsNumber: 0
     HasCreateUnit: 0
     dontTouchThis: 0
   _j2Infos:
     EventUseLeft: 0
-    ArmyName: 
-    ArmyNameNomMasc: 
-    ArmyNameNomFem: 
+    ArmyName: Japon
+    ArmyNameNomMasc: japonais
+    ArmyNameNomFem: japonaise
     ActivationLeft: 0
     ActivationCardValue: 0
     _OrgoneValue: 0
-    OrgoneExploseCancel: 1
+    OrgoneExploseCancel: 0
     OrgonePowerLeft: 0
     _LastKnownOrgoneValue: 0
-    TileCentreZoneOrgone: {fileID: 0}
-    _Ressource: 0
+    TileCentreZoneOrgone: {fileID: 1948034056}
+    _Ressource: 3
     GoalCapturePointsNumber: 0
     HasCreateUnit: 0
     dontTouchThis: 0
@@ -36794,15 +36809,21 @@ MonoBehaviour:
   DisactivateUnitType: 
   _eventCardList:
     _eventSO: {fileID: 11400000, guid: 955303dc40a1fa54984cef9072aef4ad, type: 2}
-    _eventCardJ1: 
-    _eventCardBluePlayer: 
-    _eventGamJ1: []
-    _eventGamJ2: []
+    _eventCardJ1: 000000000200000008000000
+    _eventCardJ2: 0a0000000600000001000000
+    _eventGamJ1:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    _eventGamJ2:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
   _cardObtain: 
-  J1Anim: {fileID: 635168400}
-  J2Anim: {fileID: 428529051}
-  UseResourcesAnimJ1: {fileID: 428529051}
-  UseResourcesAnimJ2: {fileID: 0}
+  J1Anim: {fileID: 1840330438}
+  J2Anim: {fileID: 52238290}
+  UseResourcesAnimJ1: {fileID: 531586852}
+  UseResourcesAnimJ2: {fileID: 432330858}
 --- !u!4 &1087456876 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6059932685993088843, guid: d1962239ab789ca4ca215d4a6b9915b0, type: 3}
@@ -61349,6 +61370,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1839300238}
   m_CullTransparentMesh: 1
+--- !u!1 &1840330438 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7531181307576381077, guid: d2e46e67e6ac9ac49aa6045262c95038, type: 3}
+  m_PrefabInstance: {fileID: 1151012240}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1846323069
 GameObject:
   m_ObjectHideFlags: 0
@@ -63092,7 +63118,7 @@ MonoBehaviour:
   _eventCardList:
     _eventSO: {fileID: 11400000, guid: 955303dc40a1fa54984cef9072aef4ad, type: 2}
     _eventCardJ1: 
-    _eventCardBluePlayer: 
+    _eventCardJ2: 
     _eventGamJ1: []
     _eventGamJ2: []
   _cardObtain: 

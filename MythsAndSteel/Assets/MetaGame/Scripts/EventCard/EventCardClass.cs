@@ -49,7 +49,7 @@ public class EventCardClass : ScriptableObject{
             }
         }
         else{
-            PlayerScript.Instance.EventCardList._eventCardBluePlayer.Remove(ev);
+            PlayerScript.Instance.EventCardList._eventCardJ2.Remove(ev);
 
             foreach(GameObject gam in PlayerScript.Instance.EventCardList._eventGamJ2){
                 if(gam.GetComponent<EventCardContainer>().EventCardInfo._eventType == ev){
@@ -104,7 +104,7 @@ public class EventCardClass : ScriptableObject{
         }
         else if(player == 2)
         {
-            if(PlayerScript.Instance.EventCardList._eventCardBluePlayer.Count <= 3){
+            if(PlayerScript.Instance.EventCardList._eventCardJ2.Count <= 3){
                 ResetEventParentPos(2);
 
                 UpdateEventList(gam, player);
@@ -1328,7 +1328,7 @@ foreach (GameObject element in TilesManager.Instance.TileList)
             }
         }
 
-        foreach(MYthsAndSteel_Enum.EventCard card in PlayerScript.Instance.EventCardList._eventCardBluePlayer)
+        foreach(MYthsAndSteel_Enum.EventCard card in PlayerScript.Instance.EventCardList._eventCardJ2)
         {
             if(card == cardToFind)
             {

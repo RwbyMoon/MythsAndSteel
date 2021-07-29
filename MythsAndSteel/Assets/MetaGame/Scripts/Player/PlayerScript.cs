@@ -15,10 +15,10 @@ public class PlayerScript : MonoSingleton<PlayerScript>
     [SerializeField] bool _ArmyJ1WinAtTheEnd;
     public bool ArmyJ1WinAtTheEnd => _ArmyJ1WinAtTheEnd;
 
-    [Header("STAT JOUEUR ROUGE")]
+    [Header("STAT JOUEUR J1")]
     [SerializeField] private Player _j1Infos = new Player();
     public Player J1Infos => _j1Infos;
-    [Header("STAT JOUEUR BLEU")]
+    [Header("STAT JOUEUR J2")]
     [SerializeField] private Player _j2Infos = new Player();
     public Player J2Infos => _j2Infos;
     [Space]
@@ -158,7 +158,7 @@ public class PlayerScript : MonoSingleton<PlayerScript>
             EventCardList._eventCardJ1.Insert(0, card);
         }
         else if(player == 2){
-            EventCardList._eventCardBluePlayer.Insert(0, card);
+            EventCardList._eventCardJ2.Insert(0, card);
         }
         else{
             Debug.LogError("vous essayez d'ajouter une carte event a un joueur qui n'existe pas");
@@ -377,7 +377,7 @@ public class EventCardList
     public List<MYthsAndSteel_Enum.EventCard> _eventCardJ1 = new List<MYthsAndSteel_Enum.EventCard>();
 
     //Carte Event du Joueur 2
-    public List<MYthsAndSteel_Enum.EventCard> _eventCardBluePlayer = new List<MYthsAndSteel_Enum.EventCard>();
+    public List<MYthsAndSteel_Enum.EventCard> _eventCardJ2 = new List<MYthsAndSteel_Enum.EventCard>();
 
     //Carte Gam du Joueur 1
     public List<GameObject> _eventGamJ1 = null;
