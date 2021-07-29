@@ -666,7 +666,7 @@ public class UnitScript : MonoBehaviour
             if (Damage > 0 && !IsOrgoneDamage)
             {
 
-                if (TilesManager.Instance.TileList[ActualTiledId].GetComponent<TileScript>().TerrainEffectList.Contains(MYthsAndSteel_Enum.TerrainType.OrgoneRed))
+                if (TilesManager.Instance.TileList[ActualTiledId].GetComponent<TileScript>().TerrainEffectList.Contains(MYthsAndSteel_Enum.TerrainType.OrgoneJ1))
                 {
                     if (!GameManager.Instance.IsCheckingOrgone)
                     {
@@ -688,7 +688,7 @@ public class UnitScript : MonoBehaviour
                     }
                 }
 
-                if (TilesManager.Instance.TileList[ActualTiledId].GetComponent<TileScript>().TerrainEffectList.Contains(MYthsAndSteel_Enum.TerrainType.OrgoneBlue))
+                if (TilesManager.Instance.TileList[ActualTiledId].GetComponent<TileScript>().TerrainEffectList.Contains(MYthsAndSteel_Enum.TerrainType.OrgoneJ2))
                 {
                     if (!GameManager.Instance.IsCheckingOrgone)
                     {
@@ -769,14 +769,14 @@ public class UnitScript : MonoBehaviour
         else PlayerScript.Instance.UnitRef.UnitListBluePlayer.Remove(gameObject);
         if (!IsDeadByOrgone)
         {
-            if (TilesManager.Instance.TileList[ActualTiledId].GetComponent<TileScript>().TerrainEffectList.Contains(MYthsAndSteel_Enum.TerrainType.OrgoneRed))
+            if (TilesManager.Instance.TileList[ActualTiledId].GetComponent<TileScript>().TerrainEffectList.Contains(MYthsAndSteel_Enum.TerrainType.OrgoneJ1))
             {
                 Debug.Log("doing orgone" + GameManager.Instance.DoingEpxlosionOrgone);
                 PlayerScript.Instance.AddOrgone(1, 1);
                 FxOrgoneSpawn(true);
                 PlayerScript.Instance.J1Infos.CheckOrgone(1);
             }
-            else if (TilesManager.Instance.TileList[ActualTiledId].GetComponent<TileScript>().TerrainEffectList.Contains(MYthsAndSteel_Enum.TerrainType.OrgoneBlue))
+            else if (TilesManager.Instance.TileList[ActualTiledId].GetComponent<TileScript>().TerrainEffectList.Contains(MYthsAndSteel_Enum.TerrainType.OrgoneJ2))
             {
                 PlayerScript.Instance.AddOrgone(1, 2);
                 FxOrgoneSpawn(false);

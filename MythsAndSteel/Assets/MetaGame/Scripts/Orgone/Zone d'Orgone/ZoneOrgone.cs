@@ -57,11 +57,11 @@ public class ZoneOrgone : MonoBehaviour
         }
 
         List<int> neighZone = PlayerStatic.GetNeighbourDiag(_centerOrgoneArea.GetComponent<TileScript>().TileId, _centerOrgoneArea.GetComponent<TileScript>().Line, true);
-        _centerOrgoneArea.GetComponent<TileScript>().TerrainEffectList.Remove(_J1Zone ? MYthsAndSteel_Enum.TerrainType.OrgoneRed : MYthsAndSteel_Enum.TerrainType.OrgoneBlue);
+        _centerOrgoneArea.GetComponent<TileScript>().TerrainEffectList.Remove(_J1Zone ? MYthsAndSteel_Enum.TerrainType.OrgoneJ1 : MYthsAndSteel_Enum.TerrainType.OrgoneJ2);
 
         foreach(int i in neighZone)
         {
-            TilesManager.Instance.TileList[i].GetComponent<TileScript>().TerrainEffectList.Remove(_J1Zone ? MYthsAndSteel_Enum.TerrainType.OrgoneRed : MYthsAndSteel_Enum.TerrainType.OrgoneBlue);
+            TilesManager.Instance.TileList[i].GetComponent<TileScript>().TerrainEffectList.Remove(_J1Zone ? MYthsAndSteel_Enum.TerrainType.OrgoneJ1 : MYthsAndSteel_Enum.TerrainType.OrgoneJ2);
         }
 
         List<int> newNeighZone = PlayerStatic.GetNeighbourDiag(_centerOrgoneArea.GetComponent<TileScript>().TileId, _centerOrgoneArea.GetComponent<TileScript>().Line, true);
@@ -69,7 +69,7 @@ public class ZoneOrgone : MonoBehaviour
 
         foreach(int i in newNeighZone)
         {
-            TilesManager.Instance.TileList[i].GetComponent<TileScript>().TerrainEffectList.Add(_J1Zone ? MYthsAndSteel_Enum.TerrainType.OrgoneRed : MYthsAndSteel_Enum.TerrainType.OrgoneBlue);
+            TilesManager.Instance.TileList[i].GetComponent<TileScript>().TerrainEffectList.Add(_J1Zone ? MYthsAndSteel_Enum.TerrainType.OrgoneJ1 : MYthsAndSteel_Enum.TerrainType.OrgoneJ2);
         }
     }
 
@@ -191,10 +191,10 @@ public class ZoneOrgone : MonoBehaviour
         }
 
         List<int> neighZone = PlayerStatic.GetNeighbourDiag(_centerOrgoneArea.GetComponent<TileScript>().TileId, _centerOrgoneArea.GetComponent<TileScript>().Line, true);
-        _centerOrgoneArea.GetComponent<TileScript>().TerrainEffectList.Remove(_J1Zone ? MYthsAndSteel_Enum.TerrainType.OrgoneRed : MYthsAndSteel_Enum.TerrainType.OrgoneBlue);
+        _centerOrgoneArea.GetComponent<TileScript>().TerrainEffectList.Remove(_J1Zone ? MYthsAndSteel_Enum.TerrainType.OrgoneJ1 : MYthsAndSteel_Enum.TerrainType.OrgoneJ2);
 
         foreach(int i in neighZone){
-            TilesManager.Instance.TileList[i].GetComponent<TileScript>().TerrainEffectList.Remove(_J1Zone? MYthsAndSteel_Enum.TerrainType.OrgoneRed : MYthsAndSteel_Enum.TerrainType.OrgoneBlue);
+            TilesManager.Instance.TileList[i].GetComponent<TileScript>().TerrainEffectList.Remove(_J1Zone? MYthsAndSteel_Enum.TerrainType.OrgoneJ1 : MYthsAndSteel_Enum.TerrainType.OrgoneJ2);
         }
 
         if(GameManager.Instance.IsJ1Turn) PlayerScript.Instance.J1Infos.TileCentreZoneOrgone = _targetTile;
@@ -209,7 +209,7 @@ public class ZoneOrgone : MonoBehaviour
 
         foreach(int i in newNeighZone)
         {
-            TilesManager.Instance.TileList[i].GetComponent<TileScript>().TerrainEffectList.Add(_J1Zone ? MYthsAndSteel_Enum.TerrainType.OrgoneRed : MYthsAndSteel_Enum.TerrainType.OrgoneBlue);
+            TilesManager.Instance.TileList[i].GetComponent<TileScript>().TerrainEffectList.Add(_J1Zone ? MYthsAndSteel_Enum.TerrainType.OrgoneJ1 : MYthsAndSteel_Enum.TerrainType.OrgoneJ2);
         }
 
         newNeighZone.Clear();
