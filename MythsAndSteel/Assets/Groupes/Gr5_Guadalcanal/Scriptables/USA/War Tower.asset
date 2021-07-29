@@ -13,14 +13,12 @@ MonoBehaviour:
   m_Name: War Tower
   m_EditorClassIdentifier: 
   UnitName: The War Tower
-  Description: "L'Am\xE9rique de\u0301cide de se concentrer sur la cre\u0301ation
-    de me\u0301chas capables de servir sur le long terme et facilement modifiables.
-    Dans cet esprit a e\u0301te\u0301 cre\u0301e\u0301 le me\u0301cha War Tower,
-    un grand assemblage blinde\u0301, parfait pour accompagner ses allie\u0301s dans
-    les assauts de front. Cre\u0301e\u0301 pour prote\u0301ger ses allie\u0301s et
-    forcer le passage a\u0300 travers les lignes ennemies, il est dirige\u0301 a\u0300
-    distance via un syste\u0300me d\u2019ondes radio chiffre\u0301es, permettant
-    de ne pas mettre en danger un potentiel e\u0301quipage.  "
+  Description: "L'Am\xE9rique d\xE9cide de se concentrer sur la cr\xE9ation de m\xE9chas
+    capables de servir sur le long terme et facilement modifiables. Dans cet esprit
+    a \xE9t\xE9\u0301 cr\xE9e\u0301 le War Tower, un grand assemblage blinde\u0301,
+    parfait pour accompagner ses alli\xE9s dans les assauts de front. Il est dirig\xE9\u0301
+    a\u0300 distance via un syst\xE8me d\u2019ondes radio chiffr\xE9es, permettant
+    de ne pas mettre en danger un potentiel \xE9quipage.  "
   typeUnite: 5
   LifeMax: 5
   ShieldMax: 0
@@ -41,3 +39,4 @@ MonoBehaviour:
   UsefullToWin: 0
   IsInRedArmy: 1
   UnitAttributs: 000000000000000000000000
+  UnitStatuts: 00000000000000000000000000000000

@@ -15,11 +15,11 @@ MonoBehaviour:
   UnitName: "M\xE9chappa"
   Description: "En 1935 suite au succ\xE8s des mobylettes Honda et la d\xE9couverte
     des mythes, l\u2019arm\xE9e japonaise fait appel \xE0 Soichiro, un passionn\xE9
-    de m\xE9caniques pour concevoir une arme de guerre puissante mais \xE9conome
-    en \xE9nergie capable de concurrencer les mod\xE8les mod\xE8les am\xE9ricains
-    ou allemands en 1936. En 1940 est assembl\xE9 M\xE9chappa, un robot g\xE9ant
-    en forme de Kappa anim\xE9 par un syst\xE8me de pompe hydraulique aliment\xE9e
-    par une batterie Mesali n\xE9cessaire au mouvement des bras et des jambes."
+    de m\xE9caniques pour concevoir une arme puissante mais \xE9conome en \xE9nergie
+    capable de concurrencer les mod\xE8les ennemis. En 1940 est assembl\xE9 M\xE9chappa,
+    un robot g\xE9ant en forme de Kappa anim\xE9 par un syst\xE8me de pompe hydraulique
+    aliment\xE9e par une batterie Mesali n\xE9cessaire au mouvement des bras et des
+    jambes."
   typeUnite: 5
   LifeMax: 4
   ShieldMax: 0
@@ -40,3 +40,4 @@ MonoBehaviour:
   UsefullToWin: 0
   IsInRedArmy: 0
   UnitAttributs: 080000000000000000000000
+  UnitStatuts: 00000000000000000000000000000000

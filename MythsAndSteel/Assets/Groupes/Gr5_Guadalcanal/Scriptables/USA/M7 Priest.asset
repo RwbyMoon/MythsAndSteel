@@ -13,11 +13,10 @@ MonoBehaviour:
   m_Name: M7 Priest
   m_EditorClassIdentifier: 
   UnitName: M7 Priest
-  Description: "Lorsque le pre\u0302tre protestant Francis Spellman de\u0301cide
-    de participer a\u0300 l\u2019effort militaire en 1939, il utilise ses connaissances
-    en Hyperchimie pour transformer le canon auto-porte\u0301e M7 Priest en une machine
-    capable de soigner les troupes. Celle-ci se re\u0301ve\u0300lera particulie\u0300rement
-    utile pour gue\u0301rir les blesse\u0301s .  "
+  Description: "Lorsque le pr\xEAtre protestant Francis Spellman d\xE9cide de participer
+    a\u0300 l\u2019effort militaire en 1939, il utilise ses connaissances en Hyperchimie
+    pour transformer le canon auto-port\xE9e M7 Priest en une machine capable de
+    soigner les troupes."
   typeUnite: 1
   LifeMax: 4
   ShieldMax: 0
@@ -38,3 +37,4 @@ MonoBehaviour:
   UsefullToWin: 0
   IsInRedArmy: 1
   UnitAttributs: 000000000000000000000000
+  UnitStatuts: 00000000000000000000000000000000
