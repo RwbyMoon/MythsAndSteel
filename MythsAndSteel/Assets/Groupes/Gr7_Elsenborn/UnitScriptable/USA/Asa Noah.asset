@@ -16,11 +16,9 @@ MonoBehaviour:
   Description: "Asa Noah est une fusion de l\u2019Orgone concentr\xE9e de plusieurs
     mythes am\xE9rindiens faisant d\u2019elle une sorte d\u2019\xE9l\xE9mentaire
     d\u2019Orgone brute. Pour asservir et contr\xF4ler cet amas d\u2019\xE9nergie,
-    les Am\xE9ricains l\u2019ont \xE9quip\xE9 d\u2019une armure compl\xE8te. Cette
-    armure contiendrait son \xE9nergie et la chaleur provoqu\xE9 par l\u2019Orgone
-    concentr\xE9e. Elle est repr\xE9sent\xE9 comme le Soleil qui b\xE9nit l\u2019Am\xE9rique
-    et la sauveuse des Am\xE9ricains. Cette arme ultime peut se consumer pour annihiler
-    ses ennemis, \xE0 l\u2019aide de projections d\u2019Orgone concentr\xE9e.  "
+    les Am\xE9ricains l\u2019ont \xE9quip\xE9 d\u2019une armure contenant son \xE9nergie
+    et la chaleur provoqu\xE9 par l\u2019Orgone concentr\xE9e. Elle est repr\xE9sent\xE9
+    comme le Soleil qui b\xE9nit l\u2019Am\xE9rique et la sauveuse des Am\xE9ricains."
   typeUnite: 3
   LifeMax: 4
   ShieldMax: 0
@@ -41,3 +39,4 @@ MonoBehaviour:
   UsefullToWin: 0
   IsInRedArmy: 1
   UnitAttributs: 000000000000000000000000
+  UnitStatuts: 00000000000000000000000000000000

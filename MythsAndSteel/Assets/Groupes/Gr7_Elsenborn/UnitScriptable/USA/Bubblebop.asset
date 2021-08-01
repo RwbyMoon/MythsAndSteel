@@ -15,12 +15,10 @@ MonoBehaviour:
   UnitName: Bublebop
   Description: "En 1940, alors que les Alli\xE9s lib\xE8rent la France, Les Am\xE9ricains
     d\xE9couvrent non-loin des Ardennes belges un bunker allemand contenant le m\xE9cha
-    Aufladen faisant parti d\u2019un des puissants m\xE9chas au c\u0153ur de la Blitzkrieg.
-    Il permet notamment de gagner la bataille des Ardennes de 1940. Les Etats-Unis
-    l\u2019ont r\xE9cup\xE9r\xE9 et am\xE9lior\xE9 pour en faire Bubblebop, le maitre
-    des Ardennes belges, notamment gr\xE2ce \xE0 son syst\xE8me de mobilit\xE9 et
-    d\u2019attaque qui lui permet d\u2019ignorer le relief tout en r\xE9duisant \xE0
-    n\xE9ant ses ennemis sur son passage.."
+    Aufladen, l\u2019un des plus puissants au c\u0153ur de la Blitzkrieg. Il permet
+    notamment de gagner la bataille des Ardennes. Am\xE9lior\xE9 et renomm\xE9 Bubblebop,
+    il peut d\xE9sormais ignorer le relief et r\xE9duire \xE0 n\xE9ant ses ennemis
+    sur son passage."
   typeUnite: 5
   LifeMax: 4
   ShieldMax: 0
@@ -41,3 +39,4 @@ MonoBehaviour:
   UsefullToWin: 0
   IsInRedArmy: 1
   UnitAttributs: 050000000000000000000000
+  UnitStatuts: 00000000000000000000000000000000

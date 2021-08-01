@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UnitName: 57mm Gun M1
   Description: "Le 57mm gun M1 a \xE9t\xE9 install\xE9 sur 4 pattes m\xE9caniques,
-    ce qui lui accroit une grande mobilit\xE9 pour une artillerie. De base antichar
-    avec une faible cadence, gr\xE2ce \xE0 un rechargement automatique  et un liquide
-    de refroidissement hyperchimique elle obtient une cadence accrue pour un canon
-    antichar qui est d\xE9sormais d\xE9vastateur."
+    ce qui lui accroit une grande mobilit\xE9 en tant qu\u2019artillerie. De base
+    antichar avec une faible cadence, gr\xE2ce \xE0 un rechargement automatique 
+    et un liquide de refroidissement hyperchimique elle obtient une cadence accrue
+    et est d\xE9sormais d\xE9vastateur."
   typeUnite: 2
   LifeMax: 2
   ShieldMax: 0
@@ -38,3 +38,4 @@ MonoBehaviour:
   UsefullToWin: 0
   IsInRedArmy: 1
   UnitAttributs: 000000000000000000000000
+  UnitStatuts: 00000000000000000000000000000000
