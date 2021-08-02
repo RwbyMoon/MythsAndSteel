@@ -444,11 +444,10 @@ public class GameManager : MonoSingleton<GameManager>
         _canSelectMultiples = multiplesUnit;
         if(!DoingEpxlosionOrgone)
         {
-
-        foreach (GameObject gam in _selectableUnit)
-        {
-            TilesManager.Instance.TileList[gam.GetComponent<UnitScript>().ActualTiledId].GetComponent<TileScript>().ActiveChildObj(MYthsAndSteel_Enum.ChildTileType.EventSelect);
-        }
+            foreach (GameObject gam in _selectableUnit)
+            {
+                TilesManager.Instance.TileList[gam.GetComponent<UnitScript>().ActualTiledId].GetComponent<TileScript>().ActiveChildObj(MYthsAndSteel_Enum.ChildTileType.EventSelect);
+            }
         }
         else
         {

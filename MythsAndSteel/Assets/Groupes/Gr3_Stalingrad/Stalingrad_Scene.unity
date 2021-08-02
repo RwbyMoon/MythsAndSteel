@@ -2122,7 +2122,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.8867924, g: 0.8867924, b: 0.8867924, a: 0.5882353}
-    m_PressedColor: {r: 1, g: 0.9080458, b: 0.6367924, a: 1}
+    m_PressedColor: {r: 0.627451, g: 0.627451, b: 0.627451, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -3826,7 +3826,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 21
+  m_SortingOrder: 9
   m_TargetDisplay: 0
 --- !u!114 &313674262
 MonoBehaviour:
@@ -9948,7 +9948,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 20
+  m_SortingOrder: 9
   m_TargetDisplay: 0
 --- !u!1 &882798627
 GameObject:
@@ -11165,7 +11165,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 21
+  m_SortingOrder: 9
   m_TargetDisplay: 0
 --- !u!114 &926049756
 MonoBehaviour:
@@ -12082,7 +12082,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 20
+  m_SortingOrder: 9
   m_TargetDisplay: 0
 --- !u!4 &1030464005 stripped
 Transform:
@@ -16867,7 +16867,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 21
+  m_SortingOrder: 9
   m_TargetDisplay: 0
 --- !u!114 &1338210833
 MonoBehaviour:
@@ -16998,7 +16998,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 21
+  m_SortingOrder: 9
   m_TargetDisplay: 0
 --- !u!114 &1339733927
 MonoBehaviour:
@@ -18285,7 +18285,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 0}
+  m_Color: {r: 0.6698113, g: 0.5971431, b: 0.5971431, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -18592,7 +18592,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 21
+  m_SortingOrder: 9
   m_TargetDisplay: 0
 --- !u!114 &1493617168
 MonoBehaviour:
@@ -18799,7 +18799,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 21
+  m_SortingOrder: 9
   m_TargetDisplay: 0
 --- !u!114 &1497176691
 MonoBehaviour:
@@ -19124,7 +19124,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 20
+  m_SortingOrder: 9
   m_TargetDisplay: 0
 --- !u!1 &1535168279
 GameObject:
@@ -19815,7 +19815,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 20
+  m_SortingOrder: 9
   m_TargetDisplay: 0
 --- !u!1 &1601198696
 GameObject:
@@ -24699,38 +24699,8 @@ MonoBehaviour:
   eventWithCostRessource: 0100000002000000120000000d0000000e00000006000000
   prefabIconRessource: {fileID: 5166679113246713426, guid: 2defed3d504af21439c44b09e33a4cda, type: 3}
   _ArmyRedWinAtTheEnd: 0
-  _redPlayerInfos:
-    EventUseLeft: 0
-    ArmyName: URSS
-    ArmyNameNomMasc: "sovi\xE9tique"
-    ArmyNameNomFem: "sovi\xE9tique"
-    ActivationLeft: 0
-    ActivationCardValue: 0
-    _OrgoneValue: 0
-    OrgoneExploseCancel: 0
-    OrgonePowerLeft: 0
-    _LastKnownOrgoneValue: 0
-    TileCentreZoneOrgone: {fileID: 557173029}
-    _Ressource: 3
-    GoalCapturePointsNumber: 0
-    HasCreateUnit: 0
-    dontTouchThis: 0
-  _bluePlayerInfos:
-    EventUseLeft: 0
-    ArmyName: Allemagne
-    ArmyNameNomMasc: allemand
-    ArmyNameNomFem: allemande
-    ActivationLeft: 0
-    ActivationCardValue: 0
-    _OrgoneValue: 0
-    OrgoneExploseCancel: 0
-    OrgonePowerLeft: 0
-    _LastKnownOrgoneValue: 0
-    TileCentreZoneOrgone: {fileID: 822449746}
-    _Ressource: 2
-    GoalCapturePointsNumber: 0
-    HasCreateUnit: 0
-    dontTouchThis: 0
+  _redPlayerInfos: {fileID: 0}
+  _bluePlayerInfos: {fileID: 0}
   _unitRef: {fileID: 1890824753}
   DisactivateUnitType: 
   _eventCardList:
@@ -25242,7 +25212,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 21
+  m_SortingOrder: 9
   m_TargetDisplay: 0
 --- !u!114 &1955433010
 MonoBehaviour:
@@ -25540,7 +25510,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 21
+  m_SortingOrder: 9
   m_TargetDisplay: 0
 --- !u!114 &1964640192
 MonoBehaviour:
@@ -27505,7 +27475,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 21
+  m_SortingOrder: 9
   m_TargetDisplay: 0
 --- !u!114 &2034608753
 MonoBehaviour:
@@ -34393,8 +34363,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 297, y: 2}
-  m_SizeDelta: {x: 515.0918, y: 588.3032}
+  m_AnchoredPosition: {x: 297, y: 2.7822}
+  m_SizeDelta: {x: 515.0918, y: 586.7389}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &798457119481271063
 GameObject:
@@ -34582,8 +34552,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 33.121704, y: 27.444414}
-  m_SizeDelta: {x: 122.847, y: 557.9578}
+  m_AnchoredPosition: {x: 33.121704, y: 11.0179}
+  m_SizeDelta: {x: 122.847, y: 468.3666}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &798457120189424093
 MonoBehaviour:
@@ -36363,11 +36333,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7780127359491037297, guid: 6d77f177aab7c7749ab7442930f0fff1, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 122.846985
+      value: 122.847
       objectReference: {fileID: 0}
     - target: {fileID: 7780127359491037297, guid: 6d77f177aab7c7749ab7442930f0fff1, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 464.9801
+      value: 451.4594
       objectReference: {fileID: 0}
     - target: {fileID: 7780127359491037297, guid: 6d77f177aab7c7749ab7442930f0fff1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -36403,7 +36373,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7780127359491037297, guid: 6d77f177aab7c7749ab7442930f0fff1, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 27.896217
+      value: 10.5453
       objectReference: {fileID: 0}
     - target: {fileID: 7780127359491037297, guid: 6d77f177aab7c7749ab7442930f0fff1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -39793,6 +39763,14 @@ PrefabInstance:
     - target: {fileID: 4011532426921733455, guid: 57a2237b24a64d64ebf642d20f7ff832, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6838253569237079513, guid: 57a2237b24a64d64ebf642d20f7ff832, type: 3}
+      propertyPath: m_SortingOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7580144824820498045, guid: 57a2237b24a64d64ebf642d20f7ff832, type: 3}
+      propertyPath: m_SortingOrder
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7758472142766975328, guid: 57a2237b24a64d64ebf642d20f7ff832, type: 3}
       propertyPath: m_SizeDelta.x
