@@ -16582,6 +16582,7 @@ GameObject:
   - component: {fileID: 1328282951}
   - component: {fileID: 1328282953}
   - component: {fileID: 1328282952}
+  - component: {fileID: 1328282954}
   m_Layer: 5
   m_Name: Background_UI
   m_TagString: Untagged
@@ -16646,6 +16647,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1328282950}
   m_CullTransparentMesh: 1
+--- !u!223 &1328282954
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1328282950}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!1 &1330318452 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6143290470533496019, guid: 25294b9364e0e6a40bdf53908301a743, type: 3}
@@ -24699,8 +24721,38 @@ MonoBehaviour:
   eventWithCostRessource: 0100000002000000120000000d0000000e00000006000000
   prefabIconRessource: {fileID: 5166679113246713426, guid: 2defed3d504af21439c44b09e33a4cda, type: 3}
   _ArmyRedWinAtTheEnd: 0
-  _redPlayerInfos: {fileID: 0}
-  _bluePlayerInfos: {fileID: 0}
+  _redPlayerInfos:
+    EventUseLeft: 0
+    ArmyName: URSS
+    ArmyNameNomMasc: "sovi\xE9tique"
+    ArmyNameNomFem: "sovi\xE9tique"
+    ActivationLeft: 0
+    ActivationCardValue: 0
+    _OrgoneValue: 0
+    OrgoneExploseCancel: 1
+    OrgonePowerLeft: 0
+    _LastKnownOrgoneValue: 0
+    TileCentreZoneOrgone: {fileID: 557173029}
+    _Ressource: 3
+    GoalCapturePointsNumber: 0
+    HasCreateUnit: 0
+    dontTouchThis: 0
+  _bluePlayerInfos:
+    EventUseLeft: 0
+    ArmyName: Allemagne
+    ArmyNameNomMasc: allemand
+    ArmyNameNomFem: allemande
+    ActivationLeft: 0
+    ActivationCardValue: 0
+    _OrgoneValue: 0
+    OrgoneExploseCancel: 1
+    OrgonePowerLeft: 0
+    _LastKnownOrgoneValue: 0
+    TileCentreZoneOrgone: {fileID: 822449746}
+    _Ressource: 2
+    GoalCapturePointsNumber: 0
+    HasCreateUnit: 0
+    dontTouchThis: 0
   _unitRef: {fileID: 1890824753}
   DisactivateUnitType: 
   _eventCardList:
