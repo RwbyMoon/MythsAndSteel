@@ -13,13 +13,10 @@ MonoBehaviour:
   m_Name: Erwin Rommel
   m_EditorClassIdentifier: 
   UnitName: Erwin Rommel
-  Description: "N\xE9 en 1891 \xE0 Heidenheim, Erwin Johannes Eugen Romme est le
-    g\xE9n\xE9ral des Afrika Korps surnomm\xE9 \"Le Renard du D\xE9sert\". Au cours
-    des deux guerres, ce talentueux strat\xE8ge a mont\xE9 les \xE9chelons pour devenir
-    finalement Generalfeldmarschall lors de la campagne d'Afrique du Nord.  Reconnu
-    \xE0 l'unanimit\xE9 par ses pairs comme ses ennemis, il est un officier efficace,
-    audacieux et qui a su d'adapter au d\xE9sert tout en exploitant sans piti\xE9
-    les points faibles de ceux osant se mettre en travers de sa route."
+  Description: "N\xE9 en 1891 \xE0 Heidenheim, Erwin Rommel est le g\xE9n\xE9ral
+    des Afrika Korps surnomm\xE9 \"Le Renard du D\xE9sert\". Au cours des deux guerres,
+    ce talentueux strat\xE8ge a mont\xE9 les \xE9chelons pour devenir finalement
+    Generalfeldmarschall lors de la campagne d'Afrique du Nord."
   typeUnite: 4
   LifeMax: 3
   ShieldMax: 0
@@ -35,8 +32,9 @@ MonoBehaviour:
   SonDeplacement: {fileID: 8300000, guid: d021c76a866619c49a06f80a66437243, type: 3}
   SonMort: {fileID: 8300000, guid: 4eeb03f554133c3499029c1ced009882, type: 3}
   VoiceLine: {fileID: 8300000, guid: f938ce7af824c214b8e2ecf710ddcc2d, type: 3}
-  Sprite: {fileID: 2064336215402819962, guid: e9b173f0ab649874cb498e86fcbe2ba4, type: 3}
+  Sprite: {fileID: 1215846622920080035, guid: 79f0528035f78954487000dffacb2deb, type: 3}
   CanAttackEmptyTile: 0
   UsefullToWin: 0
   IsInRedArmy: 1
   UnitAttributs: 090000000000000000000000
+  UnitStatuts: 00000000000000000000000000000000

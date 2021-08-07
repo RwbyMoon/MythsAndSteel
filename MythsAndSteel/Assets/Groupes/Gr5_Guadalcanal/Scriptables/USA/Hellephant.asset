@@ -13,15 +13,11 @@ MonoBehaviour:
   m_Name: Hellephant
   m_EditorClassIdentifier: 
   UnitName: Hellephant
-  Description: "Ces chars blinde\u0301s initialement pre\u0301vus pour le de\u0301barquement
-    en Normandie, furent redirige\u0301s vers la bataille de Guadalcanal afifin d\u2019apporter
-    du soutien aux troupes ame\u0301ricaines. Ces chars tirent de puissants obus
-    a\u0300 distance, un choix de qualite\u0301 lorsqu\u2019il s\u2019agit de de\u0301truire
-    les de\u0301fenses ennemies. Ce char de rupture, hautement appre\u0301cie\u0301
-    pour sa puissance de feu, fera l\u2019affaire dans les combats ou\u0300 le temps
-    est primordial. Ce Sherman dernier cri, pre\u0302t pour l\u2019ultime combat
-    est capable, gra\u0302ce a\u0300 ses chenilles modulaires, de s\u2019immobiliser
-    pour se soigner.  "
+  Description: "Ces chars blind\xE9s initialement pr\xE9vus pour le d\xE9barquement
+    en Normandie, furent redirig\xE9s vers la bataille de Guadalcanal afin d\u2019apporter
+    du soutien aux troupes am\xE9ricaines. Ces chars tirent de puissants obus et
+    sont appr\xE9ci\xE9s pour leur puissance de feu. Il est n\xE9anmoins n\xE9cessaire
+    de l\u2019immobiliser pour le r\xE9parer."
   typeUnite: 1
   LifeMax: 3
   ShieldMax: 0
@@ -42,3 +38,4 @@ MonoBehaviour:
   UsefullToWin: 0
   IsInRedArmy: 1
   UnitAttributs: 000000000000000000000000
+  UnitStatuts: 00000000000000000000000000000000

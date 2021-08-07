@@ -13,15 +13,13 @@ MonoBehaviour:
   m_Name: John Basilone
   m_EditorClassIdentifier: 
   UnitName: John Basilone
-  Description: "De\u0300s ses 18 ans, John Basilone s\u2019engage dans l\u2019arme\u0301e.
-    Il devient un champion de boxe durant ses trois anne\u0301es de service aux Philippines.
-    Apre\u0300s avoir rejoint les champs de bataille dans le pacififique, il est
-    de\u0301signe\u0301 comme sergent des armes lourdes pour son utilisation presque
-    intempestive d\u2019armes a\u0300 puissance de feu e\u0301norme. De\u0300s son
-    arrive\u0301e a\u0300 Guadalcanal, il affronte les Japonais en combat rapproche\u0301.
-    Apre\u0300s de nombreux combats, un samourai\u0308 crabe lui fait une entaille
-    a\u0300 l\u2019oeil droit. Cette blessure va lui donner envie de continuer le
-    combat.  "
+  Description: "D\xE8s ses 18 ans, John Basilone s\u2019engage dans l\u2019arm\xE9e.
+    Apr\xE8s avoir rejoint les champs de bataille dans le pacifique, il est d\xE9sign\xE9\u0301
+    comme sergent des armes lourdes pour son utilisation presque intempestive d\u2019armes
+    a\u0300 puissance de feu \xE9norme. D\xE8s son arriv\xE9e a\u0300 Guadalcanal,
+    il affronte les Japonais en combat rapproche\u0301. Un samoura\xEF\u0308 crabe
+    lui fait une entaille a\u0300 l\u2019\u0153il droit. Cette blessure va lui donner
+    envie de continuer le combat.  "
   typeUnite: 4
   LifeMax: 5
   ShieldMax: 0
@@ -42,3 +40,4 @@ MonoBehaviour:
   UsefullToWin: 0
   IsInRedArmy: 1
   UnitAttributs: 000000000000000000000000
+  UnitStatuts: 00000000000000000000000000000000

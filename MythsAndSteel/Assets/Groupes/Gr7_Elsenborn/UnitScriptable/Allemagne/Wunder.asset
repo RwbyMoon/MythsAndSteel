@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Wunder
   m_EditorClassIdentifier: 
   UnitName: Wunder
-  Description: "Ce Mecha est contr\xF4l\xE9e par ondes radio et est capable de passer
-    d\u2019une phase mobile \xE0 une phase de protection. Ainsi, \xE0 l\u2019aide
+  Description: "Ce m\xE9cha est contr\xF4l\xE9 par ondes radio et est capable de
+    passer d\u2019une phase mobile \xE0 une phase de protection. Ainsi, \xE0 l\u2019aide
     d\u2019un alliage hyperchimique unique, Wunder peut encaisser plusieurs obus
     sans broncher. Wunder est con\xE7u \xE0 la base pour d\xE9fendre l\u2019arm\xE9e
-    de Berlin, en vue d\u2019une derni\xE8re bataille qui s\u2019y profilait. Mais
-    gr\xE2ce aux messages intercept\xE9s, les Allemands l\u2019envoy\xE8rent \xE0
-    la cr\xE8te d\u2019Elsenborn pour prot\xE9ger leur derni\xE8re chance.  "
+    de Berlin, en vue d\u2019une derni\xE8re bataille qui s\u2019y profilait. Gr\xE2ce
+    aux messages intercept\xE9s, les Allemands l\u2019envoy\xE8rent \xE0 la cr\xE8te
+    d\u2019Elsenborn en dernier recours."
   typeUnite: 5
   LifeMax: 5
   ShieldMax: 0
@@ -40,3 +40,4 @@ MonoBehaviour:
   UsefullToWin: 0
   IsInRedArmy: 0
   UnitAttributs: 000000000000000000000000
+  UnitStatuts: 00000000000000000000000000000000

@@ -17,10 +17,7 @@ MonoBehaviour:
     et f\xE9roce, Kraas s\u2019est fait remarquer d\xE8s les premi\xE8res offensives
     allemandes, ce qui lui permit d\u2019\xEAtre rapidement promu, au fil des ann\xE9es
     de guerre, Generaloberst. L'Allemagne elle-m\xEAme le r\xE9compensa en faisant
-    de lui le 1er Wunderwaffe de la nation. Par un nouveau corps en parti m\xE9canis\xE9
-    avec le meilleur de la technologie allemande, il est de plus en plus puissant
-    plus sa Mesali qui le constitue est charg\xE9 en \xE9lectricit\xE9. il devient
-    l\u2019avatar de la guerre elle-m\xEAme."
+    de lui le 1er Wunderwaffe de la nation."
   typeUnite: 4
   LifeMax: 4
   ShieldMax: 0
@@ -41,3 +38,4 @@ MonoBehaviour:
   UsefullToWin: 0
   IsInRedArmy: 0
   UnitAttributs: 000000000000000000000000
+  UnitStatuts: 00000000000000000000000000000000

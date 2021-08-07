@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Howitzer M1
   m_EditorClassIdentifier: 
   UnitName: Howitzer M1
-  Description: "Surnomm\xE9 le \xAB Dragon noir \xBB, ce mastodonte, de par sa taille
-    et sa puissance de feu avec son canon 240 mm, est l\u2019artillerie la plus puissante
+  Description: "Surnomm\xE9 le \xAB Dragon noir \xBB de par sa taille et sa puissance
+    de feu avec son canon 240 mm, ce mastodonte est l\u2019artillerie la plus puissante
     d\xE9ploy\xE9e par les Am\xE9ricains. Elle est capable de tirer un projectile
     d\xE9flagr\xE9 par une explosion concentr\xE9e en Orgone. Elle permet d\u2019infliger
     de lourds d\xE9g\xE2ts dans une vaste zone et rayer de la carte m\xEAme le plus
@@ -39,3 +39,4 @@ MonoBehaviour:
   UsefullToWin: 0
   IsInRedArmy: 1
   UnitAttributs: 010000000000000000000000
+  UnitStatuts: 00000000000000000000000000000000

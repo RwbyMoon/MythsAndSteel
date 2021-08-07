@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Longstrecken
   m_EditorClassIdentifier: 
   UnitName: Longstrecken
-  Description: "Largement r\xE9utilis\xE9e par l'axe apr\xE8s la Premi\xE8re Bataille
+  Description: "Largement r\xE9utilis\xE9e par l'Axe apr\xE8s la Premi\xE8re Bataille
     d'El Alamein, l'artillerie Longstrecken est sans conteste un excellent compromis
     entre mobilit\xE9 et puissance. Il s'agit d'une pi\xE8ce d'artillerie \xE9lectromagn\xE9tique
     mobile capable d'inflige de lourds dommages aux ennemis sans couvert avec un
@@ -38,3 +38,4 @@ MonoBehaviour:
   UsefullToWin: 0
   IsInRedArmy: 1
   UnitAttributs: 000000000000000000000000
+  UnitStatuts: 00000000000000000000000000000000

@@ -19,8 +19,7 @@ MonoBehaviour:
     trahi. Il sera r\xE9cup\xE9r\xE9 et \xE9tudi\xE9 par des grands scientifiques
     allemands. Ils r\xE9ussissent apr\xE8s plusieurs ann\xE9es de lavages de cerveau
     et d\u2019exp\xE9riences \xE0 le \xAB r\xE9parer \xBB aussi bien physiquement
-    que mentalement. Maintenant, le flutiste voit les ennemies de l\u2019Allemagne
-    comme les enfants du village. Et il compte bien leur faire subir le m\xEAme sort.  "
+    que mentalement."
   typeUnite: 3
   LifeMax: 3
   ShieldMax: 0
@@ -41,3 +40,4 @@ MonoBehaviour:
   UsefullToWin: 0
   IsInRedArmy: 0
   UnitAttributs: 000000000000000000000000
+  UnitStatuts: 00000000000000000000000000000000

@@ -18,9 +18,8 @@ MonoBehaviour:
     \xEAtre reconnu par l\u2019Empereur lui-m\xEAme pour ses exploits contre les
     am\xE9ricains. Il rejoint l\u2019\xE9cole d\u2019entra\xEEnement intensive de
     Kurume et il y reste trois ans, o\xF9 il s\u2019entra\xEEne dans tous les types
-    de terrain existant au Japon et apprend chaque utilisation possible de la nature.
-    Malgr\xE9 ses 23 ans, il impose un charisme que m\xEAme ses sup\xE9rieurs ne
-    peuvent contester."
+    de terrain existants au Japon. Malgr\xE9 ses 23 ans, il impose un charisme que
+    m\xEAme ses sup\xE9rieurs ne peuvent contester."
   typeUnite: 4
   LifeMax: 4
   ShieldMax: 0
@@ -41,3 +40,4 @@ MonoBehaviour:
   UsefullToWin: 0
   IsInRedArmy: 0
   UnitAttributs: 000000000000000000000000
+  UnitStatuts: 00000000000000000000000000000000

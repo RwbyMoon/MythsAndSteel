@@ -14,12 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UnitName: M18 Hellcat
   Description: "Le M18 Hellcat est un chasseur de chars et est l\u2019engin chenill\xE9
-    le plus rapide jamais cr\xE9\xE9. La raison de sa vitesse est son moteur hydride
-    unique. Pour des trajets normaux, il utilisera son moteur \xE9lectrique avec
-    notamment des batteries Mesali, mais s\u2019il a besoin de passer au maximum
-    de sa vitesse, alors il acc\xE9l\xE8rera avec son moteur explosif de p\xE9trole
-    coupl\xE9 au Narc\xE9on. De ce fait, il rattrapera toujours n\u2019importe quelle
-    proie qui oserait s\u2019en prendre aux Etats-Unis."
+    tr\xE8s rapide. La raison de sa vitesse est son moteur hydride unique. Pour des
+    trajets normaux, il utilisera son moteur \xE9lectrique avec notamment des batteries
+    Mesali, mais s\u2019il a besoin de passer au maximum de sa vitesse, alors il
+    acc\xE9l\xE8rera avec son moteur explosif de p\xE9trole coupl\xE9 au Narc\xE9on."
   typeUnite: 1
   LifeMax: 3
   ShieldMax: 0
@@ -40,3 +38,4 @@ MonoBehaviour:
   UsefullToWin: 0
   IsInRedArmy: 1
   UnitAttributs: 000000000000000000000000
+  UnitStatuts: 00000000000000000000000000000000

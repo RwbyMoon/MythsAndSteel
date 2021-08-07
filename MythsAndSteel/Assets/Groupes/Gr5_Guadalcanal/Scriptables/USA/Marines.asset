@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Marines
   m_EditorClassIdentifier: 
   UnitName: Marines
-  Description: "L\u2019Ame\u0301rique et sa grandeur inspirent les troupes qui se
-    battent pour elle. Cette unite\u0301 repre\u0301sente les forces ame\u0301ricaines
-    a\u0300 merveille, ses de\u0301placements coordonne\u0301es et son souhait imposant
-    de vouloir gagner la bataille en font une unite\u0301 redoutable. Munie d\u2019un
-    fusil et d\u2019un e\u0301quipement ade\u0301quat pour la rupture en groupe,
-    il ne faut pas sous-estimer cette unite\u0301."
+  Description: "L\u2019Am\xE9rique et sa grandeur inspirent les troupes qui se battent
+    pour elle. Cette unit\xE9\u0301 repr\xE9sente les forces am\xE9ricaines a\u0300
+    merveille, ses d\xE9placements coordonn\xE9es et son souhait imposant de vouloir
+    gagner la bataille en font une unit\xE9\u0301 redoutable. Munie d\u2019un fusil
+    et d\u2019un \xE9quipement ad\xE9quat pour la rupture en groupe, il ne faut pas
+    la sous-estimer."
   typeUnite: 0
   LifeMax: 2
   ShieldMax: 0
@@ -39,3 +39,4 @@ MonoBehaviour:
   UsefullToWin: 0
   IsInRedArmy: 1
   UnitAttributs: 000000000000000000000000
+  UnitStatuts: 00000000000000000000000000000000

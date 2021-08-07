@@ -15,9 +15,9 @@ MonoBehaviour:
   UnitName: Panther
   Description: "Imp\xE9n\xE9trable avec son blindage synth\xE9tis\xE9 \xE0 l\u2019aide
     de l\u2019Hyperchimie, et terrifiant avec son canon \xE0 acc\xE9l\xE9rateur de
-    particules permettant de tirer un faisceau de particules allant \xE0 la vitesse
-    de la lumi\xE8re. Cette puissance a un co\xFBt qui am\xE8ne  \xE0 quelques inconv\xE9nients
-    : le canon met du temps \xE0 charger son projectile et la rotation de sa tourelle
+    particules permettant de tirer un faisceau de particules \xE0 grande vitesse.
+    Cette puissance a un co\xFBt qui am\xE8ne  \xE0 quelques inconv\xE9nients : le
+    canon met du temps \xE0 charger son projectile et la rotation de sa tourelle
     est tr\xE8s lente."
   typeUnite: 1
   LifeMax: 4
@@ -39,3 +39,4 @@ MonoBehaviour:
   UsefullToWin: 0
   IsInRedArmy: 0
   UnitAttributs: 000000000000000000000000
+  UnitStatuts: 00000000000000000000000000000000

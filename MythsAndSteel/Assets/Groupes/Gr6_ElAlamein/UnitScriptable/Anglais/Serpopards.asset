@@ -13,14 +13,13 @@ MonoBehaviour:
   m_Name: Serpopards
   m_EditorClassIdentifier: 
   UnitName: Serpopard
-  Description: "Lors de la conqu\xEAte de l'Egypte par l'Empire Britannique, d'anciens
+  Description: "Lors de la conqu\xEAte de l'Egypte par l'Empire britannique, d'anciens
     tombeaux furent mis \xE0 jour \xE0 des fins arch\xE9ologiques et historiques.
     Dans l'un d'eux se trouvait un couple de Serpopards, des chim\xE8res mythiques
-    de l'antiquit\xE9.  Apr\xE8s les avoir soign\xE9 gr\xE2ce \xE0 des injections
-    d'orgone, l'arm\xE9e britannique \xE9voqua la possibilit\xE9 de les employer
-    sur le champ de bataille mais sans succ\xE8s. Ce n'est que lorsque les troupes
-    du Reich se rapproch\xE8rent de leur patrie que les Serpopards se mirent \xE9trangement
-    \xE0 se battre pour prot\xE9ger leur pays, semblant comprendre toute la situation. "
+    de l'antiquit\xE9. Apr\xE8s les avoir soign\xE9 gr\xE2ce \xE0 des injections
+    d'Orgone, l'arm\xE9e britannique \xE9voqua la possibilit\xE9 de les employer
+    sur le champ de bataille. Ces cr\xE9atures ne se battent que sur les terres qui
+    les ont vu naitre."
   typeUnite: 3
   LifeMax: 4
   ShieldMax: 0
@@ -36,8 +35,9 @@ MonoBehaviour:
   SonDeplacement: {fileID: 8300000, guid: 68ddee8ab222cf641b252b09302d6d9b, type: 3}
   SonMort: {fileID: 8300000, guid: 0d82b24a8e972d1439d9c5f93229e701, type: 3}
   VoiceLine: {fileID: 8300000, guid: 48d905388e42a064aa8928c1bb401f19, type: 3}
-  Sprite: {fileID: 7088738044596619541, guid: f823609ef62497e4ab94811ad5b7e099, type: 3}
+  Sprite: {fileID: 21300000, guid: 68ae7a68107086c489092714d2c59c0a, type: 3}
   CanAttackEmptyTile: 0
   UsefullToWin: 0
   IsInRedArmy: 0
   UnitAttributs: 050000000000000000000000
+  UnitStatuts: 00000000000000000000000000000000

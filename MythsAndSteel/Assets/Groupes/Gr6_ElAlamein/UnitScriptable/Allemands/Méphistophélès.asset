@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UnitName: "M\xE9phistoph\xE9l\xE8s"
   Description: "Sans le savoir, un jeune groupe d'inconscients invoqua un jour l'un
-    des sept princes de enfers lors d'une s\xE9ance de spiritisme.  L'objectif de
+    des sept princes de enfers lors d'une s\xE9ance de spiritisme. L'objectif de
     ce d\xE9mon \xE9tant surtout de s'amuser via la destruction, il entra en contact
     avec les forces allemandes et passa un pacte : en \xE9change de technologies
     farfelues et amusantes, il aiderait les troupes de la Wehrmacht dans ses conqu\xEAtes."
@@ -33,8 +33,9 @@ MonoBehaviour:
   SonDeplacement: {fileID: 8300000, guid: 19907052015cd27468e3060fb67593ef, type: 3}
   SonMort: {fileID: 8300000, guid: 3562423a3e4e1f646b4db86429661a36, type: 3}
   VoiceLine: {fileID: 8300000, guid: 6a201de4029a8ab44bf62c94c156ddde, type: 3}
-  Sprite: {fileID: 3473205268770018456, guid: 07156a9e62de1e84aa423bcbd0fe369a, type: 3}
+  Sprite: {fileID: 6506162757596757463, guid: c8ce4c13a10aa8b44b16f2a720bc5cda, type: 3}
   CanAttackEmptyTile: 0
   UsefullToWin: 0
   IsInRedArmy: 1
   UnitAttributs: 000000000000000000000000
+  UnitStatuts: 00000000000000000000000000000000

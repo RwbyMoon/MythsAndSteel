@@ -16,11 +16,7 @@ MonoBehaviour:
   Description: "L\u2019infanterie japonaise \xE9tant experte des environnements,
     elle ma\xEEtrise les techniques d\xE9licates li\xE9es \xE0 la terre. Cela leur
     permet de creuser des trous et de venir au combat rapproch\xE9. Cette tactique
-    ouvre un large \xE9ventail d'opportunit\xE9s d\u2019infiltrer les lignes ennemis
-    tout en s\u2019assurant une r\xE9ponse tactique qualitative \xE0 la mesure des
-    attentes de l\u2019Empereur. Les tunneliers portent dans leur c\u0153ur le souhait
-    d\u2019 Hiro-Hito d\u2019assouvir la domination japonaise sur le monde et de
-    creuser encore plus."
+    ouvre un large \xE9ventail d'opportunit\xE9s d\u2019infiltrer les lignes ennemis."
   typeUnite: 0
   LifeMax: 1
   ShieldMax: 0
@@ -41,3 +37,4 @@ MonoBehaviour:
   UsefullToWin: 0
   IsInRedArmy: 0
   UnitAttributs: 000000000000000000000000
+  UnitStatuts: 00000000000000000000000000000000

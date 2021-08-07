@@ -15,7 +15,7 @@ MonoBehaviour:
   UnitName: Panzer IV
   Description: "Ce tank est la base de l\u2019arm\xE9e blind\xE9e allemande et tout
     particuli\xE8rement lors de la bataille d\u2019Elsenborn, o\xF9 il faisait partie
-    du corps de la charge de la Cr\xE8te, m\xEAme si cela le dirigeait vers une mort
+    du corps de la charge de la cr\xE8te, m\xEAme si cela le dirigeait vers une mort
     certaine. Son canon est un canon Gauss, permettant de lancer ses projectiles
     \xE0 haute v\xE9locit\xE9."
   typeUnite: 1
@@ -38,3 +38,4 @@ MonoBehaviour:
   UsefullToWin: 0
   IsInRedArmy: 0
   UnitAttributs: 000000000000000000000000
+  UnitStatuts: 00000000000000000000000000000000

@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Bazooka
   m_EditorClassIdentifier: 
   UnitName: Bazooka
-  Description: "A cause du bruit et du nuage de poussi\xE8re soulev\xE9 provoqu\xE9
-    par le tir du bazooka, Les Etats-Unis ont d\xE9velopp\xE9 un syst\xE8me de propulsion
-    ainsi qu\u2019une unit\xE9 d\u2019\xE9lite sp\xE9cialement entrain\xE9e \xE0
-    cette technologie. Cette unit\xE9 d\xE9sormais tr\xE8s mobile transforme la visibilit\xE9
+  Description: "A cause du bruit et du nuage de poussi\xE8re provoqu\xE9 par le tir
+    du bazooka, Les Etats-Unis ont d\xE9velopp\xE9 un syst\xE8me de propulsion ainsi
+    qu\u2019une unit\xE9 d\u2019\xE9lite sp\xE9cialement entrain\xE9e \xE0 cette
+    technologie. Cette unit\xE9 d\xE9sormais tr\xE8s mobile transforme la visibilit\xE9
     de tir du bazooka en leurre pour tromper ses ennemis."
   typeUnite: 0
   LifeMax: 2
@@ -38,3 +38,4 @@ MonoBehaviour:
   UsefullToWin: 0
   IsInRedArmy: 1
   UnitAttributs: 000000000000000000000000
+  UnitStatuts: 00000000000000000000000000000000
