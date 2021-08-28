@@ -335,16 +335,16 @@ public class UIInstance : MonoSingleton<UIInstance>
 
     public void ActivationMenuActivation(int InitiativeJ1, int InitiativeJ2)
     {
-        _activationDefinedTxtJ1.text = PlayerScript.Instance.J1Infos.ActivationLeft.ToString() + ".";
-        _activationDefinedTxtJ2.text = PlayerScript.Instance.J2Infos.ActivationLeft.ToString() + ".";
+        _activationDefinedTxtJ1.text = PlayerScript.Instance.J1Infos.ActivationLeft.ToString();
+        _activationDefinedTxtJ2.text = PlayerScript.Instance.J2Infos.ActivationLeft.ToString();
         _activationInitTxtJ1.text = InitiativeJ1.ToString();
         _activationInitTxtJ2.text = InitiativeJ2.ToString();
     }
 
     public void ResetActivationValue()
     {
-        _activationDefinedTxtJ1.text = "?.";
-        _activationDefinedTxtJ2.text = "?.";
+        _activationDefinedTxtJ1.text = "?";
+        _activationDefinedTxtJ2.text = "?";
         _activationInitTxtJ1.text = "?";
         _activationInitTxtJ2.text = "?";
     }
