@@ -31,6 +31,7 @@ public class Mouvement : MonoSingleton<Mouvement>
 
     //Déplacement restant de l'unité au départ
     int MoveLeftBase = 0;
+    int MoveBonusBase = 0;
 
     [Header("INFOS DE L UNITE")]
     //Est ce que l'unité a commencé à choisir son déplacement
@@ -112,7 +113,7 @@ public class Mouvement : MonoSingleton<Mouvement>
     public void Highlight(int tileId, int Range, int lasttileId)
     {
         // Si il s'agit d'une route et que la range est de 0.
-        if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Route, tileId) && Range == 0)
+        if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Route, tileId) && Range == 0 && !RaycastManager.Instance.Tile.GetComponent<TileScript>().Unit.GetComponent<UnitScript>().Volant && !RaycastManager.Instance.Tile.GetComponent<TileScript>().Unit.GetComponent<UnitScript>().RestreintAuxRails)
         {
             foreach (int ID in PlayerStatic.GetNeighbourDiag(tileId, TilesManager.Instance.TileList[tileId].GetComponent<TileScript>().Line, false))
             {
@@ -124,31 +125,31 @@ public class Mouvement : MonoSingleton<Mouvement>
                 }
                 foreach (MYthsAndSteel_Enum.TerrainType Type in TileSc.TerrainEffectList)
                 {
-                    if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Ravin, ID) || PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Eau, ID))
+                    if ((PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Ravin, ID) || PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Eau, ID)) && ((!RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().ToutTerrain || !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().Amphibie) || ((RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().ToutTerrain || RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().Amphibie) && Range ==1)))
                     {
                         i = true;
                     }
-                    else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Rivière_Est, tileId) && PlayerStatic.CheckDirection(tileId, ID) == MYthsAndSteel_Enum.Direction.Est && !PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Pont_Est, tileId))
+                    else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Rivière_Est, tileId) && PlayerStatic.CheckDirection(tileId, ID) == MYthsAndSteel_Enum.Direction.Est && !PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Pont_Est, tileId) && (!RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().ToutTerrain || !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().Amphibie))
                     {
                         i = true;
                     }
-                    else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Rivière_Nord, tileId) && PlayerStatic.CheckDirection(tileId, ID) == MYthsAndSteel_Enum.Direction.Nord && !PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Pont_Nord, tileId))
+                    else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Rivière_Nord, tileId) && PlayerStatic.CheckDirection(tileId, ID) == MYthsAndSteel_Enum.Direction.Nord && !PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Pont_Nord, tileId) && (!RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().ToutTerrain || !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().Amphibie))
                     {
                         i = true;
                     }
-                    else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Rivière_Sud, tileId) && PlayerStatic.CheckDirection(tileId, ID) == MYthsAndSteel_Enum.Direction.Sud && !PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Pont_Sud, tileId))
+                    else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Rivière_Sud, tileId) && PlayerStatic.CheckDirection(tileId, ID) == MYthsAndSteel_Enum.Direction.Sud && !PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Pont_Sud, tileId) && (!RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().ToutTerrain || !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().Amphibie))
                     {
                         i = true;
                     }
-                    else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Rivière_Ouest, tileId) && PlayerStatic.CheckDirection(tileId, ID) == MYthsAndSteel_Enum.Direction.Ouest && !PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Pont_Ouest, tileId))
+                    else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Rivière_Ouest, tileId) && PlayerStatic.CheckDirection(tileId, ID) == MYthsAndSteel_Enum.Direction.Ouest && !PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Pont_Ouest, tileId) && (!RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().ToutTerrain || !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().Amphibie))
                     {
                         i = true;
                     }
-                    else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Haute_colline, ID))
+                    else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Haute_colline, ID) && !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().ToutTerrain)
                     {
                         i = true;
                     }
-                    else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Mont, ID) || PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Forêt, ID))
+                    else if ((PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Mont, ID) || PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Forêt, ID)) && !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().ToutTerrain)
                     {
                         i = true;
                     }
@@ -156,7 +157,7 @@ public class Mouvement : MonoSingleton<Mouvement>
                 if (!i)
                 {
                     TilesManager.Instance.TileList[ID].GetComponent<TileScript>().ActiveChildObj(MYthsAndSteel_Enum.ChildTileType.MoveSelect, _selectedSprite);
-                    if (!newNeighbourId.Contains(ID))
+                    if (!newNeighbourId.Contains(ID) && ((RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().RestreintAuxRails && TilesManager.Instance.TileList[ID].GetComponent<TileScript>().TerrainEffectList.Contains(MYthsAndSteel_Enum.TerrainType.Rails)) || !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().RestreintAuxRails))
                     {
                         newNeighbourId.Add(ID);
                     }
@@ -164,7 +165,7 @@ public class Mouvement : MonoSingleton<Mouvement>
             }
         }
         // Si il s'agit d'une route et que la range est de 1.
-        else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Route, tileId) && Range == 1)
+        else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Route, tileId) && Range == 1 && !RaycastManager.Instance.Tile.GetComponent<TileScript>().Unit.GetComponent<UnitScript>().Volant && !RaycastManager.Instance.Tile.GetComponent<TileScript>().Unit.GetComponent<UnitScript>().RestreintAuxRails)
         {
             foreach (int ID in PlayerStatic.GetNeighbourDiag(tileId, TilesManager.Instance.TileList[tileId].GetComponent<TileScript>().Line, false))
             {
@@ -176,27 +177,27 @@ public class Mouvement : MonoSingleton<Mouvement>
                 }
                 foreach (MYthsAndSteel_Enum.TerrainType Type in TileSc.TerrainEffectList)
                 {
-                    if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Ravin, ID) || PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Eau, ID))
+                    if ((PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Ravin, ID) || PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Eau, ID)) && ((!RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().ToutTerrain || !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().Amphibie) || ((RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().ToutTerrain || RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().Amphibie) && Range == 1)))
                     {
                         i = true;
                     }
-                    else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Rivière_Est, tileId) && PlayerStatic.CheckDirection(tileId, ID) == MYthsAndSteel_Enum.Direction.Est && !PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Pont_Est, tileId))
+                    else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Rivière_Est, tileId) && PlayerStatic.CheckDirection(tileId, ID) == MYthsAndSteel_Enum.Direction.Est && !PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Pont_Est, tileId) && (!RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().ToutTerrain || !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().Amphibie))
                     {
                         i = true;
                     }
-                    else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Rivière_Nord, tileId) && PlayerStatic.CheckDirection(tileId, ID) == MYthsAndSteel_Enum.Direction.Nord && !PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Pont_Nord, tileId))
+                    else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Rivière_Nord, tileId) && PlayerStatic.CheckDirection(tileId, ID) == MYthsAndSteel_Enum.Direction.Nord && !PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Pont_Nord, tileId) && (!RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().ToutTerrain || !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().Amphibie))
                     {
                         i = true;
                     }
-                    else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Rivière_Sud, tileId) && PlayerStatic.CheckDirection(tileId, ID) == MYthsAndSteel_Enum.Direction.Sud && !PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Pont_Sud, tileId))
+                    else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Rivière_Sud, tileId) && PlayerStatic.CheckDirection(tileId, ID) == MYthsAndSteel_Enum.Direction.Sud && !PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Pont_Sud, tileId) && (!RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().ToutTerrain || !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().Amphibie))
                     {
                         i = true;
                     }
-                    else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Rivière_Ouest, tileId) && PlayerStatic.CheckDirection(tileId, ID) == MYthsAndSteel_Enum.Direction.Ouest && !PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Pont_Ouest, tileId))
+                    else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Rivière_Ouest, tileId) && PlayerStatic.CheckDirection(tileId, ID) == MYthsAndSteel_Enum.Direction.Ouest && !PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Pont_Ouest, tileId) && (!RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().ToutTerrain || !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().Amphibie))
                     {
                         i = true;
                     }
-                    else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Haute_colline, ID))
+                    else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Haute_colline, ID) && !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().ToutTerrain)
                     {
                         i = true;
                     }
@@ -204,7 +205,7 @@ public class Mouvement : MonoSingleton<Mouvement>
                 if (!i)
                 {
                     TilesManager.Instance.TileList[ID].GetComponent<TileScript>().ActiveChildObj(MYthsAndSteel_Enum.ChildTileType.MoveSelect, _selectedSprite);
-                    if (!newNeighbourId.Contains(ID))
+                    if (!newNeighbourId.Contains(ID) && ((RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().RestreintAuxRails && TilesManager.Instance.TileList[ID].GetComponent<TileScript>().TerrainEffectList.Contains(MYthsAndSteel_Enum.TerrainType.Rails)) || !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().RestreintAuxRails))
                     {
                         newNeighbourId.Add(ID);
                     }
@@ -222,7 +223,7 @@ public class Mouvement : MonoSingleton<Mouvement>
                 {
                     if (TilesManager.Instance.TileList[ID].GetComponent<TileScript>().Unit != null)
                     {
-                        if (!TilesManager.Instance.TileList[ID].GetComponent<TileScript>().Unit.GetComponent<UnitScript>().UnitSO.IsInRedArmy)
+                        if (!TilesManager.Instance.TileList[ID].GetComponent<TileScript>().Unit.GetComponent<UnitScript>().UnitSO.IsInRedArmy && (!RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().PasseMuraille || (RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().PasseMuraille && Range == 1)))
                         {
                             i = true;
                         }
@@ -236,7 +237,7 @@ public class Mouvement : MonoSingleton<Mouvement>
                 {
                     if (TilesManager.Instance.TileList[ID].GetComponent<TileScript>().Unit != null)
                     {
-                        if (TilesManager.Instance.TileList[ID].GetComponent<TileScript>().Unit.GetComponent<UnitScript>().UnitSO.IsInRedArmy)
+                        if (TilesManager.Instance.TileList[ID].GetComponent<TileScript>().Unit.GetComponent<UnitScript>().UnitSO.IsInRedArmy && (!RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().PasseMuraille || (RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().PasseMuraille && Range == 1)))
                         {
                             i = true;
                         }
@@ -247,11 +248,11 @@ public class Mouvement : MonoSingleton<Mouvement>
                     }
                 }
 
-                if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Ravin, ID) || PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Eau, ID))
+                if ((PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Ravin, ID) || PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Eau, ID)) && ((!RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().ToutTerrain || !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().Amphibie) || ((RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().ToutTerrain || RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().Amphibie) && Range ==1)))
                 {
                     i = true;
                 }
-                else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Haute_colline, ID))
+                else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Haute_colline, ID) && !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().ToutTerrain)
                 {
                     if (!PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Colline, tileId) && !PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Haute_colline, tileId))
                     {
@@ -259,36 +260,36 @@ public class Mouvement : MonoSingleton<Mouvement>
                     }
 
                 }
-                else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Haute_colline, tileId))
+                else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Haute_colline, tileId) && !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().ToutTerrain)
                 {
                     if (!PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Colline, ID) && !PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Haute_colline, ID))
                     {
                         i = true;
                     }
                 }
-                else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Rivière_Est, tileId) && PlayerStatic.CheckDirection(tileId, ID) == MYthsAndSteel_Enum.Direction.Est && !PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Pont_Est, tileId))
+                else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Rivière_Est, tileId) && PlayerStatic.CheckDirection(tileId, ID) == MYthsAndSteel_Enum.Direction.Est && !PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Pont_Est, tileId) && (!RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().ToutTerrain || !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().Amphibie))
                 {
                     i = true;
                 }
-                else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Rivière_Nord, tileId) && PlayerStatic.CheckDirection(tileId, ID) == MYthsAndSteel_Enum.Direction.Nord && !PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Pont_Nord, tileId))
+                else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Rivière_Nord, tileId) && PlayerStatic.CheckDirection(tileId, ID) == MYthsAndSteel_Enum.Direction.Nord && !PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Pont_Nord, tileId) && (!RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().ToutTerrain || !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().Amphibie))
                 {
                     i = true;
                 }
-                else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Rivière_Sud, tileId) && PlayerStatic.CheckDirection(tileId, ID) == MYthsAndSteel_Enum.Direction.Sud && !PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Pont_Sud, tileId))
+                else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Rivière_Sud, tileId) && PlayerStatic.CheckDirection(tileId, ID) == MYthsAndSteel_Enum.Direction.Sud && !PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Pont_Sud, tileId) && (!RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().ToutTerrain || !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().Amphibie))
                 {
                     i = true;
                 }
-                else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Rivière_Ouest, tileId) && PlayerStatic.CheckDirection(tileId, ID) == MYthsAndSteel_Enum.Direction.Ouest && !PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Pont_Ouest, tileId))
+                else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Rivière_Ouest, tileId) && PlayerStatic.CheckDirection(tileId, ID) == MYthsAndSteel_Enum.Direction.Ouest && !PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Pont_Ouest, tileId) && (!RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().ToutTerrain || !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().Amphibie))
                 {
                     i = true;
                 }
-                else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Mont, ID) || PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Forêt, ID))
+                else if ((PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Mont, ID) || PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Forêt, ID)) && !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().ToutTerrain)
                 {
                     if (Range >= 2)
                     {
                         TilesManager.Instance.TileList[ID].GetComponent<TileScript>().ActiveChildObj(MYthsAndSteel_Enum.ChildTileType.MoveSelect, _selectedSprite);
 
-                        if (!newNeighbourId.Contains(ID))
+                        if (!newNeighbourId.Contains(ID) && ((RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().RestreintAuxRails && TilesManager.Instance.TileList[ID].GetComponent<TileScript>().TerrainEffectList.Contains(MYthsAndSteel_Enum.TerrainType.Rails)) || !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().RestreintAuxRails))
                         {
                             newNeighbourId.Add(ID);
                         }
@@ -297,15 +298,24 @@ public class Mouvement : MonoSingleton<Mouvement>
                     i = true;
                 }
                 if (!i)
-                {                        
+                {
                     TilesManager.Instance.TileList[ID].GetComponent<TileScript>().ActiveChildObj(MYthsAndSteel_Enum.ChildTileType.MoveSelect, _selectedSprite);
 
-                    if (!newNeighbourId.Contains(ID))
-                    {                    
+                    if (!newNeighbourId.Contains(ID) && ((RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().RestreintAuxRails && TilesManager.Instance.TileList[ID].GetComponent<TileScript>().TerrainEffectList.Contains(MYthsAndSteel_Enum.TerrainType.Rails)) || !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().RestreintAuxRails))
+                    {
                         newNeighbourId.Add(ID);
                     }
-
                     Highlight(ID, Range - 1, tileId);
+                }
+            }
+        }
+        if (RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().RestreintAuxRails)
+        {
+            foreach(GameObject gam in TilesManager.Instance.TileList)
+            {
+                if (!gam.GetComponent<TileScript>().TerrainEffectList.Contains(MYthsAndSteel_Enum.TerrainType.Rails))
+                {
+                    gam.GetComponent<TileScript>().DesActiveChildObj(MYthsAndSteel_Enum.ChildTileType.MoveSelect);
                 }
             }
         }
@@ -329,6 +339,7 @@ public class Mouvement : MonoSingleton<Mouvement>
                 {
                     _selected = true;
                     MoveLeftBase = mUnit.GetComponent<UnitScript>().MoveLeft;
+                    MoveBonusBase = mUnit.GetComponent<UnitScript>().MoveSpeedBonus;
                     UIInstance.Instance.ButtonRenfortJ1.GetComponent<Button>().interactable = false;
                     StartMouvement(TilesManager.Instance.TileList.IndexOf(tileSelected), mUnit.GetComponent<UnitScript>().MoveSpeed - (mUnit.GetComponent<UnitScript>().MoveSpeed - MoveLeftBase) + mUnit.GetComponent<UnitScript>().MoveSpeedBonus);
                 }
@@ -351,6 +362,7 @@ public class Mouvement : MonoSingleton<Mouvement>
                 {
                     _selected = true;
                     MoveLeftBase = mUnit.GetComponent<UnitScript>().MoveLeft;
+                    MoveBonusBase = mUnit.GetComponent<UnitScript>().MoveSpeedBonus;
                     UIInstance.Instance.ButtonRenfortJ2.GetComponent<Button>().interactable = false;
                     StartMouvement(TilesManager.Instance.TileList.IndexOf(tileSelected), mUnit.GetComponent<UnitScript>().MoveSpeed - (mUnit.GetComponent<UnitScript>().MoveSpeed - MoveLeftBase) + mUnit.GetComponent<UnitScript>().MoveSpeedBonus);
                 }
@@ -376,7 +388,7 @@ public class Mouvement : MonoSingleton<Mouvement>
         mvmtrunning = false;
         if (!_mvmtRunning && !_isInMouvement)
         {
-       
+
             _isInMouvement = true;
             _selectedTileId.Add(tileId);
             List<int> ID = new List<int>();
@@ -395,7 +407,7 @@ public class Mouvement : MonoSingleton<Mouvement>
     public void StopMouvement(bool forceStop)
     {
         mvmtrunning = false;
-        if(Last != null)
+        if (Last != null)
         {
             StopCoroutine(Last);
         }
@@ -431,17 +443,18 @@ public class Mouvement : MonoSingleton<Mouvement>
         _selected = false;
 
         if (mUnit != null) mUnit.GetComponent<UnitScript>().MoveLeft = forceStop ? MoveLeftBase : mUnit.GetComponent<UnitScript>().MoveLeft;
+        if (mUnit != null) mUnit.GetComponent<UnitScript>().MoveSpeedBonus = forceStop ? MoveBonusBase : mUnit.GetComponent<UnitScript>().MoveSpeedBonus;
 
         if (!forceStop) if (mUnit != null) mUnit.GetComponent<UnitScript>().checkMovementLeft();
 
         mUnit = null;
-       if( !CapacitySystem.Instance.capacityTryStart)
+        if (!CapacitySystem.Instance.capacityTryStart)
         {
 
-        RaycastManager.Instance.ActualTileSelected = null;
+            RaycastManager.Instance.ActualTileSelected = null;
             Debug.Log("fdjks");
         }
-        
+
 
 
         UIInstance.Instance.ActivationUnitPanel.CloseMovementPanel();
@@ -449,12 +462,12 @@ public class Mouvement : MonoSingleton<Mouvement>
         UIInstance.Instance.ActivateNextPhaseButton();
 
         _mvmtRunning = false;
-        if(GameManager.Instance.IsPlayerRedTurn)
+        if (GameManager.Instance.IsPlayerRedTurn)
         {
             if (UIInstance.Instance.RedRenfortCount == 0)
             {
 
-            UIInstance.Instance.ButtonRenfortJ1.GetComponent<Button>().interactable = true;
+                UIInstance.Instance.ButtonRenfortJ1.GetComponent<Button>().interactable = true;
 
             }
 
@@ -464,7 +477,7 @@ public class Mouvement : MonoSingleton<Mouvement>
             if (UIInstance.Instance.BlueRenfortCount == 0)
             {
 
-            UIInstance.Instance.ButtonRenfortJ2.GetComponent<Button>().interactable = true;
+                UIInstance.Instance.ButtonRenfortJ2.GetComponent<Button>().interactable = true;
             }
         }
         Attaque.Instance.Attack();
@@ -483,12 +496,12 @@ public class Mouvement : MonoSingleton<Mouvement>
             if (newNeighbourId.Contains(tileId)) // Si cette case est dans la range de l'unité.
             {
                 if (_selectedTileId.Contains(tileId))// Si cette case est déjà selectionnée.
-                {                        
+                {
                     // Supprime toutes les cases sélectionnées à partir de l'ID tileId.
                     for (int i = _selectedTileId.IndexOf(tileId); i < _selectedTileId.Count; i++)
                     {
 
-                        if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Forêt, _selectedTileId[i]) || PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Mont, _selectedTileId[i]))
+                        if ((PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Forêt, _selectedTileId[i]) || PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Mont, _selectedTileId[i])) && !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().ToutTerrain)
                         {
                             // Redistribution du Range à chaque suppression de case.
                             if (RouteBonus)
@@ -561,41 +574,41 @@ public class Mouvement : MonoSingleton<Mouvement>
                     Attaque.Instance.RemoveTileSprite();
                     Attaque.Instance.StartAttackSelectionUnit(_selectedTileId[_selectedTileId.Count - 1]);
 
-                }  
+                }
                 else if (PlayerStatic.IsNeighbour(tileId, _selectedTileId[_selectedTileId.Count - 1], TilesManager.Instance.TileList[tileId].GetComponent<TileScript>().Line, false))
                 {
                     // et qu'il reste du mvmt, on assigne la nouvelle case selectionnée à la liste SelectedTile.
-                    if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Rivière_Est, tileId) && PlayerStatic.CheckDirection(tileId, _selectedTileId[_selectedTileId.Count - 1]) == MYthsAndSteel_Enum.Direction.Est && !PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Pont_Est, tileId))
+                    if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Rivière_Est, tileId) && PlayerStatic.CheckDirection(tileId, _selectedTileId[_selectedTileId.Count - 1]) == MYthsAndSteel_Enum.Direction.Est && !PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Pont_Est, tileId) && !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().ToutTerrain)
                     {
                         check = true;
                     }
-                    if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Rivière_Nord, tileId) && PlayerStatic.CheckDirection(tileId, _selectedTileId[_selectedTileId.Count - 1]) == MYthsAndSteel_Enum.Direction.Nord && !PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Pont_Nord, tileId))
+                    if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Rivière_Nord, tileId) && PlayerStatic.CheckDirection(tileId, _selectedTileId[_selectedTileId.Count - 1]) == MYthsAndSteel_Enum.Direction.Nord && !PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Pont_Nord, tileId) && !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().ToutTerrain)
                     {
                         check = true;
                     }
-                    if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Rivière_Sud, tileId) && PlayerStatic.CheckDirection(tileId, _selectedTileId[_selectedTileId.Count - 1]) == MYthsAndSteel_Enum.Direction.Sud && !PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Pont_Sud, tileId))
+                    if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Rivière_Sud, tileId) && PlayerStatic.CheckDirection(tileId, _selectedTileId[_selectedTileId.Count - 1]) == MYthsAndSteel_Enum.Direction.Sud && !PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Pont_Sud, tileId) && !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().ToutTerrain)
                     {
                         check = true;
                     }
-                    if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Rivière_Ouest, tileId) && PlayerStatic.CheckDirection(tileId, _selectedTileId[_selectedTileId.Count - 1]) == MYthsAndSteel_Enum.Direction.Ouest && !PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Pont_Ouest, tileId))
+                    if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Rivière_Ouest, tileId) && PlayerStatic.CheckDirection(tileId, _selectedTileId[_selectedTileId.Count - 1]) == MYthsAndSteel_Enum.Direction.Ouest && !PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Pont_Ouest, tileId) && !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().ToutTerrain)
                     {
                         check = true;
                     }
-                    if(PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Haute_colline, tileId))
+                    if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Haute_colline, tileId) && !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().ToutTerrain)
                     {
-                        if(!PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Colline, _selectedTileId[_selectedTileId.Count - 1]) && !PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Haute_colline, _selectedTileId[_selectedTileId.Count - 1]))
+                        if (!PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Colline, _selectedTileId[_selectedTileId.Count - 1]) && !PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Haute_colline, _selectedTileId[_selectedTileId.Count - 1]))
                         {
                             check = true;
                         }
                     }
-                    if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Haute_colline, _selectedTileId[_selectedTileId.Count - 1]))
+                    if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Haute_colline, _selectedTileId[_selectedTileId.Count - 1]) && !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().ToutTerrain)
                     {
                         if (!PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Colline, tileId) && !PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Haute_colline, tileId))
                         {
                             check = true;
                         }
                     }
-                    if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Forêt, tileId) || PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Mont, tileId))
+                    if ((PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Forêt, tileId) || PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Mont, tileId)) && !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().ToutTerrain)
                     {
                         if (mUnit.GetComponent<UnitScript>().MoveLeft + mUnit.GetComponent<UnitScript>().MoveSpeedBonus >= 2 && !check)
                         {
@@ -605,7 +618,7 @@ public class Mouvement : MonoSingleton<Mouvement>
 
                             for (int i = 1; i <= moveToDecrease; i++)
                             {
-                                if(mUnit.GetComponent<UnitScript>().MoveLeft > 0)
+                                if (mUnit.GetComponent<UnitScript>().MoveLeft > 0)
                                 {
                                     mUnit.GetComponent<UnitScript>().MoveLeft--;
                                 }
@@ -618,7 +631,7 @@ public class Mouvement : MonoSingleton<Mouvement>
                             Attaque.Instance.RemoveTileSprite();
                             Attaque.Instance.StartAttackSelectionUnit(tileId);
                         }
-                        else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Route, _selectedTileId[_selectedTileId.Count - 1]) && (mUnit.GetComponent<UnitScript>().MoveLeft + mUnit.GetComponent<UnitScript>().MoveSpeedBonus) == 1 && !RouteBonus && !check)
+                        else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Route, _selectedTileId[_selectedTileId.Count - 1]) && (mUnit.GetComponent<UnitScript>().MoveLeft + mUnit.GetComponent<UnitScript>().MoveSpeedBonus) == 1 && !RouteBonus && !check && !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().RestreintAuxRails && !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().Volant)
                         {
                             Debug.Log("Bonus");
                             RouteBonus = true;
@@ -641,7 +654,7 @@ public class Mouvement : MonoSingleton<Mouvement>
                             Debug.Log("La tile d'ID : " + tileId + " est une foret ou un mont.");
                         }
                     }
-                    else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Route, _selectedTileId[_selectedTileId.Count - 1]) && (mUnit.GetComponent<UnitScript>().MoveLeft + mUnit.GetComponent<UnitScript>().MoveSpeedBonus) == 0 && !RouteBonus)
+                    else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Route, _selectedTileId[_selectedTileId.Count - 1]) && (mUnit.GetComponent<UnitScript>().MoveLeft + mUnit.GetComponent<UnitScript>().MoveSpeedBonus) == 0 && !RouteBonus && !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().RestreintAuxRails && !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().Volant)
                     {
                         RouteBonus = true;
                         check = true;
@@ -726,7 +739,7 @@ public class Mouvement : MonoSingleton<Mouvement>
     {
         if (_selectedTileId.Count > 1)
         {
-            if (TilesManager.Instance.TileList[_selectedTileId[_selectedTileId.Count - 1]].GetComponent<TileScript>().Unit != null)
+            if (TilesManager.Instance.TileList[_selectedTileId[_selectedTileId.Count - 1]].GetComponent<TileScript>().Unit != null || ((TilesManager.Instance.TileList[_selectedTileId[_selectedTileId.Count - 1]].GetComponent<TileScript>().TerrainEffectList.Contains(MYthsAndSteel_Enum.TerrainType.Eau) || TilesManager.Instance.TileList[_selectedTileId[_selectedTileId.Count - 1]].GetComponent<TileScript>().TerrainEffectList.Contains(MYthsAndSteel_Enum.TerrainType.Ravin)) && !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().Volant) || (TilesManager.Instance.TileList[_selectedTileId[_selectedTileId.Count - 1]].GetComponent<TileScript>().TerrainEffectList.Contains(MYthsAndSteel_Enum.TerrainType.Eau) && !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().Submersible))
             {
                 if (GameManager.Instance.IsPlayerRedTurn == TilesManager.Instance.TileList[_selectedTileId[_selectedTileId.Count - 1]].GetComponent<TileScript>().Unit.GetComponent<UnitScript>().UnitSO.IsInRedArmy)
                 {
@@ -761,21 +774,21 @@ public class Mouvement : MonoSingleton<Mouvement>
         }
         mvmtrunning = true;
         UIInstance.Instance.DesactivateNextPhaseButton();
-        foreach(int ID in PlayerStatic.GetNeighbourDiag(_selectedTileId[_selectedTileId.Count - 1], TilesManager.Instance.TileList[_selectedTileId.Count - 1].GetComponent<TileScript>().Line, false))
+        foreach (int ID in PlayerStatic.GetNeighbourDiag(_selectedTileId[_selectedTileId.Count - 1], TilesManager.Instance.TileList[_selectedTileId.Count - 1].GetComponent<TileScript>().Line, false))
         {
-          if(ID >= 81)
+            if (ID >= 81)
             {
                 break;
             }
 
 
             TilesManager.Instance.TileList[ID].GetComponent<TileScript>().DesActiveChildObj(MYthsAndSteel_Enum.ChildTileType.MoveArrow);
-            
+
         }
 
-       
-            SoundController.Instance.PlaySound(RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().SonDeplacement);
-       
+
+        SoundController.Instance.PlaySound(RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().SonDeplacement);
+
 
         Attaque.Instance.RemoveTileSprite(true);
 
@@ -817,13 +830,13 @@ public class Mouvement : MonoSingleton<Mouvement>
         // L'unité de la case d'arrivée devient celle de la case de départ.
         if (mStart != null)
         {
-            if (mStart.GetComponent<TileScript>().Unit == mUnit) 
+            if (mStart.GetComponent<TileScript>().Unit == mUnit)
             {
                 mStart.GetComponent<TileScript>().RemoveUnitFromTile();
             }
         }
         // L'ancienne case n'a plus d'unité.
-        if(mUnit != null)
+        if (mUnit != null)
         {
             mUnit.GetComponent<UnitScript>().ActualTiledId = TilesManager.Instance.TileList.IndexOf(mEnd);
         }
@@ -901,10 +914,10 @@ public class Mouvement : MonoSingleton<Mouvement>
         if (Unit.GetComponent<UnitScript>().Animation.GetFloat("X") < 0)
         {
 
-        Unit.GetComponent<SpriteRenderer>().flipX = true;
+            Unit.GetComponent<SpriteRenderer>().flipX = true;
         }
-        else if(Unit.GetComponent<UnitScript>().Animation.GetFloat("X") > 0)
-            {
+        else if (Unit.GetComponent<UnitScript>().Animation.GetFloat("X") > 0)
+        {
             Unit.GetComponent<SpriteRenderer>().flipX = false;
         }
     }
@@ -912,7 +925,7 @@ public class Mouvement : MonoSingleton<Mouvement>
     {
         List<int> Temp = new List<int>();
         // Si il s'agit d'une route et que la range est de 0.
-        if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Route, tileId) && Range == 0)
+        if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Route, tileId) && Range == 0 && !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().RestreintAuxRails && !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().Volant)
         {
             foreach (int ID in PlayerStatic.GetNeighbourDiag(tileId, TilesManager.Instance.TileList[tileId].GetComponent<TileScript>().Line, false))
             {
@@ -924,31 +937,31 @@ public class Mouvement : MonoSingleton<Mouvement>
                 }
                 foreach (MYthsAndSteel_Enum.TerrainType Type in TileSc.TerrainEffectList)
                 {
-                    if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Ravin, ID) || PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Eau, ID))
+                    if ((PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Ravin, ID) || PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Eau, ID)) && ((!RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().ToutTerrain || !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().Amphibie) || ((RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().ToutTerrain || RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().Amphibie) && Range == 1)))
                     {
                         i = true;
                     }
-                    else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Rivière_Est, tileId) && PlayerStatic.CheckDirection(tileId, ID) == MYthsAndSteel_Enum.Direction.Est && !PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Pont_Est, tileId))
+                    else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Rivière_Est, tileId) && PlayerStatic.CheckDirection(tileId, ID) == MYthsAndSteel_Enum.Direction.Est && !PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Pont_Est, tileId) && (!RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().ToutTerrain || !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().Amphibie))
                     {
                         i = true;
                     }
-                    else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Rivière_Nord, tileId) && PlayerStatic.CheckDirection(tileId, ID) == MYthsAndSteel_Enum.Direction.Nord && !PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Pont_Nord, tileId))
+                    else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Rivière_Nord, tileId) && PlayerStatic.CheckDirection(tileId, ID) == MYthsAndSteel_Enum.Direction.Nord && !PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Pont_Nord, tileId) && (!RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().ToutTerrain || !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().Amphibie))
                     {
                         i = true;
                     }
-                    else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Rivière_Sud, tileId) && PlayerStatic.CheckDirection(tileId, ID) == MYthsAndSteel_Enum.Direction.Sud && !PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Pont_Sud, tileId))
+                    else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Rivière_Sud, tileId) && PlayerStatic.CheckDirection(tileId, ID) == MYthsAndSteel_Enum.Direction.Sud && !PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Pont_Sud, tileId) && (!RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().ToutTerrain || !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().Amphibie))
                     {
                         i = true;
                     }
-                    else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Rivière_Ouest, tileId) && PlayerStatic.CheckDirection(tileId, ID) == MYthsAndSteel_Enum.Direction.Ouest && !PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Pont_Ouest, tileId))
+                    else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Rivière_Ouest, tileId) && PlayerStatic.CheckDirection(tileId, ID) == MYthsAndSteel_Enum.Direction.Ouest && !PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Pont_Ouest, tileId) && (!RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().ToutTerrain || !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().Amphibie))
                     {
                         i = true;
                     }
-                    else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Haute_colline, ID))
+                    else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Haute_colline, ID) && !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().ToutTerrain)
                     {
                         i = true;
                     }
-                    else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Mont, ID) || PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Forêt, ID))
+                    else if ((PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Mont, ID) || PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Forêt, ID)) && !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().ToutTerrain)
                     {
                         i = true;
                     }
@@ -963,7 +976,7 @@ public class Mouvement : MonoSingleton<Mouvement>
             }
         }
         // Si il s'agit d'une route et que la range est de 1.
-        else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Route, tileId) && Range == 1)
+        else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Route, tileId) && Range == 1 && !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().RestreintAuxRails && !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().Volant)
         {
             foreach (int ID in PlayerStatic.GetNeighbourDiag(tileId, TilesManager.Instance.TileList[tileId].GetComponent<TileScript>().Line, false))
             {
@@ -975,27 +988,27 @@ public class Mouvement : MonoSingleton<Mouvement>
                 }
                 foreach (MYthsAndSteel_Enum.TerrainType Type in TileSc.TerrainEffectList)
                 {
-                    if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Ravin, ID) || PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Eau, ID))
+                    if ((PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Ravin, ID) || PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Eau, ID)) && ((!RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().ToutTerrain || !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().Amphibie) || ((RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().ToutTerrain || RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().Amphibie) && Range == 1)))
                     {
                         i = true;
                     }
-                    else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Rivière_Est, tileId) && PlayerStatic.CheckDirection(tileId, ID) == MYthsAndSteel_Enum.Direction.Est && !PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Pont_Est, tileId))
+                    else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Rivière_Est, tileId) && PlayerStatic.CheckDirection(tileId, ID) == MYthsAndSteel_Enum.Direction.Est && !PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Pont_Est, tileId) && (!RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().ToutTerrain || !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().Amphibie))
                     {
                         i = true;
                     }
-                    else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Rivière_Nord, tileId) && PlayerStatic.CheckDirection(tileId, ID) == MYthsAndSteel_Enum.Direction.Nord && !PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Pont_Nord, tileId))
+                    else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Rivière_Nord, tileId) && PlayerStatic.CheckDirection(tileId, ID) == MYthsAndSteel_Enum.Direction.Nord && !PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Pont_Nord, tileId) && (!RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().ToutTerrain || !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().Amphibie))
                     {
                         i = true;
                     }
-                    else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Rivière_Sud, tileId) && PlayerStatic.CheckDirection(tileId, ID) == MYthsAndSteel_Enum.Direction.Sud && !PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Pont_Sud, tileId))
+                    else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Rivière_Sud, tileId) && PlayerStatic.CheckDirection(tileId, ID) == MYthsAndSteel_Enum.Direction.Sud && !PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Pont_Sud, tileId) && (!RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().ToutTerrain || !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().Amphibie))
                     {
                         i = true;
                     }
-                    else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Rivière_Ouest, tileId) && PlayerStatic.CheckDirection(tileId, ID) == MYthsAndSteel_Enum.Direction.Ouest && !PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Pont_Ouest, tileId))
+                    else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Rivière_Ouest, tileId) && PlayerStatic.CheckDirection(tileId, ID) == MYthsAndSteel_Enum.Direction.Ouest && !PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Pont_Ouest, tileId) && (!RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().ToutTerrain || !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().Amphibie))
                     {
                         i = true;
                     }
-                    else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Haute_colline, ID))
+                    else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Haute_colline, ID) && !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().ToutTerrain)
                     {
                         i = true;
                     }
@@ -1011,7 +1024,7 @@ public class Mouvement : MonoSingleton<Mouvement>
         }
         else if (Range > 0)
         {
-                foreach (int ID in PlayerStatic.GetNeighbourDiag(tileId, TilesManager.Instance.TileList[tileId].GetComponent<TileScript>().Line, false))
+            foreach (int ID in PlayerStatic.GetNeighbourDiag(tileId, TilesManager.Instance.TileList[tileId].GetComponent<TileScript>().Line, false))
             {
                 TileScript TileSc = TilesManager.Instance.TileList[ID].GetComponent<TileScript>();
                 bool i = false;
@@ -1019,7 +1032,7 @@ public class Mouvement : MonoSingleton<Mouvement>
                 {
                     if (TilesManager.Instance.TileList[ID].GetComponent<TileScript>().Unit != null)
                     {
-                        if (!TilesManager.Instance.TileList[ID].GetComponent<TileScript>().Unit.GetComponent<UnitScript>().UnitSO.IsInRedArmy)
+                        if (!TilesManager.Instance.TileList[ID].GetComponent<TileScript>().Unit.GetComponent<UnitScript>().UnitSO.IsInRedArmy && (!RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().PasseMuraille || (RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().PasseMuraille && Range == 1)))
                         {
                             i = true;
                         }
@@ -1033,7 +1046,7 @@ public class Mouvement : MonoSingleton<Mouvement>
                 {
                     if (TilesManager.Instance.TileList[ID].GetComponent<TileScript>().Unit != null)
                     {
-                        if (TilesManager.Instance.TileList[ID].GetComponent<TileScript>().Unit.GetComponent<UnitScript>().UnitSO.IsInRedArmy)
+                        if (TilesManager.Instance.TileList[ID].GetComponent<TileScript>().Unit.GetComponent<UnitScript>().UnitSO.IsInRedArmy && (!RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().PasseMuraille || (RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().PasseMuraille && Range == 1)))
                         {
                             i = true;
                         }
@@ -1044,11 +1057,11 @@ public class Mouvement : MonoSingleton<Mouvement>
                     }
                 }
 
-                if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Ravin, ID) || PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Eau, ID))
+                if ((PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Ravin, ID) || PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Eau, ID)) && ((!RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().ToutTerrain || !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().Amphibie) || ((RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().ToutTerrain || RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().Amphibie) && Range == 1)))
                 {
                     i = true;
                 }
-                else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Haute_colline, ID))
+                else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Haute_colline, ID) && !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().ToutTerrain)
                 {
                     if (!PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Colline, tileId) && !PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Haute_colline, tileId))
                     {
@@ -1056,32 +1069,32 @@ public class Mouvement : MonoSingleton<Mouvement>
                     }
 
                 }
-                else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Haute_colline, tileId))
+                else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Haute_colline, tileId) && !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().ToutTerrain)
                 {
                     if (!PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Colline, ID) && !PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Haute_colline, ID))
                     {
                         i = true;
                     }
                 }
-                else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Rivière_Est, tileId) && PlayerStatic.CheckDirection(tileId, ID) == MYthsAndSteel_Enum.Direction.Est && !PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Pont_Est, tileId))
+                else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Rivière_Est, tileId) && PlayerStatic.CheckDirection(tileId, ID) == MYthsAndSteel_Enum.Direction.Est && !PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Pont_Est, tileId) && (!RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().ToutTerrain || !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().Amphibie))
                 {
                     i = true;
                 }
-                else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Rivière_Nord, tileId) && PlayerStatic.CheckDirection(tileId, ID) == MYthsAndSteel_Enum.Direction.Nord && !PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Pont_Nord, tileId))
+                else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Rivière_Nord, tileId) && PlayerStatic.CheckDirection(tileId, ID) == MYthsAndSteel_Enum.Direction.Nord && !PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Pont_Nord, tileId) && (!RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().ToutTerrain || !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().Amphibie))
                 {
                     i = true;
                 }
-                else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Rivière_Sud, tileId) && PlayerStatic.CheckDirection(tileId, ID) == MYthsAndSteel_Enum.Direction.Sud && !PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Pont_Sud, tileId))
+                else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Rivière_Sud, tileId) && PlayerStatic.CheckDirection(tileId, ID) == MYthsAndSteel_Enum.Direction.Sud && !PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Pont_Sud, tileId) && (!RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().ToutTerrain || !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().Amphibie))
                 {
                     i = true;
                 }
-                else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Rivière_Ouest, tileId) && PlayerStatic.CheckDirection(tileId, ID) == MYthsAndSteel_Enum.Direction.Ouest && !PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Pont_Ouest, tileId))
+                else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Rivière_Ouest, tileId) && PlayerStatic.CheckDirection(tileId, ID) == MYthsAndSteel_Enum.Direction.Ouest && !PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Pont_Ouest, tileId) && (!RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().ToutTerrain || !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().Amphibie))
                 {
                     i = true;
                 }
-                else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Mont, ID) || PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Forêt, ID))
+                else if ((PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Mont, ID) || PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Forêt, ID)) && !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().ToutTerrain)
                 {
-                    if(Range < 2)
+                    if (Range < 2)
                     {
                         i = true;
                     }
@@ -1098,8 +1111,8 @@ public class Mouvement : MonoSingleton<Mouvement>
         return Temp;
     }
 
-     List<int> ArrowedTile = new List<int>();
-     List<int> PathTile = new List<int>();
+    List<int> ArrowedTile = new List<int>();
+    List<int> PathTile = new List<int>();
     private void DisplayMoveArrow()
     {
         if (PathTile.Count > 0)
@@ -1110,7 +1123,7 @@ public class Mouvement : MonoSingleton<Mouvement>
             }
             PathTile.Clear();
         }
-        if(ArrowedTile.Count > 0)
+        if (ArrowedTile.Count > 0)
         {
             foreach (int T in ArrowedTile)
             {
@@ -1161,18 +1174,18 @@ public class Mouvement : MonoSingleton<Mouvement>
                 }
             }
         }
-        if(_selectedTileId.Count >= 2)
+        if (_selectedTileId.Count >= 2)
         {
             for (int i = 1; i < _selectedTileId.Count - 1; i++)
             {
                 MYthsAndSteel_Enum.Direction avant = PlayerStatic.CheckDirection(_selectedTileId[i - 1], _selectedTileId[i]);
                 MYthsAndSteel_Enum.Direction apres = PlayerStatic.CheckDirection(_selectedTileId[i + 1], _selectedTileId[i]);
                 Debug.Log(_selectedTileId[i]);
-                if(avant == MYthsAndSteel_Enum.Direction.Sud)
+                if (avant == MYthsAndSteel_Enum.Direction.Sud)
                 {
                     switch (apres)
                     {
-                        case MYthsAndSteel_Enum.Direction.Nord: 
+                        case MYthsAndSteel_Enum.Direction.Nord:
                             TilesManager.Instance.TileList[_selectedTileId[i]].GetComponent<TileScript>().ActiveChildObj(MYthsAndSteel_Enum.ChildTileType.MovePath, Vertical);
                             break;
                         case MYthsAndSteel_Enum.Direction.Est:
@@ -1235,7 +1248,7 @@ public class Mouvement : MonoSingleton<Mouvement>
             {
                 case MYthsAndSteel_Enum.Direction.Nord:
                     PathTile.Add(_selectedTileId[_selectedTileId.Count - 1]);
-                    if(mUnit.GetComponent<UnitScript>().MoveLeft + mUnit.GetComponent<UnitScript>().MoveSpeedBonus == 0)
+                    if (mUnit.GetComponent<UnitScript>().MoveLeft + mUnit.GetComponent<UnitScript>().MoveSpeedBonus == 0)
                     {
                         TilesManager.Instance.TileList[_selectedTileId[_selectedTileId.Count - 1]].GetComponent<TileScript>().ActiveChildObj(MYthsAndSteel_Enum.ChildTileType.MovePath, DownArrow);
                     }

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c815bdbd83982254eb2da5fbe95df910, type: 3}
   m_Name: MytheCH1
   m_EditorClassIdentifier: 
-  UnitName: "Arm\xE9e de terre cuite"
+  UnitName: "Arm\xE9e de Terre Cuite"
   Description: "Dans sa qu\xEAte de l\u2019\xC9lixir d\u2019Immortalit\xE9, l\u2019Empereur
     Qin Shi Huang ordonna sans le savoir \xE0 Xu Fu, alchimiste et sorcier, d\u2019utiliser
     lors de ses plus fifines exp\xE9rimentations l\u2019Orgone de centaines de milliers
@@ -39,4 +39,4 @@ MonoBehaviour:
   CanAttackEmptyTile: 0
   UsefullToWin: 0
   IsInRedArmy: 1
-  UnitAttributs: 000000000000000000000000
+  UnitAttributs: 010000000500000000000000

@@ -24,11 +24,11 @@ MonoBehaviour:
   LifeMax: 2
   ShieldMax: 0
   AttackRange: 1
-  MoveSpeed: 2
+  MoveSpeed: 3
   CreationCost: 2
   numberOfUnitToAttack: 1
   DamageMinimum: 0
-  NumberRangeMin: {x: 1, y: 4}
+  NumberRangeMin: {x: 0, y: 0}
   DamageMaximum: 1
   NumberRangeMax: {x: 5, y: 12}
   SonAttaque: {fileID: 8300000, guid: 672ed031b3907f14a9b1d2f3e52f71b8, type: 3}
@@ -40,3 +40,4 @@ MonoBehaviour:
   UsefullToWin: 0
   IsInRedArmy: 1
   UnitAttributs: 000000000000000000000000
+  UnitStatuts: 00000000000000000000000000000000

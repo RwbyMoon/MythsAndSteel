@@ -1,5 +1,29 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &5628594292803525430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1730111213216533168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b5d53f4caebfc4f80e7f9f37bea2cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Capacity1Name: '!!Pacte Maudit!!'
+  _Capacity1Type: Actif
+  _Capacity1Cost: 0
+  _Capacity1Desc: "D\xE9faussez-vous d'un \xE9v\xE9nement. Une unit\xE9 alli\xE9e
+    obtient +1 de d\xE9placement et +2 aux bornes d'attaque pour ce tour."
+  _Capacity1Icon: {fileID: 0}
+  _Capacity2Name: "!!N\xE9cromancie!!"
+  _Capacity2Type: Actif
+  _Capacity2Cost: 0
+  _Capacity2Desc: "Ressuscite une unit\xE9 ennemie avec 2 pv dans votre camp. Une
+    fois par partie."
+  _Capacity2Icon: {fileID: 0}
 --- !u!1001 &6437346836368053479
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9,7 +33,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4707557024412655191, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
       propertyPath: m_Name
-      value: "M\xE9phistoph\xE9l\xE8s"
+      value: "M\xE9phistoph\xE9l\xE8s Variant"
       objectReference: {fileID: 0}
     - target: {fileID: 4707557024412655208, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
       propertyPath: m_Controller
@@ -153,3 +177,8 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: ca335269bd5e3ce4cb81709d00df286e, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
+--- !u!1 &1730111213216533168 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4707557024412655191, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
+  m_PrefabInstance: {fileID: 6437346836368053479}
+  m_PrefabAsset: {fileID: 0}

@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 1808412573655632191}
   - component: {fileID: 1808412573655632190}
   - component: {fileID: 6362565426523330389}
+  - component: {fileID: 2619224057310577922}
+  - component: {fileID: 366872175737743951}
   m_Layer: 0
   m_Name: hanselEtGretel
   m_TagString: Untagged
@@ -101,7 +103,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _unitSO: {fileID: 11400000, guid: a3de4f954f5c3384cbad529bc8246b22, type: 2}
   ParalysieStat: 3
+  HasOnlyOneDamage: 0
+  IsActifNotConsumeAction: 0
+  ActifUsedThisTurn: 0
   "M\xE9lodieSinistre": 0
+  RestreintAuxRails: 0
+  ToutTerrain: 0
   _life: 1
   Renderer: {fileID: 1808412573655632188}
   _shield: 2
@@ -113,6 +120,9 @@ MonoBehaviour:
   _damageMaximum: 2
   _damageBonus: 0
   _diceBonus: 0
+  NbAtkTurn: 1
+  NbAttaqueParTour: 1
+  HasAttackedOneTime: 0
   RunningCapacity: 0
   _moveSpeed: 3
   _MoveSpeedBonus: 0
@@ -135,6 +145,11 @@ MonoBehaviour:
   step: 0
   hasUseActivation: 0
   _Animation: {fileID: 1808412573655632190}
+  HasAttacked: 0
+  NewTurnHasStart: 0
+  PermaSpeedBoost: 0
+  PermaRangeBoost: 0
+  PermaDiceBoost: 0
   DoingCharg1Blue: 0
 --- !u!95 &1808412573655632190
 Animator:
@@ -172,6 +187,42 @@ MonoBehaviour:
   _Capacity1Description: "L'unit\xE9 peut activer une unit\xE9 adverse de type Char
     ou M\xE9cha durant un tour en \xE9change d'une activation. \n"
   _Capacity1Cost: 2
+--- !u!114 &2619224057310577922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1808412573655632129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b5d53f4caebfc4f80e7f9f37bea2cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Capacity1Name: Hacking
+  _Capacity1Type: Actif
+  _Capacity1Cost: 2
+  _Capacity1Desc: "Applique le statut Poss\xE9d\xE9 \xE0 une unit\xE9 adjacente de
+    type V\xE9hicule ou M\xE9cha."
+  _Capacity1Icon: {fileID: 21300000, guid: e1ce0d0a74cf09f4fa94ededc6efb78a, type: 3}
+  _Capacity2Name: Attaque Jumelle
+  _Capacity2Type: Passif
+  _Capacity2Cost: 0
+  _Capacity2Desc: "Peut lancer 2 attaque par tour. Ne peut plus se d\xE9placer apr\xE8s
+    la 1\xE8re attaque."
+  _Capacity2Icon: {fileID: 0}
+--- !u!114 &366872175737743951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1808412573655632129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b2c8191f10009743899dc1fe952b7ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1808412575310916537
 GameObject:
   m_ObjectHideFlags: 0

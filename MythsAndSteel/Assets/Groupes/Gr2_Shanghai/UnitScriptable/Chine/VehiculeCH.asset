@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c815bdbd83982254eb2da5fbe95df910, type: 3}
   m_Name: VehiculeCH
   m_EditorClassIdentifier: 
-  UnitName: FAMO
+  UnitName: FAMO Zugkraft
   Description: "Le FAMO est un v\xE9hicule durable d\xE9riv\xE9 des v\xE9hicules
     de transports allemands, ayant pu profifiter de leurs recherches pr\xE9-guerre
     sur ce qui deviendra le Sd.Kfz.9 FAMO. Parfaitement adapt\xE9 aux troupes chinoises

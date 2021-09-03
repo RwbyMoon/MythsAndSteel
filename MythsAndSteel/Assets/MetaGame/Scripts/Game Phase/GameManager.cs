@@ -164,6 +164,9 @@ public class GameManager : MonoSingleton<GameManager>
     [SerializeField] TerrainTypeClass _Terrain;
     public TerrainTypeClass Terrain => _Terrain;
 
+    //Valeur lue lors d'un changement de phase
+    public bool IsNextPhaseDone = false;
+
     #region CheckOrgone
     //Check l'orgone pour éviter l'override
     public bool IsCheckingOrgone = false;
@@ -200,7 +203,7 @@ public class GameManager : MonoSingleton<GameManager>
 
     private void Update()
     {
-       
+
     }
 
     /// <summary>
@@ -241,6 +244,8 @@ public class GameManager : MonoSingleton<GameManager>
         _isInTurn = false;
         _eventCall = null;
         _eventCallCancel = null;
+        IsNextPhaseDone = true;
+        StartCoroutine(ChangePhaseDone());
         OnclickedEvent();
     }
 
@@ -934,4 +939,9 @@ public class GameManager : MonoSingleton<GameManager>
 
     }
 
+    IEnumerator ChangePhaseDone()
+    {
+        yield return new WaitForSeconds(2);
+        IsNextPhaseDone = false;
+    }
 }

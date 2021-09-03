@@ -1792,6 +1792,7 @@ MonoBehaviour:
   _activationPhase: {fileID: 915835425}
   activationDone: 0
   _Terrain: {fileID: 11400000, guid: 63320423d746c044c856c47713979047, type: 2}
+  IsNextPhaseDone: 0
   IsCheckingOrgone: 0
   DoingEpxlosionOrgone: 0
   DeathByOrgone: 0
@@ -2604,6 +2605,8 @@ MonoBehaviour:
   SelectedTiles: 
   _normalAttackSprite: {fileID: 21300000, guid: 120dc50b5dfb8c746a31d79d36df8a98, type: 3}
   _selectedSprite: {fileID: 21300000, guid: 332752d1c1d8b114daccf4a90b1a0703, type: 3}
+  DeviationEnCours: 0
+  idTileCible: 0
   Go: 0
   _JaugeAttack: {fileID: 1391136861}
   _attackselected: 0
@@ -3204,6 +3207,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4707557024412655209, guid: 041c8ce0012199e43a1c6005e614fab3, type: 3}
+      propertyPath: FireResistance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707557024412655209, guid: 041c8ce0012199e43a1c6005e614fab3, type: 3}
       propertyPath: _damageMaximum
       value: 3
       objectReference: {fileID: 0}
@@ -3307,6 +3314,28 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4707557024412655191, guid: 041c8ce0012199e43a1c6005e614fab3, type: 3}
   m_PrefabInstance: {fileID: 178807600}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &178807603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 178807602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b5d53f4caebfc4f80e7f9f37bea2cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Capacity1Name: "!!Masse Cyclop\xE9enne!!"
+  _Capacity1Type: Passif
+  _Capacity1Cost: 0
+  _Capacity1Desc: "D\xE9place l'unit\xE9 attaqu\xE9e de 3 cases de votre choix."
+  _Capacity1Icon: {fileID: 0}
+  _Capacity2Name: 
+  _Capacity2Type: 
+  _Capacity2Cost: 0
+  _Capacity2Desc: 
+  _Capacity2Icon: {fileID: 21300000, guid: 24c38065f0aa40046a1f50a3c6882ced, type: 3}
 --- !u!1001 &182419463
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3458,6 +3487,30 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4707557024412655211, guid: 041c8ce0012199e43a1c6005e614fab3, type: 3}
   m_PrefabInstance: {fileID: 182419463}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &182419466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 182419464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b5d53f4caebfc4f80e7f9f37bea2cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Capacity1Name: '!!Contrecoup!!'
+  _Capacity1Type: Passif
+  _Capacity1Cost: 0
+  _Capacity1Desc: "D\xE9place l'unit\xE9e attaqu\xE9e d'une case dans la direction
+    de votre choix."
+  _Capacity1Icon: {fileID: 0}
+  _Capacity2Name: '!!Grue!!'
+  _Capacity2Type: Actif
+  _Capacity2Cost: 0
+  _Capacity2Desc: "D\xE9place une unit\xE9 adjacente sur une autre case adjacente
+    \xE0 cette unit\xE9 (diagonales incluses)."
+  _Capacity2Icon: {fileID: 0}
 --- !u!1001 &188076899
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3568,11 +3621,6 @@ Transform:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5729802673627382403, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
   m_PrefabInstance: {fileID: 188076899}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &194844992 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3876014583248920428, guid: 25294b9364e0e6a40bdf53908301a743, type: 3}
-  m_PrefabInstance: {fileID: 1160431421}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &197000184 stripped
 GameObject:
@@ -4108,12 +4156,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b699dfaad64cecd4db2c734c3fd7b8f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Capacity1Name: Coeur de flamme
+  _Capacity1Name: '!!Coeur de flamme!!'
   render1: {fileID: 21300000, guid: 869be2b71c57b1f41b3fb3883eaf131f, type: 3}
   _Capacity1Description: Embrase une zone de 5 cases.
   _Capacity1Cost: 1
   fr: {fileID: 2043064946}
   Range: 3
+--- !u!114 &231853588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 231853585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b5d53f4caebfc4f80e7f9f37bea2cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Capacity1Name: '!!Coeur de Flamme!!'
+  _Capacity1Type: Actif
+  _Capacity1Cost: 0
+  _Capacity1Desc: "Embrase trois cases align\xE9es \xE0 port\xE9e d'attaque \xE0
+    la fin du prochain tour adverse."
+  _Capacity1Icon: {fileID: 0}
+  _Capacity2Name: "Coul\xE9e de Lave"
+  _Capacity2Type: Passif
+  _Capacity2Cost: 0
+  _Capacity2Desc: "L'attaque enflamme la case cibl\xE9e. Embrase en cas de critique."
+  _Capacity2Icon: {fileID: 0}
 --- !u!1001 &235730751
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6793,7 +6864,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8093891363561059414, guid: 52d97b989b65aaf43a6d23512371ba58, type: 3}
       propertyPath: m_text
-      value: OK !
+      value: "Ordre re\xE7u !"
       objectReference: {fileID: 0}
     - target: {fileID: 8093891363561059414, guid: 52d97b989b65aaf43a6d23512371ba58, type: 3}
       propertyPath: m_fontSize
@@ -7674,6 +7745,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1968846222}
         m_TargetAssemblyTypeName: SoundController, Assembly-CSharp
         m_MethodName: UINav
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 96260005}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: CliCToChangePhase
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10564,7 +10647,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4227640084239285831, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
       propertyPath: _terrainEffectList.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4227640084239285831, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
       propertyPath: _terrainEffectList.Array.data[0]
@@ -10573,6 +10656,10 @@ PrefabInstance:
     - target: {fileID: 4227640084239285831, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
       propertyPath: _terrainEffectList.Array.data[1]
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4227640084239285831, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
+      propertyPath: _terrainEffectList.Array.data[2]
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5729802673627382403, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
       propertyPath: m_Name
@@ -13662,18 +13749,9 @@ MonoBehaviour:
   - {fileID: 1279647277}
   - {fileID: 1766856158}
   _timeToWait: 0.25
-  _offsetXActivationMenu: 2
-  _offsetYActivationMenu: 0
-  _offsetXMouseOver: 1.5
-  _offsetYMouseOver: 2.3
-  _offsetXStatPlus: 1.5
-  _offsetYStatPlus: 3.7
-  _xOffsetMin: {x: -4, y: 4}
-  _yOffsetMin: {x: -4, y: 4}
-  _xOffset: {x: -6, y: 6}
-  _yOffset: {x: -6, y: 6}
-  _xOffsetMax: {x: -8, y: 8}
-  _yOffsetMax: {x: -8, y: 8}
+  OffsetPositionUI: 0
+  MapVisual: {fileID: 0}
+  carnetStats: {x: 0, y: 0, z: 0, w: 0}
   _renfortUI: {fileID: 2086137330}
   _elementMenuRenfort:
   - {fileID: 2086137329}
@@ -15350,7 +15428,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4227640084239285831, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
       propertyPath: _terrainEffectList.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4227640084239285831, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
       propertyPath: _terrainEffectList.Array.data[0]
@@ -15362,7 +15440,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4227640084239285831, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
       propertyPath: _terrainEffectList.Array.data[2]
-      value: 18
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5729802673627382403, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
       propertyPath: m_Name
@@ -15654,7 +15732,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8093891363561059414, guid: 52d97b989b65aaf43a6d23512371ba58, type: 3}
       propertyPath: m_text
-      value: OK !
+      value: "Ordre re\xE7u !"
       objectReference: {fileID: 0}
     - target: {fileID: 8093891363561059414, guid: 52d97b989b65aaf43a6d23512371ba58, type: 3}
       propertyPath: m_fontSize
@@ -16070,11 +16148,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1002808549 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4822377787160631848, guid: 3fbd8c6fc337b284787c1f442bc30be7, type: 3}
-  m_PrefabInstance: {fileID: 1060686575}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1007017053
 GameObject:
   m_ObjectHideFlags: 0
@@ -16767,7 +16840,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4227640084239285831, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
       propertyPath: _terrainEffectList.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4227640084239285831, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
       propertyPath: _terrainEffectList.Array.data[0]
@@ -16776,6 +16849,10 @@ PrefabInstance:
     - target: {fileID: 4227640084239285831, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
       propertyPath: _terrainEffectList.Array.data[1]
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4227640084239285831, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
+      propertyPath: _terrainEffectList.Array.data[2]
+      value: 41
       objectReference: {fileID: 0}
     - target: {fileID: 5729802673627382403, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
       propertyPath: m_Name
@@ -17184,6 +17261,50 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6683300044227061460, guid: 3fbd8c6fc337b284787c1f442bc30be7, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6927114940162058219, guid: 3fbd8c6fc337b284787c1f442bc30be7, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6927114940162058219, guid: 3fbd8c6fc337b284787c1f442bc30be7, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6927114940162058219, guid: 3fbd8c6fc337b284787c1f442bc30be7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6927114940162058219, guid: 3fbd8c6fc337b284787c1f442bc30be7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6927114941213783351, guid: 3fbd8c6fc337b284787c1f442bc30be7, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6927114941213783351, guid: 3fbd8c6fc337b284787c1f442bc30be7, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6927114941213783351, guid: 3fbd8c6fc337b284787c1f442bc30be7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6927114941213783351, guid: 3fbd8c6fc337b284787c1f442bc30be7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7273229136771560123, guid: 3fbd8c6fc337b284787c1f442bc30be7, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7273229136771560123, guid: 3fbd8c6fc337b284787c1f442bc30be7, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7273229136771560123, guid: 3fbd8c6fc337b284787c1f442bc30be7, type: 3}
+      propertyPath: m_AnchorMin.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7373338440962963388, guid: 3fbd8c6fc337b284787c1f442bc30be7, type: 3}
@@ -17849,7 +17970,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4227640084239285831, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
       propertyPath: _terrainEffectList.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4227640084239285831, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
       propertyPath: _terrainEffectList.Array.data[0]
@@ -17858,6 +17979,10 @@ PrefabInstance:
     - target: {fileID: 4227640084239285831, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
       propertyPath: _terrainEffectList.Array.data[1]
       value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 4227640084239285831, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
+      propertyPath: _terrainEffectList.Array.data[2]
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5729802673627382403, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
       propertyPath: m_Name
@@ -18974,6 +19099,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: switchWindows2
       objectReference: {fileID: 0}
+    - target: {fileID: 5037983463522373146, guid: 25294b9364e0e6a40bdf53908301a743, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 400.58795
+      objectReference: {fileID: 0}
     - target: {fileID: 5037983464029410098, guid: 25294b9364e0e6a40bdf53908301a743, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -19017,6 +19146,70 @@ PrefabInstance:
     - target: {fileID: 7409840831350332941, guid: 25294b9364e0e6a40bdf53908301a743, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0.00005722046
+      objectReference: {fileID: 0}
+    - target: {fileID: 8343058976594331875, guid: 25294b9364e0e6a40bdf53908301a743, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8343058976594331875, guid: 25294b9364e0e6a40bdf53908301a743, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8343058976594331875, guid: 25294b9364e0e6a40bdf53908301a743, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8343058976594331875, guid: 25294b9364e0e6a40bdf53908301a743, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8343058977250248019, guid: 25294b9364e0e6a40bdf53908301a743, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8343058977250248019, guid: 25294b9364e0e6a40bdf53908301a743, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8343058977250248019, guid: 25294b9364e0e6a40bdf53908301a743, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8343058977250248019, guid: 25294b9364e0e6a40bdf53908301a743, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8343058977521242764, guid: 25294b9364e0e6a40bdf53908301a743, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8343058977521242764, guid: 25294b9364e0e6a40bdf53908301a743, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8343058977521242764, guid: 25294b9364e0e6a40bdf53908301a743, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8343058977521242764, guid: 25294b9364e0e6a40bdf53908301a743, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8343058977923237072, guid: 25294b9364e0e6a40bdf53908301a743, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8343058977923237072, guid: 25294b9364e0e6a40bdf53908301a743, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8343058977923237072, guid: 25294b9364e0e6a40bdf53908301a743, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8343058977923237072, guid: 25294b9364e0e6a40bdf53908301a743, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8665669378577276300, guid: 25294b9364e0e6a40bdf53908301a743, type: 3}
       propertyPath: m_Pivot.x
@@ -23485,6 +23678,29 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4707557024412655211, guid: 041c8ce0012199e43a1c6005e614fab3, type: 3}
   m_PrefabInstance: {fileID: 1418046027}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1418046030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1418046028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b5d53f4caebfc4f80e7f9f37bea2cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Capacity1Name: "!!D\xE9flagration!!"
+  _Capacity1Type: Passif
+  _Capacity1Cost: 0
+  _Capacity1Desc: "Inflige 1 d\xE9g\xE2t aux unit\xE9s adjacentes \xE0 la cible en
+    cas de coup critique."
+  _Capacity1Icon: {fileID: 0}
+  _Capacity2Name: 
+  _Capacity2Type: 
+  _Capacity2Cost: 0
+  _Capacity2Desc: 
+  _Capacity2Icon: {fileID: 21300000, guid: 24c38065f0aa40046a1f50a3c6882ced, type: 3}
 --- !u!1 &1424447019
 GameObject:
   m_ObjectHideFlags: 0
@@ -24022,6 +24238,29 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4707557024412655211, guid: 041c8ce0012199e43a1c6005e614fab3, type: 3}
   m_PrefabInstance: {fileID: 1440441356}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1440441359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1440441357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b5d53f4caebfc4f80e7f9f37bea2cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Capacity1Name: "!!Menace A\xE9rienne!!"
+  _Capacity1Type: Passif
+  _Capacity1Cost: 0
+  _Capacity1Desc: "Peut-\xEAtre recrut\xE9 partout sur le terrain (sauf Haute-Colline,
+    Ressource, Usine et Objectif)."
+  _Capacity1Icon: {fileID: 0}
+  _Capacity2Name: 
+  _Capacity2Type: 
+  _Capacity2Cost: 0
+  _Capacity2Desc: 
+  _Capacity2Icon: {fileID: 21300000, guid: 24c38065f0aa40046a1f50a3c6882ced, type: 3}
 --- !u!1001 &1441415956
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24969,6 +25208,31 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4707557024412655211, guid: 041c8ce0012199e43a1c6005e614fab3, type: 3}
   m_PrefabInstance: {fileID: 1486647608}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1486647611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1486647609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b5d53f4caebfc4f80e7f9f37bea2cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Capacity1Name: '!!Bouclier Arthurien!!'
+  _Capacity1Type: Passif
+  _Capacity1Cost: 0
+  _Capacity1Desc: "Les unit\xE9s alli\xE9es adjacentes obtiennent +1 d'armure."
+  _Capacity1Icon: {fileID: 0}
+  _Capacity2Name: "!!Pilote de L\xE9gende!!"
+  _Capacity2Type: Transport
+  _Capacity2Cost: 0
+  _Capacity2Desc: "Peut embarquer et d\xE9barquer 1 unit\xE9 de type Infanterie,
+    Leader ou Mythe. Si l'unit\xE9 embarqu\xE9e est un Leader ou un Mythe, elle peut
+    utiliser ses capacit\xE9s actives.\nExcalibur ni peut pas \xEAtre d\xE9plac\xE9e
+    ni attaquer si aucune unit\xE9 n'est embarqu\xE9e."
+  _Capacity2Icon: {fileID: 0}
 --- !u!1 &1497586340 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2449508067522513048, guid: 23d5891db20fc824ebf77b9b0e573bb7, type: 3}
@@ -25484,6 +25748,32 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4707557024412655211, guid: 041c8ce0012199e43a1c6005e614fab3, type: 3}
   m_PrefabInstance: {fileID: 1522322789}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1522322792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1522322790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b5d53f4caebfc4f80e7f9f37bea2cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Capacity1Name: "!!Fr\xE9n\xE9sie Pugnace!!"
+  _Capacity1Type: Passif
+  _Capacity1Cost: 0
+  _Capacity1Desc: "Pour chaque unit\xE9 ennemie \xE9limin\xE9e, se soigne de 1 PV
+    et si celui-ci est dans une Zone d\u2019Orgone, obtient 1 Ressource. Toutes les
+    2 unit\xE9s alli\xE9es \xE9limin\xE9es, obtient +1 aux bornes d'attaque."
+  _Capacity1Icon: {fileID: 0}
+  _Capacity2Name: '!!Tir Naval!!'
+  _Capacity2Type: Actif
+  _Capacity2Cost: 1
+  _Capacity2Desc: "Cible 1 case adjacente \xE0 une unit\xE9 alli\xE9e situ\xE9e dans
+    un rayon de 3 cases.\n\xC0 la fin du prochain tour adverse, l'unit\xE9 situ\xE9e
+    sur cette case subit 6 d\xE9gats."
+  _Capacity2Icon: {fileID: 0}
 --- !u!1 &1545514385
 GameObject:
   m_ObjectHideFlags: 0
@@ -25827,7 +26117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RedObjCount: 2
-  BlueObjCount: 0
+  BlueObjCount: 5
   RedgoalTileList: []
   BluegoalTileList: []
   AnimResourcesRed: {fileID: 1074390070}
@@ -25987,11 +26277,6 @@ Transform:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5729802673627382403, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
   m_PrefabInstance: {fileID: 1564384576}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1565548301 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4822377787769312383, guid: 3fbd8c6fc337b284787c1f442bc30be7, type: 3}
-  m_PrefabInstance: {fileID: 1060686575}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1578598718 stripped
 GameObject:
@@ -26664,6 +26949,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4707557024412655209, guid: 041c8ce0012199e43a1c6005e614fab3, type: 3}
+      propertyPath: ToutTerrain
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707557024412655209, guid: 041c8ce0012199e43a1c6005e614fab3, type: 3}
       propertyPath: _SonAttaque
       value: 
       objectReference: {fileID: 8300000, guid: a1f52c844f3377044a205afabc485909, type: 3}
@@ -26678,6 +26967,10 @@ PrefabInstance:
     - target: {fileID: 4707557024412655209, guid: 041c8ce0012199e43a1c6005e614fab3, type: 3}
       propertyPath: _creationCost
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707557024412655209, guid: 041c8ce0012199e43a1c6005e614fab3, type: 3}
+      propertyPath: FireResistance
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4707557024412655209, guid: 041c8ce0012199e43a1c6005e614fab3, type: 3}
       propertyPath: _damageMaximum
@@ -26792,15 +27085,36 @@ MonoBehaviour:
   m_GameObject: {fileID: 1604577985}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b699dfaad64cecd4db2c734c3fd7b8f1, type: 3}
+  m_Script: {fileID: 11500000, guid: c795dd12b36c97140b586d70393b9c56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Capacity1Name: Eruption
-  render1: {fileID: 21300000, guid: 59b314dd88016114fbbafb5a49b1db42, type: 3}
-  _Capacity1Description: Embrase une zone de 5 cases.
-  _Capacity1Cost: 2
+  _Capacity1Name: "\xC9ruption"
+  render1: {fileID: 0}
+  _Capacity1Description: "Embrase une zone de 2 cases par 3 face \xE0 Etna."
+  _Capacity1Cost: 3
   fr: {fileID: 2043064946}
-  Range: 5
+--- !u!114 &1604577987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1604577985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b5d53f4caebfc4f80e7f9f37bea2cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Capacity1Name: "\xC9ruption"
+  _Capacity1Type: Actif
+  _Capacity1Cost: 3
+  _Capacity1Desc: "Embrase une zone de 2 cases par 3 face \xE0 Etna."
+  _Capacity1Icon: {fileID: 0}
+  _Capacity2Name: 
+  _Capacity2Type: 
+  _Capacity2Cost: 0
+  _Capacity2Desc: 
+  _Capacity2Icon: {fileID: 21300000, guid: 24c38065f0aa40046a1f50a3c6882ced, type: 3}
 --- !u!1 &1606927465
 GameObject:
   m_ObjectHideFlags: 0
@@ -28536,6 +28850,30 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4707557024412655191, guid: 041c8ce0012199e43a1c6005e614fab3, type: 3}
   m_PrefabInstance: {fileID: 1705633212}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1705633215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1705633214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b5d53f4caebfc4f80e7f9f37bea2cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Capacity1Name: "!!D\xE9tection de l'Aigle!!"
+  _Capacity1Type: Passif
+  _Capacity1Cost: 0
+  _Capacity1Desc: "Les Artilleries alli\xE9es peuvent cibler les unit\xE9s ennemies
+    adjacentes \xE0 cette unit\xE9."
+  _Capacity1Icon: {fileID: 0}
+  _Capacity2Name: "!!Efficacit\xE9 de Terrain!!"
+  _Capacity2Type: Passif
+  _Capacity2Cost: 0
+  _Capacity2Desc: "Cette unit\xE9 et les unit\xE9s alli\xE9es adjacente g\xE9n\xE8rent
+    2 fois plus de ressources."
+  _Capacity2Icon: {fileID: 0}
 --- !u!1 &1713837495
 GameObject:
   m_ObjectHideFlags: 0
@@ -29204,11 +29542,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!1 &1742319753 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6507295139892987008, guid: 3fbd8c6fc337b284787c1f442bc30be7, type: 3}
-  m_PrefabInstance: {fileID: 1060686575}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1745334396 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4212960245422712267, guid: 50ea1da46568d724cb16f2697d023b57, type: 3}
@@ -30540,6 +30873,53 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4707557024412655211, guid: 041c8ce0012199e43a1c6005e614fab3, type: 3}
   m_PrefabInstance: {fileID: 1809751433}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1809751436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809751434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b5d53f4caebfc4f80e7f9f37bea2cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Capacity1Name: "Adaptabilit\xE9 Militaire"
+  _Capacity1Type: Passif
+  _Capacity1Cost: 0
+  _Capacity1Desc: "Inflige 1 d\xE9gat en plus aux unit\xE9s situ\xE9es sur une case
+    \xE0 effet."
+  _Capacity1Icon: {fileID: 0}
+  _Capacity2Name: "Pr\xE9cision Stable"
+  _Capacity2Type: Passif
+  _Capacity2Cost: 0
+  _Capacity2Desc: "Les valeurs des bornes d'attaque ne peuvent pas \xEAtre modifi\xE9es."
+  _Capacity2Icon: {fileID: 0}
+--- !u!114 &1809751437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809751434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cb4270194681a140ac60873960c078a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1809751438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809751434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89f5bb327aa0f5146ab2620272696b9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1816596733
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32122,7 +32502,7 @@ MonoBehaviour:
     _rangeMaxDamageGam: {fileID: 0}
     _minDamageValueGam: {fileID: 0}
     _maxDamageValueGam: {fileID: 0}
-  _capacityParent: {fileID: 1002808549}
+  _capacityParent: {fileID: 0}
   _capacityPrefab: {fileID: 5476234599435034801, guid: 3c4ab42a361d03a42a7ca23e80503a92, type: 3}
   _capacitylist: []
   textSpriteAttributUnit:
@@ -32175,11 +32555,21 @@ MonoBehaviour:
       et la Route."
   objectsAttributs:
   - MainObjects: {fileID: 1938190257}
-    Description: {fileID: 1742319753}
+    Description: {fileID: 0}
   - MainObjects: {fileID: 81386031}
-    Description: {fileID: 1565548301}
+    Description: {fileID: 0}
   - MainObjects: {fileID: 1633305398}
     Description: {fileID: 760087533}
+  textSpriteStatutUnit: []
+  objectsStatuts:
+  - MainObjects: {fileID: 0}
+    Description: {fileID: 0}
+  - MainObjects: {fileID: 0}
+    Description: {fileID: 0}
+  - MainObjects: {fileID: 0}
+    Description: {fileID: 0}
+  - MainObjects: {fileID: 0}
+    Description: {fileID: 0}
   MiniJaugeSlot:
   - {fileID: 1010602382}
   - {fileID: 1289869642}
@@ -32198,7 +32588,7 @@ MonoBehaviour:
   MinSlider: {fileID: 545791933}
   MaxSlider: {fileID: 459834148}
   _prefabSlotEffetDeTerrain: {fileID: 5476234599435034801, guid: 935f51419ad172646a34ee56e0bef9ea, type: 3}
-  _parentSlotEffetDeTerrain: {fileID: 194844992}
+  _parentSlotEffetDeTerrain: {fileID: 0}
   _effetDeTerrain: []
   _prefabSlotStatuts: {fileID: 5476234599435034801, guid: 7bcaec3b13cd59747950a811c1923970, type: 3}
   _parentSlotStatuts: {fileID: 407080643}
@@ -33143,15 +33533,38 @@ MonoBehaviour:
   m_GameObject: {fileID: 1942473594}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf0ded22390a0a84ebc5aa4e798d57b0, type: 3}
+  m_Script: {fileID: 11500000, guid: 4c810c4a0c689ed47b1dddafaa4b0b9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Capacity1Name: "Fl\xE8che l\xE9gendaire"
-  render1: {fileID: 21300000, guid: b2ce71d673076964cabc91357d5d6d22, type: 3}
-  _Capacity1Description: " Prend le contr\xF4le d\u2019une unit\xE9 adverse (Infanterie,
-    Artillerie, Leader ou Mythe) \xE0 port\xE9e durant ce tour. Cette unit\xE9 est
-    activ\xE9e \xE0 sa place"
-  _Capacity1Cost: 1
+  _Capacity1Name: "Art du D\xE9pouillement"
+  render1: {fileID: 21300000, guid: bce7e36c51b6cec48abe916f53c733d5, type: 3}
+  _Capacity1Description: "Volez une ressource \xE0 l'arm\xE9e adverse si une unit\xE9
+    ennemie se situe \xE0 1 de port\xE9e."
+  _Capacity1Cost: 0
+--- !u!114 &1942473597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1942473594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b5d53f4caebfc4f80e7f9f37bea2cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Capacity1Name: '!!Voile Mythique!!'
+  _Capacity1Type: Passif
+  _Capacity1Cost: 0
+  _Capacity1Desc: "Ne peut \xEAtre cibl\xE9 que par des unit\xE9s adjacentes. Ignore
+    toute source de d\xE9gat sup\xE9rieure \xE0 1."
+  _Capacity1Icon: {fileID: 0}
+  _Capacity2Name: "Art du D\xE9pouillement"
+  _Capacity2Type: Actif
+  _Capacity2Cost: 0
+  _Capacity2Desc: "Cible une unit\xE9 ennemie adjacente et vole 1 ressource \xE0
+    l'adversaire."
+  _Capacity2Icon: {fileID: 21300000, guid: bce7e36c51b6cec48abe916f53c733d5, type: 3}
 --- !u!1001 &1948034054
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33237,7 +33650,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4227640084239285831, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
       propertyPath: _terrainEffectList.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4227640084239285831, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
       propertyPath: _terrainEffectList.Array.data[0]
@@ -33245,7 +33658,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4227640084239285831, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
       propertyPath: _terrainEffectList.Array.data[1]
-      value: 11
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4227640084239285831, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
       propertyPath: _terrainEffectList.Array.data[2]
@@ -38858,7 +39271,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4227640084239285831, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
       propertyPath: _terrainEffectList.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4227640084239285831, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
       propertyPath: _terrainEffectList.Array.data[0]
@@ -38866,7 +39279,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4227640084239285831, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
       propertyPath: _terrainEffectList.Array.data[1]
-      value: 25
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5729802673627382403, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
       propertyPath: m_Name
@@ -39131,7 +39544,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4227640084239285831, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
       propertyPath: _terrainEffectList.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4227640084239285831, guid: ee6b1ce0faa94234f9a29df7bd08b393, type: 3}
       propertyPath: _terrainEffectList.Array.data[0]

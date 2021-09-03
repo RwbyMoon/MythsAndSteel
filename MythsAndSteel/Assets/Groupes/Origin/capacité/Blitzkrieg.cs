@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class Blitzkrieg : Capacity
 {
+    public AudioClip ActivUp;
+    public AudioSource audioSource;
     public override void StartCpty()
     {
-      
+        GetComponent<UnitScript>().IsActifNotConsumeAction = true;
         int ressourcePlayer = GameManager.Instance.IsPlayerRedTurn ? PlayerScript.Instance.RedPlayerInfos.Ressource : PlayerScript.Instance.BluePlayerInfos.Ressource;
         if (ressourcePlayer >= Capacity1Cost)
         {
@@ -31,6 +33,7 @@ public class Blitzkrieg : Capacity
 
     public override void StopCpty()
     {
+        GetComponent<UnitScript>().IsActifNotConsumeAction = false;
         GameManager.Instance.StopEventModeTile();
         GameManager.Instance.TileChooseList.Clear();
         GetComponent<UnitScript>().StopCapacity(true);
@@ -39,6 +42,7 @@ public class Blitzkrieg : Capacity
 
     public override void EndCpty()
     {
+        audioSource.PlayOneShot(ActivUp, 1f);
          Player player = GameManager.Instance.IsPlayerRedTurn ? PlayerScript.Instance.RedPlayerInfos : PlayerScript.Instance.BluePlayerInfos;
         Debug.Log("oui");
         player.Ressource -= Capacity1Cost;
@@ -50,6 +54,15 @@ public class Blitzkrieg : Capacity
         GetComponent<UnitScript>().EndCapacity();
         base.EndCpty();
         GameManager.Instance.TileChooseList.Clear();
+        GetComponent<UnitScript>().IsActifNotConsumeAction = false;
+        GetComponent<Animator>().SetBool("Blitzkrieg", true);
+        StartCoroutine(WaitEndAnim());
+    }
+
+    IEnumerator WaitEndAnim()
+    {
+        yield return new WaitForSeconds(GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length + 1.5f);
+        GetComponent<Animator>().SetBool("Blitzkrieg", false);
     }
 }
 

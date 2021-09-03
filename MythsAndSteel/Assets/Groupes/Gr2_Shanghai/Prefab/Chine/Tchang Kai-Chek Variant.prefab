@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &751738558969617136
+--- !u!114 &7488051324857724272
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9,14 +9,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 3809892971369922437}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1db96cacdb85f0542b0ced89ae0f6673, type: 3}
+  m_Script: {fileID: 11500000, guid: f4b5d53f4caebfc4f80e7f9f37bea2cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Capacity1Name: Corruption des Troupes
-  render1: {fileID: 0}
-  _Capacity1Description: "Paralyse une unit\xE9 ennemie \xE0 4 case de port\xE9e.\n"
-  _Capacity1Cost: 1
-  Range: 4
+  _Capacity1Name: '!!Muraille!!'
+  _Capacity1Type: Actif
+  _Capacity1Cost: 0
+  _Capacity1Desc: "Place un mur sur une case \xE0 port\xE9e."
+  _Capacity1Icon: {fileID: 0}
+  _Capacity2Name: '!!!!Grande Muraille!!'
+  _Capacity2Type: Actif
+  _Capacity2Cost: 1
+  _Capacity2Desc: "Place un mur sur 2 cases \xE0 port\xE9e."
+  _Capacity2Icon: {fileID: 0}
 --- !u!1001 &8470126671725339090
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -14,6 +14,8 @@ public class UnitScript : MonoBehaviour
     [SerializeField] Unit_SO _unitSO;
 
     public int ParalysieStat = 3;
+    public int SilenceStat = 3;
+    public bool DoubleRessource = false;
     public Unit_SO UnitSO
     {
         get
@@ -25,12 +27,26 @@ public class UnitScript : MonoBehaviour
             _unitSO = value;
         }
     }
+    //Ici sont listées toutes les variables servant uniquement aux capacités passives
+    public bool HasOnlyOneDamage;
 
-public bool MélodieSinistre = false;
+    //Variables liées à l'utilisations de capacités n'utilisant pas l'action
+    public bool IsActifNotConsumeAction;
+    public bool ActifUsedThisTurn;
+
+    public bool MélodieSinistre = false;
+    [Header("--------------- Attributs ---------------")]
+    public bool RestreintAuxRails;
+    public bool ToutTerrain;
+    public bool Volant;
+    public bool FireResistance;
+    public bool PasseMuraille;
+    public bool Amphibie;
+    public bool Submersible;
     [Header("------------------- VIE -------------------")]
     [Header("------------------- STAT EN JEU -------------------")]
     //Vie actuelle
-    [SerializeField] int _life;
+    [SerializeField] public int _life;
     public int Life
     {
         get
@@ -48,7 +64,7 @@ public bool MélodieSinistre = false;
     bool IsDeadByOrgone = false;
 
     // Bouclier actuelle
-    [SerializeField] int _shield;
+    [SerializeField] public int _shield;
     public int Shield => _shield;
 
     //UI de la vie de l'unité
@@ -71,6 +87,8 @@ public bool MélodieSinistre = false;
             _attackRangeBonus = value;
         }
     }
+
+    public bool AttaqueEnLigne;
   
 
     [Space]
@@ -88,7 +106,7 @@ public bool MélodieSinistre = false;
     public int DamageMaximum => _damageMaximum;
 
     //Dégât bonus
-    [SerializeField] int _damageBonus;
+    [SerializeField] public int _damageBonus;
     public int DamageBonus => _damageBonus;
 
     //Bonus aux lancés de dé
@@ -105,11 +123,19 @@ public bool MélodieSinistre = false;
         }
     }
 
+    public int NbAtkTurn = 1;
+    public int NbAttaqueParTour = 1;
+    public bool HasAttackedOneTime;
+
+    public bool FailAttack;
+    public bool InflictMinimumDamages;
+    public bool InflictMaximumDamages;
+
     public bool RunningCapacity = false;
 
     [Header("------------------- MOUVEMENT -------------------")]
     //Vitesse de déplacement
-    [SerializeField] int _moveSpeed;
+    [SerializeField] public int _moveSpeed;
     public int MoveSpeed => _moveSpeed;
     public int _MoveSpeedBonus = 0;
     public int MoveSpeedBonus
@@ -256,10 +282,10 @@ public bool MélodieSinistre = false;
         {
 
         if (StatusPrefab.GetBool("In"))
-        {
+            {
             StatusPrefab.SetBool("In", false);
             yield return new WaitForSeconds(1f);
-        }
+            }
         }
         if(UnitStatuts.Count >= step && step >= 0)
         {
@@ -339,6 +365,17 @@ public bool MélodieSinistre = false;
         }
     }
 
+    //Vérifie si l'unité a attaqué ce tour
+    public bool HasAttacked;
+
+    //Vérifie lorsqu'un nouveau tour est lancé
+    public bool NewTurnHasStart;
+
+    //Stockage des Bonus permanents
+    public int PermaSpeedBoost;
+    public int PermaRangeBoost;
+    public int PermaDiceBoost;
+    public int PermaDamageBoost;
 
     #endregion Variables
 
@@ -378,6 +415,7 @@ public bool MélodieSinistre = false;
             }
         }
     }
+
 
     #region LifeMethods
     /// <summary>
@@ -481,8 +519,10 @@ public bool MélodieSinistre = false;
                                                 {
                                                     if (Try2.TryGetComponent<TerrainParent>(out TerrainParent Try3))
                                                     {
-                                                        AttackVariation += Try3.AttackApply(Damage);
-
+                                                        if (!Volant)
+                                                        {
+                                                            AttackVariation += Try3.AttackApply(Damage);
+                                                        }
                                                     }
                                                 }
                                             }
@@ -493,8 +533,10 @@ public bool MélodieSinistre = false;
                                     {
                                         if (Type.Child.TryGetComponent<TerrainParent>(out TerrainParent Try))
                                         {
-                                            AttackVariation += Try.AttackApply(Damage);
-
+                                            if (!Volant)
+                                            {
+                                                AttackVariation += Try.AttackApply(Damage);
+                                            }
                                         }
                                     }
                                 }
@@ -891,9 +933,16 @@ public bool MélodieSinistre = false;
         _isActivationDone = false;
         _isMoveDone = false;
         _isActionDone = false;
+        NbAttaqueParTour = NbAtkTurn;
+        HasAttackedOneTime = false;
 
-        MoveSpeedBonus = 0;
-        AttackRangeBonus = 0;
+        StartCoroutine(NewTurnHasStarted());
+
+        MoveSpeedBonus = PermaSpeedBoost;
+        AttackRangeBonus = PermaRangeBoost;
+        DiceBonus = PermaDiceBoost;
+        _damageBonus = PermaDamageBoost;
+        ActifUsedThisTurn = false;
 
         hasUseActivation = false;
         _moveLeft = _unitSO.MoveSpeed;
@@ -944,35 +993,43 @@ public bool MélodieSinistre = false;
             {
                 if (!_hasStartMove) PlayerScript.Instance.RedPlayerInfos.ActivationLeft--;
                 UIInstance.Instance.UpdateActivationLeft();
-               
 
             }
             else if ((!_unitSO.IsInRedArmy && !_unitStatuts.Contains(MYthsAndSteel_Enum.UnitStatut.Possédé)) || (_unitSO.IsInRedArmy && _unitStatuts.Contains(MYthsAndSteel_Enum.UnitStatut.Possédé) && !MélodieSinistre))
             {
                 if (!_hasStartMove) PlayerScript.Instance.BluePlayerInfos.ActivationLeft--;
                 UIInstance.Instance.UpdateActivationLeft();
+
             }
+            StartCoroutine(ReduceSpeed());
         }
+
     }
 
     public void StartCapacity()
     {
-        CapacitySystem.Instance.CapacityRunning = true;
-        RunningCapacity = true; 
-        CapacitySystem.Instance.Updatebutton();
-        UIInstance.Instance.DesactivateNextPhaseButton();
+        if (!HasAttackedOneTime && !UnitStatuts.Contains(MYthsAndSteel_Enum.UnitStatut.Silence))
+        {
+            CapacitySystem.Instance.CapacityRunning = true;
+            RunningCapacity = true;
+            CapacitySystem.Instance.Updatebutton();
+            UIInstance.Instance.DesactivateNextPhaseButton();
             if (TryGetComponent<Capacity>(out Capacity T))
             {
                 Debug.Log("starrt");
                 T.StartCpty();
             }
+        }
     }
 
     public void EndCapacity()
     {
         CapacitySystem.Instance.CapacityRunning = false;
 
-        _isActionDone = true;
+        if(IsActifNotConsumeAction == false)
+        {
+            _isActionDone = true;
+        }
         RunningCapacity = false;
 
         CapacitySystem.Instance.PanelBlockant1.SetActive(false);
@@ -1046,4 +1103,75 @@ public bool MélodieSinistre = false;
         }
        
     }
+
+    //Assombri l'unité et réduit sa vitesse d'animation
+    IEnumerator ReduceSpeed()
+    {
+        yield return new WaitForSeconds(1);
+        GetComponent<Animator>().speed = 0.25f;
+        GetComponent<SpriteRenderer>().color = new Color32(135, 135, 135, 255);
+    }
+
+    void Update()
+    {
+        if (GameObject.Find("GameManager").GetComponent<GameManager>().IsNextPhaseDone == true || (UnitSO.IsInRedArmy && PlayerScript.Instance.RedPlayerInfos.ActivationLeft != 0 && !hasUseActivation && !_isActionDone) || (!UnitSO.IsInRedArmy && PlayerScript.Instance.BluePlayerInfos.ActivationLeft != 0 && !hasUseActivation && !_isActionDone))
+        {
+            GetComponent<SpriteRenderer>().color = new Color32(255, 255, 255, 255);
+            GetComponent<Animator>().speed = 1f;
+        }
+        if (PlayerScript.Instance.RedPlayerInfos.ActivationLeft == 0 && UnitSO.IsInRedArmy && !hasUseActivation && GameManager.Instance.IsPlayerRedTurn && GameManager.Instance.ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.ActionJ1)
+        {
+            StartCoroutine(ReduceSpeed());
+        }
+        if (PlayerScript.Instance.BluePlayerInfos.ActivationLeft == 0 && !UnitSO.IsInRedArmy && !hasUseActivation && !GameManager.Instance.IsPlayerRedTurn && GameManager.Instance.ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.ActionJ2)
+        {
+            StartCoroutine(ReduceSpeed());
+        }
+    }
+
+    //Permet de détecter lorsque l'unité vient d'attaquer
+    public void HasAttackedThisTurn()
+    {
+        StartCoroutine(SetAttackedTrue());
+    }
+    public IEnumerator SetAttackedTrue()
+    {
+        HasAttacked = true;
+        yield return new WaitForSeconds(1);
+        HasAttacked = false;
+    }
+
+    //Détecte lorsqu'un nouveau tour est lancé
+    public IEnumerator NewTurnHasStarted()
+    {
+        NewTurnHasStart = true;
+        yield return new WaitForSeconds(1);
+        NewTurnHasStart = false;
+    }
+
+    #region DamagesInflict
+    //Passe les bools en true selon le résultat du lancer d'attaque
+
+    public IEnumerator HasFailedAttack()
+    {
+        FailAttack = true;
+        yield return new WaitForSeconds(1);
+        FailAttack = false;
+    }
+
+    public IEnumerator HasInflictedMini()
+    {
+        InflictMinimumDamages = true;
+        yield return new WaitForSeconds(1);
+        InflictMinimumDamages = false;
+    }
+
+    public IEnumerator HasInflictedMax()
+    {
+        InflictMaximumDamages = true;
+        yield return new WaitForSeconds(1);
+        InflictMaximumDamages = false;
+    }
+
+    #endregion
 }

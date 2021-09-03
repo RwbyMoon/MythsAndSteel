@@ -45,9 +45,18 @@ public class Hiro_Onoda : Capacity
         {
             GameManager.Instance.TileChooseList[i].GetComponent<TileScript>().AddUnitToTile(GameManager.Instance.UnitChooseList[i].gameObject);
         }
+        GetComponent<Animator>().SetBool("Regroup", true);
+        StartCoroutine(WaitAnimEnd());
+        
+    }
+
+    IEnumerator WaitAnimEnd()
+    {
+        yield return new WaitForSeconds(1.2f);
         GameManager.Instance._eventCall -= EndCpty;
         GetComponent<UnitScript>().EndCapacity();
         base.EndCpty();
         GameManager.Instance.TileChooseList.Clear();
+        GetComponent<Animator>().SetBool("Regroup", false);
     }
 }

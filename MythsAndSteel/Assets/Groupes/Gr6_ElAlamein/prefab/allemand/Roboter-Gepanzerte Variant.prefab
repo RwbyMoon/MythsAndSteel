@@ -1,5 +1,44 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8412068931584034478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3102579775817544360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b5d53f4caebfc4f80e7f9f37bea2cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Capacity1Name: Protocole de Protection
+  _Capacity1Type: Bonus
+  _Capacity1Cost: 0
+  _Capacity1Desc: "Octroie 1 de bouclier \xE0 une unit\xE9 alli\xE9e adjacente."
+  _Capacity1Icon: {fileID: 0}
+  _Capacity2Name: "!!Transporteur Optimis\xE9!!"
+  _Capacity2Type: Transport
+  _Capacity2Cost: 0
+  _Capacity2Desc: "Peut embarquer et d\xE9barquer jusqu'\xE0 deux unit\xE9s de type
+    Infanterie et Leader."
+  _Capacity2Icon: {fileID: 0}
+--- !u!114 &3753579857965011796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3102579775817544360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d4bf052ae1ddc74abe12a7b7c57f201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Capacity1Name: Protocole de Protection
+  render1: {fileID: 0}
+  _Capacity1Description: "Octroie 1 de bouclier \xE0 une unit\xE9 alli\xE9e adjacente."
+  _Capacity1Cost: 0
 --- !u!1001 &7663448651865828607
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9,7 +48,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4707557024412655191, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
       propertyPath: m_Name
-      value: Roboter-Gepanzerte
+      value: Roboter-Gepanzerte Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4707557024412655208, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
       propertyPath: m_Controller
@@ -145,3 +184,8 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: c6b1b170cc49e7247bb20b4d426b0924, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
+--- !u!1 &3102579775817544360 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4707557024412655191, guid: 58e09c580f7ab16419499ddb20657f81, type: 3}
+  m_PrefabInstance: {fileID: 7663448651865828607}
+  m_PrefabAsset: {fileID: 0}

@@ -502,4 +502,40 @@ public class TileScript : MonoBehaviour
             }
         }
     }
+
+    private void Update()
+    {
+        //Système de contrôle des gares
+        if (TerrainEffectList.Contains(MYthsAndSteel_Enum.TerrainType.Gare) && Unit != null)
+        {
+            if(Unit.GetComponent<UnitScript>().UnitSO.IsInRedArmy)
+            {
+                if (!TerrainEffectList.Contains(MYthsAndSteel_Enum.TerrainType.UsineRouge) || !TerrainEffectList.Contains(MYthsAndSteel_Enum.TerrainType.UsineBleu))
+                {
+                    AddEffectToList(MYthsAndSteel_Enum.TerrainType.UsineRouge);
+                    RenfortPhase.Instance.UpdateGareControl();
+                }
+                if (!TerrainEffectList.Contains(MYthsAndSteel_Enum.TerrainType.UsineRouge) && TerrainEffectList.Contains(MYthsAndSteel_Enum.TerrainType.UsineBleu))
+                {
+                    RemoveEffect(MYthsAndSteel_Enum.TerrainType.UsineBleu);
+                    AddEffectToList(MYthsAndSteel_Enum.TerrainType.UsineRouge);
+                    RenfortPhase.Instance.UpdateGareControl();
+                }
+            }
+            if (!Unit.GetComponent<UnitScript>().UnitSO.IsInRedArmy)
+            {
+                if (!TerrainEffectList.Contains(MYthsAndSteel_Enum.TerrainType.UsineRouge) || !TerrainEffectList.Contains(MYthsAndSteel_Enum.TerrainType.UsineBleu))
+                {
+                    AddEffectToList(MYthsAndSteel_Enum.TerrainType.UsineBleu);
+                    RenfortPhase.Instance.UpdateGareControl();
+                }
+                if (TerrainEffectList.Contains(MYthsAndSteel_Enum.TerrainType.UsineRouge) && !TerrainEffectList.Contains(MYthsAndSteel_Enum.TerrainType.UsineBleu))
+                {
+                    RemoveEffect(MYthsAndSteel_Enum.TerrainType.UsineRouge);
+                    AddEffectToList(MYthsAndSteel_Enum.TerrainType.UsineBleu);
+                    RenfortPhase.Instance.UpdateGareControl();
+                }
+            }
+        }
+    }
 }
