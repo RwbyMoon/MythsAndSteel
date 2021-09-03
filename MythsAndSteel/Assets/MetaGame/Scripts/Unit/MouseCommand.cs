@@ -313,7 +313,6 @@ public class MouseCommand : MonoBehaviour
                 if (unit.GetComponent<UnitScript>().UnitStatuts[i] == MYthsAndSteel_Enum.UnitStatut.Aucun)
                 {
                     UIInstance.Instance.objectsStatuts[i].MainObjects.SetActive(false);
-                    Debug.Log("Case 1");
                     continue;
                 }
 
@@ -327,7 +326,6 @@ public class MouseCommand : MonoBehaviour
                         gam.transform.GetChild(0).GetComponent<Image>().sprite = statut.SpriteStatutUnit;
 
                         UIInstance.Instance.objectsStatuts[i].Description.GetComponent<TextMeshProUGUI>().text = statut._name + " : " + statut.TextStatutUnit;
-                        Debug.Log("Case 2");
                         continue;
                     }
                 }
@@ -335,7 +333,6 @@ public class MouseCommand : MonoBehaviour
             else
             {
                 UIInstance.Instance.objectsStatuts[i].MainObjects.SetActive(false);
-                Debug.Log("Case 3");
                 continue;
             }
         }

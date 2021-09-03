@@ -20021,11 +20021,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4205353217221560531, guid: d5a9f81ae18e8fa439e5ee791dfc7575, type: 3}
   m_PrefabInstance: {fileID: 784872949}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &784872951 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4205353217221560525, guid: d5a9f81ae18e8fa439e5ee791dfc7575, type: 3}
-  m_PrefabInstance: {fileID: 784872949}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &786129299
 GameObject:
   m_ObjectHideFlags: 0
@@ -27180,11 +27175,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1337694734097652005, guid: 06c7686325996964881e728d41b8522c, type: 3}
   m_PrefabInstance: {fileID: 1086612961}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1086612963 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2999315247022887512, guid: 06c7686325996964881e728d41b8522c, type: 3}
-  m_PrefabInstance: {fileID: 1086612961}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1090904022
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29127,8 +29117,8 @@ MonoBehaviour:
   _j1PanelOrgone: {fileID: 1837217967}
   FxOrgoneGauche: {fileID: 8363220598332135257, guid: 7cb8963d071a44b45b5e089524086056, type: 3}
   FxOrgoneDroit: {fileID: 1057740839329210452, guid: 0e770f2a6dbe8c34fb9f294314956d1e, type: 3}
-  ForceFieldDroit: {fileID: 784872951}
-  ForceFieldGauche: {fileID: 1086612963}
+  ForceFieldDroit: {fileID: 888608756}
+  ForceFieldGauche: {fileID: 1299007599}
   BasOrgoneRed: {fileID: 1271150892}
   BasOrgoneBlue: {fileID: 202084753}
   _j2PanelOrgone: {fileID: 2123167046}

@@ -51587,7 +51587,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DoingOrgoneCharge: 0
   mouseCommand: {fileID: 1770043961}
-  PlayerInstance: {fileID: 0}
+  PlayerInstance: {fileID: 890090116}
   UnitListForOrgone:
   - {fileID: 6059932685993088887, guid: d1962239ab789ca4ca215d4a6b9915b0, type: 3}
   - {fileID: 6773052740282601602, guid: 9d536ab024014c74fa620e94a7d69f12, type: 3}
@@ -51620,8 +51620,8 @@ MonoBehaviour:
   _j1PanelOrgone: {fileID: 2058628485}
   FxOrgoneGauche: {fileID: 8363220598332135257, guid: 7cb8963d071a44b45b5e089524086056, type: 3}
   FxOrgoneDroit: {fileID: 1057740839329210452, guid: 0e770f2a6dbe8c34fb9f294314956d1e, type: 3}
-  ForceFieldDroit: {fileID: 1041681342700545735}
-  ForceFieldGauche: {fileID: 1041681344254602377}
+  ForceFieldDroit: {fileID: 65158264}
+  ForceFieldGauche: {fileID: 711793489}
   BasOrgoneRed: {fileID: 2062721010}
   BasOrgoneBlue: {fileID: 1344797787}
   _j2PanelOrgone: {fileID: 2008848474}
