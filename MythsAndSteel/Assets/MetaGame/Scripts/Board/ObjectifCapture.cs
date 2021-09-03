@@ -39,7 +39,7 @@ public class ObjectifCapture : MonoBehaviour
             OtherPlayerHasPlayed = true;
         }
         
-        if(UnitOnTile && OtherPlayerHasPlayed && GameManager.Instance.IsNextPhaseDone && !LaunchCapture)
+        if(UnitOnTile && OtherPlayerHasPlayed && GameManager.Instance.IsNextPhaseDone && !LaunchCapture && GameManager.Instance.ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.Strategie)
         {
             LaunchCapture = true;
             ChangeOwner();
@@ -47,7 +47,7 @@ public class ObjectifCapture : MonoBehaviour
 
         if(ObjectifNeutre && GetComponent<TileScript>().Unit != null)
         {
-            if(!UnitOnTile && ((GetComponent<UnitScript>().UnitSO.IsInRedArmy && Possesseur != 1) || (!GetComponent<UnitScript>().UnitSO.IsInRedArmy && Possesseur != 2)))
+            if(!UnitOnTile && ((GetComponent<TileScript>().Unit.GetComponent<UnitScript>().UnitSO.IsInRedArmy && Possesseur != 1) || (!GetComponent<TileScript>().Unit.GetComponent<UnitScript>().UnitSO.IsInRedArmy && Possesseur != 2)))
             {
                 UnitOnTile = true;
             }
@@ -58,12 +58,12 @@ public class ObjectifCapture : MonoBehaviour
             OtherPlayerHasPlayed = false;
         }
 
-        if( UnitOnTile && !OtherPlayerHasPlayed && ((!GameManager.Instance.IsPlayerRedTurn && GetComponent<UnitScript>().UnitSO.IsInRedArmy) || (GameManager.Instance.IsPlayerRedTurn && !GetComponent<UnitScript>().UnitSO.IsInRedArmy)))
+        if( UnitOnTile && !OtherPlayerHasPlayed && ((!GameManager.Instance.IsPlayerRedTurn && GetComponent<TileScript>().Unit.GetComponent<UnitScript>().UnitSO.IsInRedArmy) || (GameManager.Instance.IsPlayerRedTurn && !GetComponent<TileScript>().Unit.GetComponent<UnitScript>().UnitSO.IsInRedArmy)))
         {
             OtherPlayerHasPlayed = true;
         }
 
-        if(ObjectifNeutre && UnitOnTile && OtherPlayerHasPlayed && !LaunchCapture)
+        if(ObjectifNeutre && UnitOnTile && OtherPlayerHasPlayed && !LaunchCapture && GameManager.Instance.ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.Strategie)
         {
             LaunchCapture = true;
             ChangeOwner();
@@ -75,6 +75,14 @@ public class ObjectifCapture : MonoBehaviour
         if (!ObjectifNeutre && !PrisParAdversaire)
         {
             PrisParAdversaire = true;
+            if (AppartientAuxRouge)
+            {
+                VictoryConditions.Instance.ObjectiveBlue++;
+            }
+            if (!AppartientAuxRouge)
+            {
+                VictoryConditions.Instance.ObjectiveRed++;
+            }
             UnitOnTile = false;
             OtherPlayerHasPlayed = false;
             StartCoroutine(ResetLaunch());
@@ -82,6 +90,14 @@ public class ObjectifCapture : MonoBehaviour
         else if(!ObjectifNeutre && PrisParAdversaire)
         {
             PrisParAdversaire = false;
+            if (AppartientAuxRouge)
+            {
+                VictoryConditions.Instance.ObjectiveBlue--;
+            }
+            if (!AppartientAuxRouge)
+            {
+                VictoryConditions.Instance.ObjectiveRed--;
+            }
             UnitOnTile = false;
             OtherPlayerHasPlayed = false;
             StartCoroutine(ResetLaunch());
@@ -92,16 +108,27 @@ public class ObjectifCapture : MonoBehaviour
             PrisParAdversaire = true;
             if (GetComponent<UnitScript>().UnitSO.IsInRedArmy)
             {
+                if (Possesseur == 2)
+                {
+                    VictoryConditions.Instance.ObjectiveBlue--;
+                }
                 Possesseur = 1;
+                VictoryConditions.Instance.ObjectiveRed++;
             }
             else
             {
+                if (Possesseur == 1)
+                {
+                    VictoryConditions.Instance.ObjectiveRed--;
+                }
                 Possesseur = 2;
+                VictoryConditions.Instance.ObjectiveBlue++;
             }
             UnitOnTile = false;
             OtherPlayerHasPlayed = false;
             StartCoroutine(ResetLaunch());
         }
+        VictoryConditions.Instance.CheckVictoryConditions();
     }
 
     IEnumerator ResetLaunch()

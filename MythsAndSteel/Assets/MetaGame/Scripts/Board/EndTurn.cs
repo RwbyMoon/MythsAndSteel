@@ -34,7 +34,7 @@ public class EndTurn : MonoBehaviour
         }
         GameManager.Instance.ManagerSO.GoToStrategyPhase += EndTerrainEffect;
         GameManager.Instance.ManagerSO.GoToStrategyPhase += CheckResources;
-        GameManager.Instance.ManagerSO.GoToStrategyPhase += CheckOwner;
+        GameManager.Instance.ManagerSO.GoToStrategyPhase += CheckVictory;
       
     }
 
@@ -259,171 +259,12 @@ public class EndTurn : MonoBehaviour
         }
         CheckVictory();
     }
-
-    /// <summary>
-    /// Change le propriétaire d'un objectif.
-    /// </summary>
-    /// <param name="TileSc"></param>
-    /// <param name="RedArmy"></param>
-    void ChangeOwner(TileScript TileSc, bool RedArmy)
-    {
-        if (TileSc.OwnerObjectiv == MYthsAndSteel_Enum.Owner.blue && RedArmy)
-        {
-            PlayerScript.Instance.BluePlayerInfos.GoalCapturePointsNumber--;
-            TileSc.ChangePlayerObj(MYthsAndSteel_Enum.Owner.red);
-            PlayerScript.Instance.RedPlayerInfos.GoalCapturePointsNumber++;
-        }
-        if (TileSc.OwnerObjectiv == MYthsAndSteel_Enum.Owner.red && !RedArmy)
-        {
-            PlayerScript.Instance.RedPlayerInfos.GoalCapturePointsNumber--;
-            TileSc.ChangePlayerObj(MYthsAndSteel_Enum.Owner.blue);
-            PlayerScript.Instance.BluePlayerInfos.GoalCapturePointsNumber++;
-        }
-        if (TileSc.OwnerObjectiv == MYthsAndSteel_Enum.Owner.neutral)
-        {
-            if (RedArmy)
-            {
-                TileSc.ChangePlayerObj(MYthsAndSteel_Enum.Owner.red);
-                PlayerScript.Instance.RedPlayerInfos.GoalCapturePointsNumber++;
-            }
-            else
-            {
-                TileSc.ChangePlayerObj(MYthsAndSteel_Enum.Owner.blue);
-                PlayerScript.Instance.BluePlayerInfos.GoalCapturePointsNumber++;
-            }
-        }
-    }
-
     
     /// <summary>
     /// Called by CheckOwner();
     /// </summary>
     protected void CheckVictory()
     {
-        Debug.Log(PlayerPrefs.GetInt("Bataille"));
-        switch (PlayerPrefs.GetInt("Bataille"))
-        {
-            case 2: // RETHEL
-                if (PlayerScript.Instance.BluePlayerInfos.GoalCapturePointsNumber == BlueObjCount) /* RedObjCount = 2 */
-                {
-                    Debug.Log("Pouet pouet");
-                    GameManager.Instance.VictoryForArmy(2);
-                }
-                else { PlayerScript.Instance.BluePlayerInfos.GoalCapturePointsNumber = 0;
-                    Debug.Log("Pouet pouet");
-                }
-
-                if (GameManager.Instance.ActualTurnNumber == 11)
-                {
-                    GameManager.Instance.VictoryForArmy(1);
-                }
-                    break;
-            case 1: // SHANGHAI
-                if (PlayerScript.Instance.BluePlayerInfos.GoalCapturePointsNumber == BlueObjCount) /* BlueObjCount = 2 */
-                {
-                    GameManager.Instance.VictoryForArmy(2);
-                    Debug.Log("Pouet pouet");
-                }
-                else
-                {
-                    PlayerScript.Instance.BluePlayerInfos.GoalCapturePointsNumber = 0;
-                    Debug.Log("Pouet pouet");
-                }
-
-                if (GameManager.Instance.ActualTurnNumber == 11)
-                {
-                    GameManager.Instance.VictoryForArmy(1);
-                }
-                    break;
-            case 3: // STALINGRAD
-                if (GameManager.Instance.ActualTurnNumber >= 5 && PlayerScript.Instance.RedPlayerInfos.GoalCapturePointsNumber > PlayerScript.Instance.BluePlayerInfos.GoalCapturePointsNumber) 
-                {
-                    GameManager.Instance.VictoryForArmy(1);
-                }
-                else { PlayerScript.Instance.RedPlayerInfos.GoalCapturePointsNumber = 0; }
-
-                if (GameManager.Instance.ActualTurnNumber == 11)
-                {
-                    GameManager.Instance.VictoryForArmy(1);
-                }
-
-                if (GameManager.Instance.ActualTurnNumber >= 5 && PlayerScript.Instance.BluePlayerInfos.GoalCapturePointsNumber > PlayerScript.Instance.BluePlayerInfos.GoalCapturePointsNumber)
-                {
-                    GameManager.Instance.VictoryForArmy(2);
-                }
-                else { PlayerScript.Instance.BluePlayerInfos.GoalCapturePointsNumber = 0; }
-                    break;
-
-            case 6: // HUSKY
-                if (GameManager.Instance.ActualTurnNumber == 9)
-                {
-                    GameManager.Instance.VictoryForArmy(2);
-                }
-
-                if (GameManager.Instance.ActualTurnNumber >= 4)
-                {
-                    if (PlayerScript.Instance.RedPlayerInfos.GoalCapturePointsNumber == RedObjCount) /* RedObjCount = 2 */
-                    {
-                        GameManager.Instance.VictoryForArmy(1);
-                    }
-                    else { PlayerScript.Instance.RedPlayerInfos.GoalCapturePointsNumber = 0; }
-                }
-                    break;
-            case 4: // GUADALCANAL
-                if (GameManager.Instance.ActualTurnNumber == 11)
-                {
-                    GameManager.Instance.VictoryForArmy(2);
-                }
-
-                if (PlayerScript.Instance.RedPlayerInfos.GoalCapturePointsNumber == RedObjCount) /* RedObjCount = 2 */
-                {
-                    GameManager.Instance.VictoryForArmy(1);
-                }
-                else { PlayerScript.Instance.RedPlayerInfos.GoalCapturePointsNumber = 0; }
-                break;
-            case 5: // EL ALAMEIN
-                if (PlayerScript.Instance.RedPlayerInfos.GoalCapturePointsNumber == RedObjCount) /* RedObjCount = 1 */
-                {
-                    GameManager.Instance.VictoryForArmy(1);
-                }
-
-                if (!PlayerScript.Instance.UnitRef.UnitListRedPlayer.Find( Unit => Unit.name == "Méphistophélès") && !PlayerScript.Instance.UnitRef.UnitListRedPlayer.Find(Unit => Unit.name == "Erwin Rommel") && !PlayerScript.Instance.UnitRef.UnitListRedPlayer.Find(Unit => Unit.name == "Roboterschütze"))   /* Tuer la chaine de commandement */
-                {
-                    GameManager.Instance.VictoryForArmy(2); 
-                }
-
-                if (GameManager.Instance.ActualTurnNumber == 9)
-                {
-                    GameManager.Instance.VictoryForArmy(2); 
-                }
-
-                if (PlayerScript.Instance.BluePlayerInfos.GoalCapturePointsNumber == BlueObjCount) /* BlueObjCount = 1 */
-                {
-                    GameManager.Instance.VictoryForArmy(2);
-                }
-
-                break;
-            case 7: // ELSENBORN
-                if (PlayerScript.Instance.BluePlayerInfos.GoalCapturePointsNumber == BlueObjCount) /* RedObjCount = 1 */
-                {
-                    GameManager.Instance.VictoryForArmy(2);
-                }
-
-                if (GameManager.Instance.ActualTurnNumber == 12)
-                {
-                    GameManager.Instance.VictoryForArmy(1);
-                }
-                break;
-        }
-        
-        if (PlayerScript.Instance.UnitRef.UnitListBluePlayer.Count == 0)
-        {
-            GameManager.Instance.VictoryForArmy(1);
-        }
-
-        if (PlayerScript.Instance.UnitRef.UnitListRedPlayer.Count == 0)
-        {
-            GameManager.Instance.VictoryForArmy(2);
-        }
+        VictoryConditions.Instance.CheckVictoryConditions();
     }
 }

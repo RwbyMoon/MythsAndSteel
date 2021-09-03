@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VictoryConditions : MonoBehaviour
+public class VictoryConditions : MonoSingleton<VictoryConditions>
 {
     public int ObjectiveNeedRed;
     public int ObjectiveNeedBlue;
@@ -20,7 +20,7 @@ public class VictoryConditions : MonoBehaviour
     bool RedHasCommand;
     bool BlueHasCommand;
 
-    public void CheckVictory()
+    public void CheckVictoryConditions()
     {
         if (ChaineDeCommandement != 0)
         {
@@ -45,11 +45,11 @@ public class VictoryConditions : MonoBehaviour
             }
             CheckCommand();
         }
-        if (ObjectiveNeedRed <= ObjectiveRed && ObjectiveNeedBlue > ObjectiveBlue && GameManager.Instance.ActualTurnNumber + 1  >= MinTurnToWin && ((ChaineDeCommandement == 0 || ChaineDeCommandement == 2) || ((ChaineDeCommandement == 1 || ChaineDeCommandement == 3) && RedHasCommand)))
+        if (ObjectiveNeedRed <= ObjectiveRed && (ObjectiveNeedBlue > ObjectiveBlue || ObjectiveNeedBlue == 0) && GameManager.Instance.ActualTurnNumber + 1  >= MinTurnToWin && ((ChaineDeCommandement == 0 || ChaineDeCommandement == 2) || ((ChaineDeCommandement == 1 || ChaineDeCommandement == 3) && RedHasCommand)) && ObjectiveNeedRed != 0)
         {
             VictoryForArmy(true);
         }
-        else if(ObjectiveNeedRed > ObjectiveRed && ObjectiveNeedBlue <= ObjectiveBlue && GameManager.Instance.ActualTurnNumber + 1 >= MinTurnToWin && ((ChaineDeCommandement == 0 || ChaineDeCommandement == 1) || ((ChaineDeCommandement == 2 || ChaineDeCommandement == 3) && BlueHasCommand)))
+        else if((ObjectiveNeedRed > ObjectiveRed || ObjectiveNeedRed == 0) && ObjectiveNeedBlue <= ObjectiveBlue && GameManager.Instance.ActualTurnNumber + 1 >= MinTurnToWin && ((ChaineDeCommandement == 0 || ChaineDeCommandement == 1) || ((ChaineDeCommandement == 2 || ChaineDeCommandement == 3) && BlueHasCommand)) && ObjectiveNeedBlue != 0)
         {
             VictoryForArmy(false);
         }
@@ -64,15 +64,16 @@ public class VictoryConditions : MonoBehaviour
                 VictoryForArmy(false);
             }
         }
-        if (PlayerScript.Instance.UnitRef.UnitListBluePlayer.Count == 0)
+        else if (PlayerScript.Instance.UnitRef.UnitListBluePlayer.Count == 0)
         {
             VictoryForArmy(true);
         }
 
-        if (PlayerScript.Instance.UnitRef.UnitListRedPlayer.Count == 0)
+        else if (PlayerScript.Instance.UnitRef.UnitListRedPlayer.Count == 0)
         {
             VictoryForArmy(false);
         }
+        
     }
 
     void CheckCommand()
