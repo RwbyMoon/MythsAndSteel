@@ -1,5 +1,17 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &4463748668102506758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3516828726791126061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9633cf0c4938b8349b3d2a3eee60c9d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &4544084536150697080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12,7 +24,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4b5d53f4caebfc4f80e7f9f37bea2cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Capacity1Name: "!!Acc\xE9l\xE9ration!!"
+  _Capacity1Name: "Acc\xE9l\xE9ration"
   _Capacity1Type: Passif
   _Capacity1Cost: 0
   _Capacity1Desc: "Au d\xE9but du tour, obtient +1 de d\xE9placement si une case
