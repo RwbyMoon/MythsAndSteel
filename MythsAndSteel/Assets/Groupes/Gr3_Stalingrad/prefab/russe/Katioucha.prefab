@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 349878068894297390}
   - component: {fileID: 349878068894297391}
   - component: {fileID: -8932356097129784327}
+  - component: {fileID: 5750015935337007164}
   m_Layer: 0
   m_Name: Katioucha
   m_TagString: Untagged
@@ -183,24 +184,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _unitSO: {fileID: 11400000, guid: ef20cf2375f76b04599379ca3db83705, type: 2}
   ParalysieStat: 3
+  SilenceStat: 3
+  DoubleRessource: 0
   HasOnlyOneDamage: 0
   IsActifNotConsumeAction: 0
   ActifUsedThisTurn: 0
   "M\xE9lodieSinistre": 0
   RestreintAuxRails: 0
   ToutTerrain: 0
+  Volant: 0
+  FireResistance: 0
+  PasseMuraille: 0
+  Amphibie: 0
+  Submersible: 0
   _life: 1
   Renderer: {fileID: 349878068894297389}
   _shield: 2
   _attackRange: 3
   _attackRangeBonus: 0
+  AttaqueEnLigne: 0
   _numberRangeMin: {x: 3, y: 4}
   _damageMinimum: 1
   _numberRangeMax: {x: 5, y: 12}
   _damageMaximum: 2
   _damageBonus: 0
   _diceBonus: 0
+  NbAtkTurn: 1
+  NbAttaqueParTour: 1
+  HasAttackedOneTime: 0
+  FailAttack: 0
+  InflictMinimumDamages: 0
+  InflictMaximumDamages: 0
   RunningCapacity: 0
+  RunningCapacity2: 0
   _moveSpeed: 3
   _MoveSpeedBonus: 0
   BonusUsed: 0
@@ -227,6 +243,7 @@ MonoBehaviour:
   PermaSpeedBoost: 0
   PermaRangeBoost: 0
   PermaDiceBoost: 0
+  PermaDamageBoost: 0
   DoingCharg1Blue: 0
 --- !u!95 &349878068894297391
 Animator:
@@ -259,7 +276,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4b5d53f4caebfc4f80e7f9f37bea2cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Capacity1Name: '!!Stalinorgel!!'
+  _Capacity1Name: Stalinorgel
   _Capacity1Type: Actif
   _Capacity1Cost: 2
   _Capacity1Desc: "Cible une zone de 3x3 cases face \xE0 la Katioucha. Inflige 1
@@ -271,6 +288,25 @@ MonoBehaviour:
   _Capacity2Cost: 0
   _Capacity2Desc: 
   _Capacity2Icon: {fileID: 21300000, guid: 24c38065f0aa40046a1f50a3c6882ced, type: 3}
+--- !u!114 &5750015935337007164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 349878068894297360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85bb3d51de01631488647285d142a302, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Capacity1Name: Stalinorgel
+  render1: {fileID: 0}
+  _Capacity1Description: "Cible une zone de 3x3 cases face \xE0 la Katioucha. Inflige
+    1 de d\xE9gat aux unit\xE9s dans la zone. 3 cases al\xE9atoires subissent 1 de
+    d\xE9gat suppl\xE9mentaire."
+  _Capacity1Cost: 2
+  SecondCapacity: 0
 --- !u!1 &7167033828147668445
 GameObject:
   m_ObjectHideFlags: 0
