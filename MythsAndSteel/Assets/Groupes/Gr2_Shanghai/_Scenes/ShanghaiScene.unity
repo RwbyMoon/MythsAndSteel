@@ -10755,6 +10755,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 611274539}
     m_Modifications:
     - target: {fileID: 1397833382716939709, guid: 5f63c55664872f34ca395f71311cf8ee, type: 3}
+      propertyPath: Terrain
+      value: 
+      objectReference: {fileID: 11400000, guid: a3032ce23b29e4543ba95c858cba2611, type: 2}
+    - target: {fileID: 1397833382716939709, guid: 5f63c55664872f34ca395f71311cf8ee, type: 3}
       propertyPath: _redWin
       value: 
       objectReference: {fileID: 1707150044}
@@ -15802,7 +15806,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 760451156}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0638, y: 0.16, z: 0}
+  m_LocalPosition: {x: -0.0638, y: 0.81, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2.0255468}
   m_Children: []
   m_Father: {fileID: 1247325970}
@@ -51675,6 +51679,7 @@ MonoBehaviour:
   _selected: 0
   _j1Zone: {fileID: 1041681342700545735}
   _j2Zone: {fileID: 1041681344254602377}
+  OrgoneHasBoom: 0
 --- !u!114 &229205836657886190
 MonoBehaviour:
   m_ObjectHideFlags: 0
