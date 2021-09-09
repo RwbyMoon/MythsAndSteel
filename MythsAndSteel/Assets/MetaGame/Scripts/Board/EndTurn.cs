@@ -269,27 +269,27 @@ public class EndTurn : MonoBehaviour
     {
         if (TileSc.OwnerObjectiv == MYthsAndSteel_Enum.Owner.blue && RedArmy)
         {
-            PlayerScript.Instance.BluePlayerInfos.GoalCapturePointsNumber--;
+            PlayerScript.Instance.J2Infos.GoalCapturePointsNumber--;
             TileSc.ChangePlayerObj(MYthsAndSteel_Enum.Owner.red);
-            PlayerScript.Instance.RedPlayerInfos.GoalCapturePointsNumber++;
+            PlayerScript.Instance.J1Infos.GoalCapturePointsNumber++;
         }
         if (TileSc.OwnerObjectiv == MYthsAndSteel_Enum.Owner.red && !RedArmy)
         {
-            PlayerScript.Instance.RedPlayerInfos.GoalCapturePointsNumber--;
+            PlayerScript.Instance.J1Infos.GoalCapturePointsNumber--;
             TileSc.ChangePlayerObj(MYthsAndSteel_Enum.Owner.blue);
-            PlayerScript.Instance.BluePlayerInfos.GoalCapturePointsNumber++;
+            PlayerScript.Instance.J2Infos.GoalCapturePointsNumber++;
         }
         if (TileSc.OwnerObjectiv == MYthsAndSteel_Enum.Owner.neutral)
         {
             if (RedArmy)
             {
                 TileSc.ChangePlayerObj(MYthsAndSteel_Enum.Owner.red);
-                PlayerScript.Instance.RedPlayerInfos.GoalCapturePointsNumber++;
+                PlayerScript.Instance.J1Infos.GoalCapturePointsNumber++;
             }
             else
             {
                 TileSc.ChangePlayerObj(MYthsAndSteel_Enum.Owner.blue);
-                PlayerScript.Instance.BluePlayerInfos.GoalCapturePointsNumber++;
+                PlayerScript.Instance.J2Infos.GoalCapturePointsNumber++;
             }
         }
     }
