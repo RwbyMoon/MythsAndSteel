@@ -60,6 +60,8 @@ public class OrgoneManager : MonoSingleton<OrgoneManager>
     [SerializeField] private GameObject _j2Zone = null;
     public GameObject J2Zone => _j2Zone;
 
+    public bool OrgoneHasBoom;
+
     #endregion Variables
 
     public void CheckZoneOrgone()
@@ -170,8 +172,8 @@ public class OrgoneManager : MonoSingleton<OrgoneManager>
             SoundController.Instance.PlaySound(SoundController.Instance.AudioClips[2]);
             Debug.Log("exoplsionn");
         }
-        
         StartCoroutine(UpdateOrgoneUI(Player, 4, 0));
+        StartCoroutine(OrgonBoom());
     }
 
     IEnumerator AnimationOrgone(int LastOrgoneValue, int ActualOrgoneValue, int Player)
@@ -357,6 +359,13 @@ public class OrgoneManager : MonoSingleton<OrgoneManager>
         else{
             _j2Zone.GetComponent<ZoneOrgone>().ActivationArea();
         }
+    }
+
+    IEnumerator OrgonBoom()
+    {
+        OrgoneHasBoom = true;
+        yield return new WaitForSeconds(2);
+        OrgoneHasBoom = false;
     }
 }
 
