@@ -164,7 +164,7 @@ public class GameManager : MonoSingleton<GameManager>
     [SerializeField] TerrainTypeClass _Terrain;
     public TerrainTypeClass Terrain => _Terrain;
 
-    //Valeur lue pour relancer l'animation des unités ralenties
+    //Valeur lue lors d'un changement de phase
     public bool IsNextPhaseDone = false;
 
     #region CheckOrgone
