@@ -18777,6 +18777,7 @@ MonoBehaviour:
   _selected: 0
   _j1Zone: {fileID: 205540792}
   _j2Zone: {fileID: 205540791}
+  OrgoneHasBoom: 0
 --- !u!1001 &542666380
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33902,6 +33903,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f73f09319808eda41b736687a48f37a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1122406472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1122406469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1509353106cb31942b0690e474f87f5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startCapa: 0
 --- !u!1 &1129618877
 GameObject:
   m_ObjectHideFlags: 0
@@ -51102,7 +51116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4b5d53f4caebfc4f80e7f9f37bea2cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Capacity1Name: '!!Peine Maximal!!'
+  _Capacity1Name: Peine Maximale
   _Capacity1Type: Actif
   _Capacity1Cost: 1
   _Capacity1Desc: "Une fois activ\xE9e, les unit\xE9s alli\xE9es adjacentes infligent
@@ -51115,6 +51129,18 @@ MonoBehaviour:
     unit\xE9s ennemies adjacentes au point d'arriv\xE9e sont repouss\xE9es d'une
     case."
   _Capacity2Icon: {fileID: 0}
+--- !u!114 &1823775407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1823775405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 283fe42d4857cca43878c6907c9444ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1833444417
 PrefabInstance:
   m_ObjectHideFlags: 0
