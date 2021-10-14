@@ -11,7 +11,6 @@ public class Détonation : TerrainParent
 
     public override void EndPlayerTurnEffect(bool IsInRedArmy, UnitScript unit = null)
     {
-        Debug.Log("bonsoir");
         if (IsInRedArmy != _IsInRedArmy)
         {
             if (TilesManager.Instance.TileList[TileID].GetComponent<TileScript>().Unit != null)

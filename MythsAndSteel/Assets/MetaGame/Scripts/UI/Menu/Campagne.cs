@@ -132,8 +132,6 @@ public class Campagne : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(ScenarioVal);
-        Debug.Log(PlayerPrefs.GetInt("ShanghaiDone"));
 
         _mapTransform.GetComponent<RectTransform>().localPosition = Vector2.MoveTowards(_mapTransform.GetComponent<RectTransform>().localPosition, new Vector2(-spaceBetweenScenario * (Screen.width / 1920f) * ScenarioVal, _mapTransform.GetComponent<RectTransform>().localPosition.y), Time.deltaTime * _mapSpeed);
         redPlayerVictories = saveData.redPlayerVictories;

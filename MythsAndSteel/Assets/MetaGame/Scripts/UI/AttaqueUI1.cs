@@ -152,7 +152,6 @@ public class AttaqueUI1 : MonoBehaviour
         }
         if(Dice == 2)
         {
-            Debug.Log("low");
             Impactor.SetTrigger("ImpactLeft");
         }
         else if (Dice == 12)

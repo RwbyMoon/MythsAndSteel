@@ -92,7 +92,6 @@ public class EndTurn : MonoBehaviour
     public void CheckResources()
     {
 
-        Debug.Log("Ressources");
         foreach (GameObject Tile in TilesManager.Instance.ResourcesList)
         {
             TileScript S = Tile.GetComponent<TileScript>();
@@ -222,13 +221,11 @@ public class EndTurn : MonoBehaviour
                     UnitScript US = S.Unit.GetComponent<UnitScript>();
                     if (US.UnitSO.IsInRedArmy && !US.UnitStatuts.Contains(MYthsAndSteel_Enum.UnitStatut.PeutPasPrendreDesObjectifs))
                     {
-                        Debug.Log("Objectif dans le camp rouge.");
                         //ChangeOwner(S, true);
                         PlayerScript.Instance.J1Infos.GoalCapturePointsNumber++;
                     }
                     else if (!US.UnitSO.IsInRedArmy && !US.UnitStatuts.Contains(MYthsAndSteel_Enum.UnitStatut.PeutPasPrendreDesObjectifs))
                     {
-                        Debug.Log("Objectif dans le camp bleu.");
                         //ChangeOwner(S, false);
                     }
                 }
@@ -245,13 +242,11 @@ public class EndTurn : MonoBehaviour
                     UnitScript US = S.Unit.GetComponent<UnitScript>();
                     if (!US.UnitSO.IsInRedArmy && !US.UnitStatuts.Contains(MYthsAndSteel_Enum.UnitStatut.PeutPasPrendreDesObjectifs))
                     {
-                        Debug.Log("Objectif dans le camp rouge.");
                         //ChangeOwner(S, true);
                         PlayerScript.Instance.J2Infos.GoalCapturePointsNumber++;
                     }
                     else if (US.UnitSO.IsInRedArmy && !US.UnitStatuts.Contains(MYthsAndSteel_Enum.UnitStatut.PeutPasPrendreDesObjectifs))
                     {
-                        Debug.Log("Objectif dans le camp bleu.");
                         //ChangeOwner(S, false);
                     }
                 }
@@ -300,17 +295,14 @@ public class EndTurn : MonoBehaviour
     /// </summary>
     protected void CheckVictory()
     {
-        Debug.Log(PlayerPrefs.GetInt("Bataille"));
         switch (PlayerPrefs.GetInt("Bataille"))
         {
             case 2: // RETHEL
                 if (PlayerScript.Instance.J2Infos.GoalCapturePointsNumber == BlueObjCount) /* RedObjCount = 2 */
                 {
-                    Debug.Log("Pouet pouet");
                     GameManager.Instance.VictoryForArmy(2);
                 }
                 else { PlayerScript.Instance.J2Infos.GoalCapturePointsNumber = 0;
-                    Debug.Log("Pouet pouet");
                 }
 
                 if (GameManager.Instance.ActualTurnNumber == 11)
@@ -322,12 +314,10 @@ public class EndTurn : MonoBehaviour
                 if (PlayerScript.Instance.J2Infos.GoalCapturePointsNumber == BlueObjCount) /* BlueObjCount = 2 */
                 {
                     GameManager.Instance.VictoryForArmy(2);
-                    Debug.Log("Pouet pouet");
                 }
                 else
                 {
                     PlayerScript.Instance.J2Infos.GoalCapturePointsNumber = 0;
-                    Debug.Log("Pouet pouet");
                 }
 
                 if (GameManager.Instance.ActualTurnNumber == 11)

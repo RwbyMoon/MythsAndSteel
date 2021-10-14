@@ -164,13 +164,11 @@ public class OrgoneManager : MonoSingleton<OrgoneManager>
         {
            Explodered.SetTrigger("explode");
             SoundController.Instance.PlaySound(SoundController.Instance.AudioClips[2]);
-            Debug.Log("exoplsionn");
         }
         else
         {
            Explodeblue.SetTrigger("explode");
             SoundController.Instance.PlaySound(SoundController.Instance.AudioClips[2]);
-            Debug.Log("exoplsionn");
         }
         StartCoroutine(UpdateOrgoneUI(Player, 4, 0));
         StartCoroutine(OrgonBoom());
@@ -228,7 +226,6 @@ public class OrgoneManager : MonoSingleton<OrgoneManager>
 
                         if (i < 0 || i > 4)
                         {
-                            Debug.Log("je suis là");
                             OrgoneRunning1 = false;
                             break;
                         }

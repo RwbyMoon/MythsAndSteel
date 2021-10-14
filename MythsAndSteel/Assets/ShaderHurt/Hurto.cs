@@ -17,7 +17,6 @@ public class Hurto : MonoBehaviour
         }
 
     
-        //Debug.Log (Time.time + " ||| " + Renderer.material.GetFloat("_HitTime") + " ||| " + (Time.time - Renderer.material.GetFloat("_HitTime")< Renderer.material.GetFloat("_Duration")));
     }
 
     void PlayFeedback()

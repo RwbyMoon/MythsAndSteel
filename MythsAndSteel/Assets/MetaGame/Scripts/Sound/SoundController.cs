@@ -14,16 +14,13 @@ public class SoundController : MonoSingleton<SoundController>
 
     public void PlaySound(AudioClip SoundPlay, string log = null)
     {
-        //Debug.Log("Son lancé"); 
         for (int i = 0; i < _Source.Count; i++) 
         {
-            //Debug.Log("Uraken");
             if (!_Source[i].isPlaying)
             {
 
                 _Source[i].clip = SoundPlay;
                 if (log == null) log = SoundPlay.name;
-                Debug.Log(log);
 
                 if (_Source[i].clip != null)
                 {

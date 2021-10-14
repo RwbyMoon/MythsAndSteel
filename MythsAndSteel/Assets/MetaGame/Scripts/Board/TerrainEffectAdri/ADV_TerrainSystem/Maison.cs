@@ -12,7 +12,6 @@ public class Maison :TerrainParent
             i = -1;
         }
 
-        Debug.Log(i);
 
 
         return base.AttackApply(i);

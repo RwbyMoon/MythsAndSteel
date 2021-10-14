@@ -21,7 +21,6 @@ public class Guérison : Capacity
                     if(TilesManager.Instance.TileList[T].GetComponent<TileScript>().Unit.GetComponent<UnitScript>().UnitSO.IsInRedArmy == GameManager.Instance.IsPlayerRedTurn)
                     {
                     tile.Add(TilesManager.Instance.TileList[T]);
-                        Debug.Log("fjdk");
                     }
 
                 }

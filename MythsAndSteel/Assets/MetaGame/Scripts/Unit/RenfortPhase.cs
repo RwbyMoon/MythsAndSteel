@@ -333,7 +333,6 @@ public class RenfortPhase : MonoSingleton<RenfortPhase>
         foreach(GameObject typeTile in usineList)
         {
             int typeTileID = TilesManager.Instance.TileList.IndexOf(typeTile);
-            //Debug.Log(typeTile);
             foreach(int idtyleIndex in PlayerStatic.GetNeighbourDiag(typeTileID, TilesManager.Instance.TileList[typeTileID].GetComponent<TileScript>().Line, false))
             {
                 //Tu ajoutes la tile correspondant à l'usineJ2
@@ -590,7 +589,6 @@ public class RenfortPhase : MonoSingleton<RenfortPhase>
                 if (UIInstance.Instance.RedRenfortCount == 1)
                 {
                     UIInstance.Instance.ButtonRenfortJ1.GetComponent<Button>().interactable = false;
-                    Debug.Log("fdljs");
                 }
             }
             GameManager.Instance.victoryScreen.redRessourcesUsed += PlayerScript.Instance.UnitRef.UnitClassCreableListRedPlayer[idCreate].GetComponent<UnitScript>().UnitSO.CreationCost;

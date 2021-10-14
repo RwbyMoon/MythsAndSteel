@@ -147,7 +147,6 @@ public class ConsoleManager : MonoSingleton<ConsoleManager>
                                     PlayerScript.Instance.J1Infos.Ressource += int.Parse(split[2]);
                                     break;
                             }
-                            Debug.Log("x");
                             Log("Le joueur " + split[1].ToString() + " a gagné " + int.Parse(split[2]) + " ressource(s))", cmd, true);
                         }
                     }
@@ -278,7 +277,6 @@ public class ConsoleManager : MonoSingleton<ConsoleManager>
                                     PlayerScript.Instance.J1Infos.ActivationLeft += int.Parse(split[2]);
                                     break;
                             }
-                            Debug.Log("x");
                             Log("Le joueur " + split[1].ToString() + " a gagné " + int.Parse(split[2]) + " activation(s))", cmd, true);
                         }
                     }
@@ -396,7 +394,6 @@ public class ConsoleManager : MonoSingleton<ConsoleManager>
             {
                 if(Parse < minValue)
                 {
-                    Debug.Log("x");
                     Dictionary<string, bool> ReturnMin = new Dictionary<string, bool>();
                     ReturnMin.Add(cmd, false);
                     Log("Une valeur est trop basse.", cmd, false);
@@ -425,7 +422,6 @@ public class ConsoleManager : MonoSingleton<ConsoleManager>
             {
                 if (Parse > maxValue)
                 {
-                    Debug.Log("x");
                     Dictionary<string, bool> ReturnMax = new Dictionary<string, bool>();
                     ReturnMax.Add(cmd, false);
                     Log("Une valeur est trop haute.", cmd, false);
@@ -442,7 +438,6 @@ public class ConsoleManager : MonoSingleton<ConsoleManager>
         }
         else
         {
-            Debug.Log("x");
             Dictionary<string, bool> NoValue = new Dictionary<string, bool>();
             NoValue.Add(cmd, false);
             Log("Miss parameter.", cmd, false);

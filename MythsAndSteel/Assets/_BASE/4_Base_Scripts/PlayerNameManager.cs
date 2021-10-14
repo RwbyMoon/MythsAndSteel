@@ -48,7 +48,6 @@ public class PlayerNameManager : MonoBehaviour
 
         RedInputMenu.text = PlayerPrefs.GetString("AlliesName");
 
-        Debug.Log(PlayerPrefs.GetString("AlliesName"));
     }
 
     public void SetBlueNameCampagne()
@@ -64,7 +63,6 @@ public class PlayerNameManager : MonoBehaviour
 
         BlueInputMenu.text = PlayerPrefs.GetString("AxeName");
 
-        Debug.Log(PlayerPrefs.GetString("AxeName"));
     }
 
     public void SetRedNameMenu()
@@ -81,7 +79,6 @@ public class PlayerNameManager : MonoBehaviour
 
         RedInputCampagne.text = PlayerPrefs.GetString("AlliesName");
 
-        Debug.Log(PlayerPrefs.GetString("AlliesName"));
     }
 
     public void SetBlueNameMenu()
@@ -97,7 +94,6 @@ public class PlayerNameManager : MonoBehaviour
 
         BlueInputCampagne.text = PlayerPrefs.GetString("AxeName");
 
-        Debug.Log(PlayerPrefs.GetString("AxeName"));
     }
 
 }

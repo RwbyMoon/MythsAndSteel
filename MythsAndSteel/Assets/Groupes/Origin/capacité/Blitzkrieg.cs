@@ -15,10 +15,8 @@ public class Blitzkrieg : Capacity
             List<GameObject> tile = new List<GameObject>();
 
 
-            Debug.Log("oui");
             GameManager.Instance._eventCall += EndCpty;
             GameManager.Instance._eventCallCancel += StopCpty;
-            Debug.Log("oui");
             
             if (PlayerPrefs.GetInt("Avertissement") == 0)
             {
@@ -44,12 +42,10 @@ public class Blitzkrieg : Capacity
     {
         audioSource.PlayOneShot(ActivUp, 1f);
          Player player = GameManager.Instance.IsPlayerRedTurn ? PlayerScript.Instance.J1Infos : PlayerScript.Instance.J2Infos;
-        Debug.Log("oui");
         player.Ressource -= Capacity1Cost;
         player.ActivationLeft += 2;
         UIInstance.Instance.UpdateRessourceLeft();
         UIInstance.Instance.UpdateActivationLeft();
-        Debug.Log("Inchallah");
         GameManager.Instance._eventCall -= EndCpty;
         GetComponent<UnitScript>().EndCapacity();
         base.EndCpty();

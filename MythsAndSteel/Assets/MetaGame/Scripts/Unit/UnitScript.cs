@@ -487,13 +487,10 @@ public class UnitScript : MonoBehaviour
     /// <param name="Damage"></param>
     public void TakeDamage(int Damage, bool IsOrgoneDamage = false, bool terrain = true)
     {
-        Debug.Log("jfkdms");
-        Debug.Log(terrain);
         if (terrain)
         {
 
 
-            Debug.Log("je suis lancé");
             int AttackVariation = 0;
             TileScript T = TilesManager.Instance.TileList[ActualTiledId].GetComponent<TileScript>();
 
@@ -547,7 +544,6 @@ public class UnitScript : MonoBehaviour
 
                 }
             }
-            Debug.Log(AttackVariation);
 
 
             if (T.TerrainEffectList.Contains(MYthsAndSteel_Enum.TerrainType.Maison))
@@ -566,14 +562,12 @@ public class UnitScript : MonoBehaviour
             {
 
                 GiveLife(-AttackVariation);
-                Debug.Log(AttackVariation + gameObject.name);
             }
 
             else if (AttackVariation < 0)
             {
                 IsOrgoneDamage = true;
                 TakeDamage(AttackVariation, true, false);
-                Debug.Log(AttackVariation + gameObject.name);
 
             }
 
@@ -630,7 +624,6 @@ public class UnitScript : MonoBehaviour
                     {
                         UpdateLifeHeartShieldUI(UIInstance.Instance.J1HeartShieldSprite, _life + _shield);
                         Renderer.material.SetFloat("_HitTime", Time.time);
-                        Debug.Log("je ne fonctionne pas ");
                     }
                     else
                     {
@@ -682,7 +675,6 @@ public class UnitScript : MonoBehaviour
                             PlayerScript.Instance.AddOrgone(1, 1);
                             FxOrgoneSpawn(true);
 
-                            Debug.Log("Ca buuuuuug");
                         }
                         if (GameManager.Instance._waitToCheckOrgone != null) GameManager.Instance._waitToCheckOrgone += AddOrgoneToPlayer;
                     }
@@ -707,7 +699,6 @@ public class UnitScript : MonoBehaviour
                             PlayerScript.Instance.AddOrgone(1, 2);
 
                             FxOrgoneSpawn(false);
-                            Debug.Log("Ca buuuuuug");
                         }
                         if (GameManager.Instance._waitToCheckOrgone != null) GameManager.Instance._waitToCheckOrgone += AddOrgoneToPlayer;
                     }
@@ -771,7 +762,6 @@ public class UnitScript : MonoBehaviour
         {
             if (TilesManager.Instance.TileList[ActualTiledId].GetComponent<TileScript>().TerrainEffectList.Contains(MYthsAndSteel_Enum.TerrainType.OrgoneRed))
             {
-                Debug.Log("doing orgone" + GameManager.Instance.DoingEpxlosionOrgone);
                 PlayerScript.Instance.AddOrgone(1, 1);
                 FxOrgoneSpawn(true);
                 PlayerScript.Instance.J1Infos.CheckOrgone(1);
@@ -786,7 +776,6 @@ public class UnitScript : MonoBehaviour
         }
         else
         {
-            Debug.Log("fdkj");
             TilesManager.Instance.TileList[ActualTiledId].GetComponent<TileScript>().DesActiveChildObj(MYthsAndSteel_Enum.ChildTileType.EventSelect);
             GameManager.Instance.DeathByOrgone--;
         }
@@ -960,13 +949,11 @@ public class UnitScript : MonoBehaviour
 
             if ((_unitSO.IsInRedArmy && !hasUseActivation && !_unitStatuts.Contains(MYthsAndSteel_Enum.UnitStatut.Possédé)) || (!_unitSO.IsInRedArmy && _unitStatuts.Contains(MYthsAndSteel_Enum.UnitStatut.Possédé) && !hasUseActivation && !MélodieSinistre))
             {
-                Debug.Log("bonsoir");
                 hasUseActivation = true;
                 PlayerScript.Instance.J1Infos.ActivationLeft--;
             }
             else if ((!_unitSO.IsInRedArmy && !hasUseActivation && !_unitStatuts.Contains(MYthsAndSteel_Enum.UnitStatut.Possédé)) || (_unitSO.IsInRedArmy && _unitStatuts.Contains(MYthsAndSteel_Enum.UnitStatut.Possédé) && !hasUseActivation && !MélodieSinistre))
             {
-                Debug.Log("bonsoir");
                 hasUseActivation = true;
                 PlayerScript.Instance.J2Infos.ActivationLeft--;
             }
@@ -1017,7 +1004,6 @@ public class UnitScript : MonoBehaviour
             UIInstance.Instance.DesactivateNextPhaseButton();
             if (TryGetComponent<Capacity>(out Capacity T))
             {
-                Debug.Log("starrt");
                 T.StartCpty();
             }
         }

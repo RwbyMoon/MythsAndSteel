@@ -64,6 +64,6 @@ public class ProtocoleDeProtection : Capacity
     {
         
         yield return new WaitForSeconds(GameManager.Instance.TileChooseList[0].GetComponent<TileScript>().Unit.transform.GetChild(2).GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length + 1.5f);
-        Bonus.GetComponent<TileScript>().Unit.transform.GetChild(2).GetComponent<Animator>().SetBool("Shield", false);
+        //Bonus.GetComponent<TileScript>().Unit.transform.GetChild(2).GetComponent<Animator>().SetBool("Shield", false);
     }
 }

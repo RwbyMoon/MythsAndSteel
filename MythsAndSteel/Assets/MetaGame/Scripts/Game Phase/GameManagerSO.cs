@@ -185,11 +185,9 @@ public class GameManagerSO : ScriptableObject
                 
                 if (GameManager.Instance.possesion)
                 {
-                    Debug.Log(GameManager.Instance.IsPlayerRedTurn);
                     foreach (GameObject unit in GameManager.Instance.IsPlayerRedTurn ? PlayerScript.Instance.UnitRef.UnitListBluePlayer : PlayerScript.Instance.UnitRef.UnitListRedPlayer)
                     {
                         GameManager.Instance.possesion = false;
-                        Debug.Log("fjkds");
                         unit.GetComponent<UnitScript>().ResetStatutPossesion();
 
 
@@ -432,7 +430,6 @@ public class GameManagerSO : ScriptableObject
             case MYthsAndSteel_Enum.PhaseDeJeu.Strategie:
                 RaycastManager.Instance.ActualUnitSelected = null;
                 RaycastManager.Instance.ActualTileSelected = null;
-                Debug.Log("End");
                 
                 foreach (GameObject TS in TilesManager.Instance.TileList)
                 {

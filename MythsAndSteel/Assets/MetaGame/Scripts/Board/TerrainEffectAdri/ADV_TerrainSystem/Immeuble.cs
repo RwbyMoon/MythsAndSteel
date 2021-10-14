@@ -14,7 +14,6 @@ public class Immeuble : TerrainParent
             i = -BaseDamage;
         }
 
-        Debug.Log(i);
        
 
         return base.AttackApply(i);

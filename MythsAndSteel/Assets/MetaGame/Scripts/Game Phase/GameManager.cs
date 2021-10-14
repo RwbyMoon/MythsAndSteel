@@ -211,7 +211,6 @@ public class GameManager : MonoSingleton<GameManager>
     /// </summary>
     public void CliCToChangePhase()
     {
-        Debug.Log("ClickedToChangePhase");
         _eventCallCancel += CancelSkipPhase;
         _eventCall += ChangePhase;
         _eventCall += SoundController.Instance.nextPhaseSound;
@@ -263,11 +262,8 @@ public class GameManager : MonoSingleton<GameManager>
             victoryScreen.RedWin = true;
             saveData.redPlayerVictories += 1;
             PlayerPrefs.SetInt("RedPlayerVictories", saveData.redPlayerVictories);
-            Debug.Log(PlayerPrefs.GetInt("RedPlayerVictories"));
             saveData.unlockCampaign += 1;
             PlayerPrefs.SetInt("UnlockCampaign", saveData.unlockCampaign);
-            Debug.Log(PlayerPrefs.GetInt("UnlockCampaign"));
-            Debug.Log("Red win.");
         }
         else if (armeeGagnante == 2)
         {
@@ -278,7 +274,6 @@ public class GameManager : MonoSingleton<GameManager>
             PlayerPrefs.SetInt("BluePlayerVictories", saveData.bluePlayerVictories);
             saveData.unlockCampaign += 1;
             PlayerPrefs.SetInt("UnlockCampaign", saveData.unlockCampaign);
-            Debug.Log("Blue win.");
         }
     }
 
@@ -541,7 +536,6 @@ public class GameManager : MonoSingleton<GameManager>
                 {
 
 
-                    Debug.Log("Do explosion");
                     int TimeChoosen = 1;
                     for (int i = 0; i < _unitChooseList.Count; i++)
                     {
@@ -823,12 +817,10 @@ public class GameManager : MonoSingleton<GameManager>
             SoundController.Instance.PlaySound(SoundController.Instance.AudioClips[10]);
                 _selectableTiles.Clear();
                 _selectableTiles.AddRange(TilesManager.Instance.TileList);
-            Debug.Log("test3");
             foreach (int element in PlayerStatic.GetNeighbourDiag(_tileChooseList[0].GetComponent<TileScript>().TileId, _tileChooseList[0].GetComponent<TileScript>().Line, false))
             {
                
           TilesManager.Instance.TileList[element].GetComponent<TileScript>().ActiveChildObj(MYthsAndSteel_Enum.ChildTileType.EventSelect, _normalEventSprite);
-                Debug.Log("test4");
                 _tileChooseList.Remove(tile);
             }
             }

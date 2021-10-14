@@ -23,7 +23,6 @@ public class ScriptableStatus : ScriptableObject
             PrefabStatus.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = Saved._description;
             return PrefabStatus;
         }
-        Debug.Log("null");
         return null;
     }
 
@@ -33,7 +32,6 @@ public class ScriptableStatus : ScriptableObject
         {
             if (tr.Status == Type)
             {
-                Debug.Log("returned");
                 return tr;
             }
         }
