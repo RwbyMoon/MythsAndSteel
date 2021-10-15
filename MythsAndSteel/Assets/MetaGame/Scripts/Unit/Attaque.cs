@@ -910,6 +910,7 @@ public class Attaque : MonoSingleton<Attaque>
     {
         Randomdice();
         _selectedUnit.GetComponent<UnitScript>().NbAttaqueParTour--;
+        GameManager.Instance.lastAttacker = _selectedUnit.GetComponent<UnitScript>().UnitSO.UnitName;
         _selectedUnit.GetComponent<UnitScript>().HasAttackedOneTime = true;
         CapacitySystem.Instance.Updatebutton();
         IsInAttack = false;

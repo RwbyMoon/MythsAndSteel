@@ -187,8 +187,12 @@ public class GameManager : MonoSingleton<GameManager>
     private int _valueOrgone = 0;
     public int ValueOrgone => _valueOrgone;
     #endregion CheckOrgone
-  
+
     #endregion Variables
+
+    public string lastAttacker;
+    public string lastKiller;
+    public string lastKilled;
 
     /// <summary>
     /// Permet d'initialiser le script

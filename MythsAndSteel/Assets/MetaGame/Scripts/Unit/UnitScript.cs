@@ -773,6 +773,9 @@ public class UnitScript : MonoBehaviour
                 PlayerScript.Instance.J2Infos.CheckOrgone(2);
             }
             else { }
+            GameManager.Instance.lastKilled = GetComponent<UnitScript>().UnitSO.UnitName;
+            GameManager.Instance.lastKiller = GameManager.Instance.lastAttacker;
+            Debug.Log(GameManager.Instance.lastKiller + " Killed " + GameManager.Instance.lastKilled);
         }
         else
         {
@@ -918,7 +921,7 @@ public class UnitScript : MonoBehaviour
     /// <summary>
     /// Reset les valeurs nécéssaires pour un nouveau tour
     /// </summary>
-    public virtual void ResetTurn()
+    public virtual void ResetTurn(bool softReset = false)
     {
         _isActivationDone = false;
         _isMoveDone = false;
@@ -926,7 +929,10 @@ public class UnitScript : MonoBehaviour
         NbAttaqueParTour = NbAtkTurn;
         HasAttackedOneTime = false;
 
-        StartCoroutine(NewTurnHasStarted());
+        if (!softReset) 
+        { 
+            StartCoroutine(NewTurnHasStarted());
+        }
 
         MoveSpeedBonus = PermaSpeedBoost;
         AttackRangeBonus = PermaRangeBoost;
@@ -934,9 +940,9 @@ public class UnitScript : MonoBehaviour
         _damageBonus = PermaDamageBoost;
         ActifUsedThisTurn = false;
 
-        hasUseActivation = false;
-        _moveLeft = _unitSO.MoveSpeed;
         _hasStartMove = false;
+        _moveLeft = _unitSO.MoveSpeed;
+        hasUseActivation = false;
     }
 
     /// <summary>
