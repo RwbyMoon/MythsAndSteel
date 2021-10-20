@@ -16,6 +16,7 @@ public class UnitScript : MonoBehaviour
     public int ParalysieStat = 3;
     public int SilenceStat = 3;
     public bool DoubleRessource = false;
+    public bool OtherCanTargetNear;
     public Unit_SO UnitSO
     {
         get

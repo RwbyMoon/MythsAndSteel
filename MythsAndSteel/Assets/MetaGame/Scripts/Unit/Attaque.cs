@@ -406,7 +406,6 @@ public class Attaque : MonoSingleton<Attaque>
                 if (ID == currentID)
                 {
                     i = true;
-
                 }
 
                 if (!i)
@@ -420,6 +419,39 @@ public class Attaque : MonoSingleton<Attaque>
                         }
                     }
                     Highlight(ID, currentID, Range - 1, InfoLigneDroite + 1);
+                }
+            }
+        }
+        else
+        {
+            if (_selectedUnit.GetComponent<UnitScript>().UnitSO.IsInRedArmy)
+            {
+                foreach (GameObject U in PlayerScript.Instance.UnitRef.UnitListRedPlayer)
+                {
+                    if (U.GetComponent<UnitScript>().OtherCanTargetNear)
+                    {
+                        foreach (int ID in PlayerStatic.GetNeighbourDiag(U.GetComponent<UnitScript>().ActualTiledId, TilesManager.Instance.TileList[U.GetComponent<UnitScript>().ActualTiledId].GetComponent<TileScript>().Line, false))
+                        {
+                            TileScript TileSc = TilesManager.Instance.TileList[ID].GetComponent<TileScript>();
+                            TileSc.ActiveChildObj(MYthsAndSteel_Enum.ChildTileType.AttackSelect, _normalAttackSprite, 1);
+                            newNeighbourId.Add(ID);
+                        }
+                    }
+                }
+            }
+            else
+            {
+                foreach (GameObject U in PlayerScript.Instance.UnitRef.UnitListBluePlayer)
+                {
+                    if (U.GetComponent<UnitScript>().OtherCanTargetNear)
+                    {
+                        foreach (int ID in PlayerStatic.GetNeighbourDiag(U.GetComponent<UnitScript>().ActualTiledId, TilesManager.Instance.TileList[U.GetComponent<UnitScript>().ActualTiledId].GetComponent<TileScript>().Line, false))
+                        {
+                            TileScript TileSc = TilesManager.Instance.TileList[ID].GetComponent<TileScript>();
+                            TileSc.ActiveChildObj(MYthsAndSteel_Enum.ChildTileType.AttackSelect, _normalAttackSprite, 1);
+                            newNeighbourId.Add(ID);
+                        }
+                    }
                 }
             }
         }
