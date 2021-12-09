@@ -48,7 +48,6 @@ public class ChargeRedPlayer : ChargeOrgone
 
     void MoveUnitChageOgone1()
     {
-        Debug.Log("Call");
         GameManager.Instance._eventCall = null;
 
         while (GameManager.Instance.UnitChooseList[0].transform.position != GameManager.Instance.TileChooseList[0].transform.position)
@@ -91,10 +90,8 @@ public class ChargeRedPlayer : ChargeOrgone
         void UseCharge3RedPlayer()
         {
             UIInstance.Instance.ActivateNextPhaseButton();
-            Debug.Log("R3 USE");
             PlayerScript.Instance.J1Infos.EventUseLeft += 1;
          
-            Debug.Log("R3 finish");
             SoundController.Instance.PlaySound(SoundController.Instance.AudioClips[7]);
             GameManager.Instance._eventCall -= UseCharge3RedPlayer;
             EndOrgoneUpdateRed(-3);
@@ -107,14 +104,12 @@ public class ChargeRedPlayer : ChargeOrgone
     public void ChargeOrgone5(int cost)
     {
 
-        Debug.Log("R5");
         if (MythsAndSteel.Orgone.OrgoneCheck.CanUseOrgonePower(5, 1))
         {
       
 
             Attaque.Instance.PanelBlockant1.SetActive(true);
             Attaque.Instance.PanelBlockant2.SetActive(true);
-            Debug.Log("R5Laucnhed"); 
             GameManager.Instance._eventCall += UseCharge5RedPlayer;
             if (PlayerPrefs.GetInt("Avertissement") == 0)
             {
@@ -187,7 +182,6 @@ public class ChargeRedPlayer : ChargeOrgone
 
     void GMoveUnitChageOgone1()
     {
-        Debug.Log("Call");
         GameManager.Instance._eventCall = null;
 
         while (GameManager.Instance.UnitChooseList[0].transform.position != GameManager.Instance.TileChooseList[0].transform.position)
@@ -230,10 +224,8 @@ public class ChargeRedPlayer : ChargeOrgone
         void GUseCharge3RedPlayer()
         {
             UIInstance.Instance.ActivateNextPhaseButton();
-            Debug.Log("R3 USE");
             PlayerScript.Instance.J2Infos.EventUseLeft += 1;
 
-            Debug.Log("R3 finish");
             SoundController.Instance.PlaySound(SoundController.Instance.AudioClips[7]);
             GameManager.Instance._eventCall -= GUseCharge3RedPlayer;
             EndOrgoneUpdateBlue(-3);
@@ -246,14 +238,12 @@ public class ChargeRedPlayer : ChargeOrgone
     public void GChargeOrgone5(int cost)
     {
 
-        Debug.Log("R5");
         if (MythsAndSteel.Orgone.OrgoneCheck.CanUseOrgonePower(5, 2))
         {
 
 
             Attaque.Instance.PanelBlockant1.SetActive(true);
             Attaque.Instance.PanelBlockant2.SetActive(true);
-            Debug.Log("R5Laucnhed");
             GameManager.Instance._eventCall += GUseCharge5RedPlayer;
             if (PlayerPrefs.GetInt("Avertissement") == 0)
             {

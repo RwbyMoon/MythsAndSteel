@@ -16,7 +16,7 @@ MonoBehaviour:
   _Capacity1Type: Bonus
   _Capacity1Cost: 0
   _Capacity1Desc: "Octroie 1 de bouclier \xE0 une unit\xE9 alli\xE9e adjacente."
-  _Capacity1Icon: {fileID: 0}
+  _Capacity1Icon: {fileID: 21300000, guid: a48a5f1155bb4b546a43cd50cdb68493, type: 3}
   _Capacity2Name: "!!Transporteur Optimis\xE9!!"
   _Capacity2Type: Transport
   _Capacity2Cost: 0
@@ -36,9 +36,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _Capacity1Name: Protocole de Protection
-  render1: {fileID: 0}
+  render1: {fileID: 21300000, guid: a48a5f1155bb4b546a43cd50cdb68493, type: 3}
   _Capacity1Description: "Octroie 1 de bouclier \xE0 une unit\xE9 alli\xE9e adjacente."
   _Capacity1Cost: 0
+  SecondCapacity: 0
 --- !u!1001 &7663448651865828607
 PrefabInstance:
   m_ObjectHideFlags: 0

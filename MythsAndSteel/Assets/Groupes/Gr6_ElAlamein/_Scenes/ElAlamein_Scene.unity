@@ -29172,6 +29172,7 @@ MonoBehaviour:
   _selected: 0
   _j1Zone: {fileID: 750701008}
   _j2Zone: {fileID: 750701007}
+  OrgoneHasBoom: 0
 --- !u!1001 &1174071974
 PrefabInstance:
   m_ObjectHideFlags: 0

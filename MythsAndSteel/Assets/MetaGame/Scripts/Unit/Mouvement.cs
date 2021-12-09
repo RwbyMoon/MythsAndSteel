@@ -452,7 +452,6 @@ public class Mouvement : MonoSingleton<Mouvement>
         {
 
             RaycastManager.Instance.ActualTileSelected = null;
-            Debug.Log("fdjks");
         }
 
 
@@ -510,7 +509,6 @@ public class Mouvement : MonoSingleton<Mouvement>
                                 if (mUnit.GetComponent<UnitScript>().MoveLeft + 1 > mUnit.GetComponent<UnitScript>().UnitSO.MoveSpeed)
                                 {
                                     mUnit.GetComponent<UnitScript>().MoveSpeedBonus += 1;
-                                    Debug.Log("mvt");
                                 }
                                 else
                                 {
@@ -545,7 +543,6 @@ public class Mouvement : MonoSingleton<Mouvement>
                                 int moveToAdd = 1 - (mUnit.GetComponent<UnitScript>().UnitSO.MoveSpeed - mUnit.GetComponent<UnitScript>().MoveLeft);
                                 mUnit.GetComponent<UnitScript>().MoveLeft = mUnit.GetComponent<UnitScript>().UnitSO.MoveSpeed;
                                 mUnit.GetComponent<UnitScript>().MoveSpeedBonus += moveToAdd;
-                                Debug.Log(moveToAdd);
 
                             }
                             else
@@ -612,7 +609,6 @@ public class Mouvement : MonoSingleton<Mouvement>
                     {
                         if (mUnit.GetComponent<UnitScript>().MoveLeft + mUnit.GetComponent<UnitScript>().MoveSpeedBonus >= 2 && !check)
                         {
-                            Debug.Log("La tile d'ID : " + tileId + " est une foret ou un mont.");
                             int moveToDecrease = 2;
                             check = true;
 
@@ -633,7 +629,6 @@ public class Mouvement : MonoSingleton<Mouvement>
                         }
                         else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Route, _selectedTileId[_selectedTileId.Count - 1]) && (mUnit.GetComponent<UnitScript>().MoveLeft + mUnit.GetComponent<UnitScript>().MoveSpeedBonus) == 1 && !RouteBonus && !check && !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().RestreintAuxRails && !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().Volant)
                         {
-                            Debug.Log("Bonus");
                             RouteBonus = true;
                             check = true;
                             if (mUnit.GetComponent<UnitScript>().MoveLeft > 0)
@@ -651,7 +646,6 @@ public class Mouvement : MonoSingleton<Mouvement>
                         else
                         {
                             check = true;
-                            Debug.Log("La tile d'ID : " + tileId + " est une foret ou un mont.");
                         }
                     }
                     else if (PlayerStatic.CheckTiles(MYthsAndSteel_Enum.TerrainType.Route, _selectedTileId[_selectedTileId.Count - 1]) && (mUnit.GetComponent<UnitScript>().MoveLeft + mUnit.GetComponent<UnitScript>().MoveSpeedBonus) == 0 && !RouteBonus && !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().RestreintAuxRails && !RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().Volant)
@@ -684,13 +678,11 @@ public class Mouvement : MonoSingleton<Mouvement>
                 } // Sinon, si cette case est bien voisine de l'ancienne selection. 
                 else // Sinon cette case est trop loin de l'ancienne seletion.
                 {
-                    Debug.Log("La tile d'ID : " + tileId + " est trop loin de la tile d'ID: " + _selectedTileId[_selectedTileId.Count - 1]);
                 }
             }
             // Sinon cette case est hors de la range de l'unité.
             else
             {
-                Debug.Log("La tile d'ID : " + tileId + " est trop loin de la tile d'ID: " + _selectedTileId[_selectedTileId.Count - 1]);
             }
         }
         if (_selectedTileId.Count > 1 && TilesManager.Instance.TileList[_selectedTileId[_selectedTileId.Count - 1]].GetComponent<TileScript>().Unit == null)
@@ -744,7 +736,6 @@ public class Mouvement : MonoSingleton<Mouvement>
                 if (GameManager.Instance.IsPlayerRedTurn == TilesManager.Instance.TileList[_selectedTileId[_selectedTileId.Count - 1]].GetComponent<TileScript>().Unit.GetComponent<UnitScript>().UnitSO.IsInRedArmy)
                 {
                     UIInstance.Instance.ActivationUnitPanel.ShowMovementPanel();
-                    Debug.Log("Vous ne pouvez pas terminer votre mouvement sur une unité alliée.");
                     return;
                 }
             }
@@ -858,7 +849,6 @@ public class Mouvement : MonoSingleton<Mouvement>
             {
                 for (int i = 0; i < TileUnit.Count; i++)
                 {
-                    Debug.Log("apply");
                     TileUnit[i].AddUnitInfo(ActualUnit[i], LastUnit[i]);
                 }
             }
@@ -1180,7 +1170,6 @@ public class Mouvement : MonoSingleton<Mouvement>
             {
                 MYthsAndSteel_Enum.Direction avant = PlayerStatic.CheckDirection(_selectedTileId[i - 1], _selectedTileId[i]);
                 MYthsAndSteel_Enum.Direction apres = PlayerStatic.CheckDirection(_selectedTileId[i + 1], _selectedTileId[i]);
-                Debug.Log(_selectedTileId[i]);
                 if (avant == MYthsAndSteel_Enum.Direction.Sud)
                 {
                     switch (apres)

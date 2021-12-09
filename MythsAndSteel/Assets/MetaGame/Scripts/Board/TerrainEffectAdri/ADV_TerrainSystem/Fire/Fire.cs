@@ -111,7 +111,6 @@ public class Fire : TerrainParent
     public override void EndTurnEffect(TileScript ts, UnitScript Unit = null)
     {
         TurnLeft--;
-        Debug.Log(TurnLeft);
         if (TurnLeft == 2 && !Unit.GetComponent<UnitScript>().Volant && !Unit.GetComponent<UnitScript>().FireResistance)
         {
             if (Unit != null) Unit.TakeDamage(2);

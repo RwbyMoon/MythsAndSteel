@@ -222,7 +222,6 @@ public class ZoneOrgone : MonoBehaviour
         _isInValidation = false;
         HideChild();
 
-        Debug.Log("Orgone : OK (Gauthier)");
         GameManager.Instance.ChangePhase();
         //UIInstance.Instance.ActivateNextPhaseButton();
     }

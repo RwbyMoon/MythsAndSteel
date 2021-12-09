@@ -240,7 +240,6 @@ public class MouseCommand : MonoBehaviour
 
             Effet.GetComponent<TextMeshProUGUI>().ForceMeshUpdate();
 
-            Debug.Log("LineCount" + (Effet.GetComponent<TextMeshProUGUI>().textInfo.lineCount + Effet.GetComponent<ChildOfParent>().TheChild.GetComponent<TextMeshProUGUI>().textInfo.lineCount));
             UI.parentSlotEffetDeTerrain.GetComponent<RectTransform>().sizeDelta = new Vector2(UI.parentSlotEffetDeTerrain.GetComponent<RectTransform>().sizeDelta.x, 212 * UI.effetDeTerrain.Count); //(Effet.GetComponent<TextMeshProUGUI>().textInfo.lineCount + Effet.GetComponent<ChildOfParent>().TheChild.GetComponent<TextMeshProUGUI>().textInfo.lineCount) * 300 * UI.effetDeTerrain.Count);//
         }
 
@@ -309,7 +308,6 @@ public class MouseCommand : MonoBehaviour
         {
             if (unit.GetComponent<UnitScript>().UnitStatuts.Count > i)
             {
-                Debug.Log("Count : " + unit.GetComponent<UnitScript>().UnitStatuts.Count);
                 if (unit.GetComponent<UnitScript>().UnitStatuts[i] == MYthsAndSteel_Enum.UnitStatut.Aucun)
                 {
                     UIInstance.Instance.objectsStatuts[i].MainObjects.SetActive(false);
@@ -471,7 +469,6 @@ public class MouseCommand : MonoBehaviour
             else if (pos.y + carnetStats.w / 2 >= Screen.height) // Si ça va plus haut que l'écran, ça le résoud en l'envoyant plus bas
             {
                 pos.y = Screen.height - carnetStats.w / 2;
-                Debug.Log("2Y " + pos.y);
             }
         }
 
@@ -722,7 +719,6 @@ public class MouseCommand : MonoBehaviour
                 }
                 if (i >= 2)
                 {
-                    Debug.Log("fds"); 
                 _elementMenuRenfort[2].SetActive(true);
                 //Statistique pour l'unité3
                 UIInstance.Instance.PageUnitéRenfort._nameUnit3.GetComponent<TextMeshProUGUI>().text = unitReference.UnitClassCreableListRedPlayer[2].GetComponent<UnitScript>().UnitSO.UnitName.ToString();

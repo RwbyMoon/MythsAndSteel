@@ -164,7 +164,6 @@ public class Attaque : MonoSingleton<Attaque>
                 StartCoroutine(MinDmgAfterDelay(ActualUnit.GetComponent<UnitScript>().Animation, selectedUnitEnemyJauge, damageDealt));
             
             SoundController.Instance.PlaySound(_selectedUnit.GetComponent<UnitScript>().SonAttaque);
-            Debug.Log("Damage : " + _damageMinimum);
             StopAttack();
         }
         if (DiceResult < _numberRangeMin.x)
@@ -215,7 +214,6 @@ public class Attaque : MonoSingleton<Attaque>
                 StartCoroutine(MinDmgAfterDelay(ActualUnit.GetComponent<UnitScript>().Animation, selectedUnitEnemyJauge, damageDealt));
             
             SoundController.Instance.PlaySound(_selectedUnit.GetComponent<UnitScript>().SonAttaque);
-            Debug.Log("Damage : " + _damageMinimum);
             StopAttack();
         }
         if (DiceResult >= _numberRangeMax.x && DiceResult <= _numberRangeMax.y)
@@ -233,7 +231,6 @@ public class Attaque : MonoSingleton<Attaque>
             if (_selectedUnit.GetComponent<UnitScript>().VoiceLine != null)
             {
                 SoundController.Instance.PlaySound(_selectedUnit.GetComponent<UnitScript>().VoiceLine);
-                Debug.Log("vocieline");
 
             }
             else
@@ -242,12 +239,10 @@ public class Attaque : MonoSingleton<Attaque>
 
             }
 
-            Debug.Log("Damage Max : " + _damageMaximum);
             StopAttack();
         }
         if (DiceResult < _numberRangeMin.x)
         {
-            Debug.Log("Devi two Range" + _isAttackDeviation);
             if (_isAttackDeviation == true)
             {
                 ChangeStat();
@@ -263,7 +258,6 @@ public class Attaque : MonoSingleton<Attaque>
                 selectedUnitEnnemy.GetComponent<UnitScript>().TakeDamage(0);
                 StartCoroutine(_selectedUnit.GetComponent<UnitScript>().HasFailedAttack());
                 SoundController.Instance.PlaySound(_selectedUnit.GetComponent<UnitScript>().SonAttaque);
-                Debug.Log("Damage : " + null);
                 StopAttack();
             }
 
@@ -381,7 +375,6 @@ public class Attaque : MonoSingleton<Attaque>
     {
         Go = false;
 
-        //Debug.Log("Dice: " + (firstDiceInt + secondDiceInt));
         _JaugeAttack.SynchAttackBorne(RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>());
         _JaugeAttack.Attack(firstDiceInt + secondDiceInt);
 
@@ -413,7 +406,6 @@ public class Attaque : MonoSingleton<Attaque>
                 if (ID == currentID)
                 {
                     i = true;
-
                 }
 
                 if (!i)
@@ -427,6 +419,39 @@ public class Attaque : MonoSingleton<Attaque>
                         }
                     }
                     Highlight(ID, currentID, Range - 1, InfoLigneDroite + 1);
+                }
+            }
+        }
+        else
+        {
+            if (_selectedUnit.GetComponent<UnitScript>().UnitSO.IsInRedArmy)
+            {
+                foreach (GameObject U in PlayerScript.Instance.UnitRef.UnitListRedPlayer)
+                {
+                    if (U.GetComponent<UnitScript>().OtherCanTargetNear)
+                    {
+                        foreach (int ID in PlayerStatic.GetNeighbourDiag(U.GetComponent<UnitScript>().ActualTiledId, TilesManager.Instance.TileList[U.GetComponent<UnitScript>().ActualTiledId].GetComponent<TileScript>().Line, false))
+                        {
+                            TileScript TileSc = TilesManager.Instance.TileList[ID].GetComponent<TileScript>();
+                            TileSc.ActiveChildObj(MYthsAndSteel_Enum.ChildTileType.AttackSelect, _normalAttackSprite, 1);
+                            newNeighbourId.Add(ID);
+                        }
+                    }
+                }
+            }
+            else
+            {
+                foreach (GameObject U in PlayerScript.Instance.UnitRef.UnitListBluePlayer)
+                {
+                    if (U.GetComponent<UnitScript>().OtherCanTargetNear)
+                    {
+                        foreach (int ID in PlayerStatic.GetNeighbourDiag(U.GetComponent<UnitScript>().ActualTiledId, TilesManager.Instance.TileList[U.GetComponent<UnitScript>().ActualTiledId].GetComponent<TileScript>().Line, false))
+                        {
+                            TileScript TileSc = TilesManager.Instance.TileList[ID].GetComponent<TileScript>();
+                            TileSc.ActiveChildObj(MYthsAndSteel_Enum.ChildTileType.AttackSelect, _normalAttackSprite, 1);
+                            newNeighbourId.Add(ID);
+                        }
+                    }
                 }
             }
         }
@@ -450,7 +475,6 @@ public class Attaque : MonoSingleton<Attaque>
 
                         DiceResult++;
                     }
-                    Debug.Log(DiceResult);
                 }
                 _selectedUnit.GetComponent<UnitScript>().DoingCharg1Blue = false;
             }
@@ -481,7 +505,6 @@ public class Attaque : MonoSingleton<Attaque>
                         {
                             if (Type.Child != null)
                             {
-                                Debug.Log(Type._terrainName);
                                 if (Type.Child.TryGetComponent<TerrainParent>(out TerrainParent Try))
                                 {
                                     Try.UnCibledByAttack(RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>());
@@ -572,7 +595,6 @@ public class Attaque : MonoSingleton<Attaque>
 
                     if (!_selectedUnit.GetComponent<UnitScript>()._isActionDone && !_selectedUnit.GetComponent<UnitScript>().UnitStatuts.Contains(MYthsAndSteel_Enum.UnitStatut.PeutPasCombattre))
                     {
-                        Debug.Log(_selectedUnit);
                         _selected = true;
 
                         GetStats();
@@ -714,7 +736,6 @@ public class Attaque : MonoSingleton<Attaque>
                                     {
                                         if (Type.Child != null)
                                         {
-                                            Debug.Log(Type._terrainName);
                                             if (Type.Child.TryGetComponent<TerrainParent>(out TerrainParent Try))
                                             {
                                                 Try.CibledByAttack(RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>(), TilesManager.Instance.TileList[RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>().ActualTiledId].GetComponent<TileScript>());
@@ -755,7 +776,6 @@ public class Attaque : MonoSingleton<Attaque>
                     {
                         if (Type.Child != null)
                         {
-                            Debug.Log(Type._terrainName);
                             if (Type.Child.TryGetComponent<TerrainParent>(out TerrainParent Try))
                             {
                                 Try.UnCibledByAttack(RaycastManager.Instance.ActualUnitSelected.GetComponent<UnitScript>());
@@ -820,7 +840,6 @@ public class Attaque : MonoSingleton<Attaque>
 
             _selected = false;
             RaycastManager.Instance.ActualTileSelected = null;
-            Debug.Log("fdjks");
         }
 
     }
@@ -869,7 +888,6 @@ public class Attaque : MonoSingleton<Attaque>
                     selectedUnitEnnemy = TilesManager.Instance.TileList[i].GetComponent<TileScript>().Unit;
                     if (selectedUnitEnnemy != null)
                     {
-                        Debug.Log("fds");
                         ChooseAttackType(_numberRangeMin, _damageMinimum, _numberRangeMax, _damageMaximum, DiceResult, selectedUnitEnnemy);
                     }
                     else
@@ -924,6 +942,7 @@ public class Attaque : MonoSingleton<Attaque>
     {
         Randomdice();
         _selectedUnit.GetComponent<UnitScript>().NbAttaqueParTour--;
+        GameManager.Instance.lastAttacker = _selectedUnit.GetComponent<UnitScript>().UnitSO.UnitName;
         _selectedUnit.GetComponent<UnitScript>().HasAttackedOneTime = true;
         CapacitySystem.Instance.Updatebutton();
         IsInAttack = false;
@@ -971,7 +990,6 @@ public class Attaque : MonoSingleton<Attaque>
     /// </summary>
     public void StartDeviation()
     {
-        Debug.Log("StartDevi");
         foreach (int i in _selectedTiles)
         {
             TilesManager.Instance.TileList[i].gameObject.GetComponent<TileScript>().DesActiveChildObj(MYthsAndSteel_Enum.ChildTileType.AttackSelect);
@@ -1083,7 +1101,6 @@ public class Attaque : MonoSingleton<Attaque>
         {
             StartCoroutine(ColorTile(i, x, listIdUI, ennemyUnitIDTile, endDeviation));
         }
-        Debug.Log(DeviationIdTile);
     }
 
     /// <summary>
@@ -1103,7 +1120,6 @@ public class Attaque : MonoSingleton<Attaque>
 
         {
             SoundController.Instance.PlaySound(_selectedUnit.GetComponent<UnitScript>().SonAttaque);
-            Debug.Log("Damage : " + null);
             StartCoroutine(_selectedUnit.GetComponent<UnitScript>().HasFailedAttack());
             StopAttack();
 
@@ -1129,7 +1145,6 @@ public class Attaque : MonoSingleton<Attaque>
                 StartCoroutine(_selectedUnit.GetComponent<UnitScript>().HasInflictedMini());
             }
             SoundController.Instance.PlaySound(_selectedUnit.GetComponent<UnitScript>().SonAttaque);
-            Debug.Log("Damage : " + _damageMinimum);
             
             StopAttack();
         }

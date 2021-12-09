@@ -192,7 +192,6 @@ public class PhaseActivation : MonoBehaviour
                         {
                             foreach(CarteActivation Carteactivations in BlueCartesActivation)
                             {
-                                Debug.Log("Change card blue");
                                 ConfirmPanelBlue.SetActive(false);
                             }
                             J2Choix = true;
@@ -302,7 +301,6 @@ public class PhaseActivation : MonoBehaviour
             GameManager.Instance.SetPlayerStart(false);
             RedPlayerPanel.transform.GetChild(J1CarteVerif.IndexCarteActivation).GetComponent<Image>().color = new Color(rgb, rgb, rgb, 1f);
             BluePlayerPanel.transform.GetChild(J2CarteVerif.IndexCarteActivation).GetComponent<Image>().color = new Color(rgb, rgb, rgb, 1f);
-            Debug.Log("7");
             _result.SetActive(true);
             
         }
@@ -328,7 +326,6 @@ public class PhaseActivation : MonoBehaviour
         GameManager.Instance.activationDone = false;
         _result.SetActive(false);
 
-        Debug.Log("GAUTHIER");     
     }
 
     /// <summary>

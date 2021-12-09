@@ -23,7 +23,6 @@ public class Boost : Capacity
                     {
                         unit.Add(TilesManager.Instance.TileList[Unit.GetComponent<UnitScript>().ActualTiledId]);
 
-                        Debug.Log("Boost : "+ Unit);
                         
                     }
                 }
@@ -37,7 +36,6 @@ public class Boost : Capacity
                     {
                         unit.Add(TilesManager.Instance.TileList[Unit.GetComponent<UnitScript>().ActualTiledId]);
 
-                        Debug.Log("Boost : " + Unit);
 
                     }
                 }
@@ -52,7 +50,6 @@ public class Boost : Capacity
                     {
                         unit.Add(TilesManager.Instance.TileList[Unit.GetComponent<UnitScript>().ActualTiledId]);
 
-                        Debug.Log("Boost : " + Unit);
 
                     }
                 }
@@ -67,7 +64,6 @@ public class Boost : Capacity
                     {
                         unit.Add(TilesManager.Instance.TileList[Unit.GetComponent<UnitScript>().ActualTiledId]);
 
-                        Debug.Log("Boost : " + Unit);
 
                     }
                 }
@@ -82,7 +78,6 @@ public class Boost : Capacity
                     {
                         unit.Add(TilesManager.Instance.TileList[Unit.GetComponent<UnitScript>().ActualTiledId]);
 
-                        Debug.Log("Boost : " + Unit);
 
                     }
                 }
@@ -106,18 +101,14 @@ public class Boost : Capacity
     public override void EndCpty()
     {
 
-        Debug.Log("Boost, unité choisie : "+ GameManager.Instance.TileChooseList[0].GetComponent<TileScript>().Unit.GetComponent<UnitScript>().UnitSO.UnitName);
 
-        // -1 PV pour la cible
         if (GameManager.Instance.TileChooseList[0].GetComponent<TileScript>().Unit.GetComponent<UnitScript>().Life > 1)
         {
             GameManager.Instance.TileChooseList[0].GetComponent<TileScript>().Unit.GetComponent<UnitScript>().TakeDamage(1);
-            // +2 déplacement pour la cible
             GameManager.Instance.TileChooseList[0].GetComponent<TileScript>().Unit.GetComponent<UnitScript>().MoveSpeedBonus += 2;
         }
         else
         {
-            Debug.Log("pas possible car pas assez de PV");
         }
         GetComponent<UnitScript>().ActifUsedThisTurn = true;
         GameManager.Instance._eventCall -= EndCpty;

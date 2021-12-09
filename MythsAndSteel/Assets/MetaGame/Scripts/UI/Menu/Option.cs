@@ -62,18 +62,15 @@ public class Option : MonoBehaviour
     {
         audioMixer.SetFloat("Effect", PlayerPrefs.GetFloat("EffectVolume"));
 
-        Debug.Log(PlayerPrefs.GetInt("Avertissement"));
         audioMixer.SetFloat("Music", PlayerPrefs.GetFloat("MusicVolume"));
         EffectVolumeSlider.GetComponent<Slider>().value = PlayerPrefs.GetFloat("EffectVolume");
         MusicVolumeSlider.GetComponent<Slider>().value = PlayerPrefs.GetFloat("MusicVolume");
         
-        Debug.Log("Volume set : Effect " + PlayerPrefs.GetFloat("EffectVolume") + ", Music " + PlayerPrefs.GetFloat("MusicVolume"));
         if (PlayerPrefs.GetInt("Volume") == 1) Toggle.GetComponent<Toggle>().isOn = true;
         else Toggle.GetComponent<Toggle>().isOn = false;
 
         if (PlayerPrefs.GetInt("Avertissement") == 1)
         { toggleAvertissement.GetComponent<Toggle>().isOn = true;
-            Debug.Log(PlayerPrefs.GetInt("Avertissement"));
         }
         else if (PlayerPrefs.GetInt("Avertissement") == 0)
        
@@ -81,7 +78,6 @@ public class Option : MonoBehaviour
 
             toggleAvertissement.GetComponent<Toggle>().isOn = false;
             PlayerPrefs.SetInt("Avertissement", 0);
-        Debug.Log(PlayerPrefs.GetInt("Avertissement"));
         }
    
     }
@@ -97,7 +93,6 @@ public class Option : MonoBehaviour
         Resolution resolution = resolutions[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
         currentResolutionIndex = resolutionIndex;
-        Debug.Log("rr");
         if (!FirstTime)
         {
             StartCoroutine(Validation());
@@ -110,7 +105,6 @@ public class Option : MonoBehaviour
 
     public void ResetResolution()
     {
-        Debug.Log(OldResolution);
         Screen.SetResolution(OldResolution.width, OldResolution.height, Screen.fullScreen);
 
         ResolutionDropdown.value = Oldindex;

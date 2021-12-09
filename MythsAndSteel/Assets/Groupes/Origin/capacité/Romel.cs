@@ -77,7 +77,6 @@ public class Romel : Capacity
 
     public override void EndCpty()
     {
-        Debug.Log("test");
         UIInstance.Instance.ActivateNextPhaseButton();
         GetComponent<Animator>().runtimeAnimatorController = null;
         if (TransformationRomel != null) GetComponent<UnitScript>().UnitSO = TransformationRomel;

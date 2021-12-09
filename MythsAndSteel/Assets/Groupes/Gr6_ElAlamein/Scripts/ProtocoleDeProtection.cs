@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ProtocoleDeProtection : Capacity
 {
+    GameObject Bonus;
     public override void StartCpty()
     {
         GetComponent<UnitScript>().IsActifNotConsumeAction = true;
@@ -40,6 +41,9 @@ public class ProtocoleDeProtection : Capacity
     public override void EndCpty()
     {
         GameManager.Instance.TileChooseList[0].GetComponent<TileScript>().Unit.GetComponent<UnitScript>()._shield++;
+        GameManager.Instance.TileChooseList[0].GetComponent<TileScript>().Unit.transform.GetChild(2).GetComponent<Animator>().SetBool("Shield", true);
+        Bonus = GameManager.Instance.TileChooseList[0];
+        StartCoroutine(WaitEndAnim());
         GameManager.Instance._eventCall -= EndCpty;
         GetComponent<UnitScript>().EndCapacity();
         base.EndCpty();
@@ -54,5 +58,12 @@ public class ProtocoleDeProtection : Capacity
         }
         GameManager.Instance.TileChooseList.Clear();
         GetComponent<UnitScript>().IsActifNotConsumeAction = false;
+    }
+
+    IEnumerator WaitEndAnim()
+    {
+        
+        yield return new WaitForSeconds(GameManager.Instance.TileChooseList[0].GetComponent<TileScript>().Unit.transform.GetChild(2).GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length + 1.5f);
+        //Bonus.GetComponent<TileScript>().Unit.transform.GetChild(2).GetComponent<Animator>().SetBool("Shield", false);
     }
 }

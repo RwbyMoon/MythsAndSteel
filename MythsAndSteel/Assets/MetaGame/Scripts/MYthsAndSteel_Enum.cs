@@ -48,7 +48,7 @@ public class MYthsAndSteel_Enum : MonoBehaviour
     /// Tous les types de terrain
     /// </summary>
     public enum TerrainType{
-        Sol, Forêt, Bosquet, Plage, Colline, Haute_colline, Mont, Ravin, Eau, Boue, Rivière_Nord, Rivière_Sud, Rivière_Est, Rivière_Ouest, Fleuve, Ruisseau, Pont_Nord, Pont_Sud, Pont_Est, Pont_Ouest, Route, Rails, Maison, Immeuble, Ruines, UsineRouge, UsineBleu, Point_de_ressource, Gare, Bunker, Cabane_Isatabu, OrgoneBlue, OrgoneRed, Point_de_ressources_vide, Brasier, Feu, Barbelé_Nord, Barbelé_Sud, Barbelé_Est, Barbelé_Ouest, Détonation, Point_Objectif_Rouge, Point_Objectif_Bleu, Tunnel
+        Sol, Forêt, Bosquet, Plage, Colline, Haute_colline, Mont, Ravin, Eau, Boue, Rivière_Nord, Rivière_Sud, Rivière_Est, Rivière_Ouest, Fleuve, Ruisseau, Pont_Nord, Pont_Sud, Pont_Est, Pont_Ouest, Route, Rails, Maison, Immeuble, Ruines, UsineRouge, UsineBleu, Point_de_ressource, Gare, Bunker, Cabane_Isatabu, OrgoneBlue, OrgoneRed, Point_de_ressources_vide, Brasier, Feu, Barbelé_Nord, Barbelé_Sud, Barbelé_Est, Barbelé_Ouest, Détonation, Point_Objectif_Rouge, Point_Objectif_Bleu, Tunnel, Fumigène
     }
 
     /// <summary>

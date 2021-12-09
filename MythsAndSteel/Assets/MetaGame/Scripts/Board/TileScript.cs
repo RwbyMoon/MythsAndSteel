@@ -137,7 +137,6 @@ public class TileScript : MonoBehaviour
         }
         set
         {
-            Debug.Log("Attention, vous venez d'ajouter manuellement un effet de terrain. Ce n'est clairement pas conseillé. Call un méta ou c'est la mort.");
             _terrainEffectList = value;
         }
     }
@@ -439,7 +438,6 @@ public class TileScript : MonoBehaviour
                     {
                         TerrainEffectList.Add(Type);
                     }
-                    Debug.Log(T._terrainName);
                     GameObject Child = Instantiate(T.Child, transform.position, Quaternion.identity);
                
                     
@@ -480,10 +478,8 @@ public class TileScript : MonoBehaviour
                 {
                     if (Type == MYthsAndSteel_Enum.TerrainType.Maison || Type == MYthsAndSteel_Enum.TerrainType.Immeuble)
                     {
-                        Debug.Log("bonsoirrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr");
                             if((T.Type == MYthsAndSteel_Enum.TerrainType.Ruines))
                         {
-                            Debug.Log("djfkqlmsdjlfdqsl:kjfqmze:jlskjfqeislldfjqozieljfoqmze");
                             C.GetComponent<SpriteRenderer>().enabled = true;
 
                             }

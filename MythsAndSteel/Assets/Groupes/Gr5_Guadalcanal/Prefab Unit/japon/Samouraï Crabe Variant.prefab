@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4b5d53f4caebfc4f80e7f9f37bea2cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Capacity1Name: '!!Bonus Littoral!!'
+  _Capacity1Name: Bonus Littoral
   _Capacity1Type: Passif
   _Capacity1Cost: 0
   _Capacity1Desc: "Obtient +2 aux bornes d'attaques et +1 de d\xE9placement si l'unit\xE9
@@ -23,6 +23,18 @@ MonoBehaviour:
   _Capacity2Cost: 0
   _Capacity2Desc: 
   _Capacity2Icon: {fileID: 21300000, guid: 24c38065f0aa40046a1f50a3c6882ced, type: 3}
+--- !u!114 &4849682389766319447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7807426832748974061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db94fd0e63e3b8a4280aba6a93bd82f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3246276722241950138
 PrefabInstance:
   m_ObjectHideFlags: 0

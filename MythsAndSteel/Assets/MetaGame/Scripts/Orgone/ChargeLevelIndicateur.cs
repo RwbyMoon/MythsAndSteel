@@ -23,12 +23,10 @@ public class ChargeLevelIndicateur : MonoBehaviour
             
         if (Gamanager.GetComponent<GameManager>().ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.OrgoneJ1 && GetComponent<Animator>().GetInteger("Allumage") == 1 && Possessor == 1)
         {
-            Debug.Log("+1 Pour Gryffondor");
             GetComponent<Animator>().SetInteger("Allumage", 2);
         }
         else if (Gamanager.GetComponent<GameManager>().ActualTurnPhase == MYthsAndSteel_Enum.PhaseDeJeu.OrgoneJ2 && GetComponent<Animator>().GetInteger("Allumage") == 1 && Possessor == 2)
         {
-            Debug.Log("+1 Pour Serpentard");
             GetComponent<Animator>().SetInteger("Allumage", 2);
         }
     }

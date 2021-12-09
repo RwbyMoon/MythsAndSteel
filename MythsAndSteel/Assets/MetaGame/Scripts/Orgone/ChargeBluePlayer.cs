@@ -87,7 +87,6 @@ public class ChargeBluePlayer : ChargeOrgone
         {
             TileScript tilescript = gam.GetComponent<TileScript>();
 
-            Debug.Log(tilescript.TileId);
             if (tilescript.Unit == null)
             {
 
@@ -95,7 +94,6 @@ public class ChargeBluePlayer : ChargeOrgone
                     && !tilescript.TerrainEffectList.Contains(MYthsAndSteel_Enum.TerrainType.Point_Objectif_Bleu) && !tilescript.TerrainEffectList.Contains(MYthsAndSteel_Enum.TerrainType.UsineBleu) && !tilescript.TerrainEffectList.Contains(MYthsAndSteel_Enum.TerrainType.UsineRouge))
                 {
                     SelectTileList.Add(gam);
-                    Debug.Log("break");
 
                 }
             }
@@ -205,7 +203,6 @@ public class ChargeBluePlayer : ChargeOrgone
         {
             TileScript tilescript = gam.GetComponent<TileScript>();
 
-            Debug.Log(tilescript.TileId);
             if (tilescript.Unit == null)
             {
 
@@ -213,7 +210,6 @@ public class ChargeBluePlayer : ChargeOrgone
                     && !tilescript.TerrainEffectList.Contains(MYthsAndSteel_Enum.TerrainType.Point_Objectif_Bleu) && !tilescript.TerrainEffectList.Contains(MYthsAndSteel_Enum.TerrainType.UsineBleu) && !tilescript.TerrainEffectList.Contains(MYthsAndSteel_Enum.TerrainType.UsineRouge))
                 {
                     SelectTileList.Add(gam);
-                    Debug.Log("break");
 
                 }
             }

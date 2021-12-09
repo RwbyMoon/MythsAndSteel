@@ -97,7 +97,6 @@ public class Motivation : MonoBehaviour
 
     IEnumerator DelayBonus()
     {
-        Debug.Log("LaunchArea");
         RemoveBonus();
         yield return new WaitForSeconds(1);
         AddBonus();
