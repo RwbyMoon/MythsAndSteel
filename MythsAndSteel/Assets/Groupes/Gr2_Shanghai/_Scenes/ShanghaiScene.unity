@@ -11083,6 +11083,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1216643929}
     - target: {fileID: 1397833382716939709, guid: 5f63c55664872f34ca395f71311cf8ee, type: 3}
+      propertyPath: _flecheSpriteRef._redArrowUp
+      value: 
+      objectReference: {fileID: 21300000, guid: 1ec510790d352ab439381c62d23a02e1, type: 3}
+    - target: {fileID: 1397833382716939709, guid: 5f63c55664872f34ca395f71311cf8ee, type: 3}
       propertyPath: _j1HeartSprite.Array.data[0]
       value: 
       objectReference: {fileID: 21300000, guid: f4061b12460f34f4882f3dcdffdb5ee7, type: 3}
@@ -11171,6 +11175,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1216643947}
     - target: {fileID: 1397833382716939709, guid: 5f63c55664872f34ca395f71311cf8ee, type: 3}
+      propertyPath: _flecheSpriteRef._blueArrowUp
+      value: 
+      objectReference: {fileID: 21300000, guid: 8cebf809470bb6d4eb090c3267bc51f8, type: 3}
+    - target: {fileID: 1397833382716939709, guid: 5f63c55664872f34ca395f71311cf8ee, type: 3}
       propertyPath: _j1HeartSprite.Array.data[10]
       value: 
       objectReference: {fileID: 21300000, guid: aba068187803f5a468bb140204f352ae, type: 3}
@@ -11227,6 +11235,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1840272027}
     - target: {fileID: 1397833382716939709, guid: 5f63c55664872f34ca395f71311cf8ee, type: 3}
+      propertyPath: _flecheSpriteRef._redArrowDown
+      value: 
+      objectReference: {fileID: 21300000, guid: 1ae046eeffebd44478fe41c9ff1ebe9b, type: 3}
+    - target: {fileID: 1397833382716939709, guid: 5f63c55664872f34ca395f71311cf8ee, type: 3}
       propertyPath: "_pageUnit\xE9Renfort._lifeValor1"
       value: 
       objectReference: {fileID: 1840272024}
@@ -11278,6 +11290,10 @@ PrefabInstance:
       propertyPath: _buttonEventRedPlayer._upButton
       value: 
       objectReference: {fileID: 1510579202}
+    - target: {fileID: 1397833382716939709, guid: 5f63c55664872f34ca395f71311cf8ee, type: 3}
+      propertyPath: _flecheSpriteRef._blueArrowDown
+      value: 
+      objectReference: {fileID: 21300000, guid: 2102bf759da0a084797f8a09ad9cca70, type: 3}
     - target: {fileID: 1397833382716939709, guid: 5f63c55664872f34ca395f71311cf8ee, type: 3}
       propertyPath: _j1HeartShieldSprite.Array.size
       value: 11
@@ -25946,6 +25962,9 @@ MonoBehaviour:
   IsCheckingOrgone: 0
   DoingEpxlosionOrgone: 0
   DeathByOrgone: 0
+  lastAttacker: 
+  lastKiller: 
+  lastKilled: 
 --- !u!1001 &1216643919
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -57537,7 +57556,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8027309299331325418
 RectTransform:
   m_ObjectHideFlags: 0
